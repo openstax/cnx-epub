@@ -21,6 +21,28 @@ Either of the following will work::
     $ python -m unittest discover
     $ python setup.py test
 
+Format notes
+------------
+
+Order of documents
+~~~~~~~~~~~~~~~~~~
+
+To enforcing order of contents, we use the navigation document rather than
+the Open Packaging Format (OPF),
+which supports a ``spine`` element that aids in epub reader in navigation order.
+The Connexions library does not use the spine for order.
+A navigation document is the authority on order of contents
+and which contents are document like.
+Anything not included in the navigation document is considered a resource.
+
+Document encapsulation
+~~~~~~~~~~~~~~~~~~~~~~
+
+Collections are easy because they will be sent across as individual OPF entries
+that contain the collection tree as navigation documents.
+In the case of publishing module documents without a collection,
+the navigation document will be flagged as a non-document item.
+
 License
 -------
 
