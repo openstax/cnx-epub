@@ -105,7 +105,17 @@ class EPUBPackage(MutableSequence):
 
         # FIXME Ignoring spine ordering, because I (pumazi) don't understand
         #       parts of it.
+        spine_items = opf_xml.xpath('/opf:package/opf:spine/opf:itemref',
+                                    namespaces=EPUB_OPF_NAMESPACES)
         return package
+
+    @property
+    def navigation_doc(self):
+        navs = [i for i in self._items
+                if isinstance(i, Document) and i.is_navigation]
+        if len(navs) > 1:
+            pass # FIXME This can't happen.
+        return navs[0]
 
     # ABC methods for MutableSequence
     def __getitem__(self, k):

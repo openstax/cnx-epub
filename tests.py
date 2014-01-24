@@ -61,6 +61,7 @@ class EPUBTestCase(unittest.TestCase):
         # Check the navigation order
         expected_nav_document = package.grab_by_name("9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml")
         self.assertTrue(expected_nav_document.is_navigation)
+        self.assertEqual(package.navigation_doc, expected_nav_document)
 
         # Verify reference to a resource item.
         # This also checks iteration and containment
