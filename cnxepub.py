@@ -6,6 +6,7 @@
 # See LICENCE.txt for details.
 # ###
 import os
+import sys
 import io
 import zipfile
 from collections import Container, Iterator, MutableSequence
@@ -21,7 +22,6 @@ EPUB_OPF_NAMESPACES = {
     'opf': "http://www.idpf.org/2007/opf",
     'dc': "http://purl.org/dc/elements/1.1/",
     }
-DEFAULT_DOCUMENT_MEDIA_TYPE = "application/xhtml+xml"
 
 
 class EPUB(MutableSequence):
@@ -97,11 +97,13 @@ class EPUBPackage(MutableSequence):
         for item in manifest:
             absolute_filepath = os.path.join(package_relative_root,
                                              item.get('href'))
-            is_navigation = item.get('properties') == 'nav'
+            properties = item.get('properties', '').split()
+            is_navigation = 'nav' in properties
             media_type = item.get('media-type')
-            package.append(item_from_file(absolute_filepath,
+            package.append(Item.from_file(absolute_filepath,
                                           media_type=media_type,
-                                          is_navigation=is_navigation))
+                                          is_navigation=is_navigation,
+                                          properties=properties))
 
         # FIXME Ignoring spine ordering, because I (pumazi) don't understand
         #       parts of it.
@@ -110,9 +112,8 @@ class EPUBPackage(MutableSequence):
         return package
 
     @property
-    def navigation_doc(self):
-        navs = [i for i in self._items
-                if isinstance(i, Document) and i.is_navigation]
+    def navigation(self):
+        navs = [i for i in self._items if i.is_navigation]
         if len(navs) > 1:
             pass # FIXME This can't happen.
         return navs[0]
@@ -140,41 +141,16 @@ class EPUBPackage(MutableSequence):
 #     """EPUB3 metadata information"""
 
 
-def item_from_file(filepath, media_type, **kwargs):
-    """Factory for creating item objects (Document or Resource)"""
-    if media_type in Document.available_media_types:
-        return Document.from_file(filepath, media_type=media_type, **kwargs)
-    else:
-        return Resource.from_file(filepath, media_type=media_type, **kwargs)
+class Item(object):
+    """Package item"""
 
-
-class Document:
-    """Content document"""
-    available_media_types = (DEFAULT_DOCUMENT_MEDIA_TYPE,)
-
-    def __init__(self, name, data=None,
-                 media_type=DEFAULT_DOCUMENT_MEDIA_TYPE, is_navigation=False,
-                 **kwargs):
+    def __init__(self, name, data=None, media_type=None,
+                 is_navigation=False, properties=[], **kwargs):
         self.name = name
         self.data = data
         self.media_type = media_type
-        self.is_navigation = is_navigation
-
-    @classmethod
-    def from_file(cls, filepath, **kwargs):
-        name = os.path.basename(filepath)
-        with open(filepath, 'r') as fb:
-            data = io.BytesIO(fb.read())
-        return cls(name, data, **kwargs)
-
-
-class Resource:
-    """Resource item"""
-
-    def __init__(self, name, data=None, media_type=None, **kwargs):
-        self.name = name
-        self.data = data
-        self.media_type = media_type
+        self.is_navigation = bool(is_navigation)
+        self.properties = properties
 
     @classmethod
     def from_file(cls, filepath, **kwargs):
