@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <title>Document One</title>
+    <meta itemprop="inLanguage" content="en" />
+    <meta itemprop="description" content="The first page" />
+    <meta id="author01" itemprop="author" content="Author 1" />
+    <meta id="author03" itemprop="author" content="Author 3" />
+    <meta id="author04" itemprop="author" content="Author 4" />
+    <meta id="author12" itemprop="author" content="Author 12" />
+    <meta id="author10" itemprop="author" content="Author 10" />
+    <!-- order as [author03, author12, author04, author01, author10] -->
+    <meta refines="author01" property="display-seq" content="4" />
+    <meta refines="author04" property="display-seq" content="3" />
+    <meta refines="author12" property="display-seq" content="2" />
+    <meta refines="author03" property="display-seq" content="1" />
+    <meta refines="#author01" property="custom:cnx-id" content="cnx" />
+    <meta itemprop="about" content="Books" />
+    <meta itemprop="keywords" content="Example" />
+    <meta property="dc:license" content="CC-BY 4.0" />
+    <meta property="lrmi:useRightsUrl" content="http://creativecommons.org/licenses/by/4.0/" />
+    <link rel="lrmi:useRightsUrl" href="http://creativecommons.org/licenses/by/4.0/" />
+    <meta itemprop="publisher" content="Sample Publisher" />
+    <meta itemprop="editor" content="Sample Editor" />
+    <meta id="translator01" itemprop="contributor" content="Sample Translator" />
+    <meta refines="#translator01" property="role" scheme="marc:relators" content="trl" />
+    <meta itemprop="illustrator" content="Sample Illustrator" />
+    <meta itemprop="copyrightHolder" content="Mister Owner" />
+    <meta itemprop="dateCreated" content="2013/03/19 15:01:16 -0500" />
+    <meta itemprop="dateModified" content="2013/06/18 15:22:55 -0500" />
+  </head>
+  <body xmlns:c="http://cnx.rice.edu/cnxml"
+	xmlns:md="http://cnx.rice.edu/mdml"
+	xmlns:qml="http://cnx.rice.edu/qml/1.0"
+	xmlns:mod="http://cnx.rice.edu/#moduleIds"
+	xmlns:bib="http://bibtexml.sf.net/"
+	xmlns:data="http://dev.w3.org/html5/spec/#custom">
+    <p class="para" id="fish">There once was a fish that swam against the current because he was told to do so.</p>
+  </body>
+</html>

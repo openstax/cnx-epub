@@ -1,6 +1,8 @@
 0.x
 ---
 
+- Added document parsing code to extract metadata and create navigation trees.
+  [pumazi]
 - Added classes for parsing EPUB3 files. [pumazi]
 
 0.0
