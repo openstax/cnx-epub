@@ -72,10 +72,10 @@ class EPUBPackage(MutableSequence):
     """EPUB3 package"""
     # TODO Navigation document requirement on output/input
 
-    def __init__(self, metadata={}, items=[], spine_order=None):
+    def __init__(self, metadata=None, items=None, spine_order=None):
         # TODO Metadata will become a mutable sequence object.
-        self.metadata = metadata
-        self._items = items
+        self.metadata = metadata or {}
+        self._items = items or []
         self._spine_indexes = spine_order  # TODO Ordered reference object, similar to nav.
 
     @classmethod
