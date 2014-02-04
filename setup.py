@@ -16,7 +16,8 @@ setup(
     url="https://github.com/connexions/cnx-epub",
     license='LGPL, See also LICENSE.txt',
     description=description,
-    py_modules=['cnxlogging'],
+    install_requires=install_requires,
+    py_modules=['cnxepub'],
     include_package_data=False,
     entry_points="""\
     [console_scripts]
