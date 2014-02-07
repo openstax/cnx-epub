@@ -72,6 +72,17 @@ class EPUBTestCase(unittest.TestCase):
                     if i.name == "e3d625fe893b3f1f9aaef3bdf6bfa15c.png"][0]
         self.assertIn(resource, package)
 
+    def test_parsing_same_file_twice(self):
+        from cnxepub import EPUB
+
+        epub1 = EPUB.from_file(SINGLE_OPF_FILEPATH)
+        epub2 = EPUB.from_file(SINGLE_OPF_FILEPATH)
+
+        self.assertEqual(len(epub1), 1)
+        self.assertEqual(len(epub1[0]), 9)
+        self.assertEqual(len(epub2), 1)
+        self.assertEqual(len(epub2[0]), 9)
+
 
 class HtmlMetadataParsingTestCase(unittest.TestCase):
 
