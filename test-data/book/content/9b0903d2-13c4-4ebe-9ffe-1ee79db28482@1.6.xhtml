@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
-  <head itemscope="itemscope"
-        itemtype="http://schema.org/Book"
-        >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:epub="http://www.idpf.org/2007/ops"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:lrmi="http://lrmi.net/the-specification"
+      >
+  <head>
     <title>Book One</title>
     <meta itemprop="inLanguage"
           data-type="langugage"
@@ -41,7 +44,7 @@
       <!-- For modules in the editor, the metadata should be encapsulated in
            a div so that it can be pulled out of the main content editable. -->
       <!-- //@itemprop='name' is perferred over //title -->
-      <h1 data-type="title" itemprop="name">Document One of Infinity</h1>
+      <h1 data-type="title" itemprop="name">Book of Infinity</h1>
 
       <div class="authors">
         By: 
@@ -136,65 +139,57 @@
           <li class="item">Purchase a watch</li>
           <li class="item">Wear funny hats</li>
           <li class="item">Eat cake</li>
+          <li class="item">Bend a spoon</li>
         </ul>
       </div>
 
       <div itemprop="keywords">Physics</div>
-      <div itemprop="keywords" data-type="keyword">South Africa</div>
       <div itemprop="about"
            data-type="subject"
            >Science and Mathematics</div>
     </div>
 
-    <nav xmlns:epub="http://www.idpf.org/2007/ops" epub:type="toc" id="toc">
+
+    <nav epub:type="toc"
+         id="toc">
       <ol>
-	<li class="part">
-	  <span>Part One</span>
-	  <ol>
-	    <li class="chapter">
-	      <span>Chapter One</span>
-	      <ol>
-		<li>
-		  <a href="e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml">Document One</a>
-		</li>
-	      </ol>
-	    </li>
-	    <li class="chapter">
-	      <span>Chapter Two</span>
-	      <ol>
-		<li>
-		  <a href="3c448dc6-d5f5-43d5-8df7-fe27d462bd3a@1.xhtml">Document Two</a>
-		</li>
-	      </ol>
-	    </li>
-	  </ol>
-	</li>
-	<li class="part">
-	  <span>Part Two</span>
-	  <ol>
-	    <li class="chapter">
-	      <span>Chapter Three</span>
-	      <ol>
-		<li>
-		  <a href="ad17c39c-d606-4441-b987-54448020bb40@2.xhtml">Document Three</a>
-		</li>
-	      </ol>
-	    </li>
-	  </ol>
-	</li>
-	<li class="part">
-	  <span>Part Three</span>
-	  <ol>
-	    <li class="chapter">
-	      <span>Chapter Four</span>
-	      <ol>
-		<li>
-		  <a href="7c52af05-05b1-4761-aa4c-b17b0197dc6d@1.xhtml">Document Four</a>
-		</li>
-	      </ol>
-	    </li>
-	  </ol>
-	</li>
+        <li class="part">
+          <span>Part One</span>
+          <ol>
+            <li class="chapter">
+              <span>Chapter One</span>
+              <ol>
+                <li>
+                  <a href="e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml"
+                     >Document One</a>
+                </li>
+              </ol>
+            </li>
+            <li class="chapter">
+              <span>Chapter Two</span>
+              <ol>
+                <li>
+                  <a href="e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml"
+                     >Document One (again)</a>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li class="part">
+          <span>Part Two</span>
+          <ol>
+            <li class="chapter">
+              <span>Chapter Three</span>
+              <ol>
+                <li>
+                  <a href="e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml"
+                     >Document One (...and again)</a>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
       </ol>
     </nav>
   </body>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xml:lang="en"
+         version="3.0"
+         unique-identifier="pub-id"
+         prefix="cc: http://creativecommons.org/ns#"
+         >
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title id="title"
+              >Loose Pages</dc:title>
+    <meta property="title-type"
+          refines="#title"
+          >main</meta>
+    <dc:creator id="creator"
+                file-as="Connexions"
+                >Connexions</dc:creator>
+    <dc:identifier id="pub-id">org.cnx.contents.null</dc:identifier>
+    <dc:language>en-us</dc:language>
+    <meta property="dcterms:modified">2013-06-23T12:47:00Z</meta>
+    <dc:publisher>Connexions</dc:publisher>
+    <meta property="publicationMessage">Loosely publishing these here modules.</meta>
+    <dc:rights>This work is shared with the public using the Attribution 3.0 Unported (CC BY 3.0) license.</dc:rights>
+    <link rel="cc:license" href="http://creativecommons.org/licenses/by/3.0/"/>
+    <meta property="cc:attributionURL">http://cnx.org/contents</meta>
+  </metadata>
+  <manifest>
+    <item id="toc"
+          properties="nav"
+          media-type="application/xhtml+xml"
+          href="content/faux.xhtml"
+          />
+    <item id="fig-bush"
+          media-type="application/xhtml+xml"
+          href="content/fig-bush.xhtml"
+          />
+    <item id="mushroom-cloud"
+          media-type="application/xhtml+xml"
+          href="mushroom-cloud.xhtml"
+          />
+    <item media-type="image/png"
+          href="resources/openstax.png"
+          />
+  </manifest>
+  <spine>
+    <itemref linear="no" idref="toc" />
+    <itemref linear="yes" idref="fig-bush" />
+    <itemref linear="yes" idref="mushroom-cloud" />
+  </spine>
+</package>

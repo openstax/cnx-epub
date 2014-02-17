@@ -9,6 +9,7 @@ import os
 import sys
 import io
 import zipfile
+import tempfile
 from collections import Container, Iterator, MutableSequence
 
 from lxml import etree
@@ -21,6 +22,7 @@ EPUB_CONTAINER_XML_NAMESPACES = {
 EPUB_OPF_NAMESPACES = {
     'opf': "http://www.idpf.org/2007/opf",
     'dc': "http://purl.org/dc/elements/1.1/",
+    'lrmi': "http://lrmi.net/the-specification",
     }
 HTML_DOCUMENT_NAMESPACES = {
     'xhtml': "http://www.w3.org/1999/xhtml",
@@ -38,22 +40,26 @@ class EPUB(MutableSequence):
         self._packages = []
 
     @classmethod
-    def from_file(cls, filepath):
+    def from_filepath(cls, filepath, unpack_dir=None):
         """Create the object from file."""
+        if unpack_dir is None:
+            unpack_dir = tempfile.mkdtemp()
         # Extract the epub to the current working directory.
-        with zipfile.ZipFile(filepath) as zf:
-            zf.extractall()
-        
+        with zipfile.ZipFile(filepath, 'r') as zf:
+            zf.extractall(path=unpack_dir)
+
         # Build a blank epub object then parse the packages.
-        container_xml_filepath = os.path.join(os.getcwd(),
+        container_xml_filepath = os.path.join(unpack_dir,
                                               EPUB_CONTAINER_XML_RELATIVE_PATH)
         container_xml = etree.parse(container_xml_filepath)
 
         epub = cls()
         for pkg in container_xml.xpath('//ns:rootfile/@full-path',
                                        namespaces=EPUB_CONTAINER_XML_NAMESPACES):
-            epub.append(EPUBPackage.from_file(pkg))
+            epub.append(EPUBPackage.from_file(os.path.join(unpack_dir, pkg)))
         return epub
+
+    from_file = from_filepath  # BBB (2014-02-12)
 
     # ABC methods for MutableSequence
     def __getitem__(self, k):
@@ -73,17 +79,17 @@ class EPUBPackage(MutableSequence):
     # TODO Navigation document requirement on output/input
 
     def __init__(self, metadata=None, items=None, spine_order=None):
-        # TODO Metadata will become a mutable sequence object.
         self.metadata = metadata or {}
-        self._items = items or []
-        self._spine_indexes = spine_order  # TODO Ordered reference object, similar to nav.
+        self._items = []
+        if items is not None:
+            for item in items:
+                self.append(item)
 
     @classmethod
-    def from_file(cls, filepath):
+    def from_filepath(cls, filepath):
         """Create the object from a file."""
         opf_xml = etree.parse(filepath)
         package_relative_root = os.path.abspath(os.path.dirname(filepath))
-        # FIXME Incomplete metadata extraction.
         md_prefix = "/opf:package/opf:metadata/"
         metadata_xpath = lambda x: opf_xml.xpath(md_prefix+x, namespaces=EPUB_OPF_NAMESPACES)
         metadata = {
@@ -95,6 +101,7 @@ class EPUBPackage(MutableSequence):
             'rights': metadata_xpath('dc:rights/text()')[0],
             'license_url': metadata_xpath('opf:link[@rel="cc:license"]/@href')[0],
             'base_attribution_url': metadata_xpath('opf:meta[@property="cc:attributionURL"]/text()')[0],
+            'publication_message': metadata_xpath('opf:meta[@property="publicationMessage"]/text()')[0],
             }
         package = cls(metadata)
 
@@ -112,17 +119,23 @@ class EPUBPackage(MutableSequence):
                                           is_navigation=is_navigation,
                                           properties=properties))
 
-        # FIXME Ignoring spine ordering, because I (pumazi) don't understand
-        #       parts of it.
+        # Ignore spine ordering, because it is not important
+        #   for our use cases.
         spine_items = opf_xml.xpath('/opf:package/opf:spine/opf:itemref',
                                     namespaces=EPUB_OPF_NAMESPACES)
         return package
 
+    from_file = from_filepath  # BBB (2014-02-12)
+
     @property
     def navigation(self):
         navs = [i for i in self._items if i.is_navigation]
-        if len(navs) > 1:
-            pass # FIXME This can't happen.
+        if len(navs) == 0:
+            raise ValueError("Navigation item not found")
+        elif len(navs) > 1:
+            raise ValueError("Only one navigation item can exist "
+                             "per package. The given value is a second "
+                             "navigation item.")
         return navs[0]
 
     # ABC methods for MutableSequence
@@ -130,6 +143,7 @@ class EPUBPackage(MutableSequence):
         return self._items[k]
     def __setitem__(self, k, v):
         self._items[k] = v
+
     def __delitem__(self, k):
         del self._items[k]
     def __len__(self):
@@ -180,7 +194,7 @@ def epub_to_mapping(epub):
             }
         for doc_name in documents:
             doc = package.grab_by_name(doc_name)
-            doc_etree = etree.fromstring(doc.data.read())
+            doc_etree = etree.parse(doc.data)
             item_mappings[doc.name] = {
                 'type': DOCUMENT_MIMETYPE,
                 'metadata': _parse_document_metadata(doc_etree),
@@ -198,27 +212,32 @@ def _parse_document_metadata(root):
     metadata = {
         'title': xpath('//xhtml:title/text()')[0],
         'language': xpath('//xhtml:meta[@itemprop="inLanguage"]/@content')[0],
-        'abstract': xpath('//xhtml:meta[@itemprop="description"]/@content')[0],
-        'subjects': [x for x in xpath('//xhtml:meta[@itemprop="about"]/@content')],
-        'keywords': [x for x in xpath('//xhtml:meta[@itemprop="keywords"]/@content')],
-        ##'license': xpath('//xhtml:meta[@property="dc:license"]/@content')[0],
-        'license_url': xpath('//xhtml:link[@rel="lrmi:useRightsUrl"]/@href')[0],
-        'publishers': [x for x in xpath('//xhtml:meta[@itemprop="publisher"]/@content')],
-        'editors': [x for x in xpath('//xhtml:meta[@itemprop="editor"]/@content')],
-        'illustrators': [x for x in xpath('//xhtml:meta[@itemprop="illustrator"]/@content')],
-        'translators': [x for x in xpath('//xhtml:meta[@itemprop="translator"]/@content')],
-        'copyright_holders': [x for x in xpath('//xhtml:meta[@itemprop="copyrightHolder"]/@content')],
+        'abstract': etree.tostring(xpath('//xhtml:*[@data-type="description"]')[0]),
+        'subjects': [x for x in xpath('//xhtml:*[@data-type="subject"]/@content')],
+        'keywords': [x for x in xpath('//xhtml:meta[@data-type="keyword"]/@content')],
+        ##'license': xpath('//xhtml:*[@data-type="license"]/@content')[0],
+        'license_url': xpath('//xhtml:*[@data-type="license"]/@href')[0],
+        'publishers': [x for x in xpath('//xhtml:*[@data-type="publisher"]/@content')],
+        'editors': [x for x in xpath('//xhtml:*[@data-type="editor"]/@content')],
+        'illustrators': [x for x in xpath('//xhtml:*[@data-type="illustrator"]/@content')],
+        'translators': [x for x in xpath('//xhtml:*[@data-type="translator"]/@content')],
+        'copyright_holders': [x for x in xpath('//xhtml:*[@data-type="copyright-holder"]/@content')],
         'created': [x for x in xpath('//xhtml:meta[@itemprop="dateCreated"]/@content')][0],
         'revised': [x for x in xpath('//xhtml:meta[@itemprop="dateModified"]/@content')][0],
         }
     unordered = []
-    for elm in xpath('//xhtml:meta[@itemprop="author"]'):
+    for elm in xpath('//xhtml:*[@data-type="author"]'):
         elm_id = elm.get('id', None)
-        uid = elm.get('content')
+        uid = elm.get('content', None)
+        if len(elm) > 0:
+            # Connexions does not accept uids from other identification systems.
+            author_elm = elm[0]
+            uid = author_elm.text
+
         order = None
         if elm_id is not None:
             try:
-                order = xpath('//xhtml:meta[@refines="{}" and @property="display-seq"]/@content'.format(elm_id.lstrip('#')))[0]
+                order = xpath('//xhtml:meta[@refines="#{}" and @property="display-seq"]/@content'.format(elm_id))[0]
             except IndexError:
                 pass  # Check for refinement failed, maintain None value.
         unordered.append((order, uid,))
@@ -257,9 +276,9 @@ def _parse_epub_navigation(nav):
     Returns the name list, tree and document metadaa.
     """
     tree = []
-    nav_doc = etree.fromstring(nav.data.read())
+    nav_doc = etree.parse(nav.data)
     nav_metadata = _parse_document_metadata(nav_doc)
-    doc_names = [href for href in nav_doc.xpath('//xhtml:a/@href', namespaces=HTML_DOCUMENT_NAMESPACES)]
+    doc_names = [href for href in nav_doc.xpath('//xhtml:nav//xhtml:a/@href', namespaces=HTML_DOCUMENT_NAMESPACES)]
     tree = {'id': nav.name,
             'title': nav_metadata['title'],
             'contents': [x for x in _nav_to_tree(nav_doc.xpath('//xhtml:nav', namespaces=HTML_DOCUMENT_NAMESPACES)[0])]
