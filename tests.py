@@ -115,7 +115,7 @@ class EPUBTestCase(BaseTestCase):
         from copy import deepcopy
         manifest.append(deepcopy(manifest[0]))
         with open(package_filepath, 'w') as fb:
-            fb.write(etree.tostring(package_doc))
+            fb.write(str(etree.tostring(package_doc), encoding='utf-8'))
 
         epub_filepath = self.pack_epub(epub_dir)
         # We only fail on navigation item retrieval. This may not be complete?
@@ -125,7 +125,7 @@ class EPUBTestCase(BaseTestCase):
         with self.assertRaises(ValueError) as caught_assertion:
             navigation = epub[0].navigation
         exception = caught_assertion.exception
-        self.assertTrue(exception.message.lower().find('only one') >= 0)
+        self.assertTrue(exception.args[0].lower().find('only one') >= 0)
 
     def test_zero_navigation_items_fails(self):
         # Expect failure when zero navigation items exist.
@@ -143,7 +143,7 @@ class EPUBTestCase(BaseTestCase):
         from copy import deepcopy
         del manifest[0]
         with open(package_filepath, 'w') as fb:
-            fb.write(etree.tostring(package_doc))
+            fb.write(str(etree.tostring(package_doc), encoding='utf-8'))
 
         epub_filepath = self.pack_epub(epub_dir)
         # We only fail on navigation item retrieval. This may not be complete?
@@ -153,7 +153,7 @@ class EPUBTestCase(BaseTestCase):
         with self.assertRaises(ValueError) as caught_assertion:
             navigation = epub[0].navigation
         exception = caught_assertion.exception
-        self.assertTrue(exception.message.lower().find('not found') >= 0)
+        self.assertTrue(exception.args[0].lower().find('not found') >= 0)
 
 
 class EPubParsingTestCase(BaseTestCase):
@@ -172,13 +172,13 @@ class EPubParsingTestCase(BaseTestCase):
 
         expected_package_mapping = {
             # '{filename}': [{document-data-key}, ...],
-            'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml': ['document', 'type',
-                                                             'metadata'],
-            '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml': ['tree', 'type',
-                                                               'metadata'],
+            'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml': ['document',
+                                                             'metadata', 'type'],
+            '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml': ['metadata',
+                                                               'tree', 'type'],
             }
 
-        dense_mapping = {k:v.keys() for k, v in mapping[0].items()}
+        dense_mapping = {k:sorted(v.keys()) for k, v in mapping[0].items()}
         self.assertEqual(dense_mapping, expected_package_mapping)
 
     @unittest.skip("not implemented, waiting to see if the base cases "

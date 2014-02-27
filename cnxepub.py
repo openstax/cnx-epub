@@ -241,8 +241,8 @@ def _parse_document_metadata(root):
             except IndexError:
                 pass  # Check for refinement failed, maintain None value.
         unordered.append((order, uid,))
+
     ordered = sorted(unordered,
-                     cmp=lambda x,y: x is None or y is None and -1 or cmp(x,y),
                      key=lambda x: x[0])
     metadata['authors'] = [x[1] for x in ordered]
     return metadata
