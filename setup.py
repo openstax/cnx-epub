@@ -17,10 +17,9 @@ setup(
     license='LGPL, See also LICENSE.txt',
     description=description,
     install_requires=install_requires,
-    py_modules=['cnxepub'],
+    packages=find_packages(),
     include_package_data=False,
     entry_points="""\
     [console_scripts]
     """,
-    test_suite='tests',
     )
