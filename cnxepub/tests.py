@@ -90,7 +90,7 @@ class EPUBTestCase(BaseTestCase):
 
         # Does it unpack to a temporary location?
         self.assertTrue(epub._root.startswith(tempfile.tempdir))
-        from .main import (
+        from .epub import (
             EPUB_MIMETYPE_RELATIVE_PATH,
             EPUB_MIMETYPE_CONTENTS,
             )
@@ -120,7 +120,7 @@ class EPUBTestCase(BaseTestCase):
 class PackageTestCase(BaseTestCase):
 
     def make_one(self, file):
-        from .main import Package
+        from .epub import Package
         return Package.from_file(file)
 
     def test_wo_navigation_item(self):
@@ -138,7 +138,7 @@ class PackageTestCase(BaseTestCase):
         # Remove the navigation item from the 'book' test data.
         with open(package_filepath, 'r') as fb:
             xml = etree.parse(fb)
-        from .main import EPUB_OPF_NAMESPACES as opf_nsmap
+        from .epub import EPUB_OPF_NAMESPACES as opf_nsmap
         manifest = xml.xpath('//opf:manifest', namespaces=opf_nsmap)[0]
         nav_item = xml.xpath('//opf:item[@properties="nav"]',
                              namespaces=opf_nsmap)[0]
@@ -146,7 +146,7 @@ class PackageTestCase(BaseTestCase):
         with open(package_filepath, 'wb') as fb:
             fb.write(etree.tostring(xml))
 
-        from .main import MissingNavigationError as Error
+        from .epub import MissingNavigationError as Error
         with self.assertRaises(Error) as caught_exception:
             package = self.make_one(package_filepath)
 
@@ -166,7 +166,7 @@ class PackageTestCase(BaseTestCase):
         # Remove the navigation item from the 'book' test data.
         with open(package_filepath, 'r') as fb:
             xml = etree.parse(fb)
-        from .main import EPUB_OPF_NAMESPACES as opf_nsmap
+        from .epub import EPUB_OPF_NAMESPACES as opf_nsmap
         manifest = xml.xpath('//opf:manifest', namespaces=opf_nsmap)[0]
         nav_item = xml.xpath('//opf:item[@properties="nav"]',
                              namespaces=opf_nsmap)[0]
@@ -177,7 +177,7 @@ class PackageTestCase(BaseTestCase):
         with open(package_filepath, 'wb') as fb:
             fb.write(etree.tostring(xml))
 
-        from .main import AdditionalNavigationError as Error
+        from .epub import AdditionalNavigationError as Error
         with self.assertRaises(Error) as caught_exception:
             package = self.make_one(package_filepath)
 

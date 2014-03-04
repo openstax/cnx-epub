@@ -5,4 +5,4 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
-from .main import EPUB, Package, Item
+from .epub import EPUB, Package, Item
