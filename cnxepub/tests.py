@@ -21,15 +21,15 @@ TEST_DATA_DIR = os.path.join(here, 'test-data')
 class BaseTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.tmp_dir = tempfile.mkdtemp()
-        self.addCleanup(shutil.rmtree, self.tmp_dir)
+        self.tmpdir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.tmpdir)
 
     def pack_epub(self, directory):
         """Given an directory containing epub contents,
         pack it up and make return filepath.
         Packed file is remove on test exit.
         """
-        zip_fd, zip_filepath = tempfile.mkstemp('.epub', dir=self.tmp_dir)
+        zip_fd, zip_filepath = tempfile.mkstemp('.epub', dir=self.tmpdir)
         with zipfile.ZipFile(zip_filepath, 'w') as zippy:
             base_path = os.path.abspath(directory)
             for root, dirs, filenames in os.walk(directory):
@@ -41,38 +41,175 @@ class BaseTestCase(unittest.TestCase):
                     zippy.write(filepath, archival_filepath)
         return zip_filepath
 
+    def copy(self, src, dst_name='book'):
+        """Convenient method for copying test data directories."""
+        dst = os.path.join(self.tmpdir, dst_name)
+        shutil.copytree(src, dst)
+        return dst
 
 
 class EPUBTestCase(BaseTestCase):
 
-    def test_parsing_success(self):
+    def test_obj_from_unknown_file_type(self):
+        """Test that we get an exception when
+        an unknown filetype is given.
+        """
+        # For example purposes, use any file within the test-data directory.
+        filepath = os.path.join(TEST_DATA_DIR, 'nav-tree.xhtml')
+
+        from . import EPUB
+        with self.assertRaises(TypeError) as caught_exception:
+            epub = EPUB.from_file(filepath)
+
+    def test_obj_from_directory(self):
+        """Test that we can read an (unarchived) epub from the filesystem."""
+        epub_filepath = os.path.join(TEST_DATA_DIR, 'blank')
+
+        from . import EPUB
+        epub = EPUB.from_file(epub_filepath)
+
+        self.assertEqual(epub._root, epub_filepath)
+
+    def test_obj_from_epub_file(self):
+        """Test that we can read an .epub file."""
+        epub_filepath = self.pack_epub(os.path.join(TEST_DATA_DIR, 'blank'))
+
+        from . import EPUB
+        epub = EPUB.from_file(epub_filepath)
+
+        # Does it unpack to a temporary location?
+        self.assertTrue(epub._root.startswith(tempfile.tempdir))
+
+    def test_obj_from_open_epub_file(self):
+        """Test that we can read an open .epub file."""
+        epub_filepath = self.pack_epub(os.path.join(TEST_DATA_DIR, 'blank'))
+
+        from .import EPUB
+        with open(epub_filepath, 'rb') as zf:
+            epub = EPUB.from_file(zf)
+
+        # Does it unpack to a temporary location?
+        self.assertTrue(epub._root.startswith(tempfile.tempdir))
+        from .main import (
+            EPUB_MIMETYPE_RELATIVE_PATH,
+            EPUB_MIMETYPE_CONTENTS,
+            )
+        mimetype_filepath = os.path.join(epub._root,
+                                         EPUB_MIMETYPE_RELATIVE_PATH)
+        with open(mimetype_filepath, 'r') as fb:
+            contents = fb.read().strip()
+            self.assertEqual(contents, EPUB_MIMETYPE_CONTENTS)
+
+    def test_package_parsing(self):
+        """Test that packages are parsed into the EPUB.
+        This does not examine whether the packages themselves are correct,
+        only that the packages are represented within the EPUB object.
+        """
+        # Use the book test data, which contains a single package with
+        # valid values all the way down.
         epub_filepath = self.pack_epub(os.path.join(TEST_DATA_DIR, 'book'))
 
         # Parse an EPUB.
         from cnxepub import EPUB
-        epub = EPUB.from_filepath(epub_filepath)
+        epub = EPUB.from_file(epub_filepath)
 
         # EPUBs have packages which the object treats as iterable items.
         self.assertEqual(len(epub), 1)
 
-        package = epub[0]
-        # EPUB Packages have contents... both documents and resources.
-        self.assertEqual(len(package), 3)
 
-        # Verify the package metadata.
-        # The important bits to check for are our custom properties
-        expected_package_metadata = {
-            'title': "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
-            'creator': "Connexions",
+class PackageTestCase(BaseTestCase):
+
+    def make_one(self, file):
+        from .main import Package
+        return Package.from_file(file)
+
+    def test_wo_navigation_item(self):
+        """Navigation documents are required in a valid EPUB.
+        We will enforce this requirement, as we (cnx) also need the navigation
+        document in order to build a tree of publishable items.
+        """
+        # Copy the test data to modify it.
+        epub_filepath = os.path.join(TEST_DATA_DIR, 'book')
+        epub_root = os.path.join(self.tmpdir, 'book')
+        shutil.copytree(epub_filepath, epub_root)
+        package_filepath = os.path.join(
+            epub_root,
+            "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
+        # Remove the navigation item from the 'book' test data.
+        with open(package_filepath, 'r') as fb:
+            xml = etree.parse(fb)
+        from .main import EPUB_OPF_NAMESPACES as opf_nsmap
+        manifest = xml.xpath('//opf:manifest', namespaces=opf_nsmap)[0]
+        nav_item = xml.xpath('//opf:item[@properties="nav"]',
+                             namespaces=opf_nsmap)[0]
+        del manifest[manifest.index(nav_item)]
+        with open(package_filepath, 'wb') as fb:
+            fb.write(etree.tostring(xml))
+
+        from .main import MissingNavigationError as Error
+        with self.assertRaises(Error) as caught_exception:
+            package = self.make_one(package_filepath)
+
+    def test_w_double_navigation_item(self):
+        """Navigation documents are required in a valid EPUB.
+        We will enfource this requirement, as we (cnx) also need the navigation
+        document in order to build a tree of publishable items.
+        However, we need to limit the navigation to one per package,
+        because in our scheme the package's navigation document defines
+        a book tree.
+        """
+        # Copy the test data to modify it.
+        epub_root = self.copy(os.path.join(TEST_DATA_DIR, 'book'))
+        package_filepath = os.path.join(
+            epub_root,
+            "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
+        # Remove the navigation item from the 'book' test data.
+        with open(package_filepath, 'r') as fb:
+            xml = etree.parse(fb)
+        from .main import EPUB_OPF_NAMESPACES as opf_nsmap
+        manifest = xml.xpath('//opf:manifest', namespaces=opf_nsmap)[0]
+        nav_item = xml.xpath('//opf:item[@properties="nav"]',
+                             namespaces=opf_nsmap)[0]
+        from copy import deepcopy
+        nav_item = deepcopy(nav_item)
+        nav_item.set('id', "toc2")
+        manifest.append(nav_item)
+        with open(package_filepath, 'wb') as fb:
+            fb.write(etree.tostring(xml))
+
+        from .main import AdditionalNavigationError as Error
+        with self.assertRaises(Error) as caught_exception:
+            package = self.make_one(package_filepath)
+
+    def test_metadata_parsing(self):
+        """With a completely NEW package
+        (NOT based on or derived from any other work),
+        check parsed metadata for accuracy.
+        """
+        package_filepath = os.path.join(
+            TEST_DATA_DIR, 'book',
+            "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
+        package = self.make_one(package_filepath)
+
+        expected_metadata = {
+            'publisher': "Connexions",
+            'publication_message': "Loosely publishing these here modules.",
             'identifier': "org.cnx.contents.9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
+            'title': "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
             'language': "en-us",
             'publisher': "Connexions",
-            'rights': "This work is shared with the public using the Attribution 3.0 Unported (CC BY 3.0) license.",
+            'license_text': "This work is shared with the public using the Attribution 3.0 Unported (CC BY 3.0) license.",
             'license_url': "http://creativecommons.org/licenses/by/3.0/",
-            'base_attribution_url': "http://cnx.org/contents",
-            'publication_message': "Loosely publishing these here modules.",
-        }
-        self.assertEqual(package.metadata, expected_package_metadata)
+            }
+        self.assertEqual(package.metadata, expected_metadata)
+
+    def test_item_containment(self):
+        package_filepath = os.path.join(
+            TEST_DATA_DIR, 'book',
+            "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
+        package = self.make_one(package_filepath)
+        # EPUB Packages have contents...
+        self.assertEqual(len(package), 3)
 
         # Check the navigation order
         expected_nav_document = package.grab_by_name(
@@ -98,177 +235,3 @@ class EPUBTestCase(BaseTestCase):
         self.assertEqual(len(epub1[0]), 3)
         self.assertEqual(len(epub2), 1)
         self.assertEqual(len(epub2[0]), 3)
-
-    def test_two_navigation_items_fails(self):
-        # Expect failure when two navigation items exist.
-
-        # Copy the test 'book' and modify it to include
-        #   a second navigation document.
-        epub_dir = os.path.join(self.tmp_dir, 'book')
-        shutil.copytree(os.path.join(TEST_DATA_DIR, 'book'), epub_dir)
-        package_filepath = os.path.join(
-                epub_dir, '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf')
-        package_doc = etree.parse(package_filepath)
-        from cnxepub import EPUB_OPF_NAMESPACES
-        manifest = package_doc.xpath('//opf:manifest',
-                                     namespaces=EPUB_OPF_NAMESPACES)[0]
-        from copy import deepcopy
-        manifest.append(deepcopy(manifest[0]))
-        with open(package_filepath, 'w') as fb:
-            fb.write(str(etree.tostring(package_doc), encoding='utf-8'))
-
-        epub_filepath = self.pack_epub(epub_dir)
-        # We only fail on navigation item retrieval. This may not be complete?
-        from cnxepub import EPUB
-        epub = EPUB.from_file(epub_filepath)
-
-        with self.assertRaises(ValueError) as caught_assertion:
-            navigation = epub[0].navigation
-        exception = caught_assertion.exception
-        self.assertTrue(exception.args[0].lower().find('only one') >= 0)
-
-    def test_zero_navigation_items_fails(self):
-        # Expect failure when zero navigation items exist.
-
-        # Copy the test 'book' and modify it to include
-        #   a second navigation document.
-        epub_dir = os.path.join(self.tmp_dir, 'book')
-        shutil.copytree(os.path.join(TEST_DATA_DIR, 'book'), epub_dir)
-        package_filepath = os.path.join(
-                epub_dir, '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf')
-        package_doc = etree.parse(package_filepath)
-        from cnxepub import EPUB_OPF_NAMESPACES
-        manifest = package_doc.xpath('//opf:manifest',
-                                     namespaces=EPUB_OPF_NAMESPACES)[0]
-        from copy import deepcopy
-        del manifest[0]
-        with open(package_filepath, 'w') as fb:
-            fb.write(str(etree.tostring(package_doc), encoding='utf-8'))
-
-        epub_filepath = self.pack_epub(epub_dir)
-        # We only fail on navigation item retrieval. This may not be complete?
-        from cnxepub import EPUB
-        epub = EPUB.from_file(epub_filepath)
-
-        with self.assertRaises(ValueError) as caught_assertion:
-            navigation = epub[0].navigation
-        exception = caught_assertion.exception
-        self.assertTrue(exception.args[0].lower().find('not found') >= 0)
-
-
-class EPubParsingTestCase(BaseTestCase):
-    maxDiff = None
-
-    def test_epub(self):
-        # Parses a collection oriented epub content to file mappings.
-        epub_filepath = self.pack_epub(os.path.join(TEST_DATA_DIR, 'book'))
-
-        from cnxepub import EPUB
-        epub = EPUB.from_file(epub_filepath)
-
-        # Chop the epub apart.
-        from cnxepub import epub_to_mapping
-        mapping = epub_to_mapping(epub)
-
-        expected_package_mapping = {
-            # '{filename}': [{document-data-key}, ...],
-            'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml': ['document',
-                                                             'metadata', 'type'],
-            '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml': ['metadata',
-                                                               'tree', 'type'],
-            }
-
-        dense_mapping = {k:sorted(v.keys()) for k, v in mapping[0].items()}
-        self.assertEqual(dense_mapping, expected_package_mapping)
-
-    @unittest.skip("not implemented, waiting to see if the base cases "
-                   "(formatting and values) are acceptable.")
-    def test_collection_w_extras(self):
-        # Parse an epub containing content that is not referenced within the
-        #   navigation or documents.
-        from cnxepub import EPUB
-        epub = EPUB.from_file(TEST_EPUB_W_EXTRAS_FILEPATH)
-
-        # Check that it dropped the extra content.
-
-
-class AdaptationTestCase(unittest.TestCase):
-
-    def test_package_to_collection(self):
-        # Adapt a package to a collection.
-        # A collection in this context is an object that has
-        #   metadata and contains subcollections and/or modules.
-        # A subcollection in this context is an object that does
-        #   not contain the full set of metadata,
-        #   but does have a human readable title.
-        # A module is then an object that like collections contains metadata
-        #   and optionally contains resources.
-        # Resources are any auxiliary file referenced within the module(s).
-        pass
-
-class HtmlMetadataParsingTestCase(unittest.TestCase):
-
-    def test_uid_ordering(self):
-        from cnxepub import _parse_document_metadata as parser
-
-        filepath = os.path.join(TEST_DATA_DIR, 'book', 'content',
-                                'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml')
-        with open(filepath, 'r') as fb:
-            doc = etree.parse(fb)
-        metadata = parser(doc)
-
-        expected =  ['Mark Horner', 'Sarah Blyth', 'Charmaine St. Rose']
-        self.assertEqual(metadata['authors'], expected)
-
-
-class HtmlNavigationParsingTestCase(unittest.TestCase):
-
-    def test_parsing(self):
-        from cnxepub import Item, _parse_epub_navigation
-
-        filepath = os.path.join(TEST_DATA_DIR, 'nav-tree.xhtml')
-        with open(filepath) as fb:
-            item = Item('no-name', fb)
-            docs, tree, metadata = _parse_epub_navigation(item)
-
-        expected_docs = ['e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml',
-                         '3c448dc6-d5f5-43d5-8df7-fe27d462bd3a@1.xhtml',
-                         'ad17c39c-d606-4441-b987-54448020bb40@2.xhtml',
-                         '7c52af05-05b1-4761-aa4c-b17b0197dc6d@1.xhtml',
-                         ]
-        expected_tree = {
-            'id': 'no-name',
-            'contents': [
-                {'id': 'subcol',
-                 'contents': [
-                     {'id': 'subcol',
-                      'contents': [
-                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml',
-                           'title': 'Document One'}],
-                      'title': 'Chapter One'},
-                     {'id': 'subcol',
-                      'contents': [
-                          {'id': '3c448dc6-d5f5-43d5-8df7-fe27d462bd3a@1.xhtml',
-                           'title': 'Document Two'}],
-                      'title': 'Chapter Two'}],
-                 'title': 'Part One'},
-                {'id': 'subcol',
-                 'contents': [
-                    {'id': 'subcol',
-                     'contents': [
-                         {'id': 'ad17c39c-d606-4441-b987-54448020bb40@2.xhtml',
-                          'title': 'Document Three'}],
-                     'title': 'Chapter Three'}],
-                 'title': 'Part Two'},
-                {'id': 'subcol',
-                 'contents': [
-                     {'id': 'subcol',
-                      'contents': [
-                          {'id': '7c52af05-05b1-4761-aa4c-b17b0197dc6d@1.xhtml',
-                           'title': 'Document Four'}],
-                      'title': 'Chapter Four'}],
-                 'title': 'Part Three'}],
-            'title': 'Book One'}
-
-        self.assertEqual(docs, expected_docs)
-        self.assertEqual(tree, expected_tree)
