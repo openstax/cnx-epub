@@ -6,6 +6,7 @@
 # See LICENCE.txt for details.
 # ###
 import os
+import io
 import tempfile
 import shutil
 import unittest
@@ -235,3 +236,167 @@ class PackageTestCase(BaseTestCase):
         self.assertEqual(len(epub1[0]), 3)
         self.assertEqual(len(epub2), 1)
         self.assertEqual(len(epub2[0]), 3)
+
+
+class TreeUtilityTestCase(unittest.TestCase):
+
+    def make_binder(self, id=None, nodes=None, metadata=None):
+        """Make a ``Binder`` instance.
+        If ``id`` is not supplied, a ``FauxBinder`` is made.
+        """
+        from .models import Binder, TranslucentBinder
+        if id is None:
+            binder = TranslucentBinder(nodes, metadata)
+        else:
+            binder = Binder(id, nodes, metadata)
+        return binder
+
+    def make_document(self, id, metadata={}):
+        from .models import Document
+        return Document(id, io.StringIO(''), metadata=metadata)
+
+    maxDiff = None
+    def test_binder_to_tree(self):
+        binder = self.make_binder(
+            '8d75ea29',
+            metadata={'version': '3', 'title': "Book One"},
+            nodes=[
+                self.make_binder(
+                    None,
+                    metadata={'title': "Part One"},
+                    nodes=[
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter One"},
+                            nodes=[
+                                self.make_document(
+                                    id="e78d4f90",
+                                    metadata={'version': '3',
+                                              'title': "Document One"})]),
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter Two"},
+                            nodes=[
+                                self.make_document(
+                                    id="3c448dc6",
+                                    metadata={'version': '1',
+                                              'title': "Document Two"})])]),
+                self.make_binder(
+                    None,
+                    metadata={'title': "Part Two"},
+                    nodes=[
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter Three"},
+                            nodes=[
+                                self.make_document(
+                                    id="ad17c39c",
+                                    metadata={'version': '2',
+                                              'title': "Document Three"})])]),
+                self.make_binder(
+                    None,
+                    metadata={'title': "Part Three"},
+                    nodes=[
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter Four"},
+                            nodes=[
+                                self.make_document(
+                                    id="7c52af05",
+                                    metadata={'version': '1',
+                                              'title': "Document Four"})])])])
+
+        expected_tree = {
+            'id': '8d75ea29@3',
+            'contents': [
+                {'id': 'subcol',
+                 'contents': [
+                     {'id': 'subcol',
+                      'contents': [
+                          {'id': 'e78d4f90@3',
+                           'title': 'Document One'}],
+                      'title': 'Chapter One'},
+                     {'id': 'subcol',
+                      'contents': [
+                          {'id': '3c448dc6@1',
+                           'title': 'Document Two'}],
+                      'title': 'Chapter Two'}],
+                 'title': 'Part One'},
+                {'id': 'subcol',
+                 'contents': [
+                    {'id': 'subcol',
+                     'contents': [
+                         {'id': 'ad17c39c@2',
+                          'title': 'Document Three'}],
+                     'title': 'Chapter Three'}],
+                 'title': 'Part Two'},
+                {'id': 'subcol',
+                 'contents': [
+                     {'id': 'subcol',
+                      'contents': [
+                          {'id': '7c52af05@1',
+                           'title': 'Document Four'}],
+                      'title': 'Chapter Four'}],
+                 'title': 'Part Three'}],
+            'title': 'Book One'}
+
+        from .models import model_to_tree
+        tree = model_to_tree(binder)
+        self.assertEqual(tree, expected_tree)
+
+
+class PackageAdaptationTestCase(unittest.TestCase):
+
+    def make_package(self, file):
+        from . import Package
+        return Package.from_file(file)
+
+    def make_one(self, package):
+        from . import Binder
+        return Binder.from_package(package)
+
+    def test_to_binder(self):
+        """Adapts a ``Package`` to a ``BinderItem``.
+        Binders are native object representations of data,
+        while the Package is merely a representation of EPUB structure.
+        """
+        # Easiest way to test this is using the ``model_to_tree`` utility
+        # to analyze the structural equality.
+        package_filepath = os.path.join(
+            TEST_DATA_DIR, 'book',
+            "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
+        package = self.make_package(package_filepath)
+        expected_tree = {
+            'id': None,
+            'title': 'Book of Infinity',
+            'contents': [
+                {'id': 'subcol',
+                 'title': 'Part One',
+                 'contents': [
+                     {
+                      'contents': [
+                          {'id': None, 'title': 'Document One'}],
+                             'id': 'subcol',
+                             'title': 'Chapter One'},
+                     {'id': 'subcol',
+                      'title': 'Chapter Two',
+                      'contents': [{'id': None,
+                                    'title': 'Document One (again)'}],
+                      }]},
+                {'id': 'subcol',
+                 'title': 'Part Two',
+                 'contents': [
+                     {'id': 'subcol',
+                      'title': 'Chapter Three',
+                      'contents': [
+                          {'id': None,
+                           'title': 'Document One (...and again)'}]
+                      }]}]}
+
+        from .adapters import adapt_package
+        binder = adapt_package(package)
+
+        # This checks the binder structure, and only taps at the documents.
+        from .models import model_to_tree
+        tree = model_to_tree(binder)
+        self.assertEqual(tree, expected_tree)
