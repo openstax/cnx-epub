@@ -11,6 +11,7 @@ import tempfile
 import shutil
 import unittest
 import zipfile
+from unittest import mock
 
 from lxml import etree
 
@@ -345,15 +346,56 @@ class TreeUtilityTestCase(unittest.TestCase):
         self.assertEqual(tree, expected_tree)
 
 
-class PackageAdaptationTestCase(unittest.TestCase):
+class HTMLParsingTestCase(unittest.TestCase):
+
+    def test_metadata_parsing(self):
+        """Verify the parsing of metadata from an HTML document."""
+        html_doc_filepath = os.path.join(
+            TEST_DATA_DIR, 'book', 'content',
+            'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml')
+        from .html_parsers import parse_metadata
+        with open(html_doc_filepath, 'r') as fb:
+            html = etree.parse(fb)
+            metadata = parse_metadata(html)
+        expected_metadata = {
+            'authors': [
+                {'id': 'https://github.com/marknewlyn',
+                 'name': 'Mark Horner',
+                 'type': 'github-id'},
+                {'id': 'https://cnx.org/member_profile/sarblyth',
+                 'name': 'Sarah Blyth',
+                 'type': 'cnx-id'},
+                {'id': 'https://example.org/profiles/charrose',
+                 'name': 'Charmaine St. Rose',
+                 'type': 'openstax-id'}],
+            'copyright_holders': [],
+            'created': '2013/03/19 15:01:16 -0500',
+            'editors': [],
+            'illustrators': [],
+            'keywords': ['South Africa'],
+            'license_text': 'CC-By 4.0',
+            'license_url': 'http://creativecommons.org/licenses/by/4.0/',
+            'publishers': [],
+            'revised': '2013/06/18 15:22:55 -0500',
+            'subjects': ['Science and Mathematics'],
+            'title': 'Document One of Infinity',
+            'translators': [],
+            }
+        self.assertEqual(metadata, expected_metadata)
+
+    def test_resource_parsing(self):
+        """Look for resources within the document"""
+        self.fail('incomplete')
+
+class AdaptationTestCase(unittest.TestCase):
 
     def make_package(self, file):
         from . import Package
         return Package.from_file(file)
 
-    def make_one(self, package):
-        from . import Binder
-        return Binder.from_package(package)
+    def make_item(self, file, **kwargs):
+        from . import Item
+        return Item.from_file(file, **kwargs)
 
     def test_to_binder(self):
         """Adapts a ``Package`` to a ``BinderItem``.
@@ -400,3 +442,30 @@ class PackageAdaptationTestCase(unittest.TestCase):
         from .models import model_to_tree
         tree = model_to_tree(binder)
         self.assertEqual(tree, expected_tree)
+
+    def test_to_document_wo_resources_o_references(self):
+        """Adapts an ``Item`` to a ``DocumentItem``.
+        Documents are native object representations of data,
+        while the Item is merely a representation of an item
+        in the EPUB structure.
+        We are specifically testing for metadata parsing and
+        resource discovery.
+        """
+        item_filepath = os.path.join(
+            TEST_DATA_DIR, 'loose-pages', 'content',
+            "fig-bush.xhtml")
+        item = self.make_item(item_filepath)
+
+        package = mock.Mock()
+        # This would not typically be called outside the context of
+        # a package, but in the case of a scoped test we use it.
+        from .adapters import adapt_item
+        document = adapt_item(item, package)
+
+        self.fail('incomplete')
+        # Check the document metadata
+        pass
+        # Check the document uri lookup
+        pass
+        # Check resource discovery.
+        pass

@@ -14,15 +14,12 @@ HTML_DOCUMENT_NAMESPACES = {
     }
 
 
-def parse_navigation_to_tree(navigation_item):
-    """Parse the navigation items (type ``.epub.Item``)
-    to a name list and tree,
-    both of which are using item names as values.
-    Returns the name list, tree and document metadata.
+def parse_navigation_html_to_tree(html, id):
+    """Parse the given ``html`` (an etree object) to a tree.
+    The ``id`` is required in order to assign the top-level tree id value.
     """
-    nav_doc = etree.parse(navigation_item.data)
-    xpath = lambda x: nav_doc.xpath(x, namespaces=HTML_DOCUMENT_NAMESPACES)
-    tree = {'id': navigation_item.name,
+    xpath = lambda x: html.xpath(x, namespaces=HTML_DOCUMENT_NAMESPACES)
+    tree = {'id': id,
             'title': xpath('//*[@data-type="title"]')[0],
             'contents': [x for x in _nav_to_tree(xpath('//xhtml:nav')[0])]
             }
@@ -52,10 +49,9 @@ def _nav_to_tree(root):
     raise StopIteration()
 
 
-def parse_metadata(item):
-    """Parse metadata out of the given item (type ``.epub.Item``)."""
-    elm_tree = etree.parse(item.data)
-    parser = DocumentMetadataParser(elm_tree)
+def parse_metadata(html):
+    """Parse metadata out of the given an etree object as ``html``."""
+    parser = DocumentMetadataParser(html)
     return parser()
 
 
@@ -196,19 +192,24 @@ class DocumentMetadataParser:
         unordered = []
         for elm in self.parse('//xhtml:*[@data-type="author"]'):
             elm_id = elm.get('id', None)
-            uid = elm.get('content', None)
             if len(elm) > 0:
-                # Connexions does not accept uids from other
-                # identification systems.
-                author_elm = elm[0]
-                uid = author_elm.text
+                person_elm = elm[0]
+                name = person_elm.text
+                type_ = person_elm.get('data-type', None)
+                id_ = person_elm.get('href', None)
+            else:
+                name = elm.text
+                type_ = None
+                id_ = None
+            person = {'name': name, 'type': type_, 'id': id_}
+            # Meta refinement allows these to be ordered.
             order = None
             if elm_id is not None:
                 try:
                     order = self.parse('//xhtml:meta[@refines="#{}" and @property="display-seq"]/@content'.format(elm_id))[0]
                 except IndexError:
                     pass # Check for refinement failed, maintain None value.
-            unordered.append((order, uid,))
+            unordered.append((order, person,))
             ordered = sorted(unordered, key=lambda x: x[0])
         values = [x[1] for x in ordered]
         return values

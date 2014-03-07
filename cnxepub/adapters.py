@@ -5,16 +5,18 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+from lxml import etree
+
 from .models import (
     Binder, TranslucentBinder,
     Document, Resource,
     TRANSLUCENT_BINDER_ID,
     )
-from .html_parsers import parse_metadata, parse_navigation_to_tree
+from .html_parsers import parse_metadata, parse_navigation_html_to_tree
 
 
 __all__ = (
-    'adapt_package',
+    'adapt_package', 'adapt_item',
     'BinderItem',
     'DocumentItem',
     )
@@ -28,9 +30,15 @@ def adapt_package(package):
     ``.models.Binder``, ``.models.Document`` and ``.models.Resource``.
     """
     navigation_item = package.navigation
-    tree = parse_navigation_to_tree(navigation_item)
+    html = etree.parse(navigation_item.data)
+    tree = parse_navigation_html_to_tree(html, navigation_item.name)
     return _node_to_model(tree, package)
 
+def adapt_item(item, package):
+    """Adapts ``.epub.Item`` to a ``DocumentItem``.
+
+    """
+    return DocumentItem(item, package)
 
 def _node_to_model(tree_or_item, package, parent=None,
                    lucent_id=TRANSLUCENT_BINDER_ID):
@@ -53,7 +61,7 @@ def _node_to_model(tree_or_item, package, parent=None,
         # It is a document.
         item = tree_or_item
         package_item = package.grab_by_name(item['id'])
-        result = DocumentItem(package_item, package)
+        result = adapt_item(package_item, package)
     if parent is not None:
         parent.append(result)
     return result
@@ -76,7 +84,8 @@ class BinderItem(Binder):
     def __init__(self, item, package):
         self._item = item
         self._package = package
-        metadata = parse_metadata(self._item)
+        html = etree.parse(self._item.data)
+        metadata = parse_metadata(html)
         id = _id_from_metadata(metadata)
         super(BinderItem, self).__init__(id, metadata=metadata)
 
@@ -86,7 +95,8 @@ class DocumentItem(Document):
     def __init__(self, item, package):
         self._item = item
         self._package = package
-        metadata = parse_metadata(self._item)
+        self._html = etree.parse(self._item.data)
+        metadata = parse_metadata(self._html)
         content = self._item.data
         id = _id_from_metadata(metadata)
         # TODO Resource discovery and setting...
