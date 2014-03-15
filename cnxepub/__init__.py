@@ -7,3 +7,4 @@
 # ###
 from .epub import *
 from .models import *
+from .adapters import *

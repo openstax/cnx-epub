@@ -139,10 +139,12 @@ class Binder(TranslucentBinder):
             uri = self.metadata["{}-uri".format(system)]
         except KeyError:
             return default
+        return uri
 
     def set_uri(self, system, value):
         key = "{}-uri".format(system)
         self.metadata[key] = value
+
 
 ##class Document:
 class Document(object):
@@ -179,6 +181,7 @@ class Document(object):
             uri = self.metadata["{}-uri".format(system)]
         except KeyError:
             return default
+        return uri
 
     def set_uri(self, system, value):
         key = "{}-uri".format(system)
