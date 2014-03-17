@@ -7,12 +7,16 @@
 # ###
 import io
 import hashlib
-from collections.abc import MutableSequence
+try:
+    from collections.abc import MutableSequence
+except ImportError:
+    from collections import MutableSequence
 
 
 __all__ = ('Binder', 'TranslucentBinder', 'Document', 'Resource',)
 
 
+RESOURCE_HASH_TYPE = 'md5'
 TRANSLUCENT_BINDER_ID = 'subcol'
 
 
@@ -44,7 +48,9 @@ def flatten_tree_to_ident_hashs(item_or_tree, lucent_id=TRANSLUCENT_BINDER_ID):
         if tree['id'] != lucent_id:
             yield tree['id']
         for i in tree['contents']:
-            yield from flatten_tree_to_ident_hashs(i, lucent_id)
+            ##yield from flatten_tree_to_ident_hashs(i, lucent_id)
+            for x in flatten_tree_to_ident_hashs(i, lucent_id):
+                yield x
     else:
         item = item_or_tree
         yield item['id']
@@ -134,8 +140,12 @@ class Binder(TranslucentBinder):
         except KeyError:
             return default
 
+    def set_uri(self, system, value):
+        key = "{}-uri".format(system)
+        self.metadata[key] = value
 
-class Document:
+##class Document:
+class Document(object):
     """An HTML document noted as ``content`` on the instance,
     which can contain ``Resource`` instances.
     """
@@ -170,6 +180,10 @@ class Document:
         except KeyError:
             return default
 
+    def set_uri(self, system, value):
+        key = "{}-uri".format(system)
+        self.metadata[key] = value
+
 
 class Resource:
     """A binary object used within the context of the ``Document``.
@@ -185,7 +199,8 @@ class Resource:
         self.media_type = media_type
         self.filename = filename or ''
 
-        self._hash = hashlib.new('sha1', self.data.read()).hexdigest()
+        self._hash = hashlib.new(RESOURCE_HASH_TYPE,
+                                 self.data.read()).hexdigest()
         self.data.seek(0)
 
     @property

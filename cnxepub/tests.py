@@ -11,7 +11,10 @@ import tempfile
 import shutil
 import unittest
 import zipfile
-from unittest import mock
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 
 from lxml import etree
 
@@ -254,7 +257,7 @@ class TreeUtilityTestCase(unittest.TestCase):
 
     def make_document(self, id, metadata={}):
         from .models import Document
-        return Document(id, io.StringIO(''), metadata=metadata)
+        return Document(id, io.BytesIO(b''), metadata=metadata)
 
     maxDiff = None
     def test_binder_to_tree(self):
