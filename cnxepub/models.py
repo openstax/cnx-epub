@@ -83,8 +83,9 @@ class TranslucentBinder(MutableSequence):
     def ident_hash(self):
         return None
 
-    def get_uri(self, system, default=None):
-        return None
+    @property
+    def is_translucent(self):
+        return self.__class__ is TranslucentBinder
 
     def set_title_for_node(self, node, title):
         index = self._nodes.index(node)
