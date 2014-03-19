@@ -210,6 +210,6 @@ class DocumentMetadataParser:
                 except IndexError:
                     pass # Check for refinement failed, maintain None value.
             unordered.append((order, person,))
-            ordered = sorted(unordered, key=lambda x: x[0])
+        ordered = sorted(unordered, key=lambda x: x[0])
         values = [x[1] for x in ordered]
         return values
