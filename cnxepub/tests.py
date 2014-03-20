@@ -259,7 +259,6 @@ class TreeUtilityTestCase(unittest.TestCase):
         from .models import Document
         return Document(id, io.BytesIO(b''), metadata=metadata)
 
-    maxDiff = None
     def test_binder_to_tree(self):
         binder = self.make_binder(
             '8d75ea29',
@@ -347,6 +346,98 @@ class TreeUtilityTestCase(unittest.TestCase):
         from .models import model_to_tree
         tree = model_to_tree(binder)
         self.assertEqual(tree, expected_tree)
+
+    def test_flatten_model(self):
+        binder = self.make_binder(
+            '8d75ea29',
+            metadata={'version': '3', 'title': "Book One"},
+            nodes=[
+                self.make_binder(
+                    None,
+                    metadata={'title': "Part One"},
+                    nodes=[
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter One"},
+                            nodes=[
+                                self.make_document(
+                                    id="e78d4f90",
+                                    metadata={'version': '3',
+                                              'title': "Document One"})]),
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter Two"},
+                            nodes=[
+                                self.make_document(
+                                    id="3c448dc6",
+                                    metadata={'version': '1',
+                                              'title': "Document Two"})])]),
+                self.make_binder(
+                    None,
+                    metadata={'title': "Part Two"},
+                    nodes=[
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter Three"},
+                            nodes=[
+                                self.make_document(
+                                    id="ad17c39c",
+                                    metadata={'version': '2',
+                                              'title': "Document Three"})])])])
+        expected_titles = [
+            'Book One',
+            'Part One',
+            'Chapter One', 'Document One',
+            'Chapter Two', 'Document Two',
+            'Part Two',
+            'Chapter Three', 'Document Three']
+
+        from .models import flatten_model
+        titles = [m.metadata['title'] for m in flatten_model(binder)]
+        self.assertEqual(titles, expected_titles)
+
+    def test_flatten_to_documents(self):
+        binder = self.make_binder(
+            '8d75ea29',
+            metadata={'version': '3', 'title': "Book One"},
+            nodes=[
+                self.make_binder(
+                    None,
+                    metadata={'title': "Part One"},
+                    nodes=[
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter One"},
+                            nodes=[
+                                self.make_document(
+                                    id="e78d4f90",
+                                    metadata={'version': '3',
+                                              'title': "Document One"})]),
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter Two"},
+                            nodes=[
+                                self.make_document(
+                                    id="3c448dc6",
+                                    metadata={'version': '1',
+                                              'title': "Document Two"})])]),
+                self.make_binder(
+                    None,
+                    metadata={'title': "Part Two"},
+                    nodes=[
+                        self.make_binder(
+                            None,
+                            metadata={'title': "Chapter Three"},
+                            nodes=[
+                                self.make_document(
+                                    id="ad17c39c",
+                                    metadata={'version': '2',
+                                              'title': "Document Three"})])])])
+        expected_titles = ['Document One', 'Document Two', 'Document Three']
+
+        from .models import flatten_to_documents
+        titles = [d.metadata['title'] for d in flatten_to_documents(binder)]
+        self.assertEqual(titles, expected_titles)
 
 
 class HTMLParsingTestCase(unittest.TestCase):

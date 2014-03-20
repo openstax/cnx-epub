@@ -13,7 +13,11 @@ except ImportError:
     from collections import MutableSequence
 
 
-__all__ = ('Binder', 'TranslucentBinder', 'Document', 'Resource',)
+__all__ = (
+    'flatten_tree_to_ident_hashes', 'model_to_tree',
+    'flatten_model', 'flatten_to_documents',
+    'Binder', 'TranslucentBinder', 'Document', 'Resource',
+    )
 
 
 RESOURCE_HASH_TYPE = 'md5'
@@ -41,7 +45,7 @@ def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):
     return tree
 
 
-def flatten_tree_to_ident_hashs(item_or_tree, lucent_id=TRANSLUCENT_BINDER_ID):
+def flatten_tree_to_ident_hashes(item_or_tree, lucent_id=TRANSLUCENT_BINDER_ID):
     """Flatten a tree to id and version values (ident_hash)."""
     if 'contents' in item_or_tree:
         tree = item_or_tree
@@ -49,11 +53,35 @@ def flatten_tree_to_ident_hashs(item_or_tree, lucent_id=TRANSLUCENT_BINDER_ID):
             yield tree['id']
         for i in tree['contents']:
             ##yield from flatten_tree_to_ident_hashs(i, lucent_id)
-            for x in flatten_tree_to_ident_hashs(i, lucent_id):
+            for x in flatten_tree_to_ident_hashes(i, lucent_id):
                 yield x
     else:
         item = item_or_tree
         yield item['id']
+    raise StopIteration()
+
+
+def flatten_model(model):
+    """Flatten a model to a list of models.
+    This is used to flatten a ``Binder``'ish model down to a list
+    of contained models.
+    """
+    yield model
+    if isinstance(model, (TranslucentBinder, Binder,)):
+        for m in model:
+            ##yield from flatten_model(m)
+            for x in flatten_model(m):
+                yield x
+    raise StopIteration()
+
+
+def flatten_to_documents(model):
+    """Flatten the model to a list of documents (aka ``Document`` objects).
+    This is to flatten a ``Binder``'ish model down to a list of documents.
+    """
+    for m in flatten_model(model):
+        if isinstance(m, Document):
+            yield m
     raise StopIteration()
 
 
