@@ -70,7 +70,7 @@ class DocumentMetadataParser:
     """
     namespaces = HTML_DOCUMENT_NAMESPACES
     metadata_required_keys = (
-        'title', 'license_url',
+        'title', 'license_url', 'summary',
         )
     metadata_optional_keys = (
         'created', 'revised', 'language', 'subjects', 'keywords',
@@ -117,6 +117,16 @@ class DocumentMetadataParser:
         return value
 
     @property
+    def summary(self):
+        items = self.parse('//xhtml:*[@data-type="description"]')
+        try:
+            value = items[0]
+            value = etree.tostring(value)
+        except IndexError:
+            value = None
+        return value
+
+    @property
     def created(self):
         items = self.parse('//xhtml:meta[@itemprop="dateCreated"]/@content')
         try:
@@ -136,7 +146,7 @@ class DocumentMetadataParser:
 
     @property
     def language(self):
-        items = self.parse('//xhtml:*[@data-type="language"]/text()')
+        items = self.parse('//xhtml:*[@data-type="language"]/@content')
         try:
             value = items[0]
         except IndexError:
