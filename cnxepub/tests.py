@@ -446,6 +446,35 @@ class AdaptationTestCase(unittest.TestCase):
         tree = model_to_tree(binder)
         self.assertEqual(tree, expected_tree)
 
+    def test_to_translucent_binder(self):
+        """Adapts a ``Package`` to a ``TranslucentBinder``.
+        Translucent binders are native object representations of data,
+        while the Package is merely a representation of EPUB structure.
+        Furthermore, translucent binders are non-persistable objects,
+        that contain the same behavior as binders, but lack metadata
+        and material. They can be thought of as a protective sheath that
+        is invisible, yet holds the contents together.
+        """
+        # Easiest way to test this is using the ``model_to_tree`` utility
+        # to analyze the structural equality.
+        package_filepath = os.path.join(
+            TEST_DATA_DIR, 'loose-pages', "faux.opf")
+        package = self.make_package(package_filepath)
+        expected_tree = {
+            'id': 'subcol',
+            'title': "Loose Pages",
+            'contents': [{'id': None, 'title': 'Yummy'},
+                         {'id': None, 'title': 'Da bomb'}],
+            }
+
+        from .adapters import adapt_package
+        binder = adapt_package(package)
+
+        # This checks the binder structure, and only taps at the documents.
+        from .models import model_to_tree
+        tree = model_to_tree(binder)
+        self.assertEqual(tree, expected_tree)
+
     def test_to_document_wo_resources_o_references(self):
         """Adapts an ``Item`` to a ``DocumentItem``.
         Documents are native object representations of data,

@@ -7,6 +7,8 @@
 # ###
 from lxml import etree
 
+from .models import TRANSLUCENT_BINDER_ID
+
 
 HTML_DOCUMENT_NAMESPACES = {
     'xhtml': "http://www.w3.org/1999/xhtml",
@@ -19,8 +21,15 @@ def parse_navigation_html_to_tree(html, id):
     The ``id`` is required in order to assign the top-level tree id value.
     """
     xpath = lambda x: html.xpath(x, namespaces=HTML_DOCUMENT_NAMESPACES)
+    try:
+        value = xpath('//*[@data-type="binding"]/@data-value')[0]
+        is_translucent = value == 'translucent'
+    except IndexError:
+        is_translucent = False
+    if is_translucent:
+        id = TRANSLUCENT_BINDER_ID
     tree = {'id': id,
-            'title': xpath('//*[@data-type="title"]')[0],
+            'title': xpath('//*[@data-type="title"]/text()')[0],
             'contents': [x for x in _nav_to_tree(xpath('//xhtml:nav')[0])]
             }
     return tree
