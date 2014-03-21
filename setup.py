@@ -7,6 +7,7 @@ IS_PY3 = sys.version_info > (3,)
 
 
 install_requires = [
+    'jinja2',
     'lxml',
     ]
 tests_require = [

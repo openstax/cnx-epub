@@ -205,3 +205,79 @@ class PackageTestCase(testing.EPUBTestCase):
         self.assertEqual(len(epub1[0]), 3)
         self.assertEqual(len(epub2), 1)
         self.assertEqual(len(epub2[0]), 3)
+
+
+class WritePackageTestCase(testing.EPUBTestCase):
+    """Output the ``Package`` to the filesystem"""
+
+    def test_write(self):
+        """Write a populated Package to the filesystem."""
+        # Use the 'book' data to test against. This enables us to
+        # test the resulting structure against the existing structure.
+
+        # Packages are not mutable and shouldn't be, because one wouldn't
+        # normally create a package by hand. It would be created via
+        # the reading from the filesystem or through adaptation of
+        # a ``Binder``'ish object.
+        book_path = os.path.join(TEST_DATA_DIR, 'book')
+        from ..epub import Item
+        items = [
+            {'filepath': os.path.join(
+                book_path, 'content',
+                '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml'),
+             'media_type': 'application/xhtml+xml',
+             'is_navigation': True,
+             'properties': ['nav'],
+             },
+            {'filepath': os.path.join(
+                 book_path, 'content',
+                 'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml'),
+             'media_type': 'application/xhtml+xml',
+             },
+            {'filepath': os.path.join(
+                 book_path, 'resources',
+                 'e3d625fe893b3f1f9aaef3bdf6bfa15c.png'),
+             'media_type': 'image/png',
+             }
+            ]
+        items = [Item.from_file(**i) for i in items]
+
+        package_name = '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf'
+        package_metadata = {
+            'publisher': "Connexions",
+            'publication_message': "Loosely publishing these here modules.",
+            'title': "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
+            'identifier': "org.cnx.contents.9b0903d2-13c4-4ebe-" \
+                          "9ffe-1ee79db28482@1.6",
+            'language': 'en-us',
+            'license_text': "This work is shared with the public using " \
+                            "the Attribution 3.0 Unported (CC BY 3.0) " \
+                            "license.",
+            'license_url': "http://creativecommons.org/licenses/by/3.0/",
+            }
+        from ..epub import Package
+        package = Package(package_name, items, package_metadata)
+
+        output_path = self.tmpdir
+        package.to_file(package, output_path)
+
+        # Verify...
+        walker = os.walk(output_path)
+        root, dirs, files = walker.next()
+        self.assertEqual(dirs, ['contents', 'resources'])
+        self.assertEqual(files, [package_name])
+        root, dirs, files = walker.next()  # ./contents/
+        self.assertEqual(files,
+                         ['9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml',
+                          'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml'])
+        root, dirs, files = walker.next()  # ./resources/
+        self.assertEqual(files, ['e3d625fe893b3f1f9aaef3bdf6bfa15c.png'])
+
+        with open(os.path.join(output_path, package_name), 'r') as fb:
+            opf_xml = etree.parse(fb)
+
+        # Parse the file and see if the metadata matches.
+        from ..epub import OPFParser
+        parser = OPFParser(opf_xml)
+
+        self.assertEqual(parser.metadata, package_metadata)

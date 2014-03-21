@@ -11,6 +11,7 @@ import tempfile
 import zipfile
 from collections import Sequence
 
+import jinja2
 from lxml import etree
 
 
@@ -31,6 +32,49 @@ EPUB_OPF_NAMESPACES = {
     'dc': "http://purl.org/dc/elements/1.1/",
     'lrmi': "http://lrmi.net/the-specification",
     }
+OPF_TEMPLATE = """\
+{% set metadata = package.metadata %}
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf"
+         xml:lang="en"
+         version="3.0"
+         unique-identifier="pub-id"
+         prefix="cc: http://creativecommons.org/ns#"
+         >
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title id="title">{{ metadata['title'] }}</dc:title>
+    <meta property="title-type"
+          refines="#title"
+          >main</meta>
+    <dc:creator id="creator"
+                file-as="{{ metadata['publisher'] }}"
+                >{{ metadata['publisher'] }}</dc:creator>
+    <dc:identifier id="pub-id">{{ metadata['identifier'] }}</dc:identifier>
+    <dc:language>{{ metadata['language'] }}</dc:language>
+    <dc:publisher>{{ metadata['publisher'] }}</dc:publisher>
+    <meta property="publicationMessage">{{ metadata['publication_message'] }}</meta>
+    {% if 'license_text' in metadata %}
+    <dc:rights>{{ metadata['license_text'] }}</dc:rights>
+    {% endif %}
+    <link rel="cc:license" href="{{ metadata['license_url'] }}"/>
+    <meta property="cc:attributionURL">http://cnx.org/contents</meta>
+  </metadata>
+  <manifest>
+    {% for item in package -%}
+      <item media-type="{{ item.media_type }}"
+            href="{{ locations[item] }}"
+            {% if item.is_navigation %}
+            id="toc"
+            {% endif %}
+            {% if item.properties is defined and item.properties %}
+            properties="{{ ', '.join(item.properties) }}"
+            {% endif %}
+            />
+    {%- endfor %}
+  </manifest>
+</package>
+"""
+
 
 
 class MissingNavigationError(Exception):
@@ -224,7 +268,8 @@ class OPFParser:
 class Package(Sequence):
     """EPUB3 package"""
 
-    def __init__(self, items, metadata=None):
+    def __init__(self, name, items, metadata=None):
+        self.name = name
         self.metadata = metadata or {}
         self._items = items
         navigation_items = [i for i in self._items if i.is_navigation]
@@ -245,8 +290,10 @@ class Package(Sequence):
         opf_xml = etree.parse(file)
         # Check if ``file`` is file-like.
         if hasattr(file, 'read'):
+            name = os.path.basename(file.name)
             root = os.path.abspath(os.path.dirname(file.name))
         else:  # ...a filepath
+            name = os.path.basename(file)
             root = os.path.abspath(os.path.dirname(file))
         parser = OPFParser(opf_xml)
 
@@ -265,7 +312,41 @@ class Package(Sequence):
                                           properties=properties))
         # Ignore spine ordering, because it is not important
         #   for our use cases.
-        return cls(pkg_items, parser.metadata)
+        return cls(name, pkg_items, parser.metadata)
+
+    @staticmethod
+    def to_file(package, directory):
+        """Write the package to the given ``directory``.
+        Returns the OPF filename.
+        """
+        opf_filepath = os.path.join(directory, package.name)
+
+        # Create the directory structure
+        for name in ('contents', 'resources',):
+            path = os.path.join(directory, name)
+            os.mkdir(path)
+
+        # Write the items to the filesystem
+        locations = {}  # Used when rendering
+        for item in package:
+            if item.media_type == 'application/xhtml+xml':
+                base = os.path.join(directory, 'contents')
+            else:
+                base = os.path.join(directory, 'resources')
+            filename = item.name
+            filepath = os.path.join(base, filename)
+            locations[item] = os.path.relpath(filepath, directory)
+            with open(filepath, 'w') as item_file:
+                item_file.write(item.data.read())
+
+        # Write the OPF
+        template = jinja2.Template(OPF_TEMPLATE,
+                                   trim_blocks=True, lstrip_blocks=True)
+        with open(opf_filepath, 'w') as opf_file:
+            opf = template.render(package=package, locations=locations)
+            opf_file.write(opf)
+
+        return opf_filepath
 
     @property
     def navigation(self):
