@@ -210,7 +210,7 @@ class PackageTestCase(testing.EPUBTestCase):
 class WritePackageTestCase(testing.EPUBTestCase):
     """Output the ``Package`` to the filesystem"""
 
-    def test_write(self):
+    def test_to_file(self):
         """Write a populated Package to the filesystem."""
         # Use the 'book' data to test against. This enables us to
         # test the resulting structure against the existing structure.
@@ -281,3 +281,98 @@ class WritePackageTestCase(testing.EPUBTestCase):
         parser = OPFParser(opf_xml)
 
         self.assertEqual(parser.metadata, package_metadata)
+
+
+class WriteEPUBTestCase(testing.EPUBTestCase):
+    """Output the ``EPUB`` to the filesystem"""
+
+    def test_to_file(self):
+        """Write a populated EPUB to the filesystem as a zipfile."""
+        # Use the 'book' data to test against. This enables us to
+        # test the resulting structure against the existing structure.
+
+        # EPUB and Package are not mutable and shouldn't be,
+        # because one wouldn't normally create an EPUB by hand.
+        # It would be created via the reading from the filesystem
+        # or through adaptation of a ``Binder``'ish object(s).
+        book_path = os.path.join(TEST_DATA_DIR, 'book')
+        from ..epub import Item
+        items = [
+            {'filepath': os.path.join(
+                book_path, 'content',
+                '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml'),
+             'media_type': 'application/xhtml+xml',
+             'is_navigation': True,
+             'properties': ['nav'],
+             },
+            {'filepath': os.path.join(
+                 book_path, 'content',
+                 'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml'),
+             'media_type': 'application/xhtml+xml',
+             },
+            {'filepath': os.path.join(
+                 book_path, 'resources',
+                 'e3d625fe893b3f1f9aaef3bdf6bfa15c.png'),
+             'media_type': 'image/png',
+             }
+            ]
+        items = [Item.from_file(**i) for i in items]
+
+        package_name = '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf'
+        package_metadata = {
+            'publisher': "Connexions",
+            'publication_message': "Loosely publishing these here modules.",
+            'title': "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
+            'identifier': "org.cnx.contents.9b0903d2-13c4-4ebe-" \
+                          "9ffe-1ee79db28482@1.6",
+            'language': 'en-us',
+            'license_text': "This work is shared with the public using " \
+                            "the Attribution 3.0 Unported (CC BY 3.0) " \
+                            "license.",
+            'license_url': "http://creativecommons.org/licenses/by/3.0/",
+            }
+        from ..epub import Package
+        package = Package(package_name, items, package_metadata)
+
+        from ..epub import EPUB
+        epub = EPUB(packages=[package])
+
+        output_path = self.tmpdir
+        epub_filename = 'book.epub'
+        epub_filepath = os.path.join(output_path, epub_filename)
+        epub.to_file(epub, epub_filepath)
+
+        # Unpack so we can check the contents...
+        from ..epub import unpack_epub
+        unpack_path = os.path.join(self.tmpdir, 'unpacked-epub')
+        os.mkdir(unpack_path)
+        epub_directory = unpack_epub(epub_filepath, unpack_path)
+
+        # Verify...
+        walker = os.walk(unpack_path)
+        root, dirs, files = walker.next()
+        self.assertEqual(dirs, ['contents', 'META-INF', 'resources'])
+        self.assertEqual(files, [package_name, 'mimetype'])
+        root, dirs, files = walker.next()  # ./contents/
+        self.assertEqual(files,
+                         ['9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml',
+                          'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml'])
+        root, dirs, files = walker.next()  # ./META-INF/
+        self.assertEqual(files,
+                         ['container.xml'])
+        root, dirs, files = walker.next()  # ./resources/
+        self.assertEqual(files, ['e3d625fe893b3f1f9aaef3bdf6bfa15c.png'])
+
+        from ..epub import EPUB_CONTAINER_XML_RELATIVE_PATH
+        container_xml_filepath = os.path.join(unpack_path,
+                                              EPUB_CONTAINER_XML_RELATIVE_PATH)
+        with open(container_xml_filepath, 'r') as fb:
+            container_xml = fb.read()
+
+        with open(os.path.join(unpack_path, 'mimetype'), 'r') as fb:
+            self.assertEqual(fb.read(), 'application/epub+zip')
+
+        # Parse the file and check for opf inclusion.
+        expected_string = 'full-path="{}"'.format(package_name)
+        self.assertTrue(container_xml.find(expected_string) >= 0,
+                        container_xml)

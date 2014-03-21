@@ -74,7 +74,19 @@ OPF_TEMPLATE = """\
   </manifest>
 </package>
 """
-
+CONTAINER_XML_TEMPLATE = """\
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container"
+           version="1.0">
+  <rootfiles>
+    {% for filename in package_filenames -%}
+    <rootfile media-type="application/oebps-package+xml"
+              full-path="{{ filename }}"
+              />
+    {%- endfor %}
+  </rootfiles>
+</container>
+"""
 
 
 class MissingNavigationError(Exception):
@@ -90,6 +102,31 @@ class AdditionalNavigationError(Exception):
 class MissingMetadataError(Exception):
     """Raised when a piece of required metadata is missing from the document.
     """
+
+
+def pack_epub(directory, file):
+    """Pack the given ``directory`` into an epub (i.e. zip) archive
+    given as ``file``, which can be a file-path or file-like object.
+    """
+    with zipfile.ZipFile(file, 'w') as zippy:
+        base_path = os.path.abspath(directory)
+        for root, dirs, filenames in os.walk(directory):
+            # Strip the absolute path
+            archive_path = os.path.relpath(root, base_path)
+            for filename in filenames:
+                filepath = os.path.join(root, filename)
+                archival_filepath = os.path.join(archive_path, filename)
+                zippy.write(filepath, archival_filepath)
+
+
+def unpack_epub(file, directory):
+    """Unpack the given ``file`` (a file-path or file-like object)
+    to the given ``directory``.
+    """
+    if zipfile.is_zipfile(file):
+        # Extract the epub to the current working directory.
+        with zipfile.ZipFile(file, 'r') as zf:
+            zf.extractall(path=directory)
 
 
 class EPUB(Sequence):
@@ -143,9 +180,32 @@ class EPUB(Sequence):
             packages.append(Package.from_file(filepath))
         return cls(packages=packages, root=root)
 
-    def to_file(self, file):
+    @staticmethod
+    def to_file(epub, file):
         """Export to ``file``, which is a *file* or *file-like object*."""
-        raise NotImplementedError()
+        directory = tempfile.mkdtemp('-epub')
+        # Write out the contents to the filesystem.
+        package_filenames = []
+        for package in epub:
+            opf_filepath = Package.to_file(package, directory)
+            opf_filename = os.path.basename(opf_filepath)
+            package_filenames.append(opf_filename)
+
+        # Create the container.xml
+        container_xml_filepath = os.path.join(directory,
+                                              EPUB_CONTAINER_XML_RELATIVE_PATH)
+        template = jinja2.Template(CONTAINER_XML_TEMPLATE,
+                                   trim_blocks=True, lstrip_blocks=True)
+        os.makedirs(os.path.dirname(container_xml_filepath))  # FIXME PY3
+        with open(container_xml_filepath, 'w') as fb:
+            xml  = template.render(package_filenames=package_filenames)
+            fb.write(xml)
+        # Write the mimetype file.
+        with open(os.path.join(directory, 'mimetype'), 'w') as fb:
+            fb.write("application/epub+zip")
+
+        # Pack everything up
+        pack_epub(directory, file=file)
 
     # ABC methods for MutableSequence
     def __getitem__(self, k):
