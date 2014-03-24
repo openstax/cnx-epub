@@ -396,13 +396,13 @@ class Package(Sequence):
             filename = item.name
             filepath = os.path.join(base, filename)
             locations[item] = os.path.relpath(filepath, directory)
-            with open(filepath, 'w') as item_file:
+            with open(filepath, 'wb') as item_file:
                 item_file.write(item.data.read())
 
         # Write the OPF
         template = jinja2.Template(OPF_TEMPLATE,
                                    trim_blocks=True, lstrip_blocks=True)
-        with open(opf_filepath, 'w') as opf_file:
+        with open(opf_filepath, 'wb') as opf_file:
             opf = template.render(package=package, locations=locations)
             opf_file.write(opf)
 

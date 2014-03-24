@@ -175,11 +175,11 @@ class Binder(TranslucentBinder):
         self.metadata[key] = value
 
 
-##class Document:
 class Document(object):
     """An HTML document noted as ``content`` on the instance,
     which can contain ``Resource`` instances.
     """
+    media_type = 'application/xhtml+xml'
 
     def __init__(self, id, content, metadata=None, resources=None):
         self.id = id
@@ -215,6 +215,13 @@ class Document(object):
     def set_uri(self, system, value):
         key = "{}-uri".format(system)
         self.metadata[key] = value
+
+    @property
+    def references(self):
+        """Reference points in the document.
+        These could be resources, other documents, external links, etc.
+        """
+        return []  # XXX Some type of sequence...
 
 
 class Resource:

@@ -5,9 +5,16 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+import io
+import mimetypes
+from copy import deepcopy
+
+import jinja2
 from lxml import etree
 
+from .epub import EPUB, Package, Item
 from .models import (
+    model_to_tree, flatten_model,
     Binder, TranslucentBinder,
     Document, Resource,
     TRANSLUCENT_BINDER_ID,
@@ -24,8 +31,8 @@ __all__ = (
 
 def adapt_package(package):
     """Adapts ``.epub.Package`` to a ``BinderItem`` and cascades
-    the adaptation downward to ``.models.DocumentItem``
-    and ``.models.ResourceItem``.
+    the adaptation downward to ``DocumentItem``
+    and ``ResourceItem``.
     The results of this process provide the same interface as
     ``.models.Binder``, ``.models.Document`` and ``.models.Resource``.
     """
@@ -34,11 +41,89 @@ def adapt_package(package):
     tree = parse_navigation_html_to_tree(html, navigation_item.name)
     return _node_to_model(tree, package)
 
+
 def adapt_item(item, package):
     """Adapts ``.epub.Item`` to a ``DocumentItem``.
 
     """
     return DocumentItem(item, package)
+
+
+def make_epub(binders, file):
+    """Creates an EPUB file from a binder(s)."""
+    if not isinstance(binders, (list, set, tuple,)):
+        binders = [binders]
+    epub = EPUB([_make_package(binder) for binder in binders])
+    epub.to_file(file)
+
+
+def make_publication_epub(binders, publisher, publication_message, file):
+    """Creates an epub file from a binder(s). Also requires
+    publication information, meant to be used in a EPUB publication
+    request.
+    """
+    if not isinstance(binders, (list, set, tuple,)):
+        binders = [binders]
+    for binder in binders:
+        binder = deepcopy(binder)
+        binder.metadata.update({'publisher': publisher,
+                                'publication_message': publication_message})
+        epub = EPUB([_make_package(binder) for binder in binders])
+        EPUB.to_file(epub, file)
+
+
+def _make_package(binder):
+    """Makes an ``.epub.Package`` from a  Binder'ish instance."""
+    package_id = binder.id
+    if package_id is None:
+        package_id = hash(binder)
+
+    package_name = "{}.opf".format(package_id)
+
+    # Set model identifier file extensions.
+    for model in flatten_model(binder):
+        if isinstance(model, (Binder, TranslucentBinder,)):
+            continue
+        ext = mimetypes.guess_extension(model.media_type, strict=False)
+        if ext is None:
+            raise ValueError("Can't apply an extension to media-type '{}'." \
+                             .format(modle.media_type))
+        model.id = ''.join([model.id, ext])
+
+    template = jinja2.Template(HTML_DOCUMENT,
+                               trim_blocks=True, lstrip_blocks=True)
+    # Build the package item list.
+    items = []
+    # Build the binder as an item, specifically a navigation item.
+    navigation_content =  tree_to_html(model_to_tree(binder))
+    navigation_document = template.render(metadata=binder.metadata,
+                                          content=navigation_content)
+    navigation_document_name = "{}.xhtml".format(package_id)
+    item = Item(str(navigation_document_name),
+                io.BytesIO(bytes(navigation_document)),
+                'application/xhtml+xml', is_navigation=True, properties=['nav'])
+    items.append(item)
+    # Roll through the model list again, making each one an item.
+    for model in flatten_model(binder):
+        if isinstance(model, (Binder, TranslucentBinder,)):
+            continue
+        complete_content = template.render(metadata=binder.metadata,
+                                           content=model.content.read())
+        item = Item(model.id, io.BytesIO(bytes(complete_content)),
+                    model.media_type)
+        items.append(item)
+
+    # Build the package.
+    package = Package(package_name, items, binder.metadata)
+    return package
+
+
+def _make_item(model):
+    """Makes an ``.epub.Item`` from
+    a ``.models.Document`` or ``.models.Resource``
+    """
+    item = Item(model.id, model.content, model.media_type)
+
 
 def _node_to_model(tree_or_item, package, parent=None,
                    lucent_id=TRANSLUCENT_BINDER_ID):
@@ -103,3 +188,168 @@ class DocumentItem(Document):
         resources = None
         super(DocumentItem, self).__init__(id, content, metadata,
                                            resources=resources)
+
+
+
+# XXX Rendering shouldn't happen here.
+#     Temporarily place the rendering templates and code here.
+
+HTML_DOCUMENT = """\
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:epub="http://www.idpf.org/2007/ops"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:lrmi="http://lrmi.net/the-specification"
+      >
+  <head itemscope="itemscope"
+        itemtype="http://schema.org/Book"
+        >
+
+    <title>{{ metadata['title'] }}</title>
+    <meta itemprop="inLanguage"
+          data-type="language"
+          content="{{ metadata['language'] }}"
+          />
+
+    {# TODO Include this based on the feature being present #}
+    <!-- These are for discoverability of accessible content. -->
+    <meta itemprop="accessibilityFeature" content="MathML" />
+    <meta itemprop="accessibilityFeature" content="LaTeX" />
+    <meta itemprop="accessibilityFeature" content="alternativeText" />
+    <meta itemprop="accessibilityFeature" content="captions" />
+    <meta itemprop="accessibilityFeature" content="structuredNavigation" />
+
+    {# TODO
+       <meta refines="#<html-id>" property="display-seq" content="<ord>" />
+     #}
+
+    <meta itemprop="dateCreated"
+          content="{{ metadata['created'] }}"
+          />
+    <meta itemprop="dateModified"
+          content="{{ metadata['revised'] }}"
+          />
+  </head>
+  <body xmlns:bib="http://bibtexml.sf.net/"
+        xmlns:data="http://dev.w3.org/html5/spec/#custom"
+        itemscope="itemscope"
+        itemtype="http://schema.org/Book"
+        >
+    <div data-type="metadata">
+      <h1 data-type="title" itemprop="name">{{ metadata['title'] }}</h1>
+
+      <div class="authors">
+        By: 
+        {% for author in metadata['authors'] -%}
+        <span id="author01"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Person"
+              itemprop="author"
+              data-type="author"
+              >
+          <a href="{{ author['id'] }}"
+             itemprop="url"
+             data-type="{{ author['type'] }}"
+             >{{ author['name'] }}</a>
+        </span>{% if not loop.last %}, {% endif %}
+        {%- endfor %}
+
+        Edited by: 
+        <span itemprop="editor"
+              data-type="editor"
+              >I. M. Picky</span>
+
+        Illustrated by: 
+        <span itemprop="illustrator"
+              data-type="illustrator"
+              >Francis Hablar</span>
+
+        Translated by: 
+        <span itemprop="contributor"
+              data-type="translator"
+              >Francis Hablar</span>
+      </div>
+
+      <div class="publishers">
+       {% for publisher in metadata['publishers'] -%}
+       Published By: 
+        <span itemprop="publisher"
+              data-type="publisher"
+              >{{ publisher }}</span>
+       {%- endfor %}
+      </div>
+
+      <div class="derived-from">
+        Based on:
+        <a href="http://example.org/contents/id@ver"
+           itemprop="isBasedOnURL"
+           data-type="based-on"
+           >Wild Grains and Warted Feet</a>
+      </div>
+
+      <div class="permissions">
+        {% if metadata['copyright_holders'] %}
+        <p class="copyright">
+          Copyright:
+          {% for holder in metadata['copyright_holders'] -%}
+          <span itemprop="copyrightHolder"
+                data-type="copyright-holder"
+                >{{ holder }}</span>
+          {%- endfor %}
+        </p>
+        {% endif %}
+        <p class="license">
+          Licensed:
+          <a href="{{ metadata['license_url'] }}"
+             itemprop="dc:license,lrmi:useRightsURL"
+             data-type="license"
+             >{{ metadata['license_text'] }}</a>
+        </p>
+      </div>
+
+      <div class="description"
+           itemprop="description"
+           data-type="description"
+           >
+        {{ metadata['summary']|e }}
+      </div>
+
+      {% for keyword in metadata['keywords'] -%}
+      <div itemprop="keywords" data-type="keyword">{{ keyword }}</div>
+      {%- endfor %}
+      {% for subject in metadata['subjects'] -%}
+      <div itemprop="about" data-type="subject">{{ subject }}</div>
+      {%- endfor %}
+    </div>
+
+   {{ content }}
+  </body>
+</html>
+"""
+
+# YANK This was pulled from cnx-archive to temporarily provide
+#      a way to render the the tree to html. This either needs to
+#      move elsewhere or preferably be replaced with a better solution.
+
+def html_listify(tree, root_xl_element, list_type='ol'):
+    for node in tree:
+        li_elm = etree.SubElement(root_xl_element, 'li')
+        a_elm = etree.SubElement(li_elm, 'a')
+        a_elm.text = node['title']
+        if node['id'] != 'subcol':
+            # FIXME Hard coded route...
+            a_elm.set('href', '/contents/{}.html'.format(node['id']))
+        if 'contents' in node:
+            elm = etree.SubElement(li_elm, list_type)
+            html_listify(node['contents'], elm)
+
+
+def tree_to_html(tree):
+    nav = etree.Element('nav')
+    nav.set('id', 'toc')
+    ol = etree.SubElement(nav, 'ol')
+    html_listify([tree], ol)
+    return etree.tostring(nav)
+
+# /YANK
