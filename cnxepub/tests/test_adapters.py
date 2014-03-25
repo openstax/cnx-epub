@@ -156,7 +156,7 @@ class AdaptationTestCase(unittest.TestCase):
         self.assertEqual(None, uri)
 
         # Check resource discovery.
-        self.assertEqual(document.references, None)
+        self.assertEqual([], document.references)
 
 
 class ModelsToEPUBTestCase(unittest.TestCase):
@@ -260,7 +260,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         # Call the target.
         fs_pointer, epub_filepath = tempfile.mkstemp('.epub')
         self.addCleanup(os.remove, epub_filepath)
-        from ..adapters import make_publication_epub
+        from ..adapters import make_epub
         with open(epub_filepath, 'w') as epub_file:
             make_epub(binder, epub_file)
 

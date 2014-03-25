@@ -54,7 +54,7 @@ def make_epub(binders, file):
     if not isinstance(binders, (list, set, tuple,)):
         binders = [binders]
     epub = EPUB([_make_package(binder) for binder in binders])
-    epub.to_file(file)
+    epub.to_file(epub, file)
 
 
 def make_publication_epub(binders, publisher, publication_message, file):
@@ -108,7 +108,7 @@ def _make_package(binder):
         if isinstance(model, (Binder, TranslucentBinder,)):
             continue
         complete_content = template.render(metadata=binder.metadata,
-                                           content=model.content.read())
+                                           content=model.content)
         item = Item(model.id, io.BytesIO(bytes(complete_content)),
                     model.media_type)
         items.append(item)
