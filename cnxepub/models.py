@@ -11,9 +11,14 @@ try:
     from collections.abc import MutableSequence, Iterable
 except ImportError:
     from collections import MutableSequence, Iterable
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 import lxml.html
 from lxml import etree
+
 
 __all__ = (
     'flatten_tree_to_ident_hashes', 'model_to_tree',
@@ -94,8 +99,12 @@ REFERENCE_REMOTE_TYPES = (INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE,)
 
 def _discover_uri_type(uri):
     """Given a ``uri``, determine if it is internal or external."""
-    # XXX
-    return EXTERNAL_REFERENCE_TYPE
+    parsed_uri = urlparse(uri)
+    if not parsed_uri.netloc:
+        type_ = INTERNAL_REFERENCE_TYPE
+    else:
+        type_ = EXTERNAL_REFERENCE_TYPE
+    return type_
 
 def _parse_references(xml):
     """Parse the references to ``Reference`` instances."""
@@ -286,7 +295,7 @@ class Document(object):
         # Unwrap the xml.
         content = [isinstance(node, str) and node or etree.tostring(node)
                    for node in self._xml.xpath('node()')]
-        return content
+        return ''.join(content)
 
     def _content__set(self, value):
         self._xml = lxml.html.fragment_fromstring(value, 'div')
@@ -339,7 +348,7 @@ class Resource:
 
     def __init__(self, id, data, media_type, filename=None):
         self.id = id
-        if not isinstance(content, io.BytesIO):
+        if not isinstance(data, io.BytesIO):
             raise ValueError("Data must be an io.BytesIO instance. "
                              "'{}' was given.".format(type(data)))
         self.data = data

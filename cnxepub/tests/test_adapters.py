@@ -15,6 +15,8 @@ try:
 except ImportError:
     import mock
 
+from lxml import etree
+
 
 here = os.path.abspath(os.path.dirname(__file__))
 TEST_DATA_DIR = os.path.join(here, 'data')
@@ -116,7 +118,7 @@ class AdaptationTestCase(unittest.TestCase):
         item_filepath = os.path.join(
             TEST_DATA_DIR, 'loose-pages', 'content',
             "fig-bush.xhtml")
-        item = self.make_item(item_filepath)
+        item = self.make_item(item_filepath, media_type='application/xhtml+xml')
 
         package = mock.Mock()
         # This would not typically be called outside the context of
@@ -157,6 +159,50 @@ class AdaptationTestCase(unittest.TestCase):
 
         # Check resource discovery.
         self.assertEqual([], document.references)
+
+    def test_to_document_w_resources(self):
+        """Adapts an ``Item`` to a ``DocumentItem``.
+        Documents are native object representations of data,
+        while the Item is merely a representation of an item
+        in the EPUB structure.
+        We are specifically testing for reference parsing and
+        resource discovery.
+        """
+        content_filepath = os.path.join(
+            TEST_DATA_DIR, 'loose-pages', 'content',
+            "fig-bush.xhtml")
+        file_pointer, item_filepath = tempfile.mkstemp()
+        internal_uri = "../resources/openstax.png"
+        with open(content_filepath, 'r') as fb:
+            xml = etree.parse(fb)
+            body = xml.xpath(
+                '//xhtml:body',
+                namespaces={'xhtml': "http://www.w3.org/1999/xhtml"})[0]
+            elm = etree.SubElement(body, "img")
+            elm.set('src', internal_uri)
+        with open(item_filepath, 'w') as fb:
+            fb.write(etree.tostring(xml))
+        item = self.make_item(item_filepath, media_type='application/xhtml+xml')
+
+        package = mock.Mock()
+        # This would not typically be called outside the context of
+        # a package, but in the case of a scoped test we use it.
+
+        resource_filepath = os.path.join(TEST_DATA_DIR, 'loose-pages',
+                                         'resources', 'openstax.png')
+        from ..models import Resource
+        package.grab_by_name.side_effect = [
+            self.make_item(resource_filepath, media_type='image/png'),
+            ]
+        from ..adapters import adapt_item
+        document = adapt_item(item, package)
+
+        # Check resource discovery.
+        self.assertEqual([internal_uri],
+                         [ref.uri for ref in document.references])
+        # Check the resource was discovered.
+        self.assertEqual(['openstax.png'],
+                         [res.id for res in document.resources])
 
 
 class ModelsToEPUBTestCase(unittest.TestCase):

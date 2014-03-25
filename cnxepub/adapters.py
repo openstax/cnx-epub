@@ -5,6 +5,7 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+import os
 import io
 import mimetypes
 from copy import deepcopy
@@ -46,7 +47,11 @@ def adapt_item(item, package):
     """Adapts ``.epub.Item`` to a ``DocumentItem``.
 
     """
-    return DocumentItem(item, package)
+    if item.media_type == 'application/xhtml+xml':
+        model = DocumentItem(item, package)
+    else:
+        model = Resource(item.name, item.data, item.media_type, item.name)
+    return model
 
 
 def make_epub(binders, file):
@@ -183,10 +188,12 @@ class DocumentItem(Document):
         self._html = etree.parse(self._item.data)
 
         metadata = parse_metadata(self._html)
-        content_xpath = "//body/node()[not(self::node()[@data-type='metadata'])]"
+        content_xpath = "//xhtml:body/node()[not(self::node()[@data-type='metadata'])]"
+        nsmap = {'xhtml': "http://www.w3.org/1999/xhtml"}
+
         content = io.BytesIO(
             b''.join([isinstance(n, str) and n or etree.tostring(n)
-                      for n in self._html.xpath(content_xpath)]))
+                      for n in self._html.xpath(content_xpath, namespaces=nsmap)]))
         id = _id_from_metadata(metadata)
         resources = None
         super(DocumentItem, self).__init__(id, content, metadata)
