@@ -8,10 +8,12 @@
 import io
 import hashlib
 try:
-    from collections.abc import MutableSequence
+    from collections.abc import MutableSequence, Iterable
 except ImportError:
-    from collections import MutableSequence
+    from collections import MutableSequence, Iterable
 
+import lxml.html
+from lxml import etree
 
 __all__ = (
     'flatten_tree_to_ident_hashes', 'model_to_tree',
@@ -84,6 +86,89 @@ def flatten_to_documents(model):
             yield m
     raise StopIteration()
 
+
+INTERNAL_REFERENCE_TYPE = 'internal'
+EXTERNAL_REFERENCE_TYPE = 'external'
+REFERENCE_REMOTE_TYPES = (INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE,)
+
+
+def _discover_uri_type(uri):
+    """Given a ``uri``, determine if it is internal or external."""
+    # XXX
+    return EXTERNAL_REFERENCE_TYPE
+
+def _parse_references(xml):
+    """Parse the references to ``Reference`` instances."""
+    references = []
+    ref_finder = HTMLReferenceFinder(xml)
+    for elm, uri_attr in ref_finder:
+        type_ = _discover_uri_type(elm.get(uri_attr))
+        references.append(Reference(elm, type_, uri_attr))
+    return references
+
+
+class Reference(object):
+    """A reference within a ``Document`` model, either internal or external.
+    This depends on an xml element tree, to provide binds for uri and name.
+    """
+
+    def __init__(self, elm, remote_type, uri_attr):
+        self.elm = elm
+        try:
+            assert remote_type in REFERENCE_REMOTE_TYPES
+        except AssertionError:
+            raise ValueError("remote_type: '{}' is invalid." \
+                             .format(remote_type))
+        self.remote_type = remote_type
+        self._uri_attr = uri_attr
+
+    def _get_uri(self):
+        return self.elm.get(self._uri_attr)
+
+    def _set_uri(self, value):
+        self.elm.set(self._uri_attr, value)
+
+    uri = property(_get_uri, _set_uri)
+
+
+class HTMLReferenceFinder(object):
+    """Find references within an HTML xml element tree."""
+
+    def __init__(self, xml):
+        self.xml = xml
+
+    def __iter__(self):
+        for elm in self._archors():
+            yield elm, 'href'
+        for elm, uri_attr in self._media():
+            yield elm, uri_attr
+        raise StopIteration()
+
+    def apply_xpath(self, xpath):
+        return self.xml.xpath(xpath)
+
+    def _archors(self):
+        return self.apply_xpath('//a')
+
+    def _media(self):
+        media_xpath = {
+                '//img': 'src',
+                '//audio': 'src',
+                '//video': 'src',
+                '//object': 'data',
+                '//object/embed': 'src',
+                '//source': 'src',
+                '//span': 'data-src',
+                }
+        for xpath, attr in media_xpath.items():
+            for elm in self.apply_xpath(xpath):
+                yield elm, attr
+        raise StopIteration()
+
+
+# ########## #
+#   Models   #
+# ########## #
 
 class TranslucentBinder(MutableSequence):
     """A clear/translucent binder instance.
@@ -181,17 +266,38 @@ class Document(object):
     """
     media_type = 'application/xhtml+xml'
 
-    def __init__(self, id, content, metadata=None, resources=None):
+    def __init__(self, id, data, metadata=None, resources=None,
+                 reference_resolver=None):
         self.id = id
-        valid_data_types = (io.StringIO, io.BytesIO,)
-        if not isinstance(content, valid_data_types):
-            types = ' or '.join([str(x) for x in valid_data_types]),
-            raise ValueError("Content must be an {} instance. "
-                             "'{}' was given." \
-                             .format(types, type(content)))
-        self.content = content
+        self._xml = None
+        if hasattr(data, 'read'):
+            self.content = data.read()
+        else:
+            self.content = data
+        self._references = _parse_references(self._xml)
         self.metadata = metadata or {}
         self.resources = resources or []
+
+    def _content__get(self):
+        """Produce the content from the data.
+        This is used to write out reference changes that may have
+        taken place.
+        """
+        # Unwrap the xml.
+        content = [isinstance(node, str) and node or etree.tostring(node)
+                   for node in self._xml.xpath('node()')]
+        return content
+
+    def _content__set(self, value):
+        self._xml = lxml.html.fragment_fromstring(value, 'div')
+
+    def _content__del(self):
+        self._xml = etree.Element('div')
+
+    content = property(_content__get,
+                       _content__set,
+                       _content__del,
+                       _content__get.__doc__)
 
     @property
     def ident_hash(self):
@@ -221,7 +327,9 @@ class Document(object):
         """Reference points in the document.
         These could be resources, other documents, external links, etc.
         """
-        return []  # XXX Some type of sequence...
+        if self._references is None:
+            return []
+        return self._references
 
 
 class Resource:

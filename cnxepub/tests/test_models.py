@@ -206,3 +206,27 @@ class TreeUtilityTestCase(unittest.TestCase):
         from ..models import flatten_to_documents
         titles = [d.metadata['title'] for d in flatten_to_documents(binder)]
         self.assertEqual(titles, expected_titles)
+
+
+class ModelBehaviorTestCase(unittest.TestCase):
+
+    def test_document_w_external_references(self):
+        """Documents are loaded then parsed to show their
+        references within the HTML content.
+        """
+        expected_uris = ["http://example.com/people/old-mcdonald",
+                         "http://cnx.org/contents/5f3acd92@3",
+                         ]
+        content = """\
+<h1> McDonald Bio </h1>
+<p>There is a farmer named <a href="{}">Old McDonald</a>. Plants grow on his farm and animals live there. He himself is vegan, and so he wrote a book about <a href="{}">Vegan Farming</a>.</p>
+<p>Ei ei O.</p>
+""".format(*expected_uris)
+        from ..models import Document
+        document = Document('mcdonald', content)
+
+        self.assertEqual(len(document.references), 2)
+        are_external = [r.remote_type == 'external'
+                        for r in document.references]
+        self.assertEqual([True, True], are_external)
+        self.assertEqual(expected_uris, [r.uri for r in document.references])

@@ -181,14 +181,34 @@ class DocumentItem(Document):
         self._item = item
         self._package = package
         self._html = etree.parse(self._item.data)
-        metadata = parse_metadata(self._html)
-        content = self._item.data
-        id = _id_from_metadata(metadata)
-        # TODO Resource discovery and setting...
-        resources = None
-        super(DocumentItem, self).__init__(id, content, metadata,
-                                           resources=resources)
 
+        metadata = parse_metadata(self._html)
+        content_xpath = "//body/node()[not(self::node()[@data-type='metadata'])]"
+        content = io.BytesIO(
+            b''.join([isinstance(n, str) and n or etree.tostring(n)
+                      for n in self._html.xpath(content_xpath)]))
+        id = _id_from_metadata(metadata)
+        resources = None
+        super(DocumentItem, self).__init__(id, content, metadata)
+
+        # Based on the reference list, make a best effort
+        # to acquire resources.
+        resources = []
+        for ref in self.references:
+            if ref.remote_type == 'external':
+                continue
+            elif not ref.uri.find('../resources') >= 0:
+                continue
+            name = os.path.basename(ref.uri)
+            try:
+                resource = adapt_item(package.grab_by_name(name), package)
+                resources.append(resource)
+            except KeyError:
+                # When resources are missing, the problem is pushed off
+                # to the rendering process, which will
+                # raise a missing reference exception when necessary.
+                pass
+        self.resources = resources
 
 
 # XXX Rendering shouldn't happen here.
