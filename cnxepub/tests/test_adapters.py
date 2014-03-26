@@ -275,9 +275,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             nav = f.read()
         expected_nav = (
                 '<nav id="toc"><ol><li>'
-                '<a href="/contents/ingress@draft.xhtml">ingress</a>'
+                '<a href="ingress@draft.xhtml">ingress</a>'
                 '</li><li>'
-                '<a href="/contents/egress@draft.xhtml">egress</a>'
+                '<a href="egress@draft.xhtml">egress</a>'
                 '</li></ol></nav>')
         self.assertTrue(expected_nav in nav)
 
@@ -350,9 +350,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             nav = f.read()
         expected_nav = (
                 '<nav id="toc"><ol><li>'
-                '<a href="/contents/ingress@draft.xhtml">ingress</a>'
+                '<a href="ingress@draft.xhtml">ingress</a>'
                 '</li><li>'
-                '<a href="/contents/egress@draft.xhtml">egress</a>'
+                '<a href="egress@draft.xhtml">egress</a>'
                 '</li></ol></nav>')
         self.assertTrue(expected_nav in nav)
 

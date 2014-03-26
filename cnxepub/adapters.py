@@ -374,8 +374,7 @@ def html_listify(tree, root_xl_element, list_type='ol'):
         else:
             a_elm = etree.SubElement(li_elm, 'a')
             a_elm.text = node['title']
-            # FIXME Hard coded route...
-            a_elm.set('href', '/contents/{}.xhtml'.format(node['id']))
+            a_elm.set('href', '{}.xhtml'.format(node['id']))
         if 'contents' in node:
             elm = etree.SubElement(li_elm, list_type)
             html_listify(node['contents'], elm)
