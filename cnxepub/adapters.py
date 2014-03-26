@@ -364,11 +364,14 @@ HTML_DOCUMENT = """\
 def html_listify(tree, root_xl_element, list_type='ol'):
     for node in tree:
         li_elm = etree.SubElement(root_xl_element, 'li')
-        a_elm = etree.SubElement(li_elm, 'a')
-        a_elm.text = node['title']
-        if node['id'] != 'subcol':
+        if node['id'] == 'subcol':
+            span_elm = etree.SubElement(li_elm, 'span')
+            span_elm.text = node['title']
+        else:
+            a_elm = etree.SubElement(li_elm, 'a')
+            a_elm.text = node['title']
             # FIXME Hard coded route...
-            a_elm.set('href', '/contents/{}.html'.format(node['id']))
+            a_elm.set('href', '/contents/{}.xhtml'.format(node['id']))
         if 'contents' in node:
             elm = etree.SubElement(li_elm, list_type)
             html_listify(node['contents'], elm)
@@ -378,7 +381,7 @@ def tree_to_html(tree):
     nav = etree.Element('nav')
     nav.set('id', 'toc')
     ol = etree.SubElement(nav, 'ol')
-    html_listify([tree], ol)
+    html_listify(tree['contents'], ol)
     return etree.tostring(nav)
 
 # /YANK

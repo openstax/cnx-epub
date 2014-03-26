@@ -270,6 +270,17 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             [navdoc_filename, 'egress@draft.xhtml', 'ingress@draft.xhtml'],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
 
+        # Check the nav
+        with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
+            nav = f.read()
+        expected_nav = (
+                '<nav id="toc"><ol><li>'
+                '<a href="/contents/ingress@draft.xhtml">ingress</a>'
+                '</li><li>'
+                '<a href="/contents/egress@draft.xhtml">egress</a>'
+                '</li></ol></nav>')
+        self.assertTrue(expected_nav in nav)
+
     def test_binder(self):
         """Create an EPUB from a binder with a few documents."""
         from ..models import Binder, Document
@@ -330,3 +341,14 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertEqual(
             ['egress@draft.xhtml', 'ingress@draft.xhtml', navdoc_filename],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
+
+        # Check the nav
+        with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
+            nav = f.read()
+        expected_nav = (
+                '<nav id="toc"><ol><li>'
+                '<a href="/contents/ingress@draft.xhtml">ingress</a>'
+                '</li><li>'
+                '<a href="/contents/egress@draft.xhtml">egress</a>'
+                '</li></ol></nav>')
+        self.assertTrue(expected_nav in nav)
