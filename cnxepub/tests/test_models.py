@@ -8,6 +8,10 @@
 import os
 import io
 import unittest
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 
 
 class TreeUtilityTestCase(unittest.TestCase):
@@ -224,6 +228,7 @@ class ModelBehaviorTestCase(unittest.TestCase):
 <img src="{}"/>
 <p>Ei ei O.</p>
 """.format(*expected_uris)
+
         from ..models import Document
         document = Document('mcdonald', content)
 
@@ -231,4 +236,46 @@ class ModelBehaviorTestCase(unittest.TestCase):
         are_external = [r.remote_type == 'external'
                         for r in document.references]
         self.assertEqual([True, True, False], are_external)
+        self.assertEqual(expected_uris, [r.uri for r in document.references])
+
+    def test_document_w_bound_references(self):
+        starting_uris = ["../resources/openstax.png",
+                         "m23409.xhtml",
+                         ]
+        content = """\
+<h1>Reference replacement test-case</h1>
+<p>Link to <a href="{}">a local legacy module</a>.</p>
+<img src="{}"/>
+<p>Fin.</p>
+""".format(*starting_uris)
+
+        from ..models import Document
+        document = Document('document', content)
+
+        self.assertEqual(len(document.references), 2)
+        are_external = [r.remote_type == 'external'
+                        for r in document.references]
+        self.assertEqual([False, False], are_external)
+        self.assertEqual(starting_uris, [r.uri for r in document.references])
+
+        # Now bind the model to the reference.
+        resource_uri_tmplt = "/resources/{}"
+        resource_name = '36ad78c3'
+        resource = mock.Mock()
+        resource.id = resource_name
+        document.references[0].bind(resource, "/resources/{}")
+
+        expected_uris = [
+            resource_uri_tmplt.format(resource_name),
+            starting_uris[1],
+            ]
+        self.assertEqual(expected_uris, [r.uri for r in document.references])
+
+        # And change it the resource identifier
+        changed_resource_name = 'smoo.png'
+        resource.id = changed_resource_name
+        expected_uris = [
+            resource_uri_tmplt.format(changed_resource_name),
+            starting_uris[1],
+            ]
         self.assertEqual(expected_uris, [r.uri for r in document.references])

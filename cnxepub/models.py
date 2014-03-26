@@ -130,14 +130,40 @@ class Reference(object):
                              .format(remote_type))
         self.remote_type = remote_type
         self._uri_attr = uri_attr
+        self._bound_model = None
+        self._uri_template = None
 
     def _get_uri(self):
+        if self._bound_model is not None:
+            # Update the value before returning.
+            self._set_uri_from_bound_model()
         return self.elm.get(self._uri_attr)
 
     def _set_uri(self, value):
+        if self._bound_model is not None:
+            raise ValueError("URI is bound to an object.")
         self.elm.set(self._uri_attr, value)
 
     uri = property(_get_uri, _set_uri)
+
+    def _set_uri_from_bound_model(self):
+        """Using the bound model, set the uri."""
+        value = self._uri_template.format(self._bound_model.id)
+        self.elm.set(self._uri_attr, value)
+
+    def bind(self, model, template="{}"):
+        """Bind the ``model`` to the reference. This uses the model's
+        ``id`` attribute and the given ``template`` to
+        dynamically produce a uri when accessed.
+        """
+        self._bound_model = model
+        self._uri_template = template
+        self._set_uri_from_bound_model()
+
+    def unbind(self):
+        """Unbind the model from the reference."""
+        self._bound_model = None
+        self._uri_template = None
 
 
 class HTMLReferenceFinder(object):
