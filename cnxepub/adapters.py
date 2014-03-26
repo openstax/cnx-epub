@@ -114,7 +114,7 @@ def _make_package(binder):
     for model in flatten_model(binder):
         if isinstance(model, (Binder, TranslucentBinder,)):
             continue
-        complete_content = template.render(metadata=binder.metadata,
+        complete_content = template.render(metadata=model.metadata,
                                            content=model.content)
         item = Item(''.join([model.ident_hash, extensions[model.id]]),
                     io.BytesIO(bytes(complete_content)),

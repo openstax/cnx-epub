@@ -284,6 +284,13 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         # Check that translucent is set
         self.assertTrue('<span data-type="binding" data-value="translucent" />' in nav)
 
+        # Check the title and content
+        self.assertTrue('<title>Kraken</title>' in nav)
+        with open(os.path.join(epub_path, 'contents', 'egress@draft.xhtml')) as f:
+            egress = f.read()
+        self.assertTrue('<title>egress</title>' in egress)
+        self.assertTrue('<p>Goodbye.</p>' in egress)
+
     def test_binder(self):
         """Create an EPUB from a binder with a few documents."""
         from ..models import Binder, Document
@@ -358,3 +365,10 @@ class ModelsToEPUBTestCase(unittest.TestCase):
 
         # Check that translucent is not set
         self.assertFalse('<span data-type="binding" data-value="translucent" />' in nav)
+
+        # Check the title and content
+        self.assertTrue('<title>Kraken</title>' in nav)
+        with open(os.path.join(epub_path, 'contents', 'egress@draft.xhtml')) as f:
+            egress = f.read()
+        self.assertTrue('<title>egress</title>' in egress)
+        self.assertTrue('<p>Goodbye.</p>' in egress)
