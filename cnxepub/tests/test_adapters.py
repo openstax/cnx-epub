@@ -230,6 +230,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             'license_text': 'CC-By 4.0',
             'license_url': 'http://creativecommons.org/licenses/by/4.0/',
             'summary': "<p>summary</p>",
+            'version': 'draft',
             }
 
         # Build test documents
@@ -266,7 +267,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             [opf_filename, 'META-INF', 'contents', 'mimetype'],
             sorted(os.listdir(epub_path)))
         self.assertEqual(
-            [navdoc_filename, 'egress.xhtml', 'ingress.xhtml'],
+            [navdoc_filename, 'egress@draft.xhtml', 'ingress@draft.xhtml'],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
 
     def test_binder(self):
@@ -293,6 +294,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             'license_text': 'CC-By 4.0',
             'license_url': 'http://creativecommons.org/licenses/by/4.0/',
             'summary': "<p>summary</p>",
+            'version': 'draft',
             }
 
         # Build test documents
@@ -326,5 +328,5 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             ['META-INF', 'contents', 'mimetype', opf_filename],
             sorted(os.listdir(epub_path)))
         self.assertEqual(
-            ['egress.xhtml', 'ingress.xhtml', navdoc_filename],
+            ['egress@draft.xhtml', 'ingress@draft.xhtml', navdoc_filename],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))

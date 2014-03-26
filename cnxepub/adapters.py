@@ -85,6 +85,7 @@ def _make_package(binder):
 
     package_name = "{}.opf".format(package_id)
 
+    extensions = {}
     # Set model identifier file extensions.
     for model in flatten_model(binder):
         if isinstance(model, (Binder, TranslucentBinder,)):
@@ -93,7 +94,7 @@ def _make_package(binder):
         if ext is None:
             raise ValueError("Can't apply an extension to media-type '{}'." \
                              .format(modle.media_type))
-        model.id = ''.join([model.id, ext])
+        extensions[model.id] = ext
 
     template = jinja2.Template(HTML_DOCUMENT,
                                trim_blocks=True, lstrip_blocks=True)
@@ -114,7 +115,8 @@ def _make_package(binder):
             continue
         complete_content = template.render(metadata=binder.metadata,
                                            content=model.content)
-        item = Item(model.id, io.BytesIO(bytes(complete_content)),
+        item = Item(''.join([model.ident_hash, extensions[model.id]]),
+                    io.BytesIO(bytes(complete_content)),
                     model.media_type)
         items.append(item)
 
