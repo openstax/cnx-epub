@@ -103,7 +103,8 @@ def _make_package(binder):
     # Build the binder as an item, specifically a navigation item.
     navigation_content =  tree_to_html(model_to_tree(binder))
     navigation_document = template.render(metadata=binder.metadata,
-                                          content=navigation_content)
+                                          content=navigation_content,
+                                          is_translucent=binder.is_translucent)
     navigation_document_name = "{}.xhtml".format(package_id)
     item = Item(str(navigation_document_name),
                 io.BytesIO(bytes(navigation_document)),
@@ -267,6 +268,9 @@ HTML_DOCUMENT = """\
         >
     <div data-type="metadata">
       <h1 data-type="title" itemprop="name">{{ metadata['title'] }}</h1>
+      {% if is_translucent %}
+      <span data-type="binding" data-value="translucent" />
+      {%- endif %}
 
       <div class="authors">
         By: 

@@ -281,6 +281,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
                 '</li></ol></nav>')
         self.assertTrue(expected_nav in nav)
 
+        # Check that translucent is set
+        self.assertTrue('<span data-type="binding" data-value="translucent" />' in nav)
+
     def test_binder(self):
         """Create an EPUB from a binder with a few documents."""
         from ..models import Binder, Document
@@ -352,3 +355,6 @@ class ModelsToEPUBTestCase(unittest.TestCase):
                 '<a href="/contents/egress@draft.xhtml">egress</a>'
                 '</li></ol></nav>')
         self.assertTrue(expected_nav in nav)
+
+        # Check that translucent is not set
+        self.assertFalse('<span data-type="binding" data-value="translucent" />' in nav)
