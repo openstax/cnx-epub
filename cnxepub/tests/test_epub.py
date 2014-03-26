@@ -264,14 +264,17 @@ class WritePackageTestCase(testing.EPUBTestCase):
         # Verify...
         walker = os.walk(output_path)
         root, dirs, files = walker.next()
-        self.assertEqual(dirs, ['contents', 'resources'])
-        self.assertEqual(files, [package_name])
-        root, dirs, files = walker.next()  # ./contents/
-        self.assertEqual(files,
-                         ['9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml',
-                          'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml'])
-        root, dirs, files = walker.next()  # ./resources/
-        self.assertEqual(files, ['e3d625fe893b3f1f9aaef3bdf6bfa15c.png'])
+        self.assertEqual(['contents', 'resources'], sorted(dirs))
+        self.assertEqual([package_name], files)
+        # ./contents/
+        files = os.listdir(os.path.join(output_path, 'contents'))
+        self.assertEqual(['9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml',
+                          'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml'],
+                         sorted(files))
+        # ./resources/
+        files = os.listdir(os.path.join(output_path, 'resources'))
+        self.assertEqual(['e3d625fe893b3f1f9aaef3bdf6bfa15c.png'],
+                         sorted(files))
 
         with open(os.path.join(output_path, package_name), 'r') as fb:
             opf_xml = etree.parse(fb)
@@ -351,17 +354,20 @@ class WriteEPUBTestCase(testing.EPUBTestCase):
         # Verify...
         walker = os.walk(unpack_path)
         root, dirs, files = walker.next()
-        self.assertEqual(dirs, ['contents', 'META-INF', 'resources'])
-        self.assertEqual(files, [package_name, 'mimetype'])
-        root, dirs, files = walker.next()  # ./contents/
-        self.assertEqual(files,
-                         ['9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml',
-                          'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml'])
-        root, dirs, files = walker.next()  # ./META-INF/
-        self.assertEqual(files,
-                         ['container.xml'])
-        root, dirs, files = walker.next()  # ./resources/
-        self.assertEqual(files, ['e3d625fe893b3f1f9aaef3bdf6bfa15c.png'])
+        self.assertEqual(['META-INF', 'contents', 'resources'],
+                         sorted(dirs))
+        self.assertEqual([package_name, 'mimetype'], sorted(files))
+        # ./META-INF/
+        files = os.listdir(os.path.join(unpack_path, 'META-INF'))
+        self.assertEqual(['container.xml'], files)
+        # ./contents/
+        files = os.listdir(os.path.join(unpack_path, 'contents'))
+        self.assertEqual(['9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.xhtml',
+                          'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml'],
+                         sorted(files))
+        # ./resources/
+        files = os.listdir(os.path.join(unpack_path, 'resources'))
+        self.assertEqual(['e3d625fe893b3f1f9aaef3bdf6bfa15c.png'], files)
 
         from ..epub import EPUB_CONTAINER_XML_RELATIVE_PATH
         container_xml_filepath = os.path.join(unpack_path,

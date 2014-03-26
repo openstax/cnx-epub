@@ -54,7 +54,3 @@ class HTMLParsingTestCase(unittest.TestCase):
             }
         self.maxDiff = None
         self.assertEqual(metadata, expected_metadata)
-
-    def test_resource_parsing(self):
-        """Look for resources within the document"""
-        self.fail('incomplete')
