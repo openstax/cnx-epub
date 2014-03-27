@@ -226,7 +226,7 @@ class ModelBehaviorTestCase(unittest.TestCase):
 <h1> McDonald Bio </h1>
 <p>There is a farmer named <a href="{}">Old McDonald</a>. Plants grow on his farm and animals live there. He himself is vegan, and so he wrote a book about <a href="{}">Vegan Farming</a>.</p>
 <img src="{}"/>
-<p>Ei ei O.</p>
+<span>Ei ei O.</span>
 """.format(*expected_uris)
 
         from ..models import Document

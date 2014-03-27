@@ -198,13 +198,13 @@ class HTMLReferenceFinder(object):
 
     def _media(self):
         media_xpath = {
-                '//img': 'src',
-                '//audio': 'src',
-                '//video': 'src',
-                '//object': 'data',
-                '//object/embed': 'src',
-                '//source': 'src',
-                '//span': 'data-src',
+                '//img[@src]': 'src',
+                '//audio[@src]': 'src',
+                '//video[@src]': 'src',
+                '//object[@data]': 'data',
+                '//object/embed[@src]': 'src',
+                '//source[@src]': 'src',
+                '//span[@data-src]': 'data-src',
                 }
         for xpath, attr in media_xpath.items():
             for elm in self.apply_xpath(xpath):
