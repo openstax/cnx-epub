@@ -117,7 +117,7 @@ def _make_package(binder):
         complete_content = template.render(metadata=model.metadata,
                                            content=model.content)
         item = Item(''.join([model.ident_hash, extensions[model.id]]),
-                    io.BytesIO(bytes(complete_content)),
+                    io.BytesIO(complete_content.encode('utf-8')),
                     model.media_type)
         items.append(item)
 

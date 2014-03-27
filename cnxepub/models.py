@@ -31,6 +31,17 @@ RESOURCE_HASH_TYPE = 'md5'
 TRANSLUCENT_BINDER_ID = 'subcol'
 
 
+def utf8(item):
+    if isinstance(item, list):
+        return [utf8(i) for i in item]
+    if isinstance(item, dict):
+        return {utf8(k): utf8(v) for k, v in item.items()}
+    try:
+        return item.decode('utf-8')
+    except:
+        return item
+
+
 def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):
     """Given an model, build the tree::
 
@@ -216,14 +227,14 @@ class TranslucentBinder(MutableSequence):
     def __init__(self, nodes=None, metadata=None,
                  title_overrides=None):
         self._nodes = nodes or []
-        self.metadata = metadata or {}
+        self.metadata = utf8(metadata or {})
         if title_overrides is not None:
             if len(self._nodes) != len(title_overrides):
                 raise ValueError(
                     "``title_overrides`` should be the same length as "
                     "``nodes``. {} != {}" \
                     .format(len(self._nodes), len(title_overrides)))
-            self._title_overrides = title_overrides
+            self._title_overrides = utf8(title_overrides)
         else:
             self._title_overrides = [None] * len(self._nodes)
 
@@ -306,11 +317,11 @@ class Document(object):
         self.id = id
         self._xml = None
         if hasattr(data, 'read'):
-            self.content = data.read()
+            self.content = utf8(data.read())
         else:
-            self.content = data
+            self.content = utf8(data)
         self._references = _parse_references(self._xml)
-        self.metadata = metadata or {}
+        self.metadata = utf8(metadata or {})
         self.resources = resources or []
 
     def _content__get(self):
