@@ -17,7 +17,7 @@ extras_require = {
     }
 description = "Library for building and paring Connexions' EPUBs."
 
-if IS_PY3:
+if not IS_PY3:
     tests_require.append('mock')
 
 
@@ -37,5 +37,6 @@ setup(
     entry_points="""\
     [console_scripts]
     """,
+    test_suite='cnxepub.tests',
     zip_safe=False,
     )

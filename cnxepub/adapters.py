@@ -85,6 +85,7 @@ def _make_package(binder):
 
     package_name = "{}.opf".format(package_id)
 
+    extensions = {}
     # Set model identifier file extensions.
     for model in flatten_model(binder):
         if isinstance(model, (Binder, TranslucentBinder,)):
@@ -93,7 +94,7 @@ def _make_package(binder):
         if ext is None:
             raise ValueError("Can't apply an extension to media-type '{}'." \
                              .format(modle.media_type))
-        model.id = ''.join([model.id, ext])
+        extensions[model.id] = ext
 
     template = jinja2.Template(HTML_DOCUMENT,
                                trim_blocks=True, lstrip_blocks=True)
@@ -102,7 +103,8 @@ def _make_package(binder):
     # Build the binder as an item, specifically a navigation item.
     navigation_content =  tree_to_html(model_to_tree(binder))
     navigation_document = template.render(metadata=binder.metadata,
-                                          content=navigation_content)
+                                          content=navigation_content,
+                                          is_translucent=binder.is_translucent)
     navigation_document_name = "{}.xhtml".format(package_id)
     item = Item(str(navigation_document_name),
                 io.BytesIO(bytes(navigation_document)),
@@ -112,9 +114,10 @@ def _make_package(binder):
     for model in flatten_model(binder):
         if isinstance(model, (Binder, TranslucentBinder,)):
             continue
-        complete_content = template.render(metadata=binder.metadata,
+        complete_content = template.render(metadata=model.metadata,
                                            content=model.content)
-        item = Item(model.id, io.BytesIO(bytes(complete_content)),
+        item = Item(''.join([model.ident_hash, extensions[model.id]]),
+                    io.BytesIO(complete_content.encode('utf-8')),
                     model.media_type)
         items.append(item)
 
@@ -265,6 +268,9 @@ HTML_DOCUMENT = """\
         >
     <div data-type="metadata">
       <h1 data-type="title" itemprop="name">{{ metadata['title'] }}</h1>
+      {% if is_translucent %}
+      <span data-type="binding" data-value="translucent" />
+      {%- endif %}
 
       <div class="authors">
         By: 
@@ -362,11 +368,13 @@ HTML_DOCUMENT = """\
 def html_listify(tree, root_xl_element, list_type='ol'):
     for node in tree:
         li_elm = etree.SubElement(root_xl_element, 'li')
-        a_elm = etree.SubElement(li_elm, 'a')
-        a_elm.text = node['title']
-        if node['id'] != 'subcol':
-            # FIXME Hard coded route...
-            a_elm.set('href', '/contents/{}.html'.format(node['id']))
+        if node['id'] == 'subcol':
+            span_elm = etree.SubElement(li_elm, 'span')
+            span_elm.text = node['title']
+        else:
+            a_elm = etree.SubElement(li_elm, 'a')
+            a_elm.text = node['title']
+            a_elm.set('href', '{}.xhtml'.format(node['id']))
         if 'contents' in node:
             elm = etree.SubElement(li_elm, list_type)
             html_listify(node['contents'], elm)
@@ -376,7 +384,7 @@ def tree_to_html(tree):
     nav = etree.Element('nav')
     nav.set('id', 'toc')
     ol = etree.SubElement(nav, 'ol')
-    html_listify([tree], ol)
+    html_listify(tree['contents'], ol)
     return etree.tostring(nav)
 
 # /YANK

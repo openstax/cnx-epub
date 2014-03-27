@@ -5,6 +5,10 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+try:
+    import html.parser as HTMLParser
+except:
+    import HTMLParser
 import os
 import io
 import tempfile
@@ -20,6 +24,11 @@ from lxml import etree
 
 here = os.path.abspath(os.path.dirname(__file__))
 TEST_DATA_DIR = os.path.join(here, 'data')
+
+
+def unescape(html):
+    p = HTMLParser.HTMLParser()
+    return p.unescape(html)
 
 
 class AdaptationTestCase(unittest.TestCase):
@@ -230,16 +239,17 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             'license_text': 'CC-By 4.0',
             'license_url': 'http://creativecommons.org/licenses/by/4.0/',
             'summary': "<p>summary</p>",
+            'version': 'draft',
             }
 
         # Build test documents
         metadata = base_metadata.copy()
-        metadata.update({'title': "ingress"})
+        metadata.update({'title': "entrée"})
         binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
         metadata.update({'title': "egress"})
-        binder.append(Document('egress', io.BytesIO(b'<p>Goodbye.</p>'),
+        binder.append(Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
                                metadata=metadata))
 
         # Call the target.
@@ -266,8 +276,29 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             [opf_filename, 'META-INF', 'contents', 'mimetype'],
             sorted(os.listdir(epub_path)))
         self.assertEqual(
-            [navdoc_filename, 'egress.xhtml', 'ingress.xhtml'],
+            [navdoc_filename, 'egress@draft.xhtml', 'ingress@draft.xhtml'],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
+
+        # Check the nav
+        with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
+            nav = unescape(f.read())
+        expected_nav = (
+                u'<nav id="toc"><ol><li>'
+                u'<a href="ingress@draft.xhtml">entrée</a>'
+                u'</li><li>'
+                u'<a href="egress@draft.xhtml">egress</a>'
+                u'</li></ol></nav>')
+        self.assertTrue(expected_nav in nav)
+
+        # Check that translucent is set
+        self.assertTrue('<span data-type="binding" data-value="translucent" />' in nav)
+
+        # Check the title and content
+        self.assertTrue('<title>Kraken</title>' in nav)
+        with open(os.path.join(epub_path, 'contents', 'egress@draft.xhtml')) as f:
+            egress = unescape(f.read())
+        self.assertTrue('<title>egress</title>' in egress)
+        self.assertTrue(u'<p>hüvasti.</p>' in egress)
 
     def test_binder(self):
         """Create an EPUB from a binder with a few documents."""
@@ -293,16 +324,17 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             'license_text': 'CC-By 4.0',
             'license_url': 'http://creativecommons.org/licenses/by/4.0/',
             'summary': "<p>summary</p>",
+            'version': 'draft',
             }
 
         # Build test documents
         metadata = base_metadata.copy()
-        metadata.update({'title': "ingress"})
+        metadata.update({'title': "entrée"})
         binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
         metadata.update({'title': "egress"})
-        binder.append(Document('egress', io.BytesIO(b'<p>Goodbye.</p>'),
+        binder.append(Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
                                metadata=metadata))
 
         # Call the target.
@@ -326,5 +358,26 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             ['META-INF', 'contents', 'mimetype', opf_filename],
             sorted(os.listdir(epub_path)))
         self.assertEqual(
-            ['egress.xhtml', 'ingress.xhtml', navdoc_filename],
+            ['egress@draft.xhtml', 'ingress@draft.xhtml', navdoc_filename],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
+
+        # Check the nav
+        with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
+            nav = unescape(f.read())
+        expected_nav = (
+                u'<nav id="toc"><ol><li>'
+                u'<a href="ingress@draft.xhtml">entrée</a>'
+                u'</li><li>'
+                u'<a href="egress@draft.xhtml">egress</a>'
+                u'</li></ol></nav>')
+        self.assertTrue(expected_nav in nav)
+
+        # Check that translucent is not set
+        self.assertFalse('<span data-type="binding" data-value="translucent" />' in nav)
+
+        # Check the title and content
+        self.assertTrue('<title>Kraken</title>' in nav)
+        with open(os.path.join(epub_path, 'contents', 'egress@draft.xhtml')) as f:
+            egress = unescape(f.read())
+        self.assertTrue('<title>egress</title>' in egress)
+        self.assertTrue(u'<p>hüvasti.</p>' in egress)
