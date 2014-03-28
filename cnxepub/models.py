@@ -17,6 +17,7 @@ except ImportError:
     from urlparse import urlparse
 
 import lxml.html
+import lxml.html.builder
 from lxml import etree
 
 
@@ -198,13 +199,13 @@ class HTMLReferenceFinder(object):
 
     def _media(self):
         media_xpath = {
-                '//img': 'src',
-                '//audio': 'src',
-                '//video': 'src',
-                '//object': 'data',
-                '//object/embed': 'src',
-                '//source': 'src',
-                '//span': 'data-src',
+                '//img[@src]': 'src',
+                '//audio[@src]': 'src',
+                '//video[@src]': 'src',
+                '//object[@data]': 'data',
+                '//object/embed[@src]': 'src',
+                '//source[@src]': 'src',
+                '//span[@data-src]': 'data-src',
                 }
         for xpath, attr in media_xpath.items():
             for elm in self.apply_xpath(xpath):
@@ -324,6 +325,12 @@ class Document(object):
         self.metadata = utf8(metadata or {})
         self.resources = resources or []
 
+    @property
+    def html(self):
+        html = lxml.html.builder.HTML(
+            lxml.html.fragment_fromstring(self.content, 'body'))
+        return utf8(lxml.html.tostring(html, method='xml'))
+
     def _content__get(self):
         """Produce the content from the data.
         This is used to write out reference changes that may have
@@ -332,7 +339,7 @@ class Document(object):
         # Unwrap the xml.
         content = [isinstance(node, str) and node or etree.tostring(node)
                    for node in self._xml.xpath('node()')]
-        return ''.join(content)
+        return ''.join(utf8(content))
 
     def _content__set(self, value):
         self._xml = lxml.html.fragment_fromstring(value, 'div')
