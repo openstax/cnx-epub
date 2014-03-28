@@ -332,7 +332,7 @@ class Document(object):
         # Unwrap the xml.
         content = [isinstance(node, str) and node or etree.tostring(node)
                    for node in self._xml.xpath('node()')]
-        return ''.join(content)
+        return ''.join(utf8(content))
 
     def _content__set(self, value):
         self._xml = lxml.html.fragment_fromstring(value, 'div')
