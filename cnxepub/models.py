@@ -17,6 +17,7 @@ except ImportError:
     from urlparse import urlparse
 
 import lxml.html
+import lxml.html.builder
 from lxml import etree
 
 
@@ -323,6 +324,12 @@ class Document(object):
         self._references = _parse_references(self._xml)
         self.metadata = utf8(metadata or {})
         self.resources = resources or []
+
+    @property
+    def html(self):
+        html = lxml.html.builder.HTML(
+            lxml.html.fragment_fromstring(self.content, 'body'))
+        return utf8(lxml.html.tostring(html, method='xml'))
 
     def _content__get(self):
         """Produce the content from the data.
