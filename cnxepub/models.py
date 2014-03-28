@@ -21,9 +21,10 @@ from lxml import etree
 
 
 __all__ = (
+    'TRANSLUCENT_BINDER_ID',
     'flatten_tree_to_ident_hashes', 'model_to_tree',
     'flatten_model', 'flatten_to_documents',
-    'Binder', 'TranslucentBinder', 'Document', 'Resource',
+    'Binder', 'TranslucentBinder', 'Document', 'DocumentPointer', 'Resource',
     )
 
 
@@ -376,6 +377,20 @@ class Document(object):
         if self._references is None:
             return []
         return self._references
+
+
+class DocumentPointer:
+
+    def __init__(self, ident_hash, metadata=None):
+        self.ident_hash = ident_hash
+        self.metadata = metadata is not None and metadata or {}
+
+    @classmethod
+    def from_uri(cls, uri):
+        parts = urlparse(uri)
+        split_path = parts.path.split('/')
+        ident_hash = split_path[-1]
+        return cls(ident_hash)
 
 
 class Resource:
