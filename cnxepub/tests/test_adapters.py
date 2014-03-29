@@ -212,6 +212,10 @@ class AdaptationTestCase(unittest.TestCase):
         # Check the resource was discovered.
         self.assertEqual(['openstax.png'],
                          [res.id for res in document.resources])
+        # Check that the reference is bound to the resource
+        ref = list(document.references)[0]
+        res = list(document.resources)[0]
+        self.assertEqual(ref._bound_model, res)
 
 
 class ModelsToEPUBTestCase(unittest.TestCase):

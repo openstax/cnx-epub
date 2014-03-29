@@ -212,6 +212,7 @@ class DocumentItem(Document):
             name = os.path.basename(ref.uri)
             try:
                 resource = adapt_item(package.grab_by_name(name), package)
+                ref.bind(resource, '../resources/{}')
                 resources.append(resource)
             except KeyError:
                 # When resources are missing, the problem is pushed off
