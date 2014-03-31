@@ -263,7 +263,8 @@ class WritePackageTestCase(testing.EPUBTestCase):
 
         # Verify...
         walker = os.walk(output_path)
-        root, dirs, files = walker.next()
+        for root, dirs, files in walker:
+            break
         self.assertEqual(['contents', 'resources'], sorted(dirs))
         self.assertEqual([package_name], files)
         # ./contents/
@@ -353,7 +354,8 @@ class WriteEPUBTestCase(testing.EPUBTestCase):
 
         # Verify...
         walker = os.walk(unpack_path)
-        root, dirs, files = walker.next()
+        for root, dirs, files in walker:
+            break
         self.assertEqual(['META-INF', 'contents', 'resources'],
                          sorted(dirs))
         self.assertEqual([package_name, 'mimetype'], sorted(files))

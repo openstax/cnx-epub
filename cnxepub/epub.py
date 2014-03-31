@@ -402,7 +402,7 @@ class Package(Sequence):
         # Write the OPF
         template = jinja2.Template(OPF_TEMPLATE,
                                    trim_blocks=True, lstrip_blocks=True)
-        with open(opf_filepath, 'wb') as opf_file:
+        with open(opf_filepath, 'w') as opf_file:
             opf = template.render(package=package, locations=locations)
             opf_file.write(opf)
 

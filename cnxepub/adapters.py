@@ -107,7 +107,7 @@ def _make_package(binder):
                                           is_translucent=binder.is_translucent)
     navigation_document_name = "{}.xhtml".format(package_id)
     item = Item(str(navigation_document_name),
-                io.BytesIO(bytes(navigation_document)),
+                io.BytesIO(navigation_document.encode('utf-8')),
                 'application/xhtml+xml', is_navigation=True, properties=['nav'])
     items.append(item)
     # Roll through the model list again, making each one an item.
@@ -195,7 +195,7 @@ class DocumentItem(Document):
         nsmap = {'xhtml': "http://www.w3.org/1999/xhtml"}
 
         content = io.BytesIO(
-            b''.join([isinstance(n, str) and n or etree.tostring(n)
+            b''.join([isinstance(n, str) and n.encode('utf-8') or etree.tostring(n)
                       for n in self._html.xpath(content_xpath, namespaces=nsmap)]))
         id = _id_from_metadata(metadata)
         resources = None

@@ -189,7 +189,7 @@ class AdaptationTestCase(unittest.TestCase):
                 namespaces={'xhtml': "http://www.w3.org/1999/xhtml"})[0]
             elm = etree.SubElement(body, "img")
             elm.set('src', internal_uri)
-        with open(item_filepath, 'w') as fb:
+        with open(item_filepath, 'wb') as fb:
             fb.write(etree.tostring(xml))
         item = self.make_item(item_filepath, media_type='application/xhtml+xml')
 
@@ -256,7 +256,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         fs_pointer, epub_filepath = tempfile.mkstemp('.epub')
         self.addCleanup(os.remove, epub_filepath)
         from ..adapters import make_publication_epub
-        with open(epub_filepath, 'w') as epub_file:
+        with open(epub_filepath, 'wb') as epub_file:
             make_publication_epub(binder, 'krabs', '$.$', epub_file)
 
         # Verify the results.
@@ -341,7 +341,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         fs_pointer, epub_filepath = tempfile.mkstemp('.epub')
         self.addCleanup(os.remove, epub_filepath)
         from ..adapters import make_epub
-        with open(epub_filepath, 'w') as epub_file:
+        with open(epub_filepath, 'wb') as epub_file:
             make_epub(binder, epub_file)
 
         # Verify the results.
