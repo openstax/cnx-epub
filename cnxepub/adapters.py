@@ -19,6 +19,7 @@ from .models import (
     Binder, TranslucentBinder,
     Document, Resource,
     TRANSLUCENT_BINDER_ID,
+    INTERNAL_REFERENCE_TYPE,
     )
 from .html_parsers import parse_metadata, parse_navigation_html_to_tree
 
@@ -110,10 +111,23 @@ def _make_package(binder):
                 io.BytesIO(navigation_document.encode('utf-8')),
                 'application/xhtml+xml', is_navigation=True, properties=['nav'])
     items.append(item)
+    resources = {}
     # Roll through the model list again, making each one an item.
     for model in flatten_model(binder):
         if isinstance(model, (Binder, TranslucentBinder,)):
             continue
+        for resource in model.resources:
+            resources[resource.id] = resource
+            item = Item(resource.id,
+                    resource.data, resource.media_type)
+            items.append(item)
+        for reference in model.references:
+            if reference.remote_type == INTERNAL_REFERENCE_TYPE:
+                filename = os.path.basename(reference.uri)
+                resource = resources.get(filename)
+                if resource:
+                    reference.bind(resource, '../resources/{}')
+
         complete_content = template.render(metadata=model.metadata,
                                            content=model.content)
         item = Item(''.join([model.ident_hash, extensions[model.id]]),
