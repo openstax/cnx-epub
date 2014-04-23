@@ -286,6 +286,9 @@ HTML_DOCUMENT = """\
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
+      {% if metadata.get('cnx-archive-uri') %}
+      <span data-type="cnx-archive-uri" data-value="{{ metadata['cnx-archive-uri'] }}" />
+      {%- endif %}
 
       <div class="authors">
         By: 

@@ -76,6 +76,7 @@ class DocumentMetadataParser:
         'created', 'revised', 'language', 'subjects', 'keywords',
         'license_text', 'editors', 'illustrators', 'translators',
         'publishers', 'copyright_holders', 'authors',
+        'cnx-archive-uri',
         )
 
     def __init__(self, elm_tree):
@@ -98,7 +99,7 @@ class DocumentMetadataParser:
                 # TODO On refactoring properties
                 # raise an error on property access rather than outside of it
                 # as is currently being done here.
-                value = getattr(self, key)
+                value = getattr(self, key.replace('-', '_'))
                 if key in self.metadata_required_keys and value is None:
                     raise ValueError(
                         "A value for '{}' could not be found.".format(key))
@@ -232,3 +233,9 @@ class DocumentMetadataParser:
         ordered = sorted(unordered, key=lambda x: x[0])
         values = [x[1] for x in ordered]
         return values
+
+    @property
+    def cnx_archive_uri(self):
+        items = self.parse('//xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
+        if items:
+            return items[0]

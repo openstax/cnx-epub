@@ -51,6 +51,7 @@ class HTMLParsingTestCase(unittest.TestCase):
             'subjects': ['Science and Mathematics'],
             'title': 'Document One of Infinity',
             'translators': [],
+            'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667',
             }
         self.maxDiff = None
         self.assertEqual(metadata, expected_metadata)

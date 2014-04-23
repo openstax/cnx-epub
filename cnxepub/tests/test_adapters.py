@@ -61,12 +61,12 @@ class AdaptationTestCase(unittest.TestCase):
                  'contents': [
                      {
                       'contents': [
-                          {'id': None, 'title': 'Document One'}],
+                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667', 'title': 'Document One'}],
                              'id': 'subcol',
                              'title': 'Chapter One'},
                      {'id': 'subcol',
                       'title': 'Chapter Two',
-                      'contents': [{'id': None,
+                      'contents': [{'id': 'e78d4f90-e078-49d2-beac-e95e8be70667',
                                     'title': 'Document One (again)'}],
                       }]},
                 {'id': 'subcol',
@@ -75,7 +75,7 @@ class AdaptationTestCase(unittest.TestCase):
                      {'id': 'subcol',
                       'title': 'Chapter Three',
                       'contents': [
-                          {'id': None,
+                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667',
                            'title': 'Document One (...and again)'}]
                       }]}]}
 
@@ -393,6 +393,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         with open(os.path.join(epub_path, 'contents', 'egress@draft.xhtml')) as f:
             egress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
+        self.assertFalse('<span data-type="cnx-archive-uri"' in egress)
         self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
 
     def test_binder(self):
@@ -428,7 +429,8 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
-        metadata.update({'title': "egress"})
+        metadata.update({'title': "egress",
+            'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667'})
         binder.append(Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
                                metadata=metadata))
 
@@ -475,4 +477,6 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         with open(os.path.join(epub_path, 'contents', 'egress@draft.xhtml')) as f:
             egress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
+        self.assertTrue('<span data-type="cnx-archive-uri" '
+                'data-value="e78d4f90-e078-49d2-beac-e95e8be70667" />' in egress)
         self.assertTrue(u'<p>hüvasti.</p>' in egress)
