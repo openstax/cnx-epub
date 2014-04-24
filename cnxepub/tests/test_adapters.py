@@ -28,6 +28,8 @@ TEST_DATA_DIR = os.path.join(here, 'data')
 
 def unescape(html):
     p = HTMLParser.HTMLParser()
+    if isinstance(html, bytes):
+        html = html.decode('utf-8')
     return p.unescape(html)
 
 
@@ -86,6 +88,7 @@ class AdaptationTestCase(unittest.TestCase):
         from ..models import model_to_tree
         tree = model_to_tree(binder)
         self.assertEqual(tree, expected_tree)
+        self.assertEqual(package.metadata['publication_message'], u'Nueva Versión')
 
     def test_to_translucent_binder(self):
         """Adapts a ``Package`` to a ``TranslucentBinder``.
@@ -400,7 +403,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         """Create an EPUB from a binder with a few documents."""
         from ..models import Binder, Document
         binder_name = 'rock'
-        binder = Binder(binder_name, metadata={'title': "Kraken"})
+        binder = Binder(binder_name, metadata={'title': "Kraken (Nueva Versión)"})
 
         base_metadata = {
             'publishers': [],
@@ -473,7 +476,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertFalse('<span data-type="binding" data-value="translucent" />' in nav)
 
         # Check the title and content
-        self.assertTrue('<title>Kraken</title>' in nav)
+        self.assertTrue(u'<title>Kraken (Nueva Versión)</title>' in nav)
         with open(os.path.join(epub_path, 'contents', 'egress@draft.xhtml')) as f:
             egress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
