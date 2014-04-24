@@ -286,9 +286,11 @@ HTML_DOCUMENT = """\
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
-      {% if metadata.get('cnx-archive-uri') %}
-      <span data-type="cnx-archive-uri" data-value="{{ metadata['cnx-archive-uri'] }}" />
-      {%- endif %}
+      {% for field in ['cnx-archive-uri', 'publication_message'] -%}
+        {% if metadata.get(field) %}
+        <span data-type="{{ field }}" data-value="{{ metadata[field] }}" />
+        {%- endif %}
+      {%- endfor %}
 
       <div class="authors">
         By: 

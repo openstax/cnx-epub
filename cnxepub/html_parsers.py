@@ -76,7 +76,7 @@ class DocumentMetadataParser:
         'created', 'revised', 'language', 'subjects', 'keywords',
         'license_text', 'editors', 'illustrators', 'translators',
         'publishers', 'copyright_holders', 'authors',
-        'cnx-archive-uri',
+        'cnx-archive-uri', 'publication_message',
         )
 
     def __init__(self, elm_tree):
@@ -237,5 +237,11 @@ class DocumentMetadataParser:
     @property
     def cnx_archive_uri(self):
         items = self.parse('//xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
+        if items:
+            return items[0]
+
+    @property
+    def publication_message(self):
+        items = self.parse('//xhtml:*[@data-type="publication_message"]/@data-value')
         if items:
             return items[0]
