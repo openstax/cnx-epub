@@ -28,6 +28,8 @@ TEST_DATA_DIR = os.path.join(here, 'data')
 
 def unescape(html):
     p = HTMLParser.HTMLParser()
+    if isinstance(html, bytes):
+        html = html.decode('utf-8')
     return p.unescape(html)
 
 
@@ -394,6 +396,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             egress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
         self.assertFalse('<span data-type="cnx-archive-uri"' in egress)
+        self.assertFalse('<span data-type="publication_message"' in egress)
         self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
 
     def test_binder(self):
@@ -430,7 +433,8 @@ class ModelsToEPUBTestCase(unittest.TestCase):
                                metadata=metadata))
         metadata = base_metadata.copy()
         metadata.update({'title': "egress",
-            'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667'})
+            'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667',
+            'publication_message': u'Nueva Versión'})
         binder.append(Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
                                metadata=metadata))
 
@@ -479,4 +483,6 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue('<title>egress</title>' in egress)
         self.assertTrue('<span data-type="cnx-archive-uri" '
                 'data-value="e78d4f90-e078-49d2-beac-e95e8be70667" />' in egress)
+        self.assertTrue(u'<span data-type="publication_message" '
+                u'data-value="Nueva Versión" />' in egress)
         self.assertTrue(u'<p>hüvasti.</p>' in egress)
