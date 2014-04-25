@@ -286,6 +286,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             [navdoc_filename, 'egress@draft.xhtml', 'ingress@draft.xhtml'],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
 
+        # Check the opf file
+        with open(os.path.join(epub_path, opf_filename)) as f:
+            opf = unescape(f.read())
+        self.assertTrue(u'<dc:publisher>krabs</dc:publisher>' in opf)
+        self.assertTrue(u'<meta property="publicationMessage">$.$</meta>' in opf)
+
         # Check the nav
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
             nav = unescape(f.read())
@@ -377,6 +383,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertEqual(os.listdir(os.path.join(epub_path, 'resources')),
             ['1x1.jpg'])
 
+        # Check the opf file
+        with open(os.path.join(epub_path, opf_filename)) as f:
+            opf = unescape(f.read())
+        self.assertTrue(u'<dc:publisher>krabs</dc:publisher>' in opf)
+        self.assertTrue(u'<meta property="publicationMessage">$.$</meta>' in opf)
+
         # Check the nav
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
             nav = unescape(f.read())
@@ -440,9 +452,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         # Call the target.
         fs_pointer, epub_filepath = tempfile.mkstemp('.epub')
         self.addCleanup(os.remove, epub_filepath)
-        from ..adapters import make_epub
+        from ..adapters import make_publication_epub
         with open(epub_filepath, 'wb') as epub_file:
-            make_epub(binder, epub_file)
+            make_publication_epub(binder, 'krabs', '$.$', epub_file)
 
         # Verify the results.
         epub_path = tempfile.mkdtemp('-epub')
@@ -460,6 +472,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertEqual(
             ['egress@draft.xhtml', 'ingress@draft.xhtml', navdoc_filename],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
+
+        # Check the opf file
+        with open(os.path.join(epub_path, opf_filename)) as f:
+            opf = unescape(f.read())
+        self.assertTrue(u'<dc:publisher>krabs</dc:publisher>' in opf)
+        self.assertTrue(u'<meta property="publicationMessage">$.$</meta>' in opf)
 
         # Check the nav
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:

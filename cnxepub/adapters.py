@@ -70,12 +70,16 @@ def make_publication_epub(binders, publisher, publication_message, file):
     """
     if not isinstance(binders, (list, set, tuple,)):
         binders = [binders]
+    packages = []
     for binder in binders:
-        binder = deepcopy(binder)
+        metadata = binder.metadata
+        binder.metadata = deepcopy(metadata)
         binder.metadata.update({'publisher': publisher,
                                 'publication_message': publication_message})
-        epub = EPUB([_make_package(binder) for binder in binders])
-        EPUB.to_file(epub, file)
+        packages.append(_make_package(binder))
+        binder.metadata = metadata
+    epub = EPUB(packages)
+    epub.to_file(epub, file)
 
 
 def _make_package(binder):
