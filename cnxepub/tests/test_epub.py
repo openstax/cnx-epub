@@ -163,7 +163,7 @@ class PackageTestCase(testing.EPUBTestCase):
 
         expected_metadata = {
             'publisher': "Connexions",
-            'publication_message': "Loosely publishing these here modules.",
+            'publication_message': u'Nueva Versión',
             'identifier': "org.cnx.contents.9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
             'title': "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
             'language': "en-us",

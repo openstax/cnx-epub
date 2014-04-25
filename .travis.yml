@@ -9,7 +9,7 @@ before_install:
 install:
   - python setup.py install
 script:
-  - coverage run --source=cnxepub.py -m unittest discover
+  - coverage run --source=cnxepub -m unittest discover
 after_success:
   # Report test coverage to coveralls.io
   - coveralls

@@ -28,6 +28,8 @@ TEST_DATA_DIR = os.path.join(here, 'data')
 
 def unescape(html):
     p = HTMLParser.HTMLParser()
+    if isinstance(html, bytes):
+        html = html.decode('utf-8')
     return p.unescape(html)
 
 
@@ -86,6 +88,7 @@ class AdaptationTestCase(unittest.TestCase):
         from ..models import model_to_tree
         tree = model_to_tree(binder)
         self.assertEqual(tree, expected_tree)
+        self.assertEqual(package.metadata['publication_message'], u'Nueva Versión')
 
     def test_to_translucent_binder(self):
         """Adapts a ``Package`` to a ``TranslucentBinder``.
@@ -283,6 +286,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             [navdoc_filename, 'egress@draft.xhtml', 'ingress@draft.xhtml'],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
 
+        # Check the opf file
+        with open(os.path.join(epub_path, opf_filename)) as f:
+            opf = unescape(f.read())
+        self.assertTrue(u'<dc:publisher>krabs</dc:publisher>' in opf)
+        self.assertTrue(u'<meta property="publicationMessage">$.$</meta>' in opf)
+
         # Check the nav
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
             nav = unescape(f.read())
@@ -374,6 +383,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertEqual(os.listdir(os.path.join(epub_path, 'resources')),
             ['1x1.jpg'])
 
+        # Check the opf file
+        with open(os.path.join(epub_path, opf_filename)) as f:
+            opf = unescape(f.read())
+        self.assertTrue(u'<dc:publisher>krabs</dc:publisher>' in opf)
+        self.assertTrue(u'<meta property="publicationMessage">$.$</meta>' in opf)
+
         # Check the nav
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
             nav = unescape(f.read())
@@ -400,7 +415,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         """Create an EPUB from a binder with a few documents."""
         from ..models import Binder, Document
         binder_name = 'rock'
-        binder = Binder(binder_name, metadata={'title': "Kraken"})
+        binder = Binder(binder_name, metadata={'title': "Kraken (Nueva Versión)"})
 
         base_metadata = {
             'publishers': [],
@@ -437,9 +452,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         # Call the target.
         fs_pointer, epub_filepath = tempfile.mkstemp('.epub')
         self.addCleanup(os.remove, epub_filepath)
-        from ..adapters import make_epub
+        from ..adapters import make_publication_epub
         with open(epub_filepath, 'wb') as epub_file:
-            make_epub(binder, epub_file)
+            make_publication_epub(binder, 'krabs', '$.$', epub_file)
 
         # Verify the results.
         epub_path = tempfile.mkdtemp('-epub')
@@ -458,6 +473,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             ['egress@draft.xhtml', 'ingress@draft.xhtml', navdoc_filename],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
 
+        # Check the opf file
+        with open(os.path.join(epub_path, opf_filename)) as f:
+            opf = unescape(f.read())
+        self.assertTrue(u'<dc:publisher>krabs</dc:publisher>' in opf)
+        self.assertTrue(u'<meta property="publicationMessage">$.$</meta>' in opf)
+
         # Check the nav
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
             nav = unescape(f.read())
@@ -473,7 +494,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertFalse('<span data-type="binding" data-value="translucent" />' in nav)
 
         # Check the title and content
-        self.assertTrue('<title>Kraken</title>' in nav)
+        self.assertTrue(u'<title>Kraken (Nueva Versión)</title>' in nav)
         with open(os.path.join(epub_path, 'contents', 'egress@draft.xhtml')) as f:
             egress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
