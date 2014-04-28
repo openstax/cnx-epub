@@ -21,7 +21,8 @@ from .models import (
     TRANSLUCENT_BINDER_ID,
     INTERNAL_REFERENCE_TYPE,
     )
-from .html_parsers import parse_metadata, parse_navigation_html_to_tree
+from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
+        DocumentPointerMetadataParser)
 
 
 __all__ = (
@@ -49,7 +50,13 @@ def adapt_item(item, package):
 
     """
     if item.media_type == 'application/xhtml+xml':
-        model = DocumentItem(item, package)
+        html = etree.parse(item.data)
+        metadata = DocumentPointerMetadataParser(html, raise_value_error=False)()
+        item.data.seek(0)
+        if metadata.get('is_document_pointer'):
+            model = DocumentPointerItem(item, package)
+        else:
+            model = DocumentItem(item, package)
     else:
         model = Resource(item.name, item.data, item.media_type, item.name)
     return model
@@ -208,6 +215,18 @@ class BinderItem(Binder):
         metadata = parse_metadata(html)
         id = _id_from_metadata(metadata)
         super(BinderItem, self).__init__(id, metadata=metadata)
+
+
+class DocumentPointerItem(DocumentPointer):
+
+    def __init__(self, item, package):
+        self._item = item
+        self._package = package
+        self._html = etree.parse(self._item.data)
+
+        metadata = DocumentPointerMetadataParser(self._html)()
+        id = _id_from_metadata(metadata)
+        super(DocumentPointerItem, self).__init__(id, metadata=metadata)
 
 
 class DocumentItem(Document):

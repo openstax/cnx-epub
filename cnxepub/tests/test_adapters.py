@@ -108,7 +108,8 @@ class AdaptationTestCase(unittest.TestCase):
             'id': 'subcol',
             'title': "Loose Pages",
             'contents': [{'id': None, 'title': 'Yummy'},
-                         {'id': None, 'title': 'Da bomb'}],
+                         {'id': None, 'title': 'Da bomb'},
+                         {'id': 'pointer@1', 'title': 'Pointer'}],
             }
 
         from ..adapters import adapt_package
@@ -219,6 +220,16 @@ class AdaptationTestCase(unittest.TestCase):
         ref = list(document.references)[0]
         res = list(document.resources)[0]
         self.assertEqual(ref._bound_model, res)
+
+    def test_to_document_pointer(self):
+        """Adapts an ``Item`` to a ``DocumentPointerItem``.
+        Documents are native object representations of data,
+        while the Item is merely a representation of an item
+        in the EPUB structure.
+        """
+        content_filepath = os.path.join(
+                TEST_DATA_DIR, 'loose-pages', 'content',
+                'pointer.xhtml')
 
 
 class ModelsToEPUBTestCase(unittest.TestCase):
@@ -512,6 +523,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         with open(os.path.join(epub_path, 'contents', 'pointer@1.xhtml')) as f:
             pointer = unescape(f.read())
         self.assertTrue('<title>Pointer</title>' in pointer)
+        self.assertTrue('<span data-type="document" data-value="pointer" />' in pointer)
         self.assertTrue('<span data-type="cnx-archive-uri" '
                 'data-value="pointer@1" />' in pointer)
         self.assertTrue('<a href="http://cnx.org/contents/pointer@1">here</a>' in pointer)

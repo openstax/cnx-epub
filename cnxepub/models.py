@@ -386,7 +386,7 @@ class Document(object):
         return self._references
 
 
-class DocumentPointer:
+class DocumentPointer(object):
     media_type = 'application/xhtml+xml'
 
     def __init__(self, ident_hash, metadata=None):

@@ -39,6 +39,10 @@
           media-type="application/xhtml+xml"
           href="content/mushroom-cloud.xhtml"
           />
+    <item id="pointer"
+          media-type="application/xhtml+xml"
+          href="content/pointer.xhtml"
+          />
     <item media-type="image/png"
           href="resources/openstax.png"
           />
@@ -47,5 +51,6 @@
     <itemref linear="no" idref="toc" />
     <itemref linear="yes" idref="fig-bush" />
     <itemref linear="yes" idref="mushroom-cloud" />
+    <itemref linear="yes" idref="pointer" />
   </spine>
 </package>

@@ -79,8 +79,9 @@ class DocumentMetadataParser:
         'cnx-archive-uri',
         )
 
-    def __init__(self, elm_tree):
+    def __init__(self, elm_tree, raise_value_error=True):
        self._xml = elm_tree
+       self.raise_value_error = raise_value_error
 
     def __call__(self):
         return self.metadata
@@ -100,7 +101,8 @@ class DocumentMetadataParser:
                 # raise an error on property access rather than outside of it
                 # as is currently being done here.
                 value = getattr(self, key.replace('-', '_'))
-                if key in self.metadata_required_keys and value is None:
+                if self.raise_value_error and \
+                        key in self.metadata_required_keys and value is None:
                     raise ValueError(
                         "A value for '{}' could not be found.".format(key))
                 elif value is None:
@@ -239,3 +241,18 @@ class DocumentMetadataParser:
         items = self.parse('//xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
         if items:
             return items[0]
+
+
+class DocumentPointerMetadataParser(DocumentMetadataParser):
+    metadata_required_keys = (
+            'title', 'cnx-archive-uri', 'is_document_pointer',
+            )
+    metadata_optional_keys = DocumentMetadataParser.metadata_optional_keys + (
+            'license_url', 'summary',
+            )
+
+    @property
+    def is_document_pointer(self):
+        items = self.parse('//xhtml:*[@data-type="document"]/@data-value')
+        if items:
+            return items[0] == 'pointer'
