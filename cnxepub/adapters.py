@@ -17,7 +17,7 @@ from .epub import EPUB, Package, Item
 from .models import (
     model_to_tree, flatten_model,
     Binder, TranslucentBinder,
-    Document, Resource,
+    Document, Resource, DocumentPointer,
     TRANSLUCENT_BINDER_ID,
     INTERNAL_REFERENCE_TYPE,
     )
@@ -116,9 +116,18 @@ def _make_package(binder):
                 'application/xhtml+xml', is_navigation=True, properties=['nav'])
     items.append(item)
     resources = {}
+    pointer_template = jinja2.Template(DOCUMENT_POINTER_TEMPLATE,
+                                       trim_blocks=True, lstrip_blocks=True)
     # Roll through the model list again, making each one an item.
     for model in flatten_model(binder):
         if isinstance(model, (Binder, TranslucentBinder,)):
+            continue
+        if isinstance(model, DocumentPointer):
+            content = pointer_template.render(metadata=model.metadata)
+            item = Item('{}.xhtml'.format(model.ident_hash),
+                        io.BytesIO(content.encode('utf-8')),
+                        model.media_type)
+            items.append(item)
             continue
         for resource in model.resources:
             resources[resource.id] = resource
@@ -243,6 +252,54 @@ class DocumentItem(Document):
 # XXX Rendering shouldn't happen here.
 #     Temporarily place the rendering templates and code here.
 
+DOCUMENT_POINTER_TEMPLATE = """\
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:epub="http://www.idpf.org/2007/ops"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:lrmi="http://lrmi.net/the-specification"
+      >
+  <head itemscope="itemscope"
+        itemtype="http://schema.org/Book"
+        >
+
+    <title>{{ metadata['title'] }}</title>
+
+    {# TODO Include this based on the feature being present #}
+    <!-- These are for discoverability of accessible content. -->
+    <meta itemprop="accessibilityFeature" content="MathML" />
+    <meta itemprop="accessibilityFeature" content="LaTeX" />
+    <meta itemprop="accessibilityFeature" content="alternativeText" />
+    <meta itemprop="accessibilityFeature" content="captions" />
+    <meta itemprop="accessibilityFeature" content="structuredNavigation" />
+
+    {# TODO
+       <meta refines="#<html-id>" property="display-seq" content="<ord>" />
+     #}
+
+  </head>
+  <body xmlns:bib="http://bibtexml.sf.net/"
+        xmlns:data="http://dev.w3.org/html5/spec/#custom"
+        itemscope="itemscope"
+        itemtype="http://schema.org/Book"
+        >
+    <div data-type="metadata">
+      <h1 data-type="title" itemprop="name">{{ metadata['title'] }}</h1>
+      <span data-type="document" data-value="pointer" />
+      {% if metadata.get('cnx-archive-uri') %}
+      <span data-type="cnx-archive-uri" data-value="{{ metadata['cnx-archive-uri'] }}" />
+      {%- endif %}
+    </div>
+
+    <div>
+      <p>
+        Click <a href="{{ metadata['url'] }}">here</a> to read {{ metadata['title'] }}.
+      </p>
+    </div>
+  </body>
+</html>
+"""
 HTML_DOCUMENT = """\
 <?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml"
