@@ -386,10 +386,12 @@ class Document(object):
         return self._references
 
 
-class DocumentPointer:
+class DocumentPointer(object):
+    media_type = 'application/xhtml+xml'
 
     def __init__(self, ident_hash, metadata=None):
         self.ident_hash = ident_hash
+        self.id = ident_hash
         self.metadata = metadata is not None and metadata or {}
 
     @classmethod

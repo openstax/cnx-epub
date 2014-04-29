@@ -108,7 +108,8 @@ class AdaptationTestCase(unittest.TestCase):
             'id': 'subcol',
             'title': "Loose Pages",
             'contents': [{'id': None, 'title': 'Yummy'},
-                         {'id': None, 'title': 'Da bomb'}],
+                         {'id': None, 'title': 'Da bomb'},
+                         {'id': 'pointer@1', 'title': 'Pointer'}],
             }
 
         from ..adapters import adapt_package
@@ -219,6 +220,16 @@ class AdaptationTestCase(unittest.TestCase):
         ref = list(document.references)[0]
         res = list(document.resources)[0]
         self.assertEqual(ref._bound_model, res)
+
+    def test_to_document_pointer(self):
+        """Adapts an ``Item`` to a ``DocumentPointerItem``.
+        Documents are native object representations of data,
+        while the Item is merely a representation of an item
+        in the EPUB structure.
+        """
+        content_filepath = os.path.join(
+                TEST_DATA_DIR, 'loose-pages', 'content',
+                'pointer.xhtml')
 
 
 class ModelsToEPUBTestCase(unittest.TestCase):
@@ -413,7 +424,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
 
     def test_binder(self):
         """Create an EPUB from a binder with a few documents."""
-        from ..models import Binder, Document
+        from ..models import Binder, Document, DocumentPointer
         binder_name = 'rock'
         binder = Binder(binder_name, metadata={'title': "Kraken (Nueva Versión)"})
 
@@ -448,6 +459,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667'})
         binder.append(Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
                                metadata=metadata))
+        binder.append(DocumentPointer('pointer@1', {'title': 'Pointer',
+            'cnx-archive-uri': 'pointer@1',
+            'url': 'http://cnx.org/contents/pointer@1'}))
 
         # Call the target.
         fs_pointer, epub_filepath = tempfile.mkstemp('.epub')
@@ -470,7 +484,8 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             ['META-INF', 'contents', 'mimetype', opf_filename],
             sorted(os.listdir(epub_path)))
         self.assertEqual(
-            ['egress@draft.xhtml', 'ingress@draft.xhtml', navdoc_filename],
+            ['egress@draft.xhtml', 'ingress@draft.xhtml', 'pointer@1.xhtml',
+                navdoc_filename],
             sorted(os.listdir(os.path.join(epub_path, 'contents'))))
 
         # Check the opf file
@@ -487,6 +502,8 @@ class ModelsToEPUBTestCase(unittest.TestCase):
                 u'<a href="ingress@draft.xhtml">entrée</a>'
                 u'</li><li>'
                 u'<a href="egress@draft.xhtml">egress</a>'
+                u'</li><li>'
+                u'<a href="pointer@1.xhtml">Pointer</a>'
                 u'</li></ol></nav>')
         self.assertTrue(expected_nav in nav)
 
@@ -501,3 +518,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue('<span data-type="cnx-archive-uri" '
                 'data-value="e78d4f90-e078-49d2-beac-e95e8be70667" />' in egress)
         self.assertTrue(u'<p>hüvasti.</p>' in egress)
+
+        # Check the content of the document pointer file
+        with open(os.path.join(epub_path, 'contents', 'pointer@1.xhtml')) as f:
+            pointer = unescape(f.read())
+        self.assertTrue('<title>Pointer</title>' in pointer)
+        self.assertTrue('<span data-type="document" data-value="pointer" />' in pointer)
+        self.assertTrue('<span data-type="cnx-archive-uri" '
+                'data-value="pointer@1" />' in pointer)
+        self.assertTrue('<a href="http://cnx.org/contents/pointer@1">here</a>' in pointer)
