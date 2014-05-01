@@ -373,42 +373,117 @@ HTML_DOCUMENT = """\
       <div class="authors">
         By: 
         {% for author in metadata['authors'] -%}
-        <span id="author01"
-              itemscope="itemscope"
-              itemtype="http://schema.org/Person"
-              itemprop="author"
-              data-type="author"
-              >
-          <a href="{{ author['id'] }}"
-             itemprop="url"
-             data-type="{{ author['type'] }}"
-             >{{ author['name'] }}</a>
-        </span>{% if not loop.last %}, {% endif %}
+          <span id="{{ '{}-{}'.format('author', loop.index) }}"
+                itemscope="itemscope"
+                itemtype="http://schema.org/Person"
+                itemprop="author"
+                data-type="author"
+                >
+            <a href="{{ author['id'] }}"
+               itemprop="url"
+               data-type="{{ author['type'] }}"
+               >{{ author['name'] }}</a>
+          </span>{% if not loop.last %}, {% endif %}
         {%- endfor %}
 
         Edited by: 
-        <span itemprop="editor"
-              data-type="editor"
-              >I. M. Picky</span>
+        {% set person_type = 'editor' %}
+        {% set person_itemprop_name = 'editor' %}
+        {% set person_key = 'editors' %}
+        {% for person in metadata[person_key] -%}
+          {% if isinstance(person, dict) %}
+            <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
+                  itemscope="itemscope"
+                  itemtype="http://schema.org/Person"
+                  itemprop="{{ person_type }}"
+                  data-type="{{ person_type }}"
+                  >
+              <a href="{{ person['id'] }}"
+                 itemprop="url"
+                 data-type="{{ person['type'] }}"
+                 >{{ person['name'] }}</a>
+            </span>{% if not loop.last %}, {% endif %}
+          {% else %}
+            <span itemprop="{{ person_type }}"
+                  data-type="{{ person_type }}"
+              >person</span>{% if not loop.last %}, {% endif %}
+          {% endif %}
+        {%- endfor %}
 
         Illustrated by: 
-        <span itemprop="illustrator"
-              data-type="illustrator"
-              >Francis Hablar</span>
+        {% set person_type = 'illustrator' %}
+        {% set person_itemprop_name = 'illustrator' %}
+        {% set person_key = 'illustrators' %}
+        {% for person in metadata[person_key] -%}
+          {% if isinstance(person, dict) %}
+            <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
+                  itemscope="itemscope"
+                  itemtype="http://schema.org/Person"
+                  itemprop="{{ person_type }}"
+                  data-type="{{ person_type }}"
+                  >
+              <a href="{{ person['id'] }}"
+                 itemprop="url"
+                 data-type="{{ person['type'] }}"
+                 >{{ person['name'] }}</a>
+            </span>{% if not loop.last %}, {% endif %}
+          {% else %}
+            <span itemprop="{{ person_type }}"
+                  data-type="{{ person_type }}"
+              >person</span>{% if not loop.last %}, {% endif %}
+          {% endif %}
+        {%- endfor %}
 
         Translated by: 
-        <span itemprop="contributor"
-              data-type="translator"
-              >Francis Hablar</span>
+        {% set person_type = 'translator' %}
+        {% set person_itemprop_name = 'contributor' %}
+        {% set person_key = 'translators' %}
+        {% for person in metadata[person_key] -%}
+          {% if isinstance(person, dict) %}
+            <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
+                  itemscope="itemscope"
+                  itemtype="http://schema.org/Person"
+                  itemprop="{{ person_type }}"
+                  data-type="{{ person_type }}"
+                  >
+              <a href="{{ person['id'] }}"
+                 itemprop="url"
+                 data-type="{{ person['type'] }}"
+                 >{{ person['name'] }}</a>
+            </span>{% if not loop.last %}, {% endif %}
+          {% else %}
+            <span itemprop="{{ person_type }}"
+                  data-type="{{ person_type }}"
+              >person</span>{% if not loop.last %}, {% endif %}
+          {% endif %}
+        {%- endfor %}
+
       </div>
 
       <div class="publishers">
-       {% for publisher in metadata['publishers'] -%}
-       Published By: 
-        <span itemprop="publisher"
-              data-type="publisher"
-              >{{ publisher }}</span>
-       {%- endfor %}
+        Published By: 
+        {% set person_type = 'publisher' %}
+        {% set person_itemprop_name = 'publisher' %}
+        {% set person_key = 'publishers' %}
+        {% for person in metadata[person_key] -%}
+          {% if isinstance(person, dict) %}
+            <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
+                  itemscope="itemscope"
+                  itemtype="http://schema.org/Person"
+                  itemprop="{{ person_type }}"
+                  data-type="{{ person_type }}"
+                  >
+              <a href="{{ person['id'] }}"
+                 itemprop="url"
+                 data-type="{{ person['type'] }}"
+                 >{{ person['name'] }}</a>
+            </span>{% if not loop.last %}, {% endif %}
+          {% else %}
+            <span itemprop="{{ person_type }}"
+                  data-type="{{ person_type }}"
+              >person</span>{% if not loop.last %}, {% endif %}
+          {% endif %}
+        {%- endfor %}
       </div>
 
       <div class="derived-from">
@@ -423,10 +498,27 @@ HTML_DOCUMENT = """\
         {% if metadata['copyright_holders'] %}
         <p class="copyright">
           Copyright:
-          {% for holder in metadata['copyright_holders'] -%}
-          <span itemprop="copyrightHolder"
-                data-type="copyright-holder"
-                >{{ holder }}</span>
+          {% set person_type = 'copyright-holder' %}
+          {% set person_itemprop_name = 'copyrightHolder' %}
+          {% set person_key = 'copyright_holders' %}
+          {% for person in metadata[person_key] -%}
+            {% if isinstance(person, dict) %}
+              <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
+                    itemscope="itemscope"
+                    itemtype="http://schema.org/Person"
+                    itemprop="{{ person_type }}"
+                    data-type="{{ person_type }}"
+                    >
+                <a href="{{ person['id'] }}"
+                   itemprop="url"
+                   data-type="{{ person['type'] }}"
+                   >{{ person['name'] }}</a>
+              </span>{% if not loop.last %}, {% endif %}
+            {% else %}
+              <span itemprop="{{ person_type }}"
+                    data-type="{{ person_type }}"
+                >person</span>{% if not loop.last %}, {% endif %}
+            {% endif %}
           {%- endfor %}
         </p>
         {% endif %}
