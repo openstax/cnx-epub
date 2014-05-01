@@ -41,17 +41,18 @@ class HTMLParsingTestCase(unittest.TestCase):
                  'type': 'openstax-id'}],
             'copyright_holders': [],
             'created': '2013/03/19 15:01:16 -0500',
-            'editors': [],
-            'illustrators': [],
+            'editors': [{'id': None, 'name': 'I. M. Picky', 'type': None}],
+            'illustrators': [{'id': None, 'name': 'Francis Hablar',
+                              'type': None}],
             'keywords': ['South Africa'],
             'license_text': 'CC-By 4.0',
             'license_url': 'http://creativecommons.org/licenses/by/4.0/',
-            'publishers': [],
+            'publishers': [{'id': None, 'name': 'Ream', 'type': None}],
             'revised': '2013/06/18 15:22:55 -0500',
             'subjects': ['Science and Mathematics'],
             'title': 'Document One of Infinity',
-            'translators': [],
+            'translators': [{'id': None, 'name': 'Francis Hablar',
+                             'type': None}],
             'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667',
             }
-        self.maxDiff = None
         self.assertEqual(metadata, expected_metadata)

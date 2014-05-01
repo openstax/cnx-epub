@@ -184,35 +184,9 @@ class DocumentMetadataParser:
             value = None
         return value
 
-    @property
-    def publishers(self):
-        items = self.parse('//xhtml:*[@data-type="publisher"]/@content')
-        return items
-
-    @property
-    def editors(self):
-        items = self.parse('//xhtml:*[@data-type="editor"]/@content')
-        return items
-
-    @property
-    def illustrators(self):
-        items = self.parse('//xhtml:*[@data-type="illustrator"]/@content')
-        return items
-
-    @property
-    def translators(self):
-        items = self.parse('//xhtml:*[@data-type="translator"]/@content')
-        return items
-
-    @property
-    def copyright_holders(self):
-        items = self.parse('//xhtml:*[@data-type="copyright-holders"]/@content')
-        return items
-
-    @property
-    def authors(self):
+    def _parse_person_info(self, xpath):
         unordered = []
-        for elm in self.parse('//xhtml:*[@data-type="author"]'):
+        for elm in self.parse(xpath):
             elm_id = elm.get('id', None)
             if len(elm) > 0:
                 person_elm = elm[0]
@@ -226,15 +200,46 @@ class DocumentMetadataParser:
             person = {'name': name, 'type': type_, 'id': id_}
             # Meta refinement allows these to be ordered.
             order = None
+            refines_xpath_tmplt = """//xhtml:meta[@refines="#{}" and @property="display-seq"]/@content"""
             if elm_id is not None:
                 try:
-                    order = self.parse('//xhtml:meta[@refines="#{}" and @property="display-seq"]/@content'.format(elm_id))[0]
+                    order = self.parse(refines_xpath_tmplt.format(elm_id))[0]
                 except IndexError:
                     pass # Check for refinement failed, maintain None value.
             unordered.append((order, person,))
         ordered = sorted(unordered, key=lambda x: x[0])
         values = [x[1] for x in ordered]
         return values
+
+    @property
+    def publishers(self):
+        xpath = '//xhtml:*[@data-type="publisher"]'
+        return self._parse_person_info(xpath)
+
+    @property
+    def editors(self):
+        xpath = '//xhtml:*[@data-type="editor"]'
+        return self._parse_person_info(xpath)
+
+    @property
+    def illustrators(self):
+        xpath = '//xhtml:*[@data-type="illustrator"]'
+        return self._parse_person_info(xpath)
+
+    @property
+    def translators(self):
+        xpath = '//xhtml:*[@data-type="translator"]'
+        return self._parse_person_info(xpath)
+
+    @property
+    def copyright_holders(self):
+        xpath = '//xhtml:*[@data-type="copyright-holders"]'
+        return self._parse_person_info(xpath)
+
+    @property
+    def authors(self):
+        xpath = '//xhtml:*[@data-type="author"]'
+        return self._parse_person_info(xpath)
 
     @property
     def cnx_archive_uri(self):
