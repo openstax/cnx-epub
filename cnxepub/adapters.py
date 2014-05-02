@@ -107,17 +107,19 @@ def _make_package(binder):
             raise ValueError("Can't apply an extension to media-type '{}'." \
                              .format(modle.media_type))
         extensions[model.id] = ext
+        extensions[model.ident_hash] = ext
 
     template = jinja2.Template(HTML_DOCUMENT,
                                trim_blocks=True, lstrip_blocks=True)
     # Build the package item list.
     items = []
     # Build the binder as an item, specifically a navigation item.
-    navigation_content =  tree_to_html(model_to_tree(binder))
+    navigation_content =  tree_to_html(model_to_tree(binder), extensions)
     navigation_document = template.render(metadata=binder.metadata,
                                           content=navigation_content,
                                           is_translucent=binder.is_translucent)
-    navigation_document_name = "{}.xhtml".format(package_id)
+    navigation_document_name = "{}{}".format(package_id,
+            mimetypes.guess_extension('application/xhtml+xml', strict=False))
     item = Item(str(navigation_document_name),
                 io.BytesIO(navigation_document.encode('utf-8')),
                 'application/xhtml+xml', is_navigation=True, properties=['nav'])
@@ -131,7 +133,7 @@ def _make_package(binder):
             continue
         if isinstance(model, DocumentPointer):
             content = pointer_template.render(metadata=model.metadata)
-            item = Item('{}.xhtml'.format(model.ident_hash),
+            item = Item(''.join([model.ident_hash, extensions[model.id]]),
                         io.BytesIO(content.encode('utf-8')),
                         model.media_type)
             items.append(item)
@@ -463,7 +465,7 @@ HTML_DOCUMENT = """\
 #      a way to render the the tree to html. This either needs to
 #      move elsewhere or preferably be replaced with a better solution.
 
-def html_listify(tree, root_xl_element, list_type='ol'):
+def html_listify(tree, root_xl_element, extensions, list_type='ol'):
     for node in tree:
         li_elm = etree.SubElement(root_xl_element, 'li')
         if node['id'] == 'subcol':
@@ -472,17 +474,17 @@ def html_listify(tree, root_xl_element, list_type='ol'):
         else:
             a_elm = etree.SubElement(li_elm, 'a')
             a_elm.text = node['title']
-            a_elm.set('href', '{}.xhtml'.format(node['id']))
+            a_elm.set('href', ''.join([node['id'], extensions[node['id']]]))
         if 'contents' in node:
             elm = etree.SubElement(li_elm, list_type)
-            html_listify(node['contents'], elm)
+            html_listify(node['contents'], elm, extensions)
 
 
-def tree_to_html(tree):
+def tree_to_html(tree, extensions):
     nav = etree.Element('nav')
     nav.set('id', 'toc')
     ol = etree.SubElement(nav, 'ol')
-    html_listify(tree['contents'], ol)
+    html_listify(tree['contents'], ol, extensions)
     return etree.tostring(nav)
 
 # /YANK
