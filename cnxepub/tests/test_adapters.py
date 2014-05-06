@@ -241,9 +241,19 @@ class AdaptationTestCase(unittest.TestCase):
         while the Item is merely a representation of an item
         in the EPUB structure.
         """
-        content_filepath = os.path.join(
+        item_filepath = os.path.join(
                 TEST_DATA_DIR, 'loose-pages', 'content',
                 'pointer.xhtml')
+
+        package = mock.Mock()
+        item = self.make_item(item_filepath, media_type='application/xhtml+xml')
+
+        from ..adapters import adapt_item, DocumentPointerItem
+        pointer = adapt_item(item, package)
+
+        self.assertEqual(type(pointer), DocumentPointerItem)
+        self.assertEqual(pointer.ident_hash, 'pointer@1')
+        self.assertEqual(pointer.metadata['title'], 'Pointer')
 
 
 @mock.patch('mimetypes.guess_extension', new=random_extension)
