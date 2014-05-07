@@ -238,6 +238,13 @@ class ModelBehaviorTestCase(unittest.TestCase):
         self.assertEqual([True, True, False], are_external)
         self.assertEqual(expected_uris, [r.uri for r in document.references])
 
+        # reload the content
+        document.content = content
+        # update some references
+        document.references[0].uri = 'https://example.com/people/old-mcdonald'
+        self.assertTrue('<a href="https://example.com/people/old-mcdonald">'
+                        in document.content)
+
     def test_document_w_bound_references(self):
         starting_uris = ["../resources/openstax.png",
                          "m23409.xhtml",
