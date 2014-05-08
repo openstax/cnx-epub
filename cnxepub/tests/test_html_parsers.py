@@ -54,5 +54,7 @@ class HTMLParsingTestCase(unittest.TestCase):
             'translators': [{'id': None, 'name': 'Francis Hablar',
                              'type': None}],
             'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667',
+            'derived_from_uri': 'http://example.org/contents/id@ver',
+            'derived_from_title': 'Wild Grains and Warted Feet',
             }
         self.assertEqual(metadata, expected_metadata)

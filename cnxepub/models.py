@@ -344,6 +344,8 @@ class Document(object):
 
     def _content__set(self, value):
         self._xml = lxml.html.fragment_fromstring(value, 'div')
+        # reload the references after a content update
+        self._references = _parse_references(self._xml)
 
     def _content__del(self):
         self._xml = etree.Element('div')

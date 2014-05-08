@@ -177,6 +177,8 @@ class AdaptationTestCase(unittest.TestCase):
             u'title': u'Document One of Infinity',
             u'translators': [{u'id': None, u'name': u'Francis Hablar',
                               u'type': None}],
+            u'derived_from_uri': u'http://example.org/contents/id@ver',
+            u'derived_from_title': u'Wild Grains and Warted Feet',
             }
         self.assertEqual(expected_metadata, document.metadata)
 
@@ -241,9 +243,19 @@ class AdaptationTestCase(unittest.TestCase):
         while the Item is merely a representation of an item
         in the EPUB structure.
         """
-        content_filepath = os.path.join(
+        item_filepath = os.path.join(
                 TEST_DATA_DIR, 'loose-pages', 'content',
                 'pointer.xhtml')
+
+        package = mock.Mock()
+        item = self.make_item(item_filepath, media_type='application/xhtml+xml')
+
+        from ..adapters import adapt_item, DocumentPointerItem
+        pointer = adapt_item(item, package)
+
+        self.assertEqual(type(pointer), DocumentPointerItem)
+        self.assertEqual(pointer.ident_hash, 'pointer@1')
+        self.assertEqual(pointer.metadata['title'], 'Pointer')
 
 
 @mock.patch('mimetypes.guess_extension', new=random_extension)
@@ -492,7 +504,11 @@ class ModelsToEPUBTestCase(unittest.TestCase):
 
         # Build test documents
         metadata = base_metadata.copy()
-        metadata.update({'title': "entrée"})
+        metadata.update({
+            'title': "entrée",
+            'derived_from_uri': 'http://cnx.org/contents/dd68a67a-11f4-4140-a49f-b78e856e2262@1',
+            'derived_from_title': "Taking Customers' Orders",
+            })
         binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
@@ -560,10 +576,16 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue(u'<title>Kraken (Nueva Versión)</title>' in nav)
         with open(os.path.join(epub_path, 'contents', egress_filename)) as f:
             egress = unescape(f.read())
+        with open(os.path.join(epub_path, 'contents', ingress_filename)) as f:
+            ingress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
         self.assertTrue('<span data-type="cnx-archive-uri" '
                 'data-value="e78d4f90-e078-49d2-beac-e95e8be70667" />' in egress)
         self.assertTrue(u'<p>hüvasti.</p>' in egress)
+        self.assertFalse('Derived from:' in egress)
+        self.assertTrue('Derived from:' in ingress)
+        self.assertTrue('http://cnx.org/contents/dd68a67a-11f4-4140-a49f-b78e856e2262@1' in ingress)
+        self.assertTrue("Taking Customers' Orders" in ingress)
 
         # Check the content of the document pointer file
         with open(os.path.join(epub_path, 'contents', pointer_filename)) as f:

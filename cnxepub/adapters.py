@@ -488,13 +488,15 @@ HTML_DOCUMENT = """\
         {%- endfor %}
       </div>
 
+      {% if metadata.get('derived_from_uri') %}
       <div class="derived-from">
-        Based on:
-        <a href="http://example.org/contents/id@ver"
-           itemprop="isBasedOnURL"
-           data-type="based-on"
-           >Wild Grains and Warted Feet</a>
+        Derived from:
+        <a href="{{ metadata['derived_from_uri'] }}"
+           itemprop="isDerivedFromURL"
+           data-type="derived-from"
+           >{{ metadata['derived_from_title'] }}</a>
       </div>
+      {%- endif %}
 
       <div class="permissions">
         {% if metadata['copyright_holders'] %}
