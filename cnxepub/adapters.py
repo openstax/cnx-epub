@@ -27,6 +27,7 @@ from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
 
 __all__ = (
     'adapt_package', 'adapt_item',
+    'make_epub', 'make_publication_epub',
     'BinderItem',
     'DocumentItem',
     )
