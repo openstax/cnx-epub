@@ -384,7 +384,8 @@ class Package(Sequence):
         # Create the directory structure
         for name in ('contents', 'resources',):
             path = os.path.join(directory, name)
-            os.mkdir(path)
+            if not os.path.exists(path):
+                os.mkdir(path)
 
         # Write the items to the filesystem
         locations = {}  # Used when rendering
