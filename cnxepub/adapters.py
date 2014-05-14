@@ -27,6 +27,7 @@ from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
 
 __all__ = (
     'adapt_package', 'adapt_item',
+    'make_epub', 'make_publication_epub',
     'BinderItem',
     'DocumentItem',
     )
@@ -109,8 +110,10 @@ def _make_package(binder):
         extensions[model.id] = ext
         extensions[model.ident_hash] = ext
 
-    template = jinja2.Template(HTML_DOCUMENT,
-                               trim_blocks=True, lstrip_blocks=True)
+    template_env = jinja2.Environment(trim_blocks=True, lstrip_blocks=True)
+    isdict = lambda v: isinstance(v, dict)
+    template = template_env.from_string(HTML_DOCUMENT,
+                                        globals={'isdict': isdict})
     # Build the package item list.
     items = []
     # Build the binder as an item, specifically a navigation item.
@@ -393,7 +396,7 @@ HTML_DOCUMENT = """\
         {% set person_itemprop_name = 'editor' %}
         {% set person_key = 'editors' %}
         {% for person in metadata[person_key] -%}
-          {% if isinstance(person, dict) %}
+          {% if isdict(person) %}
             <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
                   itemscope="itemscope"
                   itemtype="http://schema.org/Person"
@@ -417,7 +420,7 @@ HTML_DOCUMENT = """\
         {% set person_itemprop_name = 'illustrator' %}
         {% set person_key = 'illustrators' %}
         {% for person in metadata[person_key] -%}
-          {% if isinstance(person, dict) %}
+          {% if isdict(person) %}
             <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
                   itemscope="itemscope"
                   itemtype="http://schema.org/Person"
@@ -441,7 +444,7 @@ HTML_DOCUMENT = """\
         {% set person_itemprop_name = 'contributor' %}
         {% set person_key = 'translators' %}
         {% for person in metadata[person_key] -%}
-          {% if isinstance(person, dict) %}
+          {% if isdict(person) %}
             <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
                   itemscope="itemscope"
                   itemtype="http://schema.org/Person"
@@ -468,7 +471,7 @@ HTML_DOCUMENT = """\
         {% set person_itemprop_name = 'publisher' %}
         {% set person_key = 'publishers' %}
         {% for person in metadata[person_key] -%}
-          {% if isinstance(person, dict) %}
+          {% if isdict(person) %}
             <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
                   itemscope="itemscope"
                   itemtype="http://schema.org/Person"
@@ -506,7 +509,7 @@ HTML_DOCUMENT = """\
           {% set person_itemprop_name = 'copyrightHolder' %}
           {% set person_key = 'copyright_holders' %}
           {% for person in metadata[person_key] -%}
-            {% if isinstance(person, dict) %}
+            {% if isdict(person) %}
               <span id="{{ '{}-{}'.format(person_type, loop.index) }}"
                     itemscope="itemscope"
                     itemtype="http://schema.org/Person"
@@ -539,7 +542,7 @@ HTML_DOCUMENT = """\
            itemprop="description"
            data-type="description"
            >
-        {{ metadata['summary']|e }}
+        {{ metadata['summary'] }}
       </div>
 
       {% for keyword in metadata['keywords'] -%}
