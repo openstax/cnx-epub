@@ -337,8 +337,9 @@ class Document(object):
         This is used to write out reference changes that may have
         taken place.
         """
+        string_types = (type(u''), type(b''))
         # Unwrap the xml.
-        content = [isinstance(node, str) and node or etree.tostring(node)
+        content = [isinstance(node, string_types) and node or etree.tostring(node)
                    for node in self._xml.xpath('node()')]
         return ''.join(utf8(content))
 
