@@ -7,11 +7,16 @@
 # ###
 import os
 import io
+import json
 import unittest
 try:
     from unittest import mock
 except ImportError:
     import mock
+
+
+here = os.path.abspath(os.path.dirname(__file__))
+TEST_DATA_DIR = os.path.join(here, 'data')
 
 
 class TreeUtilityTestCase(unittest.TestCase):
@@ -286,3 +291,13 @@ class ModelBehaviorTestCase(unittest.TestCase):
             starting_uris[1],
             ]
         self.assertEqual(expected_uris, [r.uri for r in document.references])
+
+    def test_document_content(self):
+        with open(os.path.join(TEST_DATA_DIR,
+            'fb74dc89-47d4-4e46-aac1-b8682f487bd5@1.json'),
+            'r') as f:
+            metadata = json.loads(f.read())
+        from ..models import Document
+        document = Document('document', metadata['content'])
+        self.assertTrue('To demonstrate the potential of online publishing'
+                in document.content)
