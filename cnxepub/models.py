@@ -22,7 +22,7 @@ from lxml import etree
 
 
 __all__ = (
-    'TRANSLUCENT_BINDER_ID',
+    'TRANSLUCENT_BINDER_ID', 'RESOURCE_HASH_TYPE',
     'flatten_tree_to_ident_hashes', 'model_to_tree',
     'flatten_model', 'flatten_to_documents',
     'Binder', 'TranslucentBinder', 'Document', 'DocumentPointer', 'Resource',
