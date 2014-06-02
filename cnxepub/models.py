@@ -146,15 +146,24 @@ class Reference(object):
         self._bound_model = None
         self._uri_template = None
 
+    @property
+    def is_bound(self):
+        return self._bound_model is not None
+
+    # read-only property, use bind for writing.
+    @property
+    def bound_model(self):
+        return self._bound_model
+
     def _get_uri(self):
-        if self._bound_model is not None:
+        if self.is_bound:
             # Update the value before returning.
             self._set_uri_from_bound_model()
         return self.elm.get(self._uri_attr)
 
     def _set_uri(self, value):
-        if self._bound_model is not None:
-            raise ValueError("URI is bound to an object.")
+        if self.is_bound:
+            raise ValueError("URI is bound to an object. Unbind first.")
         self.elm.set(self._uri_attr, value)
 
     uri = property(_get_uri, _set_uri)
