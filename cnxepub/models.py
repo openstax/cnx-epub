@@ -29,7 +29,7 @@ __all__ = (
     )
 
 
-RESOURCE_HASH_TYPE = 'md5'
+RESOURCE_HASH_TYPE = 'sha1'
 TRANSLUCENT_BINDER_ID = 'subcol'
 
 
