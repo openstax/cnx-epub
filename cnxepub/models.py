@@ -15,6 +15,7 @@ try:
     from urllib.parse import urlparse
 except ImportError:
     from urlparse import urlparse
+from contextlib import contextmanager
 
 import lxml.html
 import lxml.html.builder
@@ -424,14 +425,20 @@ class Resource:
         if not isinstance(data, io.BytesIO):
             raise ValueError("Data must be an io.BytesIO instance. "
                              "'{}' was given.".format(type(data)))
-        self.data = data
+        self._data = data
         self.media_type = media_type
         self.filename = filename or ''
 
         self._hash = hashlib.new(RESOURCE_HASH_TYPE,
-                                 self.data.read()).hexdigest()
-        self.data.seek(0)
+                                 self._data.read()).hexdigest()
+        self._data.seek(0)
 
     @property
     def hash(self):
         return self._hash
+
+    @contextmanager
+    def open(self):
+        self._data.seek(0)
+        yield self._data
+        self._data.seek(0)
