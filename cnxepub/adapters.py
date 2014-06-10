@@ -143,8 +143,8 @@ def _make_package(binder):
             continue
         for resource in model.resources:
             resources[resource.id] = resource
-            item = Item(resource.id,
-                    resource.data, resource.media_type)
+            with resource.open() as data:
+                item = Item(resource.id, data, resource.media_type)
             items.append(item)
         for reference in model.references:
             if reference.remote_type == INTERNAL_REFERENCE_TYPE:
