@@ -24,6 +24,9 @@ from lxml import etree
 
 __all__ = (
     'TRANSLUCENT_BINDER_ID', 'RESOURCE_HASH_TYPE',
+    'INTERNAL_REFERENCE_TYPE', 'EXTERNAL_REFERENCE_TYPE',
+    'REFERENCE_REMOTE_TYPES',
+    'ATTRIBUTED_ROLE_KEYS',
     'flatten_tree_to_ident_hashes', 'model_to_tree',
     'flatten_model', 'flatten_to_documents',
     'Binder', 'TranslucentBinder', 'Document', 'DocumentPointer', 'Resource',
@@ -32,6 +35,14 @@ __all__ = (
 
 RESOURCE_HASH_TYPE = 'sha1'
 TRANSLUCENT_BINDER_ID = 'subcol'
+INTERNAL_REFERENCE_TYPE = 'internal'
+EXTERNAL_REFERENCE_TYPE = 'external'
+REFERENCE_REMOTE_TYPES = (INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE,)
+ATTRIBUTED_ROLE_KEYS = (
+    # MUST be alphabetical
+    'authors', 'copyright_holders', 'editors', 'illustrators',
+    'publishers', 'translators',
+    )
 
 
 def utf8(item):
@@ -104,11 +115,6 @@ def flatten_to_documents(model):
         if isinstance(m, Document):
             yield m
     raise StopIteration()
-
-
-INTERNAL_REFERENCE_TYPE = 'internal'
-EXTERNAL_REFERENCE_TYPE = 'external'
-REFERENCE_REMOTE_TYPES = (INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE,)
 
 
 def _discover_uri_type(uri):
