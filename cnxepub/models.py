@@ -26,6 +26,7 @@ __all__ = (
     'TRANSLUCENT_BINDER_ID', 'RESOURCE_HASH_TYPE',
     'INTERNAL_REFERENCE_TYPE', 'EXTERNAL_REFERENCE_TYPE',
     'REFERENCE_REMOTE_TYPES',
+    'ATTRIBUTED_ROLE_KEYS',
     'flatten_tree_to_ident_hashes', 'model_to_tree',
     'flatten_model', 'flatten_to_documents',
     'Binder', 'TranslucentBinder', 'Document', 'DocumentPointer', 'Resource',
@@ -37,6 +38,11 @@ TRANSLUCENT_BINDER_ID = 'subcol'
 INTERNAL_REFERENCE_TYPE = 'internal'
 EXTERNAL_REFERENCE_TYPE = 'external'
 REFERENCE_REMOTE_TYPES = (INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE,)
+ATTRIBUTED_ROLE_KEYS = (
+    # MUST be alphabetical
+    'authors', 'copyright_holders', 'editors', 'illustrators',
+    'publishers', 'translators',
+    )
 
 
 def utf8(item):
