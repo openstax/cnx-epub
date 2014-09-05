@@ -175,6 +175,11 @@ class Reference(object):
 
     uri = property(_get_uri, _set_uri)
 
+    @property
+    def uri_parts(self):
+        """Returns a parsed URI"""
+        return urlparse(self.uri)
+
     def _set_uri_from_bound_model(self):
         """Using the bound model, set the uri."""
         value = self._uri_template.format(self._bound_model.id)
@@ -421,7 +426,7 @@ class DocumentPointer(object):
         return cls(ident_hash)
 
 
-class Resource:
+class Resource(object):
     """A binary object used within the context of the ``Document``.
     It is typically referenced within the documents HTML content.
     """
