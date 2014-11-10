@@ -37,7 +37,8 @@ RESOURCE_HASH_TYPE = 'sha1'
 TRANSLUCENT_BINDER_ID = 'subcol'
 INTERNAL_REFERENCE_TYPE = 'internal'
 EXTERNAL_REFERENCE_TYPE = 'external'
-REFERENCE_REMOTE_TYPES = (INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE,)
+INLINE_REFERENCE_TYPE = 'inline'
+REFERENCE_REMOTE_TYPES = (INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE, INLINE_REFERENCE_TYPE,)
 ATTRIBUTED_ROLE_KEYS = (
     # MUST be alphabetical
     'authors', 'copyright_holders', 'editors', 'illustrators',
@@ -121,7 +122,10 @@ def _discover_uri_type(uri):
     """Given a ``uri``, determine if it is internal or external."""
     parsed_uri = urlparse(uri)
     if not parsed_uri.netloc:
-        type_ = INTERNAL_REFERENCE_TYPE
+        if parsed_uri.scheme == 'data':
+            type_ = INLINE_REFERENCE_TYPE
+        else:
+            type_ = INTERNAL_REFERENCE_TYPE
     else:
         type_ = EXTERNAL_REFERENCE_TYPE
     return type_
