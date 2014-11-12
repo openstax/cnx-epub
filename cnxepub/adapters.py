@@ -20,10 +20,12 @@ from .models import (
     Document, Resource, DocumentPointer,
     TRANSLUCENT_BINDER_ID,
     INTERNAL_REFERENCE_TYPE,
+    INLINE_REFERENCE_TYPE,
     )
 from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
         DocumentPointerMetadataParser)
 
+from .data_uri import DataURI
 
 __all__ = (
     'adapt_package', 'adapt_item',
@@ -147,7 +149,18 @@ def _make_package(binder):
                 item = Item(resource.id, data, resource.media_type)
             items.append(item)
         for reference in model.references:
-            if reference.remote_type == INTERNAL_REFERENCE_TYPE:
+            if reference.remote_type == INLINE_REFERENCE_TYPE:
+                # has side effects - converts ref type to INTERNAL w/
+                # appropriate uri, so need to replicate resource treatment from above
+                resource = _make_resource_from_inline(reference)
+                model.resources.append(resource)
+                resources[resource.id] = resource
+                with resource.open() as data:
+                    item = Item(resource.id, data, resource.media_type)
+                items.append(item)
+                reference.bind(resource,'../resources/{}')
+
+            elif reference.remote_type == INTERNAL_REFERENCE_TYPE:
                 filename = os.path.basename(reference.uri)
                 resource = resources.get(filename)
                 if resource:
@@ -164,6 +177,16 @@ def _make_package(binder):
     package = Package(package_name, items, binder.metadata)
     return package
 
+def _make_resource_from_inline(reference):
+    """Makes an ``models.Resource`` from a ``models.Reference``
+       of type INLINE. That is, a data: uri"""
+    uri = DataURI(reference.uri)
+    data = io.BytesIO(uri.data)
+    mimetype = uri.mimetype
+    resname = 'inline-{}'.format(mimetype.replace('/','-'))
+    res = Resource(resname, data, mimetype, resname)
+    return res
+    
 
 def _make_item(model):
     """Makes an ``.epub.Item`` from
