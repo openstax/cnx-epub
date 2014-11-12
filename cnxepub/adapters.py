@@ -183,8 +183,8 @@ def _make_resource_from_inline(reference):
     uri = DataURI(reference.uri)
     data = io.BytesIO(uri.data)
     mimetype = uri.mimetype
-    resname = 'inline-{}'.format(mimetype.replace('/','-'))
-    res = Resource(resname, data, mimetype, resname)
+    res = Resource('dummy', data, mimetype)
+    res.id = res.filename
     return res
     
 
