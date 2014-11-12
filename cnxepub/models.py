@@ -7,6 +7,7 @@
 # ###
 import io
 import hashlib
+import mimetypes
 try:
     from collections.abc import MutableSequence, Iterable
 except ImportError:
@@ -33,6 +34,7 @@ __all__ = (
     )
 
 
+mimetypes.init()
 RESOURCE_HASH_TYPE = 'sha1'
 TRANSLUCENT_BINDER_ID = 'subcol'
 INTERNAL_REFERENCE_TYPE = 'internal'
@@ -442,10 +444,15 @@ class Resource(object):
                              "'{}' was given.".format(type(data)))
         self._data = data
         self.media_type = media_type
-        self.filename = filename or ''
 
         self._hash = hashlib.new(RESOURCE_HASH_TYPE,
                                  self._data.read()).hexdigest()
+        if not filename:
+            # Create a filename from the hash and media-type.
+            filename = "{}.{}".format(
+                self._hash, mimetypes.guess_extension(self.media_type))
+        self.filename = filename
+
         self._data.seek(0)
 
     @property
