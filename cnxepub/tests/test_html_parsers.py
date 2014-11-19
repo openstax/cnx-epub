@@ -16,6 +16,7 @@ TEST_DATA_DIR = os.path.join(here, 'data')
 
 
 class HTMLParsingTestCase(unittest.TestCase):
+    maxDiff = None
 
     def test_metadata_parsing(self):
         """Verify the parsing of metadata from an HTML document."""
@@ -39,7 +40,10 @@ class HTMLParsingTestCase(unittest.TestCase):
                 {'id': 'https://example.org/profiles/charrose',
                  'name': 'Charmaine St. Rose',
                  'type': 'openstax-id'}],
-            'copyright_holders': [],
+            'copyright_holders': [
+                {'id': 'https://cnx.org/member_profile/ream',
+                 'name': 'Ream',
+                 'type': 'cnx-id'}],
             'created': '2013/03/19 15:01:16 -0500',
             'editors': [{'id': None, 'name': 'I. M. Picky', 'type': None}],
             'illustrators': [{'id': None, 'name': 'Francis Hablar',

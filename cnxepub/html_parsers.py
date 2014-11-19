@@ -233,7 +233,7 @@ class DocumentMetadataParser:
 
     @property
     def copyright_holders(self):
-        xpath = '//xhtml:*[@data-type="copyright-holders"]'
+        xpath = '//xhtml:*[@data-type="copyright-holder"]'
         return self._parse_person_info(xpath)
 
     @property
