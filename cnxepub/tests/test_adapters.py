@@ -45,6 +45,7 @@ def random_extension(*args, **kwargs):
 
 
 class AdaptationTestCase(unittest.TestCase):
+    maxDiff = None
 
     def make_package(self, file):
         from ..epub import Package
@@ -161,7 +162,10 @@ class AdaptationTestCase(unittest.TestCase):
                          {u'id': u'https://example.org/profiles/charrose',
                           u'name': u'Charmaine St. Rose',
                           u'type': u'openstax-id'}],
-            u'copyright_holders': [],
+            u'copyright_holders': [
+                {u'id': u'https://cnx.org/member_profile/ream',
+                 u'name': u'Ream',
+                 u'type': u'cnx-id'}],
             u'created': u'2013/03/19 15:01:16 -0500',
             u'editors': [{u'id': None, u'name': u'I. M. Picky',
                           u'type': None}],
