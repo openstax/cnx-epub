@@ -110,12 +110,16 @@ def flatten_model(model):
     raise StopIteration()
 
 
-def flatten_to_documents(model):
+def flatten_to_documents(model, include_pointers=False):
     """Flatten the model to a list of documents (aka ``Document`` objects).
     This is to flatten a ``Binder``'ish model down to a list of documents.
+    If ``include_pointers`` has been set to ``True``, ``DocumentPointers``
+    will also be included in the results.
     """
     for m in flatten_model(model):
         if isinstance(m, Document):
+            yield m
+        elif include_pointers and isinstance(m, DocumentPointer):
             yield m
     raise StopIteration()
 
