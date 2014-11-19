@@ -36,6 +36,10 @@ class TreeUtilityTestCase(unittest.TestCase):
         from ..models import Document
         return Document(id, io.BytesIO(b''), metadata=metadata)
 
+    def make_document_pointer(self, ident_hash, metadata={}):
+        from ..models import DocumentPointer
+        return DocumentPointer(ident_hash, metadata=metadata)
+
     def test_binder_to_tree(self):
         binder = self.make_binder(
             '8d75ea29',
@@ -190,6 +194,9 @@ class TreeUtilityTestCase(unittest.TestCase):
                                     id="e78d4f90",
                                     metadata={'version': '3',
                                               'title': "Document One"})]),
+                        self.make_document_pointer(
+                            ident_hash='844a99e5@1',
+                            metadata={'title': "Pointing"}),
                         self.make_binder(
                             None,
                             metadata={'title': "Chapter Two"},
@@ -210,10 +217,19 @@ class TreeUtilityTestCase(unittest.TestCase):
                                     id="ad17c39c",
                                     metadata={'version': '2',
                                               'title': "Document Three"})])])])
-        expected_titles = ['Document One', 'Document Two', 'Document Three']
 
         from ..models import flatten_to_documents
+
+        # Test for default, Document only results.
+        expected_titles = ['Document One', 'Document Two', 'Document Three']
         titles = [d.metadata['title'] for d in flatten_to_documents(binder)]
+        self.assertEqual(titles, expected_titles)
+
+        # Test for included DocumentPointer results.
+        expected_titles = ['Document One', 'Pointing', 'Document Two',
+                           'Document Three']
+        titles = [d.metadata['title']
+                  for d in flatten_to_documents(binder, include_pointers=True)]
         self.assertEqual(titles, expected_titles)
 
 
