@@ -217,7 +217,7 @@ class HTMLReferenceFinder(object):
         self.xml = xml
 
     def __iter__(self):
-        for elm in self._archors():
+        for elm in self._anchors():
             yield elm, 'href'
         for elm, uri_attr in self._media():
             yield elm, uri_attr
@@ -226,8 +226,8 @@ class HTMLReferenceFinder(object):
     def apply_xpath(self, xpath):
         return self.xml.xpath(xpath)
 
-    def _archors(self):
-        return self.apply_xpath('//a')
+    def _anchors(self):
+        return self.apply_xpath('//a[@href]')
 
     def _media(self):
         media_xpath = {
