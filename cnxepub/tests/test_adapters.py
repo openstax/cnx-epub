@@ -398,7 +398,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         metadata = base_metadata.copy()
         metadata.update({'title': "entrée"})
         binder.append(Document('ingress', io.BytesIO(
-            b'<p><a href="http://cnx.org/">Hello.</a></p>'),
+            b'<p><a href="http://cnx.org/">Hello.</a><a id="nohref">Goodbye</a></p>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
         metadata.update({'title': "egress"})
