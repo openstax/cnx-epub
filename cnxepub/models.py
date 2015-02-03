@@ -19,7 +19,6 @@ except ImportError:
 from contextlib import contextmanager
 
 import lxml.html
-import lxml.html.builder
 from lxml import etree
 
 
@@ -359,9 +358,11 @@ class Document(object):
 
     @property
     def html(self):
-        html = lxml.html.builder.HTML(
-            lxml.html.fragment_fromstring(self.content, 'body'))
-        return utf8(lxml.html.tostring(html, method='xml'))
+        html = """\
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <body>{}</body>
+</html>""".format(self.content)
+        return utf8(html)
 
     def _content__get(self):
         """Produce the content from the data.
