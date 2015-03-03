@@ -524,6 +524,15 @@ HTML_DOCUMENT = """\
       </div>
       {%- endif %}
 
+      {% if metadata.get('print_style') %}
+      <div class="print-style">
+        Print style:
+        <span
+           data-type="print-style"
+           >{{ metadata['print_style'] }}</span>
+      </div>
+      {%- endif %}
+
       <div class="permissions">
         {% if metadata['copyright_holders'] %}
         <p class="copyright">
