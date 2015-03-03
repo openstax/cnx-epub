@@ -77,6 +77,7 @@ class DocumentMetadataParser:
         'license_text', 'editors', 'illustrators', 'translators',
         'publishers', 'copyright_holders', 'authors',
         'cnx-archive-uri', 'derived_from_uri', 'derived_from_title',
+        'print_style',
         )
 
     def __init__(self, elm_tree, raise_value_error=True):
@@ -105,8 +106,6 @@ class DocumentMetadataParser:
                         key in self.metadata_required_keys and value is None:
                     raise ValueError(
                         "A value for '{}' could not be found.".format(key))
-                elif value is None:
-                    continue
                 items[key] = value
         return items
 
@@ -250,6 +249,12 @@ class DocumentMetadataParser:
     @property
     def derived_from_uri(self):
         items = self.parse('//xhtml:*[@data-type="derived-from"]/@href')
+        if items:
+            return items[0]
+
+    @property
+    def print_style(self):
+        items = self.parse('//xhtml:*[@data-type="print-style"]/text()')
         if items:
             return items[0]
 

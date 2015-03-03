@@ -183,6 +183,7 @@ class AdaptationTestCase(unittest.TestCase):
                               u'type': None}],
             u'derived_from_uri': u'http://example.org/contents/id@ver',
             u'derived_from_title': u'Wild Grains and Warted Feet',
+            u'print_style': u'* print style *',
             }
         self.assertEqual(expected_metadata, document.metadata)
 
