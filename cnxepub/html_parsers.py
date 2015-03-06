@@ -29,7 +29,7 @@ def parse_navigation_html_to_tree(html, id):
     if is_translucent:
         id = TRANSLUCENT_BINDER_ID
     tree = {'id': id,
-            'title': xpath('//*[@data-type="title"]/text()')[0],
+            'title': xpath('//*[@data-type="document-title"]/text()')[0],
             'contents': [x for x in _nav_to_tree(xpath('//xhtml:nav')[0])]
             }
     return tree
@@ -111,7 +111,7 @@ class DocumentMetadataParser:
 
     @property
     def title(self):
-        items = self.parse('//xhtml:*[@data-type="title"]/text()')
+        items = self.parse('//xhtml:*[@data-type="document-title"]/text()')
         try:
             value = items[0]
         except IndexError:
