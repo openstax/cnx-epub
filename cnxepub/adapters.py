@@ -332,7 +332,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
         itemtype="http://schema.org/Book"
         >
     <div data-type="metadata">
-      <h1 data-type="title" itemprop="name">{{ metadata['title'] }}</h1>
+      <h1 data-type="document-title" itemprop="name">{{ metadata['title'] }}</h1>
       <span data-type="document" data-value="pointer" />
       {% if metadata.get('cnx-archive-uri') %}
       <span data-type="cnx-archive-uri" data-value="{{ metadata['cnx-archive-uri'] }}" />
@@ -390,7 +390,7 @@ HTML_DOCUMENT = """\
         itemtype="http://schema.org/Book"
         >
     <div data-type="metadata">
-      <h1 data-type="title" itemprop="name">{{ metadata['title'] }}</h1>
+      <h1 data-type="document-title" itemprop="name">{{ metadata['title'] }}</h1>
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
