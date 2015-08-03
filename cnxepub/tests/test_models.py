@@ -14,9 +14,41 @@ try:
 except ImportError:
     import mock
 
+from lxml import etree
+
 
 here = os.path.abspath(os.path.dirname(__file__))
 TEST_DATA_DIR = os.path.join(here, 'data')
+
+
+class PrivateUtilitiesTestCase(unittest.TestCase):
+
+    def test_sanatize_xml(self):
+        from ..models import _sanitize_xml as target
+        xml_namespaces = ' '.join([
+            'xmlns:bib="http://bibtexml.sf.net/"',
+            'xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"',
+            'xmlns:epub="http://www.idpf.org/2007/ops"',
+            'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"',
+            'xmlns:dc="http://purl.org/dc/elements/1.1/"',
+            'xmlns:lrmi="http://lrmi.net/the-specification"',
+            ])
+
+        # Sanitize loose elements.
+        content = "<p {0}>aaa bbb</p><p {0}>bbb aaa</p>".format(xml_namespaces)
+        xml = target(content)
+        self.assertEqual(xml, '<p>aaa bbb</p><p>bbb aaa</p>')
+
+        # Sanitize content with a pre-existing wrapping element.
+        content = "<div {0}><p {0}>aaa bbb</p><p {0}>bbb aaa</p></div>" \
+            .format(xml_namespaces)
+        xml = target(content)
+        self.assertEqual(xml, '<div><p>aaa bbb</p><p>bbb aaa</p></div>')
+
+        # Sanitize content that does not contain tags.
+        content = "aaa bbb"
+        xml = target(content)
+        self.assertEqual(xml, 'aaa bbb')
 
 
 class TreeUtilityTestCase(unittest.TestCase):

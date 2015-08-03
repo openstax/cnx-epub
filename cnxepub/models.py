@@ -45,6 +45,17 @@ ATTRIBUTED_ROLE_KEYS = (
     'authors', 'copyright_holders', 'editors', 'illustrators',
     'publishers', 'translators',
     )
+XML_WRAPPER = """\
+<div
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:bib="http://bibtexml.sf.net/"
+  xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
+  xmlns:epub="http://www.idpf.org/2007/ops"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:lrmi="http://lrmi.net/the-specification">
+{}
+</div>"""
 
 
 def utf8(item):
@@ -56,6 +67,21 @@ def utf8(item):
         return item.decode('utf-8')
     except:
         return item
+
+
+def _sanitize_xml(raw_xml):
+    """Wraps the XML and sanitizes the namespaces."""
+    xml_parser = etree.XMLParser(ns_clean=True, recover=True)
+    elms = lxml.html.fragments_fromstring(raw_xml)
+    # If the raw_xml starts with untagged content, it will be parsed
+    # to a string rather than an Element instance.
+    # Thus causing etree.tostring to error unless we first check its type.
+    raw_xml = ''.join([utf8(isinstance(e, (str, bytes,)) and e or etree.tostring(e))
+                       for e in elms])
+    xml = etree.fromstring(XML_WRAPPER.format(raw_xml), xml_parser)
+    result = utf8(etree.tostring(xml))
+    result = result[result.find('>')+1:result.rfind('<')].strip()
+    return result
 
 
 def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):
@@ -376,6 +402,7 @@ class Document(object):
         return ''.join(utf8(content))
 
     def _content__set(self, value):
+        value = _sanitize_xml(value)
         self._xml = lxml.html.fragment_fromstring(value, 'div')
         # reload the references after a content update
         self._references = _parse_references(self._xml)
