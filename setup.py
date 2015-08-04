@@ -27,7 +27,7 @@ setup(
     author='Connexions team',
     author_email='info@cnx.org',
     url="https://github.com/connexions/cnx-epub",
-    license='LGPL, See also LICENSE.txt',
+    license='AGPL, See also LICENSE.txt',
     description=description,
     install_requires=install_requires,
     tests_require=tests_require,
