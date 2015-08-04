@@ -23,7 +23,7 @@ if not IS_PY3:
 
 setup(
     name='cnx-epub',
-    version='0.6.0',
+    version='0.8.0',
     author='Connexions team',
     author_email='info@cnx.org',
     url="https://github.com/connexions/cnx-epub",
