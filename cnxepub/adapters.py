@@ -327,7 +327,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
 
   </head>
   <body xmlns:bib="http://bibtexml.sf.net/"
-        xmlns:data="http://dev.w3.org/html5/spec/#custom"
+        xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
         itemscope="itemscope"
         itemtype="http://schema.org/Book"
         >
@@ -385,7 +385,7 @@ HTML_DOCUMENT = """\
           />
   </head>
   <body xmlns:bib="http://bibtexml.sf.net/"
-        xmlns:data="http://dev.w3.org/html5/spec/#custom"
+        xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
         itemscope="itemscope"
         itemtype="http://schema.org/Book"
         >
