@@ -9,6 +9,9 @@ before_install:
   - pip install coveralls
 install:
   - python setup.py install
+before_script:
+  - pip install pep8
+  - pep8 --exclude=tests *.py cnxepub/
 script:
   - coverage run --source=cnxepub -m unittest discover
 after_success:
