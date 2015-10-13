@@ -23,7 +23,7 @@ from .models import (
     INLINE_REFERENCE_TYPE,
     )
 from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
-        DocumentPointerMetadataParser)
+                           DocumentPointerMetadataParser)
 
 from .data_uri import DataURI
 
@@ -54,7 +54,8 @@ def adapt_item(item, package):
     """
     if item.media_type == 'application/xhtml+xml':
         html = etree.parse(item.data)
-        metadata = DocumentPointerMetadataParser(html, raise_value_error=False)()
+        metadata = DocumentPointerMetadataParser(
+            html, raise_value_error=False)()
         item.data.seek(0)
         if metadata.get('is_document_pointer'):
             model = DocumentPointerItem(item, package)
@@ -107,27 +108,31 @@ def _make_package(binder):
             continue
         ext = mimetypes.guess_extension(model.media_type, strict=False)
         if ext is None:
-            raise ValueError("Can't apply an extension to media-type '{}'." \
+            raise ValueError("Can't apply an extension to media-type '{}'."
                              .format(modle.media_type))
         extensions[model.id] = ext
         extensions[model.ident_hash] = ext
 
     template_env = jinja2.Environment(trim_blocks=True, lstrip_blocks=True)
-    isdict = lambda v: isinstance(v, dict)
+
+    def isdict(v):
+        return isinstance(v, dict)
     template = template_env.from_string(HTML_DOCUMENT,
                                         globals={'isdict': isdict})
     # Build the package item list.
     items = []
     # Build the binder as an item, specifically a navigation item.
-    navigation_content =  tree_to_html(model_to_tree(binder), extensions)
+    navigation_content = tree_to_html(model_to_tree(binder), extensions)
     navigation_document = template.render(metadata=binder.metadata,
                                           content=navigation_content,
                                           is_translucent=binder.is_translucent)
-    navigation_document_name = "{}{}".format(package_id,
-            mimetypes.guess_extension('application/xhtml+xml', strict=False))
+    navigation_document_name = "{}{}".format(
+        package_id,
+        mimetypes.guess_extension('application/xhtml+xml', strict=False))
     item = Item(str(navigation_document_name),
                 io.BytesIO(navigation_document.encode('utf-8')),
-                'application/xhtml+xml', is_navigation=True, properties=['nav'])
+                'application/xhtml+xml',
+                is_navigation=True, properties=['nav'])
     items.append(item)
     resources = {}
     pointer_template = jinja2.Template(DOCUMENT_POINTER_TEMPLATE,
@@ -151,14 +156,15 @@ def _make_package(binder):
         for reference in model.references:
             if reference.remote_type == INLINE_REFERENCE_TYPE:
                 # has side effects - converts ref type to INTERNAL w/
-                # appropriate uri, so need to replicate resource treatment from above
+                # appropriate uri, so need to replicate resource treatment from
+                # above
                 resource = _make_resource_from_inline(reference)
                 model.resources.append(resource)
                 resources[resource.id] = resource
                 with resource.open() as data:
                     item = Item(resource.id, data, resource.media_type)
                 items.append(item)
-                reference.bind(resource,'../resources/{}')
+                reference.bind(resource, '../resources/{}')
 
             elif reference.remote_type == INTERNAL_REFERENCE_TYPE:
                 filename = os.path.basename(reference.uri)
@@ -177,6 +183,7 @@ def _make_package(binder):
     package = Package(package_name, items, binder.metadata)
     return package
 
+
 def _make_resource_from_inline(reference):
     """Makes an ``models.Resource`` from a ``models.Reference``
        of type INLINE. That is, a data: uri"""
@@ -186,7 +193,7 @@ def _make_resource_from_inline(reference):
     res = Resource('dummy', data, mimetype)
     res.id = res.filename
     return res
-    
+
 
 def _make_item(model):
     """Makes an ``.epub.Item`` from
@@ -265,12 +272,14 @@ class DocumentItem(Document):
         self._html = etree.parse(self._item.data)
 
         metadata = parse_metadata(self._html)
-        content_xpath = "//xhtml:body/node()[not(self::node()[@data-type='metadata'])]"
+        content_xpath = (
+            "//xhtml:body/node()[not(self::node()[@data-type='metadata'])]")
         nsmap = {'xhtml': "http://www.w3.org/1999/xhtml"}
 
         content = io.BytesIO(
-            b''.join([isinstance(n, str) and n.encode('utf-8') or etree.tostring(n)
-                      for n in self._html.xpath(content_xpath, namespaces=nsmap)]))
+            b''.join([
+                isinstance(n, str) and n.encode('utf-8') or etree.tostring(n)
+                for n in self._html.xpath(content_xpath, namespaces=nsmap)]))
         id = _id_from_metadata(metadata)
         resources = None
         super(DocumentItem, self).__init__(id, content, metadata)
@@ -332,16 +341,19 @@ DOCUMENT_POINTER_TEMPLATE = """\
         itemtype="http://schema.org/Book"
         >
     <div data-type="metadata">
-      <h1 data-type="document-title" itemprop="name">{{ metadata['title'] }}</h1>
+      <h1 data-type="document-title" itemprop="name">{{ metadata['title'] \
+                                                     }}</h1>
       <span data-type="document" data-value="pointer" />
       {% if metadata.get('cnx-archive-uri') %}
-      <span data-type="cnx-archive-uri" data-value="{{ metadata['cnx-archive-uri'] }}" />
+      <span data-type="cnx-archive-uri" data-value="{{ \
+          metadata['cnx-archive-uri'] }}" />
       {%- endif %}
     </div>
 
     <div>
       <p>
-        Click <a href="{{ metadata['url'] }}">here</a> to read {{ metadata['title'] }}.
+        Click <a href="{{ metadata['url'] }}">here</a> to read {{ \
+            metadata['title'] }}.
       </p>
     </div>
   </body>
@@ -390,16 +402,18 @@ HTML_DOCUMENT = """\
         itemtype="http://schema.org/Book"
         >
     <div data-type="metadata">
-      <h1 data-type="document-title" itemprop="name">{{ metadata['title'] }}</h1>
+      <h1 data-type="document-title" itemprop="name">{{ metadata['title'] \
+                                                     }}</h1>
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
       {% if metadata.get('cnx-archive-uri') %}
-      <span data-type="cnx-archive-uri" data-value="{{ metadata['cnx-archive-uri'] }}" />
+      <span data-type="cnx-archive-uri" data-value="{{ \
+          metadata['cnx-archive-uri'] }}" />
       {%- endif %}
 
       <div class="authors">
-        By: 
+        By:
         {% for author in metadata['authors'] -%}
           <span id="{{ '{}-{}'.format('author', loop.index) }}"
                 itemscope="itemscope"
@@ -414,7 +428,7 @@ HTML_DOCUMENT = """\
           </span>{% if not loop.last %}, {% endif %}
         {%- endfor %}
 
-        Edited by: 
+        Edited by:
         {% set person_type = 'editor' %}
         {% set person_itemprop_name = 'editor' %}
         {% set person_key = 'editors' %}
@@ -438,7 +452,7 @@ HTML_DOCUMENT = """\
           {% endif %}
         {%- endfor %}
 
-        Illustrated by: 
+        Illustrated by:
         {% set person_type = 'illustrator' %}
         {% set person_itemprop_name = 'illustrator' %}
         {% set person_key = 'illustrators' %}
@@ -462,7 +476,7 @@ HTML_DOCUMENT = """\
           {% endif %}
         {%- endfor %}
 
-        Translated by: 
+        Translated by:
         {% set person_type = 'translator' %}
         {% set person_itemprop_name = 'contributor' %}
         {% set person_key = 'translators' %}
@@ -489,7 +503,7 @@ HTML_DOCUMENT = """\
       </div>
 
       <div class="publishers">
-        Published By: 
+        Published By:
         {% set person_type = 'publisher' %}
         {% set person_itemprop_name = 'publisher' %}
         {% set person_key = 'publishers' %}
@@ -590,10 +604,10 @@ HTML_DOCUMENT = """\
 </html>
 """
 
+
 # YANK This was pulled from cnx-archive to temporarily provide
 #      a way to render the the tree to html. This either needs to
 #      move elsewhere or preferably be replaced with a better solution.
-
 def html_listify(tree, root_xl_element, extensions, list_type='ol'):
     for node in tree:
         li_elm = etree.SubElement(root_xl_element, 'li')

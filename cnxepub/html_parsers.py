@@ -20,7 +20,8 @@ def parse_navigation_html_to_tree(html, id):
     """Parse the given ``html`` (an etree object) to a tree.
     The ``id`` is required in order to assign the top-level tree id value.
     """
-    xpath = lambda x: html.xpath(x, namespaces=HTML_DOCUMENT_NAMESPACES)
+    def xpath(x):
+        return html.xpath(x, namespaces=HTML_DOCUMENT_NAMESPACES)
     try:
         value = xpath('//*[@data-type="binding"]/@data-value')[0]
         is_translucent = value == 'translucent'
@@ -40,14 +41,15 @@ def _nav_to_tree(root):
     rooted from the 'nav' element, parse to a tree:
     {'id': <id>|'subcol', 'title': <title>, 'contents': [<tree>, ...]}
     """
-    expath = lambda e,x: e.xpath(x, namespaces=HTML_DOCUMENT_NAMESPACES)
+    def expath(e, x):
+        return e.xpath(x, namespaces=HTML_DOCUMENT_NAMESPACES)
     for li in expath(root, 'xhtml:ol/xhtml:li'):
         classes = li.get('class', '').split()
         is_subtree = bool([e for e in li.getchildren()
                            if e.tag[e.tag.find('}')+1:] == 'ol'])
         if is_subtree:
             # It's a sub-tree and have a 'span' and 'ol'.
-            yield {'id': 'subcol', # Special id...
+            yield {'id': 'subcol',  # Special id...
                    'title': expath(li, 'xhtml:span/text()')[0],
                    'contents': [x for x in _nav_to_tree(li)],
                    }
@@ -81,8 +83,8 @@ class DocumentMetadataParser:
         )
 
     def __init__(self, elm_tree, raise_value_error=True):
-       self._xml = elm_tree
-       self.raise_value_error = raise_value_error
+        self._xml = elm_tree
+        self.raise_value_error = raise_value_error
 
     def __call__(self):
         return self.metadata
@@ -199,12 +201,13 @@ class DocumentMetadataParser:
             person = {'name': name, 'type': type_, 'id': id_}
             # Meta refinement allows these to be ordered.
             order = None
-            refines_xpath_tmplt = """//xhtml:meta[@refines="#{}" and @property="display-seq"]/@content"""
+            refines_xpath_tmplt = """\
+//xhtml:meta[@refines="#{}" and @property="display-seq"]/@content"""
             if elm_id is not None:
                 try:
                     order = self.parse(refines_xpath_tmplt.format(elm_id))[0]
                 except IndexError:
-                    pass # Check for refinement failed, maintain None value.
+                    pass  # Check for refinement failed, maintain None value.
             unordered.append((order, person,))
         ordered = sorted(unordered, key=lambda x: x[0])
         values = [x[1] for x in ordered]
@@ -242,7 +245,8 @@ class DocumentMetadataParser:
 
     @property
     def cnx_archive_uri(self):
-        items = self.parse('//xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
+        items = self.parse(
+            '//xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
         if items:
             return items[0]
 
