@@ -140,11 +140,11 @@ class TreeUtilityTestCase(unittest.TestCase):
                  'title': 'Part One'},
                 {'id': 'subcol',
                  'contents': [
-                    {'id': 'subcol',
-                     'contents': [
-                         {'id': 'ad17c39c@2',
-                          'title': 'Document Three'}],
-                     'title': 'Chapter Three'}],
+                     {'id': 'subcol',
+                      'contents': [
+                          {'id': 'ad17c39c@2',
+                           'title': 'Document Three'}],
+                      'title': 'Chapter Three'}],
                  'title': 'Part Two'},
                 {'id': 'subcol',
                  'contents': [
@@ -341,11 +341,12 @@ class ModelBehaviorTestCase(unittest.TestCase):
         self.assertEqual(expected_uris, [r.uri for r in document.references])
 
     def test_document_content(self):
-        with open(os.path.join(TEST_DATA_DIR,
-            'fb74dc89-47d4-4e46-aac1-b8682f487bd5@1.json'),
-            'r') as f:
+        with open(
+            os.path.join(TEST_DATA_DIR,
+                         'fb74dc89-47d4-4e46-aac1-b8682f487bd5@1.json'),
+                'r') as f:
             metadata = json.loads(f.read())
         from ..models import Document
         document = Document('document', metadata['content'])
         self.assertTrue('To demonstrate the potential of online publishing'
-                in document.content)
+                        in document.content)

@@ -12,6 +12,7 @@ install:
 before_script:
   - pip install pep8
   - pep8 --exclude=tests *.py cnxepub/
+  - pep8 --max-line-length=1000 cnxepub/tests
 script:
   - coverage run --source=cnxepub -m unittest discover
 after_success:
