@@ -39,7 +39,8 @@ TRANSLUCENT_BINDER_ID = 'subcol'
 INTERNAL_REFERENCE_TYPE = 'internal'
 EXTERNAL_REFERENCE_TYPE = 'external'
 INLINE_REFERENCE_TYPE = 'inline'
-REFERENCE_REMOTE_TYPES = (INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE, INLINE_REFERENCE_TYPE,)
+REFERENCE_REMOTE_TYPES = (
+    INTERNAL_REFERENCE_TYPE, EXTERNAL_REFERENCE_TYPE, INLINE_REFERENCE_TYPE,)
 ATTRIBUTED_ROLE_KEYS = (
     # MUST be alphabetical
     'authors', 'copyright_holders', 'editors', 'illustrators',
@@ -76,8 +77,9 @@ def _sanitize_xml(raw_xml):
     # If the raw_xml starts with untagged content, it will be parsed
     # to a string rather than an Element instance.
     # Thus causing etree.tostring to error unless we first check its type.
-    raw_xml = ''.join([utf8(isinstance(e, (str, bytes,)) and e or etree.tostring(e))
-                       for e in elms])
+    raw_xml = ''.join([
+        utf8(isinstance(e, (str, bytes,)) and e or etree.tostring(e))
+        for e in elms])
     xml = etree.fromstring(XML_WRAPPER.format(raw_xml), xml_parser)
     result = utf8(etree.tostring(xml))
     result = result[result.find('>')+1:result.rfind('<')].strip()
@@ -105,14 +107,15 @@ def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):
     return tree
 
 
-def flatten_tree_to_ident_hashes(item_or_tree, lucent_id=TRANSLUCENT_BINDER_ID):
+def flatten_tree_to_ident_hashes(item_or_tree,
+                                 lucent_id=TRANSLUCENT_BINDER_ID):
     """Flatten a tree to id and version values (ident_hash)."""
     if 'contents' in item_or_tree:
         tree = item_or_tree
         if tree['id'] != lucent_id:
             yield tree['id']
         for i in tree['contents']:
-            ##yield from flatten_tree_to_ident_hashs(i, lucent_id)
+            # yield from flatten_tree_to_ident_hashs(i, lucent_id)
             for x in flatten_tree_to_ident_hashes(i, lucent_id):
                 yield x
     else:
@@ -129,7 +132,7 @@ def flatten_model(model):
     yield model
     if isinstance(model, (TranslucentBinder, Binder,)):
         for m in model:
-            ##yield from flatten_model(m)
+            # yield from flatten_model(m)
             for x in flatten_model(m):
                 yield x
     raise StopIteration()
@@ -161,6 +164,7 @@ def _discover_uri_type(uri):
         type_ = EXTERNAL_REFERENCE_TYPE
     return type_
 
+
 def _parse_references(xml):
     """Parse the references to ``Reference`` instances."""
     references = []
@@ -181,7 +185,7 @@ class Reference(object):
         try:
             assert remote_type in REFERENCE_REMOTE_TYPES
         except AssertionError:
-            raise ValueError("remote_type: '{}' is invalid." \
+            raise ValueError("remote_type: '{}' is invalid."
                              .format(remote_type))
         self.remote_type = remote_type
         self._uri_attr = uri_attr
@@ -290,7 +294,7 @@ class TranslucentBinder(MutableSequence):
             if len(self._nodes) != len(title_overrides):
                 raise ValueError(
                     "``title_overrides`` should be the same length as "
-                    "``nodes``. {} != {}" \
+                    "``nodes``. {} != {}"
                     .format(len(self._nodes), len(title_overrides)))
             self._title_overrides = utf8(title_overrides)
         else:
@@ -397,8 +401,9 @@ class Document(object):
         """
         string_types = (type(u''), type(b''))
         # Unwrap the xml.
-        content = [isinstance(node, string_types) and node or etree.tostring(node)
-                   for node in self._xml.xpath('node()')]
+        content = [
+            isinstance(node, string_types) and node or etree.tostring(node)
+            for node in self._xml.xpath('node()')]
         return ''.join(utf8(content))
 
     def _content__set(self, value):

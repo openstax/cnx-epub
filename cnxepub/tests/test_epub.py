@@ -247,11 +247,11 @@ class WritePackageTestCase(testing.EPUBTestCase):
             'publisher': "Connexions",
             'publication_message': "Loosely publishing these here modules.",
             'title': "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
-            'identifier': "org.cnx.contents.9b0903d2-13c4-4ebe-" \
+            'identifier': "org.cnx.contents.9b0903d2-13c4-4ebe-"
                           "9ffe-1ee79db28482@1.6",
             'language': 'en-us',
-            'license_text': "This work is shared with the public using " \
-                            "the Attribution 3.0 Unported (CC BY 3.0) " \
+            'license_text': "This work is shared with the public using "
+                            "the Attribution 3.0 Unported (CC BY 3.0) "
                             "license.",
             'license_url': "http://creativecommons.org/licenses/by/3.0/",
             }
@@ -327,11 +327,11 @@ class WriteEPUBTestCase(testing.EPUBTestCase):
             'publisher': "Connexions",
             'publication_message': "Loosely publishing these here modules.",
             'title': "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6",
-            'identifier': "org.cnx.contents.9b0903d2-13c4-4ebe-" \
+            'identifier': "org.cnx.contents.9b0903d2-13c4-4ebe-"
                           "9ffe-1ee79db28482@1.6",
             'language': 'en-us',
-            'license_text': "This work is shared with the public using " \
-                            "the Attribution 3.0 Unported (CC BY 3.0) " \
+            'license_text': "This work is shared with the public using "
+                            "the Attribution 3.0 Unported (CC BY 3.0) "
                             "license.",
             'license_url': "http://creativecommons.org/licenses/by/3.0/",
             }

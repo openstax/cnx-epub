@@ -1,5 +1,5 @@
-#data_uri.py take from https://gist.github.com/zacharyvoase/5538178
-#This code is released under the Unlicense (c.f. http://unlicense.org/).
+# data_uri.py take from https://gist.github.com/zacharyvoase/5538178
+# This code is released under the Unlicense (c.f. http://unlicense.org/).
 
 import mimetypes
 import re

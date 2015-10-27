@@ -52,7 +52,8 @@ OPF_TEMPLATE = """\
     <dc:identifier id="pub-id">{{ metadata['identifier'] }}</dc:identifier>
     <dc:language>{{ metadata['language'] }}</dc:language>
     <dc:publisher>{{ metadata['publisher'] }}</dc:publisher>
-    <meta property="publicationMessage">{{ metadata['publication_message'] }}</meta>
+    <meta property="publicationMessage">{{ metadata['publication_message'] \
+                                        }}</meta>
     {% if 'license_text' in metadata %}
     <dc:rights>{{ metadata['license_text'] }}</dc:rights>
     {% endif %}
@@ -198,7 +199,7 @@ class EPUB(Sequence):
                                    trim_blocks=True, lstrip_blocks=True)
         os.makedirs(os.path.dirname(container_xml_filepath))  # FIXME PY3
         with open(container_xml_filepath, 'w') as fb:
-            xml  = template.render(package_filenames=package_filenames)
+            xml = template.render(package_filenames=package_filenames)
             fb.write(xml)
         # Write the mimetype file.
         with open(os.path.join(directory, 'mimetype'), 'w') as fb:
@@ -367,9 +368,9 @@ class Package(Sequence):
             is_navigation = 'nav' in properties
             media_type = item.get('media-type')
             pkg_items.append(Item.from_file(absolute_filepath,
-                                          media_type=media_type,
-                                          is_navigation=is_navigation,
-                                          properties=properties))
+                                            media_type=media_type,
+                                            is_navigation=is_navigation,
+                                            properties=properties))
         # Ignore spine ordering, because it is not important
         #   for our use cases.
         return cls(name, pkg_items, parser.metadata)
