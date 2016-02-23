@@ -123,9 +123,11 @@ def _make_package(binder):
     items = []
     # Build the binder as an item, specifically a navigation item.
     navigation_content = tree_to_html(model_to_tree(binder), extensions)
+    resources = getattr(binder, 'resources', [])
     navigation_document = template.render(metadata=binder.metadata,
                                           content=navigation_content,
-                                          is_translucent=binder.is_translucent)
+                                          is_translucent=binder.is_translucent,
+                                          resources=resources)
     navigation_document_name = "{}{}".format(
         package_id,
         mimetypes.guess_extension('application/xhtml+xml', strict=False))
@@ -139,6 +141,12 @@ def _make_package(binder):
                                        trim_blocks=True, lstrip_blocks=True)
     # Roll through the model list again, making each one an item.
     for model in flatten_model(binder):
+        for resource in getattr(model, 'resources', []):
+            resources[resource.id] = resource
+            with resource.open() as data:
+                item = Item(resource.id, data, resource.media_type)
+            items.append(item)
+
         if isinstance(model, (Binder, TranslucentBinder,)):
             continue
         if isinstance(model, DocumentPointer):
@@ -148,11 +156,6 @@ def _make_package(binder):
                         model.media_type)
             items.append(item)
             continue
-        for resource in model.resources:
-            resources[resource.id] = resource
-            with resource.open() as data:
-                item = Item(resource.id, data, resource.media_type)
-            items.append(item)
         for reference in model.references:
             if reference.remote_type == INLINE_REFERENCE_TYPE:
                 # has side effects - converts ref type to INTERNAL w/
@@ -173,7 +176,8 @@ def _make_package(binder):
                     reference.bind(resource, '../resources/{}')
 
         complete_content = template.render(metadata=model.metadata,
-                                           content=model.content)
+                                           content=model.content,
+                                           resources=model.resources)
         item = Item(''.join([model.ident_hash, extensions[model.id]]),
                     io.BytesIO(complete_content.encode('utf-8')),
                     model.media_type)
@@ -597,6 +601,14 @@ HTML_DOCUMENT = """\
       {% for subject in metadata['subjects'] -%}
       <div itemprop="about" data-type="subject">{{ subject }}</div>
       {%- endfor %}
+
+      <div data-type="resources" style="display: none">
+        <ul>
+          {% for resource in resources -%}
+          <li>{{ resource.id }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
     </div>
 
    {{ content }}
