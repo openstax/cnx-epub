@@ -23,7 +23,7 @@ from .models import (
     INLINE_REFERENCE_TYPE,
     )
 from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
-                           DocumentPointerMetadataParser)
+                           parse_resources, DocumentPointerMetadataParser)
 
 from .data_uri import DataURI
 
@@ -252,8 +252,12 @@ class BinderItem(Binder):
         self._package = package
         html = etree.parse(self._item.data)
         metadata = parse_metadata(html)
+        resources = [
+            adapt_item(package.grab_by_name(name), package)
+            for name in parse_resources(html)]
         id = _id_from_metadata(metadata)
-        super(BinderItem, self).__init__(id, metadata=metadata)
+        super(BinderItem, self).__init__(
+            id, metadata=metadata, resources=resources)
 
 
 class DocumentPointerItem(DocumentPointer):

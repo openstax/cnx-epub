@@ -94,6 +94,14 @@ class AdaptationTestCase(unittest.TestCase):
 
         from ..adapters import adapt_package
         binder = adapt_package(package)
+        self.assertEqual(len(binder.resources), 1)
+        self.assertEqual(binder.resources[0].id, 'cover.png')
+        with open(os.path.join(
+                TEST_DATA_DIR, 'book', 'resources', 'cover.png'), 'rb') as f:
+            expected_cover = f.read()
+        with binder.resources[0].open() as f:
+            binder_cover = f.read()
+        self.assertEqual(expected_cover, binder_cover)
 
         # This checks the binder structure, and only taps at the documents.
         from ..models import model_to_tree

@@ -179,7 +179,7 @@ class PackageTestCase(testing.EPUBTestCase):
             "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
         package = self.make_one(package_filepath)
         # EPUB Packages have contents...
-        self.assertEqual(len(package), 3)
+        self.assertEqual(len(package), 4)
 
         # Check the navigation order
         expected_nav_document = package.grab_by_name(
@@ -202,9 +202,9 @@ class PackageTestCase(testing.EPUBTestCase):
         epub2 = EPUB.from_file(epub_filepath)
 
         self.assertEqual(len(epub1), 1)
-        self.assertEqual(len(epub1[0]), 3)
+        self.assertEqual(len(epub1[0]), 4)
         self.assertEqual(len(epub2), 1)
-        self.assertEqual(len(epub2[0]), 3)
+        self.assertEqual(len(epub2[0]), 4)
 
 
 class WritePackageTestCase(testing.EPUBTestCase):
