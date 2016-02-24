@@ -5,9 +5,11 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+from __future__ import unicode_literals
 import os
 import io
 import mimetypes
+import sys
 from copy import deepcopy
 
 import jinja2
@@ -27,11 +29,14 @@ from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
 
 from .data_uri import DataURI
 
+IS_PY3 = sys.version_info.major == 3
+
 __all__ = (
     'adapt_package', 'adapt_item',
     'make_epub', 'make_publication_epub',
     'BinderItem',
     'DocumentItem',
+    'DocumentContentFormatter',
     )
 
 
@@ -307,6 +312,26 @@ class DocumentItem(Document):
                 # raise a missing reference exception when necessary.
                 pass
         self.resources = resources
+
+
+class DocumentContentFormatter(object):
+    def __init__(self, document):
+        self.document = document
+
+    def __unicode__(self):
+        return self.__bytes__().decode('utf-8')
+
+    def __str__(self):
+        if IS_PY3:
+            return self.__bytes__().decode('utf-8')
+        return self.__bytes__()
+
+    def __bytes__(self):
+        html = """\
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <body>{}</body>
+</html>""".format(self.document.content)
+        return html.encode('utf-8')
 
 
 # XXX Rendering shouldn't happen here.
