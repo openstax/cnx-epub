@@ -67,7 +67,7 @@ class AdaptationTestCase(unittest.TestCase):
             "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
         package = self.make_package(package_filepath)
         expected_tree = {
-            'id': None,
+            'id': '9b0903d2-13c4-4ebe-9ffe-1ee79db28482',
             'title': 'Book of Infinity',
             'contents': [
                 {'id': 'subcol',
@@ -94,6 +94,7 @@ class AdaptationTestCase(unittest.TestCase):
 
         from ..adapters import adapt_package
         binder = adapt_package(package)
+        self.assertEqual(binder.id, '9b0903d2-13c4-4ebe-9ffe-1ee79db28482')
         self.assertEqual(len(binder.resources), 1)
         self.assertEqual(binder.resources[0].id, 'cover.png')
         with open(os.path.join(
