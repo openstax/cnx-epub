@@ -337,12 +337,14 @@ class TranslucentBinder(MutableSequence):
 
 class Binder(TranslucentBinder):
     """An object that has metadata and contains
-    ``Binder``, ``TranslucentBinder`` and ``Document`` instances.
+    ``Binder``, ``Resource``, ``TranslucentBinder`` and ``Document`` instances.
     """
 
-    def __init__(self, id, nodes=None, metadata=None, title_overrides=None):
+    def __init__(self, id, nodes=None, metadata=None, title_overrides=None,
+                 resources=None):
         super(Binder, self).__init__(nodes, metadata, title_overrides)
         self.id = id
+        self.resources = resources or []
 
     @property
     def ident_hash(self):

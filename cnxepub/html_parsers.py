@@ -66,6 +66,13 @@ def parse_metadata(html):
     return parser()
 
 
+def parse_resources(html):
+    """Return a list of resource names found in the html metadata section."""
+    names = html.xpath('//xhtml:*[@data-type="resources"]//xhtml:li/text()',
+                       namespaces=HTML_DOCUMENT_NAMESPACES)
+    return [name.strip() for name in names]
+
+
 class DocumentMetadataParser:
     """Given a file-like object, parse out the metadata to a dictionary.
     This only parses the data. It does not validate it.

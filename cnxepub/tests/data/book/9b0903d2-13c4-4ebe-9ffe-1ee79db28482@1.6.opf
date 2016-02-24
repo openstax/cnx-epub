@@ -34,5 +34,8 @@
     <item media-type="image/png"
           href="resources/e3d625fe893b3f1f9aaef3bdf6bfa15c.png"
           />
+    <item media-type="image/png"
+          href="resources/cover.png"
+          />
   </manifest>
 </package>
