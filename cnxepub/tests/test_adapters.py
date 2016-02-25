@@ -67,19 +67,19 @@ class AdaptationTestCase(unittest.TestCase):
             "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
         package = self.make_package(package_filepath)
         expected_tree = {
-            'id': '9b0903d2-13c4-4ebe-9ffe-1ee79db28482',
+            'id': '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6',
             'title': 'Book of Infinity',
             'contents': [
                 {'id': 'subcol',
                  'title': 'Part One',
                  'contents': [
                      {'contents': [
-                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667', 'title': 'Document One'}],
+                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3', 'title': 'Document One'}],
                       'id': 'subcol',
                       'title': 'Chapter One'},
                      {'id': 'subcol',
                       'title': 'Chapter Two',
-                      'contents': [{'id': 'e78d4f90-e078-49d2-beac-e95e8be70667',
+                      'contents': [{'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
                                     'title': 'Document One (again)'}],
                       }]},
                 {'id': 'subcol',
@@ -88,13 +88,15 @@ class AdaptationTestCase(unittest.TestCase):
                      {'id': 'subcol',
                       'title': 'Chapter Three',
                       'contents': [
-                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667',
+                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
                            'title': 'Document One (...and again)'}]
                       }]}]}
 
         from ..adapters import adapt_package
         binder = adapt_package(package)
-        self.assertEqual(binder.id, '9b0903d2-13c4-4ebe-9ffe-1ee79db28482')
+        self.assertEqual(binder.id, '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6')
+        self.assertEqual(binder.ident_hash,
+                         '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6')
         self.assertEqual(len(binder.resources), 1)
         self.assertEqual(binder.resources[0].id, 'cover.png')
         with open(os.path.join(
