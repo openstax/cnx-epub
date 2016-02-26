@@ -26,7 +26,8 @@ from .models import (
     INLINE_REFERENCE_TYPE,
     )
 from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
-                           parse_resources, DocumentPointerMetadataParser)
+                           parse_resources, DocumentPointerMetadataParser,
+                           HTML_DOCUMENT_NAMESPACES)
 
 from .data_uri import DataURI
 
@@ -42,6 +43,7 @@ __all__ = (
     'DocumentItem',
     'DocumentContentFormatter',
     'HTMLFormatter',
+    'SingleHTMLFormatter',
     )
 
 
@@ -387,6 +389,86 @@ class HTMLFormatter(object):
     def __bytes__(self):
         html = self._template.render(self._template_args)
         return html.encode('utf-8')
+
+
+class SingleHTMLFormatter(object):
+    def __init__(self, binder, archive_href=None):
+        self.binder = binder
+        self.archive_href = archive_href
+
+        self.root = etree.fromstring(b"""\
+<html xmlns="http://www.w3.org/1999/xhtml"></html>""")
+        self.head = etree.Element('head')
+        self.body = etree.Element('body', **{'data-type': 'book'})
+
+        self.root.append(self.head)
+        self.root.append(self.body)
+
+        self.built = False
+
+    def get_node_type(self, node):
+        """If node is a document, the type is page.
+        If node is a binder, the type is book.
+        If node is a translucent binder, the type is either chapters (only
+        contain pages) or unit (contains at least one translucent binder).
+        """
+        if isinstance(node, Document):
+            return 'page'
+        if isinstance(node, Binder):
+            return 'book'
+        for child in node:
+            if isinstance(child, TranslucentBinder):
+                return 'unit'
+        return 'chapter'
+
+    def _document_title(self, elem, title=None):
+        t = etree.SubElement(elem, 'div', **{'data-type': 'document-title'})
+        if title:
+            t.text = title
+        return t
+
+    def _build_binder(self, binder, elem):
+        for node in binder:
+            child_elem = etree.SubElement(
+                elem, 'div', **{'data-type': self.get_node_type(node)})
+            self._document_title(
+                child_elem,
+                binder.get_title_for_node(node) or node.metadata['title'])
+            if isinstance(node, TranslucentBinder):
+                self._build_binder(node, child_elem)
+            elif isinstance(node, Document):
+                html = str(DocumentContentFormatter(node))
+                doc_root = etree.fromstring(html)
+                body = doc_root.xpath('//xhtml:body',
+                                      namespaces=HTML_DOCUMENT_NAMESPACES)[0]
+                for c in body.iterchildren():
+                    child_elem.append(c)
+
+    def build(self):
+        etree.SubElement(self.head, 'title').text = \
+            self.binder.metadata['title']
+
+        document_title = self._document_title(self.body)
+        if self.archive_href:
+            document_title = etree.SubElement(
+                document_title, 'a',
+                href=self.archive_href.format(self.binder.ident_hash))
+        document_title.text = self.binder.metadata['title']
+
+        self._build_binder(self.binder, self.body)
+
+    def __unicode__(self):
+        return self.__bytes__().decode('utf-8')
+
+    def __str__(self):
+        if IS_PY3:
+            return self.__bytes__().decode('utf-8')
+        return self.__bytes__()
+
+    def __bytes__(self):
+        if not self.built:
+            self.build()
+        return etree.tostring(self.root, pretty_print=True)
 
 
 # XXX Rendering shouldn't happen here.
