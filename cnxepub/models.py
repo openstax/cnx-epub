@@ -453,7 +453,7 @@ class DocumentPointer(object):
     def __init__(self, ident_hash, metadata=None):
         self.ident_hash = ident_hash
         self.id = ident_hash
-        self.metadata = metadata is not None and metadata or {}
+        self.metadata = utf8(metadata or {})
 
     @classmethod
     def from_uri(cls, uri):

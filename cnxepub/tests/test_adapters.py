@@ -470,7 +470,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
                 u'</li><li>'
                 u'<a href="{}">egress</a>'
                 u'</li></ol></nav>'.format(ingress_filename, egress_filename))
-        self.assertTrue(expected_nav in nav)
+        self.assertIn(expected_nav, nav)
 
         # Check that translucent is set
         self.assertTrue('<span data-type="binding" data-value="translucent" />' in nav)
