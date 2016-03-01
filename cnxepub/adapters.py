@@ -238,11 +238,7 @@ def _id_from_metadata(metadata):
     # FIXME Where does the system identifier come from?
     system = 'cnx-archive'
     identifier = "{}-uri".format(system)
-    if identifier in metadata:
-        id = metadata[identifier]
-    else:
-        id = None
-    return id
+    return metadata.get(identifier)
 
 
 class BinderItem(Binder):
