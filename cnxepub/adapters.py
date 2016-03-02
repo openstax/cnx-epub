@@ -8,6 +8,7 @@
 from __future__ import unicode_literals
 import os
 import io
+import logging
 import mimetypes
 import sys
 from copy import deepcopy
@@ -29,7 +30,10 @@ from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
 
 from .data_uri import DataURI
 
+
 IS_PY3 = sys.version_info.major == 3
+logger = logging.getLogger('cnxepub')
+
 
 __all__ = (
     'adapt_package', 'adapt_item',
@@ -59,7 +63,11 @@ def adapt_item(item, package):
 
     """
     if item.media_type == 'application/xhtml+xml':
-        html = etree.parse(item.data)
+        try:
+            html = etree.parse(item.data)
+        except Exception as exc:
+            logger.error("failed parsing {}".format(item.name))
+            raise
         metadata = DocumentPointerMetadataParser(
             html, raise_value_error=False)()
         item.data.seek(0)
