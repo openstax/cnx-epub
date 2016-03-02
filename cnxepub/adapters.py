@@ -396,7 +396,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
         itemtype="http://schema.org/Book"
         >
 
-    <title>{{ metadata['title'] }}</title>
+    <title>{{ metadata['title']|escape }}</title>
 
     {# TODO Include this based on the feature being present #}
     <!-- These are for discoverability of accessible content. -->
@@ -417,8 +417,8 @@ DOCUMENT_POINTER_TEMPLATE = """\
         itemtype="http://schema.org/Book"
         >
     <div data-type="metadata">
-      <h1 data-type="document-title" itemprop="name">{{ metadata['title'] \
-                                                     }}</h1>
+      <h1 data-type="document-title" itemprop="name">{{ \
+              metadata['title']|escape }}</h1>
       <span data-type="document" data-value="pointer" />
       {% if metadata.get('cnx-archive-uri') %}
       <span data-type="cnx-archive-uri" data-value="{{ \
@@ -429,7 +429,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
     <div>
       <p>
         Click <a href="{{ metadata['url'] }}">here</a> to read {{ \
-            metadata['title'] }}.
+            metadata['title']|escape }}.
       </p>
     </div>
   </body>
@@ -447,7 +447,7 @@ HTML_DOCUMENT = """\
         itemtype="http://schema.org/Book"
         >
 
-    <title>{{ metadata['title'] }}</title>
+    <title>{{ metadata['title']|escape }}</title>
     <meta itemprop="inLanguage"
           data-type="language"
           content="{{ metadata['language'] }}"
@@ -478,8 +478,8 @@ HTML_DOCUMENT = """\
         itemtype="http://schema.org/Book"
         >
     <div data-type="metadata">
-      <h1 data-type="document-title" itemprop="name">{{ metadata['title'] \
-                                                     }}</h1>
+      <h1 data-type="document-title" itemprop="name">{{ \
+              metadata['title']|escape }}</h1>
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
@@ -610,7 +610,7 @@ HTML_DOCUMENT = """\
         <a href="{{ metadata['derived_from_uri'] }}"
            itemprop="isDerivedFromURL"
            data-type="derived-from"
-           >{{ metadata['derived_from_title'] }}</a>
+           >{{ metadata['derived_from_title']|escape }}</a>
       </div>
       {%- endif %}
 
@@ -668,10 +668,10 @@ HTML_DOCUMENT = """\
       </div>
 
       {% for keyword in metadata['keywords'] -%}
-      <div itemprop="keywords" data-type="keyword">{{ keyword }}</div>
+      <div itemprop="keywords" data-type="keyword">{{ keyword|escape }}</div>
       {%- endfor %}
       {% for subject in metadata['subjects'] -%}
-      <div itemprop="about" data-type="subject">{{ subject }}</div>
+      <div itemprop="about" data-type="subject">{{ subject|escape }}</div>
       {%- endfor %}
 
       <div data-type="resources" style="display: none">
