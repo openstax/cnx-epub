@@ -388,14 +388,6 @@ class Document(object):
         self.metadata = utf8(metadata or {})
         self.resources = resources or []
 
-    @property
-    def html(self):
-        html = """\
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <body>{}</body>
-</html>""".format(self.content)
-        return utf8(html)
-
     def _content__get(self):
         """Produce the content from the data.
         This is used to write out reference changes that may have
@@ -461,7 +453,7 @@ class DocumentPointer(object):
     def __init__(self, ident_hash, metadata=None):
         self.ident_hash = ident_hash
         self.id = ident_hash
-        self.metadata = metadata is not None and metadata or {}
+        self.metadata = utf8(metadata or {})
 
     @classmethod
     def from_uri(cls, uri):

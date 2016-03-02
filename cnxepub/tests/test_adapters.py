@@ -470,7 +470,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
                 u'</li><li>'
                 u'<a href="{}">egress</a>'
                 u'</li></ol></nav>'.format(ingress_filename, egress_filename))
-        self.assertTrue(expected_nav in nav)
+        self.assertIn(expected_nav, nav)
 
         # Check that translucent is set
         self.assertTrue('<span data-type="binding" data-value="translucent" />' in nav)
@@ -639,3 +639,218 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertEqual(len(epub), 1)
         binder = adapt_package(epub[0])
         self.assertEqual(len(list(flatten_model(binder))), 4)
+
+
+class DocumentContentFormatterTestCase(unittest.TestCase):
+    def test_document(self):
+        from ..models import Document
+        from ..adapters import DocumentContentFormatter
+
+        base_metadata = {
+            'publishers': [],
+            'created': '2013/03/19 15:01:16 -0500',
+            'revised': '2013/06/18 15:22:55 -0500',
+            'authors': [
+                {'type': 'cnx-id',
+                 'name': 'Sponge Bob',
+                 'id': 'sbob'}],
+            'editors': [],
+            'copyright_holders': [],
+            'illustrators': [],
+            'subjects': ['Science and Mathematics'],
+            'translators': [],
+            'keywords': ['Bob', 'Sponge', 'Rock'],
+            'title': "Goofy Goober Rock",
+            'license_text': 'CC-By 4.0',
+            'license_url': 'http://creativecommons.org/licenses/by/4.0/',
+            'summary': "<p>summary</p>",
+            'version': 'draft',
+            }
+
+        # Build test document.
+        metadata = base_metadata.copy()
+        document = Document('title',
+                            io.BytesIO(u'<p>コンテンツ...</p>'.encode('utf-8')),
+                            metadata=metadata)
+        html = str(DocumentContentFormatter(document))
+        expected_html = u"""\
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <body><p>コンテンツ...</p></body>
+</html>"""
+        self.assertEqual(expected_html, unescape(html))
+
+
+class HTMLFormatterTestCase(unittest.TestCase):
+    base_metadata = {
+        'publishers': [],
+        'created': '2013/03/19 15:01:16 -0500',
+        'revised': '2013/06/18 15:22:55 -0500',
+        'authors': [
+            {'type': 'cnx-id',
+             'name': 'Sponge Bob',
+             'id': 'sbob'}],
+        'editors': [],
+        'copyright_holders': [],
+        'illustrators': [],
+        'subjects': ['Science and Mathematics'],
+        'translators': [],
+        'keywords': ['Bob', 'Sponge', 'Rock'],
+        'title': 'タイトル',
+        'license_text': 'CC-By 4.0',
+        'license_url': 'http://creativecommons.org/licenses/by/4.0/',
+        'summary': "<p>summary</p>",
+        'version': 'draft',
+        }
+
+    def xpath(self, path):
+        from ..html_parsers import HTML_DOCUMENT_NAMESPACES
+
+        return self.root.xpath(path, namespaces=HTML_DOCUMENT_NAMESPACES)
+
+    def test_document(self):
+        from ..models import Document
+        from ..adapters import HTMLFormatter
+
+        # Build test document.
+        metadata = self.base_metadata.copy()
+        document = Document(
+            metadata['title'],
+            io.BytesIO(u'<p>コンテンツ...</p>'.encode('utf-8')),
+            metadata=metadata)
+
+        html = str(HTMLFormatter(document))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertIn(u'<title>タイトル</title>', html)
+        self.assertIn(u'<p>コンテンツ...</p>', html)
+
+        self.assertEqual(
+            u'タイトル',
+            self.xpath('//*[@data-type="document-title"]/text()')[0])
+
+        self.assertEqual(
+            'summary',
+            self.xpath('//*[@class="description"]/xhtml:p/text()')[0])
+
+        self.assertEqual(
+            metadata['created'],
+            self.xpath('//xhtml:meta[@itemprop="dateCreated"]/@content')[0])
+
+        self.assertEqual(
+            metadata['revised'],
+            self.xpath('//xhtml:meta[@itemprop="dateModified"]/@content')[0])
+
+    def test_document_pointer(self):
+        from ..models import DocumentPointer
+        from ..adapters import HTMLFormatter
+
+        # Build test document pointer.
+        pointer = DocumentPointer('pointer@1', {
+            'title': self.base_metadata['title'],
+            'cnx-archive-uri': 'pointer@1',
+            'url': 'https://cnx.org/contents/pointer@1',
+            })
+
+        html = str(HTMLFormatter(pointer))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertIn(u'<title>タイトル</title>', html)
+        self.assertIn(
+            u'<a href="https://cnx.org/contents/pointer@1">', html)
+
+        self.assertEqual(
+            u'タイトル',
+            self.xpath('//*[@data-type="document-title"]/text()')[0])
+
+        self.assertEqual(
+            'pointer@1',
+            self.xpath('//*[@data-type="cnx-archive-uri"]/@data-value')[0])
+
+    def test_binder(self):
+        from ..models import (Binder, TranslucentBinder, Document,
+                              DocumentPointer)
+        from ..adapters import HTMLFormatter
+
+        # Build test binder.
+        binder = Binder(self.base_metadata['title'], metadata={
+            'title': self.base_metadata['title'],
+            })
+
+        metadata = self.base_metadata.copy()
+        metadata.update({
+            'title': "entrée",
+            'derived_from_uri': 'http://cnx.org/contents/'
+                                'dd68a67a-11f4-4140-a49f-b78e856e2262@1',
+            'derived_from_title': "Taking Customers' Orders",
+            })
+
+        binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
+                               metadata=metadata))
+
+        translucent_binder = TranslucentBinder(metadata={'title': 'Kranken'})
+        binder.append(translucent_binder)
+
+        metadata = self.base_metadata.copy()
+        metadata.update({
+            'title': "egress",
+            'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667'})
+        translucent_binder.append(
+            Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
+                     metadata=metadata))
+
+        binder.append(DocumentPointer('pointer@1', {
+            'title': 'Pointer',
+            'cnx-archive-uri': 'pointer@1',
+            'url': 'http://cnx.org/contents/pointer@1'}))
+
+        html = str(HTMLFormatter(binder))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertIn(u'<title>タイトル</title>', html)
+
+        lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li')
+        self.assertEqual(3, len(lis))
+        self.assertEqual('ingress@draft.xhtml', lis[0][0].attrib['href'])
+        self.assertEqual(u'entrée', lis[0][0].text)
+        self.assertEqual('Kranken', lis[1][0].text)
+        self.assertEqual('pointer@1.xhtml', lis[2][0].attrib['href'])
+        self.assertEqual('Pointer', lis[2][0].text)
+
+        lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li[2]/xhtml:ol/xhtml:li')
+        self.assertEqual(1, len(lis))
+        self.assertEqual('egress@draft.xhtml', lis[0][0].attrib['href'])
+        self.assertEqual('egress', lis[0][0].text)
+
+    def test_translucent_binder(self):
+        from ..models import (TranslucentBinder, Document)
+        from ..adapters import HTMLFormatter
+
+        # Build test translucent binder.
+        binder = TranslucentBinder(metadata={
+            'title': self.base_metadata['title'],
+            })
+
+        metadata = self.base_metadata.copy()
+        metadata.update({
+            'title': "entrée",
+            'derived_from_uri': 'http://cnx.org/contents/'
+                                'dd68a67a-11f4-4140-a49f-b78e856e2262@1',
+            'derived_from_title': "Taking Customers' Orders",
+            })
+
+        binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
+                               metadata=metadata))
+
+        html = str(HTMLFormatter(binder))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertIn(u'<title>タイトル</title>', html)
+
+        lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li')
+        self.assertEqual(1, len(lis))
+        self.assertEqual('ingress@draft.xhtml', lis[0][0].attrib['href'])
+        self.assertEqual(u'entrée', lis[0][0].text)

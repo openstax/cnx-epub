@@ -5,9 +5,11 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+from __future__ import unicode_literals
 import os
 import io
 import mimetypes
+import sys
 from copy import deepcopy
 
 import jinja2
@@ -27,11 +29,15 @@ from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
 
 from .data_uri import DataURI
 
+IS_PY3 = sys.version_info.major == 3
+
 __all__ = (
     'adapt_package', 'adapt_item',
     'make_epub', 'make_publication_epub',
     'BinderItem',
     'DocumentItem',
+    'DocumentContentFormatter',
+    'HTMLFormatter',
     )
 
 
@@ -93,14 +99,7 @@ def make_publication_epub(binders, publisher, publication_message, file):
     epub.to_file(epub, file)
 
 
-def _make_package(binder):
-    """Makes an ``.epub.Package`` from a  Binder'ish instance."""
-    package_id = binder.id
-    if package_id is None:
-        package_id = hash(binder)
-
-    package_name = "{}.opf".format(package_id)
-
+def _get_model_extensions(binder):
     extensions = {}
     # Set model identifier file extensions.
     for model in flatten_model(binder):
@@ -112,6 +111,18 @@ def _make_package(binder):
                              .format(modle.media_type))
         extensions[model.id] = ext
         extensions[model.ident_hash] = ext
+    return extensions
+
+
+def _make_package(binder):
+    """Makes an ``.epub.Package`` from a  Binder'ish instance."""
+    package_id = binder.id
+    if package_id is None:
+        package_id = hash(binder)
+
+    package_name = "{}.opf".format(package_id)
+
+    extensions = _get_model_extensions(binder)
 
     template_env = jinja2.Environment(trim_blocks=True, lstrip_blocks=True)
 
@@ -122,23 +133,16 @@ def _make_package(binder):
     # Build the package item list.
     items = []
     # Build the binder as an item, specifically a navigation item.
-    navigation_content = tree_to_html(model_to_tree(binder), extensions)
-    resources = getattr(binder, 'resources', [])
-    navigation_document = template.render(metadata=binder.metadata,
-                                          content=navigation_content,
-                                          is_translucent=binder.is_translucent,
-                                          resources=resources)
+    navigation_document = bytes(HTMLFormatter(binder, extensions))
     navigation_document_name = "{}{}".format(
         package_id,
         mimetypes.guess_extension('application/xhtml+xml', strict=False))
     item = Item(str(navigation_document_name),
-                io.BytesIO(navigation_document.encode('utf-8')),
+                io.BytesIO(navigation_document),
                 'application/xhtml+xml',
                 is_navigation=True, properties=['nav'])
     items.append(item)
     resources = {}
-    pointer_template = jinja2.Template(DOCUMENT_POINTER_TEMPLATE,
-                                       trim_blocks=True, lstrip_blocks=True)
     # Roll through the model list again, making each one an item.
     for model in flatten_model(binder):
         for resource in getattr(model, 'resources', []):
@@ -150,9 +154,9 @@ def _make_package(binder):
         if isinstance(model, (Binder, TranslucentBinder,)):
             continue
         if isinstance(model, DocumentPointer):
-            content = pointer_template.render(metadata=model.metadata)
+            content = bytes(HTMLFormatter(model))
             item = Item(''.join([model.ident_hash, extensions[model.id]]),
-                        io.BytesIO(content.encode('utf-8')),
+                        io.BytesIO(content),
                         model.media_type)
             items.append(item)
             continue
@@ -175,11 +179,9 @@ def _make_package(binder):
                 if resource:
                     reference.bind(resource, '../resources/{}')
 
-        complete_content = template.render(metadata=model.metadata,
-                                           content=model.content,
-                                           resources=model.resources)
+        complete_content = bytes(HTMLFormatter(model))
         item = Item(''.join([model.ident_hash, extensions[model.id]]),
-                    io.BytesIO(complete_content.encode('utf-8')),
+                    io.BytesIO(complete_content),
                     model.media_type)
         items.append(item)
 
@@ -307,6 +309,76 @@ class DocumentItem(Document):
                 # raise a missing reference exception when necessary.
                 pass
         self.resources = resources
+
+
+class DocumentContentFormatter(object):
+    def __init__(self, document):
+        self.document = document
+
+    def __unicode__(self):
+        return self.__bytes__().decode('utf-8')
+
+    def __str__(self):
+        if IS_PY3:
+            return self.__bytes__().decode('utf-8')
+        return self.__bytes__()
+
+    def __bytes__(self):
+        html = """\
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <body>{}</body>
+</html>""".format(self.document.content)
+        return html.encode('utf-8')
+
+
+class HTMLFormatter(object):
+    def __init__(self, model, extensions=None):
+        self.model = model
+        self.extensions = extensions
+
+    @property
+    def _content(self):
+        if isinstance(self.model, TranslucentBinder):
+            if not self.extensions:
+                self.extensions = _get_model_extensions(self.model)
+            return tree_to_html(
+                model_to_tree(self.model), self.extensions).decode('utf-8')
+        elif isinstance(self.model, Document):
+            return self.model.content
+
+    @property
+    def _template(self):
+        if isinstance(self.model, DocumentPointer):
+            return jinja2.Template(DOCUMENT_POINTER_TEMPLATE,
+                                   trim_blocks=True, lstrip_blocks=True)
+
+        def isdict(v):
+            return isinstance(v, dict)
+
+        template_env = jinja2.Environment(trim_blocks=True, lstrip_blocks=True)
+        return template_env.from_string(HTML_DOCUMENT,
+                                        globals={'isdict': isdict})
+
+    @property
+    def _template_args(self):
+        return {
+            'metadata': self.model.metadata,
+            'content': self._content,
+            'is_translucent': getattr(self.model, 'is_translucent', False),
+            'resources': getattr(self.model, 'resources', []),
+            }
+
+    def __unicode__(self):
+        return self.__bytes().decode('utf-8')
+
+    def __str__(self):
+        if IS_PY3:
+            return self.__bytes__().decode('utf-8')
+        return self.__bytes__()
+
+    def __bytes__(self):
+        html = self._template.render(self._template_args)
+        return html.encode('utf-8')
 
 
 # XXX Rendering shouldn't happen here.
