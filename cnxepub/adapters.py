@@ -116,7 +116,7 @@ def _get_model_extensions(binder):
         ext = mimetypes.guess_extension(model.media_type, strict=False)
         if ext is None:
             raise ValueError("Can't apply an extension to media-type '{}'."
-                             .format(modle.media_type))
+                             .format(model.media_type))
         extensions[model.id] = ext
         extensions[model.ident_hash] = ext
     return extensions
