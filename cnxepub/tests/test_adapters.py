@@ -399,7 +399,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             'illustrators': [],
             'subjects': ['Science and Mathematics'],
             'translators': [],
-            'keywords': ['Bob', 'Sponge', 'Rock'],
+            'keywords': ['Bob', 'Sponge', 'Rock',
+                         # Invalid xml in keywords
+                         '</emphasis>horizontal line'],
             'title': "Goofy Goober Rock",
             'license_text': 'CC-By 4.0',
             'license_url': 'http://creativecommons.org/licenses/by/4.0/',
@@ -491,6 +493,10 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertEqual(len(epub), 1)
         binder = adapt_package(epub[0])
         self.assertEqual(len(list(flatten_model(binder))), 3)
+
+        document = binder[0]
+        self.assertEqual(document.metadata['keywords'],
+                         base_metadata['keywords'])
 
     def test_binder(self):
         """Create an EPUB from a binder with a few documents."""
