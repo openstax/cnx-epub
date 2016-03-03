@@ -34,9 +34,11 @@ setup(
     extras_require=extras_require,
     packages=find_packages(),
     include_package_data=False,
-    entry_points="""\
-    [console_scripts]
-    """,
+    entry_points={
+        'console_scripts': [
+            'cnx-epub-single_html = cnxepub.scripts.single_html.main:main',
+            ],
+        },
     test_suite='cnxepub.tests',
     zip_safe=False,
     )
