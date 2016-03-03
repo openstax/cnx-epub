@@ -22,7 +22,7 @@ MATHJAX_URL = 'https://cdn.mathjax.org/mathjax/{mathjax_version}/'\
 
 
 parts = ['page', 'chapter', 'unit', 'book', 'series']
-partcount = {}.fromkeys(parts, 0)
+partcount = {}
 logger = logging.getLogger('single_html')
 
 
@@ -35,6 +35,7 @@ def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,
 
     package = epub[0]
     binder = cnxepub.adapt_package(package)
+    partcount.update({}.fromkeys(parts, 0))
     partcount['book'] += 1
 
     html = cnxepub.SingleHTMLFormatter(binder, archive_href=ARCHIVEHTML)
@@ -58,6 +59,9 @@ def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,
         etree.SubElement(html.head, 'style', type='text/css').text = f.read()
 
     print(str(html), file=html_out)
+    if hasattr(html_out, 'name'):
+        # html_out is a file, close after writing
+        html_out.close()
 
 
 def apply_numchapters(get_node_type, binder, numchapters):
