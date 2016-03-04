@@ -24,7 +24,7 @@ class SingleHTMLTestCase(unittest.TestCase):
 
     epub_path = os.path.join(TEST_DATA_DIR, 'book')
 
-    maxDiff = 7000
+    maxDiff = 30000
 
     def xpath(self, path):
         return self.root.xpath(path, namespaces=HTML_DOCUMENT_NAMESPACES)
