@@ -21,6 +21,28 @@ here = os.path.abspath(os.path.dirname(__file__))
 TEST_DATA_DIR = os.path.join(here, 'data')
 
 
+class BaseModelTestCase(unittest.TestCase):
+
+    def make_binder(self, id=None, nodes=None, metadata=None):
+        """Make a ``Binder`` instance.
+        If ``id`` is not supplied, a ``TranslucentBinder`` is made.
+        """
+        from ..models import Binder, TranslucentBinder
+        if id is None:
+            binder = TranslucentBinder(nodes, metadata)
+        else:
+            binder = Binder(id, nodes, metadata)
+        return binder
+
+    def make_document(self, id, content=b'', metadata={}):
+        from ..models import Document
+        return Document(id, io.BytesIO(content), metadata=metadata)
+
+    def make_document_pointer(self, ident_hash, metadata={}):
+        from ..models import DocumentPointer
+        return DocumentPointer(ident_hash, metadata=metadata)
+
+
 class PrivateUtilitiesTestCase(unittest.TestCase):
 
     def test_sanatize_xml(self):
@@ -51,26 +73,7 @@ class PrivateUtilitiesTestCase(unittest.TestCase):
         self.assertEqual(xml, 'aaa bbb')
 
 
-class TreeUtilityTestCase(unittest.TestCase):
-
-    def make_binder(self, id=None, nodes=None, metadata=None):
-        """Make a ``Binder`` instance.
-        If ``id`` is not supplied, a ``FauxBinder`` is made.
-        """
-        from ..models import Binder, TranslucentBinder
-        if id is None:
-            binder = TranslucentBinder(nodes, metadata)
-        else:
-            binder = Binder(id, nodes, metadata)
-        return binder
-
-    def make_document(self, id, metadata={}):
-        from ..models import Document
-        return Document(id, io.BytesIO(b''), metadata=metadata)
-
-    def make_document_pointer(self, ident_hash, metadata={}):
-        from ..models import DocumentPointer
-        return DocumentPointer(ident_hash, metadata=metadata)
+class TreeUtilityTestCase(BaseModelTestCase):
 
     def test_binder_to_tree(self):
         binder = self.make_binder(
