@@ -15,6 +15,7 @@ import io
 import tempfile
 import shutil
 import random
+import re
 import unittest
 try:
     from unittest import mock
@@ -369,6 +370,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue('<title>Kraken</title>' in nav)
         with open(os.path.join(epub_path, 'contents', egress_filename)) as f:
             egress = unescape(f.read())
+        self.assertFalse('<div data-type="resources"' in egress)
         self.assertTrue('<title>egress</title>' in egress)
         self.assertTrue(u'<p>hüvasti.</p>' in egress)
 
@@ -483,6 +485,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             egress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
         self.assertFalse('<span data-type="cnx-archive-uri"' in egress)
+        self.assertTrue(re.search(
+            '<div data-type="resources"[^>]*>\s*<ul>\s*'
+            '<li>1x1.jpg</li>\s*</ul>\s*</div>', egress))
         self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
 
         # Adapt epub back to documents and binders

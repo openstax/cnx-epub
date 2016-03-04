@@ -747,6 +747,7 @@ HTML_DOCUMENT = """\
       <div itemprop="about" data-type="subject">{{ subject|escape }}</div>
       {%- endfor %}
 
+      {% if resources %}
       <div data-type="resources" style="display: none">
         <ul>
           {% for resource in resources -%}
@@ -754,6 +755,8 @@ HTML_DOCUMENT = """\
           {%- endfor %}
         </ul>
       </div>
+      {%- endif %}
+
     </div>
 
    {{ content }}
