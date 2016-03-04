@@ -396,15 +396,17 @@ class SingleHTMLFormatter(object):
         self.binder = binder
         self.archive_href = archive_href
 
-        self.root = etree.fromstring(b"""\
-<html xmlns="http://www.w3.org/1999/xhtml"></html>""")
-        self.head = etree.Element('head')
-        self.body = etree.Element('body', **{'data-type': 'book'})
+        self.root = etree.fromstring(bytes(HTMLFormatter(self.binder)))
 
-        self.root.append(self.head)
-        self.root.append(self.body)
+        self.head = self.xpath('//xhtml:head')[0]
+        self.body = self.xpath('//xhtml:body')[0]
 
         self.built = False
+
+    def xpath(self, path, elem=None):
+        if elem is None:
+            elem = self.root
+        return elem.xpath(path, namespaces=HTML_DOCUMENT_NAMESPACES)
 
     def get_node_type(self, node):
         """If node is a document, the type is page.
@@ -421,23 +423,14 @@ class SingleHTMLFormatter(object):
                 return 'unit'
         return 'chapter'
 
-    def _document_title(self, elem, title=None):
-        t = etree.SubElement(elem, 'div', **{'data-type': 'document-title'})
-        if title:
-            t.text = title
-        return t
-
     def _build_binder(self, binder, elem):
         for node in binder:
             child_elem = etree.SubElement(
                 elem, 'div', **{'data-type': self.get_node_type(node)})
-            self._document_title(
-                child_elem,
-                binder.get_title_for_node(node) or node.metadata['title'])
             if isinstance(node, TranslucentBinder):
                 self._build_binder(node, child_elem)
             elif isinstance(node, Document):
-                html = str(DocumentContentFormatter(node))
+                html = bytes(HTMLFormatter(node))
                 doc_root = etree.fromstring(html)
                 body = doc_root.xpath('//xhtml:body',
                                       namespaces=HTML_DOCUMENT_NAMESPACES)[0]
@@ -445,16 +438,6 @@ class SingleHTMLFormatter(object):
                     child_elem.append(c)
 
     def build(self):
-        etree.SubElement(self.head, 'title').text = \
-            self.binder.metadata['title']
-
-        document_title = self._document_title(self.body)
-        if self.archive_href:
-            document_title = etree.SubElement(
-                document_title, 'a',
-                href=self.archive_href.format(self.binder.ident_hash))
-        document_title.text = self.binder.metadata['title']
-
         self._build_binder(self.binder, self.body)
 
     def __unicode__(self):
