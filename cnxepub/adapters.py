@@ -420,9 +420,8 @@ class HTMLFormatter(object):
 
 
 class SingleHTMLFormatter(object):
-    def __init__(self, binder, archive_href=None):
+    def __init__(self, binder):
         self.binder = binder
-        self.archive_href = archive_href
 
         self.root = etree.fromstring(bytes(HTMLFormatter(self.binder)))
 
