@@ -14,6 +14,7 @@ import os
 import io
 import tempfile
 import shutil
+import sys
 import random
 import re
 import unittest
@@ -25,6 +26,7 @@ except ImportError:
 from lxml import etree
 
 
+IS_PY3 = sys.version_info.major == 3
 here = os.path.abspath(os.path.dirname(__file__))
 TEST_DATA_DIR = os.path.join(here, 'data')
 
@@ -43,6 +45,12 @@ def random_extension(*args, **kwargs):
     # different possible extensions
     exts = mimetypes.guess_all_extensions(*args, **kwargs)
     return random.choice(exts)
+
+
+def last_extension(*args, **kwargs):
+    # Always return the last value of sorted mimetypes.guess_all_extensions
+    exts = mimetypes.guess_all_extensions(*args, **kwargs)
+    return sorted(exts)[-1]
 
 
 class AdaptationTestCase(unittest.TestCase):
@@ -908,3 +916,116 @@ class HTMLFormatterTestCase(unittest.TestCase):
         self.assertIn(lis[0][0].attrib['href'],
                       ['ingress@draft.xhtml', 'ingress@draft.xht'])
         self.assertEqual(u'entrée', lis[0][0].text)
+
+
+@mock.patch('mimetypes.guess_extension', last_extension)
+class SingleHTMLFormatterTestCase(unittest.TestCase):
+    base_metadata = {
+        'publishers': [],
+        'created': '2016/03/04 17:05:20 -0500',
+        'revised': '2013/03/05 09:35:24 -0500',
+        'authors': [
+            {'type': 'cnx-id',
+             'name': 'Good Food',
+             'id': 'yum'}],
+        'editors': [],
+        'copyright_holders': [],
+        'illustrators': [],
+        'subjects': ['Humanities'],
+        'translators': [],
+        'keywords': ['Food', 'デザート', 'Pudding'],
+        'title': 'チョコレート',
+        'license_text': 'CC-By 4.0',
+        'license_url': 'http://creativecommons.org/licenses/by/4.0/',
+        'summary': "<p>summary</p>",
+        'version': 'draft',
+        }
+
+    maxDiff = None
+
+    def setUp(self):
+        from ..models import TranslucentBinder, Binder, Document, Resource
+
+        with open(os.path.join(TEST_DATA_DIR, '1x1.jpg'), 'rb') as f:
+            jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg')
+
+        metadata = self.base_metadata.copy()
+        contents = io.BytesIO(u"""\
+<h1>Chocolate Desserts</h1>
+<p>List of desserts to try:</p>
+<ul><li>Chocolate Orange Tart,</li>
+    <li>Hot Mocha Puddings,</li>
+    <li>Chocolate and Banana French Toast,</li>
+    <li>Chocolate Truffles...</li>
+</ul><img src="/resources/1x1.jpg" /><p>チョコレートデザート</p>
+""".encode('utf-8'))
+        self.chocolate = Document('chocolate', contents, metadata=metadata,
+                                  resources=[jpg])
+
+        metadata = self.base_metadata.copy()
+        metadata['title'] = 'Apple'
+        contents = io.BytesIO(b"""\
+<h1>Apple Desserts</h1>
+<p>Here are some examples:</p>
+<ul><li>Apple Crumble,</li>
+    <li>Apfelstrudel,</li>
+    <li>Caramel Apple,</li>
+    <li>Apple Pie,</li>
+    <li>Apple sauce...</li>
+</ul>
+""")
+        self.apple = Document('apple', contents, metadata=metadata)
+
+        metadata = self.base_metadata.copy()
+        metadata['title'] = 'Lemon'
+        contents = io.BytesIO(b"""\
+<h1>Lemon Desserts</h1>
+<p>Yum! <img src="/resources/1x1.jpg" /></p>
+<ul><li>Lemon &amp; Lime Crush,</li>
+    <li>Lemon Drizzle Loaf,</li>
+    <li>Lemon Cheesecake,</li>
+    <li>Raspberry &amp; Lemon Polenta Cake...</li>
+</ul>
+""")
+        self.lemon = Document('lemon', contents, metadata=metadata,
+                              resources=[jpg])
+
+        metadata = self.base_metadata.copy()
+        metadata['title'] = 'Citrus'
+        self.citrus = TranslucentBinder([self.lemon], metadata=metadata)
+
+        self.fruity = TranslucentBinder([self.apple, self.lemon, self.citrus],
+                                        metadata={'title': 'Fruity'},
+                                        title_overrides=[
+                                            self.apple.metadata['title'],
+                                            u'レモン', 'citrus'])
+
+        with open(os.path.join(TEST_DATA_DIR, 'cover.png'), 'rb') as f:
+            cover_png = Resource(
+                'cover.png', io.BytesIO(f.read()), 'image/png')
+
+        self.desserts = Binder(
+            'Desserts', [self.fruity, self.chocolate],
+            metadata={'title': 'Desserts'}, resources=[cover_png])
+
+    def test_binder(self):
+        from ..adapters import SingleHTMLFormatter
+
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
+        with open(page_path, 'r') as f:
+            self.assertMultiLineEqual(
+                f.read(), str(SingleHTMLFormatter(self.desserts)))
+
+    def test_str_unicode_bytes(self):
+        from ..adapters import SingleHTMLFormatter
+
+        html = bytes(SingleHTMLFormatter(self.desserts))
+        if IS_PY3:
+            self.assertEqual(
+                html, str(SingleHTMLFormatter(self.desserts)).encode('utf-8'))
+        else:
+            self.assertEqual(
+                html, str(SingleHTMLFormatter(self.desserts)))
+            self.assertEqual(
+                html,
+                unicode(SingleHTMLFormatter(self.desserts)).encode('utf-8'))
