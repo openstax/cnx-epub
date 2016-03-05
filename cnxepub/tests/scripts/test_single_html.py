@@ -6,9 +6,14 @@
 # See LICENCE.txt for details.
 # ###
 
+import mimetypes
 import os.path
 import tempfile
 import unittest
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 
 from lxml import etree
 
@@ -16,6 +21,14 @@ from ...html_parsers import HTML_DOCUMENT_NAMESPACES
 from ...testing import TEST_DATA_DIR, captured_output
 
 
+def mocked_guess_extension(*args, **kwargs):
+    # Fix what extension is returned by mimetypes.guess_extension
+    # for the test
+    exts = mimetypes.guess_all_extensions(*args, **kwargs)
+    return sorted(exts)[-1]
+
+
+@mock.patch('mimetypes.guess_extension', mocked_guess_extension)
 class SingleHTMLTestCase(unittest.TestCase):
     @property
     def target(self):
@@ -24,7 +37,7 @@ class SingleHTMLTestCase(unittest.TestCase):
 
     epub_path = os.path.join(TEST_DATA_DIR, 'book')
 
-    maxDiff = 30000
+    maxDiff = None
 
     def xpath(self, path):
         return self.root.xpath(path, namespaces=HTML_DOCUMENT_NAMESPACES)
