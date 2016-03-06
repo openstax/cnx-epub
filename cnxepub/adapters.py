@@ -455,6 +455,9 @@ class SingleHTMLFormatter(object):
             child_elem = etree.SubElement(
                 elem, 'div', **{'data-type': self.get_node_type(node)})
             if isinstance(node, TranslucentBinder):
+                etree.SubElement(
+                    child_elem, 'h1', **{'data-type': 'document-title'}
+                    ).text = node.metadata['title']
                 self._build_binder(node, child_elem)
             elif isinstance(node, Document):
                 html = bytes(HTMLFormatter(node))
