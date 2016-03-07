@@ -131,8 +131,12 @@ class DocumentMetadataParser:
     def summary(self):
         items = self.parse('.//xhtml:*[@data-type="description"]')
         try:
-            value = items[0]
-            value = etree.tostring(value)
+            description = items[0]
+            value = [description.text]
+            for child in description.getchildren():
+                value.append(etree.tostring(child).decode('utf-8'))
+                value.append(child.tail)
+            value = ''.join(value).encode('utf-8')
         except IndexError:
             value = None
         return value
