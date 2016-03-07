@@ -120,7 +120,7 @@ class DocumentMetadataParser:
 
     @property
     def title(self):
-        items = self.parse('//xhtml:*[@data-type="document-title"]/text()')
+        items = self.parse('.//xhtml:*[@data-type="document-title"]/text()')
         try:
             value = items[0]
         except IndexError:
@@ -129,7 +129,7 @@ class DocumentMetadataParser:
 
     @property
     def summary(self):
-        items = self.parse('//xhtml:*[@data-type="description"]')
+        items = self.parse('.//xhtml:*[@data-type="description"]')
         try:
             value = items[0]
             value = etree.tostring(value)
@@ -139,7 +139,7 @@ class DocumentMetadataParser:
 
     @property
     def created(self):
-        items = self.parse('//xhtml:meta[@itemprop="dateCreated"]/@content')
+        items = self.parse('.//xhtml:meta[@itemprop="dateCreated"]/@content')
         try:
             value = items[0]
         except IndexError:
@@ -148,7 +148,7 @@ class DocumentMetadataParser:
 
     @property
     def revised(self):
-        items = self.parse('//xhtml:meta[@itemprop="dateModified"]/@content')
+        items = self.parse('.//xhtml:meta[@itemprop="dateModified"]/@content')
         try:
             value = items[0]
         except IndexError:
@@ -157,7 +157,7 @@ class DocumentMetadataParser:
 
     @property
     def language(self):
-        items = self.parse('//xhtml:*[@data-type="language"]/@content')
+        items = self.parse('.//xhtml:*[@data-type="language"]/@content')
         try:
             value = items[0]
         except IndexError:
@@ -166,17 +166,17 @@ class DocumentMetadataParser:
 
     @property
     def subjects(self):
-        items = self.parse('//xhtml:*[@data-type="subject"]/text()')
+        items = self.parse('.//xhtml:*[@data-type="subject"]/text()')
         return items
 
     @property
     def keywords(self):
-        items = self.parse('//xhtml:*[@data-type="keyword"]/text()')
+        items = self.parse('.//xhtml:*[@data-type="keyword"]/text()')
         return items
 
     @property
     def license_url(self):
-        items = self.parse('//xhtml:*[@data-type="license"]/@href')
+        items = self.parse('.//xhtml:*[@data-type="license"]/@href')
         try:
             value = items[0]
         except IndexError:
@@ -185,7 +185,7 @@ class DocumentMetadataParser:
 
     @property
     def license_text(self):
-        items = self.parse('//xhtml:*[@data-type="license"]/text()')
+        items = self.parse('.//xhtml:*[@data-type="license"]/text()')
         try:
             value = items[0]
         except IndexError:
@@ -209,7 +209,7 @@ class DocumentMetadataParser:
             # Meta refinement allows these to be ordered.
             order = None
             refines_xpath_tmplt = """\
-//xhtml:meta[@refines="#{}" and @property="display-seq"]/@content"""
+.//xhtml:meta[@refines="#{}" and @property="display-seq"]/@content"""
             if elm_id is not None:
                 try:
                     order = self.parse(refines_xpath_tmplt.format(elm_id))[0]
@@ -222,56 +222,56 @@ class DocumentMetadataParser:
 
     @property
     def publishers(self):
-        xpath = '//xhtml:*[@data-type="publisher"]'
+        xpath = './/xhtml:*[@data-type="publisher"]'
         return self._parse_person_info(xpath)
 
     @property
     def editors(self):
-        xpath = '//xhtml:*[@data-type="editor"]'
+        xpath = './/xhtml:*[@data-type="editor"]'
         return self._parse_person_info(xpath)
 
     @property
     def illustrators(self):
-        xpath = '//xhtml:*[@data-type="illustrator"]'
+        xpath = './/xhtml:*[@data-type="illustrator"]'
         return self._parse_person_info(xpath)
 
     @property
     def translators(self):
-        xpath = '//xhtml:*[@data-type="translator"]'
+        xpath = './/xhtml:*[@data-type="translator"]'
         return self._parse_person_info(xpath)
 
     @property
     def copyright_holders(self):
-        xpath = '//xhtml:*[@data-type="copyright-holder"]'
+        xpath = './/xhtml:*[@data-type="copyright-holder"]'
         return self._parse_person_info(xpath)
 
     @property
     def authors(self):
-        xpath = '//xhtml:*[@data-type="author"]'
+        xpath = './/xhtml:*[@data-type="author"]'
         return self._parse_person_info(xpath)
 
     @property
     def cnx_archive_uri(self):
         items = self.parse(
-            '//xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
+            './/xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
         if items:
             return items[0]
 
     @property
     def derived_from_uri(self):
-        items = self.parse('//xhtml:*[@data-type="derived-from"]/@href')
+        items = self.parse('.//xhtml:*[@data-type="derived-from"]/@href')
         if items:
             return items[0]
 
     @property
     def print_style(self):
-        items = self.parse('//xhtml:*[@data-type="print-style"]/text()')
+        items = self.parse('.//xhtml:*[@data-type="print-style"]/text()')
         if items:
             return items[0]
 
     @property
     def derived_from_title(self):
-        items = self.parse('//xhtml:*[@data-type="derived-from"]/text()')
+        items = self.parse('.//xhtml:*[@data-type="derived-from"]/text()')
         if items:
             return items[0]
 
@@ -286,6 +286,6 @@ class DocumentPointerMetadataParser(DocumentMetadataParser):
 
     @property
     def is_document_pointer(self):
-        items = self.parse('//xhtml:*[@data-type="document"]/@data-value')
+        items = self.parse('.//xhtml:*[@data-type="document"]/@data-value')
         if items:
             return items[0] == 'pointer'
