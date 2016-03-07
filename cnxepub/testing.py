@@ -6,6 +6,10 @@
 # See LICENCE.txt for details.
 # ###
 from contextlib import contextmanager
+try:
+    import html.parser as HTMLParser
+except:
+    import HTMLParser
 from io import StringIO
 import os
 import tempfile
@@ -63,3 +67,10 @@ def captured_output():
         yield sys.stdout, sys.stderr
     finally:
         sys.stdout, sys.stderr = old_out, old_err
+
+
+def unescape(html):
+    p = HTMLParser.HTMLParser()
+    if isinstance(html, bytes):
+        html = html.decode('utf-8')
+    return p.unescape(html)

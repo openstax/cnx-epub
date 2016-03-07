@@ -6,5 +6,6 @@
 # See LICENCE.txt for details.
 # ###
 from .epub import *
+from .formatters import *
 from .models import *
 from .adapters import *
