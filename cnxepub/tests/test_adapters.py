@@ -824,15 +824,18 @@ class HTMLFormatterTestCase(unittest.TestCase):
 
         lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li')
         self.assertEqual(3, len(lis))
-        self.assertEqual('ingress@draft.xhtml', lis[0][0].attrib['href'])
+        self.assertIn(lis[0][0].attrib['href'],
+                      ['ingress@draft.xhtml', 'ingress@draft.xht'])
         self.assertEqual(u'entrée', lis[0][0].text)
         self.assertEqual('Kranken', lis[1][0].text)
-        self.assertEqual('pointer@1.xhtml', lis[2][0].attrib['href'])
+        self.assertIn(lis[2][0].attrib['href'],
+                      ['pointer@1.xhtml', 'pointer@1.xht'])
         self.assertEqual('Pointer', lis[2][0].text)
 
         lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li[2]/xhtml:ol/xhtml:li')
         self.assertEqual(1, len(lis))
-        self.assertEqual('egress@draft.xhtml', lis[0][0].attrib['href'])
+        self.assertIn(lis[0][0].attrib['href'],
+                      ['egress@draft.xhtml', 'egress@draft.xht'])
         self.assertEqual('egress', lis[0][0].text)
 
     def test_translucent_binder(self):
@@ -863,5 +866,6 @@ class HTMLFormatterTestCase(unittest.TestCase):
 
         lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li')
         self.assertEqual(1, len(lis))
-        self.assertEqual('ingress@draft.xhtml', lis[0][0].attrib['href'])
+        self.assertIn(lis[0][0].attrib['href'],
+                      ['ingress@draft.xhtml', 'ingress@draft.xht'])
         self.assertEqual(u'entrée', lis[0][0].text)
