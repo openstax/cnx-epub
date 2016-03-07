@@ -32,7 +32,7 @@ def random_extension(*args, **kwargs):
     return random.choice(exts)
 
 
-class AdaptationTestCase(unittest.TestCase):
+class EPUBAdaptationTestCase(unittest.TestCase):
     maxDiff = None
 
     def make_package(self, file):
@@ -637,3 +637,112 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertEqual(len(epub), 1)
         binder = adapt_package(epub[0])
         self.assertEqual(len(list(flatten_model(binder))), 4)
+
+
+class HTMLAdaptationTestCase(unittest.TestCase):
+    page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
+    maxDiff = None
+    base_metadata = {
+        u'publishers': [],
+        u'created': None,  # '2016/03/04 17:05:20 -0500',
+        u'revised': None,  # '2013/03/05 09:35:24 -0500',
+        u'authors': [
+            {u'type': u'cnx-id',
+             u'name': u'Good Food',
+             u'id': u'yum'}],
+        u'editors': [],
+        u'copyright_holders': [],
+        u'illustrators': [],
+        u'subjects': [u'Humanities'],
+        u'translators': [],
+        u'keywords': [u'Food', u'デザート', u'Pudding'],
+        u'title': u'チョコレート',
+        u'license_text': u'CC-By 4.0',
+        u'license_url': u'http://creativecommons.org/licenses/by/4.0/',
+        # 'version': 'draft',
+        u'language': None,
+        u'print_style': None,
+        u'cnx-archive-uri': None,
+        u'derived_from_title': None,
+        u'derived_from_uri': None,
+        }
+
+    def test_to_binder(self):
+        from ..adapters import adapt_single_html
+        from ..models import model_to_tree
+
+        with open(self.page_path, 'r') as f:
+            html = f.read()
+
+        desserts = adapt_single_html(html)
+        self.assertEqual('Desserts', desserts.metadata['title'])
+
+        self.assertEqual({
+            'id': 'book',
+            'title': 'Desserts',
+            'contents': [
+                {
+                    'id': 'subcol',
+                    'title': 'Fruity',
+                    'contents': [
+                        {
+                            'id': 'Apple',
+                            'title': 'Apple',
+                            },
+                        {
+                            'id': 'Lemon',
+                            'title': 'Lemon',
+                            },
+                        {
+                            'id': 'subcol',
+                            'title': 'Citrus',
+                            'contents': [
+                                {
+                                    'id': 'Lemon',
+                                    'title': 'Lemon',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                {
+                    'id': u'チョコレート',
+                    'title': u'チョコレート',
+                    },
+                ],
+            }, model_to_tree(desserts))
+
+        fruity = desserts[0]
+        self.assertEqual('Fruity', fruity.metadata['title'])
+
+        apple = fruity[0]
+        metadata = self.base_metadata.copy()
+        metadata['title'] = 'Apple'
+        apple_metadata = apple.metadata.copy()
+        summary = etree.fromstring(apple_metadata.pop('summary'))
+        self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
+        self.assertEqual('summary', summary.text)
+        self.assertEqual(metadata, apple_metadata)
+
+        lemon = fruity[1]
+        metadata = self.base_metadata.copy()
+        metadata['title'] = 'Lemon'
+        lemon_metadata = lemon.metadata.copy()
+        summary = etree.fromstring(lemon_metadata.pop('summary'))
+        self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
+        self.assertEqual('summary', summary.text)
+        self.assertEqual(metadata, lemon_metadata)
+
+        citrus = fruity[2]
+        self.assertEqual(citrus.metadata['title'], 'Citrus')
+
+        self.assertEqual(lemon.metadata, citrus[0].metadata)
+
+        chocolate = desserts[1]
+        chocolate_metadata = chocolate.metadata.copy()
+        summary = etree.fromstring(chocolate_metadata.pop('summary'))
+        self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
+        self.assertEqual('summary', summary.text)
+        metadata = self.base_metadata.copy()
+        metadata['title'] = u'チョコレート'
+        self.assertEqual(metadata, chocolate_metadata)
