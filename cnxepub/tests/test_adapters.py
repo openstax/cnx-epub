@@ -188,7 +188,7 @@ class AdaptationTestCase(unittest.TestCase):
             u'publishers': [{u'id': None, u'name': u'Ream', u'type': None}],
             u'revised': u'2013/06/18 15:22:55 -0500',
             u'subjects': [u'Science and Mathematics'],
-            u'summary': u'<div xmlns="http://www.w3.org/1999/xhtml" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lrmi="http://lrmi.net/the-specification" class="description" itemprop="description" data-type="description">\n        By the end of this section, you will be able to: \n        <ul class="list">\n          <li class="item">Drive a car</li>\n          <li class="item">Purchase a watch</li>\n          <li class="item">Wear funny hats</li>\n          <li class="item">Eat cake</li>\n        </ul>\n      </div>\n\n      ',
+            u'summary': u'\n        By the end of this section, you will be able to: \n        <ul xmlns="http://www.w3.org/1999/xhtml" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lrmi="http://lrmi.net/the-specification" class="list">\n          <li class="item">Drive a car</li>\n          <li class="item">Purchase a watch</li>\n          <li class="item">Wear funny hats</li>\n          <li class="item">Eat cake</li>\n        </ul>\n      \n      ',
             u'title': u'Document One of Infinity',
             u'translators': [{u'id': None, u'name': u'Francis Hablar',
                               u'type': None}],
@@ -689,6 +689,45 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
   <body><p>コンテンツ...</p></body>
 </html>"""
         self.assertEqual(expected_html, unescape(html))
+
+
+class DocumentSummaryFormatterTestCase(unittest.TestCase):
+    def test_summary_w_one_tag(self):
+        from ..adapters import DocumentSummaryFormatter
+        from ..models import Document
+
+        document = Document('title', io.BytesIO(b'contents'),
+                            metadata={'summary': '<p>résumé</p>'})
+        html = str(DocumentSummaryFormatter(document))
+        self.assertEqual('<p>résumé</p>', html)
+
+    def test_summary_w_just_text(self):
+        from ..adapters import DocumentSummaryFormatter
+        from ..models import Document
+
+        document = Document('title', io.BytesIO(b'contents'),
+                            metadata={'summary': 'résumé'})
+        html = str(DocumentSummaryFormatter(document))
+        expected = """\
+<div class="description" data-type="description"\
+ xmlns="http://www.w3.org/1999/xhtml">
+  résumé
+</div>"""
+        self.assertEqual(expected, html)
+
+    def test_summary_w_text_and_tags(self):
+        from ..adapters import DocumentSummaryFormatter
+        from ..models import Document
+
+        document = Document('title', io.BytesIO(b'contents'),
+                            metadata={'summary': 'résumé<p>etc</p><p>...</p>'})
+        html = str(DocumentSummaryFormatter(document))
+        expected = """\
+<div class="description" data-type="description"\
+ xmlns="http://www.w3.org/1999/xhtml">
+  résumé<p>etc</p><p>...</p>
+</div>"""
+        self.assertEqual(expected, html)
 
 
 class HTMLFormatterTestCase(unittest.TestCase):

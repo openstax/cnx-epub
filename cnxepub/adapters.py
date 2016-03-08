@@ -42,6 +42,7 @@ __all__ = (
     'BinderItem',
     'DocumentItem',
     'DocumentContentFormatter',
+    'DocumentSummaryFormatter',
     'HTMLFormatter',
     'SingleHTMLFormatter',
     )
@@ -338,6 +339,33 @@ class DocumentContentFormatter(object):
 <html xmlns="http://www.w3.org/1999/xhtml">
   <body>{}</body>
 </html>""".format(self.document.content)
+        return html.encode('utf-8')
+
+
+class DocumentSummaryFormatter(object):
+    def __init__(self, document):
+        self.document = document
+
+    def __unicode__(self):
+        return self.__bytes__().decode('utf-8')
+
+    def __str__(self):
+        if IS_PY3:
+            return self.__bytes__().decode('utf-8')
+        return self.__bytes__()
+
+    def __bytes__(self):
+        # try to make sure summary is wrapped in a tag
+        summary = self.document.metadata['summary']
+        try:
+            etree.fromstring(summary)
+            html = '{}'.format(summary)
+        except etree.XMLSyntaxError:
+            html = """\
+<div class="description" data-type="description"\
+ xmlns="http://www.w3.org/1999/xhtml">
+  {}
+</div>""".format(summary)
         return html.encode('utf-8')
 
 
