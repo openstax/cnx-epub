@@ -691,6 +691,45 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         self.assertEqual(expected_html, unescape(html))
 
 
+class DocumentSummaryFormatterTestCase(unittest.TestCase):
+    def test_summary_w_one_tag(self):
+        from ..adapters import DocumentSummaryFormatter
+        from ..models import Document
+
+        document = Document('title', io.BytesIO(b'contents'),
+                            metadata={'summary': '<p>résumé</p>'})
+        html = str(DocumentSummaryFormatter(document))
+        self.assertEqual('<p>résumé</p>', html)
+
+    def test_summary_w_just_text(self):
+        from ..adapters import DocumentSummaryFormatter
+        from ..models import Document
+
+        document = Document('title', io.BytesIO(b'contents'),
+                            metadata={'summary': 'résumé'})
+        html = str(DocumentSummaryFormatter(document))
+        expected = """\
+<div class="description" data-type="description"\
+ xmlns="http://www.w3.org/1999/xhtml">
+  résumé
+</div>"""
+        self.assertEqual(expected, html)
+
+    def test_summary_w_text_and_tags(self):
+        from ..adapters import DocumentSummaryFormatter
+        from ..models import Document
+
+        document = Document('title', io.BytesIO(b'contents'),
+                            metadata={'summary': 'résumé<p>etc</p><p>...</p>'})
+        html = str(DocumentSummaryFormatter(document))
+        expected = """\
+<div class="description" data-type="description"\
+ xmlns="http://www.w3.org/1999/xhtml">
+  résumé<p>etc</p><p>...</p>
+</div>"""
+        self.assertEqual(expected, html)
+
+
 class HTMLFormatterTestCase(unittest.TestCase):
     base_metadata = {
         'publishers': [],
