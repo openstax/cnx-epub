@@ -38,7 +38,7 @@ def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,
     partcount.update({}.fromkeys(parts, 0))
     partcount['book'] += 1
 
-    html = cnxepub.SingleHTMLFormatter(binder, archive_href=ARCHIVEHTML)
+    html = cnxepub.SingleHTMLFormatter(binder)
 
     # Truncate binder to the first N chapters where N = numchapters.
     logger.debug('Full binder: {}'.format(cnxepub.model_to_tree(binder)))

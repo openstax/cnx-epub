@@ -5,10 +5,6 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
-try:
-    import html.parser as HTMLParser
-except:
-    import HTMLParser
 import mimetypes
 import os
 import io
@@ -24,16 +20,7 @@ except ImportError:
 
 from lxml import etree
 
-
-here = os.path.abspath(os.path.dirname(__file__))
-TEST_DATA_DIR = os.path.join(here, 'data')
-
-
-def unescape(html):
-    p = HTMLParser.HTMLParser()
-    if isinstance(html, bytes):
-        html = html.decode('utf-8')
-    return p.unescape(html)
+from ..testing import TEST_DATA_DIR, unescape
 
 
 def random_extension(*args, **kwargs):
@@ -45,7 +32,7 @@ def random_extension(*args, **kwargs):
     return random.choice(exts)
 
 
-class AdaptationTestCase(unittest.TestCase):
+class EPUBAdaptationTestCase(unittest.TestCase):
     maxDiff = None
 
     def make_package(self, file):
@@ -652,259 +639,110 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertEqual(len(list(flatten_model(binder))), 4)
 
 
-class DocumentContentFormatterTestCase(unittest.TestCase):
-    def test_document(self):
-        from ..models import Document
-        from ..adapters import DocumentContentFormatter
-
-        base_metadata = {
-            'publishers': [],
-            'created': '2013/03/19 15:01:16 -0500',
-            'revised': '2013/06/18 15:22:55 -0500',
-            'authors': [
-                {'type': 'cnx-id',
-                 'name': 'Sponge Bob',
-                 'id': 'sbob'}],
-            'editors': [],
-            'copyright_holders': [],
-            'illustrators': [],
-            'subjects': ['Science and Mathematics'],
-            'translators': [],
-            'keywords': ['Bob', 'Sponge', 'Rock'],
-            'title': "Goofy Goober Rock",
-            'license_text': 'CC-By 4.0',
-            'license_url': 'http://creativecommons.org/licenses/by/4.0/',
-            'summary': "<p>summary</p>",
-            'version': 'draft',
-            }
-
-        # Build test document.
-        metadata = base_metadata.copy()
-        document = Document('title',
-                            io.BytesIO(u'<p>コンテンツ...</p>'.encode('utf-8')),
-                            metadata=metadata)
-        html = str(DocumentContentFormatter(document))
-        expected_html = u"""\
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <body><p>コンテンツ...</p></body>
-</html>"""
-        self.assertEqual(expected_html, unescape(html))
-
-
-class DocumentSummaryFormatterTestCase(unittest.TestCase):
-    def test_summary_w_one_tag(self):
-        from ..adapters import DocumentSummaryFormatter
-        from ..models import Document
-
-        document = Document('title', io.BytesIO(b'contents'),
-                            metadata={'summary': '<p>résumé</p>'})
-        html = str(DocumentSummaryFormatter(document))
-        self.assertEqual('<p>résumé</p>', html)
-
-    def test_summary_w_just_text(self):
-        from ..adapters import DocumentSummaryFormatter
-        from ..models import Document
-
-        document = Document('title', io.BytesIO(b'contents'),
-                            metadata={'summary': 'résumé'})
-        html = str(DocumentSummaryFormatter(document))
-        expected = """\
-<div class="description" data-type="description"\
- xmlns="http://www.w3.org/1999/xhtml">
-  résumé
-</div>"""
-        self.assertEqual(expected, html)
-
-    def test_summary_w_text_and_tags(self):
-        from ..adapters import DocumentSummaryFormatter
-        from ..models import Document
-
-        document = Document('title', io.BytesIO(b'contents'),
-                            metadata={'summary': 'résumé<p>etc</p><p>...</p>'})
-        html = str(DocumentSummaryFormatter(document))
-        expected = """\
-<div class="description" data-type="description"\
- xmlns="http://www.w3.org/1999/xhtml">
-  résumé<p>etc</p><p>...</p>
-</div>"""
-        self.assertEqual(expected, html)
-
-
-class HTMLFormatterTestCase(unittest.TestCase):
+class HTMLAdaptationTestCase(unittest.TestCase):
+    page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
+    maxDiff = None
     base_metadata = {
-        'publishers': [],
-        'created': '2013/03/19 15:01:16 -0500',
-        'revised': '2013/06/18 15:22:55 -0500',
-        'authors': [
-            {'type': 'cnx-id',
-             'name': 'Sponge Bob',
-             'id': 'sbob'}],
-        'editors': [],
-        'copyright_holders': [],
-        'illustrators': [],
-        'subjects': ['Science and Mathematics'],
-        'translators': [],
-        'keywords': ['Bob', 'Sponge', 'Rock'],
-        'title': 'タイトル',
-        'license_text': 'CC-By 4.0',
-        'license_url': 'http://creativecommons.org/licenses/by/4.0/',
-        'summary': "<p>summary</p>",
-        'version': 'draft',
+        u'publishers': [],
+        u'created': None,  # '2016/03/04 17:05:20 -0500',
+        u'revised': None,  # '2013/03/05 09:35:24 -0500',
+        u'authors': [
+            {u'type': u'cnx-id',
+             u'name': u'Good Food',
+             u'id': u'yum'}],
+        u'editors': [],
+        u'copyright_holders': [],
+        u'illustrators': [],
+        u'subjects': [u'Humanities'],
+        u'translators': [],
+        u'keywords': [u'Food', u'デザート', u'Pudding'],
+        u'title': u'チョコレート',
+        u'license_text': u'CC-By 4.0',
+        u'license_url': u'http://creativecommons.org/licenses/by/4.0/',
+        # 'version': 'draft',
+        u'language': None,
+        u'print_style': None,
+        u'cnx-archive-uri': None,
+        u'derived_from_title': None,
+        u'derived_from_uri': None,
         }
 
-    def xpath(self, path):
-        from ..html_parsers import HTML_DOCUMENT_NAMESPACES
+    def test_to_binder(self):
+        from ..adapters import adapt_single_html
+        from ..models import model_to_tree
 
-        return self.root.xpath(path, namespaces=HTML_DOCUMENT_NAMESPACES)
+        with open(self.page_path, 'r') as f:
+            html = f.read()
 
-    def test_document(self):
-        from ..models import Document
-        from ..adapters import HTMLFormatter
+        desserts = adapt_single_html(html)
+        self.assertEqual('Desserts', desserts.metadata['title'])
 
-        # Build test document.
+        self.assertEqual({
+            'id': 'book',
+            'title': 'Desserts',
+            'contents': [
+                {
+                    'id': 'subcol',
+                    'title': 'Fruity',
+                    'contents': [
+                        {
+                            'id': 'Apple',
+                            'title': 'Apple',
+                            },
+                        {
+                            'id': 'Lemon',
+                            'title': 'Lemon',
+                            },
+                        {
+                            'id': 'subcol',
+                            'title': 'Citrus',
+                            'contents': [
+                                {
+                                    'id': 'Lemon',
+                                    'title': 'Lemon',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                {
+                    'id': u'チョコレート',
+                    'title': u'チョコレート',
+                    },
+                ],
+            }, model_to_tree(desserts))
+
+        fruity = desserts[0]
+        self.assertEqual('Fruity', fruity.metadata['title'])
+
+        apple = fruity[0]
         metadata = self.base_metadata.copy()
-        document = Document(
-            metadata['title'],
-            io.BytesIO(u'<p>コンテンツ...</p>'.encode('utf-8')),
-            metadata=metadata)
+        metadata['title'] = 'Apple'
+        apple_metadata = apple.metadata.copy()
+        summary = etree.fromstring(apple_metadata.pop('summary'))
+        self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
+        self.assertEqual('summary', summary.text)
+        self.assertEqual(metadata, apple_metadata)
 
-        html = str(HTMLFormatter(document))
-        html = unescape(html)
-        self.root = etree.fromstring(html.encode('utf-8'))
-
-        self.assertIn(u'<title>タイトル</title>', html)
-        self.assertIn(u'<p>コンテンツ...</p>', html)
-
-        self.assertEqual(
-            u'タイトル',
-            self.xpath('//*[@data-type="document-title"]/text()')[0])
-
-        self.assertEqual(
-            'summary',
-            self.xpath('//*[@class="description"]/xhtml:p/text()')[0])
-
-        self.assertEqual(
-            metadata['created'],
-            self.xpath('//xhtml:meta[@itemprop="dateCreated"]/@content')[0])
-
-        self.assertEqual(
-            metadata['revised'],
-            self.xpath('//xhtml:meta[@itemprop="dateModified"]/@content')[0])
-
-    def test_document_pointer(self):
-        from ..models import DocumentPointer
-        from ..adapters import HTMLFormatter
-
-        # Build test document pointer.
-        pointer = DocumentPointer('pointer@1', {
-            'title': self.base_metadata['title'],
-            'cnx-archive-uri': 'pointer@1',
-            'url': 'https://cnx.org/contents/pointer@1',
-            })
-
-        html = str(HTMLFormatter(pointer))
-        html = unescape(html)
-        self.root = etree.fromstring(html.encode('utf-8'))
-
-        self.assertIn(u'<title>タイトル</title>', html)
-        self.assertIn(
-            u'<a href="https://cnx.org/contents/pointer@1">', html)
-
-        self.assertEqual(
-            u'タイトル',
-            self.xpath('//*[@data-type="document-title"]/text()')[0])
-
-        self.assertEqual(
-            'pointer@1',
-            self.xpath('//*[@data-type="cnx-archive-uri"]/@data-value')[0])
-
-    def test_binder(self):
-        from ..models import (Binder, TranslucentBinder, Document,
-                              DocumentPointer)
-        from ..adapters import HTMLFormatter
-
-        # Build test binder.
-        binder = Binder(self.base_metadata['title'], metadata={
-            'title': self.base_metadata['title'],
-            })
-
+        lemon = fruity[1]
         metadata = self.base_metadata.copy()
-        metadata.update({
-            'title': "entrée",
-            'derived_from_uri': 'http://cnx.org/contents/'
-                                'dd68a67a-11f4-4140-a49f-b78e856e2262@1',
-            'derived_from_title': "Taking Customers' Orders",
-            })
+        metadata['title'] = 'Lemon'
+        lemon_metadata = lemon.metadata.copy()
+        summary = etree.fromstring(lemon_metadata.pop('summary'))
+        self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
+        self.assertEqual('summary', summary.text)
+        self.assertEqual(metadata, lemon_metadata)
 
-        binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
-                               metadata=metadata))
+        citrus = fruity[2]
+        self.assertEqual(citrus.metadata['title'], 'Citrus')
 
-        translucent_binder = TranslucentBinder(metadata={'title': 'Kranken'})
-        binder.append(translucent_binder)
+        self.assertEqual(lemon.metadata, citrus[0].metadata)
 
+        chocolate = desserts[1]
+        chocolate_metadata = chocolate.metadata.copy()
+        summary = etree.fromstring(chocolate_metadata.pop('summary'))
+        self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
+        self.assertEqual('summary', summary.text)
         metadata = self.base_metadata.copy()
-        metadata.update({
-            'title': "egress",
-            'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667'})
-        translucent_binder.append(
-            Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
-                     metadata=metadata))
-
-        binder.append(DocumentPointer('pointer@1', {
-            'title': 'Pointer',
-            'cnx-archive-uri': 'pointer@1',
-            'url': 'http://cnx.org/contents/pointer@1'}))
-
-        html = str(HTMLFormatter(binder))
-        html = unescape(html)
-        self.root = etree.fromstring(html.encode('utf-8'))
-
-        self.assertIn(u'<title>タイトル</title>', html)
-
-        lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li')
-        self.assertEqual(3, len(lis))
-        self.assertIn(lis[0][0].attrib['href'],
-                      ['ingress@draft.xhtml', 'ingress@draft.xht'])
-        self.assertEqual(u'entrée', lis[0][0].text)
-        self.assertEqual('Kranken', lis[1][0].text)
-        self.assertIn(lis[2][0].attrib['href'],
-                      ['pointer@1.xhtml', 'pointer@1.xht'])
-        self.assertEqual('Pointer', lis[2][0].text)
-
-        lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li[2]/xhtml:ol/xhtml:li')
-        self.assertEqual(1, len(lis))
-        self.assertIn(lis[0][0].attrib['href'],
-                      ['egress@draft.xhtml', 'egress@draft.xht'])
-        self.assertEqual('egress', lis[0][0].text)
-
-    def test_translucent_binder(self):
-        from ..models import (TranslucentBinder, Document)
-        from ..adapters import HTMLFormatter
-
-        # Build test translucent binder.
-        binder = TranslucentBinder(metadata={
-            'title': self.base_metadata['title'],
-            })
-
-        metadata = self.base_metadata.copy()
-        metadata.update({
-            'title': "entrée",
-            'derived_from_uri': 'http://cnx.org/contents/'
-                                'dd68a67a-11f4-4140-a49f-b78e856e2262@1',
-            'derived_from_title': "Taking Customers' Orders",
-            })
-
-        binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
-                               metadata=metadata))
-
-        html = str(HTMLFormatter(binder))
-        html = unescape(html)
-        self.root = etree.fromstring(html.encode('utf-8'))
-
-        self.assertIn(u'<title>タイトル</title>', html)
-
-        lis = self.xpath('//xhtml:nav/xhtml:ol/xhtml:li')
-        self.assertEqual(1, len(lis))
-        self.assertIn(lis[0][0].attrib['href'],
-                      ['ingress@draft.xhtml', 'ingress@draft.xht'])
-        self.assertEqual(u'entrée', lis[0][0].text)
+        metadata['title'] = u'チョコレート'
+        self.assertEqual(metadata, chocolate_metadata)
