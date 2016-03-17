@@ -28,7 +28,7 @@ __all__ = (
     'REFERENCE_REMOTE_TYPES',
     'ATTRIBUTED_ROLE_KEYS',
     'flatten_tree_to_ident_hashes', 'model_to_tree',
-    'flatten_model', 'flatten_to_documents',
+    'flatten_model', 'flatten_to', 'flatten_to_documents',
     'Binder', 'TranslucentBinder',
     'Document', 'CompositeDocument', 'DocumentPointer',
     'Resource',
@@ -145,11 +145,30 @@ def flatten_to_documents(model, include_pointers=False):
     This is to flatten a ``Binder``'ish model down to a list of documents.
     If ``include_pointers`` has been set to ``True``, ``DocumentPointers``
     will also be included in the results.
+
+    """
+    types = [Document]
+    if include_pointers:
+        types.append(DocumentPointer)
+    types = tuple(types)
+
+    def _filter(m):
+        return isinstance(m, types)
+
+    return flatten_to(model, _filter)
+
+
+def flatten_to(model, flatten_filter):
+    """Flatten the model to a list of models that meet criteria of
+    the given `flatten_filter` callable.
+
+    `flatten_filter` should take one argument, the model that
+    is being iterated over, and return a boolean to indicate that
+    the model meets the criteria for inclusion in the returned list.
+
     """
     for m in flatten_model(model):
-        if isinstance(m, Document):
-            yield m
-        elif include_pointers and isinstance(m, DocumentPointer):
+        if flatten_filter(m):
             yield m
     raise StopIteration()
 
