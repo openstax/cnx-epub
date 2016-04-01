@@ -191,7 +191,7 @@ class SingleHTMLFormatter(object):
     def __bytes__(self):
         if not self.built:
             self.build()
-        return etree.tostring(self.root, pretty_print=True)
+        return etree.tostring(self.root, pretty_print=True, method='html')
 
 
 # XXX Rendering shouldn't happen here.
