@@ -14,7 +14,7 @@ from lxml import etree
 from .models import (
     model_to_tree,
     Binder, TranslucentBinder,
-    Document, DocumentPointer)
+    Document, DocumentPointer, CompositeDocument)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
 
 
@@ -149,6 +149,8 @@ class SingleHTMLFormatter(object):
         If node is a translucent binder, the type is either chapters (only
         contain pages) or unit (contains at least one translucent binder).
         """
+        if isinstance(node, CompositeDocument):
+            return 'composite-page'
         if isinstance(node, Document):
             return 'page'
         if isinstance(node, Binder):
