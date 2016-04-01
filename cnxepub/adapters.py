@@ -20,7 +20,7 @@ from .formatters import HTMLFormatter
 from .models import (
     flatten_model,
     Binder, TranslucentBinder,
-    Document, Resource, DocumentPointer,
+    Document, Resource, DocumentPointer, CompositeDocument,
     TRANSLUCENT_BINDER_ID,
     INTERNAL_REFERENCE_TYPE,
     INLINE_REFERENCE_TYPE,
@@ -346,7 +346,7 @@ def _adapt_single_html_tree(parent, elem):
             tbinder = TranslucentBinder(metadata={'title': title})
             _adapt_single_html_tree(tbinder, child)
             parent.append(tbinder)
-        elif child.attrib.get('data-type') == 'page':
+        elif child.attrib.get('data-type') in ['page', 'composite-page']:
             metadata = parse_metadata(child)
             id_ = metadata['cnx-archive-uri'] or metadata['title']
             contents = b''.join([
@@ -354,5 +354,9 @@ def _adapt_single_html_tree(parent, elem):
                 for i in child.getchildren()
                 if i.attrib.get('data-type') != 'metadata'
                 ])
-            document = Document(id_, io.BytesIO(contents), metadata=metadata)
+            model = {
+                'page': Document,
+                'composite-page': CompositeDocument,
+                }[child.attrib['data-type']]
+            document = model(id_, io.BytesIO(contents), metadata=metadata)
             parent.append(document)
