@@ -41,6 +41,7 @@ __all__ = (
     'make_epub', 'make_publication_epub',
     'BinderItem',
     'DocumentItem',
+    'adapt_single_html',
     )
 
 

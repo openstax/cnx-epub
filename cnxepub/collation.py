@@ -27,8 +27,7 @@ def easybake(ruleset, in_html, out_html):
 
 def reconstitute(html):
     """Given a file-like object as ``html``, reconstruct it into models."""
-    binder = None
-    return binder
+    return cnxepub.adapt_single_html(html)
 
 
 def collate(binder):
