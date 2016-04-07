@@ -7,6 +7,7 @@
 *.*~
 .DS_Store
 /*.log
+.eggs/
 
 # Virtualenv #
 ##############
@@ -22,3 +23,4 @@ dist/
 # Coverage #
 ############
 .coverage
+htmlcov/
