@@ -310,7 +310,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     maxDiff = None
 
     def setUp(self):
-        from ..models import TranslucentBinder, Binder, Document, Resource
+        from ..models import (TranslucentBinder, Binder, Document,
+                              Resource, CompositeDocument)
 
         with open(os.path.join(TEST_DATA_DIR, '1x1.jpg'), 'rb') as f:
             jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg')
@@ -366,12 +367,21 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                                             self.apple.metadata['title'],
                                             u'レモン', 'citrus'])
 
+        metadata = self.base_metadata.copy()
+        metadata['title'] = 'Extra Stuff'
+        contents = io.BytesIO(b"""\
+<h1>Extra Stuff</h1>
+<p>This is a composite page.</p>
+""")
+        self.extra = CompositeDocument(
+            'extra', contents, metadata=metadata)
+
         with open(os.path.join(TEST_DATA_DIR, 'cover.png'), 'rb') as f:
             cover_png = Resource(
                 'cover.png', io.BytesIO(f.read()), 'image/png')
 
         self.desserts = Binder(
-            'Desserts', [self.fruity, self.chocolate],
+            'Desserts', [self.fruity, self.chocolate, self.extra],
             metadata={'title': 'Desserts'}, resources=[cover_png])
 
     def test_binder(self):

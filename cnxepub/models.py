@@ -29,7 +29,9 @@ __all__ = (
     'ATTRIBUTED_ROLE_KEYS',
     'flatten_tree_to_ident_hashes', 'model_to_tree',
     'flatten_model', 'flatten_to_documents',
-    'Binder', 'TranslucentBinder', 'Document', 'DocumentPointer', 'Resource',
+    'Binder', 'TranslucentBinder',
+    'Document', 'CompositeDocument', 'DocumentPointer',
+    'Resource',
     )
 
 
@@ -461,6 +463,10 @@ class DocumentPointer(object):
         split_path = parts.path.split('/')
         ident_hash = split_path[-1]
         return cls(ident_hash)
+
+
+class CompositeDocument(Document):
+    """A Document created during the collation process."""
 
 
 class Resource(object):
