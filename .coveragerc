@@ -1,0 +1,16 @@
+[run]
+source = cnxepub
+omit =
+    cnxepub/tests/*
+    cnxepub/scripts/*
+    cnxepub/testing.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+
+    if __name__ == .__main__.:
+omit =
+    cnxepub/scripts/*
+    cnxepub/tests/*
+    cnxepub/testing.py
