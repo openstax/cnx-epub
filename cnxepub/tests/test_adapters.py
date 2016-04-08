@@ -709,13 +709,19 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                     'id': u'チョコレート',
                     'title': u'チョコレート',
                     },
+                {
+                    'id': 'Extra Stuff',
+                    'title': 'Extra Stuff',
+                    },
                 ],
             }, model_to_tree(desserts))
 
         fruity = desserts[0]
+        self.assertEqual('TranslucentBinder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
 
         apple = fruity[0]
+        self.assertEqual('Document', apple.__class__.__name__)
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Apple'
         apple_metadata = apple.metadata.copy()
@@ -725,6 +731,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual(metadata, apple_metadata)
 
         lemon = fruity[1]
+        self.assertEqual('Document', lemon.__class__.__name__)
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Lemon'
         lemon_metadata = lemon.metadata.copy()
@@ -734,11 +741,13 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual(metadata, lemon_metadata)
 
         citrus = fruity[2]
+        self.assertEqual('TranslucentBinder', citrus.__class__.__name__)
         self.assertEqual(citrus.metadata['title'], 'Citrus')
 
         self.assertEqual(lemon.metadata, citrus[0].metadata)
 
         chocolate = desserts[1]
+        self.assertEqual('Document', chocolate.__class__.__name__)
         chocolate_metadata = chocolate.metadata.copy()
         summary = etree.fromstring(chocolate_metadata.pop('summary'))
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
@@ -746,3 +755,13 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = u'チョコレート'
         self.assertEqual(metadata, chocolate_metadata)
+
+        extra = desserts[2]
+        self.assertEqual('CompositeDocument', extra.__class__.__name__)
+        extra_metadata = extra.metadata.copy()
+        summary = etree.fromstring(extra_metadata.pop('summary'))
+        self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
+        self.assertEqual('summary', summary.text)
+        metadata = self.base_metadata.copy()
+        metadata['title'] = 'Extra Stuff'
+        self.assertEqual(metadata, extra_metadata)
