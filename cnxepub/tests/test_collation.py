@@ -6,37 +6,18 @@
 # See LICENCE.txt for details.
 # ###
 import os
+import io
 import unittest
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 
 from .test_models import BaseModelTestCase
 
 
 here = os.path.abspath(os.path.dirname(__file__))
 TEST_DATA_DIR = os.path.join(here, 'data')
-
-
-@unittest.skip("not implemented")
-class XXXEasyBakeTestCase(unittest.TestCase):
-
-    def test(self):
-        import io
-        _input = """
-<html><body>
-<div data-type="book">
-  <div data-type="page">
-    <span>content</span>
-  </div>
-</div>
-</body></html>"""
-        input = io.BytesIO(_input)
-        output = io.BytesIO()
-
-        # Ensure same in, same out
-        from cnxepub.collation import easybake
-        easybake('ruleset', input, output)
-        output.seek(0)
-
-        self.assertIn(output.read(), "<span> pseudo cooked </span>")
 
 
 class ReconstituteTestCase(unittest.TestCase):
@@ -46,11 +27,9 @@ class ReconstituteTestCase(unittest.TestCase):
         from ..models import model_to_tree
 
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
-        with open(page_path) as f:
-            html = f.read()
-
-        from cnxepub.collation import reconstitute
-        desserts = reconstitute(html)
+        with open(page_path) as html:
+            from cnxepub.collation import reconstitute
+            desserts = reconstitute(html)
 
         self.assertEqual('Desserts', desserts.metadata['title'])
 
@@ -176,9 +155,73 @@ class CollateTestCase(BaseModelTestCase):
         from cnxepub import collate
         return collate
 
-    @unittest.skip("work in progress")
     def test(self):
-        self.fail("work in progress")
+        binder = self.make_binder(
+            '8d75ea29',
+            metadata={'version': '3', 'title': "Book One"},
+            nodes=[
+                self.make_document(
+                    id="e78d4f90",
+                    content=b"<p>document one</p>",
+                    metadata={'version': '3',
+                              'title': "Document One"}),
+                self.make_document(
+                    id="3c448dc6",
+                    content=b"<p>document two</p>",
+                    metadata={'version': '1',
+                              'title': "Document Two"})])
+
+        # Append a ruleset to the binder.
+        ruleset = io.BytesIO(b" ")
+        resource = self.make_resource('ruleset', ruleset, 'text/css',
+                                      filename='ruleset.css')
+        binder.resources.append(resource)
+
+        def mock_easybake(ruleset, in_html, out_html):
+            from lxml import etree
+            html = etree.parse(in_html)
+            # Add in a composite-page with title "Composite One" here.
+            body = html.getroot().xpath(
+                '//xhtml:body',
+                namespaces={'xhtml': 'http://www.w3.org/1999/xhtml'})[0]
+            comp_elm = etree.SubElement(body, 'div')
+            comp_elm.attrib['data-type'] = 'composite-page'
+            comp_elm.append(etree.fromstring("""
+            <div data-type="metadata">
+              <h1 data-type="document-title" itemprop="name">Composite One</h1>
+              <div class="authors">
+                By:
+                Edited by:
+                Illustrated by:
+                Translated by:
+              </div>
+              <div class="publishers">
+                Published By:
+              </div>
+              <div class="permissions">
+                <p class="license">
+                Licensed:
+                <a href="" itemprop="dc:license,lrmi:useRightsURL" data-type="license"/>
+               </p>
+              </div>
+              <div class="description" itemprop="description" data-type="description"> </div>
+            </div>"""))
+            etree.SubElement(comp_elm, 'p').text = "composite document"
+            # Add the composite-page to the table-of-contents.
+            toc = html.getroot().xpath(
+                "//xhtml:*[@id='toc']/xhtml:ol",
+                namespaces={'xhtml': 'http://www.w3.org/1999/xhtml'})[0]
+            etree.SubElement(toc, 'li').append(etree.fromstring('<a>Composite One</a>'))
+            out_html.write(etree.tostring(html))
+
+        with mock.patch('cnxepub.collation.easybake') as easybake:
+            easybake.side_effect = mock_easybake
+            collated_binder = self.target(binder)
+
+        # Check for the appended composite document
+        self.assertEqual(len(collated_binder), 3)
+        self.assertEqual(collated_binder[2].metadata['title'],
+                         'Composite One')
 
     def test_without_ruleset(self):
         binder = self.make_binder(

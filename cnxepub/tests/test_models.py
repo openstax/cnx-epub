@@ -42,6 +42,10 @@ class BaseModelTestCase(unittest.TestCase):
         from ..models import DocumentPointer
         return DocumentPointer(ident_hash, metadata=metadata)
 
+    def make_resource(self, *args, **kwargs):
+        from ..models import Resource
+        return Resource(*args, **kwargs)
+
 
 class PrivateUtilitiesTestCase(unittest.TestCase):
 

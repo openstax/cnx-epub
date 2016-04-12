@@ -5,13 +5,25 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+from __future__ import print_function
 import io
+import sys
 
-import cnxepub
+from lxml import etree
+try:
+    from cnxeasybake import Oven
+except ImportError:
+    print("ERROR Missing the cnx-easybake package\n"
+          "HINT Make sure you install the 'collation' extra requirements "
+          "by doing something like `pip install cnx-epub[collation]`.",
+          file=sys.stderr)
+    sys.exit(1)
+
+from .adapters import adapt_single_html
+from .formatters import SingleHTMLFormatter
 
 
 # XXX (1-Mar-2016) Not the final resting place.
-# from cnxeasybake.scripts.main import easybake
 def easybake(ruleset, in_html, out_html):
     """This adheres to the same interface as
     ``cnxeasybake.scripts.main.easyback``.
@@ -20,14 +32,15 @@ def easybake(ruleset, in_html, out_html):
     with respective read and write ability.
 
     """
-    # TODO Add ``<span> pseudo cooked </span>`` to the head of each document
-    # before writing.
-    out_html.write(in_html.read())
+    html = etree.parse(in_html)
+    oven = Oven(ruleset)
+    oven.bake(html)
+    out_html.write(etree.tostring(html))
 
 
 def reconstitute(html):
     """Given a file-like object as ``html``, reconstruct it into models."""
-    return cnxepub.adapt_single_html(html)
+    return adapt_single_html(html.read())
 
 
 def collate(binder):
@@ -36,7 +49,7 @@ def collate(binder):
     Returns the collated binder.
 
     """
-    html_formatter = cnxepub.SingleHTMLFormatter(binder)
+    html_formatter = SingleHTMLFormatter(binder)
     raw_html = io.BytesIO(bytes(html_formatter))
     collated_html = io.BytesIO()
 
