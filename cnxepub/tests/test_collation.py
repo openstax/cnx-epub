@@ -239,3 +239,45 @@ class CollateTestCase(BaseModelTestCase):
 
         result = self.target(binder)
         self.assertIs(binder, result)
+
+    def test_with_ruleset(self):
+        binder = self.make_binder(
+            '8d75ea29',
+            metadata={'version': '3', 'title': "Book One"},
+            nodes=[
+                self.make_document(
+                    id="e78d4f90",
+                    content=b"<span>document one</span>",
+                    metadata={'version': '3',
+                              'title': "Document One"}),
+                self.make_document(
+                    id="3c448dc6",
+                    content=b"<span>document two</span>",
+                    metadata={'version': '1',
+                              'title': "Document Two"})])
+
+        # Append a ruleset to the binder.
+        ruleset = io.BytesIO(b"""\
+div[data-type='page'] > div[data-type='metadata'] {
+  copy-to: eob-all
+}
+div[data-type='page'] span {
+  copy-to: eob-all
+}
+body::after {
+  content: pending(eob-all);
+  class: end-of-book;
+  data-type: composite-page;
+  container: div;
+}
+""")
+        resource = self.make_resource('ruleset', ruleset, 'text/css',
+                                      filename='ruleset.css')
+        binder.resources.append(resource)
+
+        collated_binder = self.target(binder)
+
+        # Check for the appended composite document
+        self.assertEqual(len(collated_binder), 3)
+        self.assertEqual(collated_binder[2].metadata['title'],
+                         'Composite One')
