@@ -280,4 +280,4 @@ body::after {
         # Check for the appended composite document
         self.assertEqual(len(collated_binder), 3)
         self.assertEqual(collated_binder[2].metadata['title'],
-                         'Composite One')
+                         'Document One')
