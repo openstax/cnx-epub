@@ -7,6 +7,10 @@ before_install:
   # Install the coverage utility and coveralls reporting utility
   - pip install coverage
   - pip install coveralls
+  # FIXME (18-Apr-2016) cnx-easybake requires an unreleased package, cssselect2
+  - pip install git+https://github.com/Connexions/cssselect2.git#egg=cssselect2
+  # Install cnx-easybake
+  - pip install git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake
 install:
   - python setup.py install
 before_script:

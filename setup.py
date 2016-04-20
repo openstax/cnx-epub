@@ -10,9 +10,14 @@ install_requires = [
     'jinja2',
     'lxml',
     ]
+collation_requires = [
+    'cnx-easybake',
+    ]
 tests_require = [
     ]
+tests_require.extend(collation_requires)
 extras_require = {
+    'collation': collation_requires,
     'test': tests_require,
     }
 description = "Library for building and paring Connexions' EPUBs."
