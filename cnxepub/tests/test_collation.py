@@ -152,7 +152,7 @@ class CollateTestCase(BaseModelTestCase):
 
     @property
     def target(self):
-        from cnxepub import collate
+        from cnxepub.collation import collate
         return collate
 
     def test(self):

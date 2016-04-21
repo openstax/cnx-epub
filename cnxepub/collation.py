@@ -7,17 +7,18 @@
 # ###
 from __future__ import print_function
 import io
-import sys
+import warnings
 
 from lxml import etree
 try:
     from cnxeasybake import Oven
 except ImportError:
-    print("ERROR Missing the cnx-easybake package\n"
-          "HINT Make sure you install the 'collation' extra requirements "
-          "by doing something like `pip install cnx-epub[collation]`.",
-          file=sys.stderr)
-    sys.exit(1)
+    warnings.warn("Missing the cnx-easybake package\n"
+                  "HINT Make sure you install the 'collation' extra "
+                  "requirements by doing something "
+                  "like `pip install cnx-epub[collation]`.",
+                  ImportWarning)
+    raise
 
 from .adapters import adapt_single_html
 from .formatters import SingleHTMLFormatter
