@@ -491,7 +491,7 @@ HTML_DOCUMENT = """\
       <div data-type="resources" style="display: none">
         <ul>
           {% for resource in resources -%}
-          <li>{{ resource.id }}</li>
+          <li><a href="{{ resource.id }}">{{ resource.filename }}</a></li>
           {%- endfor %}
         </ul>
       </div>

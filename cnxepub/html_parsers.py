@@ -68,9 +68,12 @@ def parse_metadata(html):
 
 def parse_resources(html):
     """Return a list of resource names found in the html metadata section."""
-    names = html.xpath('//xhtml:*[@data-type="resources"]//xhtml:li/text()',
-                       namespaces=HTML_DOCUMENT_NAMESPACES)
-    return [name.strip() for name in names]
+    xpath = '//xhtml:*[@data-type="resources"]//xhtml:li/xhtml:a'
+    for resource in html.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
+        yield {
+            'id': resource.get('href'),
+            'filename': resource.text.strip(),
+            }
 
 
 class DocumentMetadataParser:

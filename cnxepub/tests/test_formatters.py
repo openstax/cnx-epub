@@ -314,7 +314,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                               Resource, CompositeDocument)
 
         with open(os.path.join(TEST_DATA_DIR, '1x1.jpg'), 'rb') as f:
-            jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg')
+            jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg',
+                           filename='small.jpg')
 
         metadata = self.base_metadata.copy()
         contents = io.BytesIO(u"""\
@@ -378,7 +379,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
         with open(os.path.join(TEST_DATA_DIR, 'cover.png'), 'rb') as f:
             cover_png = Resource(
-                'cover.png', io.BytesIO(f.read()), 'image/png')
+                'cover.png', io.BytesIO(f.read()), 'image/png',
+                filename='cover.png')
 
         self.desserts = Binder(
             'Desserts', [self.fruity, self.chocolate, self.extra],
