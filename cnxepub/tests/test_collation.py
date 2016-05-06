@@ -21,6 +21,7 @@ TEST_DATA_DIR = os.path.join(here, 'data')
 
 
 class ReconstituteTestCase(unittest.TestCase):
+    maxDiff = None
 
     def test(self):
         from lxml import etree
@@ -42,11 +43,11 @@ class ReconstituteTestCase(unittest.TestCase):
                     'title': 'Fruity',
                     'contents': [
                         {
-                            'id': 'Apple',
+                            'id': None,
                             'title': 'Apple',
                             },
                         {
-                            'id': 'Lemon',
+                            'id': None,
                             'title': 'Lemon',
                             },
                         {
@@ -54,7 +55,7 @@ class ReconstituteTestCase(unittest.TestCase):
                             'title': 'Citrus',
                             'contents': [
                                 {
-                                    'id': 'Lemon',
+                                    'id': None,
                                     'title': 'Lemon',
                                     },
                                 ],
@@ -62,11 +63,11 @@ class ReconstituteTestCase(unittest.TestCase):
                         ],
                     },
                 {
-                    'id': u'チョコレート',
+                    'id': None,
                     'title': u'チョコレート',
                     },
                 {
-                    'id': 'Extra Stuff',
+                    'id': None,
                     'title': 'Extra Stuff',
                     },
                 ],
@@ -220,6 +221,7 @@ class CollateTestCase(BaseModelTestCase):
 
         # Check for the appended composite document
         self.assertEqual(len(collated_binder), 3)
+        self.assertEqual(collated_binder[2].id, None)
         self.assertEqual(collated_binder[2].metadata['title'],
                          'Composite One')
 
