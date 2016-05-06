@@ -350,7 +350,7 @@ def _adapt_single_html_tree(parent, elem):
             parent.append(tbinder)
         elif child.attrib.get('data-type') in ['page', 'composite-page']:
             metadata = parse_metadata(child)
-            id_ = metadata['cnx-archive-uri'] or metadata['title']
+            id_ = metadata.get('cnx-archive-uri', None)
             contents = b''.join([
                 etree.tostring(i)
                 for i in child.getchildren()

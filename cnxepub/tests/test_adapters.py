@@ -686,11 +686,11 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                     'title': 'Fruity',
                     'contents': [
                         {
-                            'id': 'Apple',
+                            'id': None,
                             'title': 'Apple',
                             },
                         {
-                            'id': 'Lemon',
+                            'id': None,
                             'title': 'Lemon',
                             },
                         {
@@ -698,7 +698,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                             'title': 'Citrus',
                             'contents': [
                                 {
-                                    'id': 'Lemon',
+                                    'id': None,
                                     'title': 'Lemon',
                                     },
                                 ],
@@ -706,11 +706,11 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                         ],
                     },
                 {
-                    'id': u'チョコレート',
+                    'id': None,
                     'title': u'チョコレート',
                     },
                 {
-                    'id': 'Extra Stuff',
+                    'id': None,
                     'title': 'Extra Stuff',
                     },
                 ],
