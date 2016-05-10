@@ -407,7 +407,8 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         metadata = base_metadata.copy()
         metadata.update({'title': "egress"})
         with open(os.path.join(TEST_DATA_DIR, '1x1.jpg'), 'rb') as f:
-            jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg')
+            jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg',
+                           filename='1x1.jpg')
         binder.append(Document('egress', io.BytesIO(
             u'<p><img src="1x1.jpg" />hüvasti.</p>'.encode('utf-8')),
                                metadata=metadata,
@@ -474,7 +475,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertFalse('<span data-type="cnx-archive-uri"' in egress)
         self.assertTrue(re.search(
             '<div data-type="resources"[^>]*>\s*<ul>\s*'
-            '<li>1x1.jpg</li>\s*</ul>\s*</div>', egress))
+            '<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>\s*</ul>\s*</div>', egress))
         self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
 
         # Adapt epub back to documents and binders
@@ -495,7 +496,8 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         from ..models import Binder, Document, DocumentPointer, Resource
         binder_name = 'rock'
         with open(os.path.join(TEST_DATA_DIR, 'cover.png'), 'rb') as f:
-            cover = Resource('cover.png', io.BytesIO(f.read()), 'image/png')
+            cover = Resource('cover.png', io.BytesIO(f.read()), 'image/png',
+                             filename='cover.png')
         binder = Binder(binder_name, metadata={'title': "Kraken (Nueva Versión)"},
                         resources=[cover])
 
@@ -600,7 +602,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue(expected_nav in nav)
 
         # Check the resources
-        self.assertTrue(u'<li>cover.png</li>' in nav)
+        self.assertTrue(u'<a href="cover.png">cover.png</a>' in nav)
 
         # Check that translucent is not set
         self.assertFalse('<span data-type="binding" data-value="translucent" />' in nav)

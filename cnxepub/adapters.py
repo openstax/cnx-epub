@@ -58,7 +58,7 @@ def adapt_package(package):
     return _node_to_model(tree, package)
 
 
-def adapt_item(item, package):
+def adapt_item(item, package, filename=None):
     """Adapts ``.epub.Item`` to a ``DocumentItem``.
 
     """
@@ -76,7 +76,8 @@ def adapt_item(item, package):
         else:
             model = DocumentItem(item, package)
     else:
-        model = Resource(item.name, item.data, item.media_type, item.name)
+        model = Resource(item.name, item.data, item.media_type,
+                         filename or item.name)
     return model
 
 
@@ -255,8 +256,9 @@ class BinderItem(Binder):
         html = etree.parse(self._item.data)
         metadata = parse_metadata(html)
         resources = [
-            adapt_item(package.grab_by_name(name), package)
-            for name in parse_resources(html)]
+            adapt_item(package.grab_by_name(resource['id']),
+                       package, resource['filename'])
+            for resource in parse_resources(html)]
         id = _id_from_metadata(metadata)
         super(BinderItem, self).__init__(
             id, metadata=metadata, resources=resources)

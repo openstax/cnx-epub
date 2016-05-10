@@ -505,7 +505,7 @@ class Resource(object):
                                  self._data.read()).hexdigest()
         if not filename:
             # Create a filename from the hash and media-type.
-            filename = "{}.{}".format(
+            filename = "{}{}".format(
                 self._hash, mimetypes.guess_extension(self.media_type))
         self.filename = filename
 
