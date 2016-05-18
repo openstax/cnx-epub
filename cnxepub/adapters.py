@@ -335,9 +335,8 @@ def adapt_single_html(html):
     body = html_root.xpath('//xhtml:body', namespaces=HTML_DOCUMENT_NAMESPACES)
     _adapt_single_html_tree(binder, body[0])
 
-    # FIXME (20-Apr-2016) https://github.com/Connexions/cnx-epub/issues/65
-    # for i, node in enumerate(binder):
-    #     binder.set_title_for_node(node, title_overrides[i])
+    for i, node in enumerate(binder):
+        binder.set_title_for_node(node, title_overrides[i])
 
     return binder
 
