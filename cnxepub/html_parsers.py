@@ -21,7 +21,7 @@ def _squash_to_text(elm):
     for child in elm.getchildren():
         value.append(etree.tostring(child).decode('utf-8'))
         value.append(child.tail or '')
-    value = ''.join(value).encode('utf-8')
+    value = ''.join(value)
     return value
 
 
@@ -66,7 +66,7 @@ def _nav_to_tree(root):
         else:
             # It's a node and should only have an li.
             a = li.xpath('xhtml:a', namespaces=HTML_DOCUMENT_NAMESPACES)[0]
-            yield {'id': a.get('href'), 'title': a.text}
+            yield {'id': a.get('href'), 'title': _squash_to_text(a)}
     raise StopIteration()
 
 
@@ -145,7 +145,7 @@ class DocumentMetadataParser:
         items = self.parse('.//xhtml:*[@data-type="description"]')
         try:
             description = items[0]
-            value = _squash_to_text(description)
+            value = _squash_to_text(description).encode('utf-8')
         except IndexError:
             value = None
         return value
