@@ -59,7 +59,8 @@ def _nav_to_tree(root):
         if is_subtree:
             # It's a sub-tree and have a 'span' and 'ol'.
             yield {'id': 'subcol',  # Special id...
-                   'title': expath(li, 'xhtml:span/text()')[0],
+                   # Title is wrapped in a span, div or some other element...
+                   'title': expath(li, 'xhtml:*/text()')[0],
                    'contents': [x for x in _nav_to_tree(li)],
                    }
         else:
