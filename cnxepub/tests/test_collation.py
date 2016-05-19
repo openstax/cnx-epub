@@ -272,6 +272,44 @@ body::after {
   data-type: composite-page;
   container: div;
 }
+
+/* copied from cte books/rulesets/common/toc.less */
+body > div[data-type="page"],
+body > div[data-type="composite-page"] {
+  pass: 20;
+  string-set: page-id attr(id);
+}
+body > div[data-type="page"] > div[data-type="metadata"] > \
+    h1[data-type='document-title'],
+body > div[data-type="composite-page"] > div[data-type="metadata"] > \
+    h1[data-type='document-title'] {
+  pass: 20;
+  copy-to: page-title;
+}
+body > div[data-type="page"]::after,
+body > div[data-type="composite-page"]::after {
+  pass: 20;
+  content: pending(page-title);
+  attr-href: "#" string(page-id);
+  container: a;
+  move-to: page-link;
+}
+body > div[data-type="page"]::after,
+body > div[data-type="composite-page"]::after {
+  pass: 20;
+  content: pending(page-link);
+  move-to: eob-toc;
+  container: li;
+}
+nav#toc {
+  pass: 30;
+  content: '';
+}
+nav#toc::after {
+  pass: 30;
+  content: pending(eob-toc);
+  container: ol;
+}
 """)
         resource = self.make_resource('ruleset', ruleset, 'text/css',
                                       filename='ruleset.css')
