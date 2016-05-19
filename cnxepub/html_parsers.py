@@ -16,6 +16,15 @@ HTML_DOCUMENT_NAMESPACES = {
     }
 
 
+def _squash_to_text(elm):
+    value = [elm.text or '']
+    for child in elm.getchildren():
+        value.append(etree.tostring(child).decode('utf-8'))
+        value.append(child.tail or '')
+    value = ''.join(value)
+    return value
+
+
 def parse_navigation_html_to_tree(html, id):
     """Parse the given ``html`` (an etree object) to a tree.
     The ``id`` is required in order to assign the top-level tree id value.
@@ -50,13 +59,14 @@ def _nav_to_tree(root):
         if is_subtree:
             # It's a sub-tree and have a 'span' and 'ol'.
             yield {'id': 'subcol',  # Special id...
-                   'title': expath(li, 'xhtml:span/text()')[0],
+                   # Title is wrapped in a span, div or some other element...
+                   'title': expath(li, 'xhtml:*/text()')[0],
                    'contents': [x for x in _nav_to_tree(li)],
                    }
         else:
             # It's a node and should only have an li.
             a = li.xpath('xhtml:a', namespaces=HTML_DOCUMENT_NAMESPACES)[0]
-            yield {'id': a.get('href'), 'title': a.text}
+            yield {'id': a.get('href'), 'title': _squash_to_text(a)}
     raise StopIteration()
 
 
@@ -135,11 +145,7 @@ class DocumentMetadataParser:
         items = self.parse('.//xhtml:*[@data-type="description"]')
         try:
             description = items[0]
-            value = [description.text]
-            for child in description.getchildren():
-                value.append(etree.tostring(child).decode('utf-8'))
-                value.append(child.tail)
-            value = ''.join(value).encode('utf-8')
+            value = _squash_to_text(description).encode('utf-8')
         except IndexError:
             value = None
         return value
