@@ -328,7 +328,7 @@ def adapt_single_html(html):
     metadata = parse_metadata(html_root.xpath('//*[@data-type="metadata"]')[0])
     id_ = metadata['cnx-archive-uri'] or 'book'
 
-    binder = Binder(metadata['cnx-archive-uri'] or 'book', metadata=metadata)
+    binder = Binder(id_, metadata=metadata)
     nav_tree = parse_navigation_html_to_tree(html_root, id_)
     title_overrides = [i.get('title') for i in nav_tree['contents']]
 
