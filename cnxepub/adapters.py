@@ -47,6 +47,10 @@ __all__ = (
     )
 
 
+class AdaptationError(Exception):
+    """Raised when data is not able to be adapted to the requested format."""
+
+
 def adapt_package(package):
     """Adapts ``.epub.Package`` to a ``BinderItem`` and cascades
     the adaptation downward to ``DocumentItem``
@@ -396,5 +400,11 @@ def _adapt_single_html_tree(parent, elem, nav_tree):
         page.content = etree_to_content(etree_)
 
     # Assign title overrides
+    if len(parent) != len(title_overrides):
+        logger.error('Skipping title overrides -'
+                     'mismatched numbers: parent: {}, titles: {}'.format(
+                         len(parent), len(title_overrides)))
+        raise AdaptationError
+
     for i, node in enumerate(parent):
         parent.set_title_for_node(node, title_overrides[i])
