@@ -16,6 +16,15 @@ HTML_DOCUMENT_NAMESPACES = {
     }
 
 
+def _squash_to_text(elm):
+    value = [elm.text or '']
+    for child in elm.getchildren():
+        value.append(etree.tostring(child).decode('utf-8'))
+        value.append(child.tail or '')
+    value = ''.join(value).encode('utf-8')
+    return value
+
+
 def parse_navigation_html_to_tree(html, id):
     """Parse the given ``html`` (an etree object) to a tree.
     The ``id`` is required in order to assign the top-level tree id value.
@@ -135,11 +144,7 @@ class DocumentMetadataParser:
         items = self.parse('.//xhtml:*[@data-type="description"]')
         try:
             description = items[0]
-            value = [description.text]
-            for child in description.getchildren():
-                value.append(etree.tostring(child).decode('utf-8'))
-                value.append(child.tail)
-            value = ''.join(value).encode('utf-8')
+            value = _squash_to_text(description)
         except IndexError:
             value = None
         return value
