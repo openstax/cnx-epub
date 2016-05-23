@@ -342,6 +342,14 @@ def adapt_single_html(html):
 
 
 def _adapt_single_html_tree(parent, elem):
+    def fix_generated_ids(child):
+        for i in child.xpath('.//*[starts-with(@id, "auto_")]'):
+            i.attrib['id'] = i.attrib['id'].split('_', 2)[-1]
+        for i in child.xpath('.//xhtml:a[starts-with(@href, "#auto_")]',
+                             namespaces=HTML_DOCUMENT_NAMESPACES):
+            i.attrib['href'] = '#{}'.format(i.attrib['href'].split(
+                '_', 2)[-1])
+
     for child in elem.getchildren():
         if child.attrib.get('data-type') in ['unit', 'chapter']:
             title = child.xpath('*[@data-type="document-title"]/text()',
@@ -352,6 +360,7 @@ def _adapt_single_html_tree(parent, elem):
         elif child.attrib.get('data-type') in ['page', 'composite-page']:
             metadata = parse_metadata(child)
             id_ = metadata.get('cnx-archive-uri', None)
+            contents = fix_generated_ids(child)
             contents = b''.join([
                 etree.tostring(i)
                 for i in child.getchildren()
