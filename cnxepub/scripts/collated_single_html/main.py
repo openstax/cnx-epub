@@ -9,10 +9,11 @@
 
 Ensures safe parsing for specific elements.
 """
+from __future__ import print_function
 import argparse
 import logging
 import sys
-from pprint import pprint
+from pprint import pformat
 from lxml import etree
 import cnxepub
 
@@ -39,7 +40,8 @@ def main(argv=None):
     binder = reconstitute(args.collated_html)
 
     if args.dump_tree:
-        pprint(cnxepub.model_to_tree(binder))
+        print(pformat(cnxepub.model_to_tree(binder)).encode('utf-8'),
+              file=sys.stdout)
 
     # TODO Check for documents that have no identifier.
     #      These should likely be composite-documents
