@@ -40,7 +40,7 @@ def main(argv=None):
     binder = reconstitute(args.collated_html)
 
     if args.dump_tree:
-        print(pformat(cnxepub.model_to_tree(binder)).encode('utf-8'),
+        print(pformat(cnxepub.model_to_tree(binder)),
               file=sys.stdout)
 
     # TODO Check for documents that have no identifier.

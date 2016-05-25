@@ -17,6 +17,8 @@ from lxml import etree
 from ...html_parsers import HTML_DOCUMENT_NAMESPACES
 from ...testing import TEST_DATA_DIR, captured_output
 
+IS_PY3 = sys.version_info.major == 3
+
 
 class CollatedSingleHTMLTestCase(unittest.TestCase):
     maxDiff = None
@@ -38,10 +40,13 @@ class CollatedSingleHTMLTestCase(unittest.TestCase):
         # Capture stdout
         orig_stdout = sys.stdout
         self.addCleanup(setattr, sys, 'stdout', orig_stdout)
-        stdout = sys.stdout = io.BytesIO()
+        if IS_PY3:
+            stdout = sys.stdout = io.TextIOWrapper(io.BytesIO())
+        else:
+            stdout = sys.stdout = io.BytesIO()
 
         return_code = self.target([self.path_to_xhtml, '-d'])
         self.assertEqual(return_code, 0)
 
         stdout.seek(0)
-        self.assertIn('Fruity', stdout.read())
+        self.assertIn("'title': 'Fruity'", stdout.read())
