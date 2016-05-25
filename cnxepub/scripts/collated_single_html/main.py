@@ -35,15 +35,9 @@ def main(argv=None):
 
     args = parser.parse_args(argv)
 
-    html = args.collated_html.read()
-    try:
-        htree = etree.fromstring(html)
-    except etree.XMLSyntaxError:
-        htree = etree.HTML(html)
+    from cnxepub.collation import reconstitute
+    binder = reconstitute(args.collated_html)
 
-    xhtml = etree.tostring(htree, encoding='utf-8')
-
-    binder = cnxepub.adapt_single_html(xhtml)
     if args.dump_tree:
         pprint(cnxepub.model_to_tree(binder))
 
