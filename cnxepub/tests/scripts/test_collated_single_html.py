@@ -5,15 +5,12 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
-
+import io
 import mimetypes
 import os.path
+import sys
 import tempfile
 import unittest
-try:
-    from unittest import mock
-except ImportError:
-    import mock
 
 from lxml import etree
 
@@ -36,3 +33,15 @@ class CollatedSingleHTMLTestCase(unittest.TestCase):
     def test_valid(self):
         return_code = self.target([self.path_to_xhtml])
         self.assertEqual(return_code, 0)
+
+    def test_valid_with_tree(self):
+        # Capture stdout
+        orig_stdout = sys.stdout
+        self.addCleanup(setattr, sys, 'stdout', orig_stdout)
+        stdout = sys.stdout = io.BytesIO()
+
+        return_code = self.target([self.path_to_xhtml, '-d'])
+        self.assertEqual(return_code, 0)
+
+        stdout.seek(0)
+        self.assertIn('Fruity', stdout.read())
