@@ -25,8 +25,15 @@ TEST_DATA_DIR = os.path.join(here, 'data')
 class ReconstituteTestCase(unittest.TestCase):
     maxDiff = None
 
-    def test(self):
+    def test_xhtml(self):
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
+        with open(page_path) as html:
+            from cnxepub.collation import reconstitute
+            desserts = reconstitute(html)
+        self.check_desserts(desserts)
+
+    def test_html(self):
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
         with open(page_path) as html:
             from cnxepub.collation import reconstitute
             desserts = reconstitute(html)
