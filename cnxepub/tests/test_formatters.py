@@ -389,7 +389,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     def test_binder(self):
         from ..formatters import SingleHTMLFormatter
 
-        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
         with open(page_path, 'r') as f:
             self.assertMultiLineEqual(
                 f.read(), str(SingleHTMLFormatter(self.desserts)))

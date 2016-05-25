@@ -25,6 +25,11 @@ description = "Library for building and paring Connexions' EPUBs."
 if not IS_PY3:
     tests_require.append('mock')
 
+console_scripts = [
+    'cnx-epub-single_html = cnxepub.scripts.single_html.main:main',
+    ('cnx-epub-validate-collated = '
+     'cnxepub.scripts.collated_single_html.main:main'),
+]
 
 setup(
     name='cnx-epub',
@@ -40,9 +45,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     entry_points={
-        'console_scripts': [
-            'cnx-epub-single_html = cnxepub.scripts.single_html.main:main',
-            ],
+        'console_scripts': console_scripts,
         },
     test_suite='cnxepub.tests',
     zip_safe=False,
