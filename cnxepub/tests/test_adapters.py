@@ -642,7 +642,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
 
 
 class HTMLAdaptationTestCase(unittest.TestCase):
-    page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
+    page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
     maxDiff = None
     base_metadata = {
         u'publishers': [],

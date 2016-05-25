@@ -81,7 +81,7 @@ class SingleHTMLTestCase(unittest.TestCase):
         self.assertEqual(stderr, '')
 
         expected_html_path = os.path.join(
-            TEST_DATA_DIR, 'book-single-page.html')
+            TEST_DATA_DIR, 'book-single-page.xhtml')
         with open(expected_html_path, 'r') as expected:
             with open(html_path, 'r') as actual:
                 self.assertMultiLineEqual(expected.read(), actual.read())

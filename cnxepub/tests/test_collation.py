@@ -27,7 +27,7 @@ class ReconstituteTestCase(unittest.TestCase):
         from lxml import etree
         from ..models import model_to_tree
 
-        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
         with open(page_path) as html:
             from cnxepub.collation import reconstitute
             desserts = reconstitute(html)

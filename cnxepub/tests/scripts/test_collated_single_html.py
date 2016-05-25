@@ -30,9 +30,9 @@ class CollatedSingleHTMLTestCase(unittest.TestCase):
         return main
 
     @property
-    def path_to_html(self):
-        return os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
+    def path_to_xhtml(self):
+        return os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
 
     def test_valid(self):
-        return_code = self.target([self.path_to_html])
+        return_code = self.target([self.path_to_xhtml])
         self.assertEqual(return_code, 0)
