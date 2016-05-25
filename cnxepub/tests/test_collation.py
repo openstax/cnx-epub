@@ -13,6 +13,8 @@ try:
 except ImportError:
     import mock
 
+from lxml import etree
+
 from .test_models import BaseModelTestCase
 
 
@@ -24,13 +26,15 @@ class ReconstituteTestCase(unittest.TestCase):
     maxDiff = None
 
     def test(self):
-        from lxml import etree
-        from ..models import model_to_tree
-
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
         with open(page_path) as html:
             from cnxepub.collation import reconstitute
             desserts = reconstitute(html)
+        self.check_desserts(desserts)
+
+    def check_desserts(self, desserts):
+        """Assertions for the desserts model"""
+        from ..models import model_to_tree
 
         self.assertEqual('Desserts', desserts.metadata['title'])
 
