@@ -27,7 +27,7 @@ logger = logging.getLogger('single_html')
 
 
 def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,
-                numchapters=None):
+                numchapters=None, styles=None):
     """Generate complete book HTML."""
     epub = cnxepub.EPUB.from_file(epub_file_path)
     if len(epub) != 1:
@@ -55,8 +55,10 @@ def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,
             src=MATHJAX_URL.format(mathjax_version=mathjax_version))
 
     # Add styles to the page.
-    with open(os.path.join(os.path.dirname(__file__), 'styles.css')) as f:
-        etree.SubElement(html.head, 'style', type='text/css').text = f.read()
+    if styles:
+        with open(os.path.join(os.path.dirname(__file__), 'styles.css')) as f:
+            etree.SubElement(html.head, 'style',
+                             type='text/css').text = f.read()
 
     print(str(html), file=html_out)
     if hasattr(html_out, 'name'):
@@ -91,6 +93,8 @@ def main(argv=None):
                         help="Add script tag to use MathJax of given version")
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='Send debugging info to stderr')
+    parser.add_argument('-i', '--inline-styles', action='store_false',
+                        help='Insert basic inline styling')
     parser.add_argument('-s', '--subset-chapters', dest='numchapters',
                         type=int, const=2, nargs='?', metavar='num_chapters',
                         help="Create subset of complete book "
@@ -109,4 +113,4 @@ def main(argv=None):
             mathjax_version += '-latest'
 
     single_html(args.epub_file_path, args.html_out, mathjax_version,
-                args.numchapters)
+                args.numchapters, args.inline_styles)
