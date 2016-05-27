@@ -1,3 +1,2 @@
 include *.txt *.rst
 recursive-include cnxepub/tests/data *.*
-include cnxepub/scripts/single_html/styles.css

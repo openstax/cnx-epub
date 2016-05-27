@@ -54,10 +54,6 @@ def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,
             'script',
             src=MATHJAX_URL.format(mathjax_version=mathjax_version))
 
-    # Add styles to the page.
-    with open(os.path.join(os.path.dirname(__file__), 'styles.css')) as f:
-        etree.SubElement(html.head, 'style', type='text/css').text = f.read()
-
     print(str(html), file=html_out)
     if hasattr(html_out, 'name'):
         # html_out is a file, close after writing
