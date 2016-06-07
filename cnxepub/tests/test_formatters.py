@@ -401,6 +401,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         contents = io.BytesIO(b"""\
 <h1>Extra Stuff</h1>
 <p>This is a composite page.</p>
+<p>Here is a <a href="#auto_chocolate_list">link</a> to another document.</p>
 """)
         self.extra = CompositeDocument(
             'extra', contents, metadata=metadata)

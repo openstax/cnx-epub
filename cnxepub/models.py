@@ -32,6 +32,7 @@ __all__ = (
     'Binder', 'TranslucentBinder',
     'Document', 'CompositeDocument', 'DocumentPointer',
     'Resource',
+    'content_to_etree', 'etree_to_content',
     )
 
 
@@ -86,6 +87,20 @@ def _sanitize_xml(raw_xml):
     result = utf8(etree.tostring(xml))
     result = result[result.find('>')+1:result.rfind('<')].strip()
     return result
+
+
+def content_to_etree(content):
+    content = _sanitize_xml(content)
+    return lxml.html.fragment_fromstring(content, 'div')
+
+
+def etree_to_content(etree_):
+    string_types = (type(u''), type(b''))
+    # Unwrap the xml.
+    content = [
+        isinstance(node, string_types) and node or etree.tostring(node)
+        for node in etree_.xpath('node()')]
+    return ''.join(utf8(content))
 
 
 def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):
@@ -414,16 +429,10 @@ class Document(object):
         This is used to write out reference changes that may have
         taken place.
         """
-        string_types = (type(u''), type(b''))
-        # Unwrap the xml.
-        content = [
-            isinstance(node, string_types) and node or etree.tostring(node)
-            for node in self._xml.xpath('node()')]
-        return ''.join(utf8(content))
+        return etree_to_content(self._xml)
 
     def _content__set(self, value):
-        value = _sanitize_xml(value)
-        self._xml = lxml.html.fragment_fromstring(value, 'div')
+        self._xml = content_to_etree(value)
         # reload the references after a content update
         self._references = _parse_references(self._xml)
 

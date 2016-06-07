@@ -54,11 +54,11 @@ class ReconstituteTestCase(unittest.TestCase):
                     'title': 'Fruity',
                     'contents': [
                         {
-                            'id': None,
+                            'id': 'apple',
                             'title': 'Apple',
                             },
                         {
-                            'id': None,
+                            'id': 'lemon',
                             'title': 'Lemon',
                             },
                         {
@@ -66,7 +66,7 @@ class ReconstituteTestCase(unittest.TestCase):
                             'title': 'Citrus',
                             'contents': [
                                 {
-                                    'id': None,
+                                    'id': 'lemon',
                                     'title': 'Lemon',
                                     },
                                 ],
@@ -74,11 +74,11 @@ class ReconstituteTestCase(unittest.TestCase):
                         ],
                     },
                 {
-                    'id': None,
+                    'id': 'chocolate',
                     'title': u'チョコレート',
                     },
                 {
-                    'id': None,
+                    'id': 'extra',
                     'title': 'Extra Stuff',
                     },
                 ],

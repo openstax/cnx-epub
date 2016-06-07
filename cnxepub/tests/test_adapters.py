@@ -688,11 +688,11 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                     'title': 'Fruity',
                     'contents': [
                         {
-                            'id': None,
+                            'id': 'apple',
                             'title': 'Apple',
                             },
                         {
-                            'id': None,
+                            'id': 'lemon',
                             'title': 'Lemon',
                             },
                         {
@@ -700,7 +700,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                             'title': 'Citrus',
                             'contents': [
                                 {
-                                    'id': None,
+                                    'id': 'lemon',
                                     'title': 'Lemon',
                                     },
                                 ],
@@ -708,11 +708,11 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                         ],
                     },
                 {
-                    'id': None,
+                    'id': 'chocolate',
                     'title': u'チョコレート',
                     },
                 {
-                    'id': None,
+                    'id': 'extra',
                     'title': 'Extra Stuff',
                     },
                 ],
@@ -775,3 +775,6 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         self.assertEqual(metadata, extra_metadata)
+        self.assertIn('<p id="85405">Here is a <a href="/contents/chocolate'
+                      '#list">link</a> to another document.</p>',
+                      extra.content)

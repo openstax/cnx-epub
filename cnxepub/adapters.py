@@ -13,12 +13,14 @@ import mimetypes
 from copy import deepcopy
 
 import jinja2
+import lxml.html
 from lxml import etree
 
 from .epub import EPUB, Package, Item
 from .formatters import HTMLFormatter
 from .models import (
-    flatten_model,
+    flatten_model, flatten_to_documents,
+    content_to_etree, etree_to_content,
     Binder, TranslucentBinder,
     Document, Resource, DocumentPointer, CompositeDocument,
     TRANSLUCENT_BINDER_ID,
@@ -342,14 +344,25 @@ def adapt_single_html(html):
 
 
 def _adapt_single_html_tree(parent, elem):
-    def fix_generated_ids(child):
-        for i in child.xpath('.//*[starts-with(@id, "auto_")]'):
+    def fix_generated_ids(page, content):
+        for i in content.xpath('.//*[starts-with(@id, "auto_")]'):
             i.attrib['id'] = i.attrib['id'].split('_', 2)[-1]
-        for i in child.xpath('.//xhtml:a[starts-with(@href, "#auto_")]',
-                             namespaces=HTML_DOCUMENT_NAMESPACES):
-            i.attrib['href'] = '#{}'.format(i.attrib['href'].split(
-                '_', 2)[-1])
+        for i in content.xpath('.//*[starts-with(@href, "#auto_")]',
+                               namespaces=HTML_DOCUMENT_NAMESPACES):
+            _, page_id, target = i.attrib['href'].split('_', 2)
+            target_page = page_id_to_page[page_id]
+            if target_page is page:
+                i.attrib['href'] = '#{}'.format(target)
+            else:
+                i.attrib['href'] = '/contents/{}#{}'.format(
+                    target_page.id, target)
 
+    # A dictionary to allow look up a document using the page id (the id
+    # attribute of <div data-type="page|composite-page">)
+    page_id_to_page = {}
+
+    # Adapt each <div data-type="unit|chapter|page|composite-page"> into
+    # translucent binders, documents and composite documents
     for child in elem.getchildren():
         if child.attrib.get('data-type') in ['unit', 'chapter']:
             title = child.xpath('*[@data-type="document-title"]/text()',
@@ -359,8 +372,7 @@ def _adapt_single_html_tree(parent, elem):
             parent.append(tbinder)
         elif child.attrib.get('data-type') in ['page', 'composite-page']:
             metadata = parse_metadata(child)
-            id_ = metadata.get('cnx-archive-uri', None)
-            contents = fix_generated_ids(child)
+            id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
             contents = b''.join([
                 etree.tostring(i)
                 for i in child.getchildren()
@@ -372,3 +384,13 @@ def _adapt_single_html_tree(parent, elem):
                 }[child.attrib['data-type']]
             document = model(id_, io.BytesIO(contents), metadata=metadata)
             parent.append(document)
+
+            page_id_to_page[child.attrib.get('id', document.id)] = document
+
+    # For each page in the book, look for links to #auto_ and replace it with
+    # either the value without #auto_{id} or /contents/{id}#target
+    for page in flatten_to_documents(parent):
+        etree_ = content_to_etree(page.content)
+        fix_generated_ids(page, etree_)
+        string_types = (type(u''), type(b''))
+        page.content = etree_to_content(etree_)
