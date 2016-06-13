@@ -8,6 +8,7 @@
 
 import mimetypes
 import os.path
+import sys
 import tempfile
 import unittest
 try:
@@ -19,6 +20,9 @@ from lxml import etree
 
 from ...html_parsers import HTML_DOCUMENT_NAMESPACES
 from ...testing import TEST_DATA_DIR, captured_output
+
+
+IS_PY3 = sys.version_info.major == 3
 
 
 def mocked_guess_extension(*args, **kwargs):
@@ -70,6 +74,9 @@ class SingleHTMLTestCase(unittest.TestCase):
             self.xpath('xhtml:head/xhtml:script/@src'))
 
     def test_w_html_out(self):
+        import random
+        random.seed(1)
+
         _, html_path = tempfile.mkstemp('.html')
         self.addCleanup(os.remove, html_path)
 
@@ -82,6 +89,9 @@ class SingleHTMLTestCase(unittest.TestCase):
 
         expected_html_path = os.path.join(
             TEST_DATA_DIR, 'book-single-page.xhtml')
+        if not IS_PY3:
+            expected_html_path = expected_html_path.replace(
+                '.xhtml', '-py2.xhtml')
         with open(expected_html_path, 'r') as expected:
             with open(html_path, 'r') as actual:
                 self.assertMultiLineEqual(expected.read(), actual.read())

@@ -6,15 +6,17 @@
 # See LICENCE.txt for details.
 # ###
 from __future__ import unicode_literals
+import random
 import sys
 
 import jinja2
+import lxml.html
 from lxml import etree
 
 from .models import (
     model_to_tree,
     Binder, TranslucentBinder,
-    Document, DocumentPointer, CompositeDocument)
+    Document, DocumentPointer, CompositeDocument, utf8)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
 
 
@@ -77,9 +79,56 @@ class DocumentSummaryFormatter(object):
 
 
 class HTMLFormatter(object):
-    def __init__(self, model, extensions=None):
+    def __init__(self, model, extensions=None, generate_ids=False):
         self.model = model
         self.extensions = extensions
+        self.generate_ids = generate_ids
+
+    def _generate_ids(self, document, content):
+        """Generate unique ids for html elements in page content so that it's
+        possible to link to them.
+        """
+        existing_ids = content.xpath('//*/@id')
+        elements = [
+            'p', 'dl', 'dt', 'dd', 'table', 'div', 'section', 'figure',
+            'blockquote', 'q', 'code', 'pre', 'object', 'img', 'audio',
+            'video',
+            ]
+        elements_xpath = '|'.join(['.//{}'.format(elem) for elem in elements])
+
+        data_types = [
+            'equation', 'list', 'exercise', 'rule', 'example', 'note',
+            'footnote-number', 'footnote-ref', 'problem', 'solution', 'media',
+            'proof', 'statement', 'commentary'
+            ]
+        data_types_xpath = '|'.join(['.//*[@data-type="{}"]'.format(data_type)
+                                     for data_type in data_types])
+
+        xpath = '|'.join([elements_xpath, data_types_xpath])
+
+        mapping = {}  # old id -> new id
+
+        for node in content.xpath(xpath):
+            old_id = node.attrib.get('id')
+            document_id = document.id.replace('_', '')
+            if old_id:
+                new_id = 'auto_{}_{}'.format(document_id, old_id)
+            else:
+                random_number = random.randint(0, 100000)
+                new_id = 'auto_{}_{}'.format(document_id, random_number)
+            while new_id in existing_ids:
+                random_number = random.randint(0, 100000)
+                new_id = 'auto_{}_{}'.format(document_id, random_number,
+                                             random_number)
+            node.attrib['id'] = new_id
+            if old_id:
+                mapping[old_id] = new_id
+            existing_ids.append(new_id)
+
+        for a in content.xpath('//a[@href]'):
+            href = a.attrib['href']
+            if href.startswith('#') and href[1:] in mapping:
+                a.attrib['href'] = '#{}'.format(mapping[href[1:]])
 
     @property
     def _content(self):
@@ -90,7 +139,15 @@ class HTMLFormatter(object):
             return tree_to_html(
                 model_to_tree(self.model), self.extensions).decode('utf-8')
         elif isinstance(self.model, Document):
-            return self.model.content
+            content = self.model.content
+            if self.generate_ids:
+                div = lxml.html.fragment_fromstring(content, 'div')
+                self._generate_ids(self.model, div)
+                content = ''.join(utf8([
+                    isinstance(node, (type(''), type(b''))) and
+                    node or etree.tostring(node)
+                    for node in div.xpath('node()')]))
+            return content
 
     @property
     def _template(self):
@@ -162,15 +219,17 @@ class SingleHTMLFormatter(object):
 
     def _build_binder(self, binder, elem):
         for node in binder:
-            child_elem = etree.SubElement(
-                elem, 'div', **{'data-type': self.get_node_type(node)})
+            attrs = {'data-type': self.get_node_type(node)}
+            if node.id:
+                attrs['id'] = node.id
+            child_elem = etree.SubElement(elem, 'div', **attrs)
             if isinstance(node, TranslucentBinder):
                 etree.SubElement(
                     child_elem, 'h1', **{'data-type': 'document-title'}
                     ).text = node.metadata['title']
                 self._build_binder(node, child_elem)
             elif isinstance(node, Document):
-                html = bytes(HTMLFormatter(node))
+                html = bytes(HTMLFormatter(node, generate_ids=True))
                 doc_root = etree.fromstring(html)
                 body = doc_root.xpath('//xhtml:body',
                                       namespaces=HTML_DOCUMENT_NAMESPACES)[0]

@@ -130,6 +130,8 @@ class HTMLFormatterTestCase(unittest.TestCase):
         'version': 'draft',
         }
 
+    maxDiff = None
+
     def xpath(self, path):
         from ..html_parsers import HTML_DOCUMENT_NAMESPACES
 
@@ -283,6 +285,32 @@ class HTMLFormatterTestCase(unittest.TestCase):
         self.assertEqual('ingress@draft.xhtml', lis[0][0].attrib['href'])
         self.assertEqual(u'entrée', lis[0][0].text)
 
+    def test_document_auto_generate_ids(self):
+        import random
+
+        from ..models import Document
+        from ..formatters import HTMLFormatter
+
+        random.seed(1)
+        content = """\
+<div class="title" id="title">Preface</div>
+<p class="para" id="my-id">This thing and <em>that</em> thing.</p>
+<p class="para"><a href="#title">Link</a> to title</p>"""
+        page_one_id = 'fa21215a-91b5-424a-9fbd-5c451f309b87'
+
+        expected_content = """\
+<div class="title" id="auto_{id}_title">Preface</div>
+\n\n
+<p class="para" id="auto_{id}_my-id">This thing and <em>that</em> thing.</p>
+\n\n
+<p class="para" id="auto_{id}_{n}"><a href="#auto_{id}_title">Link</a> to title</p>\
+""".format(id=page_one_id, n=random.randint(0, 100000))
+
+        random.seed(1)
+        document = Document(page_one_id, content)
+        self.assertIn(expected_content,
+                      str(HTMLFormatter(document, generate_ids=True)))
+
 
 @mock.patch('mimetypes.guess_extension', last_extension)
 class SingleHTMLFormatterTestCase(unittest.TestCase):
@@ -320,12 +348,12 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         contents = io.BytesIO(u"""\
 <h1>Chocolate Desserts</h1>
-<p>List of desserts to try:</p>
-<ul><li>Chocolate Orange Tart,</li>
+<p><a href="#list">List</a> of desserts to try:</p>
+<div data-type="list" id="list"><ul><li>Chocolate Orange Tart,</li>
     <li>Hot Mocha Puddings,</li>
     <li>Chocolate and Banana French Toast,</li>
     <li>Chocolate Truffles...</li>
-</ul><img src="/resources/1x1.jpg" /><p>チョコレートデザート</p>
+</ul></div><img src="/resources/1x1.jpg" /><p>チョコレートデザート</p>
 """.encode('utf-8'))
         self.chocolate = Document('chocolate', contents, metadata=metadata,
                                   resources=[jpg])
@@ -373,6 +401,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         contents = io.BytesIO(b"""\
 <h1>Extra Stuff</h1>
 <p>This is a composite page.</p>
+<p>Here is a <a href="#auto_chocolate_list">link</a> to another document.</p>
 """)
         self.extra = CompositeDocument(
             'extra', contents, metadata=metadata)
@@ -387,23 +416,37 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             metadata={'title': 'Desserts'}, resources=[cover_png])
 
     def test_binder(self):
+        import random
+
         from ..formatters import SingleHTMLFormatter
 
+        random.seed(1)
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
+        if not IS_PY3:
+            page_path = page_path.replace('.xhtml', '-py2.xhtml')
+
         with open(page_path, 'r') as f:
-            self.assertMultiLineEqual(
-                f.read(), str(SingleHTMLFormatter(self.desserts)))
+            expected_content = f.read()
+
+        self.assertMultiLineEqual(
+            expected_content, str(SingleHTMLFormatter(self.desserts)))
 
     def test_str_unicode_bytes(self):
+        import random
+
         from ..formatters import SingleHTMLFormatter
 
+        random.seed(1)
         html = bytes(SingleHTMLFormatter(self.desserts))
         if IS_PY3:
-            self.assertEqual(
-                html, str(SingleHTMLFormatter(self.desserts)).encode('utf-8'))
+            random.seed(1)
+            self.assertMultiLineEqual(
+                html.decode('utf-8'), str(SingleHTMLFormatter(self.desserts)))
         else:
-            self.assertEqual(
+            random.seed(1)
+            self.assertMultiLineEqual(
                 html, str(SingleHTMLFormatter(self.desserts)))
-            self.assertEqual(
+            random.seed(1)
+            self.assertMultiLineEqual(
                 html,
                 unicode(SingleHTMLFormatter(self.desserts)).encode('utf-8'))
