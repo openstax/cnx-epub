@@ -693,11 +693,11 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                             },
                         {
                             'id': 'lemon',
-                            'title': 'Lemon',
+                            'title': u'レモン',
                             },
                         {
                             'id': 'subcol',
-                            'title': 'Citrus',
+                            'title': 'citrus',
                             'contents': [
                                 {
                                     'id': 'lemon',
@@ -721,6 +721,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         fruity = desserts[0]
         self.assertEqual('TranslucentBinder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
+        self.assertEqual('Fruity', desserts.get_title_for_node(fruity))
 
         apple = fruity[0]
         self.assertEqual('Document', apple.__class__.__name__)
@@ -733,6 +734,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual(metadata, apple_metadata)
         self.assertIn('<p id="17611">Here are some examples:</p>',
                       apple.content)
+        self.assertEqual('Apple', fruity.get_title_for_node(apple))
 
         lemon = fruity[1]
         self.assertEqual('Document', lemon.__class__.__name__)
@@ -745,12 +747,14 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual(metadata, lemon_metadata)
         self.assertIn('<p id="74606">Yum! <img src="/resources/1x1.jpg" '
                       'id="8271"/></p>', lemon.content)
+        self.assertEqual(u'レモン', fruity.get_title_for_node(lemon))
 
         citrus = fruity[2]
         self.assertEqual('TranslucentBinder', citrus.__class__.__name__)
         self.assertEqual(citrus.metadata['title'], 'Citrus')
 
         self.assertEqual(lemon.metadata, citrus[0].metadata)
+        self.assertEqual('citrus', fruity.get_title_for_node(citrus))
 
         chocolate = desserts[1]
         self.assertEqual('Document', chocolate.__class__.__name__)
@@ -765,6 +769,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                       chocolate.content)
         self.assertIn('<div data-type="list" id="list"><ul>',
                       chocolate.content)
+        self.assertEqual(u'チョコレート',
+                         desserts.get_title_for_node(chocolate))
 
         extra = desserts[2]
         self.assertEqual('CompositeDocument', extra.__class__.__name__)
@@ -778,3 +784,4 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertIn('<p id="85405">Here is a <a href="/contents/chocolate'
                       '#list">link</a> to another document.</p>',
                       extra.content)
+        self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))

@@ -59,11 +59,11 @@ class ReconstituteTestCase(unittest.TestCase):
                             },
                         {
                             'id': 'lemon',
-                            'title': 'Lemon',
+                            'title': u'レモン',
                             },
                         {
                             'id': 'subcol',
-                            'title': 'Citrus',
+                            'title': 'citrus',
                             'contents': [
                                 {
                                     'id': 'lemon',
