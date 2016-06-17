@@ -19,7 +19,7 @@ HTML_DOCUMENT_NAMESPACES = {
 def _squash_to_text(elm):
     value = [elm.text or '']
     for child in elm.getchildren():
-        value.append(etree.tostring(child).decode('utf-8'))
+        value.append(etree.tostring(child).decode('utf-8').strip())
         value.append(child.tail or '')
     value = ''.join(value)
     return value

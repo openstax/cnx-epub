@@ -175,7 +175,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
             u'publishers': [{u'id': None, u'name': u'Ream', u'type': None}],
             u'revised': u'2013/06/18 15:22:55 -0500',
             u'subjects': [u'Science and Mathematics'],
-            u'summary': u'\n        By the end of this section, you will be able to: \n        <ul xmlns="http://www.w3.org/1999/xhtml" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lrmi="http://lrmi.net/the-specification" class="list">\n          <li class="item">Drive a car</li>\n          <li class="item">Purchase a watch</li>\n          <li class="item">Wear funny hats</li>\n          <li class="item">Eat cake</li>\n        </ul>\n      \n      ',
+            u'summary': u'\n        By the end of this section, you will be able to: \n        <ul xmlns="http://www.w3.org/1999/xhtml" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lrmi="http://lrmi.net/the-specification" class="list">\n          <li class="item">Drive a car</li>\n          <li class="item">Purchase a watch</li>\n          <li class="item">Wear funny hats</li>\n          <li class="item">Eat cake</li>\n        </ul>\n      ',
             u'title': u'Document One of Infinity',
             u'translators': [{u'id': None, u'name': u'Francis Hablar',
                               u'type': None}],
