@@ -390,11 +390,13 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         metadata['title'] = 'Citrus'
         self.citrus = TranslucentBinder([self.lemon], metadata=metadata)
 
+        title_overrides = [
+            self.apple.metadata['title'],
+            u'<span>1.1</span> <span>|</span> <span>レモン</span>',
+            '<span>Chapter</span> <span>2</span> <span>citrus</span>']
         self.fruity = TranslucentBinder([self.apple, self.lemon, self.citrus],
                                         metadata={'title': 'Fruity'},
-                                        title_overrides=[
-                                            self.apple.metadata['title'],
-                                            u'レモン', 'citrus'])
+                                        title_overrides=title_overrides)
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'

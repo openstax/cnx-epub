@@ -693,11 +693,13 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                             },
                         {
                             'id': 'lemon',
-                            'title': u'レモン',
+                            'title': u'<span>1.1</span> <span>|</span> '
+                                     u'<span>&#12524;&#12514;&#12531;</span>',
                             },
                         {
                             'id': 'subcol',
-                            'title': 'citrus',
+                            'title': '<span>Chapter</span> <span>2</span> '
+                                     '<span>citrus</span>',
                             'contents': [
                                 {
                                     'id': 'lemon',
@@ -747,14 +749,18 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual(metadata, lemon_metadata)
         self.assertIn('<p id="74606">Yum! <img src="/resources/1x1.jpg" '
                       'id="8271"/></p>', lemon.content)
-        self.assertEqual(u'レモン', fruity.get_title_for_node(lemon))
+        self.assertEqual('<span>1.1</span> <span>|</span> <span>'
+                         '&#12524;&#12514;&#12531;</span>',
+                         fruity.get_title_for_node(lemon))
 
         citrus = fruity[2]
         self.assertEqual('TranslucentBinder', citrus.__class__.__name__)
         self.assertEqual(citrus.metadata['title'], 'Citrus')
 
         self.assertEqual(lemon.metadata, citrus[0].metadata)
-        self.assertEqual('citrus', fruity.get_title_for_node(citrus))
+        self.assertEqual('<span>Chapter</span> <span>2</span> '
+                         '<span>citrus</span>',
+                         fruity.get_title_for_node(citrus))
 
         chocolate = desserts[1]
         self.assertEqual('Document', chocolate.__class__.__name__)

@@ -571,12 +571,14 @@ def html_listify(tree, root_xl_element, extensions, list_type='ol'):
     for node in tree:
         li_elm = etree.SubElement(root_xl_element, 'li')
         if node['id'] == 'subcol':
-            span_elm = etree.SubElement(li_elm, 'span')
-            span_elm.text = node['title']
+            span_elm = lxml.html.fragment_fromstring(
+                node['title'], create_parent='span')
+            li_elm.append(span_elm)
         else:
-            a_elm = etree.SubElement(li_elm, 'a')
-            a_elm.text = node['title']
+            a_elm = lxml.html.fragment_fromstring(
+                node['title'], create_parent='a')
             a_elm.set('href', ''.join([node['id'], extensions[node['id']]]))
+            li_elm.append(a_elm)
         if 'contents' in node:
             elm = etree.SubElement(li_elm, list_type)
             html_listify(node['contents'], elm, extensions)
