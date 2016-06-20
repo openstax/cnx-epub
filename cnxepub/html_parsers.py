@@ -73,7 +73,6 @@ def _nav_to_tree(root):
             a = li.xpath('xhtml:a', namespaces=HTML_DOCUMENT_NAMESPACES)[0]
             yield {'id': a.get('href'),
                    'title': _squash_to_text(a, remove_namespaces=True)}
-    raise StopIteration()
 
 
 def parse_metadata(html):

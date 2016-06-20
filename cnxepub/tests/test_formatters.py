@@ -300,16 +300,16 @@ class HTMLFormatterTestCase(unittest.TestCase):
 
         expected_content = """\
 <div class="title" id="auto_{id}_title">Preface</div>
-\n\n
+
 <p class="para" id="auto_{id}_my-id">This thing and <em>that</em> thing.</p>
-\n\n
+
 <p class="para" id="auto_{id}_{n}"><a href="#auto_{id}_title">Link</a> to title</p>\
 """.format(id=page_one_id, n=random.randint(0, 100000))
 
         random.seed(1)
         document = Document(page_one_id, content)
-        self.assertIn(expected_content,
-                      str(HTMLFormatter(document, generate_ids=True)))
+        formatted = str(HTMLFormatter(document, generate_ids=True))
+        self.assertIn(expected_content, formatted)
 
 
 @mock.patch('mimetypes.guess_extension', last_extension)
@@ -375,6 +375,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Lemon'
         contents = io.BytesIO(b"""\
+<body class="fruity">
 <h1>Lemon Desserts</h1>
 <p>Yum! <img src="/resources/1x1.jpg" /></p>
 <ul><li>Lemon &amp; Lime Crush,</li>
@@ -382,6 +383,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     <li>Lemon Cheesecake,</li>
     <li>Raspberry &amp; Lemon Polenta Cake...</li>
 </ul>
+</body>
 """)
         self.lemon = Document('lemon', contents, metadata=metadata,
                               resources=[jpg])
@@ -430,8 +432,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         with open(page_path, 'r') as f:
             expected_content = f.read()
 
-        self.assertMultiLineEqual(
-            expected_content, str(SingleHTMLFormatter(self.desserts)))
+        actual = str(SingleHTMLFormatter(self.desserts))
+        self.assertMultiLineEqual(expected_content, actual)
 
     def test_str_unicode_bytes(self):
         import random

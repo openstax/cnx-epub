@@ -217,6 +217,7 @@ def _make_item(model):
     a ``.models.Document`` or ``.models.Resource``
     """
     item = Item(model.id, model.content, model.media_type)
+    return item
 
 
 def _node_to_model(tree_or_item, package, parent=None,
@@ -290,14 +291,19 @@ class DocumentItem(Document):
         self._html = etree.parse(self._item.data)
 
         metadata = parse_metadata(self._html)
-        content_xpath = (
-            "//xhtml:body/node()[not(self::node()[@data-type='metadata'])]")
-        nsmap = {'xhtml': "http://www.w3.org/1999/xhtml"}
+        body = self._html.xpath('//xhtml:body',
+                                namespaces=HTML_DOCUMENT_NAMESPACES)[0]
+        metadata_nodes = self._html.xpath(
+                                    "//xhtml:body/*[@data-type='metadata']",
+                                    namespaces=HTML_DOCUMENT_NAMESPACES)
+        for node in metadata_nodes:
+            body.remove(node)
+        for key in body.keys():
+            if key in ('itemtype', 'itemscope'):
+                body.attrib.pop(key)
 
-        content = io.BytesIO(
-            b''.join([
-                isinstance(n, str) and n.encode('utf-8') or etree.tostring(n)
-                for n in self._html.xpath(content_xpath, namespaces=nsmap)]))
+        content = etree.tostring(self._html)
+
         id = _id_from_metadata(metadata)
         resources = None
         super(DocumentItem, self).__init__(id, content, metadata)
@@ -377,16 +383,20 @@ def _adapt_single_html_tree(parent, elem, nav_tree):
             nav_tree['contents'].pop(0)
             metadata = parse_metadata(child)
             id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
-            contents = b''.join([
-                etree.tostring(i)
-                for i in child.getchildren()
-                if i.attrib.get('data-type') != 'metadata'
-                ])
+            metadata_nodes = child.xpath("*[@data-type='metadata']",
+                                         namespaces=HTML_DOCUMENT_NAMESPACES)
+            for node in metadata_nodes:
+                child.remove(node)
+            for key in child.keys():
+                if key in ('itemtype', 'itemscope'):
+                    child.attrib.pop(key)
+
+            contents = etree.tostring(child)
             model = {
                 'page': Document,
                 'composite-page': CompositeDocument,
                 }[child.attrib['data-type']]
-            document = model(id_, io.BytesIO(contents), metadata=metadata)
+            document = model(id_, contents, metadata=metadata)
             parent.append(document)
 
             page_id_to_page[child.attrib.get('id', document.id)] = document

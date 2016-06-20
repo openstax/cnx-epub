@@ -12,6 +12,7 @@ import sys
 import jinja2
 import lxml.html
 from lxml import etree
+from copy import deepcopy
 
 from .models import (
     model_to_tree,
@@ -94,7 +95,8 @@ class HTMLFormatter(object):
             'blockquote', 'q', 'code', 'pre', 'object', 'img', 'audio',
             'video',
             ]
-        elements_xpath = '|'.join(['.//{}'.format(elem) for elem in elements])
+        elements_xpath = '|'.join(['.//{}|xhtml:{}'.format(elem, elem)
+                                  for elem in elements])
 
         data_types = [
             'equation', 'list', 'exercise', 'rule', 'example', 'note',
@@ -108,7 +110,7 @@ class HTMLFormatter(object):
 
         mapping = {}  # old id -> new id
 
-        for node in content.xpath(xpath):
+        for node in content.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
             old_id = node.attrib.get('id')
             document_id = document.id.replace('_', '')
             if old_id:
@@ -141,12 +143,12 @@ class HTMLFormatter(object):
         elif isinstance(self.model, Document):
             content = self.model.content
             if self.generate_ids:
-                div = lxml.html.fragment_fromstring(content, 'div')
-                self._generate_ids(self.model, div)
+                _html = deepcopy(self.model._xml)
+                self._generate_ids(self.model, _html)
                 content = ''.join(utf8([
-                    isinstance(node, (type(''), type(b''))) and
-                    node or etree.tostring(node)
-                    for node in div.xpath('node()')]))
+                                   isinstance(node, (type(''), type(b''))) and
+                                   node or etree.tostring(node)
+                                   for node in _html.xpath('node()')]))
             return content
 
     @property
@@ -164,11 +166,16 @@ class HTMLFormatter(object):
 
     @property
     def _template_args(self):
+        if isinstance(self.model, Document):
+            root = self.model._xml
+        else:
+            root = {}
         return {
             'metadata': self.model.metadata,
             'content': self._content,
             'is_translucent': getattr(self.model, 'is_translucent', False),
             'resources': getattr(self.model, 'resources', []),
+            'root_attrs': {k: root.get(k) for k in root.keys()}
             }
 
     def __unicode__(self):
@@ -235,6 +242,9 @@ class SingleHTMLFormatter(object):
                                       namespaces=HTML_DOCUMENT_NAMESPACES)[0]
                 for c in body.iterchildren():
                     child_elem.append(c)
+                for a in body.attrib:
+                    if not (a.startswith('item')):
+                        child_elem.set(a, body.get(a))
 
     def build(self):
         self._build_binder(self.binder, self.body)
@@ -348,6 +358,9 @@ HTML_DOCUMENT = """\
         xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
         itemscope="itemscope"
         itemtype="http://schema.org/Book"
+      {% for attr,value in root_attrs.items() %}
+        {{ attr }}="{{ value }}"
+      {%- endfor %}
         >
     <div data-type="metadata">
       <h1 data-type="document-title" itemprop="name">{{ \
