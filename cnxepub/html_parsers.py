@@ -5,6 +5,8 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+import re
+
 from lxml import etree
 
 from .models import TRANSLUCENT_BINDER_ID
@@ -16,11 +18,13 @@ HTML_DOCUMENT_NAMESPACES = {
     }
 
 
-def _squash_to_text(elm):
+def _squash_to_text(elm, remove_namespaces=False):
     value = [elm.text or '']
     for child in elm.getchildren():
-        value.append(etree.tostring(child).decode('utf-8'))
+        value.append(etree.tostring(child).decode('utf-8').strip())
         value.append(child.tail or '')
+    if remove_namespaces:
+        value = [re.sub(' xmlns:?[^=]*="[^"]*"', '', v) for v in value]
     value = ''.join(value)
     return value
 
@@ -60,13 +64,15 @@ def _nav_to_tree(root):
             # It's a sub-tree and have a 'span' and 'ol'.
             yield {'id': 'subcol',  # Special id...
                    # Title is wrapped in a span, div or some other element...
-                   'title': expath(li, 'xhtml:*/text()')[0],
+                   'title': _squash_to_text(expath(li, 'xhtml:*')[0],
+                                            remove_namespaces=True),
                    'contents': [x for x in _nav_to_tree(li)],
                    }
         else:
             # It's a node and should only have an li.
             a = li.xpath('xhtml:a', namespaces=HTML_DOCUMENT_NAMESPACES)[0]
-            yield {'id': a.get('href'), 'title': _squash_to_text(a)}
+            yield {'id': a.get('href'),
+                   'title': _squash_to_text(a, remove_namespaces=True)}
     raise StopIteration()
 
 

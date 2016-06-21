@@ -175,7 +175,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
             u'publishers': [{u'id': None, u'name': u'Ream', u'type': None}],
             u'revised': u'2013/06/18 15:22:55 -0500',
             u'subjects': [u'Science and Mathematics'],
-            u'summary': u'\n        By the end of this section, you will be able to: \n        <ul xmlns="http://www.w3.org/1999/xhtml" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lrmi="http://lrmi.net/the-specification" class="list">\n          <li class="item">Drive a car</li>\n          <li class="item">Purchase a watch</li>\n          <li class="item">Wear funny hats</li>\n          <li class="item">Eat cake</li>\n        </ul>\n      \n      ',
+            u'summary': u'\n        By the end of this section, you will be able to: \n        <ul xmlns="http://www.w3.org/1999/xhtml" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lrmi="http://lrmi.net/the-specification" class="list">\n          <li class="item">Drive a car</li>\n          <li class="item">Purchase a watch</li>\n          <li class="item">Wear funny hats</li>\n          <li class="item">Eat cake</li>\n        </ul>\n      ',
             u'title': u'Document One of Infinity',
             u'translators': [{u'id': None, u'name': u'Francis Hablar',
                               u'type': None}],
@@ -693,11 +693,13 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                             },
                         {
                             'id': 'lemon',
-                            'title': 'Lemon',
+                            'title': u'<span>1.1</span> <span>|</span> '
+                                     u'<span>&#12524;&#12514;&#12531;</span>',
                             },
                         {
                             'id': 'subcol',
-                            'title': 'Citrus',
+                            'title': '<span>Chapter</span> <span>2</span> '
+                                     '<span>citrus</span>',
                             'contents': [
                                 {
                                     'id': 'lemon',
@@ -721,6 +723,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         fruity = desserts[0]
         self.assertEqual('TranslucentBinder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
+        self.assertEqual('Fruity', desserts.get_title_for_node(fruity))
 
         apple = fruity[0]
         self.assertEqual('Document', apple.__class__.__name__)
@@ -733,6 +736,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual(metadata, apple_metadata)
         self.assertIn('<p id="17611">Here are some examples:</p>',
                       apple.content)
+        self.assertEqual('Apple', fruity.get_title_for_node(apple))
 
         lemon = fruity[1]
         self.assertEqual('Document', lemon.__class__.__name__)
@@ -745,12 +749,18 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual(metadata, lemon_metadata)
         self.assertIn('<p id="74606">Yum! <img src="/resources/1x1.jpg" '
                       'id="8271"/></p>', lemon.content)
+        self.assertEqual('<span>1.1</span> <span>|</span> <span>'
+                         '&#12524;&#12514;&#12531;</span>',
+                         fruity.get_title_for_node(lemon))
 
         citrus = fruity[2]
         self.assertEqual('TranslucentBinder', citrus.__class__.__name__)
         self.assertEqual(citrus.metadata['title'], 'Citrus')
 
         self.assertEqual(lemon.metadata, citrus[0].metadata)
+        self.assertEqual('<span>Chapter</span> <span>2</span> '
+                         '<span>citrus</span>',
+                         fruity.get_title_for_node(citrus))
 
         chocolate = desserts[1]
         self.assertEqual('Document', chocolate.__class__.__name__)
@@ -765,6 +775,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                       chocolate.content)
         self.assertIn('<div data-type="list" id="list"><ul>',
                       chocolate.content)
+        self.assertEqual(u'チョコレート',
+                         desserts.get_title_for_node(chocolate))
 
         extra = desserts[2]
         self.assertEqual('CompositeDocument', extra.__class__.__name__)
@@ -778,3 +790,4 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertIn('<p id="85405">Here is a <a href="/contents/chocolate'
                       '#list">link</a> to another document.</p>',
                       extra.content)
+        self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))

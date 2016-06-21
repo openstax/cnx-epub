@@ -332,18 +332,16 @@ def adapt_single_html(html):
 
     binder = Binder(id_, metadata=metadata)
     nav_tree = parse_navigation_html_to_tree(html_root, id_)
-    title_overrides = [i.get('title') for i in nav_tree['contents']]
 
     body = html_root.xpath('//xhtml:body', namespaces=HTML_DOCUMENT_NAMESPACES)
-    _adapt_single_html_tree(binder, body[0])
-
-    for i, node in enumerate(binder):
-        binder.set_title_for_node(node, title_overrides[i])
+    _adapt_single_html_tree(binder, body[0], nav_tree)
 
     return binder
 
 
-def _adapt_single_html_tree(parent, elem):
+def _adapt_single_html_tree(parent, elem, nav_tree):
+    title_overrides = [i.get('title') for i in nav_tree['contents']]
+
     def fix_generated_ids(page, content):
         for i in content.xpath('.//*[starts-with(@id, "auto_")]'):
             i.attrib['id'] = i.attrib['id'].split('_', 2)[-1]
@@ -368,9 +366,11 @@ def _adapt_single_html_tree(parent, elem):
             title = child.xpath('*[@data-type="document-title"]/text()',
                                 namespaces=HTML_DOCUMENT_NAMESPACES)[0]
             tbinder = TranslucentBinder(metadata={'title': title})
-            _adapt_single_html_tree(tbinder, child)
+            _adapt_single_html_tree(tbinder, child,
+                                    nav_tree['contents'].pop(0))
             parent.append(tbinder)
         elif child.attrib.get('data-type') in ['page', 'composite-page']:
+            nav_tree['contents'].pop(0)
             metadata = parse_metadata(child)
             id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
             contents = b''.join([
@@ -394,3 +394,7 @@ def _adapt_single_html_tree(parent, elem):
         fix_generated_ids(page, etree_)
         string_types = (type(u''), type(b''))
         page.content = etree_to_content(etree_)
+
+    # Assign title overrides
+    for i, node in enumerate(parent):
+        parent.set_title_for_node(node, title_overrides[i])
