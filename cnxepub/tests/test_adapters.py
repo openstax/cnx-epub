@@ -791,3 +791,16 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                       '#list">link</a> to another document.</p>',
                       extra.content)
         self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))
+
+    def test_missing_title_override(self):
+        """Throw error if override titles are missing."""
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-bad.xhtml')
+        from ..adapters import adapt_single_html
+        from ..models import model_to_tree
+
+        with open(page_path, 'r') as f:
+            html = f.read()
+
+        from ..adapters import AdaptationError
+        with self.assertRaises(AdaptationError) as caught_exception:
+            desserts = adapt_single_html(html)
