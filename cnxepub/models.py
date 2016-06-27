@@ -61,6 +61,8 @@ XML_WRAPPER = """\
 {}
 </div>"""
 
+XHTML_NS = {'x': 'http://www.w3.org/1999/xhtml'}
+
 
 def utf8(item):
     if isinstance(item, list):
@@ -90,8 +92,17 @@ def _sanitize_xml(raw_xml):
 
 
 def content_to_etree(content):
-    content = _sanitize_xml(content)
-    return lxml.html.fragment_fromstring(content, 'div')
+    try:
+        xml_parser = etree.XMLParser(ns_clean=True, recover=True)
+        tree = etree.HTML(content, xml_parser)
+        bod = tree.xpath('//*[self::body|self::x:body]',
+                         namespaces={'x': 'http://www.w3.org/1999/xhtml'})[0]
+        bod.tag = 'div'
+        return bod
+    # Reeeally broken HTML, or no body
+    except (etree.Error, AttributeError, IndexError):
+        content = _sanitize_xml(content)
+        return lxml.html.fragment_fromstring(content, 'div')
 
 
 def etree_to_content(etree_):
@@ -138,7 +149,6 @@ def flatten_tree_to_ident_hashes(item_or_tree,
     else:
         item = item_or_tree
         yield item['id']
-    raise StopIteration()
 
 
 def flatten_model(model):
@@ -152,7 +162,6 @@ def flatten_model(model):
             # yield from flatten_model(m)
             for x in flatten_model(m):
                 yield x
-    raise StopIteration()
 
 
 def flatten_to_documents(model, include_pointers=False):
@@ -185,7 +194,6 @@ def flatten_to(model, flatten_filter):
     for m in flatten_model(model):
         if flatten_filter(m):
             yield m
-    raise StopIteration()
 
 
 def _discover_uri_type(uri):
@@ -286,28 +294,34 @@ class HTMLReferenceFinder(object):
             yield elm, 'href'
         for elm, uri_attr in self._media():
             yield elm, uri_attr
-        raise StopIteration()
 
-    def apply_xpath(self, xpath):
-        return self.xml.xpath(xpath)
+    def apply_xpath(self, xpath, namespaces=None):
+        return self.xml.xpath(xpath, namespaces=namespaces)
 
     def _anchors(self):
-        return self.apply_xpath('//a[@href]')
+        return self.apply_xpath('//*[self::a[@href]|self::x:a[@href]]',
+                                XHTML_NS)
 
     def _media(self):
-        media_xpath = {
-                '//img[@src]': 'src',
-                '//audio[@src]': 'src',
-                '//video[@src]': 'src',
-                '//object[@data]': 'data',
-                '//object/embed[@src]': 'src',
-                '//source[@src]': 'src',
-                '//span[@data-src]': 'data-src',
-                }
-        for xpath, attr in media_xpath.items():
-            for elm in self.apply_xpath(xpath):
+        media_xpath = [
+                ['//img[@src]', 'src', None],
+                ['//audio[@src]', 'src', None],
+                ['//video[@src]', 'src', None],
+                ['//object[@data]', 'data', None],
+                ['//object/embed[@src]', 'src', None],
+                ['//source[@src]', 'src', None],
+                ['//span[@data-src]', 'data-src', None],
+                ['//x:img[@src]', 'src', XHTML_NS],
+                ['//x:audio[@src]', 'src', XHTML_NS],
+                ['//x:video[@src]', 'src', XHTML_NS],
+                ['//x:object[@data]', 'data', XHTML_NS],
+                ['//x:object/embed[@src]', 'src', XHTML_NS],
+                ['//x:source[@src]', 'src', XHTML_NS],
+                ['//x:span[@data-src]', 'data-src', XHTML_NS],
+                ]
+        for xpath, attr, ns in media_xpath:
+            for elm in self.apply_xpath(xpath, ns):
                 yield elm, attr
-        raise StopIteration()
 
 
 # ########## #
