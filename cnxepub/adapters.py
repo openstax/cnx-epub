@@ -344,30 +344,30 @@ def adapt_single_html(html):
     nav_tree = parse_navigation_html_to_tree(html_root, id_)
 
     body = html_root.xpath('//xhtml:body', namespaces=HTML_DOCUMENT_NAMESPACES)
+
     _adapt_single_html_tree(binder, body[0], nav_tree)
 
     return binder
 
 
-def _adapt_single_html_tree(parent, elem, nav_tree):
+def _adapt_single_html_tree(parent, elem, nav_tree, page_ids=None):
     title_overrides = [i.get('title') for i in nav_tree['contents']]
+    if page_ids is None:
+        pages = elem.xpath('//*[@data-type="page"]|'
+                           '//*[@data-type="composite-page"]')
+        page_ids = [page.get('id') for page in pages]
 
     def fix_generated_ids(page, content):
         for i in content.xpath('.//*[starts-with(@id, "auto_")]'):
             i.attrib['id'] = i.attrib['id'].split('_', 2)[-1]
         for i in content.xpath('.//*[starts-with(@href, "#auto_")]',
                                namespaces=HTML_DOCUMENT_NAMESPACES):
-            _, page_id, target = i.attrib['href'].split('_', 2)
-            target_page = page_id_to_page[page_id]
-            if target_page is page:
+            _, target_page_id, target = i.attrib['href'].split('_', 2)
+            if target_page_id == page.id:
                 i.attrib['href'] = '#{}'.format(target)
             else:
                 i.attrib['href'] = '/contents/{}#{}'.format(
-                    target_page.id, target)
-
-    # A dictionary to allow look up a document using the page id (the id
-    # attribute of <div data-type="page|composite-page">)
-    page_id_to_page = {}
+                    target_page_id, target)
 
     # Adapt each <div data-type="unit|chapter|page|composite-page"> into
     # translucent binders, documents and composite documents
@@ -377,7 +377,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree):
                                 namespaces=HTML_DOCUMENT_NAMESPACES)[0]
             tbinder = TranslucentBinder(metadata={'title': title})
             _adapt_single_html_tree(tbinder, child,
-                                    nav_tree['contents'].pop(0))
+                                    nav_tree['contents'].pop(0), page_ids)
             parent.append(tbinder)
         elif child.attrib.get('data-type') in ['page', 'composite-page']:
             nav_tree['contents'].pop(0)
@@ -398,8 +398,6 @@ def _adapt_single_html_tree(parent, elem, nav_tree):
                 }[child.attrib['data-type']]
             document = model(id_, contents, metadata=metadata)
             parent.append(document)
-
-            page_id_to_page[child.attrib.get('id', document.id)] = document
 
     # For each page in the book, look for links to #auto_ and replace it with
     # either the value without #auto_{id} or /contents/{id}#target
