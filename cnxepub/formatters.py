@@ -95,7 +95,7 @@ class HTMLFormatter(object):
             'blockquote', 'q', 'code', 'pre', 'object', 'img', 'audio',
             'video',
             ]
-        elements_xpath = '|'.join(['.//{}|xhtml:{}'.format(elem, elem)
+        elements_xpath = '|'.join(['//{}|//xhtml:{}'.format(elem, elem)
                                   for elem in elements])
 
         data_types = [
@@ -103,7 +103,7 @@ class HTMLFormatter(object):
             'footnote-number', 'footnote-ref', 'problem', 'solution', 'media',
             'proof', 'statement', 'commentary'
             ]
-        data_types_xpath = '|'.join(['.//*[@data-type="{}"]'.format(data_type)
+        data_types_xpath = '|'.join(['//*[@data-type="{}"]'.format(data_type)
                                      for data_type in data_types])
 
         xpath = '|'.join([elements_xpath, data_types_xpath])
@@ -127,7 +127,8 @@ class HTMLFormatter(object):
                 mapping[old_id] = new_id
             existing_ids.append(new_id)
 
-        for a in content.xpath('//a[@href]'):
+        for a in content.xpath('//a[@href]|//xhtml:a[@href]',
+                               namespaces=HTML_DOCUMENT_NAMESPACES):
             href = a.attrib['href']
             if href.startswith('#') and href[1:] in mapping:
                 a.attrib['href'] = '#{}'.format(mapping[href[1:]])
