@@ -9,6 +9,7 @@ from __future__ import unicode_literals
 import random
 import sys
 
+import re
 import jinja2
 import lxml.html
 from lxml import etree
@@ -16,6 +17,7 @@ from copy import deepcopy
 
 from .models import (
     model_to_tree,
+    flatten_to_documents,
     Binder, TranslucentBinder,
     Document, DocumentPointer, CompositeDocument, utf8)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
@@ -249,6 +251,20 @@ class SingleHTMLFormatter(object):
 
     def build(self):
         self._build_binder(self.binder, self.body)
+        # Rewrite absolute-path links that are intra-binder
+        page_ids = [page.id for page in flatten_to_documents(self.binder)]
+        page_uuids = {id.split('@')[0]: id for id in page_ids}
+        for link in self.root.xpath('//*[@href]'):
+            href = link.get('href')
+            if href.startswith('/contents/'):
+                link_uuid = re.split('@|#', href[10:])[0]
+                if link_uuid in page_uuids:
+                    if '#' in href:
+                        fragment = href[href.index('#'):].replace('#', '_')
+                        link.set('href', '#auto_{}{}'.format(
+                            page_uuids[link_uuid], fragment))
+                    else:
+                        link.set('href', '#{}'.format(page_uuids[link_uuid]))
 
     def __unicode__(self):
         return self.__bytes__().decode('utf-8')
