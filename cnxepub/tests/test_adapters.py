@@ -734,7 +734,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, apple_metadata)
-        self.assertIn('>Here are some examples:</p>',
+        self.assertIn('<p id="17611">Here are some examples:</p>',
                       apple.content)
         self.assertEqual('Apple', fruity.get_title_for_node(apple))
 
@@ -747,7 +747,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, lemon_metadata)
-        self.assertIn('>Yum! <img src="/resources/1x1.jpg" ', lemon.content)
+        self.assertIn('<p id="74606">Yum! <img src="/resources/1x1.jpg" '
+                      'id="8271"/></p>', lemon.content)
         self.assertEqual('<span>1.1</span> <span>|</span> <span>'
                          '&#12524;&#12514;&#12531;</span>',
                          fruity.get_title_for_node(lemon))
@@ -770,7 +771,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = u'チョコレート'
         self.assertEqual(metadata, chocolate_metadata)
-        self.assertIn('><a href="#list">List</a> of',
+        self.assertIn('<p id="64937"><a href="#list">List</a> of',
                       chocolate.content)
         self.assertIn('<div data-type="list" id="list"><ul>',
                       chocolate.content)
@@ -786,7 +787,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         self.assertEqual(metadata, extra_metadata)
-        self.assertIn('>Here is a <a href="/contents/chocolate'
+        self.assertIn('<p id="85405">Here is a <a href="/contents/chocolate'
                       '#list">link</a> to another document.</p>',
                       extra.content)
         self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))
