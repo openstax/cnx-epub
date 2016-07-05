@@ -292,7 +292,6 @@ class HTMLFormatterTestCase(unittest.TestCase):
         from ..formatters import HTMLFormatter
 
         random.seed(1)
-        n = random.randint(0, 100000)
         content = """\
 <div class="title" id="title">Preface</div>
 <p class="para" id="my-id">This thing and <em>that</em> thing.</p>
@@ -434,8 +433,6 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             expected_content = f.read()
 
         actual = str(SingleHTMLFormatter(self.desserts))
-        with open('/tmp/desserts-single-page-py2.xhtml', 'w') as f:
-            f.write(actual)
         self.assertMultiLineEqual(expected_content, actual)
 
     def test_str_unicode_bytes(self):
