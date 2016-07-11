@@ -362,7 +362,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         metadata['title'] = 'Apple'
         contents = io.BytesIO(b"""\
 <h1>Apple Desserts</h1>
-<p>Here are some examples:</p>
+<p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
 <ul><li>Apple Crumble,</li>
     <li>Apfelstrudel,</li>
     <li>Caramel Apple,</li>

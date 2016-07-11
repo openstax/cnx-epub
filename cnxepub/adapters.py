@@ -364,6 +364,12 @@ def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
             else:
                 i.attrib['href'] = '/contents/{}#{}'.format(
                     target_page.id, target)
+        page_id_xpath = ' or '.join([
+            '@href = "#{}"'.format(page_id)
+            for page_id in pages_by_id])
+        for i in content.xpath('.//*[{}]'.format(page_id_xpath)):
+            i.attrib['href'] = '/contents/{}'.format(
+                i.attrib['href'].split('#')[-1])
 
     # A dictionary to allow look up a document using the page id (the id
     # attribute of <div data-type="page|composite-page">)
