@@ -357,22 +357,22 @@ def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
             i.attrib['id'] = i.attrib['id'].split('_', 2)[-1]
         for i in content.xpath('.//*[starts-with(@href, "#auto_")]',
                                namespaces=HTML_DOCUMENT_NAMESPACES):
-            _, page_id, target = i.attrib['href'].split('_', 2)
-            target_page = pages_by_id[page_id]
+            _, _, target = i.attrib['href'].split('_', 2)
+            target_page = pages_by_id[i.attrib['href']]
             if target_page is page:
                 i.attrib['href'] = '#{}'.format(target)
             else:
                 i.attrib['href'] = '/contents/{}#{}'.format(
                     target_page.id, target)
-        page_id_xpath = ' or '.join([
-            '@href = "#{}"'.format(page_id)
-            for page_id in pages_by_id])
-        for i in content.xpath('.//*[{}]'.format(page_id_xpath)):
-            i.attrib['href'] = '/contents/{}'.format(
-                i.attrib['href'].split('#')[-1])
+        target_pages = set(pages_by_id.values())
+        if target_pages:
+            page_id_xpath = ' or '.join([
+                '@href = "#{}"'.format(page.id) for page in target_pages])
+            for i in content.xpath('.//*[{}]'.format(page_id_xpath)):
+                i.attrib['href'] = '/contents/{}'.format(
+                    i.attrib['href'].split('#')[-1])
 
-    # A dictionary to allow look up a document using the page id (the id
-    # attribute of <div data-type="page|composite-page">)
+    # A dictionary to allow look up a document using the html element id
     if pages_by_id is None:
         pages_by_id = {}
 
@@ -407,7 +407,8 @@ def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
             document = model(id_, contents, metadata=metadata)
             parent.append(document)
 
-            pages_by_id[child.attrib.get('id', document.id)] = document
+            for element in child.xpath('.//*[@id]'):
+                pages_by_id['#{}'.format(element.attrib['id'])] = document
 
     # Assign title overrides
     if len(parent) != len(title_overrides):
