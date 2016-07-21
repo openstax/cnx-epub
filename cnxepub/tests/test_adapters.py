@@ -824,3 +824,17 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                       extra.content)
         self.assertIn('Click <a href="/contents/extra#1">here</a>',
                       chocolate.content)
+
+    def test_fix_generated_ids_links_without_version(self):
+        from ..adapters import adapt_single_html
+
+        page_path = os.path.join(TEST_DATA_DIR,
+                                 'collated-desserts-single-page.xhtml')
+
+        with open(page_path, 'r') as f:
+            html = f.read()
+
+        desserts = adapt_single_html(html)
+        apple = desserts[0][0]
+        self.assertIn('<p id="12345"><a href="/contents/chocolate">',
+                      apple.content)
