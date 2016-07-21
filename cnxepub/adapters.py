@@ -334,8 +334,6 @@ def adapt_single_html(html):
     ``.formatters.SingleHTMLFormatter`` to a ``models.Binder``
     """
     html_root = etree.fromstring(html)
-    # parse_metadata, parse_navigation_html_to_tree,
-    # parse_resources, DocumentPointerMetadataParser
 
     metadata = parse_metadata(html_root.xpath('//*[@data-type="metadata"]')[0])
     id_ = metadata['cnx-archive-uri'] or 'book'
@@ -366,8 +364,11 @@ def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
                     target_page.id, target)
         target_pages = set(pages_by_id.values())
         if target_pages:
+            page_ids_wo_versions = [
+                page.id.split('@')[0] for page in target_pages]
             page_id_xpath = ' or '.join([
-                '@href = "#{}"'.format(page.id) for page in target_pages])
+                'starts-with(@href, "#{}")'.format(page_id)
+                for page_id in page_ids_wo_versions])
             for i in content.xpath('.//*[{}]'.format(page_id_xpath)):
                 i.attrib['href'] = '/contents/{}'.format(
                     i.attrib['href'].split('#')[-1])
