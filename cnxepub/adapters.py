@@ -381,8 +381,10 @@ def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
     # translucent binders, documents and composite documents
     for child in elem.getchildren():
         if child.attrib.get('data-type') in ['unit', 'chapter']:
-            title = child.xpath('*[@data-type="document-title"]/text()',
-                                namespaces=HTML_DOCUMENT_NAMESPACES)[0]
+            title = lxml.html.HtmlElement(
+                        child.xpath('*[@data-type="document-title"]',
+                                    namespaces=HTML_DOCUMENT_NAMESPACES)[0]
+                        ).text_content().strip()
             tbinder = TranslucentBinder(metadata={'title': title})
             _adapt_single_html_tree(tbinder, child,
                                     nav_tree['contents'].pop(0),
