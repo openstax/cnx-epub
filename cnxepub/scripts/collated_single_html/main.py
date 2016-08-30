@@ -34,6 +34,9 @@ def main(argv=None):
     parser.add_argument('-d', '--dump-tree', action='store_true',
                         help='Print out parsed model tree.')
 
+    parser.add_argument('-o', '--output', type=argparse.FileType('w'),
+                        help='Write out epub of parsed tree.')
+
     args = parser.parse_args(argv)
 
     from cnxepub.collation import reconstitute
@@ -42,6 +45,9 @@ def main(argv=None):
     if args.dump_tree:
         print(pformat(cnxepub.model_to_tree(binder)),
               file=sys.stdout)
+
+    if args.output:
+        cnxepub.adapters.make_epub(binder, args.output)
 
     # TODO Check for documents that have no identifier.
     #      These should likely be composite-documents

@@ -817,6 +817,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
 
         desserts = adapt_single_html(html)
 
+        lemon = desserts[0][1][0]
         chocolate = desserts[1]
         extra = desserts[2]
 
@@ -824,6 +825,11 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                       extra.content)
         self.assertIn('Click <a href="/contents/extra#1">here</a>',
                       chocolate.content)
+        self.assertIn('<p id="summary0"> Pretend move of lemon summary</p>',
+                      extra.content)
+        self.assertIn('<p id="summary1"> Pretend move of chocolate summary</p>',
+                      extra.content)
+        self.assertIn('<p id="myid">Be sure to read the <a href="/contents/extra#summary0">Summary for lemon</a></p>', lemon.content)
 
     def test_fix_generated_ids_links_without_version(self):
         from ..adapters import adapt_single_html
