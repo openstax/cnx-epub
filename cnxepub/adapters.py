@@ -347,35 +347,61 @@ def adapt_single_html(html):
     return binder
 
 
-def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
+def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
     title_overrides = [i.get('title') for i in nav_tree['contents']]
 
-    def fix_generated_ids(page, content):
-        for i in content.xpath('.//*[starts-with(@id, "auto_")]'):
-            i.attrib['id'] = i.attrib['id'].split('_', 2)[-1]
-        for i in content.xpath('.//*[starts-with(@href, "#auto_")]',
+    # A dictionary to allow look up of a document and new id using the old html
+    # element id
+
+    if id_map is None:
+        id_map = {}
+
+    def fix_generated_ids(page, id_map):
+        """Fix element ids (remove auto marker) and populate id_map."""
+
+        content = content_to_etree(page.content)
+
+        new_ids = []
+        for element in content.xpath('.//*[@id]'):
+            id_val = element.get('id')
+            if id_val.startswith('auto_'):
+                new_val = id_val.split('_', 2)[-1]
+                # Did content from different pages w/ same original id
+                # get moved to the same page?
+                if new_val in new_ids:
+                    suffix = 0
+                    while (new_val + str(suffix)) in new_ids:
+                        suffix += 1
+                    new_val = new_val + str(suffix)
+            else:
+                new_val = id_val
+            new_ids.append(new_val)
+            element.set('id', new_val)
+            id_map['#{}'.format(id_val)] = (page, new_val)
+
+        id_map['#{}'.format(page.id)] = (page, '')
+        if page.id and '@' in page.id:
+            id_map['#{}'.format(page.id.split('@')[0])] = (page, '')
+
+        page.content = etree_to_content(content)
+
+    def fix_links(page, id_map):
+        """Remap all intra-book links, replace with value from id_map."""
+
+        content = content_to_etree(page.content)
+        for i in content.xpath('.//*[starts-with(@href, "#")]',
                                namespaces=HTML_DOCUMENT_NAMESPACES):
-            _, _, target = i.attrib['href'].split('_', 2)
-            target_page = pages_by_id[i.attrib['href']]
-            if target_page is page:
+            ref_val = i.attrib['href']
+            target_page, target = id_map[ref_val]
+            target_id = target_page.id.split('@')[0]
+            if page == target_page:
                 i.attrib['href'] = '#{}'.format(target)
+            elif not target:  # link to page
+                i.attrib['href'] = '/contents/{}'.format(target_id)
             else:
                 i.attrib['href'] = '/contents/{}#{}'.format(
-                    target_page.id, target)
-        target_pages = set(pages_by_id.values())
-        if target_pages:
-            page_ids_wo_versions = [
-                page.id.split('@')[0] for page in target_pages]
-            page_id_xpath = ' or '.join([
-                'starts-with(@href, "#{}")'.format(page_id)
-                for page_id in page_ids_wo_versions])
-            for i in content.xpath('.//*[{}]'.format(page_id_xpath)):
-                i.attrib['href'] = '/contents/{}'.format(
-                    i.attrib['href'].split('#')[-1])
-
-    # A dictionary to allow look up a document using the html element id
-    if pages_by_id is None:
-        pages_by_id = {}
+                    target_id, target)
+        page.content = etree_to_content(content)
 
     # Adapt each <div data-type="unit|chapter|page|composite-page"> into
     # translucent binders, documents and composite documents
@@ -388,7 +414,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
             tbinder = TranslucentBinder(metadata={'title': title})
             _adapt_single_html_tree(tbinder, child,
                                     nav_tree['contents'].pop(0),
-                                    pages_by_id=pages_by_id, depth=depth+1)
+                                    id_map=id_map, depth=depth+1)
             parent.append(tbinder)
         elif child.attrib.get('data-type') in ['page', 'composite-page']:
             nav_tree['contents'].pop(0)
@@ -410,8 +436,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
             document = model(id_, contents, metadata=metadata)
             parent.append(document)
 
-            for element in child.xpath('.//*[@id]'):
-                pages_by_id['#{}'.format(element.attrib['id'])] = document
+            fix_generated_ids(document, id_map)  # also populates id_map
 
     # Assign title overrides
     if len(parent) != len(title_overrides):
@@ -423,12 +448,8 @@ def _adapt_single_html_tree(parent, elem, nav_tree, pages_by_id=None, depth=0):
     for i, node in enumerate(parent):
         parent.set_title_for_node(node, title_overrides[i])
 
-    # For each page in the book, look for links to #auto_ and replace it with
-    # either the value without #auto_{id} or /contents/{id}#target
-    # only fixup links at top, for whole book
+    # only fixup links after all pages
+    # processed for whole book, to allow for foward links
     if depth == 0:
         for page in flatten_to_documents(parent):
-            etree_ = content_to_etree(page.content)
-            fix_generated_ids(page, etree_)
-            string_types = (type(u''), type(b''))
-            page.content = etree_to_content(etree_)
+            fix_links(page, id_map)
