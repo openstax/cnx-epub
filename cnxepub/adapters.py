@@ -392,15 +392,19 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
         for i in content.xpath('.//*[starts-with(@href, "#")]',
                                namespaces=HTML_DOCUMENT_NAMESPACES):
             ref_val = i.attrib['href']
-            target_page, target = id_map[ref_val]
-            target_id = target_page.id.split('@')[0]
-            if page == target_page:
-                i.attrib['href'] = '#{}'.format(target)
-            elif not target:  # link to page
-                i.attrib['href'] = '/contents/{}'.format(target_id)
+            if ref_val in id_map:
+                target_page, target = id_map[ref_val]
+                target_id = target_page.id.split('@')[0]
+                if page == target_page:
+                    i.attrib['href'] = '#{}'.format(target)
+                elif not target:  # link to page
+                    i.attrib['href'] = '/contents/{}'.format(target_id)
+                else:
+                    i.attrib['href'] = '/contents/{}#{}'.format(
+                        target_id, target)
             else:
-                i.attrib['href'] = '/contents/{}#{}'.format(
-                    target_id, target)
+                logger.error('Bad href: {}'.format(ref_val))
+
         page.content = etree_to_content(content)
 
     # Adapt each <div data-type="unit|chapter|page|composite-page"> into
