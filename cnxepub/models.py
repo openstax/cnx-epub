@@ -57,7 +57,15 @@ XML_WRAPPER = """\
   xmlns:epub="http://www.idpf.org/2007/ops"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:lrmi="http://lrmi.net/the-specification">
+  xmlns:lrmi="http://lrmi.net/the-specification"
+  xmlns:math="http://www.w3.org/1998/Math/MathML"
+  xmlns:qml="http://cnx.rice.edu/qml/1.0"
+  xmlns:datadev="http://dev.w3.org/html5/spec/#custom"
+  xmlns:modids="http://cnx.rice.edu/#moduleIds"
+  xmlns:bib="http://bibtexml.sf.net/"
+  xmlns:md="http://cnx.rice.edu/mdml"
+  xmlns:cnxml="http://cnx.rice.edu/cnxml"
+  >
 {}
 </div>"""
 

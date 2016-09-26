@@ -191,7 +191,7 @@ class HTMLFormatter(object):
 
     def __bytes__(self):
         html = self._template.render(self._template_args)
-        return html.encode('utf-8')
+        return _fix_namespaces(html.encode('utf-8'))
 
 
 class SingleHTMLFormatter(object):
@@ -277,7 +277,39 @@ class SingleHTMLFormatter(object):
     def __bytes__(self):
         if not self.built:
             self.build()
-        return etree.tostring(self.root, pretty_print=True, method='html')
+        return _fix_namespaces(etree.tostring(self.root,
+                                              pretty_print=True,
+                                              method='html',
+                                              encoding='utf-8'))
+
+
+def _fix_namespaces(html):
+    nsmap = {u"": u"http://www.w3.org/1999/xhtml",
+             u"m": u"http://www.w3.org/1998/Math/MathML",
+             u"epub": u"http://www.idpf.org/2007/ops",
+             u"rdf": u"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+             u"dc": u"http://purl.org/dc/elements/1.1/",
+             u"lrmi": u"http://lrmi.net/the-specification",
+             u"bib": u"http://bibtexml.sf.net/",
+             u"data":
+                 u"http://www.w3.org/TR/html5/dom.html#custom-data-attribute",
+             u"qml": u"http://cnx.rice.edu/qml/1.0",
+             u"datadev": u"http://dev.w3.org/html5/spec/#custom",
+             u"mod": u"http://cnx.rice.edu/#moduleIds",
+             u"md": u"http://cnx.rice.edu/mdml",
+             u"c": u"http://cnx.rice.edu/cnxml"
+             }
+    from xml.etree import ElementTree as ET
+    from io import BytesIO
+    for prefix, uri in nsmap.items():
+        ET.register_namespace(prefix, uri)
+    et = ET.parse(BytesIO(html))
+    new_html = BytesIO()
+    et.write(new_html)
+    new_html.seek(0)
+    let = etree.parse(new_html)
+    return etree.tostring(let, pretty_print=True,
+                          method='html', encoding='utf-8')
 
 
 # XXX Rendering shouldn't happen here.
@@ -290,6 +322,13 @@ DOCUMENT_POINTER_TEMPLATE = """\
       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:lrmi="http://lrmi.net/the-specification"
+      xmlns:bib="http://bibtexml.sf.net/"
+      xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
+      xmlns:qml="http://cnx.rice.edu/qml/1.0"
+      xmlns:datadev="http://dev.w3.org/html5/spec/#custom"
+      xmlns:mod="http://cnx.rice.edu/#moduleIds"
+      xmlns:md="http://cnx.rice.edu/mdml"
+      xmlns:c="http://cnx.rice.edu/cnxml"
       >
   <head itemscope="itemscope"
         itemtype="http://schema.org/Book"
@@ -310,9 +349,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
      #}
 
   </head>
-  <body xmlns:bib="http://bibtexml.sf.net/"
-        xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
-        itemscope="itemscope"
+  <body itemscope="itemscope"
         itemtype="http://schema.org/Book"
         >
     <div data-type="metadata">
@@ -341,6 +378,13 @@ HTML_DOCUMENT = """\
       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:lrmi="http://lrmi.net/the-specification"
+      xmlns:bib="http://bibtexml.sf.net/"
+      xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
+      xmlns:qml="http://cnx.rice.edu/qml/1.0"
+      xmlns:datadev="http://dev.w3.org/html5/spec/#custom"
+      xmlns:mod="http://cnx.rice.edu/#moduleIds"
+      xmlns:md="http://cnx.rice.edu/mdml"
+      xmlns:c="http://cnx.rice.edu/cnxml"
       >
   <head itemscope="itemscope"
         itemtype="http://schema.org/Book"
@@ -371,9 +415,7 @@ HTML_DOCUMENT = """\
           content="{{ metadata['revised'] }}"
           />
   </head>
-  <body xmlns:bib="http://bibtexml.sf.net/"
-        xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
-        itemscope="itemscope"
+  <body itemscope="itemscope"
         itemtype="http://schema.org/Book"
       {% for attr,value in root_attrs.items() %}
         {{ attr }}="{{ value }}"

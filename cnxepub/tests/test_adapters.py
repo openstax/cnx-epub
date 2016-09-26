@@ -351,7 +351,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue(expected_nav in nav)
 
         # Check that translucent is set
-        self.assertTrue('<span data-type="binding" data-value="translucent" />' in nav)
+        self.assertTrue('<span data-type="binding" data-value="translucent"' in nav)
 
         # Check the title and content
         self.assertTrue('<title>Kraken</title>' in nav)
@@ -465,7 +465,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertIn(expected_nav, nav)
 
         # Check that translucent is set
-        self.assertTrue('<span data-type="binding" data-value="translucent" />' in nav)
+        self.assertTrue('<span data-type="binding" data-value="translucent"' in nav)
 
         # Check the title and content
         self.assertTrue('<title>Kraken</title>' in nav)
@@ -476,7 +476,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue(re.search(
             '<div data-type="resources"[^>]*>\s*<ul>\s*'
             '<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>\s*</ul>\s*</div>', egress))
-        self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
+        self.assertTrue(u'<p><img src="../resources/1x1.jpg"></img>hüvasti.</p>' in egress)
 
         # Adapt epub back to documents and binders
         from cnxepub import EPUB
@@ -605,7 +605,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue(u'<a href="cover.png">cover.png</a>' in nav)
 
         # Check that translucent is not set
-        self.assertFalse('<span data-type="binding" data-value="translucent" />' in nav)
+        self.assertFalse('<span data-type="binding" data-value="translucent"' in nav)
 
         # Check the title and content
         self.assertTrue(u'<title>Kraken (Nueva Versión)</title>' in nav)
@@ -615,7 +615,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             ingress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
         self.assertTrue('<span data-type="cnx-archive-uri" '
-                        'data-value="e78d4f90-e078-49d2-beac-e95e8be70667" />' in egress)
+                        'data-value="e78d4f90-e078-49d2-beac-e95e8be70667"' in egress)
         self.assertTrue(u'<p>hüvasti.</p>' in egress)
         self.assertFalse('Derived from:' in egress)
         self.assertTrue('Derived from:' in ingress)
@@ -626,9 +626,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         with open(os.path.join(epub_path, 'contents', pointer_filename)) as f:
             pointer = unescape(f.read())
         self.assertTrue('<title>Pointer</title>' in pointer)
-        self.assertTrue('<span data-type="document" data-value="pointer" />' in pointer)
+        self.assertTrue('<span data-type="document" data-value="pointer"' in pointer)
         self.assertTrue('<span data-type="cnx-archive-uri" '
-                        'data-value="pointer@1" />' in pointer)
+                        'data-value="pointer@1"' in pointer)
         self.assertTrue('<a href="http://cnx.org/contents/pointer@1">here</a>' in pointer)
 
         # Adapt epub back to documents and binders
@@ -749,8 +749,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, lemon_metadata)
-        self.assertIn('<p id="74606">Yum! <img src="/resources/1x1.jpg" '
-                      'id="8271"/></p>', lemon.content)
+        self.assertIn('<p id="74606">Yum! <img id="8271" '
+                      'src="/resources/1x1.jpg"/></p>', lemon.content)
         self.assertEqual('<span>1.1</span> <span>|</span> <span>'
                          '&#12524;&#12514;&#12531;</span>',
                          fruity.get_title_for_node(lemon))

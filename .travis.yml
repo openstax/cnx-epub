@@ -2,7 +2,7 @@ language: python
 sudo: false
 python:
   - "2.7"
-  - "3.3"
+  - "3.5"
 before_install:
   # Install the coverage utility and coveralls reporting utility
   - pip install coverage
