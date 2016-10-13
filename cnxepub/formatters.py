@@ -611,12 +611,15 @@ HTML_DOCUMENT = """\
         </p>
       </div>
 
+      {% if metadata['summary'] %}
       <div class="description"
            itemprop="description"
            data-type="description"
            >
         {{ metadata['summary'] }}
       </div>
+      {%- endif %}
+
 
       {% for keyword in metadata['keywords'] -%}
       <div itemprop="keywords" data-type="keyword">{{ keyword|escape }}</div>
