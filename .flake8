@@ -1,0 +1,11 @@
+[flake8]
+exclude = 
+    .git,
+    .eggs,
+    cnx_epub.egg-info,
+    build,
+    dist
+
+putty-ignore =
+    cnxepub/tests/ : E501, E123, E126, F841
+    */__init__.py : F401, F403
