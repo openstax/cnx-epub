@@ -195,7 +195,7 @@ class HTMLFormatter(object):
 
 
 class SingleHTMLFormatter(object):
-    def __init__(self, binder):
+    def __init__(self, binder, includes=None):
         self.binder = binder
 
         self.root = etree.fromstring(bytes(HTMLFormatter(self.binder)))
@@ -204,6 +204,7 @@ class SingleHTMLFormatter(object):
         self.body = self.xpath('//xhtml:body')[0]
 
         self.built = False
+        self.includes = includes
 
     def xpath(self, path, elem=None):
         if elem is None:
@@ -251,6 +252,12 @@ class SingleHTMLFormatter(object):
 
     def build(self):
         self._build_binder(self.binder, self.body)
+        # Fetch any includes from remote sources
+        if self.includes is not None:
+            for match, proc in self.includes:
+                for elem in self.xpath(match):
+                    proc(elem)
+
         # Rewrite absolute-path links that are intra-binder
         page_ids = [page.id for page in flatten_to_documents(self.binder)]
         page_uuids = {id.split('@')[0]: id for id in page_ids}
