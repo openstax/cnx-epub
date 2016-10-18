@@ -9,11 +9,11 @@ from __future__ import print_function
 
 import argparse
 import logging
-import os
 import sys
 
 from lxml import etree
 import cnxepub
+from cnxepub.formatters import exercise_callback_factory
 
 
 ARCHIVEHTML = 'https://archive.cnx.org/contents/{}.html'
@@ -27,7 +27,7 @@ logger = logging.getLogger('single_html')
 
 
 def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,
-                numchapters=None):
+                numchapters=None, includes=None):
     """Generate complete book HTML."""
     epub = cnxepub.EPUB.from_file(epub_file_path)
     if len(epub) != 1:
@@ -38,7 +38,7 @@ def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,
     partcount.update({}.fromkeys(parts, 0))
     partcount['book'] += 1
 
-    html = cnxepub.SingleHTMLFormatter(binder)
+    html = cnxepub.SingleHTMLFormatter(binder, includes=includes)
 
     # Truncate binder to the first N chapters where N = numchapters.
     logger.debug('Full binder: {}'.format(cnxepub.model_to_tree(binder)))
@@ -85,6 +85,10 @@ def main(argv=None):
     parser.add_argument('-m', "--mathjax_version", const="latest",
                         metavar="mathjax_version", nargs="?",
                         help="Add script tag to use MathJax of given version")
+    parser.add_argument('-x', "--exercise_host",
+                        const="exercises.openstax.org",
+                        metavar="exercise_host", nargs="?",
+                        help="Download included exercises from this host")
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='Send debugging info to stderr')
     parser.add_argument('-s', '--subset-chapters', dest='numchapters',
@@ -104,5 +108,15 @@ def main(argv=None):
         if not mathjax_version.endswith('latest'):
             mathjax_version += '-latest'
 
+    exercise_host = args.exercise_host
+    if exercise_host:
+        exercise_url = \
+                'https://%s/api/exercises?q=tag:{itemCode}' % (exercise_host)
+        exercise_match = '#ost/api/ex/'
+        includes = [exercise_callback_factory(exercise_match,
+                                              exercise_url)]
+    else:
+        includes = None
+
     single_html(args.epub_file_path, args.html_out, mathjax_version,
-                args.numchapters)
+                args.numchapters, includes)

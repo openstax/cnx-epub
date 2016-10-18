@@ -9,6 +9,7 @@ IS_PY3 = sys.version_info > (3,)
 install_requires = [
     'jinja2',
     'lxml',
+    'requests',
     ]
 collation_requires = [
     'cnx-easybake',

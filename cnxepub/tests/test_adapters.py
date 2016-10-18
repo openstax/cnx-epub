@@ -773,7 +773,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = u'チョコレート'
         self.assertEqual(metadata, chocolate_metadata)
-        self.assertIn('<p id="64937"><a href="#list">List</a> of',
+        self.assertIn('<p id="27519"><a href="#list">List</a> of',
                       chocolate.content)
         self.assertIn('<div data-type="list" id="list"><ul>',
                       chocolate.content)
@@ -789,7 +789,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         self.assertEqual(metadata, extra_metadata)
-        self.assertIn('<p id="85405">Here is a <a href="/contents/chocolate'
+        self.assertIn('<p id="51093">Here is a <a href="/contents/chocolate'
                       '#list">link</a> to another document.</p>',
                       extra.content)
         self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))
