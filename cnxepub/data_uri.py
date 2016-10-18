@@ -4,6 +4,7 @@
 import mimetypes
 import re
 import urllib
+import textwrap
 
 
 MIMETYPE_REGEX = r'[\w]+\/[\w\-\+\.]+'

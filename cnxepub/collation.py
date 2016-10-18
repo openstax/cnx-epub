@@ -51,21 +51,19 @@ def reconstitute(html):
     return adapt_single_html(xhtml)
 
 
-def collate(binder):
+def collate(binder, ruleset="ruleset.css", includes=None):
     """Given a ``Binder`` as ``binder``, collate the content into a new set
     of models.
     Returns the collated binder.
 
     """
-    html_formatter = SingleHTMLFormatter(binder)
+    html_formatter = SingleHTMLFormatter(binder, includes)
     raw_html = io.BytesIO(bytes(html_formatter))
     collated_html = io.BytesIO()
 
-    # FIXME Seems like there should be a more definitive way
-    # to get the ruleset file.
     try:
         ruleset_resource = [r for r in binder.resources
-                            if r.filename == 'ruleset.css'][0]
+                            if r.filename == ruleset][0]
     except IndexError:
         # No ruleset found, so no cooking necessary.
         return binder

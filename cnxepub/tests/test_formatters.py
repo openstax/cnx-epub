@@ -454,3 +454,31 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             self.assertMultiLineEqual(
                 html,
                 unicode(SingleHTMLFormatter(self.desserts)).encode('utf-8'))
+
+    def test_includes_callback(self):
+        import random
+
+        from ..formatters import SingleHTMLFormatter
+
+        def _upcase_text(elem):
+            if elem.text:
+                elem.text = elem.text.upper()
+
+        random.seed(1)
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-includes.xhtml')
+        if not IS_PY3:
+            page_path = page_path.replace('.xhtml', '-py2.xhtml')
+
+        with open(page_path, 'r') as f:
+            expected_content = f.read()
+
+        actual = str(SingleHTMLFormatter(self.desserts, [('//xhtml:a', _upcase_text)]))
+        out_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-includes-actual.xhtml')
+        if not IS_PY3:
+            out_path = out_path.replace('.xhtml', '-py2.xhtml')
+        with open(out_path, 'w') as out:
+            out.write(actual)
+
+        self.assertMultiLineEqual(expected_content, actual)
+        # After assert, so won't clean up if test fails
+        os.remove(out_path)
