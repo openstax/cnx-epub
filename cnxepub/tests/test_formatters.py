@@ -18,6 +18,7 @@ except ImportError:
 from lxml import etree
 
 from ..testing import TEST_DATA_DIR, unescape
+from ..formatters import exercise_callback_factory
 
 
 IS_PY3 = sys.version_info.major == 3
@@ -27,6 +28,107 @@ def last_extension(*args, **kwargs):
     # Always return the last value of sorted mimetypes.guess_all_extensions
     exts = mimetypes.guess_all_extensions(*args, **kwargs)
     return sorted(exts)[-1]
+
+EXERCISE_JSON = {
+   "items": [
+      {
+         "uid": "93@3",
+         "group_uuid": "e071207a-9d26-4cff-bbe9-9060d3d13ca6",
+         "copyright_holders": [
+            {
+               "user_id": 2,
+               "name": "Rice University"
+            }
+         ],
+         "uuid": "8fa80526-0720-4a98-99c8-5d6113482424",
+         "authors": [
+            {
+               "user_id": 1,
+               "name": "OpenStax"
+            }
+         ],
+         "published_at": "2016-09-16T17:40:20.497Z",
+         "number": 93,
+         "editors": [],
+         "is_vocab": False,
+         "stimulus_html": "",
+         "questions": [
+            {
+               "stimulus_html": "",
+               "formats": [
+                  "free-response",
+                  "multiple-choice"
+               ],
+               "hints": [],
+               "id": 63062,
+               "is_answer_order_important": True,
+               "answers": [
+                  {
+                     "id": 259956,
+                     "content_html": "monomers"
+                  },
+                  {
+                     "content_html": "polymers",
+                     "id": 259957
+                  },
+                  {
+                     "id": 259958,
+                     "content_html": "carbohydrates only"
+                  },
+                  {
+                     "content_html": "water only",
+                     "id": 259959
+                  }
+               ],
+               "combo_choices": [],
+               "stem_html": "Dehydration synthesis leads to the formation of what?"
+            }
+         ],
+         "tags": [
+            "apbio",
+            "inbook-yes",
+            "ost-chapter-review",
+            "review",
+            "apbio-ch03",
+            "apbio-ch03-s01",
+            "apbio-ch03-s01-lo01",
+            "apbio-ch03-ex002",
+            "dok:1",
+            "blooms:1",
+            "time:short",
+            "book:stax-bio",
+            "context-cnxmod:ea44b8fa-e7a2-4360-ad34-ac081bcf104f",
+            "exid:apbio-ch03-ex002",
+            "context-cnxmod:85d6c500-9860-42e8-853a-e6940a50224f",
+            "book:stax-apbio",
+            "filter-type:import:hs",
+            "type:conceptual-or-recall"
+         ],
+         "derived_from": [],
+         "version": 3
+      }
+   ],
+   "total_count": 1
+}
+
+
+def mocked_requests_get(*args, **kwargs):
+    # Replace requests.get with this mock
+    # modified from http://stackoverflow.com/a/28507806/5430
+    class MockResponse:
+        def __init__(self, json_data, status_code):
+            self.json_data = json_data
+            self.status_code = status_code
+
+        def json(self):
+            return self.json_data
+
+    if args[0] == 'https://exercises.openstax.org/api/exercises?q=tag:apbio-ch03-ex002':
+        return MockResponse(EXERCISE_JSON, 200)
+    else:
+        return MockResponse({"total_count": 0, "items": []}, 200)
+
+    return MockResponse({}, 404)
 
 
 class DocumentContentFormatterTestCase(unittest.TestCase):
@@ -378,6 +480,15 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 <body class="fruity">
 <h1>Lemon Desserts</h1>
 <p>Yum! <img src="/resources/1x1.jpg" /></p>
+<div data-type="exercise">
+    <a href="#ost/api/ex/apbio-ch03-ex002">[link]</a>
+</div>
+
+<div data-type="exercise">
+    <p>
+    <a href="#ost/api/ex/nosuchtag">[link]</a>
+    </p>
+</div>
 <ul><li>Lemon &amp; Lime Crush,</li>
     <li>Lemon Drizzle Loaf,</li>
     <li>Lemon Cheesecake,</li>
@@ -464,6 +575,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                 html,
                 unicode(SingleHTMLFormatter(self.desserts)).encode('utf-8'))
 
+    @mock.patch('requests.get', mocked_requests_get)
     def test_includes_callback(self):
         import random
 
@@ -474,15 +586,21 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                 elem.text = elem.text.upper()
 
         random.seed(1)
-        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-includes.xhtml')
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-includes.xhtml')
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
 
         with open(page_path, 'r') as f:
             expected_content = f.read()
 
-        actual = str(SingleHTMLFormatter(self.desserts, [('//xhtml:a', _upcase_text)]))
-        out_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-includes-actual.xhtml')
+        exercise_url = \
+            'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
+        exercise_match = '#ost/api/ex/'
+        includes = [exercise_callback_factory(exercise_match, exercise_url),
+                    ('//xhtml:a', _upcase_text)]
+
+        actual = str(SingleHTMLFormatter(self.desserts, includes=includes))
+        out_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
         with open(out_path, 'w') as out:

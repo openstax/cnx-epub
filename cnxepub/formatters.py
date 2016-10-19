@@ -286,7 +286,6 @@ class SingleHTMLFormatter(object):
             self.build()
         return _fix_namespaces(etree.tostring(self.root,
                                               pretty_print=True,
-                                              method='html',
                                               encoding='utf-8'))
 
 
@@ -319,8 +318,62 @@ def _fix_namespaces(html):
                           method='html', encoding='utf-8')
 
 
+def exercise_callback_factory(match, url_template):
+    """Create a callback function to replace an exercise by fetching from
+    a server."""
+    import requests
+
+    def _replace_exercises(elem):
+        item_code = elem.get('href')[len(match):]
+        url = url_template.format(itemCode=item_code)
+        res = requests.get(url)
+        if res:
+            # grab the json exercise, run it through Jinja2 template,
+            # replace element w/ it
+            exercise = res.json()
+            if exercise['total_count'] == 0:
+                html = 'MISSING EXERCISE: {}'.format(url)
+                # FIXME log this, and delete exercise instead
+            else:
+                html = EXERCISE_TEMPLATE.render(data=exercise)
+            try:
+                nodes = etree.fromstring('<div>{}</div>'.format(html))
+            except etree.XMLSyntaxError:  # Probably HTML
+                nodes = etree.HTML(html)[0]  # body node
+
+            parent = elem.getparent()
+            if etree.QName(parent.tag).localname == 'p':
+                elem = parent
+                parent = elem.getparent()
+            parent.remove(elem)
+            for child in nodes:
+                parent.append(child)
+
+    xpath = '//xhtml:a[contains(@href, "{}")]'.format(match)
+    return (xpath, _replace_exercises)
+
 # XXX Rendering shouldn't happen here.
 #     Temporarily place the rendering templates and code here.
+
+#  Template copied from webview, and translated to jinja2.
+#  src/scripts/modules/media/embeddables/exercise-template.html
+
+EXERCISE_TEMPLATE = jinja2.Template("""\
+{% if data['items'].0.questions %}
+    {% for question in data['items'].0.questions %}
+        <div>{{ question.stem_html }}</div>
+        {% if 'multiple-choice' in question.formats %}
+            {% if question.answers %}
+            <ol data-number-style="lower-alpha">
+                {% for answer in question.answers %}
+                    <li>{{ answer.content_html }}</li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+""",  trim_blocks=True, lstrip_blocks=True)
 
 DOCUMENT_POINTER_TEMPLATE = """\
 <?xml version="1.0" encoding="UTF-8"?>

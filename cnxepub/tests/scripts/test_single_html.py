@@ -77,8 +77,11 @@ class SingleHTMLTestCase(unittest.TestCase):
         import random
         random.seed(1)
 
-        _, html_path = tempfile.mkstemp('.html')
-        self.addCleanup(os.remove, html_path)
+        html_path = os.path.join(
+            TEST_DATA_DIR, 'book-single-page-actual.xhtml')
+        if not IS_PY3:
+            html_path = html_path.replace(
+                '.xhtml', '-py2.xhtml')
 
         with captured_output() as (out, err):
             self.target([self.epub_path, html_path])
@@ -95,6 +98,7 @@ class SingleHTMLTestCase(unittest.TestCase):
         with open(expected_html_path, 'r') as expected:
             with open(html_path, 'r') as actual:
                 self.assertMultiLineEqual(expected.read(), actual.read())
+        os.remove(html_path)
 
     def test_blank_epub(self):
         with self.assertRaises(Exception) as cm:
