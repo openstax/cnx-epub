@@ -433,7 +433,16 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             expected_content = f.read()
 
         actual = str(SingleHTMLFormatter(self.desserts))
+        out_path = os.path.join(TEST_DATA_DIR,
+                                'desserts-single-page-actual.xhtml')
+        if not IS_PY3:
+            out_path = out_path.replace('.xhtml', '-py2.xhtml')
+
+        with open(out_path, 'w') as out:
+            out.write(actual)
         self.assertMultiLineEqual(expected_content, actual)
+        # Placed after the assert, so only called if success:
+        os.remove(out_path)
 
     def test_str_unicode_bytes(self):
         import random
