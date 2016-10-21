@@ -34,7 +34,7 @@ console_scripts = [
 
 setup(
     name='cnx-epub',
-    version='0.11.0',
+    version='0.12.0',
     author='Connexions team',
     author_email='info@cnx.org',
     url="https://github.com/connexions/cnx-epub",
