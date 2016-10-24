@@ -476,7 +476,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue(re.search(
             '<div data-type="resources"[^>]*>\s*<ul>\s*'
             '<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>\s*</ul>\s*</div>', egress))
-        self.assertTrue(u'<p><img src="../resources/1x1.jpg"></img>hüvasti.</p>' in egress)
+        self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
 
         # Adapt epub back to documents and binders
         from cnxepub import EPUB

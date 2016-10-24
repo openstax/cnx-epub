@@ -314,8 +314,7 @@ def _fix_namespaces(html):
     et.write(new_html)
     new_html.seek(0)
     let = etree.parse(new_html)
-    return etree.tostring(let, pretty_print=True,
-                          method='html', encoding='utf-8')
+    return etree.tostring(let, pretty_print=True, encoding='utf-8')
 
 
 def exercise_callback_factory(match, url_template):
