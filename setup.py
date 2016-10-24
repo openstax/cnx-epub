@@ -50,4 +50,6 @@ setup(
         },
     test_suite='cnxepub.tests',
     zip_safe=False,
+    dependency_links=[
+        'git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake']
     )
