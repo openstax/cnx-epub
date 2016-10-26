@@ -317,7 +317,7 @@ def _fix_namespaces(html):
     return etree.tostring(let, pretty_print=True, encoding='utf-8')
 
 
-def exercise_callback_factory(match, url_template):
+def exercise_callback_factory(match, url_template, token=None):
     """Create a callback function to replace an exercise by fetching from
     a server."""
     import requests
@@ -325,7 +325,11 @@ def exercise_callback_factory(match, url_template):
     def _replace_exercises(elem):
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
-        res = requests.get(url)
+        if token:
+            headers = {'Authorization': 'Bearer {}'.format(token)}
+            res = requests.get(url, headers=headers)
+        else:
+            res = requests.get(url)
         if res:
             # grab the json exercise, run it through Jinja2 template,
             # replace element w/ it
@@ -365,7 +369,9 @@ EXERCISE_TEMPLATE = jinja2.Template("""\
             {% if question.answers %}
             <ol data-number-style="lower-alpha">
                 {% for answer in question.answers %}
-                    <li>{{ answer.content_html }}</li>
+                    <li{% if 'correctness' in answer
+                        %} data-correctness={{ answer.correctness }}{%
+                    endif %}>{{ answer.content_html }}</li>
                 {% endfor %}
             </ol>
             {% endif %}
