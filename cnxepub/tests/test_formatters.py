@@ -596,10 +596,19 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         exercise_url = \
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
         exercise_match = '#ost/api/ex/'
-        includes = [exercise_callback_factory(exercise_match, exercise_url),
+        exercise_token = 'somesortoftoken'
+        includes = [exercise_callback_factory(exercise_match,
+                                              exercise_url),
                     ('//xhtml:a', _upcase_text)]
 
+        includes_token = [exercise_callback_factory(exercise_match,
+                                                    exercise_url,
+                                                    exercise_token),
+                          ('//xhtml:a', _upcase_text)]
+
         actual = str(SingleHTMLFormatter(self.desserts, includes=includes))
+        random.seed(1)
+        actual_token = str(SingleHTMLFormatter(self.desserts, includes=includes_token))
         out_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
@@ -607,5 +616,6 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             out.write(actual)
 
         self.assertMultiLineEqual(expected_content, actual)
+        self.assertMultiLineEqual(expected_content, actual_token)
         # After assert, so won't clean up if test fails
         os.remove(out_path)
