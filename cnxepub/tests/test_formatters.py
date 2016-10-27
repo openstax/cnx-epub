@@ -29,6 +29,88 @@ def last_extension(*args, **kwargs):
     exts = mimetypes.guess_all_extensions(*args, **kwargs)
     return sorted(exts)[-1]
 
+EXERCISE_JSON_HTML = {
+   "items": [
+      {
+         "uid": "93@3",
+         "group_uuid": "e071207a-9d26-4cff-bbe9-9060d3d13ca6",
+         "copyright_holders": [
+            {
+               "user_id": 2,
+               "name": "Rice University"
+            }
+         ],
+         "uuid": "8fa80526-0720-4a98-99c8-5d6113482424",
+         "authors": [
+            {
+               "user_id": 1,
+               "name": "OpenStax"
+            }
+         ],
+         "published_at": "2016-09-16T17:40:20.497Z",
+         "number": 93,
+         "editors": [],
+         "is_vocab": False,
+         "stimulus_html": "",
+         "questions": [
+            {
+               "stimulus_html": "",
+               "formats": [
+                  "free-response",
+                  "multiple-choice"
+               ],
+               "hints": [],
+               "id": 63062,
+               "is_answer_order_important": True,
+               "answers": [
+                  {
+                     "id": 259956,
+                     "content_html": "monomers"
+                  },
+                  {
+                     "content_html": "polymers",
+                     "id": 259957
+                  },
+                  {
+                     "id": 259958,
+                     "content_html": "carbohydrates only"
+                  },
+                  {
+                     "content_html": "water only",
+                     "id": 259959
+                  }
+               ],
+               "combo_choices": [],
+               "stem_html": "Dehydration <img href='none'> synthesis leads to the formation of what?"
+            }
+         ],
+         "tags": [
+            "apbio",
+            "inbook-yes",
+            "ost-chapter-review",
+            "review",
+            "apbio-ch03",
+            "apbio-ch03-s01",
+            "apbio-ch03-s01-lo01",
+            "apbio-ch03-ex002",
+            "dok:1",
+            "blooms:1",
+            "time:short",
+            "book:stax-bio",
+            "context-cnxmod:ea44b8fa-e7a2-4360-ad34-ac081bcf104f",
+            "exid:apbio-ch03-ex002",
+            "context-cnxmod:85d6c500-9860-42e8-853a-e6940a50224f",
+            "book:stax-apbio",
+            "filter-type:import:hs",
+            "type:conceptual-or-recall"
+         ],
+         "derived_from": [],
+         "version": 3
+      }
+   ],
+   "total_count": 1
+}
+
 EXERCISE_JSON = {
    "items": [
       {
@@ -81,7 +163,7 @@ EXERCISE_JSON = {
                   }
                ],
                "combo_choices": [],
-               "stem_html": "Dehydration synthesis leads to the formation of what?"
+               "stem_html": "Dehydration <img href='none'/> synthesis leads to the formation of what?"
             }
          ],
          "tags": [
@@ -123,7 +205,13 @@ def mocked_requests_get(*args, **kwargs):
         def json(self):
             return self.json_data
 
+    if 'headers' in kwargs:
+        assert kwargs['headers'] == {'Authorization': 'Bearer somesortoftoken'}
+
     if args[0] == 'https://exercises.openstax.org/api/exercises?q=tag:apbio-ch03-ex002':
+        if 'headers' in kwargs:
+            assert kwargs['headers'] == {'Authorization': 'Bearer somesortoftoken'}
+            return MockResponse(EXERCISE_JSON_HTML, 200)
         return MockResponse(EXERCISE_JSON, 200)
     else:
         return MockResponse({"total_count": 0, "items": []}, 200)
