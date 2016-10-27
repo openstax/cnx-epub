@@ -10,18 +10,24 @@ import mimetypes
 import os
 import sys
 import unittest
+from lxml import etree
 try:
     from unittest import mock
 except ImportError:
     import mock
-
-from lxml import etree
 
 from ..testing import TEST_DATA_DIR, unescape
 from ..formatters import exercise_callback_factory
 
 
 IS_PY3 = sys.version_info.major == 3
+
+
+def _c14n(val):
+    ov = io.BytesIO()
+    ET = etree.fromstring(str(val)).getroottree()
+    ET.write_c14n(ov)
+    return ov.getvalue()
 
 
 def last_extension(*args, **kwargs):
@@ -679,7 +685,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
 
         with open(page_path, 'r') as f:
-            expected_content = f.read()
+            expected_content = _c14n(f.read())
 
         exercise_url = \
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
@@ -694,9 +700,9 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                                                     exercise_token),
                           ('//xhtml:a', _upcase_text)]
 
-        actual = str(SingleHTMLFormatter(self.desserts, includes=includes))
+        actual = _c14n((SingleHTMLFormatter(self.desserts, includes=includes)))
         random.seed(1)
-        actual_token = str(SingleHTMLFormatter(self.desserts, includes=includes_token))
+        actual_token = _c14n(SingleHTMLFormatter(self.desserts, includes=includes_token))
         out_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
