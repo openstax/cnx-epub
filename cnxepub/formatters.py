@@ -15,6 +15,8 @@ import lxml.html
 from lxml import etree
 from copy import deepcopy
 
+import requests
+
 from .models import (
     model_to_tree,
     flatten_to_documents,
@@ -317,10 +319,27 @@ def _fix_namespaces(html):
     return etree.tostring(let, pretty_print=True, encoding='utf-8')
 
 
-def exercise_callback_factory(match, url_template, token=None):
+def _replace_tex_math(node, mml_url):
+    """call mml-api service to replace TeX math in body of node with mathml"""
+
+    res = requests.post(mml_url, {'math': node.text,
+                                  'mathType': 'TeX',
+                                  'mml': 'true'})
+    if res:
+        eq = res.json()
+        mml = etree.fromstring(eq['components'][0]['source'])
+        if node.tag.endswith('span'):
+            mml.set('display', 'inline')
+        elif node.tag.endswith('div'):
+            mml.set('display', 'block')
+        return mml
+    else:
+        return None
+
+
+def exercise_callback_factory(match, url_template, token=None, mml_url=None):
     """Create a callback function to replace an exercise by fetching from
     a server."""
-    import requests
 
     def _replace_exercises(elem):
         item_code = elem.get('href')[len(match):]
@@ -344,11 +363,18 @@ def exercise_callback_factory(match, url_template, token=None):
             except etree.XMLSyntaxError:  # Probably HTML
                 nodes = etree.HTML(html)[0]  # body node
 
+            if mml_url:
+                for node in nodes.xpath('//*[@data-math]'):
+                    mathml = _replace_tex_math(node, mml_url)
+                    if mathml is not None:
+                        mparent = node.getparent()
+                        mparent.replace(node, mathml)
+
             parent = elem.getparent()
             if etree.QName(parent.tag).localname == 'p':
                 elem = parent
                 parent = elem.getparent()
-            parent.remove(elem)
+            parent.remove(elem)  # Special case - assumes single wrapper elem
             for child in nodes:
                 parent.append(child)
 
