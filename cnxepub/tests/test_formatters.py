@@ -27,7 +27,7 @@ def _c14n(val):
     ov = io.BytesIO()
     ET = etree.fromstring(str(val)).getroottree()
     ET.write_c14n(ov)
-    return ov.getvalue()
+    return ov.getvalue().decode('utf-8')
 
 
 def last_extension(*args, **kwargs):
@@ -71,19 +71,24 @@ EXERCISE_JSON_HTML = {
                "answers": [
                   {
                      "id": 259956,
-                     "content_html": "monomers"
+                     "content_html": "monomers",
+                     "correctness": "0.0"
                   },
                   {
                      "content_html": "polymers",
-                     "id": 259957
+                     "id": 259957,
+                     "correctness": "1.0"
+
                   },
                   {
                      "id": 259958,
-                     "content_html": "carbohydrates only"
+                     "content_html": "carbohydrates only",
+                     "correctness": "0.0"
                   },
                   {
-                     "content_html": "water only",
-                     "id": 259959
+                     "content_html": "water only (<span data-math='\\text{H}_2\\text{O}'>\\text{H}_2\\text{O}</span>)",
+                     "id": 259959,
+                     "correctness": "0.0"
                   }
                ],
                "combo_choices": [],
@@ -200,16 +205,40 @@ EXERCISE_JSON = {
 }
 
 
+EQUATION_JSON = {
+    "updatedAt": "2016-10-31T16:06:44.413Z",
+    "cloudUrl": "https://mathmlcloud.cnx.org:1337/equation/58176c14d08360010084f48c",
+    "mathType": "TeX",
+    "math": "\\text{H}_2\\text{O}",
+    "components": [
+        {
+            "format": "mml",
+            "equation": "58176c14d08360010084f48c",
+            "source": '<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">\n  <msub>\n    <mtext>H</mtext>\n    <mn>2</mn>\n  </msub>\n  <mtext>O</mtext>\n</math>',
+            "updatedAt": "2016-10-31T16:06:44.477Z",
+            "id": "58176c14d08360010084f48d",
+            "createdAt": "2016-10-31T16:06:44.477Z"
+        }
+    ],
+    "submittedBy": None,
+    "ip_address": "::ffff:10.64.71.226",
+    "id": "58176c14d08360010084f48c",
+    "createdAt": "2016-10-31T16:06:44.413Z"
+}
+
+
+class MockResponse:
+    def __init__(self, json_data, status_code):
+        self.json_data = json_data
+        self.status_code = status_code
+
+    def json(self):
+        return self.json_data
+
+
 def mocked_requests_get(*args, **kwargs):
     # Replace requests.get with this mock
     # modified from http://stackoverflow.com/a/28507806/5430
-    class MockResponse:
-        def __init__(self, json_data, status_code):
-            self.json_data = json_data
-            self.status_code = status_code
-
-        def json(self):
-            return self.json_data
 
     if 'headers' in kwargs:
         assert kwargs['headers'] == {'Authorization': 'Bearer somesortoftoken'}
@@ -219,9 +248,14 @@ def mocked_requests_get(*args, **kwargs):
             assert kwargs['headers'] == {'Authorization': 'Bearer somesortoftoken'}
             return MockResponse(EXERCISE_JSON_HTML, 200)
         return MockResponse(EXERCISE_JSON, 200)
+
     else:
         return MockResponse({"total_count": 0, "items": []}, 200)
 
+
+def mocked_requests_post(*args, **kwargs):
+    if args[0].startswith('http://mathmlcloud.cnx.org/equation'):
+            return MockResponse(EQUATION_JSON, 200)
     return MockResponse({}, 404)
 
 
@@ -690,26 +724,63 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         exercise_url = \
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
         exercise_match = '#ost/api/ex/'
-        exercise_token = 'somesortoftoken'
+
         includes = [exercise_callback_factory(exercise_match,
                                               exercise_url),
                     ('//xhtml:a', _upcase_text)]
 
-        includes_token = [exercise_callback_factory(exercise_match,
-                                                    exercise_url,
-                                                    exercise_token),
-                          ('//xhtml:a', _upcase_text)]
-
-        actual = _c14n((SingleHTMLFormatter(self.desserts, includes=includes)))
-        random.seed(1)
-        actual_token = _c14n(SingleHTMLFormatter(self.desserts, includes=includes_token))
+        actual = _c14n(SingleHTMLFormatter(self.desserts,
+                                           includes=includes))
         out_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
         with open(out_path, 'w') as out:
-            out.write(actual)
+            out.write(str(actual.encode('utf-8')))
 
         self.assertMultiLineEqual(expected_content, actual)
-        self.assertMultiLineEqual(expected_content, actual_token)
+        # After assert, so won't clean up if test fails
+        os.remove(out_path)
+
+    @mock.patch('requests.post', mocked_requests_post)
+    @mock.patch('requests.get', mocked_requests_get)
+    def test_includes_token_callback(self):
+        import random
+
+        from ..formatters import SingleHTMLFormatter
+
+        def _upcase_text(elem):
+            if elem.text:
+                elem.text = elem.text.upper()
+
+        random.seed(1)
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-token.xhtml')
+        if not IS_PY3:
+            page_path = page_path.replace('.xhtml', '-py2.xhtml')
+
+        with open(page_path, 'r') as f:
+            expected_content = _c14n(f.read())
+
+        exercise_url = \
+            'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
+        exercise_match = '#ost/api/ex/'
+        exercise_token = 'somesortoftoken'
+        mathml_url = 'http://mathmlcloud.cnx.org/equation'
+
+        includes = [exercise_callback_factory(exercise_match,
+                                              exercise_url,
+                                              exercise_token,
+                                              mathml_url),
+                    ('//xhtml:a', _upcase_text)]
+
+        actual = _c14n(SingleHTMLFormatter(self.desserts,
+                                           includes=includes))
+        out_path = os.path.join(TEST_DATA_DIR,
+                                'desserts-includes-token-actual.xhtml')
+        if not IS_PY3:
+            out_path = out_path.replace('.xhtml', '-py2.xhtml')
+        with open(out_path, 'w') as out:
+            out.write(str(actual.encode('utf-8')))
+
+        self.assertMultiLineEqual(expected_content, actual)
         # After assert, so won't clean up if test fails
         os.remove(out_path)
