@@ -11,6 +11,7 @@ import os
 import sys
 import unittest
 from lxml import etree
+
 try:
     from unittest import mock
 except ImportError:
@@ -89,6 +90,11 @@ EXERCISE_JSON_HTML = {
                      "content_html": "water only (<span data-math='\\text{H}_2\\text{O}'>\\text{H}_2\\text{O}</span>)",
                      "id": 259959,
                      "correctness": "0.0"
+                  },
+                  {
+                     "content_html": "polymer and water (<div data-math='\\text{H}_2\\text{O}'>\\text{H}_2\\text{O}</div>)",
+                     "id": 259959,
+                     "correctness": "1.0"
                   }
                ],
                "combo_choices": [],
@@ -734,8 +740,11 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         out_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
-        with open(out_path, 'w') as out:
-            out.write(str(actual.encode('utf-8')))
+            with open(out_path, 'w') as out:
+                out.write(actual.encode('utf-8'))
+        else:
+            with open(out_path, 'w') as out:
+                out.write(actual)
 
         self.assertMultiLineEqual(expected_content, actual)
         # After assert, so won't clean up if test fails
@@ -778,8 +787,11 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                                 'desserts-includes-token-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
-        with open(out_path, 'w') as out:
-            out.write(str(actual.encode('utf-8')))
+            with open(out_path, 'w') as out:
+                out.write(actual.encode('utf-8'))
+        else:
+            with open(out_path, 'w') as out:
+                out.write(actual)
 
         self.assertMultiLineEqual(expected_content, actual)
         # After assert, so won't clean up if test fails
