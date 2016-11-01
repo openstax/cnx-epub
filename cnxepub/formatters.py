@@ -322,12 +322,13 @@ def _fix_namespaces(html):
     return etree.tostring(let, pretty_print=True, encoding='utf-8')
 
 
-def _replace_tex_math(node, mml_url):
+def _replace_tex_math(node, mml_url, depth=0):
     """call mml-api service to replace TeX math in body of node with mathml"""
 
     res = requests.post(mml_url, {'math': node.text,
                                   'mathType': 'TeX',
                                   'mml': 'true'})
+    depth += 1
     if res:
         eq = res.json()
         if 'components' in eq and len(eq['components']) > 0:
@@ -340,9 +341,10 @@ def _replace_tex_math(node, mml_url):
                 mml.set('display', 'block')
             return mml
         else:
-            logger.warning('Bad math TeX conversion: '
+            logger.warning('Retrying math TeX conversion: '
                            '{}'.format(json.dumps(eq, indent=4)))
-            return None
+            if depth < 2:
+                return _replace_tex_math(node, mml_url, depth)
 
     else:
         return None
