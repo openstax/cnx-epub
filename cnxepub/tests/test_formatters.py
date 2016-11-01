@@ -10,12 +10,13 @@ import mimetypes
 import os
 import sys
 import unittest
-from lxml import etree
 
 try:
     from unittest import mock
 except ImportError:
     import mock
+
+from lxml import etree
 
 from ..testing import TEST_DATA_DIR, unescape
 from ..formatters import exercise_callback_factory
@@ -245,9 +246,6 @@ class MockResponse:
 def mocked_requests_get(*args, **kwargs):
     # Replace requests.get with this mock
     # modified from http://stackoverflow.com/a/28507806/5430
-
-    if 'headers' in kwargs:
-        assert kwargs['headers'] == {'Authorization': 'Bearer somesortoftoken'}
 
     if args[0] == 'https://exercises.openstax.org/api/exercises?q=tag:apbio-ch03-ex002':
         if 'headers' in kwargs:
