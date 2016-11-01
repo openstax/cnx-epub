@@ -6,6 +6,8 @@
 # See LICENCE.txt for details.
 # ###
 from __future__ import unicode_literals
+import json
+import logging
 import random
 import sys
 
@@ -24,6 +26,7 @@ from .models import (
     Document, DocumentPointer, CompositeDocument, utf8)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
 
+logger = logging.getLogger('cnxepub')
 
 IS_PY3 = sys.version_info.major == 3
 
@@ -327,12 +330,20 @@ def _replace_tex_math(node, mml_url):
                                   'mml': 'true'})
     if res:
         eq = res.json()
-        mml = etree.fromstring(eq['components'][0]['source'])
-        if node.tag.endswith('span'):
-            mml.set('display', 'inline')
-        elif node.tag.endswith('div'):
-            mml.set('display', 'block')
-        return mml
+        if 'components' in eq and len(eq['components']) > 0:
+            for component in eq['components']:
+                if component['format'] == 'mml':
+                    mml = etree.fromstring(component['source'])
+            if node.tag.endswith('span'):
+                mml.set('display', 'inline')
+            elif node.tag.endswith('div'):
+                mml.set('display', 'block')
+            return mml
+        else:
+            logger.warning('Bad math TeX conversion: '
+                           '{}'.format(json.dumps(eq, indent=4)))
+            return None
+
     else:
         return None
 
@@ -354,26 +365,27 @@ def exercise_callback_factory(match, url_template, token=None, mml_url=None):
             # replace element w/ it
             exercise = res.json()
             if exercise['total_count'] == 0:
-                html = 'MISSING EXERCISE: {}'.format(url)
-                # FIXME log this, and delete exercise instead
+                logger.warning('MISSING EXERCISE: {}'.format(url))
+                nodes = []
             else:
                 html = EXERCISE_TEMPLATE.render(data=exercise)
-            try:
-                nodes = etree.fromstring('<div>{}</div>'.format(html))
-            except etree.XMLSyntaxError:  # Probably HTML
-                nodes = etree.HTML(html)[0]  # body node
+                try:
+                    nodes = etree.fromstring('<div>{}</div>'.format(html))
+                except etree.XMLSyntaxError:  # Probably HTML
+                    nodes = etree.HTML(html)[0]  # body node
 
-            if mml_url:
-                for node in nodes.xpath('//*[@data-math]'):
-                    mathml = _replace_tex_math(node, mml_url)
-                    if mathml is not None:
-                        mparent = node.getparent()
-                        mparent.replace(node, mathml)
+                if mml_url:
+                    for node in nodes.xpath('//*[@data-math]'):
+                        mathml = _replace_tex_math(node, mml_url)
+                        if mathml is not None:
+                            mparent = node.getparent()
+                            mparent.replace(node, mathml)
 
             parent = elem.getparent()
             if etree.QName(parent.tag).localname == 'p':
                 elem = parent
                 parent = elem.getparent()
+
             parent.remove(elem)  # Special case - assumes single wrapper elem
             for child in nodes:
                 parent.append(child)
