@@ -210,6 +210,7 @@ class SingleHTMLFormatter(object):
 
         self.built = False
         self.includes = includes
+        self.included = False
 
     def xpath(self, path, elem=None):
         if elem is None:
@@ -258,10 +259,11 @@ class SingleHTMLFormatter(object):
     def build(self):
         self._build_binder(self.binder, self.body)
         # Fetch any includes from remote sources
-        if self.includes is not None:
+        if not self.included and self.includes is not None:
             for match, proc in self.includes:
                 for elem in self.xpath(match):
                     proc(elem)
+            self.included = True
 
         # Rewrite absolute-path links that are intra-binder
         page_ids = [page.id for page in flatten_to_documents(self.binder)]
@@ -277,6 +279,7 @@ class SingleHTMLFormatter(object):
                             page_uuids[link_uuid], fragment))
                     else:
                         link.set('href', '#{}'.format(page_uuids[link_uuid]))
+        self.built = True
 
     def __unicode__(self):
         return self.__bytes__().decode('utf-8')
@@ -322,12 +325,13 @@ def _fix_namespaces(html):
     return etree.tostring(let, pretty_print=True, encoding='utf-8')
 
 
-def _replace_tex_math(node, mml_url):
+def _replace_tex_math(node, mml_url, depth=0):
     """call mml-api service to replace TeX math in body of node with mathml"""
 
     res = requests.post(mml_url, {'math': node.text,
                                   'mathType': 'TeX',
                                   'mml': 'true'})
+    depth += 1
     if res:
         eq = res.json()
         if 'components' in eq and len(eq['components']) > 0:
@@ -340,9 +344,10 @@ def _replace_tex_math(node, mml_url):
                 mml.set('display', 'block')
             return mml
         else:
-            logger.warning('Bad math TeX conversion: '
+            logger.warning('Retrying math TeX conversion: '
                            '{}'.format(json.dumps(eq, indent=4)))
-            return None
+            if depth < 2:
+                return _replace_tex_math(node, mml_url, depth)
 
     else:
         return None

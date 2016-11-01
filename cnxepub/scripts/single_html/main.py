@@ -23,7 +23,7 @@ MATHJAX_URL = 'https://cdn.mathjax.org/mathjax/{mathjax_version}/'\
 
 parts = ['page', 'chapter', 'unit', 'book', 'series']
 partcount = {}
-logger = logging.getLogger('cnxepub')
+logger = logging.getLogger('single_html')
 
 
 def single_html(epub_file_path, html_out=sys.stdout, mathjax_version=None,

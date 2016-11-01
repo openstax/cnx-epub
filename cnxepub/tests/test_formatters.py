@@ -5,9 +5,11 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+import codecs
 import io
 import mimetypes
 import os
+import subprocess
 import sys
 import unittest
 
@@ -21,8 +23,22 @@ from lxml import etree
 from ..testing import TEST_DATA_DIR, unescape
 from ..formatters import exercise_callback_factory
 
+here = os.path.abspath(os.path.dirname(__file__))
 
 IS_PY3 = sys.version_info.major == 3
+
+XMLPP_DIR = os.path.join(here, 'utils')
+
+
+def xmlpp(input_):
+    """Pretty Print XML"""
+    proc = subprocess.Popen(['./xmlpp.pl', '-sSten'],
+                            stdin=subprocess.PIPE,
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            cwd=XMLPP_DIR)
+    output, _ = proc.communicate(input_)
+    return output
 
 
 def _c14n(val):
@@ -722,8 +738,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
 
-        with open(page_path, 'r') as f:
-            expected_content = _c14n(f.read())
+        with codecs.open(page_path, 'r', encoding='utf-8') as f:
+            expected_content = f.read()
 
         exercise_url = \
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
@@ -733,18 +749,21 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                                               exercise_url),
                     ('//xhtml:a', _upcase_text)]
 
-        actual = _c14n(SingleHTMLFormatter(self.desserts,
-                                           includes=includes))
+        actual = SingleHTMLFormatter(self.desserts,
+                                     includes=includes)
         out_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
             with open(out_path, 'w') as out:
-                out.write(actual.encode('utf-8'))
+                out.write(xmlpp(unicode(actual).encode('utf-8')))
+            with codecs.open(out_path, 'r', encoding='utf-8') as f:
+                actual_content = f.read()
+            self.assertEqual(xmlpp(expected_content.encode('utf-8')).split(b'\n'),
+                             xmlpp(actual_content.encode('utf-8')).split(b'\n'))
         else:
             with open(out_path, 'w') as out:
-                out.write(actual)
-
-        self.assertMultiLineEqual(expected_content, actual)
+                out.write(str(actual))
+                self.assertMultiLineEqual(expected_content, str(actual))
         # After assert, so won't clean up if test fails
         os.remove(out_path)
 
@@ -764,8 +783,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
 
-        with open(page_path, 'r') as f:
-            expected_content = _c14n(f.read())
+        with codecs.open(page_path, 'r', encoding='utf-8') as f:
+            expected_content = f.read()
 
         exercise_url = \
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
@@ -779,18 +798,22 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                                               mathml_url),
                     ('//xhtml:a', _upcase_text)]
 
-        actual = _c14n(SingleHTMLFormatter(self.desserts,
-                                           includes=includes))
+        actual = SingleHTMLFormatter(self.desserts,
+                                     includes=includes)
         out_path = os.path.join(TEST_DATA_DIR,
                                 'desserts-includes-token-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
             with open(out_path, 'w') as out:
-                out.write(actual.encode('utf-8'))
+                out.write(xmlpp(unicode(actual).encode('utf-8')))
+            with codecs.open(out_path, 'r', encoding='utf-8') as f:
+                actual_content = f.read()
+            self.assertEqual(xmlpp(expected_content.encode('utf-8')).split(b'\n'),
+                             xmlpp(actual_content.encode('utf-8')).split(b'\n'))
         else:
             with open(out_path, 'w') as out:
-                out.write(actual)
+                out.write(str(actual))
+            self.assertMultiLineEqual(expected_content, str(actual))
 
-        self.assertMultiLineEqual(expected_content, actual)
         # After assert, so won't clean up if test fails
         os.remove(out_path)
