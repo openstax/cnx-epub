@@ -6,6 +6,8 @@
 # See LICENCE.txt for details.
 # ###
 from __future__ import unicode_literals
+import json
+import logging
 import random
 import sys
 
@@ -15,6 +17,8 @@ import lxml.html
 from lxml import etree
 from copy import deepcopy
 
+import requests
+
 from .models import (
     model_to_tree,
     flatten_to_documents,
@@ -22,6 +26,7 @@ from .models import (
     Document, DocumentPointer, CompositeDocument, utf8)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
 
+logger = logging.getLogger('cnxepub')
 
 IS_PY3 = sys.version_info.major == 3
 
@@ -205,6 +210,7 @@ class SingleHTMLFormatter(object):
 
         self.built = False
         self.includes = includes
+        self.included = False
 
     def xpath(self, path, elem=None):
         if elem is None:
@@ -253,10 +259,11 @@ class SingleHTMLFormatter(object):
     def build(self):
         self._build_binder(self.binder, self.body)
         # Fetch any includes from remote sources
-        if self.includes is not None:
+        if not self.included and self.includes is not None:
             for match, proc in self.includes:
                 for elem in self.xpath(match):
                     proc(elem)
+            self.included = True
 
         # Rewrite absolute-path links that are intra-binder
         page_ids = [page.id for page in flatten_to_documents(self.binder)]
@@ -272,6 +279,7 @@ class SingleHTMLFormatter(object):
                             page_uuids[link_uuid], fragment))
                     else:
                         link.set('href', '#{}'.format(page_uuids[link_uuid]))
+        self.built = True
 
     def __unicode__(self):
         return self.__bytes__().decode('utf-8')
@@ -317,34 +325,73 @@ def _fix_namespaces(html):
     return etree.tostring(let, pretty_print=True, encoding='utf-8')
 
 
-def exercise_callback_factory(match, url_template):
+def _replace_tex_math(node, mml_url, depth=0):
+    """call mml-api service to replace TeX math in body of node with mathml"""
+
+    res = requests.post(mml_url, {'math': node.text,
+                                  'mathType': 'TeX',
+                                  'mml': 'true'})
+    depth += 1
+    if res:
+        eq = res.json()
+        if 'components' in eq and len(eq['components']) > 0:
+            for component in eq['components']:
+                if component['format'] == 'mml':
+                    mml = etree.fromstring(component['source'])
+            if node.tag.endswith('span'):
+                mml.set('display', 'inline')
+            elif node.tag.endswith('div'):
+                mml.set('display', 'block')
+            return mml
+        else:
+            logger.warning('Retrying math TeX conversion: '
+                           '{}'.format(json.dumps(eq, indent=4)))
+            if depth < 2:
+                return _replace_tex_math(node, mml_url, depth)
+
+    else:
+        return None
+
+
+def exercise_callback_factory(match, url_template, token=None, mml_url=None):
     """Create a callback function to replace an exercise by fetching from
     a server."""
-    import requests
 
     def _replace_exercises(elem):
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
-        res = requests.get(url)
+        if token:
+            headers = {'Authorization': 'Bearer {}'.format(token)}
+            res = requests.get(url, headers=headers)
+        else:
+            res = requests.get(url)
         if res:
             # grab the json exercise, run it through Jinja2 template,
             # replace element w/ it
             exercise = res.json()
             if exercise['total_count'] == 0:
-                html = 'MISSING EXERCISE: {}'.format(url)
-                # FIXME log this, and delete exercise instead
+                logger.warning('MISSING EXERCISE: {}'.format(url))
+                nodes = []
             else:
                 html = EXERCISE_TEMPLATE.render(data=exercise)
-            try:
-                nodes = etree.fromstring('<div>{}</div>'.format(html))
-            except etree.XMLSyntaxError:  # Probably HTML
-                nodes = etree.HTML(html)[0]  # body node
+                try:
+                    nodes = etree.fromstring('<div>{}</div>'.format(html))
+                except etree.XMLSyntaxError:  # Probably HTML
+                    nodes = etree.HTML(html)[0]  # body node
+
+                if mml_url:
+                    for node in nodes.xpath('//*[@data-math]'):
+                        mathml = _replace_tex_math(node, mml_url)
+                        if mathml is not None:
+                            mparent = node.getparent()
+                            mparent.replace(node, mathml)
 
             parent = elem.getparent()
             if etree.QName(parent.tag).localname == 'p':
                 elem = parent
                 parent = elem.getparent()
-            parent.remove(elem)
+
+            parent.remove(elem)  # Special case - assumes single wrapper elem
             for child in nodes:
                 parent.append(child)
 
@@ -365,7 +412,9 @@ EXERCISE_TEMPLATE = jinja2.Template("""\
             {% if question.answers %}
             <ol data-number-style="lower-alpha">
                 {% for answer in question.answers %}
-                    <li>{{ answer.content_html }}</li>
+                    <li{% if 'correctness' in answer
+                        %} data-correctness={{ answer.correctness }}{%
+                    endif %}>{{ answer.content_html }}</li>
                 {% endfor %}
             </ol>
             {% endif %}

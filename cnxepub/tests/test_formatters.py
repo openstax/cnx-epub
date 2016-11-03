@@ -5,11 +5,14 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
+import codecs
 import io
 import mimetypes
 import os
+import subprocess
 import sys
 import unittest
+
 try:
     from unittest import mock
 except ImportError:
@@ -20,14 +23,127 @@ from lxml import etree
 from ..testing import TEST_DATA_DIR, unescape
 from ..formatters import exercise_callback_factory
 
+here = os.path.abspath(os.path.dirname(__file__))
 
 IS_PY3 = sys.version_info.major == 3
+
+XMLPP_DIR = os.path.join(here, 'utils')
+
+
+def xmlpp(input_):
+    """Pretty Print XML"""
+    proc = subprocess.Popen(['./xmlpp.pl', '-sSten'],
+                            stdin=subprocess.PIPE,
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            cwd=XMLPP_DIR)
+    output, _ = proc.communicate(input_)
+    return output
+
+
+def _c14n(val):
+    ov = io.BytesIO()
+    ET = etree.fromstring(str(val)).getroottree()
+    ET.write_c14n(ov)
+    return ov.getvalue().decode('utf-8')
 
 
 def last_extension(*args, **kwargs):
     # Always return the last value of sorted mimetypes.guess_all_extensions
     exts = mimetypes.guess_all_extensions(*args, **kwargs)
     return sorted(exts)[-1]
+
+EXERCISE_JSON_HTML = {
+   "items": [
+      {
+         "uid": "93@3",
+         "group_uuid": "e071207a-9d26-4cff-bbe9-9060d3d13ca6",
+         "copyright_holders": [
+            {
+               "user_id": 2,
+               "name": "Rice University"
+            }
+         ],
+         "uuid": "8fa80526-0720-4a98-99c8-5d6113482424",
+         "authors": [
+            {
+               "user_id": 1,
+               "name": "OpenStax"
+            }
+         ],
+         "published_at": "2016-09-16T17:40:20.497Z",
+         "number": 93,
+         "editors": [],
+         "is_vocab": False,
+         "stimulus_html": "",
+         "questions": [
+            {
+               "stimulus_html": "",
+               "formats": [
+                  "free-response",
+                  "multiple-choice"
+               ],
+               "hints": [],
+               "id": 63062,
+               "is_answer_order_important": True,
+               "answers": [
+                  {
+                     "id": 259956,
+                     "content_html": "monomers",
+                     "correctness": "0.0"
+                  },
+                  {
+                     "content_html": "polymers",
+                     "id": 259957,
+                     "correctness": "1.0"
+
+                  },
+                  {
+                     "id": 259958,
+                     "content_html": "carbohydrates only",
+                     "correctness": "0.0"
+                  },
+                  {
+                     "content_html": "water only (<span data-math='\\text{H}_2\\text{O}'>\\text{H}_2\\text{O}</span>)",
+                     "id": 259959,
+                     "correctness": "0.0"
+                  },
+                  {
+                     "content_html": "polymer and water (<div data-math='\\text{H}_2\\text{O}'>\\text{H}_2\\text{O}</div>)",
+                     "id": 259959,
+                     "correctness": "1.0"
+                  }
+               ],
+               "combo_choices": [],
+               "stem_html": "Dehydration <img href='none'> synthesis leads to the formation of what?"
+            }
+         ],
+         "tags": [
+            "apbio",
+            "inbook-yes",
+            "ost-chapter-review",
+            "review",
+            "apbio-ch03",
+            "apbio-ch03-s01",
+            "apbio-ch03-s01-lo01",
+            "apbio-ch03-ex002",
+            "dok:1",
+            "blooms:1",
+            "time:short",
+            "book:stax-bio",
+            "context-cnxmod:ea44b8fa-e7a2-4360-ad34-ac081bcf104f",
+            "exid:apbio-ch03-ex002",
+            "context-cnxmod:85d6c500-9860-42e8-853a-e6940a50224f",
+            "book:stax-apbio",
+            "filter-type:import:hs",
+            "type:conceptual-or-recall"
+         ],
+         "derived_from": [],
+         "version": 3
+      }
+   ],
+   "total_count": 1
+}
 
 EXERCISE_JSON = {
    "items": [
@@ -81,7 +197,7 @@ EXERCISE_JSON = {
                   }
                ],
                "combo_choices": [],
-               "stem_html": "Dehydration synthesis leads to the formation of what?"
+               "stem_html": "Dehydration <img href='none'/> synthesis leads to the formation of what?"
             }
          ],
          "tags": [
@@ -112,22 +228,54 @@ EXERCISE_JSON = {
 }
 
 
+EQUATION_JSON = {
+    "updatedAt": "2016-10-31T16:06:44.413Z",
+    "cloudUrl": "https://mathmlcloud.cnx.org:1337/equation/58176c14d08360010084f48c",
+    "mathType": "TeX",
+    "math": "\\text{H}_2\\text{O}",
+    "components": [
+        {
+            "format": "mml",
+            "equation": "58176c14d08360010084f48c",
+            "source": '<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">\n  <msub>\n    <mtext>H</mtext>\n    <mn>2</mn>\n  </msub>\n  <mtext>O</mtext>\n</math>',
+            "updatedAt": "2016-10-31T16:06:44.477Z",
+            "id": "58176c14d08360010084f48d",
+            "createdAt": "2016-10-31T16:06:44.477Z"
+        }
+    ],
+    "submittedBy": None,
+    "ip_address": "::ffff:10.64.71.226",
+    "id": "58176c14d08360010084f48c",
+    "createdAt": "2016-10-31T16:06:44.413Z"
+}
+
+
+class MockResponse:
+    def __init__(self, json_data, status_code):
+        self.json_data = json_data
+        self.status_code = status_code
+
+    def json(self):
+        return self.json_data
+
+
 def mocked_requests_get(*args, **kwargs):
     # Replace requests.get with this mock
     # modified from http://stackoverflow.com/a/28507806/5430
-    class MockResponse:
-        def __init__(self, json_data, status_code):
-            self.json_data = json_data
-            self.status_code = status_code
-
-        def json(self):
-            return self.json_data
 
     if args[0] == 'https://exercises.openstax.org/api/exercises?q=tag:apbio-ch03-ex002':
+        if 'headers' in kwargs:
+            assert kwargs['headers'] == {'Authorization': 'Bearer somesortoftoken'}
+            return MockResponse(EXERCISE_JSON_HTML, 200)
         return MockResponse(EXERCISE_JSON, 200)
+
     else:
         return MockResponse({"total_count": 0, "items": []}, 200)
 
+
+def mocked_requests_post(*args, **kwargs):
+    if args[0].startswith('http://mathmlcloud.cnx.org/equation'):
+            return MockResponse(EQUATION_JSON, 200)
     return MockResponse({}, 404)
 
 
@@ -590,22 +738,82 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
 
-        with open(page_path, 'r') as f:
+        with codecs.open(page_path, 'r', encoding='utf-8') as f:
             expected_content = f.read()
 
         exercise_url = \
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
         exercise_match = '#ost/api/ex/'
-        includes = [exercise_callback_factory(exercise_match, exercise_url),
+
+        includes = [exercise_callback_factory(exercise_match,
+                                              exercise_url),
                     ('//xhtml:a', _upcase_text)]
 
-        actual = str(SingleHTMLFormatter(self.desserts, includes=includes))
+        actual = SingleHTMLFormatter(self.desserts,
+                                     includes=includes)
         out_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-actual.xhtml')
         if not IS_PY3:
             out_path = out_path.replace('.xhtml', '-py2.xhtml')
-        with open(out_path, 'w') as out:
-            out.write(actual)
+            with open(out_path, 'w') as out:
+                out.write(xmlpp(unicode(actual).encode('utf-8')))
+            with codecs.open(out_path, 'r', encoding='utf-8') as f:
+                actual_content = f.read()
+            self.assertEqual(xmlpp(expected_content.encode('utf-8')).split(b'\n'),
+                             xmlpp(actual_content.encode('utf-8')).split(b'\n'))
+        else:
+            with open(out_path, 'w') as out:
+                out.write(str(actual))
+                self.assertMultiLineEqual(expected_content, str(actual))
+        # After assert, so won't clean up if test fails
+        os.remove(out_path)
 
-        self.assertMultiLineEqual(expected_content, actual)
+    @mock.patch('requests.post', mocked_requests_post)
+    @mock.patch('requests.get', mocked_requests_get)
+    def test_includes_token_callback(self):
+        import random
+
+        from ..formatters import SingleHTMLFormatter
+
+        def _upcase_text(elem):
+            if elem.text:
+                elem.text = elem.text.upper()
+
+        random.seed(1)
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-token.xhtml')
+        if not IS_PY3:
+            page_path = page_path.replace('.xhtml', '-py2.xhtml')
+
+        with codecs.open(page_path, 'r', encoding='utf-8') as f:
+            expected_content = f.read()
+
+        exercise_url = \
+            'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
+        exercise_match = '#ost/api/ex/'
+        exercise_token = 'somesortoftoken'
+        mathml_url = 'http://mathmlcloud.cnx.org/equation'
+
+        includes = [exercise_callback_factory(exercise_match,
+                                              exercise_url,
+                                              exercise_token,
+                                              mathml_url),
+                    ('//xhtml:a', _upcase_text)]
+
+        actual = SingleHTMLFormatter(self.desserts,
+                                     includes=includes)
+        out_path = os.path.join(TEST_DATA_DIR,
+                                'desserts-includes-token-actual.xhtml')
+        if not IS_PY3:
+            out_path = out_path.replace('.xhtml', '-py2.xhtml')
+            with open(out_path, 'w') as out:
+                out.write(xmlpp(unicode(actual).encode('utf-8')))
+            with codecs.open(out_path, 'r', encoding='utf-8') as f:
+                actual_content = f.read()
+            self.assertEqual(xmlpp(expected_content.encode('utf-8')).split(b'\n'),
+                             xmlpp(actual_content.encode('utf-8')).split(b'\n'))
+        else:
+            with open(out_path, 'w') as out:
+                out.write(str(actual))
+            self.assertMultiLineEqual(expected_content, str(actual))
+
         # After assert, so won't clean up if test fails
         os.remove(out_path)

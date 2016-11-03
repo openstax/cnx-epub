@@ -89,6 +89,13 @@ def main(argv=None):
                         const="exercises.openstax.org",
                         metavar="exercise_host", nargs="?",
                         help="Download included exercises from this host")
+    parser.add_argument('-t', "--exercise_token",
+                        metavar="exercise_token", nargs="?",
+                        help="Token for including answers in exercises")
+    parser.add_argument('-M', "--mathmlcloud_url",
+                        metavar="mathmlcloud_url", nargs="?",
+                        help="Convert TeX equations using "
+                             "this mathmlcloud API url")
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='Send debugging info to stderr')
     parser.add_argument('-s', '--subset-chapters', dest='numchapters',
@@ -109,12 +116,16 @@ def main(argv=None):
             mathjax_version += '-latest'
 
     exercise_host = args.exercise_host
+    exercise_token = args.exercise_token
+    mml_url = args.mathmlcloud_url
     if exercise_host:
         exercise_url = \
                 'https://%s/api/exercises?q=tag:{itemCode}' % (exercise_host)
         exercise_match = '#ost/api/ex/'
         includes = [exercise_callback_factory(exercise_match,
-                                              exercise_url)]
+                                              exercise_url,
+                                              exercise_token,
+                                              mml_url)]
     else:
         includes = None
 
