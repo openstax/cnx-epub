@@ -342,6 +342,7 @@ def _replace_tex_math(node, mml_url, depth=0):
                 mml.set('display', 'inline')
             elif node.tag.endswith('div'):
                 mml.set('display', 'block')
+            mml.tail = node.tail
             return mml
         else:
             logger.warning('Retrying math TeX conversion: '
