@@ -224,7 +224,6 @@ class EPUBAdaptationTestCase(unittest.TestCase):
 
         resource_filepath = os.path.join(TEST_DATA_DIR, 'loose-pages',
                                          'resources', 'openstax.png')
-        from ..models import Resource
         package.grab_by_name.side_effect = [
             self.make_item(resource_filepath, media_type='image/png'),
             ]
@@ -402,17 +401,21 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         metadata = base_metadata.copy()
         metadata.update({'title': "entrée"})
         binder.append(Document('ingress', io.BytesIO(
-            b'<p><a href="http://cnx.org/">Hello.</a><a id="nohref">Goodbye</a></p>'),
+            b'<p><a href="http://cnx.org/">Hello.</a>'
+            b'<img src="1x1.jpg" /><a id="nohref">Goodbye</a></p>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
         metadata.update({'title': "egress"})
         with open(os.path.join(TEST_DATA_DIR, '1x1.jpg'), 'rb') as f:
             jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg',
                            filename='1x1.jpg')
+            f.seek(0)
+            jpg2 = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg',
+                            filename='1x1.jpg')
         binder.append(Document('egress', io.BytesIO(
             u'<p><img src="1x1.jpg" />hüvasti.</p>'.encode('utf-8')),
                                metadata=metadata,
-                               resources=[jpg]))
+                               resources=[jpg, jpg2]))
 
         # Call the target.
         fs_pointer, epub_filepath = tempfile.mkstemp('.epub')
@@ -473,6 +476,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             egress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
         self.assertFalse('<span data-type="cnx-archive-uri"' in egress)
+        import pdb; pdb.set_trace()
         self.assertTrue(re.search(
             '<div data-type="resources"[^>]*>\s*<ul>\s*'
             '<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>\s*</ul>\s*</div>', egress))
@@ -798,7 +802,6 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         """Throw error if override titles are missing."""
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-bad.xhtml')
         from ..adapters import adapt_single_html
-        from ..models import model_to_tree
 
         with open(page_path, 'r') as f:
             html = f.read()
