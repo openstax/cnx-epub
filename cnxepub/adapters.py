@@ -157,10 +157,11 @@ def _make_package(binder):
     # Roll through the model list again, making each one an item.
     for model in flatten_model(binder):
         for resource in getattr(model, 'resources', []):
-            resources[resource.id] = resource
-            with resource.open() as data:
-                item = Item(resource.id, data, resource.media_type)
-            items.append(item)
+            if resource.id not in resources:
+                resources[resource.id] = resource
+                with resource.open() as data:
+                    item = Item(resource.id, data, resource.media_type)
+                items.append(item)
 
         if isinstance(model, (Binder, TranslucentBinder,)):
             continue
@@ -177,12 +178,13 @@ def _make_package(binder):
                 # appropriate uri, so need to replicate resource treatment from
                 # above
                 resource = _make_resource_from_inline(reference)
-                model.resources.append(resource)
-                resources[resource.id] = resource
-                with resource.open() as data:
-                    item = Item(resource.id, data, resource.media_type)
-                items.append(item)
-                reference.bind(resource, '../resources/{}')
+                if resource.id not in model.resources:
+                    model.resources.append(resource)
+                    resources[resource.id] = resource
+                    with resource.open() as data:
+                        item = Item(resource.id, data, resource.media_type)
+                    items.append(item)
+                    reference.bind(resource, '../resources/{}')
 
             elif reference.remote_type == INTERNAL_REFERENCE_TYPE:
                 filename = os.path.basename(reference.uri)
