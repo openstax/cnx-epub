@@ -20,6 +20,10 @@ ARCHIVEHTML = 'https://archive.cnx.org/contents/{}.html'
 MATHJAX_URL = 'https://cdn.mathjax.org/mathjax/{mathjax_version}/'\
               'unpacked/MathJax.js?config=MML_HTMLorMML'
 
+DEFAULT_MATHJAX_VER = 'latest'
+DEFAULT_EXERCISES_HOST = 'exercises.openstax.org'
+DEFAULT_MATHMLCLOUD_URL = 'http://mathmlcloud.cnx.org:1337/equation/'
+
 
 parts = ['page', 'chapter', 'unit', 'book', 'series']
 partcount = {}
@@ -82,11 +86,11 @@ def main(argv=None):
                         type=argparse.FileType('w'),
                         help="assembled HTML file output (default stdout)",
                         default=sys.stdout)
-    parser.add_argument('-m', "--mathjax_version", const="latest",
+    parser.add_argument('-m', "--mathjax_version", const=DEFAULT_MATHJAX_VER,
                         metavar="mathjax_version", nargs="?",
                         help="Add script tag to use MathJax of given version")
     parser.add_argument('-x', "--exercise_host",
-                        const="exercises.openstax.org",
+                        const=DEFAULT_EXERCISES_HOST,
                         metavar="exercise_host", nargs="?",
                         help="Download included exercises from this host")
     parser.add_argument('-t', "--exercise_token",
@@ -95,7 +99,8 @@ def main(argv=None):
     parser.add_argument('-M', "--mathmlcloud_url",
                         metavar="mathmlcloud_url", nargs="?",
                         help="Convert TeX equations using "
-                             "this mathmlcloud API url")
+                             "this mathmlcloud API url",
+                        const=DEFAULT_MATHMLCLOUD_URL)
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='Send debugging info to stderr')
     parser.add_argument('-s', '--subset-chapters', dest='numchapters',
