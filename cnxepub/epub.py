@@ -10,6 +10,7 @@ import io
 import tempfile
 import zipfile
 from collections import Sequence
+from zipfile import ZIP_DEFLATED, ZIP_STORED
 
 import jinja2
 from lxml import etree
@@ -114,10 +115,17 @@ def pack_epub(directory, file):
         for root, dirs, filenames in os.walk(directory):
             # Strip the absolute path
             archive_path = os.path.relpath(root, base_path)
+            # write mimetype first, uncompressed
+            if 'mimetype' in filenames:
+                filenames.remove('mimetype')
+                filenames.insert(0, 'mimetype')
             for filename in filenames:
                 filepath = os.path.join(root, filename)
                 archival_filepath = os.path.join(archive_path, filename)
-                zippy.write(filepath, archival_filepath)
+                comp_type = [ZIP_DEFLATED, ZIP_STORED][filename == 'mimetype']
+                zippy.write(filepath,
+                            archival_filepath,
+                            compress_type=comp_type)
 
 
 def unpack_epub(file, directory):
