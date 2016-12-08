@@ -476,10 +476,9 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             egress = unescape(f.read())
         self.assertTrue('<title>egress</title>' in egress)
         self.assertFalse('<span data-type="cnx-archive-uri"' in egress)
-        import pdb; pdb.set_trace()
         self.assertTrue(re.search(
             '<div data-type="resources"[^>]*>\s*<ul>\s*'
-            '<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>\s*</ul>\s*</div>', egress))
+            '(<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>){2}\s*</ul>\s*</div>', egress))
         self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
 
         # Adapt epub back to documents and binders
