@@ -182,6 +182,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
             u'derived_from_uri': u'http://example.org/contents/id@ver',
             u'derived_from_title': u'Wild Grains and Warted Feet',
             u'cnx-archive-uri': None,
+            u'cnx-archive-shortid': None,
             u'language': None,
             u'print_style': u'* print style *',
             }
@@ -665,6 +666,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         u'language': None,
         u'print_style': None,
         u'cnx-archive-uri': None,
+        u'cnx-archive-shortid': None,
         u'derived_from_title': None,
         u'derived_from_uri': None,
         }
