@@ -107,6 +107,7 @@ class ReconstituteTestCase(unittest.TestCase):
             u'language': None,
             u'print_style': None,
             u'cnx-archive-uri': None,
+            u'cnx-archive-shortid': None,
             u'derived_from_title': None,
             u'derived_from_uri': None,
             }

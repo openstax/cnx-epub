@@ -103,8 +103,8 @@ class DocumentMetadataParser:
         'created', 'revised', 'language', 'subjects', 'keywords',
         'license_text', 'editors', 'illustrators', 'translators',
         'publishers', 'copyright_holders', 'authors', 'summary',
-        'cnx-archive-uri', 'derived_from_uri', 'derived_from_title',
-        'print_style',
+        'cnx-archive-uri', 'cnx-archive-shortid', 'derived_from_uri',
+        'derived_from_title', 'print_style',
         )
 
     def __init__(self, elm_tree, raise_value_error=True):
@@ -276,6 +276,13 @@ class DocumentMetadataParser:
             return items[0]
 
     @property
+    def cnx_archive_shortid(self):
+        items = self.parse(
+            './/xhtml:*[@data-type="cnx-archive-shortid"]/@data-value')
+        if items:
+            return items[0]
+
+    @property
     def derived_from_uri(self):
         items = self.parse('.//xhtml:*[@data-type="derived-from"]/@href')
         if items:
@@ -299,7 +306,7 @@ class DocumentPointerMetadataParser(DocumentMetadataParser):
             'title', 'cnx-archive-uri', 'is_document_pointer',
             )
     metadata_optional_keys = DocumentMetadataParser.metadata_optional_keys + (
-            'license_url', 'summary',
+            'license_url', 'summary', 'cnx-archive-shortid',
             )
 
     @property

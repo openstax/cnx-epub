@@ -468,6 +468,9 @@ DOCUMENT_POINTER_TEMPLATE = """\
       {% if metadata.get('cnx-archive-uri') %}
       <span data-type="cnx-archive-uri" data-value="{{ \
           metadata['cnx-archive-uri'] }}" />
+      {%- endif %}{% if metadata.get('cnx-archive-shortid') %}
+      <span data-type="cnx-archive-shortid" data-value="{{ \
+          metadata['cnx-archive-shortid'] }}" />
       {%- endif %}
     </div>
 
@@ -539,6 +542,10 @@ HTML_DOCUMENT = """\
       {% if metadata.get('cnx-archive-uri') %}
       <span data-type="cnx-archive-uri" data-value="{{ \
           metadata['cnx-archive-uri'] }}" />
+      {% if metadata.get('cnx-archive-shortid') %}
+      <span data-type="cnx-archive-shortid" data-value="{{ \
+          metadata['cnx-archive-shortid'] }}" />
+      {%- endif %}
       {%- endif %}
 
       <div class="authors">

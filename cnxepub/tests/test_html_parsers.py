@@ -57,6 +57,7 @@ class HTMLParsingTestCase(unittest.TestCase):
             'translators': [{'id': None, 'name': 'Francis Hablar',
                              'type': None}],
             'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
+            'cnx-archive-shortid': '541PkOB4@3',
             'derived_from_uri': 'http://example.org/contents/id@ver',
             'derived_from_title': 'Wild Grains and Warted Feet',
             'print_style': '* print style *',
