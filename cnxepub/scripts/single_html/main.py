@@ -89,6 +89,9 @@ def main(argv=None):
     parser.add_argument('-m', "--mathjax_version", const=DEFAULT_MATHJAX_VER,
                         metavar="mathjax_version", nargs="?",
                         help="Add script tag to use MathJax of given version")
+    parser.add_argument('-n', "--no-network", action='store_true',
+                        help="Do not use network access "
+                        "- no exercise or math conversion")
     parser.add_argument('-x', "--exercise_host",
                         const=DEFAULT_EXERCISES_HOST,
                         metavar="exercise_host", nargs="?",
@@ -123,7 +126,7 @@ def main(argv=None):
     exercise_host = args.exercise_host or DEFAULT_EXERCISES_HOST
     exercise_token = args.exercise_token
     mml_url = args.mathmlcloud_url or DEFAULT_MATHMLCLOUD_URL
-    if exercise_host:
+    if not args.no_network:
         exercise_url = \
                 'https://%s/api/exercises?q=tag:{itemCode}' % (exercise_host)
         exercise_match = '#ost/api/ex/'
