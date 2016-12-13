@@ -120,9 +120,9 @@ def main(argv=None):
         if not mathjax_version.endswith('latest'):
             mathjax_version += '-latest'
 
-    exercise_host = args.exercise_host
+    exercise_host = args.exercise_host or DEFAULT_EXERCISES_HOST
     exercise_token = args.exercise_token
-    mml_url = args.mathmlcloud_url
+    mml_url = args.mathmlcloud_url or DEFAULT_MATHMLCLOUD_URL
     if exercise_host:
         exercise_url = \
                 'https://%s/api/exercises?q=tag:{itemCode}' % (exercise_host)
