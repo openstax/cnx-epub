@@ -109,7 +109,7 @@ def pack_epub(directory, file):
     """Pack the given ``directory`` into an epub (i.e. zip) archive
     given as ``file``, which can be a file-path or file-like object.
     """
-    with zipfile.ZipFile(file, 'w') as zippy:
+    with zipfile.ZipFile(file, 'w', zipfile.ZIP_DEFLATED) as zippy:
         base_path = os.path.abspath(directory)
         for root, dirs, filenames in os.walk(directory):
             # Strip the absolute path
