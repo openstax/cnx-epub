@@ -42,13 +42,15 @@ def main(argv=None):
 
     args = parser.parse_args(argv)
 
+    if args.input and args.output == sys.stdout:
+        raise ValueError('Cannot output to stdout if reading resources')
+
     from cnxepub.collation import reconstitute
     binder = reconstitute(args.collated_html)
 
     if args.dump_tree:
         print(pformat(cnxepub.model_to_tree(binder)),
               file=sys.stdout)
-
     if args.output:
         cnxepub.adapters.make_epub(binder, args.output)
 
