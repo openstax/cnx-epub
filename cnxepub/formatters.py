@@ -397,8 +397,9 @@ def exercise_callback_factory(match, url_template, token=None, mml_url=None):
                             mparent = node.getparent()
                             mparent.replace(node, mathml)
                         else:
+                            mathtext = node.text or ''
                             logger.warning('BAD TEX CONVERSION: "%s" URL: %s'
-                                           % (node.text.encode('utf-8'), url))
+                                           % (mathtext.encode('utf-8'), url))
 
             parent = elem.getparent()
             if etree.QName(parent.tag).localname == 'p':

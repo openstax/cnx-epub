@@ -53,6 +53,7 @@ def last_extension(*args, **kwargs):
     exts = mimetypes.guess_all_extensions(*args, **kwargs)
     return sorted(exts)[-1]
 
+
 EXERCISE_JSON_HTML = {
    "items": [
       {
@@ -100,7 +101,7 @@ EXERCISE_JSON_HTML = {
                   },
                   {
                      "id": 259958,
-                     "content_html": "carbohydrates only",
+                     "content_html": "carbohydrates only (<span data-math='' />)",
                      "correctness": "0.0"
                   },
                   {
@@ -227,6 +228,17 @@ EXERCISE_JSON = {
    "total_count": 1
 }
 
+BAD_EQUATION_JSON = {
+    "error": "E_VALIDATION",
+    "status": 400,
+    "summary": "1 attribute is invalid",
+    "model": "Equation",
+    "invalidAttributes": {
+        "math": [{"rule": "required",
+                  "message": "\"required\" validation rule failed for input: ''\nSpecifically, it threw an error.  Details:\n undefined"}]
+        }
+    }
+
 
 EQUATION_JSON = {
     "updatedAt": "2016-10-31T16:06:44.413Z",
@@ -275,7 +287,12 @@ def mocked_requests_get(*args, **kwargs):
 
 def mocked_requests_post(*args, **kwargs):
     if args[0].startswith('http://mathmlcloud.cnx.org/equation'):
+        if args[1]['math'] == b'\\text{H}_2\\text{O}':
             return MockResponse(EQUATION_JSON, 200)
+        elif args[1]['math'] == b'':
+            return MockResponse(BAD_EQUATION_JSON, 400)
+        else:
+            return MockResponse('', 500)
     return MockResponse({}, 404)
 
 
