@@ -94,7 +94,7 @@ EXERCISE_JSON_HTML = {
                      "correctness": "0.0"
                   },
                   {
-                     "content_html": "polymers",
+                     "content_html": "polymers (<span data-math='retry' />)",
                      "id": 259957,
                      "correctness": "1.0"
 
@@ -289,6 +289,8 @@ def mocked_requests_post(*args, **kwargs):
     if args[0].startswith('http://mathmlcloud.cnx.org/equation'):
         if args[1]['math'] == b'\\text{H}_2\\text{O}':
             return MockResponse(EQUATION_JSON, 200)
+        elif args[1]['math'] == b'retry':
+            return MockResponse('{}', 200)
         elif args[1]['math'] == b'':
             return MockResponse(BAD_EQUATION_JSON, 400)
         else:
