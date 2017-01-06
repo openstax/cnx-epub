@@ -325,14 +325,18 @@ def _fix_namespaces(html):
     return etree.tostring(let, pretty_print=True, encoding='utf-8')
 
 
-def _replace_tex_math(node, mml_url, depth=0):
+def _replace_tex_math(node, mml_url, retry=0):
     """call mml-api service to replace TeX math in body of node with mathml"""
 
-    res = requests.post(mml_url, {'math': node.text,
+    math = node.attrib['data-math'] or node.text
+    if math is None:
+        return None
+
+    res = requests.post(mml_url, {'math': math.encode('utf-8'),
                                   'mathType': 'TeX',
                                   'mml': 'true'})
-    depth += 1
-    if res:
+    retry += 1
+    if res:  # Non-error response from requests
         eq = res.json()
         if 'components' in eq and len(eq['components']) > 0:
             for component in eq['components']:
@@ -347,8 +351,8 @@ def _replace_tex_math(node, mml_url, depth=0):
         else:
             logger.warning('Retrying math TeX conversion: '
                            '{}'.format(json.dumps(eq, indent=4)))
-            if depth < 2:
-                return _replace_tex_math(node, mml_url, depth)
+            if retry < 2:
+                return _replace_tex_math(node, mml_url, retry)
 
     else:
         return None
@@ -372,7 +376,13 @@ def exercise_callback_factory(match, url_template, token=None, mml_url=None):
             exercise = res.json()
             if exercise['total_count'] == 0:
                 logger.warning('MISSING EXERCISE: {}'.format(url))
-                nodes = []
+
+                XHTML = '{{{}}}'.format(HTML_DOCUMENT_NAMESPACES['xhtml'])
+                missing = etree.Element(XHTML + 'div',
+                                        {'class': 'missing-exercise'},
+                                        nsmap=HTML_DOCUMENT_NAMESPACES)
+                missing.text = 'MISSING EXERCISE: tag:{}'.format(item_code)
+                nodes = [missing]
             else:
                 html = EXERCISE_TEMPLATE.render(data=exercise)
                 try:
@@ -386,6 +396,9 @@ def exercise_callback_factory(match, url_template, token=None, mml_url=None):
                         if mathml is not None:
                             mparent = node.getparent()
                             mparent.replace(node, mathml)
+                        else:
+                            logger.warning('BAD TEX CONVERSION: "%s" URL: %s'
+                                           % (node.text.encode('utf-8'), url))
 
             parent = elem.getparent()
             if etree.QName(parent.tag).localname == 'p':
