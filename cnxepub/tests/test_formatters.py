@@ -7,6 +7,7 @@
 # ###
 import codecs
 import io
+import json
 import mimetypes
 import os
 import subprocess
@@ -265,6 +266,7 @@ EQUATION_JSON = {
 class MockResponse:
     def __init__(self, json_data, status_code):
         self.json_data = json_data
+        self.text = json.dumps(json_data)
         self.status_code = status_code
 
     def json(self):
