@@ -16,6 +16,9 @@ Running tests
 .. image:: https://travis-ci.org/Connexions/cnx-epub.png?branch=master
    :target: https://travis-ci.org/Connexions/cnx-epub
 
+.. image:: https://codecov.io/gh/Connexions/cnx-epub/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/Connexions/cnx-epub
+  
 Either of the following will work::
 
     $ python -m unittest discover

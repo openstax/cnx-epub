@@ -6,7 +6,7 @@ python:
 before_install:
   # Install the coverage utility and coveralls reporting utility
   - pip install coverage
-  - pip install coveralls
+  - pip install codecov
   # FIXME travis fails w/ 3.7.0 on python3, even though it works locally
   - pip install lxml==3.6.4
   # FIXME (18-Apr-2016) cnx-easybake requires an unreleased package, cssselect2
@@ -22,7 +22,7 @@ before_script:
 script:
   - coverage run --source=cnxepub -m unittest discover
 after_success:
-  # Report test coverage to coveralls.io
-  - coveralls
+  # Report test coverage to codecov.io
+  - codecov
 notifications:
   email: false
