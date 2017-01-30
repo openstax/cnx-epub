@@ -229,8 +229,15 @@ def _node_to_model(tree_or_item, package, parent=None,
         if tree['id'] == lucent_id:
             binder = TranslucentBinder(metadata={'title': tree['title']})
         else:
-            package_item = package.grab_by_name(tree['id'])
-            binder = BinderItem(package_item, package)
+            try:
+                package_item = package.grab_by_name(tree['id'])
+                binder = BinderItem(package_item, package)
+            except KeyError:  # Translucent w/ id
+                binder = Binder(tree['id'],
+                                metadata={
+                                   'title': tree['title'],
+                                   'cnx-archive-uri': tree['id'],
+                                   'cnx-archive-shortid': tree['shortId']})
         for item in tree['contents']:
             node = _node_to_model(item, package, parent=binder,
                                   lucent_id=lucent_id)
@@ -415,7 +422,15 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                         child.xpath('*[@data-type="document-title"]',
                                     namespaces=HTML_DOCUMENT_NAMESPACES)[0]
                         ).text_content().strip()
-            tbinder = TranslucentBinder(metadata={'title': title})
+            metadata = parse_metadata(child)
+            id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
+            shortid = metadata.get('cnx-archive-shortid')
+            if id_ is None:
+                tbinder = TranslucentBinder(metadata={'title': title})
+            else:
+                tbinder = Binder(id_, metadata={'title': title,
+                                                'id': id_,
+                                                'shortId': shortid})
             _adapt_single_html_tree(tbinder, child,
                                     nav_tree['contents'].pop(0),
                                     id_map=id_map, depth=depth+1)

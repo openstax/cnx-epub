@@ -217,9 +217,9 @@ class SingleHTMLFormatter(object):
             elem = self.root
         return elem.xpath(path, namespaces=HTML_DOCUMENT_NAMESPACES)
 
-    def get_node_type(self, node):
+    def get_node_type(self, node, parent=None):
         """If node is a document, the type is page.
-        If node is a binder, the type is book.
+        If node is a binder with no parent, the type is book.
         If node is a translucent binder, the type is either chapters (only
         contain pages) or unit (contains at least one translucent binder).
         """
@@ -227,7 +227,7 @@ class SingleHTMLFormatter(object):
             return 'composite-page'
         if isinstance(node, Document):
             return 'page'
-        if isinstance(node, Binder):
+        if isinstance(node, Binder) and parent is None:
             return 'book'
         for child in node:
             if isinstance(child, TranslucentBinder):
@@ -235,15 +235,25 @@ class SingleHTMLFormatter(object):
         return 'chapter'
 
     def _build_binder(self, binder, elem):
+        binder_type = self.get_node_type(binder)
         for node in binder:
-            attrs = {'data-type': self.get_node_type(node)}
+            attrs = {'data-type': self.get_node_type(node, binder_type)}
             if node.id:
                 attrs['id'] = node.id
             child_elem = etree.SubElement(elem, 'div', **attrs)
             if isinstance(node, TranslucentBinder):
+                html = bytes(HTMLFormatter(node, generate_ids=False))
+                doc_root = etree.fromstring(html)
+                metadata = doc_root.xpath(
+                           '//xhtml:body/xhtml:div[@data-type="metadata"]',
+                           namespaces=HTML_DOCUMENT_NAMESPACES)
+                if metadata:
+                    child_elem.append(metadata[0])
+
+                # And now the top-level title, too
                 etree.SubElement(
-                    child_elem, 'h1', **{'data-type': 'document-title'}
-                    ).text = node.metadata['title']
+                      child_elem, 'h1', **{'data-type': 'document-title'}
+                      ).text = node.metadata['title']
                 self._build_binder(node, child_elem)
             elif isinstance(node, Document):
                 html = bytes(HTMLFormatter(node, generate_ids=True))
@@ -561,6 +571,7 @@ HTML_DOCUMENT = """\
           metadata['cnx-archive-shortid'] }}" />
       {%- endif %}
       {%- endif %}
+      {% if metadata.get('authors') %}
 
       <div class="authors">
         By:
@@ -651,6 +662,8 @@ HTML_DOCUMENT = """\
         {%- endfor %}
 
       </div>
+      {%- endif %}
+      {% if metadata.get('publishers') %}
 
       <div class="publishers">
         Published By:
@@ -677,8 +690,9 @@ HTML_DOCUMENT = """\
           {% endif %}
         {%- endfor %}
       </div>
-
+      {%- endif %}
       {% if metadata.get('derived_from_uri') %}
+
       <div class="derived-from">
         Derived from:
         <a href="{{ metadata['derived_from_uri'] }}"
@@ -687,8 +701,8 @@ HTML_DOCUMENT = """\
            >{{ metadata['derived_from_title']|escape }}</a>
       </div>
       {%- endif %}
-
       {% if metadata.get('print_style') %}
+
       <div class="print-style">
         Print style:
         <span
@@ -696,6 +710,7 @@ HTML_DOCUMENT = """\
            >{{ metadata['print_style'] }}</span>
       </div>
       {%- endif %}
+      {% if metadata.get('copyright-holder') or metadata.get('license_url') %}
 
       <div class="permissions">
         {% if metadata['copyright_holders'] %}
@@ -733,8 +748,9 @@ HTML_DOCUMENT = """\
              >{{ metadata['license_text'] }}</a>
         </p>
       </div>
-
+      {%- endif %}
       {% if metadata['summary'] %}
+
       <div class="description"
            itemprop="description"
            data-type="description"
@@ -742,16 +758,14 @@ HTML_DOCUMENT = """\
         {{ metadata['summary'] }}
       </div>
       {%- endif %}
-
-
       {% for keyword in metadata['keywords'] -%}
       <div itemprop="keywords" data-type="keyword">{{ keyword|escape }}</div>
       {%- endfor %}
       {% for subject in metadata['subjects'] -%}
       <div itemprop="about" data-type="subject">{{ subject|escape }}</div>
       {%- endfor %}
-
       {% if resources %}
+
       <div data-type="resources" style="display: none">
         <ul>
           {% for resource in resources -%}
@@ -760,7 +774,6 @@ HTML_DOCUMENT = """\
         </ul>
       </div>
       {%- endif %}
-
     </div>
 
    {{ content }}
