@@ -57,27 +57,34 @@ class EPUBAdaptationTestCase(unittest.TestCase):
         expected_tree = {
             'id': '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6',
             'title': 'Book of Infinity',
+            'shortId': None,
             'contents': [
                 {'id': 'subcol',
+                 'shortId': None,
                  'title': 'Part One',
                  'contents': [
                      {'contents': [
-                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3', 'title': 'Document One'}],
+                         {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
+                          'shortId': None, 'title': 'Document One'}],
                       'id': 'subcol',
+                      'shortId': None,
                       'title': 'Chapter One'},
                      {'id': 'subcol',
+                      'shortId': None,
                       'title': 'Chapter Two',
                       'contents': [{'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
-                                    'title': 'Document One (again)'}],
+                                    'shortId': None, 'title': 'Document One (again)'}],
                       }]},
                 {'id': 'subcol',
+                 'shortId': None,
                  'title': 'Part Two',
                  'contents': [
                      {'id': 'subcol',
+                      'shortId': None,
                       'title': 'Chapter Three',
                       'contents': [
                           {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
-                           'title': 'Document One (...and again)'}]
+                            'shortId': None, 'title': 'Document One (...and again)'}]
                       }]}]}
 
         from ..adapters import adapt_package
@@ -116,10 +123,11 @@ class EPUBAdaptationTestCase(unittest.TestCase):
         package = self.make_package(package_filepath)
         expected_tree = {
             'id': 'subcol',
+            'shortId': None,
             'title': "Loose Pages",
-            'contents': [{'id': None, 'title': 'Yummy'},
-                         {'id': None, 'title': 'Da bomb'},
-                         {'id': 'pointer@1', 'title': 'Pointer'}],
+            'contents': [{'id': None, 'shortId': None, 'title': 'Yummy'},
+                         {'id': None, 'shortId': None, 'title': 'Da bomb'},
+                         {'id': 'pointer@1', 'shortId': None, 'title': 'Pointer'}],
             }
 
         from ..adapters import adapt_package
@@ -683,28 +691,34 @@ class HTMLAdaptationTestCase(unittest.TestCase):
 
         self.assertEqual({
             'id': 'book',
+            'shortId': None,
             'title': 'Desserts',
             'contents': [
                 {
                     'id': 'subcol',
+                    'shortId': None,
                     'title': 'Fruity',
                     'contents': [
                         {
                             'id': 'apple',
+                            'shortId': None,
                             'title': 'Apple',
                             },
                         {
                             'id': 'lemon',
+                            'shortId': None,
                             'title': u'<span>1.1</span> <span>|</span> '
                                      u'<span>&#12524;&#12514;&#12531;</span>',
                             },
                         {
                             'id': 'subcol',
+                            'shortId': None,
                             'title': '<span>Chapter</span> <span>2</span> '
                                      '<span>citrus</span>',
                             'contents': [
                                 {
                                     'id': 'lemon',
+                                    'shortId': None,
                                     'title': 'Lemon',
                                     },
                                 ],
@@ -713,10 +727,12 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                     },
                 {
                     'id': 'chocolate',
+                    'shortId': None,
                     'title': u'チョコレート',
                     },
                 {
                     'id': 'extra',
+                    'shortId': None,
                     'title': 'Extra Stuff',
                     },
                 ],

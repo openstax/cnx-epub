@@ -775,9 +775,13 @@ HTML_DOCUMENT = """\
 def html_listify(tree, root_xl_element, extensions, list_type='ol'):
     for node in tree:
         li_elm = etree.SubElement(root_xl_element, 'li')
-        if node['id'] == 'subcol':
+        if node['id'] not in extensions:
             span_elm = lxml.html.fragment_fromstring(
                 node['title'], create_parent='span')
+            if node['id'] is not None and node['id'] != 'subcol':
+                span_elm.set('cnx-archive-uri', node['id'])
+            if node['shortId'] is not None:
+                span_elm.set('cnx-archive-shortid', node['shortId'])
             li_elm.append(span_elm)
         else:
             a_elm = lxml.html.fragment_fromstring(

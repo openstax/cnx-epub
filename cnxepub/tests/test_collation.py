@@ -47,28 +47,34 @@ class ReconstituteTestCase(unittest.TestCase):
 
         self.assertEqual({
             'id': 'book',
+            'shortId': None,
             'title': 'Desserts',
             'contents': [
                 {
                     'id': 'subcol',
+                    'shortId': None,
                     'title': 'Fruity',
                     'contents': [
                         {
                             'id': 'apple',
+                            'shortId': None,
                             'title': 'Apple',
                             },
                         {
                             'id': 'lemon',
+                            'shortId': None,
                             'title': '<span>1.1</span> <span>|</span> '
                                      '<span>&#12524;&#12514;&#12531;</span>',
                             },
                         {
                             'id': 'subcol',
+                            'shortId': None,
                             'title': '<span>Chapter</span> <span>2</span> '
                                      '<span>citrus</span>',
                             'contents': [
                                 {
                                     'id': 'lemon',
+                                    'shortId': None,
                                     'title': 'Lemon',
                                     },
                                 ],
@@ -77,10 +83,12 @@ class ReconstituteTestCase(unittest.TestCase):
                     },
                 {
                     'id': 'chocolate',
+                    'shortId': None,
                     'title': u'チョコレート',
                     },
                 {
                     'id': 'extra',
+                    'shortId': None,
                     'title': 'Extra Stuff',
                     },
                 ],
