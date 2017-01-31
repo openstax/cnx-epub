@@ -696,8 +696,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
             'title': 'Desserts',
             'contents': [
                 {
-                    'id': 'subcol',
-                    'shortId': None,
+                    'id': 'Fruity',
+                    'shortId': 'frt',
                     'title': 'Fruity',
                     'contents': [
                         {
@@ -740,8 +740,10 @@ class HTMLAdaptationTestCase(unittest.TestCase):
             }, model_to_tree(desserts))
 
         fruity = desserts[0]
-        self.assertEqual('TranslucentBinder', fruity.__class__.__name__)
+        self.assertEqual('Binder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
+        self.assertEqual('Fruity', fruity.metadata['id'])
+        self.assertEqual('frt', fruity.metadata['shortId'])
         self.assertEqual('Fruity', desserts.get_title_for_node(fruity))
 
         apple = fruity[0]

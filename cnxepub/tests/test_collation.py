@@ -51,8 +51,8 @@ class ReconstituteTestCase(unittest.TestCase):
             'title': 'Desserts',
             'contents': [
                 {
-                    'id': 'subcol',
-                    'shortId': None,
+                    'id': 'Fruity',
+                    'shortId': 'frt',
                     'title': 'Fruity',
                     'contents': [
                         {
@@ -121,7 +121,7 @@ class ReconstituteTestCase(unittest.TestCase):
             }
 
         fruity = desserts[0]
-        self.assertEqual('TranslucentBinder', fruity.__class__.__name__)
+        self.assertEqual('Binder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
 
         apple = fruity[0]
