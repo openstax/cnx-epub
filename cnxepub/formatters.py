@@ -786,9 +786,20 @@ HTML_DOCUMENT = """\
 #      a way to render the the tree to html. This either needs to
 #      move elsewhere or preferably be replaced with a better solution.
 def html_listify(tree, root_xl_element, extensions, list_type='ol'):
+    """Convert a node tree into an xhtml nested list-of-lists.
+
+       This will create 'li' elements under the root_xl_element,
+       additional sublists of the type passed as list_type. The contents
+       of each li depends on the extensions dictonary: the keys of this
+       dictionary are the ids of tree elements that are repesented by files
+       in the epub, with associated filename extensions as the value. Those
+       nodes will be rendered as links to the reassembled filename: i.e.
+       id='abc-2345-54e4' {'abc-2345-54e4': 'xhtml'} -> abc-2345-54e4.xhtml
+       Other nodes will render as spans with cnx-archive-uri and
+       cnx-archive-shortid attributes"""
     for node in tree:
         li_elm = etree.SubElement(root_xl_element, 'li')
-        if node['id'] not in extensions:
+        if node['id'] not in extensions:  # no extension, no associated file
             span_elm = lxml.html.fragment_fromstring(
                 node['title'], create_parent='span')
             if node['id'] is not None and node['id'] != 'subcol':
