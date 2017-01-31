@@ -634,9 +634,9 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         contents = io.BytesIO(b"""\
 <h1>Apple Desserts</h1>
 <p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
-<ul><li>Apple Crumble,</li>
+<ul><li id="auto_apple_13436">Apple Crumble,</li>
     <li>Apfelstrudel,</li>
-    <li>Caramel Apple,</li>
+    <li id="auto_apple_17611">Caramel Apple,</li>
     <li>Apple Pie,</li>
     <li>Apple sauce...</li>
 </ul>

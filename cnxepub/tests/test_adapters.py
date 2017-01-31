@@ -755,7 +755,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, apple_metadata)
-        self.assertIn('<p id="17611">'
+        self.assertIn('<p id="74606">'
                       '<a href="/contents/lemon">Link to lemon</a>. '
                       'Here are some examples:</p>',
                       apple.content)
@@ -770,7 +770,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, lemon_metadata)
-        self.assertIn('<p id="74606">Yum! <img id="8271" '
+        self.assertIn('<p id="8271">Yum! <img id="33432" '
                       'src="/resources/1x1.jpg"/></p>', lemon.content)
         self.assertEqual('<span>1.1</span> <span>|</span> <span>'
                          '&#12524;&#12514;&#12531;</span>',
@@ -794,7 +794,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = u'チョコレート'
         self.assertEqual(metadata, chocolate_metadata)
-        self.assertIn('<p id="27519"><a href="#list">List</a> of',
+        self.assertIn('<p id="12302"><a href="#list">List</a> of',
                       chocolate.content)
         self.assertIn('<div data-type="list" id="list"><ul>',
                       chocolate.content)
@@ -810,7 +810,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         self.assertEqual(metadata, extra_metadata)
-        self.assertIn('<p id="51093">Here is a <a href="/contents/chocolate'
+        self.assertIn('<p id="56723">Here is a <a href="/contents/chocolate'
                       '#list">link</a> to another document.</p>',
                       extra.content)
         self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))
