@@ -127,8 +127,7 @@ class HTMLFormatter(object):
                 new_id = 'auto_{}_{}'.format(document_id, random_number)
             while new_id in existing_ids:
                 random_number = random.randint(0, 100000)
-                new_id = 'auto_{}_{}'.format(document_id, random_number,
-                                             random_number)
+                new_id = 'auto_{}_{}'.format(document_id, random_number)
             node.attrib['id'] = new_id
             if old_id:
                 mapping[old_id] = new_id
