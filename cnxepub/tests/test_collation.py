@@ -181,18 +181,21 @@ class CollateTestCase(BaseModelTestCase):
     def test(self):
         binder = self.make_binder(
             '8d75ea29',
-            metadata={'version': '3', 'title': "Book One"},
+            metadata={'version': '3', 'title': 'Book One',
+                      'license_url': 'http://my.license'},
             nodes=[
                 self.make_document(
                     id="e78d4f90",
                     content=b"<p>document one</p>",
                     metadata={'version': '3',
-                              'title': "Document One"}),
+                              'title': "Document One",
+                              'license_url': 'http://my.license'}),
                 self.make_document(
                     id="3c448dc6",
                     content=b"<p>document two</p>",
                     metadata={'version': '1',
-                              'title': "Document Two"})])
+                              'title': "Document Two",
+                              'license_url': 'http://my.license'})])
 
         # Append a ruleset to the binder.
         ruleset = io.BytesIO(b" ")
@@ -250,16 +253,19 @@ class CollateTestCase(BaseModelTestCase):
     def test_without_ruleset(self):
         binder = self.make_binder(
             '8d75ea29',
-            metadata={'version': '3', 'title': "Book One"},
+            metadata={'version': '3', 'title': "Book One",
+                      'license_url': 'http://my.license'},
             nodes=[
                 self.make_document(
                     id="e78d4f90",
                     metadata={'version': '3',
-                              'title': "Document One"}),
+                              'title': "Document One",
+                              'license_url': 'http://my.license'}),
                 self.make_document(
                     id="3c448dc6",
                     metadata={'version': '1',
-                              'title': "Document Two"})])
+                              'title': "Document Two",
+                              'license_url': 'http://my.license'})])
 
         result = self.target(binder)
         self.assertIs(binder, result)
@@ -267,18 +273,21 @@ class CollateTestCase(BaseModelTestCase):
     def test_with_ruleset(self):
         binder = self.make_binder(
             '8d75ea29',
-            metadata={'version': '3', 'title': "Book One"},
+            metadata={'version': '3', 'title': "Book One",
+                      'license_url': 'http://my.license'},
             nodes=[
                 self.make_document(
                     id="e78d4f90",
                     content=b"<span>document one</span>",
                     metadata={'version': '3',
-                              'title': "Document One"}),
+                              'title': "Document One",
+                              'license_url': 'http://my.license'}),
                 self.make_document(
                     id="3c448dc6",
                     content=b"<span>document two</span>",
                     metadata={'version': '1',
-                              'title': "Document Two"})])
+                              'title': "Document Two",
+                              'license_url': 'http://my.license'})])
 
         # Append a ruleset to the binder.
         ruleset = io.BytesIO(b"""\

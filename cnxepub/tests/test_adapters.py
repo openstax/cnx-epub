@@ -507,7 +507,8 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         with open(os.path.join(TEST_DATA_DIR, 'cover.png'), 'rb') as f:
             cover = Resource('cover.png', io.BytesIO(f.read()), 'image/png',
                              filename='cover.png')
-        binder = Binder(binder_name, metadata={'title': "Kraken (Nueva Versión)"},
+        binder = Binder(binder_name, metadata={'title': "Kraken (Nueva Versión)",
+                                               'license_url': "http://my.license"},
                         resources=[cover])
 
         base_metadata = {
