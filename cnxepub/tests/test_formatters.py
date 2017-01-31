@@ -676,9 +676,11 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             self.apple.metadata['title'],
             u'<span>1.1</span> <span>|</span> <span>レモン</span>',
             '<span>Chapter</span> <span>2</span> <span>citrus</span>']
-        self.fruity = TranslucentBinder([self.apple, self.lemon, self.citrus],
-                                        metadata={'title': 'Fruity'},
-                                        title_overrides=title_overrides)
+        self.fruity = Binder('Fruity', [self.apple, self.lemon, self.citrus],
+                             metadata={'title': 'Fruity',
+                                       'cnx-archive-uri': 'Fruity',
+                                       'cnx-archive-shortid': 'frt'},
+                             title_overrides=title_overrides)
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
