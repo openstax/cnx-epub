@@ -475,6 +475,8 @@ class HTMLFormatterTestCase(unittest.TestCase):
         # Build test binder.
         binder = Binder(self.base_metadata['title'], metadata={
             'title': self.base_metadata['title'],
+            'license_url': self.base_metadata['license_url'],
+            'license_text': self.base_metadata['license_text'],
             })
 
         metadata = self.base_metadata.copy()
@@ -695,7 +697,10 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
         self.desserts = Binder(
             'Desserts', [self.fruity, self.chocolate, self.extra],
-            metadata={'title': 'Desserts'}, resources=[cover_png])
+            metadata={'title': 'Desserts',
+                      'license_url': 'http://creativecommons.org/licenses/by/4.0/',
+                      'license_text': 'CC-By 4.0'},
+            resources=[cover_png])
 
     def test_binder(self):
         import random
