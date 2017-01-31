@@ -235,7 +235,7 @@ class DocumentMetadataParser:
                 try:
                     order = self.parse(refines_xpath_tmplt.format(elm_id))[0]
                 except IndexError:
-                    pass  # Check for refinement failed, maintain None value.
+                    order = 0  # Check for refinement failed, use constant
             unordered.append((order, person,))
         ordered = sorted(unordered, key=lambda x: x[0])
         values = [x[1] for x in ordered]
