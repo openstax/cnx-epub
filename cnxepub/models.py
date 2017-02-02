@@ -128,12 +128,12 @@ def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):
         {'id': <id>|'subcol', 'title': <title>, 'contents': [<tree>, ...]}
 
     """
-    if type(model) is TranslucentBinder:
+    id = model.ident_hash
+    if id is None and isinstance(model, TranslucentBinder):
         id = lucent_id
-    else:
-        id = model.ident_hash
+    shortid = model.metadata.get('shortId')
     title = title is not None and title or model.metadata.get('title')
-    tree = {'id': id, 'title': title}
+    tree = {'id': id, 'title': title, 'shortId': shortid}
     if hasattr(model, '__iter__'):
         contents = tree['contents'] = []
         for node in model:

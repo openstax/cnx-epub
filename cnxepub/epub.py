@@ -434,12 +434,12 @@ class Item:
     """Package item"""
 
     def __init__(self, name, data=None, media_type=None,
-                 is_navigation=False, properties=[], **kwargs):
+                 is_navigation=False, properties=None, **kwargs):
         self.name = name
         self.data = data
         self.media_type = media_type
         self.is_navigation = bool(is_navigation)
-        self.properties = properties
+        self.properties = properties or []
 
     @classmethod
     def from_file(cls, filepath, **kwargs):

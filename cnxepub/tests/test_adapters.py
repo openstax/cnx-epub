@@ -57,27 +57,34 @@ class EPUBAdaptationTestCase(unittest.TestCase):
         expected_tree = {
             'id': '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6',
             'title': 'Book of Infinity',
+            'shortId': None,
             'contents': [
                 {'id': 'subcol',
+                 'shortId': None,
                  'title': 'Part One',
                  'contents': [
                      {'contents': [
-                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3', 'title': 'Document One'}],
+                         {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
+                          'shortId': None, 'title': 'Document One'}],
                       'id': 'subcol',
+                      'shortId': None,
                       'title': 'Chapter One'},
                      {'id': 'subcol',
+                      'shortId': None,
                       'title': 'Chapter Two',
                       'contents': [{'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
-                                    'title': 'Document One (again)'}],
+                                    'shortId': None, 'title': 'Document One (again)'}],
                       }]},
                 {'id': 'subcol',
+                 'shortId': None,
                  'title': 'Part Two',
                  'contents': [
                      {'id': 'subcol',
+                      'shortId': None,
                       'title': 'Chapter Three',
                       'contents': [
                           {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
-                           'title': 'Document One (...and again)'}]
+                            'shortId': None, 'title': 'Document One (...and again)'}]
                       }]}]}
 
         from ..adapters import adapt_package
@@ -116,10 +123,11 @@ class EPUBAdaptationTestCase(unittest.TestCase):
         package = self.make_package(package_filepath)
         expected_tree = {
             'id': 'subcol',
+            'shortId': None,
             'title': "Loose Pages",
-            'contents': [{'id': None, 'title': 'Yummy'},
-                         {'id': None, 'title': 'Da bomb'},
-                         {'id': 'pointer@1', 'title': 'Pointer'}],
+            'contents': [{'id': None, 'shortId': None, 'title': 'Yummy'},
+                         {'id': None, 'shortId': None, 'title': 'Da bomb'},
+                         {'id': 'pointer@1', 'shortId': None, 'title': 'Pointer'}],
             }
 
         from ..adapters import adapt_package
@@ -499,7 +507,8 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         with open(os.path.join(TEST_DATA_DIR, 'cover.png'), 'rb') as f:
             cover = Resource('cover.png', io.BytesIO(f.read()), 'image/png',
                              filename='cover.png')
-        binder = Binder(binder_name, metadata={'title': "Kraken (Nueva Versión)"},
+        binder = Binder(binder_name, metadata={'title': "Kraken (Nueva Versión)",
+                                               'license_url': "http://my.license"},
                         resources=[cover])
 
         base_metadata = {
@@ -683,28 +692,34 @@ class HTMLAdaptationTestCase(unittest.TestCase):
 
         self.assertEqual({
             'id': 'book',
+            'shortId': None,
             'title': 'Desserts',
             'contents': [
                 {
-                    'id': 'subcol',
+                    'id': 'Fruity',
+                    'shortId': 'frt',
                     'title': 'Fruity',
                     'contents': [
                         {
                             'id': 'apple',
+                            'shortId': None,
                             'title': 'Apple',
                             },
                         {
                             'id': 'lemon',
+                            'shortId': None,
                             'title': u'<span>1.1</span> <span>|</span> '
                                      u'<span>&#12524;&#12514;&#12531;</span>',
                             },
                         {
                             'id': 'subcol',
+                            'shortId': None,
                             'title': '<span>Chapter</span> <span>2</span> '
                                      '<span>citrus</span>',
                             'contents': [
                                 {
                                     'id': 'lemon',
+                                    'shortId': None,
                                     'title': 'Lemon',
                                     },
                                 ],
@@ -713,18 +728,22 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                     },
                 {
                     'id': 'chocolate',
+                    'shortId': None,
                     'title': u'チョコレート',
                     },
                 {
                     'id': 'extra',
+                    'shortId': None,
                     'title': 'Extra Stuff',
                     },
                 ],
             }, model_to_tree(desserts))
 
         fruity = desserts[0]
-        self.assertEqual('TranslucentBinder', fruity.__class__.__name__)
+        self.assertEqual('Binder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
+        self.assertEqual('Fruity', fruity.metadata['id'])
+        self.assertEqual('frt', fruity.metadata['shortId'])
         self.assertEqual('Fruity', desserts.get_title_for_node(fruity))
 
         apple = fruity[0]
@@ -736,7 +755,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, apple_metadata)
-        self.assertIn('<p id="17611">'
+        self.assertIn('<p id="74606">'
                       '<a href="/contents/lemon">Link to lemon</a>. '
                       'Here are some examples:</p>',
                       apple.content)
@@ -751,7 +770,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, lemon_metadata)
-        self.assertIn('<p id="74606">Yum! <img id="8271" '
+        self.assertIn('<p id="8271">Yum! <img id="33432" '
                       'src="/resources/1x1.jpg"/></p>', lemon.content)
         self.assertEqual('<span>1.1</span> <span>|</span> <span>'
                          '&#12524;&#12514;&#12531;</span>',
@@ -775,7 +794,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = u'チョコレート'
         self.assertEqual(metadata, chocolate_metadata)
-        self.assertIn('<p id="27519"><a href="#list">List</a> of',
+        self.assertIn('<p id="12302"><a href="#list">List</a> of',
                       chocolate.content)
         self.assertIn('<div data-type="list" id="list"><ul>',
                       chocolate.content)
@@ -791,7 +810,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         self.assertEqual(metadata, extra_metadata)
-        self.assertIn('<p id="51093">Here is a <a href="/contents/chocolate'
+        self.assertIn('<p id="56723">Here is a <a href="/contents/chocolate'
                       '#list">link</a> to another document.</p>',
                       extra.content)
         self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))

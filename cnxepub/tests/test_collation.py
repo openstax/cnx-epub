@@ -47,28 +47,34 @@ class ReconstituteTestCase(unittest.TestCase):
 
         self.assertEqual({
             'id': 'book',
+            'shortId': None,
             'title': 'Desserts',
             'contents': [
                 {
-                    'id': 'subcol',
+                    'id': 'Fruity',
+                    'shortId': 'frt',
                     'title': 'Fruity',
                     'contents': [
                         {
                             'id': 'apple',
+                            'shortId': None,
                             'title': 'Apple',
                             },
                         {
                             'id': 'lemon',
+                            'shortId': None,
                             'title': '<span>1.1</span> <span>|</span> '
                                      '<span>&#12524;&#12514;&#12531;</span>',
                             },
                         {
                             'id': 'subcol',
+                            'shortId': None,
                             'title': '<span>Chapter</span> <span>2</span> '
                                      '<span>citrus</span>',
                             'contents': [
                                 {
                                     'id': 'lemon',
+                                    'shortId': None,
                                     'title': 'Lemon',
                                     },
                                 ],
@@ -77,10 +83,12 @@ class ReconstituteTestCase(unittest.TestCase):
                     },
                 {
                     'id': 'chocolate',
+                    'shortId': None,
                     'title': u'チョコレート',
                     },
                 {
                     'id': 'extra',
+                    'shortId': None,
                     'title': 'Extra Stuff',
                     },
                 ],
@@ -113,7 +121,7 @@ class ReconstituteTestCase(unittest.TestCase):
             }
 
         fruity = desserts[0]
-        self.assertEqual('TranslucentBinder', fruity.__class__.__name__)
+        self.assertEqual('Binder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
 
         apple = fruity[0]
@@ -173,18 +181,21 @@ class CollateTestCase(BaseModelTestCase):
     def test(self):
         binder = self.make_binder(
             '8d75ea29',
-            metadata={'version': '3', 'title': "Book One"},
+            metadata={'version': '3', 'title': 'Book One',
+                      'license_url': 'http://my.license'},
             nodes=[
                 self.make_document(
                     id="e78d4f90",
                     content=b"<p>document one</p>",
                     metadata={'version': '3',
-                              'title': "Document One"}),
+                              'title': "Document One",
+                              'license_url': 'http://my.license'}),
                 self.make_document(
                     id="3c448dc6",
                     content=b"<p>document two</p>",
                     metadata={'version': '1',
-                              'title': "Document Two"})])
+                              'title': "Document Two",
+                              'license_url': 'http://my.license'})])
 
         # Append a ruleset to the binder.
         ruleset = io.BytesIO(b" ")
@@ -242,16 +253,19 @@ class CollateTestCase(BaseModelTestCase):
     def test_without_ruleset(self):
         binder = self.make_binder(
             '8d75ea29',
-            metadata={'version': '3', 'title': "Book One"},
+            metadata={'version': '3', 'title': "Book One",
+                      'license_url': 'http://my.license'},
             nodes=[
                 self.make_document(
                     id="e78d4f90",
                     metadata={'version': '3',
-                              'title': "Document One"}),
+                              'title': "Document One",
+                              'license_url': 'http://my.license'}),
                 self.make_document(
                     id="3c448dc6",
                     metadata={'version': '1',
-                              'title': "Document Two"})])
+                              'title': "Document Two",
+                              'license_url': 'http://my.license'})])
 
         result = self.target(binder)
         self.assertIs(binder, result)
@@ -259,18 +273,21 @@ class CollateTestCase(BaseModelTestCase):
     def test_with_ruleset(self):
         binder = self.make_binder(
             '8d75ea29',
-            metadata={'version': '3', 'title': "Book One"},
+            metadata={'version': '3', 'title': "Book One",
+                      'license_url': 'http://my.license'},
             nodes=[
                 self.make_document(
                     id="e78d4f90",
                     content=b"<span>document one</span>",
                     metadata={'version': '3',
-                              'title': "Document One"}),
+                              'title': "Document One",
+                              'license_url': 'http://my.license'}),
                 self.make_document(
                     id="3c448dc6",
                     content=b"<span>document two</span>",
                     metadata={'version': '1',
-                              'title': "Document Two"})])
+                              'title': "Document Two",
+                              'license_url': 'http://my.license'})])
 
         # Append a ruleset to the binder.
         ruleset = io.BytesIO(b"""\

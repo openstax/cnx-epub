@@ -475,6 +475,8 @@ class HTMLFormatterTestCase(unittest.TestCase):
         # Build test binder.
         binder = Binder(self.base_metadata['title'], metadata={
             'title': self.base_metadata['title'],
+            'license_url': self.base_metadata['license_url'],
+            'license_text': self.base_metadata['license_text'],
             })
 
         metadata = self.base_metadata.copy()
@@ -632,9 +634,9 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         contents = io.BytesIO(b"""\
 <h1>Apple Desserts</h1>
 <p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
-<ul><li>Apple Crumble,</li>
+<ul><li id="auto_apple_13436">Apple Crumble,</li>
     <li>Apfelstrudel,</li>
-    <li>Caramel Apple,</li>
+    <li id="auto_apple_17611">Caramel Apple,</li>
     <li>Apple Pie,</li>
     <li>Apple sauce...</li>
 </ul>
@@ -674,9 +676,11 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             self.apple.metadata['title'],
             u'<span>1.1</span> <span>|</span> <span>レモン</span>',
             '<span>Chapter</span> <span>2</span> <span>citrus</span>']
-        self.fruity = TranslucentBinder([self.apple, self.lemon, self.citrus],
-                                        metadata={'title': 'Fruity'},
-                                        title_overrides=title_overrides)
+        self.fruity = Binder('Fruity', [self.apple, self.lemon, self.citrus],
+                             metadata={'title': 'Fruity',
+                                       'cnx-archive-uri': 'Fruity',
+                                       'cnx-archive-shortid': 'frt'},
+                             title_overrides=title_overrides)
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
@@ -695,7 +699,10 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
         self.desserts = Binder(
             'Desserts', [self.fruity, self.chocolate, self.extra],
-            metadata={'title': 'Desserts'}, resources=[cover_png])
+            metadata={'title': 'Desserts',
+                      'license_url': 'http://creativecommons.org/licenses/by/4.0/',
+                      'license_text': 'CC-By 4.0'},
+            resources=[cover_png])
 
     def test_binder(self):
         import random

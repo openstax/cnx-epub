@@ -57,15 +57,18 @@ def _nav_to_tree(root):
     def expath(e, x):
         return e.xpath(x, namespaces=HTML_DOCUMENT_NAMESPACES)
     for li in expath(root, 'xhtml:ol/xhtml:li'):
-        classes = li.get('class', '').split()
         is_subtree = bool([e for e in li.getchildren()
                            if e.tag[e.tag.find('}')+1:] == 'ol'])
         if is_subtree:
             # It's a sub-tree and have a 'span' and 'ol'.
-            yield {'id': 'subcol',  # Special id...
+            span = expath(li, 'xhtml:span')[0]
+            spanid = span.get('cnx-archive-uri') or 'subcol'
+            shortid = span.get('cnx-archive-shortid')
+            yield {'id': spanid,
                    # Title is wrapped in a span, div or some other element...
                    'title': _squash_to_text(expath(li, 'xhtml:*')[0],
                                             remove_namespaces=True),
+                   'shortId': shortid,
                    'contents': [x for x in _nav_to_tree(li)],
                    }
         else:
@@ -232,7 +235,7 @@ class DocumentMetadataParser:
                 try:
                     order = self.parse(refines_xpath_tmplt.format(elm_id))[0]
                 except IndexError:
-                    pass  # Check for refinement failed, maintain None value.
+                    order = 0  # Check for refinement failed, use constant
             unordered.append((order, person,))
         ordered = sorted(unordered, key=lambda x: x[0])
         values = [x[1] for x in ordered]

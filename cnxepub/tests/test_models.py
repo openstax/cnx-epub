@@ -131,33 +131,45 @@ class TreeUtilityTestCase(BaseModelTestCase):
 
         expected_tree = {
             'id': '8d75ea29@3',
+            'shortId': None,
             'contents': [
                 {'id': 'subcol',
+                 'shortId': None,
                  'contents': [
                      {'id': 'subcol',
+                      'shortId': None,
                       'contents': [
                           {'id': 'e78d4f90@3',
+                           'shortId': None,
                            'title': 'Document One'}],
                       'title': 'Chapter One'},
                      {'id': 'subcol',
+                      'shortId': None,
                       'contents': [
                           {'id': '3c448dc6@1',
+                           'shortId': None,
                            'title': 'Document Two'}],
                       'title': 'Chapter Two'}],
                  'title': 'Part One'},
                 {'id': 'subcol',
+                 'shortId': None,
                  'contents': [
                      {'id': 'subcol',
+                      'shortId': None,
                       'contents': [
                           {'id': 'ad17c39c@2',
+                           'shortId': None,
                            'title': 'Document Three'}],
                       'title': 'Chapter Three'}],
                  'title': 'Part Two'},
                 {'id': 'subcol',
+                 'shortId': None,
                  'contents': [
                      {'id': 'subcol',
+                      'shortId': None,
                       'contents': [
                           {'id': '7c52af05@1',
+                           'shortId': None,
                            'title': 'Document Four'}],
                       'title': 'Chapter Four'}],
                  'title': 'Part Three'}],
