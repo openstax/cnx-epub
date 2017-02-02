@@ -794,23 +794,24 @@ def html_listify(tree, root_xl_element, extensions, list_type='ol'):
        in the epub, with associated filename extensions as the value. Those
        nodes will be rendered as links to the reassembled filename: i.e.
        id='abc-2345-54e4' {'abc-2345-54e4': 'xhtml'} -> abc-2345-54e4.xhtml
-       Other nodes will render as spans with cnx-archive-uri and
-       cnx-archive-shortid attributes"""
+       Other nodes will render as spans. If the node has id or short id values,
+       the associated li will be populated with cnx-archive-uri and
+       cnx-archive-shortid attributes, respectively"""
     for node in tree:
         li_elm = etree.SubElement(root_xl_element, 'li')
         if node['id'] not in extensions:  # no extension, no associated file
             span_elm = lxml.html.fragment_fromstring(
                 node['title'], create_parent='span')
-            if node['id'] is not None and node['id'] != 'subcol':
-                span_elm.set('cnx-archive-uri', node['id'])
-            if node['shortId'] is not None:
-                span_elm.set('cnx-archive-shortid', node['shortId'])
             li_elm.append(span_elm)
         else:
             a_elm = lxml.html.fragment_fromstring(
                 node['title'], create_parent='a')
             a_elm.set('href', ''.join([node['id'], extensions[node['id']]]))
             li_elm.append(a_elm)
+        if node['id'] is not None and node['id'] != 'subcol':
+            li_elm.set('cnx-archive-uri', node['id'])
+        if node['shortId'] is not None:
+            li_elm.set('cnx-archive-shortid', node['shortId'])
         if 'contents' in node:
             elm = etree.SubElement(li_elm, list_type)
             html_listify(node['contents'], elm, extensions)
