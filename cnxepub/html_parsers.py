@@ -73,7 +73,7 @@ def _nav_to_tree(root):
         else:
             # It's a node and should only have an li.
             a = li.xpath('xhtml:a', namespaces=HTML_DOCUMENT_NAMESPACES)[0]
-            yield {'id': li.get('cnx-archive-uri', a.get('href')),
+            yield {'id': a.get('href'),
                    'shortid': li.get('cnx-archive-shortid'),
                    'title': _squash_to_text(a, remove_namespaces=True)}
 
