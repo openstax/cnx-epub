@@ -352,12 +352,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
             nav = unescape(f.read())
         expected_nav = (
-                u'<nav id="toc"><ol><li>'
-                u'<a href="{}">entrée</a>'
-                u'</li><li>'
-                u'<a href="{}">egress</a>'
-                u'</li></ol></nav>'.format(ingress_filename, egress_filename))
-        self.assertTrue(expected_nav in nav)
+            u'<nav id="toc"><ol><li cnx-archive-uri="ingress@draft">'
+            u'<a href="{}">entrée</a>'
+            u'</li><li cnx-archive-uri="egress@draft">'
+            u'<a href="{}">egress</a>'
+            u'</li></ol></nav>'.format(ingress_filename, egress_filename))
+        self.assertIn(expected_nav, nav)
 
         # Check that translucent is set
         self.assertTrue('<span data-type="binding" data-value="translucent"' in nav)
@@ -466,11 +466,11 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
             nav = unescape(f.read())
         expected_nav = (
-                u'<nav id="toc"><ol><li>'
-                u'<a href="{}">entrée</a>'
-                u'</li><li>'
-                u'<a href="{}">egress</a>'
-                u'</li></ol></nav>'.format(ingress_filename, egress_filename))
+            u'<nav id="toc"><ol><li cnx-archive-uri="ingress@draft">'
+            u'<a href="{}">entrée</a>'
+            u'</li><li cnx-archive-uri="egress@draft">'
+            u'<a href="{}">egress</a>'
+            u'</li></ol></nav>'.format(ingress_filename, egress_filename))
         self.assertIn(expected_nav, nav)
 
         # Check that translucent is set
@@ -600,15 +600,16 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         # Check the nav
         with open(os.path.join(epub_path, 'contents', navdoc_filename)) as f:
             nav = unescape(f.read())
+
         expected_nav = (
-                u'<nav id="toc"><ol><li>'
-                u'<a href="{}">entrée</a>'
-                u'</li><li>'
-                u'<a href="{}">egress</a>'
-                u'</li><li>'
-                u'<a href="{}">Pointer</a>'
-                u'</li></ol></nav>'.format(ingress_filename, egress_filename,
-                                           pointer_filename))
+            u'<nav id="toc"><ol><li cnx-archive-uri="ingress@draft">'
+            u'<a href="{}">entrée</a>'
+            u'</li><li cnx-archive-uri="egress@draft">'
+            u'<a href="{}">egress</a>'
+            u'</li><li cnx-archive-uri="pointer@1">'
+            u'<a href="{}">Pointer</a>'
+            u'</li></ol></nav>'.format(ingress_filename, egress_filename,
+                                       pointer_filename))
         self.assertTrue(expected_nav in nav)
 
         # Check the resources
