@@ -61,10 +61,9 @@ def _nav_to_tree(root):
                            if e.tag[e.tag.find('}')+1:] == 'ol'])
         if is_subtree:
             # It's a sub-tree and have a 'span' and 'ol'.
-            span = expath(li, 'xhtml:span')[0]
-            spanid = span.get('cnx-archive-uri') or 'subcol'
-            shortid = span.get('cnx-archive-shortid')
-            yield {'id': spanid,
+            itemid = li.get('cnx-archive-uri', 'subcol')
+            shortid = li.get('cnx-archive-shortid')
+            yield {'id': itemid,
                    # Title is wrapped in a span, div or some other element...
                    'title': _squash_to_text(expath(li, 'xhtml:*')[0],
                                             remove_namespaces=True),
@@ -75,6 +74,7 @@ def _nav_to_tree(root):
             # It's a node and should only have an li.
             a = li.xpath('xhtml:a', namespaces=HTML_DOCUMENT_NAMESPACES)[0]
             yield {'id': a.get('href'),
+                   'shortid': li.get('cnx-archive-shortid'),
                    'title': _squash_to_text(a, remove_namespaces=True)}
 
 
