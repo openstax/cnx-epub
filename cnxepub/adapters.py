@@ -6,14 +6,18 @@
 # See LICENCE.txt for details.
 # ###
 from __future__ import unicode_literals
-import os
+import base64
 import io
 import logging
 import mimetypes
+import os
+import uuid
+
 from copy import deepcopy
 
 import jinja2
 import lxml.html
+
 from lxml import etree
 
 from .epub import EPUB, Package, Item
@@ -401,18 +405,51 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
             ref_val = i.attrib['href']
             if ref_val in id_map:
                 target_page, target = id_map[ref_val]
-                target_id = target_page.id.split('@')[0]
                 if page == target_page:
-                    i.attrib['href'] = '#{}'.format(target)
-                elif not target:  # link to page
-                    i.attrib['href'] = '/contents/{}'.format(target_id)
+                        i.attrib['href'] = '#{}'.format(target)
                 else:
-                    i.attrib['href'] = '/contents/{}#{}'.format(
-                        target_id, target)
+                    target_id = target_page.id.split('@')[0]
+                    if not target:  # link to page
+                        i.attrib['href'] = '/contents/{}'.format(target_id)
+                    else:
+                        i.attrib['href'] = '/contents/{}#{}'.format(
+                            target_id, target)
             else:
                 logger.error('Bad href: {}'.format(ref_val))
 
         page.content = etree_to_content(content)
+
+    def _compute_id(p, elem, key):
+        """Compute id and shortid from parent uuid and child attr"""
+        p_ids = [p.id.split('@')[0]]
+        if 'cnx-archive-uri' in p.metadata and p.metadata['cnx-archive-uri']:
+            p_ids.insert(0, p.metadata['cnx-archive-uri'].split('@')[0])
+
+        for p_id in p_ids:
+            try:
+                p_uuid = uuid.UUID(p_id)
+                break
+            except ValueError:
+                pass
+        else:  # Punt - no parent uuid, make one up for child
+            return str(uuid.uuid4())
+
+        uuid_key = elem.get('data-uuid-key', elem.get('class', key))
+        return str(uuid.uuid5(p_uuid, uuid_key))
+
+    def _compute_shortid(ident_hash):
+        """Compute shortId from uuid or ident_hash"""
+        ver = None
+        if '@' in ident_hash:
+            (id_str, ver) = ident_hash.split('@')
+        else:
+            id_str = ident_hash
+        id_uuid = uuid.UUID(id_str)
+        short_id = base64.urlsafe_b64encode(id_uuid.bytes)[:8]
+        if ver:
+            return '@'.join((short_id, ver))
+        else:
+            return short_id
 
     # Adapt each <div data-type="unit|chapter|page|composite-page"> into
     # translucent binders, documents and composite documents
@@ -452,6 +489,17 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                 'page': Document,
                 'composite-page': CompositeDocument,
                 }[child.attrib['data-type']]
+            if not id_:
+                id_ = _compute_id(parent, child, metadata.get('title'))
+                metadata['cnx-archive-uri'] = id_
+
+            if ('cnx-archive-uri' in metadata and
+                    'cnx-archive-shortid' not in metadata):
+                metadata['cnx-archive-shortid'] = _compute_shortid(id_)
+
+            if not metadata.get('version') and parent.metadata.get('version'):
+                metadata['version'] = parent.metadata.get('version')
+
             document = model(id_, contents, metadata=metadata)
             parent.append(document)
 

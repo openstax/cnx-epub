@@ -89,7 +89,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
 
         from ..adapters import adapt_package
         binder = adapt_package(package)
-        self.assertEqual(binder.id, '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6')
+        self.assertEqual(binder.id, '9b0903d2-13c4-4ebe-9ffe-1ee79db28482')
         self.assertEqual(binder.ident_hash,
                          '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6')
         self.assertEqual(len(binder.resources), 1)

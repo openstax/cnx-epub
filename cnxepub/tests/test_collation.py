@@ -182,7 +182,8 @@ class CollateTestCase(BaseModelTestCase):
         binder = self.make_binder(
             '8d75ea29',
             metadata={'version': '3', 'title': 'Book One',
-                      'license_url': 'http://my.license'},
+                      'license_url': 'http://my.license',
+                      'cnx-archive-uri': 'bad183c3-8776-4a6d-bb02-3b11e0c26aaf'},
             nodes=[
                 self.make_document(
                     id="e78d4f90",
@@ -246,7 +247,7 @@ class CollateTestCase(BaseModelTestCase):
 
         # Check for the appended composite document
         self.assertEqual(len(collated_binder), 3)
-        self.assertEqual(collated_binder[2].id, None)
+        self.assertEqual(collated_binder[2].id, 'a9428a6c-5d31-5425-8335-8a2e780651e0')
         self.assertEqual(collated_binder[2].metadata['title'],
                          'Composite One')
 

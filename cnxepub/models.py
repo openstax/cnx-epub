@@ -405,6 +405,22 @@ class Binder(TranslucentBinder):
         self.resources = resources or []
 
     @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value):
+
+        if value and '@' in value:
+            self._id, self.metadata['version'] = value.split('@')
+        else:
+            self._id = value
+
+    @id.deleter
+    def id(self, value):
+        del self._id
+
+    @property
     def ident_hash(self):
         if self.id is not None:
             args = [self.id]
@@ -415,6 +431,14 @@ class Binder(TranslucentBinder):
         else:
             value = None
         return value
+
+    @ident_hash.setter
+    def ident_hash(self, value):
+
+        try:
+            self._id, self.metadata['version'] = value.split('@')
+        except ValueError:
+            raise ValueError("ident_hash requires a version", value)
 
     def get_uri(self, system, default=None):
         try:
@@ -436,7 +460,6 @@ class Document(object):
 
     def __init__(self, id, data, metadata=None, resources=None,
                  reference_resolver=None):
-        self.id = id
         self._xml = None
         if hasattr(data, 'read'):
             self.content = utf8(data.read())
@@ -445,6 +468,7 @@ class Document(object):
         self._references = _parse_references(self._xml)
         self.metadata = utf8(metadata or {})
         self.resources = resources or []
+        self.id = id
 
     def _content__get(self):
         """Produce the content from the data.
@@ -467,6 +491,22 @@ class Document(object):
                        _content__get.__doc__)
 
     @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value):
+
+        if value and '@' in value:
+            self._id, self.metadata['version'] = value.split('@')
+        else:
+            self._id = value
+
+    @id.deleter
+    def id(self, value):
+        del self._id
+
+    @property
     def ident_hash(self):
         if self.id is not None:
             args = [self.id]
@@ -477,6 +517,14 @@ class Document(object):
         else:
             value = None
         return value
+
+    @ident_hash.setter
+    def ident_hash(self, value):
+
+        try:
+            self._id, self.metadata['version'] = value.split('@')
+        except ValueError:
+            raise ValueError("ident_hash requires a version", value)
 
     def get_uri(self, system, default=None):
         try:
