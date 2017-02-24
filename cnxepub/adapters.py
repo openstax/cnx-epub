@@ -444,7 +444,12 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
             (id_str, ver) = ident_hash.split('@')
         else:
             id_str = ident_hash
-        id_uuid = uuid.UUID(id_str)
+        try:
+            id_uuid = uuid.UUID(id_str)
+        except ValueError:
+            # id is not a uuid, no shortid
+            return None
+
         short_id = base64.urlsafe_b64encode(id_uuid.bytes)[:8]
         if ver:
             return '@'.join((short_id, ver))
@@ -461,6 +466,15 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                         ).text_content().strip()
             metadata = parse_metadata(child)
             id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
+
+            if (metadata.get('cnx-archive-uri') and
+                    not metadata.get('cnx-archive-shortid')):
+                metadata['cnx-archive-shortid'] = \
+                        _compute_shortid(metadata['cnx-archive-uri'])
+
+            if not metadata.get('version') and parent.metadata.get('version'):
+                metadata['version'] = parent.metadata.get('version')
+
             shortid = metadata.get('cnx-archive-shortid')
             if id_ is None:
                 tbinder = TranslucentBinder(metadata={'title': title})
@@ -493,9 +507,10 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                 id_ = _compute_id(parent, child, metadata.get('title'))
                 metadata['cnx-archive-uri'] = id_
 
-            if ('cnx-archive-uri' in metadata and
-                    'cnx-archive-shortid' not in metadata):
-                metadata['cnx-archive-shortid'] = _compute_shortid(id_)
+            if (metadata.get('cnx-archive-uri') and
+                    not metadata.get('cnx-archive-shortid')):
+                metadata['cnx-archive-shortid'] = \
+                        _compute_shortid(metadata['cnx-archive-uri'])
 
             if not metadata.get('version') and parent.metadata.get('version'):
                 metadata['version'] = parent.metadata.get('version')

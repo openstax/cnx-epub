@@ -845,13 +845,13 @@ class HTMLAdaptationTestCase(unittest.TestCase):
 
         self.assertIn('<p id="1">Content moved from another page.</p>',
                       extra.content)
-        self.assertIn('Click <a href="/contents/extra#1">here</a>',
+        self.assertIn('Click <a href="/contents/9f7dce40-0de7-5a29-a416-a9cf8eedf4d4#1">here</a>',
                       chocolate.content)
         self.assertIn('<p id="summary0"> Pretend move of lemon summary</p>',
                       extra.content)
         self.assertIn('<p id="summary1"> Pretend move of chocolate summary</p>',
                       extra.content)
-        self.assertIn('<p id="myid">Be sure to read the <a href="/contents/extra#summary0">Summary for lemon</a></p>', lemon.content)
+        self.assertIn('<p id="myid">Be sure to read the <a href="/contents/9f7dce40-0de7-5a29-a416-a9cf8eedf4d4#summary0">Summary for lemon</a></p>', lemon.content)
 
     def test_fix_generated_ids_links_without_version(self):
         from ..adapters import adapt_single_html
