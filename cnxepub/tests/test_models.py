@@ -63,6 +63,16 @@ class ModelAttributesTestCase(BaseModelTestCase):
             binder.ident_hash = '67e4ag'
             self.assertContains(caughtexception, 'requires version')
 
+        del binder.id
+        with self.assertRaises(AttributeError) as caughtexception:
+            _ = binder.id
+            self.assertContains(caughtexception, 'object has no attribute')
+
+        binder.id = '456@2'
+        self.assertEqual(binder.id, '456')
+        self.assertEqual(binder.ident_hash, '456@2')
+        self.assertEqual(binder.metadata['version'], '2')
+
     def test_document_attribs(self):
         document = self.make_document('8d75ea29@3')
 
@@ -78,6 +88,16 @@ class ModelAttributesTestCase(BaseModelTestCase):
         with self.assertRaises(ValueError) as caughtexception:
             document.ident_hash = '67e4ag'
             self.assertContains(caughtexception, 'requires version')
+
+        del document.id
+        with self.assertRaises(AttributeError) as caughtexception:
+            _ = document.id
+            self.assertContains(caughtexception, 'object has no attribute')
+
+        document.id = '456@2'
+        self.assertEqual(document.id, '456')
+        self.assertEqual(document.ident_hash, '456@2')
+        self.assertEqual(document.metadata['version'], '2')
 
 
 class PrivateUtilitiesTestCase(unittest.TestCase):

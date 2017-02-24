@@ -417,7 +417,7 @@ class Binder(TranslucentBinder):
             self._id = value
 
     @id.deleter
-    def id(self, value):
+    def id(self):
         del self._id
 
     @property
@@ -503,7 +503,7 @@ class Document(object):
             self._id = value
 
     @id.deleter
-    def id(self, value):
+    def id(self):
         del self._id
 
     @property
