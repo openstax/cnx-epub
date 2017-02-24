@@ -14,8 +14,6 @@ try:
 except ImportError:
     import mock
 
-from lxml import etree
-
 
 here = os.path.abspath(os.path.dirname(__file__))
 TEST_DATA_DIR = os.path.join(here, 'data')
@@ -47,9 +45,64 @@ class BaseModelTestCase(unittest.TestCase):
         return Resource(*args, **kwargs)
 
 
+class ModelAttributesTestCase(BaseModelTestCase):
+
+    def test_binder_attribs(self):
+        binder = self.make_binder('8d75ea29@3')
+
+        self.assertEqual(binder.id, '8d75ea29')
+        self.assertEqual(binder.ident_hash, '8d75ea29@3')
+        self.assertEqual(binder.metadata['version'], '3')
+
+        binder.ident_hash = '67e4ag@4.5'
+        self.assertEqual(binder.id, '67e4ag')
+        self.assertEqual(binder.ident_hash, '67e4ag@4.5')
+        self.assertEqual(binder.metadata['version'], '4.5')
+
+        with self.assertRaises(ValueError) as caughtexception:
+            binder.ident_hash = '67e4ag'
+            self.assertContains(caughtexception, 'requires version')
+
+        del binder.id
+        with self.assertRaises(AttributeError) as caughtexception:
+            _ = binder.id
+            self.assertContains(caughtexception, 'object has no attribute')
+
+        binder.id = '456@2'
+        self.assertEqual(binder.id, '456')
+        self.assertEqual(binder.ident_hash, '456@2')
+        self.assertEqual(binder.metadata['version'], '2')
+
+    def test_document_attribs(self):
+        document = self.make_document('8d75ea29@3')
+
+        self.assertEqual(document.id, '8d75ea29')
+        self.assertEqual(document.ident_hash, '8d75ea29@3')
+        self.assertEqual(document.metadata['version'], '3')
+
+        document.ident_hash = '67e4ag@4.5'
+        self.assertEqual(document.id, '67e4ag')
+        self.assertEqual(document.ident_hash, '67e4ag@4.5')
+        self.assertEqual(document.metadata['version'], '4.5')
+
+        with self.assertRaises(ValueError) as caughtexception:
+            document.ident_hash = '67e4ag'
+            self.assertContains(caughtexception, 'requires version')
+
+        del document.id
+        with self.assertRaises(AttributeError) as caughtexception:
+            _ = document.id
+            self.assertContains(caughtexception, 'object has no attribute')
+
+        document.id = '456@2'
+        self.assertEqual(document.id, '456')
+        self.assertEqual(document.ident_hash, '456@2')
+        self.assertEqual(document.metadata['version'], '2')
+
+
 class PrivateUtilitiesTestCase(unittest.TestCase):
 
-    def test_sanatize_xml(self):
+    def test_sanitize_xml(self):
         from ..models import _sanitize_xml as target
         xml_namespaces = ' '.join([
             'xmlns:bib="http://bibtexml.sf.net/"',
@@ -117,7 +170,7 @@ class TreeUtilityTestCase(BaseModelTestCase):
                                     metadata={'version': '2',
                                               'title': "Document Three"})])]),
                 self.make_binder(
-                    None,
+                    '4e5390a5@2',
                     metadata={'title': "Part Three"},
                     nodes=[
                         self.make_binder(
@@ -162,7 +215,7 @@ class TreeUtilityTestCase(BaseModelTestCase):
                            'title': 'Document Three'}],
                       'title': 'Chapter Three'}],
                  'title': 'Part Two'},
-                {'id': 'subcol',
+                {'id': '4e5390a5@2',
                  'shortId': None,
                  'contents': [
                      {'id': 'subcol',
