@@ -713,8 +713,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                                      u'<span>&#12524;&#12514;&#12531;</span>',
                             },
                         {
-                            'id': 'subcol',
-                            'shortId': None,
+                            'id': '368a406a-11aa-4734-a0e3-6b9d649fd88f',
+                            'shortId': u'NopAahGq',
                             'title': '<span>Chapter</span> <span>2</span> '
                                      '<span>citrus</span>',
                             'contents': [
