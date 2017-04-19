@@ -230,18 +230,20 @@ def _node_to_model(tree_or_item, package, parent=None,
     if 'contents' in tree_or_item:
         # It is a binder.
         tree = tree_or_item
+        metadata = package.metadata.copy()
         if tree['id'] == lucent_id:
-            binder = TranslucentBinder(metadata={'title': tree['title']})
+            metadata['title'] = tree['title']
+            binder = TranslucentBinder(metadata)
         else:
             try:
                 package_item = package.grab_by_name(tree['id'])
                 binder = BinderItem(package_item, package)
             except KeyError:  # Translucent w/ id
-                binder = Binder(tree['id'],
-                                metadata={
-                                   'title': tree['title'],
-                                   'cnx-archive-uri': tree['id'],
-                                   'cnx-archive-shortid': tree['shortId']})
+                metadata.update({
+                   'title': tree['title'],
+                   'cnx-archive-uri': tree['id'],
+                   'cnx-archive-shortid': tree['shortId']})
+                binder = Binder(tree['id'], metadata=metadata)
         for item in tree['contents']:
             node = _node_to_model(item, package, parent=binder,
                                   lucent_id=lucent_id)
@@ -463,7 +465,8 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
 
         if data_type in ('unit', 'chapter', 'composite-chapter',
                          'page', 'composite-page'):
-            metadata = parse_metadata(child)
+            metadata = parse_metadata(
+                    child.xpath('./*[@data-type="metadata"]')[0])
             # Handle id and uuid from metadata
             id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
             if not id_:

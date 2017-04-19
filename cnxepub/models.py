@@ -131,8 +131,9 @@ def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):
     id = model.ident_hash
     if id is None and isinstance(model, TranslucentBinder):
         id = lucent_id
-    shortid = model.metadata.get('shortId')
-    title = title is not None and title or model.metadata.get('title')
+    md = model.metadata
+    shortid = md.get('shortId', md.get('cnx-archive-shortid'))
+    title = title is not None and title or md.get('title')
     tree = {'id': id, 'title': title, 'shortId': shortid}
     if hasattr(model, '__iter__'):
         contents = tree['contents'] = []
