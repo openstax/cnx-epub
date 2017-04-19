@@ -46,53 +46,47 @@ class ReconstituteTestCase(unittest.TestCase):
         self.assertEqual('Desserts', desserts.metadata['title'])
 
         self.assertEqual({
-            'id': 'book',
             'shortId': None,
-            'title': 'Desserts',
-            'contents': [
-                {
-                    'id': 'Fruity',
-                    'shortId': 'frt',
-                    'title': 'Fruity',
-                    'contents': [
-                        {
-                            'id': 'apple',
-                            'shortId': None,
-                            'title': 'Apple',
-                            },
-                        {
-                            'id': 'lemon',
-                            'shortId': None,
-                            'title': '<span>1.1</span> <span>|</span> '
-                                     '<span>&#12524;&#12514;&#12531;</span>',
-                            },
-                        {
-                            'id': 'subcol',
-                            'shortId': None,
-                            'title': '<span>Chapter</span> <span>2</span> '
-                                     '<span>citrus</span>',
-                            'contents': [
-                                {
-                                    'id': 'lemon',
-                                    'shortId': None,
-                                    'title': 'Lemon',
-                                    },
-                                ],
-                            },
+            'id': '00000000-0000-0000-0000-000000000000',
+            'contents': [{
+                'shortId': 'frt',
+                'id': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2',
+                'contents': [{
+                    'shortId': None,
+                    'id': 'apple',
+                    'title': 'Apple'
+                    },
+                    {
+                    'shortId': None,
+                    'id': 'lemon',
+                    'title': '<span>1.1</span> <span>|</span> <span>&#12524;&#12514;&#12531;</span>'
+                    },
+                    {
+                    'shortId': 'sfE7YYyV',
+                    'id': 'b1f13b61-8c95-5fbe-9112-46400b6dc8de',
+                    'contents': [{
+                        'shortId': None,
+                        'id': 'lemon',
+                        'title': 'Lemon'
+                        }
                         ],
+                    'title': '<span>Chapter</span> <span>2</span> <span>citrus</span>'
+                    }
+                    ],
+                'title': 'Fruity'
                     },
-                {
-                    'id': 'chocolate',
-                    'shortId': None,
-                    'title': u'チョコレート',
+                    {
+                        'shortId': None,
+                        'id': 'chocolate',
+                        'title': u'\u30c1\u30e7\u30b3\u30ec\u30fc\u30c8'
                     },
-                {
-                    'id': 'extra',
-                    'shortId': None,
-                    'title': 'Extra Stuff',
-                    },
-                ],
-            }, model_to_tree(desserts))
+                    {
+                        'shortId': None,
+                        'id': 'extra',
+                        'title': 'Extra Stuff'
+                    }
+                    ],
+                'title': 'Desserts'}, model_to_tree(desserts))
 
         base_metadata = {
             u'publishers': [],
@@ -145,7 +139,7 @@ class ReconstituteTestCase(unittest.TestCase):
         self.assertEqual(metadata, lemon_metadata)
 
         citrus = fruity[2]
-        self.assertEqual('TranslucentBinder', citrus.__class__.__name__)
+        self.assertEqual('Binder', citrus.__class__.__name__)
         self.assertEqual(citrus.metadata['title'], 'Citrus')
 
         self.assertEqual(lemon.metadata, citrus[0].metadata)

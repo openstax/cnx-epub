@@ -233,7 +233,7 @@ def _node_to_model(tree_or_item, package, parent=None,
         metadata = package.metadata.copy()
         if tree['id'] == lucent_id:
             metadata['title'] = tree['title']
-            binder = TranslucentBinder(metadata)
+            binder = TranslucentBinder(metadata=metadata)
         else:
             try:
                 package_item = package.grab_by_name(tree['id'])
