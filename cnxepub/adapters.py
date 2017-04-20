@@ -230,6 +230,7 @@ def _node_to_model(tree_or_item, package, parent=None,
     if 'contents' in tree_or_item:
         # It is a binder.
         tree = tree_or_item
+        # Grab the package metadata, so we have required license info
         metadata = package.metadata.copy()
         if tree['id'] == lucent_id:
             metadata['title'] = tree['title']
@@ -465,6 +466,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
 
         if data_type in ('unit', 'chapter', 'composite-chapter',
                          'page', 'composite-page'):
+            # metadata munging for all node types, in one place
             metadata = parse_metadata(
                     child.xpath('./*[@data-type="metadata"]')[0])
             # Handle id and uuid from metadata
@@ -484,6 +486,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
             shortid = metadata.get('cnx-archive-shortid')
 
         if data_type in ['unit', 'chapter', 'composite-chapter']:
+            # All the non-leaf node types
             title = lxml.html.HtmlElement(
                         child.xpath('*[@data-type="document-title"]',
                                     namespaces=HTML_DOCUMENT_NAMESPACES)[0]
@@ -497,6 +500,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                                     id_map=id_map, depth=depth+1)
             parent.append(binder)
         elif data_type in ['page', 'composite-page']:
+            # Leaf nodes
             nav_tree['contents'].pop(0)
             metadata_nodes = child.xpath("*[@data-type='metadata']",
                                          namespaces=HTML_DOCUMENT_NAMESPACES)
@@ -517,16 +521,17 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
 
             fix_generated_ids(document, id_map)  # also populates id_map
         elif data_type in ['metadata', None]:
+            # Expected non-nodal child types
             pass
         else:  # Fall through - child is not a defined type
-            raise AdaptationError
+            raise AdaptationError('Unknown data-type for child node')
 
     # Assign title overrides
     if len(parent) != len(title_overrides):
         logger.error('Skipping title overrides -'
                      'mismatched numbers: parent: {}, titles: {}'.format(
                          len(parent), len(title_overrides)))
-        raise AdaptationError
+        raise AdaptationError('Nav TOC does not match HTML structure')
 
     for i, node in enumerate(parent):
         parent.set_title_for_node(node, title_overrides[i])
