@@ -230,18 +230,21 @@ def _node_to_model(tree_or_item, package, parent=None,
     if 'contents' in tree_or_item:
         # It is a binder.
         tree = tree_or_item
+        # Grab the package metadata, so we have required license info
+        metadata = package.metadata.copy()
         if tree['id'] == lucent_id:
-            binder = TranslucentBinder(metadata={'title': tree['title']})
+            metadata['title'] = tree['title']
+            binder = TranslucentBinder(metadata=metadata)
         else:
             try:
                 package_item = package.grab_by_name(tree['id'])
                 binder = BinderItem(package_item, package)
             except KeyError:  # Translucent w/ id
-                binder = Binder(tree['id'],
-                                metadata={
-                                   'title': tree['title'],
-                                   'cnx-archive-uri': tree['id'],
-                                   'cnx-archive-shortid': tree['shortId']})
+                metadata.update({
+                   'title': tree['title'],
+                   'cnx-archive-uri': tree['id'],
+                   'cnx-archive-shortid': tree['shortId']})
+                binder = Binder(tree['id'], metadata=metadata)
         for item in tree['contents']:
             node = _node_to_model(item, package, parent=binder,
                                   lucent_id=lucent_id)
@@ -459,13 +462,18 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
     # Adapt each <div data-type="unit|chapter|page|composite-page"> into
     # translucent binders, documents and composite documents
     for child in elem.getchildren():
-        if child.attrib.get('data-type') in ['unit', 'chapter']:
-            title = lxml.html.HtmlElement(
-                        child.xpath('*[@data-type="document-title"]',
-                                    namespaces=HTML_DOCUMENT_NAMESPACES)[0]
-                        ).text_content().strip()
-            metadata = parse_metadata(child)
+        data_type = child.attrib.get('data-type')
+
+        if data_type in ('unit', 'chapter', 'composite-chapter',
+                         'page', 'composite-page'):
+            # metadata munging for all node types, in one place
+            metadata = parse_metadata(
+                    child.xpath('./*[@data-type="metadata"]')[0])
+            # Handle id and uuid from metadata
             id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
+            if not id_:
+                id_ = _compute_id(parent, child, metadata.get('title'))
+                metadata['cnx-archive-uri'] = id_
 
             if (metadata.get('cnx-archive-uri') and
                     not metadata.get('cnx-archive-shortid')):
@@ -476,20 +484,24 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                 metadata['version'] = parent.metadata.get('version')
 
             shortid = metadata.get('cnx-archive-shortid')
-            if id_ is None:
-                tbinder = TranslucentBinder(metadata={'title': title})
-            else:
-                tbinder = Binder(id_, metadata={'title': title,
-                                                'id': id_,
-                                                'shortId': shortid})
-            _adapt_single_html_tree(tbinder, child,
+
+        if data_type in ['unit', 'chapter', 'composite-chapter']:
+            # All the non-leaf node types
+            title = lxml.html.HtmlElement(
+                        child.xpath('*[@data-type="document-title"]',
+                                    namespaces=HTML_DOCUMENT_NAMESPACES)[0]
+                        ).text_content().strip()
+            binder = Binder(id_, metadata={'title': title,
+                                           'id': id_,
+                                           'shortId': shortid})
+            # Recurse
+            _adapt_single_html_tree(binder, child,
                                     nav_tree['contents'].pop(0),
                                     id_map=id_map, depth=depth+1)
-            parent.append(tbinder)
-        elif child.attrib.get('data-type') in ['page', 'composite-page']:
+            parent.append(binder)
+        elif data_type in ['page', 'composite-page']:
+            # Leaf nodes
             nav_tree['contents'].pop(0)
-            metadata = parse_metadata(child)
-            id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
             metadata_nodes = child.xpath("*[@data-type='metadata']",
                                          namespaces=HTML_DOCUMENT_NAMESPACES)
             for node in metadata_nodes:
@@ -503,29 +515,23 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                 'page': Document,
                 'composite-page': CompositeDocument,
                 }[child.attrib['data-type']]
-            if not id_:
-                id_ = _compute_id(parent, child, metadata.get('title'))
-                metadata['cnx-archive-uri'] = id_
-
-            if (metadata.get('cnx-archive-uri') and
-                    not metadata.get('cnx-archive-shortid')):
-                metadata['cnx-archive-shortid'] = \
-                        _compute_shortid(metadata['cnx-archive-uri'])
-
-            if not metadata.get('version') and parent.metadata.get('version'):
-                metadata['version'] = parent.metadata.get('version')
 
             document = model(id_, contents, metadata=metadata)
             parent.append(document)
 
             fix_generated_ids(document, id_map)  # also populates id_map
+        elif data_type in ['metadata', None]:
+            # Expected non-nodal child types
+            pass
+        else:  # Fall through - child is not a defined type
+            raise AdaptationError('Unknown data-type for child node')
 
     # Assign title overrides
     if len(parent) != len(title_overrides):
         logger.error('Skipping title overrides -'
                      'mismatched numbers: parent: {}, titles: {}'.format(
                          len(parent), len(title_overrides)))
-        raise AdaptationError
+        raise AdaptationError('Nav TOC does not match HTML structure')
 
     for i, node in enumerate(parent):
         parent.set_title_for_node(node, title_overrides[i])

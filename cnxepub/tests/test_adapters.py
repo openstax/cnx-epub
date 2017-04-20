@@ -57,7 +57,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
         expected_tree = {
             'id': '9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6',
             'title': 'Book of Infinity',
-            'shortId': None,
+            'shortId': u'mwkD0hPE@1.6',
             'contents': [
                 {'id': 'subcol',
                  'shortId': None,
@@ -65,7 +65,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
                  'contents': [
                      {'contents': [
                          {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
-                          'shortId': None, 'title': 'Document One'}],
+                          'shortId': u'541PkOB4@3', 'title': 'Document One'}],
                       'id': 'subcol',
                       'shortId': None,
                       'title': 'Chapter One'},
@@ -73,7 +73,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
                       'shortId': None,
                       'title': 'Chapter Two',
                       'contents': [{'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
-                                    'shortId': None, 'title': 'Document One (again)'}],
+                                    'shortId': u'541PkOB4@3', 'title': 'Document One (again)'}],
                       }]},
                 {'id': 'subcol',
                  'shortId': None,
@@ -84,7 +84,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
                       'title': 'Chapter Three',
                       'contents': [
                           {'id': 'e78d4f90-e078-49d2-beac-e95e8be70667@3',
-                            'shortId': None, 'title': 'Document One (...and again)'}]
+                            'shortId': u'541PkOB4@3', 'title': 'Document One (...and again)'}]
                       }]}]}
 
         from ..adapters import adapt_package
@@ -692,58 +692,57 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('Desserts', desserts.metadata['title'])
 
         self.assertEqual({
-            'id': 'book',
             'shortId': None,
-            'title': 'Desserts',
+            'id': '00000000-0000-0000-0000-000000000000',
             'contents': [
                 {
-                    'id': 'Fruity',
                     'shortId': 'frt',
-                    'title': 'Fruity',
+                    'id': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2',
                     'contents': [
                         {
+                            'shortId': None,
                             'id': 'apple',
-                            'shortId': None,
-                            'title': 'Apple',
-                            },
+                            'title': 'Apple'
+                        },
                         {
+                            'shortId': None,
                             'id': 'lemon',
-                            'shortId': None,
-                            'title': u'<span>1.1</span> <span>|</span> '
-                                     u'<span>&#12524;&#12514;&#12531;</span>',
-                            },
+                            'title': '<span>1.1</span> <span>|</span> <span>&#12524;&#12514;&#12531;</span>'
+                        },
+
                         {
-                            'id': 'subcol',
-                            'shortId': None,
-                            'title': '<span>Chapter</span> <span>2</span> '
-                                     '<span>citrus</span>',
+                            "shortId": "sfE7YYyV",
+                            "id": "b1f13b61-8c95-5fbe-9112-46400b6dc8de",
                             'contents': [
                                 {
-                                    'id': 'lemon',
                                     'shortId': None,
-                                    'title': 'Lemon',
-                                    },
-                                ],
-                            },
-                        ],
-                    },
+                                    'id': 'lemon',
+                                    'title': 'Lemon'
+                                }
+                            ],
+                            'title': '<span>Chapter</span> <span>2</span> <span>citrus</span>'
+                        }
+                    ],
+                    'title': 'Fruity'
+                },
                 {
+                    'shortId': None,
                     'id': 'chocolate',
-                    'shortId': None,
-                    'title': u'チョコレート',
-                    },
+                    'title': u'\u30c1\u30e7\u30b3\u30ec\u30fc\u30c8'
+                },
                 {
-                    'id': 'extra',
                     'shortId': None,
-                    'title': 'Extra Stuff',
-                    },
-                ],
+                    'id': 'extra',
+                    'title': 'Extra Stuff'
+                }
+            ],
+            'title': 'Desserts'
             }, model_to_tree(desserts))
 
         fruity = desserts[0]
         self.assertEqual('Binder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
-        self.assertEqual('Fruity', fruity.metadata['id'])
+        self.assertEqual('ec84e75d-9973-41f1-ab9d-1a3ebaef87e2', fruity.metadata['id'])
         self.assertEqual('frt', fruity.metadata['shortId'])
         self.assertEqual('Fruity', desserts.get_title_for_node(fruity))
 
@@ -778,7 +777,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                          fruity.get_title_for_node(lemon))
 
         citrus = fruity[2]
-        self.assertEqual('TranslucentBinder', citrus.__class__.__name__)
+        self.assertEqual('Binder', citrus.__class__.__name__)
         self.assertEqual(citrus.metadata['title'], 'Citrus')
 
         self.assertEqual(lemon.metadata, citrus[0].metadata)
@@ -819,6 +818,19 @@ class HTMLAdaptationTestCase(unittest.TestCase):
     def test_missing_title_override(self):
         """Throw error if override titles are missing."""
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-bad.xhtml')
+        from ..adapters import adapt_single_html
+        from ..models import model_to_tree
+
+        with open(page_path, 'r') as f:
+            html = f.read()
+
+        from ..adapters import AdaptationError
+        with self.assertRaises(AdaptationError) as caught_exception:
+            desserts = adapt_single_html(html)
+
+    def test_unknown_data_type(self):
+        """Throw error if unknown data-type in HTML"""
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-bad-type.xhtml')
         from ..adapters import adapt_single_html
         from ..models import model_to_tree
 
