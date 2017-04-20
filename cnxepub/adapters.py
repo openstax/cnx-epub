@@ -516,8 +516,10 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
             parent.append(document)
 
             fix_generated_ids(document, id_map)  # also populates id_map
-        else:  # Fall through - child is not a defined type FIXME warn?
+        elif data_type in ['metadata', None]:
             pass
+        else:  # Fall through - child is not a defined type
+            raise AdaptationError
 
     # Assign title overrides
     if len(parent) != len(title_overrides):

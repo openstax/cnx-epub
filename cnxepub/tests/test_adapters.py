@@ -828,6 +828,19 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         with self.assertRaises(AdaptationError) as caught_exception:
             desserts = adapt_single_html(html)
 
+    def test_unknown_data_type(self):
+        """Throw error if unknown data-type in HTML"""
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-bad-type.xhtml')
+        from ..adapters import adapt_single_html
+        from ..models import model_to_tree
+
+        with open(page_path, 'r') as f:
+            html = f.read()
+
+        from ..adapters import AdaptationError
+        with self.assertRaises(AdaptationError) as caught_exception:
+            desserts = adapt_single_html(html)
+
     def test_fix_generated_ids_in_composite_page(self):
         from ..adapters import adapt_single_html
 
