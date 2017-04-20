@@ -676,10 +676,13 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             self.apple.metadata['title'],
             u'<span>1.1</span> <span>|</span> <span>レモン</span>',
             '<span>Chapter</span> <span>2</span> <span>citrus</span>']
-        self.fruity = Binder('Fruity', [self.apple, self.lemon, self.citrus],
+        self.fruity = Binder('ec84e75d-9973-41f1-ab9d-1a3ebaef87e2', [self.apple, self.lemon, self.citrus],
                              metadata={'title': 'Fruity',
-                                       'cnx-archive-uri': 'Fruity',
-                                       'cnx-archive-shortid': 'frt'},
+                                       'cnx-archive-uri': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2',
+                                       'cnx-archive-shortid': 'frt',
+                                       'license_text': 'CC-By 4.0',
+                                       'license_url': 'http://creativecommons.org/licenses/by/4.0/',
+                                       },
                              title_overrides=title_overrides)
 
         metadata = self.base_metadata.copy()
@@ -701,7 +704,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             'Desserts', [self.fruity, self.chocolate, self.extra],
             metadata={'title': 'Desserts',
                       'license_url': 'http://creativecommons.org/licenses/by/4.0/',
-                      'license_text': 'CC-By 4.0'},
+                      'license_text': 'CC-By 4.0',
+                      'cnx-archive-uri': '00000000-0000-0000-0000-000000000000'},
             resources=[cover_png])
 
     def test_binder(self):
