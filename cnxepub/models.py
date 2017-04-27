@@ -423,7 +423,7 @@ class Binder(TranslucentBinder):
 
     @property
     def ident_hash(self):
-        if self.id is not None:
+        if self.id not in (None, TRANSLUCENT_BINDER_ID):
             args = [self.id]
             version = self.metadata.get('version')
             if version is not None:
