@@ -491,9 +491,11 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                         child.xpath('*[@data-type="document-title"]',
                                     namespaces=HTML_DOCUMENT_NAMESPACES)[0]
                         ).text_content().strip()
-            binder = Binder(id_, metadata={'title': title,
-                                           'id': id_,
-                                           'shortId': shortid})
+            metadata.update({'title': title,
+                             'id': id_,
+                             'shortId': shortid,
+                             'type': data_type})
+            binder = Binder(id_, metadata=metadata)
             # Recurse
             _adapt_single_html_tree(binder, child,
                                     nav_tree['contents'].pop(0),
