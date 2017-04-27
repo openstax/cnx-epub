@@ -73,7 +73,7 @@ class DocumentSummaryFormatter(object):
 
     def __bytes__(self):
         # try to make sure summary is wrapped in a tag
-        summary = self.document.metadata['summary']
+        summary = self.document.metadata.get('summary', '')
         try:
             etree.fromstring(summary)
             html = '{}'.format(summary)
