@@ -466,7 +466,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
         itemtype="http://schema.org/Book"
         >
 
-    <title>{{ metadata['title']|escape }}</title>
+    <title>{{ metadata['title'] }}</title>
 
     {# TODO Include this based on the feature being present #}
     <!-- These are for discoverability of accessible content. -->
@@ -486,7 +486,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
         >
     <div data-type="metadata">
       <h1 data-type="document-title" itemprop="name">{{ \
-              metadata['title']|escape }}</h1>
+              metadata['title'] }}</h1>
       <span data-type="document" data-value="pointer" />
       {% if metadata.get('cnx-archive-uri') %}
       <span data-type="cnx-archive-uri" data-value="{{ \
@@ -500,7 +500,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
     <div>
       <p>
         Click <a href="{{ metadata['url'] }}">here</a> to read {{ \
-            metadata['title']|escape }}.
+            metadata['title'] }}.
       </p>
     </div>
   </body>
@@ -525,7 +525,7 @@ HTML_DOCUMENT = """\
         itemtype="http://schema.org/Book"
         >
 
-    <title>{{ metadata['title']|escape }}</title>
+    <title>{{ metadata['title'] }}</title>
     <meta itemprop="inLanguage"
           data-type="language"
           content="{{ metadata['language'] }}"
@@ -558,7 +558,7 @@ HTML_DOCUMENT = """\
         >
     <div data-type="metadata">
       <h1 data-type="document-title" itemprop="name">{{ \
-              metadata['title']|escape }}</h1>
+              metadata['title'] }}</h1>
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
