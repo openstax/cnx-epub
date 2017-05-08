@@ -17,7 +17,6 @@ import jinja2
 import lxml.html
 from lxml import etree
 from copy import deepcopy
-import memcache
 
 import requests
 
@@ -336,17 +335,17 @@ def _fix_namespaces(html):
     return etree.tostring(let, pretty_print=True, encoding='utf-8')
 
 
-def _replace_tex_math(node, mml_url, retry=0):
+def _replace_tex_math(node, mml_url, mc_client=None, retry=0):
     """call mml-api service to replace TeX math in body of node with mathml"""
 
     math = node.attrib['data-math'] or node.text
     if math is None:
         return None
 
-    mc = memcache.Client(['127.0.0.1:11211'], debug=0)
-    math_key = hashlib.md5(math.encode('utf-8')).hexdigest()
-
-    eq = json.loads(mc.get(math_key) or '{}')
+    eq = {}
+    if mc_client:
+        math_key = hashlib.md5(math.encode('utf-8')).hexdigest()
+        eq = json.loads(mc_client.get(math_key) or '{}')
 
     if not eq:
         res = requests.post(mml_url, {'math': math.encode('utf-8'),
@@ -354,7 +353,8 @@ def _replace_tex_math(node, mml_url, retry=0):
                                       'mml': 'true'})
         if res:  # Non-error response from requests
             eq = res.json()
-            mc.set(math_key, res.text)
+            if mc_client:
+                mc_client.set(math_key, res.text)
 
     if 'components' in eq and len(eq['components']) > 0:
         for component in eq['components']:
@@ -371,21 +371,23 @@ def _replace_tex_math(node, mml_url, retry=0):
                        '{}'.format(json.dumps(eq, indent=4)))
         retry += 1
         if retry < 2:
-            return _replace_tex_math(node, mml_url, retry)
+            return _replace_tex_math(node, mml_url, mc_client, retry)
 
     return None
 
 
-def exercise_callback_factory(match, url_template, token=None, mml_url=None):
+def exercise_callback_factory(match, url_template,
+                              mc_client=None, token=None, mml_url=None):
     """Create a callback function to replace an exercise by fetching from
     a server."""
 
     def _replace_exercises(elem):
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
-        mc = memcache.Client(['127.0.0.1:11211'], debug=0)
-
-        exercise = json.loads(mc.get(item_code + (token or '')) or '{}')
+        exercise = {}
+        if mc_client:
+            mc_key = item_code + (token or '')
+            exercise = json.loads(mc_client.get(mc_key) or '{}')
 
         if not exercise:
             if token:
@@ -397,7 +399,8 @@ def exercise_callback_factory(match, url_template, token=None, mml_url=None):
                 # grab the json exercise, run it through Jinja2 template,
                 # replace element w/ it
                 exercise = res.json()
-                mc.set(item_code + (token or ''), res.text)
+                if mc_client:
+                    mc_client.set(mc_key, res.text)
 
         if exercise['total_count'] == 0:
             logger.warning('MISSING EXERCISE: {}'.format(url))
@@ -417,7 +420,7 @@ def exercise_callback_factory(match, url_template, token=None, mml_url=None):
 
             if mml_url:
                 for node in nodes.xpath('//*[@data-math]'):
-                    mathml = _replace_tex_math(node, mml_url)
+                    mathml = _replace_tex_math(node, mml_url, mc_client)
                     if mathml is not None:
                         mparent = node.getparent()
                         mparent.replace(node, mathml)
