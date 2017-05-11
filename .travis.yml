@@ -3,6 +3,8 @@ sudo: false
 python:
   - "2.7"
   - "3.5"
+services:
+  - memcached
 before_install:
   # Install the coverage utility and coveralls reporting utility
   - pip install -U pip
