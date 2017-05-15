@@ -9,6 +9,7 @@ from __future__ import print_function
 
 import argparse
 import logging
+import memcache
 import sys
 
 from lxml import etree
@@ -23,7 +24,7 @@ MATHJAX_URL = 'https://cdn.mathjax.org/mathjax/{mathjax_version}/'\
 DEFAULT_MATHJAX_VER = 'latest'
 DEFAULT_EXERCISES_HOST = 'exercises.openstax.org'
 DEFAULT_MATHMLCLOUD_URL = 'http://mathmlcloud.cnx.org:1337/equation/'
-
+DEFAULT_MEMCACHE_SRVR = 'localhost:11211'
 
 parts = ['page', 'chapter', 'unit', 'book', 'series']
 partcount = {}
@@ -92,6 +93,10 @@ def main(argv=None):
     parser.add_argument('-n', "--no-network", action='store_true',
                         help="Do not use network access "
                         "- no exercise or math conversion")
+    parser.add_argument('-c', "--memcache-server", const=DEFAULT_MEMCACHE_SRVR,
+                        metavar="memcache_server", nargs="?",
+                        help="Retrieve exercises and math from this "
+                        "memcache server - defaults to localhost")
     parser.add_argument('-x', "--exercise_host",
                         const=DEFAULT_EXERCISES_HOST,
                         metavar="exercise_host", nargs="?",
@@ -126,12 +131,15 @@ def main(argv=None):
     exercise_host = args.exercise_host or DEFAULT_EXERCISES_HOST
     exercise_token = args.exercise_token
     mml_url = args.mathmlcloud_url or DEFAULT_MATHMLCLOUD_URL
+    memcache_server = args.memcache_server or DEFAULT_MEMCACHE_SRVR
     if not args.no_network:
+        mc_client = memcache.Client([memcache_server], debug=0)
         exercise_url = \
-                'https://%s/api/exercises?q=tag:{itemCode}' % (exercise_host)
+            'https://%s/api/exercises?q=tag:{itemCode}' % (exercise_host)
         exercise_match = '#ost/api/ex/'
         includes = [exercise_callback_factory(exercise_match,
                                               exercise_url,
+                                              mc_client,
                                               exercise_token,
                                               mml_url)]
     else:
