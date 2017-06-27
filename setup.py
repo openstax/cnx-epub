@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
+import versioneer
 from setuptools import setup, find_packages
 
 
@@ -35,7 +36,7 @@ console_scripts = [
 
 setup(
     name='cnx-epub',
-    version='0.12.0',
+    version=versioneer.get_version(),
     author='Connexions team',
     author_email='info@cnx.org',
     url="https://github.com/connexions/cnx-epub",
@@ -46,6 +47,7 @@ setup(
     extras_require=extras_require,
     packages=find_packages(),
     include_package_data=True,
+    cmdclass=versioneer.get_cmdclass(),
     entry_points={
         'console_scripts': console_scripts,
         },

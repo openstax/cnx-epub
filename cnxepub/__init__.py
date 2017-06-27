@@ -9,3 +9,7 @@ from .epub import *
 from .formatters import *
 from .models import *
 from .adapters import *
+
+from ._version import get_versions
+__version__ = get_versions()['version']
+del get_versions
