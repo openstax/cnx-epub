@@ -1,2 +1,4 @@
 include *.txt *.rst
 recursive-include cnxepub/tests/data *.*
+include versioneer.py
+include cnxepub/_version.py
