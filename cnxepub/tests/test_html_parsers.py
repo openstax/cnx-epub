@@ -61,6 +61,6 @@ class HTMLParsingTestCase(unittest.TestCase):
             'derived_from_uri': 'http://example.org/contents/id@ver',
             'derived_from_title': 'Wild Grains and Warted Feet',
             'print_style': '* print style *',
-            'language': None,
+            'language': 'en',
             }
         self.assertEqual(metadata, expected_metadata)

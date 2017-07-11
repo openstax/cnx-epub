@@ -65,7 +65,7 @@ def _nav_to_tree(root):
             shortid = li.get('cnx-archive-shortid')
             yield {'id': itemid,
                    # Title is wrapped in a span, div or some other element...
-                   'title': _squash_to_text(expath(li, 'xhtml:*')[0],
+                   'title': _squash_to_text(expath(li, '*')[0],
                                             remove_namespaces=True),
                    'shortId': shortid,
                    'contents': [x for x in _nav_to_tree(li)],
@@ -86,7 +86,7 @@ def parse_metadata(html):
 
 def parse_resources(html):
     """Return a list of resource names found in the html metadata section."""
-    xpath = '//xhtml:*[@data-type="resources"]//xhtml:li/xhtml:a'
+    xpath = '//*[@data-type="resources"]//xhtml:li/xhtml:a'
     for resource in html.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
         yield {
             'id': resource.get('href'),
@@ -141,7 +141,7 @@ class DocumentMetadataParser:
 
     @property
     def title(self):
-        items = self.parse('.//xhtml:*[@data-type="document-title"]/text()')
+        items = self.parse('.//*[@data-type="document-title"]/text()')
         try:
             value = items[0]
         except IndexError:
@@ -150,7 +150,7 @@ class DocumentMetadataParser:
 
     @property
     def summary(self):
-        items = self.parse('.//xhtml:*[@data-type="description"]')
+        items = self.parse('.//*[@data-type="description"]')
         try:
             description = items[0]
             value = _squash_to_text(description).encode('utf-8')
@@ -178,9 +178,13 @@ class DocumentMetadataParser:
 
     @property
     def language(self):
-        items = self.parse('.//xhtml:*[@data-type="language"]/@content')
+        # look for lang attribute or schema.org meta tag
+        items = self.parse('ancestor-or-self::*/@lang'
+                           ' | ancestor-or-self::*/*'
+                           '[@data-type="language"]/@content'
+                           )
         try:
-            value = items[0]
+            value = items[-1]  # nodes returned in tree order, we want nearest
         except IndexError:
             value = None
         return value
@@ -197,18 +201,34 @@ class DocumentMetadataParser:
 
     @property
     def license_url(self):
-        items = self.parse('.//xhtml:*[@data-type="license"]/@href')
+        # Three cases for location of metadata stanza:
+        #  1. direct child of current node
+        #  2. direct child of any ancestor
+        #  3. Top of book (occurs when fetching from root)
+        items = self.parse('ancestor-or-self::*/*[@data-type="metadata"]//*'
+                           '[@data-type="license"]/@href'
+                           ' | /xhtml:html/xhtml:body/*'
+                           '[@data-type="metadata"]//*'
+                           '[@data-type="license"]/@href'
+                           )
+
         try:
-            value = items[0]
+            value = items[-1]  # doc order, want lowest (nearest)
         except IndexError:
             value = None
         return value
 
     @property
     def license_text(self):
-        items = self.parse('.//xhtml:*[@data-type="license"]/text()')
+        # Same as license_url
+        items = self.parse('ancestor-or-self::*/*[@data-type="metadata"]//*'
+                           '[@data-type="license"]/text()'
+                           ' | /xhtml:html/xhtml:body/*'
+                           '[@data-type="metadata"]//*'
+                           '[@data-type="license"]/text()'
+                           )
         try:
-            value = items[0]
+            value = items[-1]
         except IndexError:
             value = None
         return value
