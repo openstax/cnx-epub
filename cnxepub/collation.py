@@ -51,7 +51,7 @@ def reconstitute(html):
     return adapt_single_html(xhtml)
 
 
-def collate(binder, ruleset="ruleset.css", includes=None):
+def collate(binder, ruleset=None, includes=None):
     """Given a ``Binder`` as ``binder``, collate the content into a new set
     of models.
     Returns the collated binder.
@@ -61,15 +61,11 @@ def collate(binder, ruleset="ruleset.css", includes=None):
     raw_html = io.BytesIO(bytes(html_formatter))
     collated_html = io.BytesIO()
 
-    try:
-        ruleset_resource = [r for r in binder.resources
-                            if r.filename == ruleset][0]
-    except IndexError:
+    if ruleset is None:
         # No ruleset found, so no cooking necessary.
         return binder
 
-    with ruleset_resource.open() as ruleset:
-        easybake(ruleset.read(), raw_html, collated_html)
+    easybake(ruleset, raw_html, collated_html)
 
     collated_html.seek(0)
     collated_binder = reconstitute(collated_html)

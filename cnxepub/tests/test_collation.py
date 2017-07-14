@@ -237,7 +237,8 @@ class CollateTestCase(BaseModelTestCase):
 
         with mock.patch('cnxepub.collation.easybake') as easybake:
             easybake.side_effect = mock_easybake
-            collated_binder = self.target(binder)
+            fake_ruleset = 'div::after {contents: "test"}'
+            collated_binder = self.target(binder, fake_ruleset)
 
         # Check for the appended composite document
         self.assertEqual(len(collated_binder), 3)
@@ -285,7 +286,7 @@ class CollateTestCase(BaseModelTestCase):
                               'license_url': 'http://my.license'})])
 
         # Append a ruleset to the binder.
-        ruleset = io.BytesIO(b"""\
+        ruleset_bytes = b"""\
 div[data-type='page'] > div[data-type='metadata'] {
   copy-to: eob-all
 }
@@ -330,12 +331,14 @@ nav#toc:pass(30)::after {
   content: pending(eob-toc);
   container: ol;
 }
-""")
-        resource = self.make_resource('ruleset', ruleset, 'text/css',
+"""
+        resource = self.make_resource('ruleset',
+                                      io.BytesIO(ruleset_bytes),
+                                      'text/css',
                                       filename='ruleset.css')
         binder.resources.append(resource)
 
-        collated_binder = self.target(binder)
+        collated_binder = self.target(binder, ruleset_bytes)
 
         # Check for the appended composite document
         self.assertEqual(len(collated_binder), 3)
