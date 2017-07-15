@@ -325,6 +325,7 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
             'license_url': 'http://creativecommons.org/licenses/by/4.0/',
             'summary': "<p>summary</p>",
             'version': 'draft',
+            'language': 'en'
             }
 
         # Build test document.
@@ -400,6 +401,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
         'license_url': 'http://creativecommons.org/licenses/by/4.0/',
         'summary': "<p>summary</p>",
         'version': 'draft',
+        'language': 'en'
         }
 
     maxDiff = None
@@ -480,6 +482,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
             'title': self.base_metadata['title'],
             'license_url': self.base_metadata['license_url'],
             'license_text': self.base_metadata['license_text'],
+            'language': self.base_metadata['language']
             })
 
         metadata = self.base_metadata.copy()
@@ -708,7 +711,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             metadata={'title': 'Desserts',
                       'license_url': 'http://creativecommons.org/licenses/by/4.0/',
                       'license_text': 'CC-By 4.0',
-                      'cnx-archive-uri': '00000000-0000-0000-0000-000000000000'},
+                      'cnx-archive-uri': '00000000-0000-0000-0000-000000000000',
+                      'language': 'en'},
             resources=[cover_png])
 
     def test_binder(self):

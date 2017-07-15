@@ -539,6 +539,7 @@ HTML_DOCUMENT = """\
       xmlns:mod="http://cnx.rice.edu/#moduleIds"
       xmlns:md="http://cnx.rice.edu/mdml"
       xmlns:c="http://cnx.rice.edu/cnxml"
+      lang="{{ metadata['language'] }}"
       >
   <head itemscope="itemscope"
         itemtype="http://schema.org/Book"
