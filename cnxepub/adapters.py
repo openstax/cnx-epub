@@ -411,12 +411,12 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                 if page == target_page:
                         i.attrib['href'] = '#{}'.format(target)
                 else:
-                    target_id = target_page.id.split('@')[0]
+                    # target_id = target_page.id.split('@')[0]
                     if not target:  # link to page
-                        i.attrib['href'] = '/contents/{}'.format(target_id)
+                        i.attrib['href'] = '/contents/{}.xhtml'.format(target_page.id)
                     else:
-                        i.attrib['href'] = '/contents/{}#{}'.format(
-                            target_id, target)
+                        i.attrib['href'] = '/contents/{}.xhtml#{}'.format(
+                            target_page.id, target)
             else:
                 logger.error('Bad href: {}'.format(ref_val))
 

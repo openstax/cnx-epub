@@ -756,7 +756,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, apple_metadata)
         self.assertIn('<p id="74606">'
-                      '<a href="/contents/lemon">Link to lemon</a>. '
+                      '<a href="/contents/lemon@draft.xhtml">Link to lemon</a>. '
                       'Here are some examples:</p>',
                       apple.content)
         self.assertEqual('Apple', fruity.get_title_for_node(apple))
