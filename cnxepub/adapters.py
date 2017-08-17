@@ -158,6 +158,7 @@ def _make_package(binder):
                 is_navigation=True, properties=['nav'])
     items.append(item)
     resources = {}
+    # Need for making refs to other page files - named w/ ident_hash - uuid@ver
     page_map = {doc.id: doc.ident_hash for doc in flatten_to_documents(binder)}
     # Roll through the model list again, making each one an item.
     for model in flatten_model(binder):
@@ -195,7 +196,9 @@ def _make_package(binder):
                 if resource:
                     reference.bind(resource, '../resources/{}')
                 else:
+                    # If an internal link to another page, see if in this book
                     if reference.uri.startswith('/contents'):
+                        # remove web-path component, as added in fix_links
                         page_uuid = reference.uri.split('/')[2]
                         if page_uuid in page_map:
                             new_uri = '{}.xhtml'.format(page_map[page_uuid])
