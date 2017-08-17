@@ -132,7 +132,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
         my_page_index = item_names.index(
                 'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml')
         my_page = package2[my_page_index].data.read()
-        self.assertIn('href="e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml"',
+        self.assertIn(b'href="e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml"',
                       my_page)
 
     def test_to_translucent_binder(self):
