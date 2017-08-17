@@ -158,6 +158,7 @@ def _make_package(binder):
                 is_navigation=True, properties=['nav'])
     items.append(item)
     resources = {}
+    page_map = {doc.id: doc.ident_hash for doc in flatten_to_documents(binder)}
     # Roll through the model list again, making each one an item.
     for model in flatten_model(binder):
         for resource in getattr(model, 'resources', []):
@@ -193,6 +194,15 @@ def _make_package(binder):
                 resource = resources.get(filename)
                 if resource:
                     reference.bind(resource, '../resources/{}')
+                else:
+                    if reference.uri.startswith('/contents'):
+                        page_uuid = reference.uri.split('/')[2]
+                        if page_uuid in page_map:
+                            new_uri = '{}.xhtml'.format(page_map[page_uuid])
+                            if reference.uri_parts.fragment:
+                                new_uri += '#{}'.format(
+                                        reference.uri_parts.fragment)
+                            reference.uri = new_uri
 
         complete_content = bytes(HTMLFormatter(model))
         item = Item(''.join([model.ident_hash, extensions[model.id]]),
