@@ -107,6 +107,34 @@ class EPUBAdaptationTestCase(unittest.TestCase):
         self.assertEqual(tree, expected_tree)
         self.assertEqual(package.metadata['publication_message'], u'Nueva Versión')
 
+    def test_make_package(self):
+        """Adapts a ``Package`` to a ``Binder`` and back to a ``Package``.
+        """
+        # Easiest way to test this is using the ``model_to_tree`` utility
+        # to analyze the structural equality.
+        package_filepath = os.path.join(
+            TEST_DATA_DIR, 'book',
+            "9b0903d2-13c4-4ebe-9ffe-1ee79db28482@1.6.opf")
+        package = self.make_package(package_filepath)
+
+        from ..adapters import adapt_package, _make_package
+        binder = adapt_package(package)
+        package2 = _make_package(binder)
+
+        # Now to check the package TODO need more tests
+
+        self.assertEqual(5, len(package2))
+        item_names = [i.name for i in package2]
+        self.assertIn('e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml',
+                      item_names)
+
+        # Check for link rewriting
+        my_page_index = item_names.index(
+                'e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml')
+        my_page = package2[my_page_index].data.read()
+        self.assertIn('href="e78d4f90-e078-49d2-beac-e95e8be70667@3.xhtml"',
+                      my_page)
+
     def test_to_translucent_binder(self):
         """Adapts a ``Package`` to a ``TranslucentBinder``.
         Translucent binders are native object representations of data,
@@ -234,7 +262,6 @@ class EPUBAdaptationTestCase(unittest.TestCase):
 
         resource_filepath = os.path.join(TEST_DATA_DIR, 'loose-pages',
                                          'resources', 'openstax.png')
-        from ..models import Resource
         package.grab_by_name.side_effect = [
             self.make_item(resource_filepath, media_type='image/png'),
             ]
@@ -824,7 +851,6 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         """Throw error if override titles are missing."""
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-bad.xhtml')
         from ..adapters import adapt_single_html
-        from ..models import model_to_tree
 
         with open(page_path, 'r') as f:
             html = f.read()
@@ -837,7 +863,6 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         """Throw error if unknown data-type in HTML"""
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-bad-type.xhtml')
         from ..adapters import adapt_single_html
-        from ..models import model_to_tree
 
         with open(page_path, 'r') as f:
             html = f.read()
