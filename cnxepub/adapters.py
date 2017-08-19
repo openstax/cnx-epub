@@ -199,7 +199,7 @@ def _make_package(binder):
                     # If an internal link to another page, see if in this book
                     if reference.uri.startswith('/contents'):
                         # remove web-path component, as added in fix_links
-                        page_uuid = reference.uri.split('/')[2]
+                        page_uuid = reference.uri_parts.path.split('/')[2]
                         if page_uuid in page_map:
                             new_uri = '{}.xhtml'.format(page_map[page_uuid])
                             if reference.uri_parts.fragment:
