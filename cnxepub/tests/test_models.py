@@ -129,6 +129,11 @@ class PrivateUtilitiesTestCase(unittest.TestCase):
         xml = target(content)
         self.assertEqual(xml, 'aaa bbb')
 
+        # Sanitize content with recover=False
+        content = '<img src="aaa_bbb.png"/>'
+        xml = target(content, recover=False)
+        self.assertEqual(xml, '<img src="aaa_bbb.png"/>')
+
 
 class TreeUtilityTestCase(BaseModelTestCase):
 

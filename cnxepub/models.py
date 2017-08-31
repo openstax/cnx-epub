@@ -52,7 +52,6 @@ ATTRIBUTED_ROLE_KEYS = (
 XML_WRAPPER = """\
 <div
   xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:bib="http://bibtexml.sf.net/"
   xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
   xmlns:epub="http://www.idpf.org/2007/ops"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -83,9 +82,9 @@ def utf8(item):
         return item
 
 
-def _sanitize_xml(raw_xml):
+def _sanitize_xml(raw_xml, recover=True):
     """Wraps the XML and sanitizes the namespaces."""
-    xml_parser = etree.XMLParser(ns_clean=True, recover=True)
+    xml_parser = etree.XMLParser(ns_clean=True, recover=recover)
     elms = lxml.html.fragments_fromstring(raw_xml)
     # If the raw_xml starts with untagged content, it will be parsed
     # to a string rather than an Element instance.
