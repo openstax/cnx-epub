@@ -1,4 +1,16 @@
-0.x
+.. Use the following to start a new version entry:
+
+   |version|
+   ----------------------
+
+   - feature message
+
+0.11.0
+------
+
+- (unknown?)
+
+0.?
 ---
 
 - Added document parsing code to extract metadata and create navigation trees.
