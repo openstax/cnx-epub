@@ -5,6 +5,45 @@
 
    - feature message
 
+0.12.0
+------
+
+- Remove extra xmlns:bib in sanitize xml XML_WRAPPER (#126)
+- Add language metadata to markup (#122)
+- Explicitly pass in recipe for baking (#121)
+- Use a memcache client in the exercises callback function (#118)
+- Don't escape html titles - they may contain needed markup
+  and we've sanitized them coming in from the public already (#116)
+- Fix summary assignment when None has been stored
+- Handle chapter metadata after baking (#114 #115)
+- Add a new composite-chapters type (#113)
+- Disallow version in model.id, split to id and metadata["version"] (#111)
+- Change how ids are encoded in nav, to ease parsing and ruleset gen (#110)
+- Fix to require a license for valid conversion from single html (#109)
+- Maintain ids through adapting single html process (#109)
+- Add shortId to models (#109)
+- Add optional Id for TranslucentBinders (#109)
+- Handle missing exercises, an inaccessible mathmlcloud and bad mathml (#108)
+- Add option to copy resources from an input epub to another format (#107)
+- Add a default mathmlcloud URL (#105)
+- Handle shortid as well as fullid in metadata (#106)
+- Correct mathml insert to include the elements 'tail' text (#102)
+- Convert math to mathml using the exercises callback (#101)
+- Fix to output xhtml rather than html formatted html5 (#100)
+- Add exercises insert callback, and single-html script option to use it (#97)
+- Make summary/description optional when buidling the single-html (#95)
+- Add callback feature to extend collation procedure (#96)
+- Cleanup namespaces on output (#94)
+- Log bad links during single html link fixing (#93)
+- Rewrite every href that resolves inside the book (#92)
+- Fix TransparentBinder title where the element may have no text (#91)
+- Fix code that converts #<page-id> to /contents/<page-id> (#90)
+- Fix links to elements that were moved to another page after collation (#89)
+- Convert intra book links during single html reconstitution (#86)
+- Fix breakage of id-adding xpaths and tests (#85)
+- Fix archor reference links that point to other locations in a book (#84)
+- Correct conditional namespace usage (#82)
+
 0.11.0
 ------
 
