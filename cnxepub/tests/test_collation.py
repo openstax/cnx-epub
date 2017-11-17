@@ -47,26 +47,26 @@ class ReconstituteTestCase(unittest.TestCase):
 
         self.assertEqual({
             'shortId': None,
-            'id': '00000000-0000-0000-0000-000000000000',
+            'id': '00000000-0000-0000-0000-000000000000@1.3',
             'contents': [{
                 'shortId': 'frt',
-                'id': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2',
+                'id': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2@1.3',
                 'contents': [{
                     'shortId': None,
-                    'id': 'apple',
+                    'id': 'apple@1.3',
                     'title': 'Apple'
                     },
                     {
                     'shortId': None,
-                    'id': 'lemon',
+                    'id': 'lemon@1.3',
                     'title': '<span>1.1</span> <span>|</span> <span>&#12524;&#12514;&#12531;</span>'
                     },
                     {
                     'shortId': 'sfE7YYyV',
-                    'id': 'b1f13b61-8c95-5fbe-9112-46400b6dc8de',
+                    'id': 'b1f13b61-8c95-5fbe-9112-46400b6dc8de@1.3',
                     'contents': [{
                         'shortId': None,
-                        'id': 'lemon',
+                        'id': 'lemon@1.3',
                         'title': 'Lemon'
                         }
                         ],
@@ -77,7 +77,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     },
                     {
                         'shortId': None,
-                        'id': 'chocolate',
+                        'id': 'chocolate@1.3',
                         'title': u'\u30c1\u30e7\u30b3\u30ec\u30fc\u30c8'
                     },
                     {
@@ -112,6 +112,7 @@ class ReconstituteTestCase(unittest.TestCase):
             u'cnx-archive-shortid': None,
             u'derived_from_title': None,
             u'derived_from_uri': None,
+            u'version': None,
             }
 
         fruity = desserts[0]
@@ -122,6 +123,7 @@ class ReconstituteTestCase(unittest.TestCase):
         self.assertEqual('Document', apple.__class__.__name__)
         metadata = base_metadata.copy()
         metadata['title'] = 'Apple'
+        metadata['version'] = '1.3'
         apple_metadata = apple.metadata.copy()
         summary = etree.fromstring(apple_metadata.pop('summary'))
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
@@ -132,6 +134,8 @@ class ReconstituteTestCase(unittest.TestCase):
         self.assertEqual('Document', lemon.__class__.__name__)
         metadata = base_metadata.copy()
         metadata['title'] = 'Lemon'
+        metadata['version'] = '1.3'
+        apple_metadata = apple.metadata.copy()
         lemon_metadata = lemon.metadata.copy()
         summary = etree.fromstring(lemon_metadata.pop('summary'))
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
@@ -152,6 +156,8 @@ class ReconstituteTestCase(unittest.TestCase):
         self.assertEqual('summary', summary.text)
         metadata = base_metadata.copy()
         metadata['title'] = u'チョコレート'
+        metadata['version'] = '1.3'
+        apple_metadata = apple.metadata.copy()
         self.assertEqual(metadata, chocolate_metadata)
 
         extra = desserts[2]

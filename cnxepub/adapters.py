@@ -482,7 +482,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                         _compute_shortid(metadata['cnx-archive-uri'])
 
             if not metadata.get('version'):
-                if data_type.startswith('composite_'):
+                if data_type.startswith('composite-'):
                     if top_metadata.get('version') is not None:
                         metadata['version'] = top_metadata.get('verison')
                 elif parent.metadata.get('version') is not None:
