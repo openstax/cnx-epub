@@ -62,5 +62,6 @@ class HTMLParsingTestCase(unittest.TestCase):
             'derived_from_title': 'Wild Grains and Warted Feet',
             'print_style': '* print style *',
             'language': 'en',
+            'version': '3',
             }
         self.assertEqual(metadata, expected_metadata)

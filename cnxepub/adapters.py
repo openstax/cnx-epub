@@ -356,12 +356,13 @@ def adapt_single_html(html):
     nav_tree = parse_navigation_html_to_tree(html_root, id_)
 
     body = html_root.xpath('//xhtml:body', namespaces=HTML_DOCUMENT_NAMESPACES)
-    _adapt_single_html_tree(binder, body[0], nav_tree)
+    _adapt_single_html_tree(binder, body[0], nav_tree, top_metadata=metadata)
 
     return binder
 
 
-def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
+def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
+                            id_map=None, depth=0):
     title_overrides = [i.get('title') for i in nav_tree['contents']]
 
     # A dictionary to allow look up of a document and new id using the old html
@@ -480,8 +481,12 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
                 metadata['cnx-archive-shortid'] = \
                         _compute_shortid(metadata['cnx-archive-uri'])
 
-            if not metadata.get('version') and parent.metadata.get('version'):
-                metadata['version'] = parent.metadata.get('version')
+            if not metadata.get('version'):
+                if data_type.startswith('composite-'):
+                    if top_metadata.get('version') is not None:
+                        metadata['version'] = top_metadata.get('verison')
+                elif parent.metadata.get('version') is not None:
+                    metadata['version'] = parent.metadata.get('version')
 
             shortid = metadata.get('cnx-archive-shortid')
 
@@ -499,6 +504,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, id_map=None, depth=0):
             # Recurse
             _adapt_single_html_tree(binder, child,
                                     nav_tree['contents'].pop(0),
+                                    top_metadata=top_metadata,
                                     id_map=id_map, depth=depth+1)
             parent.append(binder)
         elif data_type in ['page', 'composite-page']:

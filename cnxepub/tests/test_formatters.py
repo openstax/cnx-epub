@@ -711,7 +711,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             metadata={'title': 'Desserts',
                       'license_url': 'http://creativecommons.org/licenses/by/4.0/',
                       'license_text': 'CC-By 4.0',
-                      'cnx-archive-uri': '00000000-0000-0000-0000-000000000000',
+                      'cnx-archive-uri': '00000000-0000-0000-0000-000000000000@1.3',
                       'language': 'en'},
             resources=[cover_png])
 

@@ -107,7 +107,7 @@ class DocumentMetadataParser:
         'license_text', 'editors', 'illustrators', 'translators',
         'publishers', 'copyright_holders', 'authors', 'summary',
         'cnx-archive-uri', 'cnx-archive-shortid', 'derived_from_uri',
-        'derived_from_title', 'print_style',
+        'derived_from_title', 'print_style', 'version',
         )
 
     def __init__(self, elm_tree, raise_value_error=True):
@@ -304,6 +304,14 @@ class DocumentMetadataParser:
             './/xhtml:*[@data-type="cnx-archive-shortid"]/@data-value')
         if items:
             return items[0]
+
+    @property
+    def version(self):
+        items = self.parse(
+            './/xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
+        if items:
+            if '@' in items[0]:
+                return items[0].split('@')[1]
 
     @property
     def derived_from_uri(self):
