@@ -62,7 +62,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     'title': '<span>1.1</span> <span>|</span> <span>&#12524;&#12514;&#12531;</span>'
                     },
                     {
-                    'shortId': 'sfE7YYyV',
+                    'shortId': 'sfE7YYyV@1.3',
                     'id': 'b1f13b61-8c95-5fbe-9112-46400b6dc8de@1.3',
                     'contents': [{
                         'shortId': None,
@@ -82,7 +82,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     },
                     {
                         'shortId': None,
-                        'id': 'extra',
+                        'id': 'extra@1.3',
                         'title': 'Extra Stuff'
                     }
                     ],
@@ -168,6 +168,7 @@ class ReconstituteTestCase(unittest.TestCase):
         self.assertEqual('summary', summary.text)
         metadata = base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
+        metadata['version'] = '1.3'
         self.assertEqual(metadata, extra_metadata)
 
 

@@ -454,11 +454,11 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             # id is not a uuid, no shortid
             return None
 
-        short_id = base64.urlsafe_b64encode(id_uuid.bytes)[:8]
+        shortid = (base64.urlsafe_b64encode(id_uuid.bytes)[:8]).decode('utf-8')
         if ver:
-            return '@'.join((short_id, ver))
+            return '@'.join((shortid, ver))
         else:
-            return short_id
+            return shortid
 
     # Adapt each <div data-type="unit|chapter|page|composite-page"> into
     # translucent binders, documents and composite documents
@@ -470,23 +470,29 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             # metadata munging for all node types, in one place
             metadata = parse_metadata(
                     child.xpath('./*[@data-type="metadata"]')[0])
-            # Handle id and uuid from metadata
+
+            # Handle version, id and uuid from metadata
+            if not metadata.get('version'):
+                if data_type.startswith('composite-'):
+                    if top_metadata.get('version') is not None:
+                        metadata['version'] = top_metadata['version']
+                elif parent.metadata.get('version') is not None:
+                    metadata['version'] = parent.metadata['version']
+
             id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
             if not id_:
                 id_ = _compute_id(parent, child, metadata.get('title'))
-                metadata['cnx-archive-uri'] = id_
+                if metadata.get('version'):
+                    metadata['cnx-archive-uri'] = \
+                        '@'.join((id_, metadata['version']))
+                else:
+                    metadata['cnx-archive-uri'] = id_
+                metadata['cnx-archive-shortid'] = None
 
             if (metadata.get('cnx-archive-uri') and
                     not metadata.get('cnx-archive-shortid')):
                 metadata['cnx-archive-shortid'] = \
                         _compute_shortid(metadata['cnx-archive-uri'])
-
-            if not metadata.get('version'):
-                if data_type.startswith('composite-'):
-                    if top_metadata.get('version') is not None:
-                        metadata['version'] = top_metadata.get('verison')
-                elif parent.metadata.get('version') is not None:
-                    metadata['version'] = parent.metadata.get('version')
 
             shortid = metadata.get('cnx-archive-shortid')
 

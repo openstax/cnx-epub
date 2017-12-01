@@ -712,7 +712,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                         },
 
                         {
-                            'shortId': 'sfE7YYyV',
+                            'shortId': 'sfE7YYyV@1.3',
                             'id': 'b1f13b61-8c95-5fbe-9112-46400b6dc8de@1.3',
                             'contents': [
                                 {
@@ -733,7 +733,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
                 },
                 {
                     'shortId': None,
-                    'id': 'extra',
+                    'id': 'extra@1.3',
                     'title': 'Extra Stuff'
                 }
             ],
@@ -813,6 +813,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('summary', summary.text)
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
+        metadata['version'] = '1.3'
         self.assertEqual(metadata, extra_metadata)
         self.assertIn('<p id="56723">Here is a <a href="/contents/chocolate'
                       '#list">link</a> to another document.</p>',
