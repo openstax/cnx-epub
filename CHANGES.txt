@@ -5,6 +5,12 @@
 
    - feature message
 
+0.13.0
+------
+
+- Have composite objects acquire their version from the top most object
+  rather than the parent object. (#127, #128)
+
 0.12.0
 ------
 
