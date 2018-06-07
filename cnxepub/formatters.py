@@ -576,7 +576,7 @@ HTML_DOCUMENT = """\
         {{ attr }}="{{ value }}"
       {%- endfor %}
         >
-    <div data-type="metadata">
+    <div data-type="metadata" style="display: none;">
       <h1 data-type="document-title" itemprop="name">{{ \
               metadata['title'] }}</h1>
       {% if is_translucent %}
@@ -785,7 +785,7 @@ HTML_DOCUMENT = """\
       {%- endfor %}
       {% if resources %}
 
-      <div data-type="resources" style="display: none">
+      <div data-type="resources">
         <ul>
           {% for resource in resources -%}
           <li><a href="{{ resource.id }}">{{ resource.filename }}</a></li>
