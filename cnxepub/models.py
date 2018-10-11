@@ -49,7 +49,7 @@ ATTRIBUTED_ROLE_KEYS = (
     'authors', 'copyright_holders', 'editors', 'illustrators',
     'publishers', 'translators',
     )
-XML_WRAPPER = """\
+XML_WRAPPER = u"""\
 <div
   xmlns="http://www.w3.org/1999/xhtml"
   xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"
@@ -85,18 +85,7 @@ def utf8(item):
 def _sanitize_xml(raw_xml, recover=True):
     """Wraps the XML and sanitizes the namespaces."""
     xml_parser = etree.XMLParser(ns_clean=True, recover=recover)
-    # Keep this terrible, awful command around just to count the number of elements
-    elms = lxml.html.fragments_fromstring(raw_xml)
-    if len(elms) is 1:
-        elms = [etree.XML(raw_xml)]
-
-    # If the raw_xml starts with untagged content, it will be parsed
-    # to a string rather than an Element instance.
-    # Thus causing etree.tostring to error unless we first check its type.
-    raw_xml = ''.join([
-        utf8(isinstance(e, (str, bytes,)) and e or etree.tostring(e))
-        for e in elms])
-    xml = etree.fromstring(XML_WRAPPER.format(raw_xml), xml_parser)
+    xml = etree.fromstring(XML_WRAPPER.format(utf8(raw_xml)), xml_parser)
     result = utf8(etree.tostring(xml))
     result = result[result.find('>')+1:result.rfind('<')].strip()
     return result
