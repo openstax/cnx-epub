@@ -85,7 +85,11 @@ def utf8(item):
 def _sanitize_xml(raw_xml, recover=True):
     """Wraps the XML and sanitizes the namespaces."""
     xml_parser = etree.XMLParser(ns_clean=True, recover=recover)
+    # Keep this terrible, awful command around just to count the number of elements
     elms = lxml.html.fragments_fromstring(raw_xml)
+    if len(elms) is 1:
+        elms = [etree.XML(raw_xml)]
+
     # If the raw_xml starts with untagged content, it will be parsed
     # to a string rather than an Element instance.
     # Thus causing etree.tostring to error unless we first check its type.
