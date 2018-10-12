@@ -8,6 +8,7 @@
 import os
 import io
 import json
+import sys
 import unittest
 try:
     from unittest import mock
@@ -17,6 +18,8 @@ except ImportError:
 
 here = os.path.abspath(os.path.dirname(__file__))
 TEST_DATA_DIR = os.path.join(here, 'data')
+
+IS_PY3 = sys.version_info.major == 3
 
 
 class BaseModelTestCase(unittest.TestCase):
@@ -134,18 +137,28 @@ class PrivateUtilitiesTestCase(unittest.TestCase):
         xml = target(content, recover=False)
         self.assertEqual(xml, '<img src="aaa_bbb.png"/>')
 
+    # https://github.com/Connexions/cnx-recipes/issues/655
     def test_sanitize_xml_not_html(self):
-        # The serializer used lxml.html.create_fragments which caused truncation
+        # The serializer used lxml.html.create_fragments
+        # which caused truncation
+
+        # Set maxDiff to always show what exactly the difference is
+        self.maxDiff = None
         from ..models import _sanitize_xml as target
         test_dir = os.path.dirname(__file__)
 
-        source_file = open(os.path.join(test_dir, './test_models_source.xml'), 'r')
-        source = source_file.read().decode('utf-8')
-        source_file.close()
+        source_filepath = os.path.join(test_dir, './test_models_source.xml')
+        with open(source_filepath, 'r') as source_file:
+            source = source_file.read()
+            if not IS_PY3:
+                source = source.decode('utf-8')
 
-        expected_file = open(os.path.join(test_dir, './test_models_expected.xml'), 'r')
-        expected = expected_file.read().decode('utf-8')
-        expected_file.close()
+        expected_filepath = os.path.join(
+            test_dir, './test_models_expected.xml')
+        with open(expected_filepath, 'r') as expected_file:
+            expected = expected_file.read()
+            if not IS_PY3:
+                expected = expected.decode('utf-8')
 
         xml = target(source)
         self.assertEqual(xml, expected)
