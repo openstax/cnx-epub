@@ -5,6 +5,11 @@
 
    - feature message
 
+0.14.0
+------
+
+- fix issue with truncation of pages when parsing (#131)
+
 0.13.0
 ------
 
