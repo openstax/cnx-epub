@@ -346,7 +346,7 @@ class DocumentSummaryFormatterTestCase(unittest.TestCase):
         from ..formatters import DocumentSummaryFormatter
         from ..models import Document
 
-        document = Document('title', io.BytesIO(b'contents'),
+        document = Document('title', io.BytesIO(b'<p>contents</p>'),
                             metadata={'summary': '<p>résumé</p>'})
         html = str(DocumentSummaryFormatter(document))
         self.assertEqual('<p>résumé</p>', html)
@@ -355,7 +355,7 @@ class DocumentSummaryFormatterTestCase(unittest.TestCase):
         from ..formatters import DocumentSummaryFormatter
         from ..models import Document
 
-        document = Document('title', io.BytesIO(b'contents'),
+        document = Document('title', io.BytesIO(b'<p>contents</p>'),
                             metadata={'summary': 'résumé'})
         html = str(DocumentSummaryFormatter(document))
         expected = """\
@@ -369,7 +369,7 @@ class DocumentSummaryFormatterTestCase(unittest.TestCase):
         from ..formatters import DocumentSummaryFormatter
         from ..models import Document
 
-        document = Document('title', io.BytesIO(b'contents'),
+        document = Document('title', io.BytesIO(b'<p>contents</p>'),
                             metadata={'summary': 'résumé<p>etc</p><p>...</p>'})
         html = str(DocumentSummaryFormatter(document))
         expected = """\
@@ -569,10 +569,10 @@ class HTMLFormatterTestCase(unittest.TestCase):
         from ..formatters import HTMLFormatter
 
         random.seed(1)
-        content = """\
+        content = """<div>\
 <div class="title" id="title">Preface</div>
 <p class="para" id="my-id">This thing and <em>that</em> thing.</p>
-<p class="para"><a href="#title">Link</a> to title</p>"""
+<p class="para"><a href="#title">Link</a> to title</p></div>"""
         page_one_id = 'fa21215a-91b5-424a-9fbd-5c451f309b87'
 
         expected_content = """\
@@ -624,6 +624,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
         metadata = self.base_metadata.copy()
         contents = io.BytesIO(u"""\
+<div>
 <h1>Chocolate Desserts</h1>
 <p><a href="#list">List</a> of desserts to try:</p>
 <div data-type="list" id="list"><ul><li>Chocolate Orange Tart,</li>
@@ -631,6 +632,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     <li>Chocolate and Banana French Toast,</li>
     <li>Chocolate Truffles...</li>
 </ul></div><img src="/resources/1x1.jpg" /><p>チョコレートデザート</p>
+</div>
 """.encode('utf-8'))
         self.chocolate = Document('chocolate', contents, metadata=metadata,
                                   resources=[jpg])
@@ -638,6 +640,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Apple'
         contents = io.BytesIO(b"""\
+<div>
 <h1>Apple Desserts</h1>
 <p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
 <ul><li id="auto_apple_13436">Apple Crumble,</li>
@@ -646,6 +649,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     <li>Apple Pie,</li>
     <li>Apple sauce...</li>
 </ul>
+</div>
 """)
         self.apple = Document('apple', contents, metadata=metadata)
 
@@ -694,9 +698,11 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         contents = io.BytesIO(b"""\
+<div>
 <h1>Extra Stuff</h1>
 <p>This is a composite page.</p>
 <p>Here is a <a href="#auto_chocolate_list">link</a> to another document.</p>
+</div>
 """)
         self.extra = CompositeDocument(
             'extra', contents, metadata=metadata)

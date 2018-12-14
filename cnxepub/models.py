@@ -9,16 +9,15 @@ import io
 import hashlib
 import mimetypes
 try:
-    from collections.abc import MutableSequence, Iterable
+    from collections.abc import MutableSequence
 except ImportError:
-    from collections import MutableSequence, Iterable
+    from collections import MutableSequence
 try:
     from urllib.parse import urlparse
 except ImportError:
     from urlparse import urlparse
 from contextlib import contextmanager
 
-import lxml.html
 from lxml import etree
 
 
@@ -82,36 +81,22 @@ def utf8(item):
         return item
 
 
-def _sanitize_xml(raw_xml, recover=True):
-    """Wraps the XML and sanitizes the namespaces."""
-    xml_parser = etree.XMLParser(ns_clean=True, recover=recover)
-    xml = etree.fromstring(XML_WRAPPER.format(utf8(raw_xml)), xml_parser)
-    result = utf8(etree.tostring(xml))
-    result = result[result.find('>')+1:result.rfind('<')].strip()
-    return result
-
-
 def content_to_etree(content):
+    if not content:
+        return etree.XML('<div/>')
+    xml_parser = etree.XMLParser(ns_clean=True)
+    tree = etree.XML(content, xml_parser)
     try:
-        xml_parser = etree.XMLParser(ns_clean=True, recover=True)
-        tree = etree.HTML(content, xml_parser)
         bod = tree.xpath('//*[self::body|self::x:body]',
                          namespaces={'x': 'http://www.w3.org/1999/xhtml'})[0]
-        bod.tag = 'div'
+        bod.tag = '{http://www.w3.org/1999/xhtml}div'
         return bod
-    # Reeeally broken HTML, or no body
-    except (etree.Error, AttributeError, IndexError):
-        content = _sanitize_xml(content)
-        return lxml.html.fragment_fromstring(content, 'div')
+    except IndexError:
+        return tree
 
 
 def etree_to_content(etree_):
-    string_types = (type(u''), type(b''))
-    # Unwrap the xml.
-    content = [
-        isinstance(node, string_types) and node or etree.tostring(node)
-        for node in etree_.xpath('node()')]
-    return ''.join(utf8(content))
+    return etree.tostring(etree_)
 
 
 def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):

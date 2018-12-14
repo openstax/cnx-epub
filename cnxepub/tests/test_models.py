@@ -103,67 +103,6 @@ class ModelAttributesTestCase(BaseModelTestCase):
         self.assertEqual(document.metadata['version'], '2')
 
 
-class PrivateUtilitiesTestCase(unittest.TestCase):
-
-    def test_sanitize_xml(self):
-        from ..models import _sanitize_xml as target
-        xml_namespaces = ' '.join([
-            'xmlns:bib="http://bibtexml.sf.net/"',
-            'xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"',
-            'xmlns:epub="http://www.idpf.org/2007/ops"',
-            'xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"',
-            'xmlns:dc="http://purl.org/dc/elements/1.1/"',
-            'xmlns:lrmi="http://lrmi.net/the-specification"',
-            ])
-
-        # Sanitize loose elements.
-        content = "<p {0}>aaa bbb</p><p {0}>bbb aaa</p>".format(xml_namespaces)
-        xml = target(content)
-        self.assertEqual(xml, '<p>aaa bbb</p><p>bbb aaa</p>')
-
-        # Sanitize content with a pre-existing wrapping element.
-        content = "<div {0}><p {0}>aaa bbb</p><p {0}>bbb aaa</p></div>" \
-            .format(xml_namespaces)
-        xml = target(content)
-        self.assertEqual(xml, '<div><p>aaa bbb</p><p>bbb aaa</p></div>')
-
-        # Sanitize content that does not contain tags.
-        content = "aaa bbb"
-        xml = target(content)
-        self.assertEqual(xml, 'aaa bbb')
-
-        # Sanitize content with recover=False
-        content = '<img src="aaa_bbb.png"/>'
-        xml = target(content, recover=False)
-        self.assertEqual(xml, '<img src="aaa_bbb.png"/>')
-
-    # https://github.com/Connexions/cnx-recipes/issues/655
-    def test_sanitize_xml_not_html(self):
-        # The serializer used lxml.html.create_fragments
-        # which caused truncation
-
-        # Set maxDiff to always show what exactly the difference is
-        self.maxDiff = None
-        from ..models import _sanitize_xml as target
-        test_dir = os.path.dirname(__file__)
-
-        source_filepath = os.path.join(test_dir, './test_models_source.xml')
-        with open(source_filepath, 'r') as source_file:
-            source = source_file.read()
-            if not IS_PY3:
-                source = source.decode('utf-8')
-
-        expected_filepath = os.path.join(
-            test_dir, './test_models_expected.xml')
-        with open(expected_filepath, 'r') as expected_file:
-            expected = expected_file.read()
-            if not IS_PY3:
-                expected = expected.decode('utf-8')
-
-        xml = target(source)
-        self.assertEqual(xml, expected)
-
-
 class TreeUtilityTestCase(BaseModelTestCase):
 
     def test_binder_to_tree(self):
@@ -382,10 +321,12 @@ class ModelBehaviorTestCase(unittest.TestCase):
                          "../resources/nyan-cat.gif"
                          ]
         content = """\
+<div>
 <h1> McDonald Bio </h1>
 <p>There is a farmer named <a href="{}">Old McDonald</a>. Plants grow on his farm and animals live there. He himself is vegan, and so he wrote a book about <a href="{}">Vegan Farming</a>.</p>
 <img src="{}"/>
 <span>Ei ei O.</span>
+</div>
 """.format(*expected_uris)
 
         from ..models import Document
@@ -409,10 +350,12 @@ class ModelBehaviorTestCase(unittest.TestCase):
                          "m23409.xhtml",
                          ]
         content = """\
+<div>
 <h1>Reference replacement test-case</h1>
 <p>Link to <a href="{}">a local legacy module</a>.</p>
 <img src="{}"/>
 <p>Fin.</p>
+</div>
 """.format(*starting_uris)
 
         from ..models import Document
