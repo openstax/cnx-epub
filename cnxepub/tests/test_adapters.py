@@ -757,9 +757,9 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, apple_metadata)
-        self.assertIn('<p id="74606">'
-                      '<a href="/contents/lemon">Link to lemon</a>. '
-                      'Here are some examples:</p>',
+        self.assertIn(b'<p id="74606">'
+                      b'<a href="/contents/lemon">Link to lemon</a>. '
+                      b'Here are some examples:</p>',
                       apple.content)
         self.assertEqual('Apple', fruity.get_title_for_node(apple))
 
@@ -773,8 +773,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, lemon_metadata)
-        self.assertIn('<p id="8271">Yum! <img id="33432" '
-                      'src="/resources/1x1.jpg"/></p>', lemon.content)
+        self.assertIn(b'<p id="8271">Yum! <img id="33432" '
+                      b'src="/resources/1x1.jpg"/></p>', lemon.content)
         self.assertEqual('<span>1.1</span> <span>|</span> <span>'
                          '&#12524;&#12514;&#12531;</span>',
                          fruity.get_title_for_node(lemon))
@@ -798,9 +798,9 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata['title'] = u'チョコレート'
         metadata['version'] = '1.3'
         self.assertEqual(metadata, chocolate_metadata)
-        self.assertIn('<p id="12302"><a href="#list">List</a> of',
+        self.assertIn(b'<p id="12302"><a href="#list">List</a> of',
                       chocolate.content)
-        self.assertIn('<div data-type="list" id="list"><ul>',
+        self.assertIn(b'<div data-type="list" id="list"><ul>',
                       chocolate.content)
         self.assertEqual(u'チョコレート',
                          desserts.get_title_for_node(chocolate))
@@ -815,8 +815,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         metadata['title'] = 'Extra Stuff'
         metadata['version'] = '1.3'
         self.assertEqual(metadata, extra_metadata)
-        self.assertIn('<p id="56723">Here is a <a href="/contents/chocolate'
-                      '#list">link</a> to another document.</p>',
+        self.assertIn(b'<p id="56723">Here is a <a href="/contents/chocolate'
+                      b'#list">link</a> to another document.</p>',
                       extra.content)
         self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))
 
@@ -860,15 +860,15 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         chocolate = desserts[1]
         extra = desserts[2]
 
-        self.assertIn('<p id="1">Content moved from another page.</p>',
+        self.assertIn(b'<p id="1">Content moved from another page.</p>',
                       extra.content)
-        self.assertIn('Click <a href="/contents/9f7dce40-0de7-5a29-a416-a9cf8eedf4d4#1">here</a>',
+        self.assertIn(b'Click <a href="/contents/9f7dce40-0de7-5a29-a416-a9cf8eedf4d4#1">here</a>',
                       chocolate.content)
-        self.assertIn('<p id="summary0"> Pretend move of lemon summary</p>',
+        self.assertIn(b'<p id="summary0"> Pretend move of lemon summary</p>',
                       extra.content)
-        self.assertIn('<p id="summary1"> Pretend move of chocolate summary</p>',
+        self.assertIn(b'<p id="summary1"> Pretend move of chocolate summary</p>',
                       extra.content)
-        self.assertIn('<p id="myid">Be sure to read the <a href="/contents/9f7dce40-0de7-5a29-a416-a9cf8eedf4d4#summary0">Summary for lemon</a></p>', lemon.content)
+        self.assertIn(b'<p id="myid">Be sure to read the <a href="/contents/9f7dce40-0de7-5a29-a416-a9cf8eedf4d4#summary0">Summary for lemon</a></p>', lemon.content)
 
     def test_fix_generated_ids_links_without_version(self):
         from ..adapters import adapt_single_html
@@ -881,5 +881,5 @@ class HTMLAdaptationTestCase(unittest.TestCase):
 
         desserts = adapt_single_html(html)
         apple = desserts[0][0]
-        self.assertIn('<p id="12345"><a href="/contents/chocolate">',
+        self.assertIn(b'<p id="12345"><a href="/contents/chocolate">',
                       apple.content)
