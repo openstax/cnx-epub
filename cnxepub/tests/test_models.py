@@ -342,7 +342,7 @@ class ModelBehaviorTestCase(unittest.TestCase):
         document.content = content
         # update some references
         document.references[0].uri = 'https://example.com/people/old-mcdonald'
-        self.assertTrue('<a href="https://example.com/people/old-mcdonald">'
+        self.assertTrue(b'<a href="https://example.com/people/old-mcdonald">'
                         in document.content)
 
     def test_document_w_bound_references(self):
@@ -397,5 +397,5 @@ class ModelBehaviorTestCase(unittest.TestCase):
             metadata = json.loads(f.read())
         from ..models import Document
         document = Document('document', metadata['content'])
-        self.assertTrue('To demonstrate the potential of online publishing'
+        self.assertTrue(b'To demonstrate the potential of online publishing'
                         in document.content)
