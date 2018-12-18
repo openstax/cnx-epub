@@ -77,21 +77,23 @@ def utf8(item):
         return {utf8(k): utf8(v) for k, v in item.items()}
     try:
         return item.decode('utf-8')
-    except:
+    except (UnicodeEncodeError, AttributeError):
+        # py2 and py3 errs, respectively, for when fed an encoded string
         return item
 
 
 def content_to_etree(content):
-    if not content:
-        return etree.XML('<div/>')
+    if not content:  # Allow building empty models
+        return etree.XML('<div xmlns="http://www.w3.org/1999/xhtml" />')
     xml_parser = etree.XMLParser(ns_clean=True)
     tree = etree.XML(content, xml_parser)
-    try:
-        bod = tree.xpath('//*[self::body|self::x:body]',
-                         namespaces={'x': 'http://www.w3.org/1999/xhtml'})[0]
-        bod.tag = '{http://www.w3.org/1999/xhtml}div'
-        return bod
-    except IndexError:
+    # Determine if we've been fed a full XHTML page, with a <body> tag:
+    bods = tree.xpath('//*[self::body|self::x:body]',
+                      namespaces={'x': 'http://www.w3.org/1999/xhtml'})
+    if bods:
+        bods[0].tag = '{http://www.w3.org/1999/xhtml}div'
+        return bods[0]
+    else:  # It parsed, so must have been fed a valid XML tree - return it
         return tree
 
 
