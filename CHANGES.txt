@@ -5,6 +5,11 @@
 
    - feature message
 
+0.15.0
+------
+
+- Remove HTML fragment support, to remove other truncation issues (#133)
+
 0.14.0
 ------
 
