@@ -13,9 +13,8 @@ before_install:
   - pip install codecov
   # FIXME travis fails w/ 3.7.0 on python3, even though it works locally
   - pip install lxml==3.6.4
-  # FIXME (18-Apr-2016) cnx-easybake requires an unreleased package, cssselect2
-  - pip install git+https://github.com/Connexions/cssselect2.git#egg=cssselect2
   # Install cnx-easybake
+  - pip install git+https://github.com/openstax/cnx-cssselect2.git#egg=cnx-cssselect2
   - pip install git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake
 install:
   - python setup.py install
