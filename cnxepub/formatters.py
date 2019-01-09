@@ -56,7 +56,7 @@ class DocumentContentFormatter(object):
         html = """\
 <html xmlns="http://www.w3.org/1999/xhtml">
   <body>{}</body>
-</html>""".format(self.document.content)
+</html>""".format(self.document.content.decode('utf-8'))
         et = etree.HTML(html)
         return etree.tostring(et, pretty_print=True, encoding='utf-8')
 
