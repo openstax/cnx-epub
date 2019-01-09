@@ -56,8 +56,9 @@ class DocumentContentFormatter(object):
         html = """\
 <html xmlns="http://www.w3.org/1999/xhtml">
   <body>{}</body>
-</html>""".format(utf8(self.document.content))
-        return html.encode('utf-8')
+</html>""".format(self.document.content.decode('utf-8'))
+        et = etree.HTML(html)
+        return etree.tostring(et, pretty_print=True, encoding='utf-8')
 
 
 class DocumentSummaryFormatter(object):
@@ -440,6 +441,7 @@ def exercise_callback_factory(match, url_template,
 
     xpath = '//xhtml:a[contains(@href, "{}")]'.format(match)
     return (xpath, _replace_exercises)
+
 
 # XXX Rendering shouldn't happen here.
 #     Temporarily place the rendering templates and code here.
