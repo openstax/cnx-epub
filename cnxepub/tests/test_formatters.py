@@ -337,7 +337,8 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         expected_html = u"""\
 <html xmlns="http://www.w3.org/1999/xhtml">
   <body><p>コンテンツ...</p></body>
-</html>"""
+</html>
+"""
         self.assertEqual(expected_html, unescape(html))
 
 
