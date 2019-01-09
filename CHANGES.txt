@@ -5,6 +5,11 @@
 
    - feature message
 
+0.16.0
+------
+
+- Rename cssselect2 to cnx-csssselect2
+
 0.15.1
 ------
 
