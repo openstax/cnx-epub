@@ -5,6 +5,12 @@
 
    - feature message
 
+0.15.1
+------
+
+- Reparse as HTML to remove namespace prefixes (#135)
+- test that math elements do not contain prefixes (#136)
+
 0.15.0
 ------
 
