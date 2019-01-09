@@ -341,6 +341,57 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
 """
         self.assertEqual(expected_html, unescape(html))
 
+    def test_document_mathjax(self):
+        from ..models import Document
+        from ..formatters import DocumentContentFormatter
+
+        base_metadata = {
+            'publishers': [],
+            'created': '2013/03/19 15:01:16 -0500',
+            'revised': '2013/06/18 15:22:55 -0500',
+            'authors': [
+                {'type': 'cnx-id',
+                 'name': 'Sponge Bob',
+                 'id': 'sbob'}],
+            'editors': [],
+            'copyright_holders': [],
+            'illustrators': [],
+            'subjects': ['Science and Mathematics'],
+            'translators': [],
+            'keywords': ['Bob', 'Sponge', 'Rock'],
+            'title': "Goofy Goober Rock",
+            'license_text': 'CC-By 4.0',
+            'license_url': 'http://creativecommons.org/licenses/by/4.0/',
+            'summary': "<p>summary</p>",
+            'version': 'draft',
+            'language': 'en'
+            }
+
+        # Build test document.
+        metadata = base_metadata.copy()
+        document = Document('title',
+                            io.BytesIO(u'<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"/>'.encode('utf-8')),
+                            metadata=metadata)
+        html = str(DocumentContentFormatter(document))
+        expected_html = u"""\
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <body><math xmlns:m="http://www.w3.org/1998/Math/MathML"/></body>
+</html>
+"""
+        self.assertEqual(expected_html, unescape(html))
+
+        # Second variation. Hoisted namespace declaration
+        document = Document('title',
+                            io.BytesIO(u'<p xmlns:m="http://www.w3.org/1998/Math/MathML"><m:math/></p>'.encode('utf-8')),
+                            metadata=metadata)
+        html = str(DocumentContentFormatter(document))
+        expected_html = u"""\
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <body><p xmlns:m="http://www.w3.org/1998/Math/MathML"><math/></p></body>
+</html>
+"""
+        self.assertEqual(expected_html, unescape(html))
+
 
 class DocumentSummaryFormatterTestCase(unittest.TestCase):
     def test_summary_w_one_tag(self):
