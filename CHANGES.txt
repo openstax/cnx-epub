@@ -4,6 +4,10 @@
    ----------------------
 
    - feature message
+0.15.2
+------
+
+- Fix Python string encoding using our py2 and py3 compatiblity function.
 
 0.15.1
 ------
