@@ -5,6 +5,11 @@
 
    - feature message
 
+0.16.2
+------
+
+- Replicate earlier behavior by removing top node when serializing to HTML
+
 0.16.1
 ------
 
