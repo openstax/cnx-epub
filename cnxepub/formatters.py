@@ -58,6 +58,15 @@ class DocumentContentFormatter(object):
   <body>{}</body>
 </html>""".format(utf8(self.document.content))
         et = etree.HTML(html)
+        # If body now contains a single child, unwrap it
+        body = et.xpath('/html/body')[0]
+        if len(body) == 1:
+            elem = body[0]
+            for child in elem:
+                body.append(child)
+            if elem.text:
+                body.text = elem.text
+            body.remove(elem)
         return etree.tostring(et, pretty_print=True, encoding='utf-8')
 
 
