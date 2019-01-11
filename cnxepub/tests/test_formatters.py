@@ -336,7 +336,7 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <body><p>コンテンツ...</p></body>
+  <body>コンテンツ...</body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
@@ -370,7 +370,7 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         # Build test document.
         metadata = base_metadata.copy()
         document = Document('title',
-                            io.BytesIO(u'<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"/>'.encode('utf-8')),
+                            io.BytesIO(u'<p><m:math xmlns:m="http://www.w3.org/1998/Math/MathML"/></p>'.encode('utf-8')),
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
@@ -387,7 +387,7 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <body><p xmlns:m="http://www.w3.org/1998/Math/MathML"><math/></p></body>
+  <body><math/></body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
