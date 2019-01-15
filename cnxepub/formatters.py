@@ -159,14 +159,16 @@ class HTMLFormatter(object):
             return tree_to_html(
                 model_to_tree(self.model), self.extensions).decode('utf-8')
         elif isinstance(self.model, Document):
-            content = self.model.content
             if self.generate_ids:
                 _html = deepcopy(self.model._xml)
                 self._generate_ids(self.model, _html)
-                content = ''.join(utf8([
-                                   isinstance(node, (type(''), type(b''))) and
-                                   node or etree.tostring(node)
-                                   for node in _html.xpath('node()')]))
+            else:
+                _html = self.model._xml
+
+            content = ''.join(utf8([
+                               isinstance(node, (type(''), type(b''))) and
+                               node or etree.tostring(node)
+                               for node in _html.xpath('node()')]))
             return content
 
     @property

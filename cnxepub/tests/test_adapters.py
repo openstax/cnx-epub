@@ -369,7 +369,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             egress = unescape(f.read())
         self.assertFalse('<div data-type="resources"' in egress)
         self.assertTrue('<title>egress</title>' in egress)
-        self.assertTrue(u'<p>hüvasti.</p>' in egress)
+        self.assertTrue(u'hüvasti.' in egress)
 
         # Adapt epub back to documents and binders
         from cnxepub import EPUB
@@ -486,7 +486,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue(re.search(
             '<div data-type="resources"[^>]*>\s*<ul>\s*'
             '<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>\s*</ul>\s*</div>', egress))
-        self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
+        self.assertTrue(u'<img src="../resources/1x1.jpg"/>hüvasti.' in egress)
 
         # Adapt epub back to documents and binders
         from cnxepub import EPUB
@@ -628,7 +628,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue('<title>egress</title>' in egress)
         self.assertTrue('<span data-type="cnx-archive-uri" '
                         'data-value="e78d4f90-e078-49d2-beac-e95e8be70667"' in egress)
-        self.assertTrue(u'<p>hüvasti.</p>' in egress)
+        self.assertTrue(u'hüvasti.' in egress)
         self.assertFalse('Derived from:' in egress)
         self.assertTrue('Derived from:' in ingress)
         self.assertTrue('http://cnx.org/contents/dd68a67a-11f4-4140-a49f-b78e856e2262@1' in ingress)

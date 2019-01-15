@@ -479,7 +479,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
         self.root = etree.fromstring(html.encode('utf-8'))
 
         self.assertIn(u'<title>タイトル</title>', html)
-        self.assertIn(u'<p>コンテンツ...</p>', html)
+        self.assertIn(u'コンテンツ...', html)
 
         self.assertEqual(
             u'タイトル',
