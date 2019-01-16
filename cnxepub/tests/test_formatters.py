@@ -336,7 +336,7 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <body>コンテンツ...</body>
+  <body><p>コンテンツ...</p></body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
@@ -375,7 +375,7 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <body><math xmlns:m="http://www.w3.org/1998/Math/MathML"/></body>
+  <body><p><math xmlns:m="http://www.w3.org/1998/Math/MathML"/></p></body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
@@ -387,7 +387,7 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <body><math/></body>
+  <body><p xmlns:m="http://www.w3.org/1998/Math/MathML"><math/></p></body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
