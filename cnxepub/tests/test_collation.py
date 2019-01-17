@@ -188,13 +188,13 @@ class CollateTestCase(BaseModelTestCase):
             nodes=[
                 self.make_document(
                     id="e78d4f90",
-                    content=b"<p>document one</p>",
+                    content=b"<body><p>document one</p></body>",
                     metadata={'version': '3',
                               'title': "Document One",
                               'license_url': 'http://my.license'}),
                 self.make_document(
                     id="3c448dc6",
-                    content=b"<p>document two</p>",
+                    content=b"<body><p>document two</p></body>",
                     metadata={'version': '1',
                               'title': "Document Two",
                               'license_url': 'http://my.license'})])
@@ -281,13 +281,13 @@ class CollateTestCase(BaseModelTestCase):
             nodes=[
                 self.make_document(
                     id="e78d4f90",
-                    content=b"<span>document one</span>",
+                    content=b"<body><span>document one</span></body>",
                     metadata={'version': '3',
                               'title': "Document One",
                               'license_url': 'http://my.license'}),
                 self.make_document(
                     id="3c448dc6",
-                    content=b"<span>document two</span>",
+                    content=b"<body><span>document two</span></body>",
                     metadata={'version': '1',
                               'title': "Document Two",
                               'license_url': 'http://my.license'})])

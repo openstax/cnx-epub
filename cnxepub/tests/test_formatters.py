@@ -331,7 +331,7 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         # Build test document.
         metadata = base_metadata.copy()
         document = Document('title',
-                            io.BytesIO(u'<p>コンテンツ...</p>'.encode('utf-8')),
+                            io.BytesIO(u'<body><p>コンテンツ...</p></body>'.encode('utf-8')),
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
@@ -370,26 +370,21 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
         # Build test document.
         metadata = base_metadata.copy()
         document = Document('title',
-                            io.BytesIO(u'<p><m:math xmlns:m="http://www.w3.org/1998/Math/MathML"/></p>'.encode('utf-8')),
+                            io.BytesIO(u'<body><p><m:math xmlns:m="http://www.w3.org/1998/Math/MathML"/></p></body>'.encode('utf-8')),
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <body><p><math xmlns:m="http://www.w3.org/1998/Math/MathML"/></p></body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <body><p><math/></p></body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
 
         # Second variation. Hoisted namespace declaration
         document = Document('title',
-                            io.BytesIO(u'<p xmlns:m="http://www.w3.org/1998/Math/MathML"><m:math/></p>'.encode('utf-8')),
+                            io.BytesIO(u'<body><p xmlns:m="http://www.w3.org/1998/Math/MathML"><m:math/></p></body>'.encode('utf-8')),
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
-        expected_html = u"""\
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <body><p xmlns:m="http://www.w3.org/1998/Math/MathML"><math/></p></body>
-</html>
-"""
         self.assertEqual(expected_html, unescape(html))
 
 
@@ -398,7 +393,7 @@ class DocumentSummaryFormatterTestCase(unittest.TestCase):
         from ..formatters import DocumentSummaryFormatter
         from ..models import Document
 
-        document = Document('title', io.BytesIO(b'<p>contents</p>'),
+        document = Document('title', io.BytesIO(b'<body><p>contents</p></body>'),
                             metadata={'summary': '<p>résumé</p>'})
         html = str(DocumentSummaryFormatter(document))
         self.assertEqual('<p>résumé</p>', html)
@@ -407,7 +402,7 @@ class DocumentSummaryFormatterTestCase(unittest.TestCase):
         from ..formatters import DocumentSummaryFormatter
         from ..models import Document
 
-        document = Document('title', io.BytesIO(b'<p>contents</p>'),
+        document = Document('title', io.BytesIO(b'<body><p>contents</p></body>'),
                             metadata={'summary': 'résumé'})
         html = str(DocumentSummaryFormatter(document))
         expected = """\
@@ -421,7 +416,7 @@ class DocumentSummaryFormatterTestCase(unittest.TestCase):
         from ..formatters import DocumentSummaryFormatter
         from ..models import Document
 
-        document = Document('title', io.BytesIO(b'<p>contents</p>'),
+        document = Document('title', io.BytesIO(b'<body><p>contents</p></body>'),
                             metadata={'summary': 'résumé<p>etc</p><p>...</p>'})
         html = str(DocumentSummaryFormatter(document))
         expected = """\
@@ -471,7 +466,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         document = Document(
             metadata['title'],
-            io.BytesIO(u'<p>コンテンツ...</p>'.encode('utf-8')),
+            io.BytesIO(u'<body><p>コンテンツ...</p></body>'.encode('utf-8')),
             metadata=metadata)
 
         html = str(HTMLFormatter(document))
@@ -479,7 +474,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
         self.root = etree.fromstring(html.encode('utf-8'))
 
         self.assertIn(u'<title>タイトル</title>', html)
-        self.assertIn(u'コンテンツ...', html)
+        self.assertIn(u'<p>コンテンツ...</p>', html)
 
         self.assertEqual(
             u'タイトル',
@@ -545,7 +540,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
             'derived_from_title': "Taking Customers' Orders",
             })
 
-        binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
+        binder.append(Document('ingress', io.BytesIO(b'<body><p>Hello.</p></body>'),
                                metadata=metadata))
 
         translucent_binder = TranslucentBinder(metadata={'title': 'Kranken'})
@@ -556,7 +551,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
             'title': "egress",
             'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667'})
         translucent_binder.append(
-            Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
+            Document('egress', io.BytesIO(u'<body><p>hüvasti.</p></body>'.encode('utf-8')),
                      metadata=metadata))
 
         binder.append(DocumentPointer('pointer@1', {
@@ -600,7 +595,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
             'derived_from_title': "Taking Customers' Orders",
             })
 
-        binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
+        binder.append(Document('ingress', io.BytesIO(b'<body><p>Hello.</p></body>'),
                                metadata=metadata))
 
         html = str(HTMLFormatter(binder))
@@ -621,10 +616,10 @@ class HTMLFormatterTestCase(unittest.TestCase):
         from ..formatters import HTMLFormatter
 
         random.seed(1)
-        content = """<div>\
+        content = """<body>\
 <div class="title" id="title">Preface</div>
 <p class="para" id="my-id">This thing and <em>that</em> thing.</p>
-<p class="para"><a href="#title">Link</a> to title</p></div>"""
+<p class="para"><a href="#title">Link</a> to title</p></body>"""
         page_one_id = 'fa21215a-91b5-424a-9fbd-5c451f309b87'
 
         expected_content = """\
@@ -676,7 +671,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
         metadata = self.base_metadata.copy()
         contents = io.BytesIO(u"""\
-<div>
+<body>
 <h1>Chocolate Desserts</h1>
 <p><a href="#list">List</a> of desserts to try:</p>
 <div data-type="list" id="list"><ul><li>Chocolate Orange Tart,</li>
@@ -684,7 +679,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     <li>Chocolate and Banana French Toast,</li>
     <li>Chocolate Truffles...</li>
 </ul></div><img src="/resources/1x1.jpg" /><p>チョコレートデザート</p>
-</div>
+</body>
 """.encode('utf-8'))
         self.chocolate = Document('chocolate', contents, metadata=metadata,
                                   resources=[jpg])
@@ -692,7 +687,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Apple'
         contents = io.BytesIO(b"""\
-<div>
+<body>
 <h1>Apple Desserts</h1>
 <p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
 <ul><li id="auto_apple_13436">Apple Crumble,</li>
@@ -701,7 +696,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     <li>Apple Pie,</li>
     <li>Apple sauce...</li>
 </ul>
-</div>
+</body>
 """)
         self.apple = Document('apple', contents, metadata=metadata)
 
@@ -750,11 +745,11 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         contents = io.BytesIO(b"""\
-<div>
+<body>
 <h1>Extra Stuff</h1>
 <p>This is a composite page.</p>
 <p>Here is a <a href="#auto_chocolate_list">link</a> to another document.</p>
-</div>
+</body>
 """)
         self.extra = CompositeDocument(
             'extra', contents, metadata=metadata)

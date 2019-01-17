@@ -305,11 +305,11 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         # Build test documents
         metadata = base_metadata.copy()
         metadata.update({'title': "entrée"})
-        binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
+        binder.append(Document('ingress', io.BytesIO(b'<body><p>Hello.</p></body>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
         metadata.update({'title': "egress"})
-        binder.append(Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
+        binder.append(Document('egress', io.BytesIO(u'<body><p>hüvasti.</p></body>'.encode('utf-8')),
                                metadata=metadata))
 
         # Call the target.
@@ -369,7 +369,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             egress = unescape(f.read())
         self.assertFalse('<div data-type="resources"' in egress)
         self.assertTrue('<title>egress</title>' in egress)
-        self.assertTrue(u'hüvasti.' in egress)
+        self.assertTrue(u'<p>hüvasti.</p>' in egress)
 
         # Adapt epub back to documents and binders
         from cnxepub import EPUB
@@ -412,7 +412,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         metadata = base_metadata.copy()
         metadata.update({'title': "entrée"})
         binder.append(Document('ingress', io.BytesIO(
-            b'<p><a href="http://cnx.org/">Hello.</a><a id="nohref">Goodbye</a></p>'),
+            b'<body><p><a href="http://cnx.org/">Hello.</a><a id="nohref">Goodbye</a></p></body>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
         metadata.update({'title': "egress"})
@@ -420,7 +420,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg',
                            filename='1x1.jpg')
         binder.append(Document('egress', io.BytesIO(
-            u'<p><img src="1x1.jpg" />hüvasti.</p>'.encode('utf-8')),
+            u'<body><p><img src="1x1.jpg" />hüvasti.</p></body>'.encode('utf-8')),
                                metadata=metadata,
                                resources=[jpg]))
 
@@ -486,7 +486,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue(re.search(
             '<div data-type="resources"[^>]*>\s*<ul>\s*'
             '<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>\s*</ul>\s*</div>', egress))
-        self.assertTrue(u'<img src="../resources/1x1.jpg"/>hüvasti.' in egress)
+        self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
 
         # Adapt epub back to documents and binders
         from cnxepub import EPUB
@@ -540,12 +540,12 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             'derived_from_uri': 'http://cnx.org/contents/dd68a67a-11f4-4140-a49f-b78e856e2262@1',
             'derived_from_title': "Taking Customers' Orders",
             })
-        binder.append(Document('ingress', io.BytesIO(b'<p>Hello.</p>'),
+        binder.append(Document('ingress', io.BytesIO(b'<body><p>Hello.</p></body>'),
                                metadata=metadata))
         metadata = base_metadata.copy()
         metadata.update({'title': "egress",
                          'cnx-archive-uri': 'e78d4f90-e078-49d2-beac-e95e8be70667'})
-        binder.append(Document('egress', io.BytesIO(u'<p>hüvasti.</p>'.encode('utf-8')),
+        binder.append(Document('egress', io.BytesIO(u'<body><p>hüvasti.</p></body>'.encode('utf-8')),
                                metadata=metadata))
         binder.append(DocumentPointer('pointer@1', {
             'title': 'Pointer',
@@ -628,7 +628,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
         self.assertTrue('<title>egress</title>' in egress)
         self.assertTrue('<span data-type="cnx-archive-uri" '
                         'data-value="e78d4f90-e078-49d2-beac-e95e8be70667"' in egress)
-        self.assertTrue(u'hüvasti.' in egress)
+        self.assertTrue(u'<p>hüvasti.</p>' in egress)
         self.assertFalse('Derived from:' in egress)
         self.assertTrue('Derived from:' in ingress)
         self.assertTrue('http://cnx.org/contents/dd68a67a-11f4-4140-a49f-b78e856e2262@1' in ingress)
@@ -681,6 +681,40 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         u'derived_from_uri': None,
         u'version': None,
         }
+
+    def test_from_formatter_to_adapter(self):
+        from ..adapters import adapt_single_html
+        from ..formatters import SingleHTMLFormatter
+        from ..models import Binder, Document
+
+        random.seed(1)
+        metadata = self.base_metadata.copy()
+        binder = Binder(metadata['title'], metadata=metadata)
+        binder.append(Document('apple-pie', io.BytesIO(b'<body><p>Apple Pie</p></body>'),
+                               metadata=metadata))
+        binder.append(Document('lemon-pie', io.BytesIO(b'''\
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Lemon Pie</title>
+    </head>
+    <body>
+        <h1>Lemon Pie</h1>
+        <p>Yum.</p>
+    </body>
+</html>'''), metadata=metadata))
+
+        single_html = str(SingleHTMLFormatter(binder))
+        adapted_binder = adapt_single_html(single_html)
+
+        random.seed(1)
+        self.assertEqual(len(adapted_binder), len(binder))
+        self.assertEqual(adapted_binder[0].id, 'apple-pie')
+        self.assertEqual(adapted_binder[1].id, 'lemon-pie')
+        self.assertEqual(adapted_binder[0].content.decode('utf-8'), '''\
+<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="apple-pie"><p id="{}">Apple Pie</p>
+  </div></body>'''.format(random.randint(0, 100000)))
+        self.assertEqual(adapted_binder[1].content.decode('utf-8'), '''\
+<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="lemon-pie"><h1>Lemon Pie</h1>\n        \n        <p id="{}">Yum.</p>\n    \n    \n  </div></body>'''.format(random.randint(0, 100000)))
 
     def test_to_binder(self):
         from ..adapters import adapt_single_html

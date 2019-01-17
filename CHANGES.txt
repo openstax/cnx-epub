@@ -5,6 +5,11 @@
 
    - feature message
 
+0.17.0
+------
+
+- Limit Document content to <body> tags only
+
 0.16.2
 ------
 

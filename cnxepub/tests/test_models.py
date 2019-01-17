@@ -321,12 +321,12 @@ class ModelBehaviorTestCase(unittest.TestCase):
                          "../resources/nyan-cat.gif"
                          ]
         content = """\
-<div>
+<body>
 <h1> McDonald Bio </h1>
 <p>There is a farmer named <a href="{}">Old McDonald</a>. Plants grow on his farm and animals live there. He himself is vegan, and so he wrote a book about <a href="{}">Vegan Farming</a>.</p>
 <img src="{}"/>
 <span>Ei ei O.</span>
-</div>
+</body>
 """.format(*expected_uris)
 
         from ..models import Document
@@ -350,12 +350,12 @@ class ModelBehaviorTestCase(unittest.TestCase):
                          "m23409.xhtml",
                          ]
         content = """\
-<div>
+<body>
 <h1>Reference replacement test-case</h1>
 <p>Link to <a href="{}">a local legacy module</a>.</p>
 <img src="{}"/>
 <p>Fin.</p>
-</div>
+</body>
 """.format(*starting_uris)
 
         from ..models import Document

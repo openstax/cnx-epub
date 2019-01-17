@@ -21,7 +21,7 @@ from copy import deepcopy
 import requests
 
 from .models import (
-    model_to_tree, etree_to_content,
+    model_to_tree, content_to_etree, etree_to_content,
     flatten_to_documents,
     Binder, TranslucentBinder,
     Document, DocumentPointer, CompositeDocument, utf8)
@@ -55,9 +55,10 @@ class DocumentContentFormatter(object):
     def __bytes__(self):
         html = """\
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <body>{}</body>
+  {}
 </html>""".format(utf8(self.document.content))
-        et = etree.HTML(html)
+        html = _fix_namespaces(html.encode('utf-8'))
+        et = etree.HTML(html.decode('utf-8'))
         return etree.tostring(et, pretty_print=True, encoding='utf-8')
 
 
@@ -150,11 +151,9 @@ class HTMLFormatter(object):
             return tree_to_html(
                 model_to_tree(self.model), self.extensions).decode('utf-8')
         elif isinstance(self.model, Document):
+            _html = content_to_etree(self.model.content)
             if self.generate_ids:
-                _html = deepcopy(self.model._xml)
                 self._generate_ids(self.model, _html)
-            else:
-                _html = self.model._xml
 
             return etree_to_content(_html, strip_root_node=True)
 

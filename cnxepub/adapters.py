@@ -524,7 +524,9 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                 if key in ('itemtype', 'itemscope'):
                     child.attrib.pop(key)
 
-            contents = etree.tostring(child)
+            document_body = content_to_etree('')
+            document_body.append(child)
+            contents = etree.tostring(document_body)
             model = {
                 'page': Document,
                 'composite-page': CompositeDocument,
