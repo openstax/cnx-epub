@@ -5,10 +5,10 @@
 
    - feature message
 
-0.16.2
+0.17.0
 ------
 
-- Replicate earlier behavior by removing top node when serializing to HTML
+- Limit Document content to <body> tags only
 
 0.16.1
 ------

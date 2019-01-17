@@ -84,17 +84,16 @@ def utf8(item):
 
 def content_to_etree(content):
     if not content:  # Allow building empty models
-        return etree.XML('<div xmlns="http://www.w3.org/1999/xhtml" />')
+        return etree.XML('<body xmlns="http://www.w3.org/1999/xhtml" />')
     xml_parser = etree.XMLParser(ns_clean=True)
     tree = etree.XML(content, xml_parser)
     # Determine if we've been fed a full XHTML page, with a <body> tag:
     bods = tree.xpath('//*[self::body|self::x:body]',
                       namespaces={'x': 'http://www.w3.org/1999/xhtml'})
     if bods:
-        bods[0].tag = '{http://www.w3.org/1999/xhtml}div'
         return bods[0]
-    else:  # It parsed, so must have been fed a valid XML tree - return it
-        return tree
+    else:
+        raise Exception('Content must have <body>')
 
 
 def etree_to_content(etree_, strip_root_node=False):
@@ -468,7 +467,7 @@ class Document(object):
         self._references = _parse_references(self._xml)
 
     def _content__del(self):
-        self._xml = etree.Element('div')
+        self._xml = content_to_etree('')
 
     content = property(_content__get,
                        _content__set,
