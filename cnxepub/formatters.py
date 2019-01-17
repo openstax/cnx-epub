@@ -21,7 +21,7 @@ from copy import deepcopy
 import requests
 
 from .models import (
-    model_to_tree,
+    model_to_tree, etree_to_content,
     flatten_to_documents,
     Binder, TranslucentBinder,
     Document, DocumentPointer, CompositeDocument, utf8)
@@ -156,11 +156,7 @@ class HTMLFormatter(object):
             else:
                 _html = self.model._xml
 
-            content = ''.join(utf8([
-                               isinstance(node, (type(''), type(b''))) and
-                               node or etree.tostring(node)
-                               for node in _html.xpath('node()')]))
-            return content
+            return etree_to_content(_html, strip_root_node=True)
 
     @property
     def _template(self):

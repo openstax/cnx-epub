@@ -97,7 +97,12 @@ def content_to_etree(content):
         return tree
 
 
-def etree_to_content(etree_):
+def etree_to_content(etree_, strip_root_node=False):
+    if strip_root_node:
+        return ''.join(utf8([
+            isinstance(node, (type(''), type(b''))) and
+            node or etree.tostring(node)
+            for node in etree_.xpath('node()')]))
     return etree.tostring(etree_)
 
 
