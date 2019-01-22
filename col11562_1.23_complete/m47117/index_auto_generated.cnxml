@@ -1,0 +1,662 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>The Regression Equation</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47117/latest</md:content-url>
+  <md:content-id>m47117</md:content-id>
+  <md:title>The Regression Equation</md:title>
+  <md:version>1.8</md:version>
+  <md:created>2013/07/19 05:02:07 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>absolute values of a residual</md:keyword>
+    <md:keyword>coefficient of determination</md:keyword>
+    <md:keyword>correlation coefficient</md:keyword>
+    <md:keyword>least-squares line</md:keyword>
+    <md:keyword>linear correlations</md:keyword>
+    <md:keyword>line of best fit</md:keyword>
+    <md:keyword>residual</md:keyword>
+    <md:keyword>sse</md:keyword>
+    <md:keyword>sum of squared errors</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="delete_me">Data rarely fit a straight line exactly. Usually, you must be satisfied with rough
+predictions. Typically, you have a set of data whose scatter plot appears to <emphasis>"fit"</emphasis> a
+straight line. This is called a <term>Line of Best Fit</term> <emphasis>or</emphasis> <term>Least-Squares Line</term>.</para><note id="fs-idm66386384" class="statistics collab"><label/><title>Collaborative Exercise</title>
+<para id="element-900">If you know a person's pinky (smallest) finger length, do you think you could predict that
+person's height? Collect data from your class (pinky finger length, in inches). The
+independent variable, <emphasis effect="italics">x</emphasis>, is pinky finger length and the dependent variable, <emphasis effect="italics">y</emphasis>, is height. For each set of data, plot the points on graph paper. Make your graph big enough and <emphasis>use a ruler</emphasis>. Then "by eye" draw a line that appears to "fit" the data. For your line, pick two convenient points and use them to find the slope of the line. Find the <emphasis effect="italics">y</emphasis>-intercept of the line by extending your line so it crosses the <emphasis effect="italics">y</emphasis>-axis. Using the slopes and the <emphasis effect="italics">y</emphasis>-intercepts, write your equation of "best fit." Do you think everyone will have the same equation? Why or why not? According to your equation, what is the predicted height for a pinky length of 2.5 inches?
+</para></note><example id="element-22">
+<para id="element-998">A random sample of 11 statistics students produced the following data, where <emphasis effect="italics">x</emphasis> is the third exam score out of 80, and <emphasis effect="italics">y</emphasis> is the final exam score out of 200. Can you predict the final exam score of a random student if you know the third exam score?</para>
+
+<figure id="linrgs_regeq1"><subfigure id="id8083493">
+
+<table id="element-50" summary="">
+<tgroup cols="2"><thead>
+  <row>
+    <entry>x (third exam score)</entry>
+    <entry>y (final exam score)</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>65</entry>
+    <entry>175</entry>
+  </row>
+  <row>
+    <entry>67</entry>
+    <entry>133</entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>185</entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>163</entry>
+  </row>
+  <row>
+    <entry>66</entry>
+    <entry>126</entry>
+  </row>
+  <row>
+    <entry>75</entry>
+    <entry>198</entry>
+  </row>
+  <row>
+    <entry>67</entry>
+    <entry>153</entry>
+  </row>
+  <row>
+    <entry>70</entry>
+    <entry>163</entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>159</entry>
+  </row>
+  <row>
+    <entry>69</entry>
+    <entry>151</entry>
+  </row>
+  <row>
+    <entry>69</entry>
+    <entry>159</entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table>
+<caption>Table showing the scores on the final exam based on scores from the third exam.</caption>
+</subfigure>
+<subfigure id="id7881358">
+<media id="id1164262330756" alt="This is a scatter plot of the data provided. The third exam score is plotted on the x-axis, and the final exam score is plotted on the y-axis. The points form a strong, positive, linear pattern."><image src="fig-ch12_05_01.jpg" mime-type="image/jpeg" width="380"/></media>
+<caption>Scatter plot showing the scores on the final exam based on scores from the third exam.</caption>
+</subfigure></figure></example>
+
+
+<note id="fs-idp122176240" class="statistics try finger">
+<label/>
+<title>Try It</title>
+<exercise id="eip-397"><problem id="eip-266">
+  <para id="eip-937">SCUBA divers have maximum dive times they cannot exceed when going to different depths. The data in <link target-id="eip-idm70490496" document=""/> show different depths with the maximum dive times in minutes. Use your calculator to find the least squares regression line and predict the maximum dive time for 110 feet.</para><table id="eip-idm70490496" summary="">
+<tgroup cols="2">
+<thead><row><entry><emphasis effect="italics">X</emphasis> (depth in feet)</entry>	<entry><emphasis effect="italics">Y</emphasis> (maximum dive time)</entry></row></thead>
+<tbody>
+<row><entry>50</entry>	<entry>80</entry></row>
+<row><entry>60</entry>	<entry>55</entry></row>
+<row><entry>70</entry>	<entry>45</entry></row>
+<row><entry>80</entry>	<entry>35</entry></row>
+<row><entry>90</entry>	<entry>25</entry></row>
+<row><entry>100</entry>	<entry>22</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+
+</note>
+
+<para id="eip-892">The third exam score, <emphasis effect="italics">x</emphasis>, is the independent variable and the final exam score, <emphasis effect="italics">y</emphasis>, is the dependent variable. We will plot a regression line that best "fits" the data. If each of you were to fit a line "by eye," you would draw different lines. We can use what is called a <term>least-squares regression line</term> to obtain the best fit line.</para><para id="element-644">Consider the following diagram. Each point of data is of the the form (<emphasis effect="italics">x</emphasis>, <emphasis effect="italics">y</emphasis>) and each point ofthe line of best fit using least-squares linear regression has the form (<emphasis effect="italics">x</emphasis>, <emphasis effect="italics">&#375;</emphasis>).</para><para id="element-51">The <emphasis effect="italics">&#375;</emphasis> is read <emphasis>"<emphasis effect="italics">y</emphasis> hat"</emphasis> and is the <emphasis>estimated value of <emphasis effect="italics">y</emphasis></emphasis>. It is the value of <emphasis effect="italics">y</emphasis> obtained using the regression line. It is not generally equal to <emphasis effect="italics">y</emphasis> from data.</para><para id="element-530"><figure id="linrgs_regeq2"><media id="id1164271221679" alt="The scatter plot of exam scores with a line of best fit. One data point is highlighted along with the corresponding point on the line of best fit. Both points have the same x-coordinate. The distance between these two points illustrates how to compute the sum of squared errors."><image src="fig-ch12_05_02.jpg" mime-type="image/jpeg" width="380"/></media></figure></para>
+<para id="element-621">The term <emphasis effect="italics">y</emphasis><sub>0</sub> &#8211; <emphasis effect="italics">&#375;</emphasis><sub>0</sub> = <emphasis effect="italics">&#949;</emphasis><sub>0</sub> is called the <emphasis>"error" or</emphasis> <term>residual</term>. It is not an error in the sense of a mistake. The <term>absolute value of a residual</term> measures the vertical distance between the actual value of <emphasis effect="italics">y</emphasis> and the estimated value of <emphasis effect="italics">y</emphasis>. In other words, it measures the vertical distance between the actual data point and the predicted point on the line.</para><para id="eip-462">If the observed data point lies above the line, the residual is positive, and the line underestimates the actual data value for <emphasis effect="italics">y</emphasis>.  If the observed data point lies below the line, the residual is negative, and the line overestimates that actual data value for <emphasis effect="italics">y</emphasis>.</para>
+<para id="eip-104">In the diagram in <link target-id="linrgs_regeq2" document=""/>, <emphasis effect="italics">y</emphasis><sub>0</sub> &#8211; <emphasis effect="italics">&#375;</emphasis><sub>0</sub> = &#949;<sub>0</sub> is the residual for the point shown. Here the point lies above the line and the residual is positive.</para><para id="element-756"><emphasis effect="italics">&#949;</emphasis> = the Greek letter <emphasis>epsilon</emphasis></para>
+<para id="element-15">For each data point, you can calculate the residuals or errors, <emphasis effect="italics">y</emphasis><sub>i</sub> - <emphasis effect="italics">&#375;</emphasis><sub>i</sub> = <emphasis effect="italics">&#949;</emphasis><sub>i</sub> for <emphasis effect="italics">i</emphasis> = 1, 2, 3, ..., 11.</para><para id="element-670">Each |<emphasis effect="italics">&#949;</emphasis>| is a vertical distance.</para><para id="element-610">For the example about the third exam scores and the final exam scores for the 11 statistics students, there are 11 data points. Therefore, there are 11 <emphasis effect="italics">&#949;</emphasis> values. If yousquare each &#949; and add, you get</para><para id="element-575"><m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:msub>
+     <m:mi>&#949;</m:mi>
+     <m:mn>1</m:mn>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mn>2</m:mn>
+  </m:msup>
+  <m:mo>+</m:mo><m:msup>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:msub>
+     <m:mi>&#949;</m:mi>
+     <m:mn>2</m:mn>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mn>2</m:mn>
+  </m:msup>
+  <m:mo>+</m:mo><m:mn>...</m:mn><m:mo>+</m:mo><m:msup>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:msub>
+     <m:mi>&#949;</m:mi>
+     <m:mrow>
+      <m:mn>11</m:mn>
+     </m:mrow>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mn>2</m:mn>
+  </m:msup>
+  <m:mo>=</m:mo><m:mover>
+   <m:mrow>
+    <m:munder>
+     <m:mi>&#931;</m:mi>
+     <m:mrow>
+      <m:mi>i</m:mi><m:mtext>&#160;</m:mtext><m:mo>=</m:mo><m:mtext>&#160;</m:mtext><m:mn>1</m:mn>
+     </m:mrow>
+    </m:munder>
+
+   </m:mrow>
+   <m:mrow>
+    <m:mn>11</m:mn>
+   </m:mrow>
+  </m:mover>
+  <m:msup>
+   <m:mi>&#949;</m:mi>
+   <m:mn>2</m:mn>
+  </m:msup>
+
+ </m:mrow>
+</m:math></para>
+<para id="element-215">This is called the <term>Sum of Squared Errors (SSE)</term>.</para><para id="element-640">Using calculus, you can determine the values of <emphasis effect="italics">a</emphasis> and <emphasis effect="italics">b</emphasis> that make the <emphasis>SSE</emphasis> a minimum. When you make the <emphasis>SSE</emphasis> a
+minimum, you have determined the points that are on the line of best fit. It turns out that
+the line of best fit has the equation:
+</para>
+
+<equation id="element-710"><m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>y</m:mi>
+   <m:mo>^</m:mo>
+  </m:mover>
+  <m:mo>=</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>x</m:mi>
+ </m:mrow>
+</m:math>
+</equation><para id="element-716">where <m:math>
+ <m:mrow>
+  <m:mi>a</m:mi><m:mo>=</m:mo><m:mover accent="true">
+   <m:mi>y</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mo>&#8722;</m:mo><m:mi>b</m:mi><m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+   </m:mrow>
+</m:math> and <m:math>
+ <m:mrow>
+  <m:mi>b</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>&#931;</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mover accent="true">
+     <m:mi>x</m:mi>
+     <m:mo>&#175;</m:mo>
+    </m:mover>
+    <m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo>&#8722;</m:mo><m:mover accent="true">
+     <m:mi>y</m:mi>
+     <m:mo>&#175;</m:mo>
+    </m:mover>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>&#931;</m:mi><m:msup>
+     <m:mrow>
+      <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mover accent="true">
+       <m:mi>x</m:mi>
+       <m:mo>&#175;</m:mo>
+      </m:mover>
+      <m:mo stretchy="false">)</m:mo>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>.</para><para id="element-153">The sample means of the <emphasis effect="italics">x</emphasis> values and the <emphasis effect="italics">y</emphasis> values are <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> and <m:math>
+ <m:mover accent="true">
+  <m:mi>y</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math>, respectively. The best fit line always passes through the point <m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mo>,</m:mo><m:mover accent="true">
+   <m:mi>y</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+</m:math>.</para><para id="element-414">The slope <emphasis effect="italics">b</emphasis> can be written as <m:math>
+ <m:mrow>
+  <m:mi>b</m:mi><m:mo>=</m:mo><m:mi>r</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:msub>
+       <m:mi>s</m:mi>
+       <m:mi>y</m:mi>
+      </m:msub>
+
+     </m:mrow>
+     <m:mrow>
+      <m:msub>
+       <m:mi>s</m:mi>
+       <m:mi>x</m:mi>
+      </m:msub>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> where <emphasis effect="italics">s</emphasis><sub><emphasis effect="italics">y</emphasis></sub> = the standard deviation of the <emphasis effect="italics">y</emphasis> values and <emphasis effect="italics">s</emphasis><sub><emphasis effect="italics">x</emphasis></sub> = the standard deviation of the <emphasis effect="italics">x</emphasis> values. <emphasis effect="italics">r</emphasis> is the correlation
+coefficient, which is discussed in the next section.</para>
+
+
+<section id="fs-idm120169264">
+<title>Least Squares Criteria for Best Fit</title>
+<para id="eip-996">The process of fitting the best-fit line is called <emphasis>linear regression</emphasis>. The idea behind finding the best-fit line is based on the assumption that the data are scattered about a straight line. The criteria for the best fit line is that the sum of the squared errors (SSE) is minimized, that is, made as small as possible. Any other line you might choose would have a higher SSE than the best fit line. This best fit line is called the <emphasis> least-squares regression line </emphasis>.</para>
+
+<note id="id1164273503037" class="finger"><label/><title>Note</title>
+<para id="fs-idp15798576">Computer spreadsheets, statistical software, and many calculators can quickly calculate the best-fit line and create the graphs. The calculations tend to be tedious if done by hand. Instructions to use the TI-83, TI-83+, and TI-84+ calculators to find the best-fit line and create a scatterplot are shown at the end of this section.</para></note><para id="element-27">
+<title>THIRD EXAM vs FINAL EXAM EXAMPLE:</title>
+The graph of the line of best fit for the third-exam/final-exam example is as follows:</para>
+
+<figure id="linrgs_regeq3"><media id="id1164250764889" alt="The scatter plot of exam scores with a line of best fit. One data point is highlighted along with the corresponding point on the line of best fit."><image src="fig-ch12_05_03.jpg" mime-type="image/jpeg" width="380"/></media></figure><para id="element-689">The least squares regression line (best-fit line) for the third-exam/final-exam example has the equation:</para><equation id="element-643"><m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>y</m:mi>
+   <m:mo>^</m:mo>
+  </m:mover>
+  <m:mo>=</m:mo><m:mo>&#8722;</m:mo><m:mn>173.51</m:mn><m:mo>+</m:mo><m:mn>4.83</m:mn><m:mi>x</m:mi>
+ </m:mrow>
+</m:math></equation>
+
+<note id="eip-923"><label/><title>Reminder</title>
+
+<para id="fs-idp965680">Remember, it is always important to plot a scatter diagram first. If the scatter plot indicates that there is a linear relationship between the variables, then it is reasonable to use a best fit line to make predictions for <emphasis effect="italics">y</emphasis> given <emphasis effect="italics">x</emphasis> within the domain of <emphasis effect="italics">x</emphasis>-values in the sample data, <emphasis>but not necessarily for <emphasis effect="italics">x</emphasis>-values outside that domain.</emphasis> You could use the line to predict the final exam score for a student who earned a grade of 73 on the third exam. You should NOT use the line to predict the final exam score for a student who earned a grade of 50 on the third exam, because 50 is not within the domain of the <emphasis effect="italics">x</emphasis>-values in the sample data, which are between 65 and 75.</para>
+</note></section>
+
+<section id="fs-idp153906304">
+<title>UNDERSTANDING SLOPE</title>
+<para id="element-39">The slope of the line, <emphasis effect="italics">b</emphasis>, describes how changes in the variables are related. It is important to interpret the slope of the line in the context of the situation represented by the data. You should be able to write a sentence interpreting the slope in plain English.</para>
+
+<para id="element-725">
+<emphasis>INTERPRETATION OF THE SLOPE:</emphasis> The slope of the best-fit line tells us how the dependent variable (<emphasis effect="italics">y</emphasis>) changes for every one unit increase in the independent (<emphasis effect="italics">x</emphasis>) variable, on average. </para>
+
+<para id="fs-idm33827856"><title>THIRD EXAM vs FINAL EXAM EXAMPLE</title>Slope: The slope of the line is <emphasis effect="italics">b</emphasis> = 4.83.
+<newline/>Interpretation: For a one-point increase in the score on the third exam, the final exam score increases by 4.83 points, on average.
+</para><note id="fs-idm68284544" class="statistics calculator">
+<label/>
+<para id="eip-772">Using the Linear Regression T Test: LinRegTTest<newline count="2"/></para><list id="eip-480" list-type="enumerated" number-style="arabic"><item> In the STAT list editor, enter the X data in list L1 and the Y data in list L2, paired so that the corresponding (<emphasis effect="italics">x</emphasis>,<emphasis effect="italics">y</emphasis>) values are next to each other in the lists. (If a particular pair of values is repeated, enter it as many times as it appears in the data.)</item>
+<item> On the STAT TESTS menu, scroll down with the cursor to select the LinRegTTest. (Be careful to select LinRegTTest, as some calculators may also have a different item called LinRegTInt.)</item>
+<item>On the LinRegTTest input screen enter: Xlist: L1 ; Ylist: L2 ; Freq: 1</item>
+<item>On the next line, at the prompt <emphasis effect="italics">&#946;</emphasis> or <emphasis effect="italics">&#961;</emphasis>, highlight "&#8800; 0" and press ENTER</item>
+<item>Leave the line for "RegEq:" blank</item>
+<item>Highlight Calculate and press ENTER.</item>
+</list><figure id="linregttestscreens"><media id="id53013501" alt="1. Image of calculator input screen for LinRegTTest with input matching the instructions above. 2.Image of corresponding output calculator output screen for LinRegTTest: Output screen shows: Line 1. LinRegTTest; Line 2. y = a + bx; Line 3. beta does not equal 0 and rho does not equal 0; Line 4. t = 2.657560155; Line 5. df = 9; Line 6. a = &#61485;173.513363; Line 7. b = 4.827394209; Line 8. s = 16.41237711; Line 9. r squared = .4396931104; Line 10. r = .663093591"><image src="fig-ch12_05_04.jpg" mime-type="image/jpeg" width="380"/></media></figure>
+
+<para id="eip-640">The output screen contains a lot of information. For now we will focus on a few items from the output, and will return later to the other items.
+<newline/>The second line says <emphasis effect="italics">y</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis>. Scroll down to find the values <emphasis effect="italics">a</emphasis> = &#8211;173.513, and <emphasis effect="italics">b</emphasis> = 4.8273; the equation of the best fit line is <emphasis effect="italics">&#375;</emphasis> = &#8211;173.51 + 4.83<emphasis effect="italics">x</emphasis>
+<newline/>The two items at the bottom are <emphasis effect="italics">r</emphasis><sub>2</sub> = 0.43969 and <emphasis effect="italics">r</emphasis> = 0.663. For now, just note where to find these values; we will discuss them in the next two sections.
+</para>
+
+<para id="eip-630">Graphing the Scatterplot and Regression Line<newline count="2"/></para><list id="eip-763" list-type="enumerated" number-style="arabic"><item>We are assuming your X data is already entered in list L1 and your Y data is in list L2</item>
+<item>Press 2nd STATPLOT ENTER to use Plot 1</item>
+<item>On the input screen for PLOT 1, highlight <emphasis>On</emphasis>, and press ENTER</item>
+<item>For TYPE: highlight the very first icon which is the scatterplot and press ENTER</item>
+<item>Indicate Xlist: L1 and Ylist: L2</item>
+<item>For Mark: it does not matter which symbol you highlight.</item>
+<item> Press the ZOOM key and then the number 9 (for menu item "ZoomStat") ; the calculator will fit the window to the data </item>
+<item> To graph the best-fit line, press the "Y=" key and type the equation &#8211;173.5 + 4.83X into equation Y1. (The X key is immediately left of the STAT key). Press ZOOM 9 again to graph it. </item>
+<item>Optional: If you want to change the viewing window, press the WINDOW key.  Enter your desired window using Xmin, Xmax, Ymin, Ymax</item></list></note>
+
+<note id="fs-idm135623232"><label/><title>NOTE</title>
+<para id="fs-idm70635232">Another way to graph the line after you create a scatter plot is to use LinRegTTest.
+<list id="eip-idm46438656" list-type="enumerated" number-style="arabic">
+<item>Make sure you have done the scatter plot. Check it on your screen.</item>
+<item>Go to LinRegTTest and enter the lists.</item>
+<item>At RegEq: press VARS and arrow over to Y-VARS. Press 1 for 1:Function. Press 1 for 1:Y1. Then arrow down to Calculate and do the calculation for the line of best fit.</item>
+<item>Press Y = (you will see the regression equation).</item>
+<item>Press GRAPH. The line will be drawn." </item>
+</list></para>
+
+</note></section>
+
+<section id="eip-737">
+<title>The Correlation Coefficient <emphasis effect="italics">r</emphasis></title>
+<para id="element-12345">Besides looking at the scatter plot and seeing that a line seems reasonable, how can you tell if the line is a good predictor? Use the correlation coefficient as another indicator (besides the scatterplot) of the strength of the relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>.</para>
+<para id="eip-357">The <emphasis>correlation coefficient, <emphasis effect="italics">r</emphasis>, </emphasis> developed by Karl Pearson in the early 1900s, is numerical and provides a measure of strength and direction of the linear association between the independent variable <emphasis effect="italics">x</emphasis> and the dependent variable <emphasis effect="italics">y</emphasis>.
+</para>
+
+<para id="eip-344">The correlation coefficient is calculated as</para>
+<para id="element-48"><equation id="eip-id4561593"><m:math>
+ <m:mrow>
+  <m:mi>r</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>n</m:mi><m:mi>&#931;</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>&#8722;</m:mo><m:mo stretchy="false">(</m:mo><m:mi>&#931;</m:mi><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mi>&#931;</m:mi><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:mrow><m:mo>[</m:mo> <m:mrow>
+       <m:mi>n</m:mi><m:mi>&#931;</m:mi><m:msup>
+        <m:mi>x</m:mi>
+        <m:mn>2</m:mn>
+       </m:msup>
+       <m:mo>&#8722;</m:mo><m:msup>
+        <m:mrow>
+         <m:mo stretchy="false">(</m:mo><m:mi>&#931;</m:mi><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo>
+        </m:mrow>
+        <m:mn>2</m:mn>
+       </m:msup>
+
+      </m:mrow> <m:mo>]</m:mo></m:mrow><m:mrow><m:mo>[</m:mo> <m:mrow>
+       <m:mi>n</m:mi><m:mi>&#931;</m:mi><m:msup>
+        <m:mi>y</m:mi>
+        <m:mn>2</m:mn>
+       </m:msup>
+       <m:mo>&#8722;</m:mo><m:msup>
+        <m:mrow>
+         <m:mo stretchy="false">(</m:mo><m:mi>&#931;</m:mi><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo>
+        </m:mrow>
+        <m:mn>2</m:mn>
+       </m:msup>
+
+      </m:mrow> <m:mo>]</m:mo></m:mrow>
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</equation></para>
+<para id="element-363">where <emphasis effect="italics">n</emphasis> = the number of data points.</para>
+
+<para id="element-447">If you suspect a linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>, then <emphasis effect="italics">r</emphasis> can measure how strong the linear relationship is.</para>
+
+<para id="fs-idm19432640"><title>What the VALUE of <emphasis effect="italics">r</emphasis> tells us:</title>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-828"><item>The value of <emphasis effect="italics">r</emphasis> is always between &#8211;1 and +1: &#8211;1 &#8804; <emphasis effect="italics">r</emphasis> &#8804; 1.</item>
+<item>The size of the correlation <emphasis effect="italics">r</emphasis> indicates the strength of the linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>. Values of <emphasis effect="italics">r</emphasis> close to &#8211;1 or to +1 indicate a stronger linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>.</item>
+
+<item>If <emphasis effect="italics">r</emphasis> = 0 there is likely no linear correlation. It is important to view the scatterplot, however, because data that exhibit a curved or horizontal pattern may have a correlation of 0.</item>
+<item>If <emphasis effect="italics">r</emphasis> = 1, there is perfect positive correlation. If <emphasis effect="italics">r</emphasis> = &#8211;1, there is perfect negative correlation. In both these cases, all of the original data points lie on a straight line. Of course,in the real world, this will not generally happen.</item>
+</list></para>
+
+<para id="fs-idp154948544">
+<title>What the SIGN of <emphasis effect="italics">r</emphasis> tells us</title>
+<list id="eip-269"><item>A positive value of <emphasis effect="italics">r</emphasis> means that when <emphasis effect="italics">x</emphasis> increases, <emphasis effect="italics">y</emphasis> tends to increase and when <emphasis effect="italics">x</emphasis> decreases, <emphasis effect="italics">y</emphasis> tends to decrease <emphasis>(positive correlation)</emphasis>.</item>
+<item>A negative value of <emphasis effect="italics">r</emphasis> means that when <emphasis effect="italics">x</emphasis> increases, <emphasis effect="italics">y</emphasis> tends to decrease and when <emphasis effect="italics">x</emphasis> decreases, <emphasis effect="italics">y</emphasis> tends to increase <emphasis>(negative correlation)</emphasis>.</item>
+<item>The sign of <emphasis effect="italics">r</emphasis> is the same as the sign of the slope, <emphasis effect="italics">b</emphasis>, of the best-fit line.</item>
+</list>
+</para>
+
+<note id="eip-131"><label/><title>Note</title>
+Strong correlation does not suggest that <emphasis effect="italics">x</emphasis> causes <emphasis effect="italics">y</emphasis> or <emphasis effect="italics">y</emphasis> causes <emphasis effect="italics">x</emphasis>. We say <emphasis>"correlation does not imply causation."</emphasis>
+</note><figure id="linrgs_facts_pics"><media id="eip-idp8185984" alt="Three scatter plots with lines of best fit. The first scatterplot shows points ascending from the lower left to the upper right. The line of best fit has positive slope. The second scatter plot shows points descending from the upper left to the lower right. The line of best fit has negative slope. The third scatter plot of points form a horizontal pattern. The line of best fit is a horizontal line.">
+<image src="fig-ch12_06_01.jpg" mime-type="image/jpeg" width="380"/>
+</media>
+<caption>(a) A scatter plot showing data with a positive correlation. 0 &lt; <emphasis effect="italics">r</emphasis> &lt; 1 (b) A scatter plot showing data with a negative correlation. &#8211;1 &lt; <emphasis effect="italics">r</emphasis> &lt; 0 (c) A scatter plot showing data with zero correlation. <emphasis effect="italics">r</emphasis> = 0</caption></figure></section>
+
+<para id="eip-696">The formula for <emphasis effect="italics">r</emphasis> looks formidable. However, computer spreadsheets, statistical software, and many calculators can quickly calculate <emphasis effect="italics">r</emphasis>. The correlation coefficient <emphasis effect="italics">r</emphasis> is the bottom item in the output screens for the LinRegTTest on the TI-83, TI-83+, or TI-84+ calculator (see previous section for instructions).</para>
+
+<section id="eip-117">
+<title>The Coefficient of Determination</title>
+<para id="eip-458"><emphasis>The variable <emphasis effect="italics">r</emphasis><sup>2</sup> is called the</emphasis> <term>coefficient of determination</term> and is the square of the correlation coefficient, but is usually stated as a percent, rather than in decimal form. It has an interpretation in the context of the data:</para>
+<list id="eip-728"><item><m:math>
+<m:msup>
+<m:mi>r</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+</m:math>, when expressed as a percent, represents the percent of variation in the dependent (predicted) variable <emphasis effect="italics">y</emphasis> that can be explained by variation in the independent (explanatory) variable <emphasis effect="italics">x</emphasis> using the regression (best-fit) line.</item>
+<item>1 &#8211; <m:math><m:msup>
+ <m:mi>r</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+</m:math>, when expressed as a percentage, represents the percent of variation in <emphasis effect="italics">y</emphasis> that is NOT explained by variation in <emphasis effect="italics">x</emphasis> using the regression line. This can be seen as the scattering of the observed data points about the regression line.</item>
+</list>
+
+<para id="fs-idp19642608">Consider the <link target-id="element-22">third exam/final exam example</link> introduced in the previous section<newline/>
+<list id="eip-624" list-type="bulleted">
+<item>The line of best fit is: <emphasis effect="italics">&#375;</emphasis> = &#8211;173.51 + 4.83x</item>
+ <item>The correlation coefficient is <emphasis effect="italics">r</emphasis> = 0.6631</item>
+<item>The coefficient of determination is <emphasis effect="italics">r</emphasis><sup>2</sup> = 0.6631<sup>2</sup> = 0.4397</item>
+
+<item><emphasis>Interpretation of <emphasis effect="italics">r</emphasis><sup>2</sup> in the context of this example:</emphasis></item>
+<item>Approximately 44% of the variation (0.4397 is approximately 0.44) in the final-exam grades can be explained by the variation in the grades on the third exam, using the best-fit regression line.</item>
+<item>Therefore, approximately 56% of the variation (1 &#8211; 0.44 = 0.56) in the final exam grades can NOT be explained by the variation in the grades on the third exam, using the best-fit regression line. (This is seen as the scattering of the points about the line.)</item>
+</list></para></section>
+
+<section id="eip-993" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm125375712">A regression line, or a line of best fit, can be drawn on a scatter plot and used to predict outcomes for the <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> variables in a given data set or sample data. There are several ways to find a regression line, but usually the least-squares regression line is used because it creates a uniform line. Residuals, also called &#8220;errors,&#8221; measure the distance from the actual value of <emphasis effect="italics">y</emphasis> and the estimated value of <emphasis effect="italics">y</emphasis>. The Sum of Squared Errors, when set to its minimum, calculates the points on the line of best fit. Regression lines can be used to predict values within the given set of data, but should not be used to make predictions for values outside the set of data.</para>
+
+<para id="fs-idm137061632">The correlation coefficient <emphasis effect="italics">r</emphasis> measures the strength of the linear association between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>. The variable <emphasis effect="italics">r</emphasis> has to be between &#8211;1 and +1. When <emphasis effect="italics">r</emphasis> is positive, the <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> will tend to increase and decrease together. When <emphasis effect="italics">r</emphasis> is negative, <emphasis effect="italics">x</emphasis> will increase and <emphasis effect="italics">y</emphasis> will decrease, or the opposite, <emphasis effect="italics">x</emphasis> will decrease and <emphasis effect="italics">y</emphasis> will increase. The coefficient of determination <emphasis effect="italics">r</emphasis><sup>2</sup>, is equal to the square of the correlation coefficient. When expressed as a percent, <emphasis effect="italics">r</emphasis><sup>2</sup> represents the percent of variation in the dependent variable <emphasis effect="italics">y</emphasis> that can be explained by variation in the independent variable <emphasis effect="italics">x</emphasis> using the regression line.</para></section>
+
+<section id="eip-234" class="practice">
+<para id="eip-399"><emphasis effect="italics">Use the following information to answer the next five exercises</emphasis>. A random sample of ten professional athletes produced the following data where <emphasis effect="italics">x</emphasis> is the number of endorsements the player has and <emphasis effect="italics">y</emphasis> is the amount of money made (in millions of dollars).</para>
+<para id="eip-841"><table id="fs-idm76330016" summary="..">
+<title/>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry><emphasis effect="italics">x</emphasis></entry>
+<entry><emphasis effect="italics">y</emphasis></entry>
+<entry><emphasis effect="italics">x</emphasis></entry>
+<entry><emphasis effect="italics">y</emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry>2</entry>
+<entry>5</entry>
+<entry>12</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>8</entry>
+<entry>4</entry>
+<entry>9</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>7</entry>
+<entry>3</entry>
+<entry>9</entry>
+</row>
+<row>
+<entry>1</entry>
+<entry>3</entry>
+<entry>0</entry>
+<entry>3</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>13</entry>
+<entry>4</entry>
+<entry>10</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</para><exercise id="eip-405"><problem id="eip-751">
+  <para id="eip-193">Draw a scatter plot of the data.</para>
+</problem></exercise><exercise id="eip-141">
+<problem id="eip-445">
+  <para id="eip-40">Use regression to find the equation for the line of best fit.</para></problem>
+
+<solution id="eip-780">
+  <para id="eip-377"><emphasis effect="italics">&#375;</emphasis> = 2.23 + 1.99<emphasis effect="italics">x</emphasis></para></solution>
+</exercise>
+
+<exercise id="eip-88"><problem id="eip-916">
+  <para id="eip-294">Draw the line of best fit on the scatter plot.</para></problem></exercise><exercise id="eip-247">
+<problem id="eip-279">
+  <para id="eip-140">What is the slope of the line of best fit? What does it represent?</para></problem>
+
+<solution id="eip-947">
+  <para id="eip-540">The slope is 1.99 (<emphasis effect="italics">b</emphasis> = 1.99). It means that for every endorsement deal a professional player gets, he gets an average of another $1.99 million in pay each year.</para></solution>
+</exercise>
+
+<exercise id="eip-723"><problem id="eip-19">
+  <para id="eip-418">What is the <emphasis effect="italics">y</emphasis>-intercept of the line of best fit? What does it represent?</para>
+</problem></exercise><exercise id="eip-976">
+<problem id="eip-554">
+  <para id="eip-24">What does an <emphasis effect="italics">r</emphasis> value of zero mean?</para>
+</problem>
+
+<solution id="eip-646">
+  <para id="eip-152">It means that there is no correlation between the data sets.</para>
+</solution>
+</exercise>
+<exercise id="eip-339"><problem id="eip-736">
+  <para id="eip-818">When <emphasis effect="italics">n</emphasis> = 2 and <emphasis effect="italics">r</emphasis> = 1, are the data significant? Explain.</para>
+</problem></exercise><exercise id="eip-270"><problem id="eip-87">
+  <para id="fs-idp27546736">When <emphasis effect="italics">n</emphasis> = 100 and <emphasis effect="italics">r</emphasis> = -0.89, is there a significant correlation? Explain.</para></problem>
+
+<solution id="eip-946">
+  <para id="eip-240">Yes, there are enough data points and the value of r is strong enough to show that there is a strong negative correlation between the data sets.</para></solution>
+</exercise>
+</section><section id="eip-884" class="free-response"><title>Homework</title><exercise id="eip-idp54658976"><problem id="eip-idp54659232">
+  <para id="eip-idp106876496">What is the process through which we can calculate a line that goes through a scatter plot with a linear pattern?</para>
+</problem></exercise><exercise id="eip-71"><problem id="eip-944">
+<para id="eip-284">Explain what it means when a correlation has an <emphasis effect="italics">r</emphasis><sup>2</sup> of 0.72.</para>
+</problem>
+<solution id="eip-459">
+<para id="eip-495">It means that 72% of the variation in the dependent variable (<emphasis effect="italics">y</emphasis>) can be explained by the variation in the independent variable (<emphasis effect="italics">x</emphasis>).</para>
+</solution></exercise><exercise id="eip-956"><problem id="eip-573">
+<para id="eip-352">Can a coefficient of determination be negative? Why or why not?</para>
+</problem></exercise></section>
+  </content>
+<glossary>
+<definition id="coeffcorr">
+    <term>Coefficient of Correlation</term>
+    <meaning id="id1167925021109">a measure developed by Karl Pearson (early 1900s) that gives the strength of association between the independent variable and the dependent variable; the formula is:
+    <equation id="id5499555"><m:math>
+ <m:mrow>
+  <m:mi>r</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>n</m:mi><m:mi>&#931;</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>&#8722;</m:mo><m:mo stretchy="false">(</m:mo><m:mi>&#931;</m:mi><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mi>&#931;</m:mi><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:mrow><m:mo>[</m:mo> <m:mrow>
+       <m:mi>n</m:mi><m:mi>&#931;</m:mi><m:msup>
+        <m:mi>x</m:mi>
+        <m:mn>2</m:mn>
+       </m:msup>
+       <m:mo>&#8722;</m:mo><m:msup>
+        <m:mrow>
+         <m:mo stretchy="false">(</m:mo><m:mi>&#931;</m:mi><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo>
+        </m:mrow>
+        <m:mn>2</m:mn>
+       </m:msup>
+
+      </m:mrow> <m:mo>]</m:mo></m:mrow><m:mrow><m:mo>[</m:mo> <m:mrow>
+       <m:mi>n</m:mi><m:mi>&#931;</m:mi><m:msup>
+        <m:mi>y</m:mi>
+        <m:mn>2</m:mn>
+       </m:msup>
+       <m:mo>&#8722;</m:mo><m:msup>
+        <m:mrow>
+         <m:mo stretchy="false">(</m:mo><m:mi>&#931;</m:mi><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo>
+        </m:mrow>
+        <m:mn>2</m:mn>
+       </m:msup>
+
+      </m:mrow> <m:mo>]</m:mo></m:mrow>
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</equation> where <emphasis effect="italics">n</emphasis> is the number of data points. The coefficient cannot be more then 1 and less then &#8211;1. The closer the coefficient is to &#177;1, the stronger the evidence of a significant linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>.
+    </meaning>
+  </definition>
+
+
+</glossary>
+</document>

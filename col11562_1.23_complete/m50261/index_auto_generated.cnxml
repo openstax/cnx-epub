@@ -1,0 +1,168 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Normal Distribution (Lap Times)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50261/latest</md:content-url>
+  <md:content-id>m50261</md:content-id>
+  <md:title>Normal Distribution (Lap Times)</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/08 18:39:06 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>area to the left</md:keyword>
+    <md:keyword>area to the right</md:keyword>
+    <md:keyword>critical value</md:keyword>
+    <md:keyword>percentile</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id8352229" class="statistics lab"><label/><title>Normal Distribution (Lap Times) </title>
+
+<para id="id5906467">Class Time: </para>
+<para id="id7315926">Names:</para>
+<list id="id3819098" list-type="bulleted"><title>Student Learning Outcome</title><item>The student will compare and contrast empirical data and a theoretical distribution to determine if Terry Vogel's lap times fit a continuous distribution. </item>
+</list><para id="element-295"><title>Directions</title>Round the relative frequencies and probabilities to four decimal places. Carry all other decimal answers to two places.</para><list id="list-23435" list-type="enumerated"><title id="CollectData">Collect the Data</title><item>Use the data from <link document="m47873">Appendix C</link>. Use a stratified sampling method by lap (races 1 to 20) and a random number generator to pick six lap times from each stratum. Record the lap times below for laps two to seven.<newline/>
+<table id="element-2352564535" summary="Blank table with 36 empty cells.">
+<tgroup cols="6">
+<tbody>
+<row>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+</row>
+<row>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+</row>
+<row>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+</row>
+<row>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+</row>
+<row>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+</row>
+<row>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+<entry>_______</entry>
+</row></tbody>
+</tgroup>
+</table>
+</item>
+
+<item>Construct a histogram. Make five to six intervals. Sketch the graph using a ruler and pencil. Scale the axes.
+<figure id="fig045324"><media id="id7826845" alt="Blank graph with relative frequency on the vertical axis and lap time on the horizontal axis.">
+<image src="fig-ch06_10_01.png" mime-type="image/png" width="400"/></media>
+</figure></item>
+<item>Calculate the following:
+<list id="list-245243533" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> = _______</item>
+<item><emphasis effect="italics">s</emphasis> = _______</item>
+</list></item>
+<item>Draw a smooth curve through the tops of the bars of the histogram. Write one to two complete sentences to describe the general shape of the curve. (Keep it simple. Does the graph go straight across, does it have a v-shape, does it have a hump in the middle or at either end, and so on?)</item></list><para id="element-12"><title id="AnalyzeDist">Analyze the Distribution</title>
+Using your sample mean, sample standard deviation, and histogram to help, what is the approximate theoretical distribution of the data?</para>
+<list id="list-23452" list-type="bulleted"><item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>How does the histogram help you arrive at the approximate distribution?</item>
+</list>
+
+<para id="element-50">
+<title id="DescData">Describe the Data</title>
+Use the data you collected to complete the following statements.</para>
+<list id="list-2342532" list-type="bulleted"><item>The <emphasis effect="italics">IQR</emphasis> goes from __________ to __________.</item>
+<item><emphasis effect="italics">IQR</emphasis> = __________. (<emphasis effect="italics">IQR</emphasis> = <emphasis effect="italics">Q</emphasis><sub>3</sub> &#8211; <emphasis effect="italics">Q</emphasis><sub>1</sub>)</item>
+<item>The 15<sup>th</sup> percentile is _______.</item>
+<item>The 85<sup>th</sup> percentile is _______.</item>
+<item>The median is _______.</item>
+<item>The empirical probability that a randomly chosen lap time is more than 130 seconds  is _______.</item>
+<item>Explain the meaning of the 85<sup>th</sup> percentile of this data.</item>
+</list><para id="element-104">
+<title id="TheoDist">Theoretical Distribution</title>
+Using the theoretical distribution, complete the following statements. You should use a normal approximation based on your sample data.</para>
+<list id="list-23432432" list-type="bulleted"><item>The <emphasis effect="italics">IQR</emphasis> goes from __________ to __________.</item>
+<item><emphasis effect="italics">IQR</emphasis> =  _______.</item>
+<item>The 15<sup>th</sup> percentile is _______.</item>
+<item>The 85<sup>th</sup> percentile is _______.</item>
+<item>The median is _______.</item>
+<item>The probability that a randomly chosen lap time is more than 130 seconds is _______.</item>
+<item>Explain the meaning of the 85<sup>th</sup> percentile of this distribution.</item>
+</list>
+
+<para id="fs-idm197255200"><title>Discussion Questions</title>Do the data from the section titled <link target-id="CollectData" document="">Collect the Data</link> give a close approximation to the theoretical distribution in the section titled <link target-id="AnalyzeDist" document="">Analyze the Distribution</link>? In complete sentences and comparing the result in the sections titled <link target-id="DescData" document="">Describe the Data</link> and <link target-id="TheoDist" document="">Theoretical Distribution</link>, explain why or why not.</para></note></content>
+
+</document>

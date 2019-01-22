@@ -1,0 +1,527 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="id6723023" module-id="" cnxml-version="0.7">
+  <title>Definitions of Statistics, Probability, and Key Terms</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46909/latest</md:content-url>
+  <md:content-id>m46909</md:content-id>
+  <md:title>Definitions of Statistics, Probability, and Key Terms</md:title>
+  <md:version>1.11</md:version>
+  <md:created>2013/07/19 05:40:35 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>average</md:keyword>
+    <md:keyword>categorical variable</md:keyword>
+    <md:keyword>data</md:keyword>
+    <md:keyword>datum</md:keyword>
+    <md:keyword>dot plot</md:keyword>
+    <md:keyword>fair coin</md:keyword>
+    <md:keyword>Karl Pearson</md:keyword>
+    <md:keyword>key terms</md:keyword>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>numerical variable</md:keyword>
+    <md:keyword>parameter</md:keyword>
+    <md:keyword>population</md:keyword>
+    <md:keyword>probability</md:keyword>
+    <md:keyword>proportion</md:keyword>
+    <md:keyword>representative sample</md:keyword>
+    <md:keyword>sample</md:keyword>
+    <md:keyword>statistics</md:keyword>
+    <md:keyword>stats</md:keyword>
+    <md:keyword>variable</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+
+
+<para id="id8112751">The science of <term>statistics</term> deals with the collection, analysis, interpretation, and presentation of <term>data</term>. We see and use data in our everyday lives. </para>
+
+<note id="fs-idm27544368" class="statistics collab"><label/><title>Collaborative Exercise</title>
+<para id="eip-34">In your classroom, try this exercise. Have class members write down the average time (in hours, to the nearest half-hour) they sleep per night. Your instructor will record the data. Then create a simple graph (called a <emphasis>dot plot</emphasis>) of the data. A dot plot consists of a number line and dots (or points) positioned above the number line. For example, consider the following data:</para>
+<para id="eip-idm80945824"><list id="eip-909" list-type="labeled-item" display="inline">
+<item>5</item>
+<item>5.5</item>
+<item>6</item>
+<item>6</item>
+<item>6</item>
+<item>6.5</item>
+<item>6.5</item>
+<item>6.5</item>
+<item>6.5</item>
+<item>7</item>
+<item>7</item>
+<item>8</item>
+<item>8</item>
+<item>9</item></list></para><para id="eip-71">The dot plot for this data would be as follows:</para>
+<figure id="eip-idp25549888"><media id="id44761709a" alt="This is a dot plot showing average hours of sleep. The number line is marked in intervals of 1 from 5 to 9. Dots above the line show 1 person reporting 5 hours, 1 with 5.5, 3 with 6, 4 with 6.5, 2 with 7, 2 with 8, and 1 with 9 hours." longdesc="m16020_DotPlot_description.html">
+<image src="fig-ch01_02_01n.png" mime-type="image/png" width="380">
+<param name="longdesc" value="m16020_DotPlot_description.html"/></image></media>
+</figure><para id="id10326643">Does your dot plot look the same as or different from the example? Why? If you did the same example in an English class with the same number of students, do you think the results would be the same? Why or why not?</para>
+<para id="id9336363">Where do your data appear to cluster? How might you interpret the clustering?</para>
+<para id="id9969457">The questions above ask you to analyze and interpret your data. With this example, you have begun your study of statistics.</para>
+
+
+</note><para id="eip-624">In this course, you will learn how to organize and summarize data. Organizing and summarizing data is called <term>descriptive statistics</term>. Two ways to summarize data are by graphing and by using numbers (for example, finding an average). After you have studied probability and probability distributions, you will use formal methods for drawing conclusions from "good" data. The formal methods are called <term>inferential statistics</term>. Statistical inference uses probability to determine how confident we can be that our conclusions are correct.</para><para id="eip-23">Effective interpretation of data (inference) is based on good procedures for producing data and thoughtful examination of the data. You will encounter what will seem to be too many mathematical formulas for interpreting data. The goal of statistics is not to perform numerous calculations using the formulas, but to gain an understanding of your data. The calculations can be done using a calculator or a computer. The understanding must come from you. If you can thoroughly grasp the basics of statistics, you can be more confident in the decisions you make in life.</para>
+
+<section id="eip-177"><title>Probability</title>
+<para id="fs-idm37641920"><term>Probability</term> is a mathematical tool used to study randomness. It deals with the chance (the likelihood) of an event occurring. For example, if you toss a <emphasis>fair</emphasis> coin four times, the outcomes may not be two heads and two tails. However, if you toss the same coin 4,000 times, the outcomes will be close to half heads and half tails. The expected theoretical probability of heads in any one toss is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>2</m:mn>
+  </m:mfrac>
+ </m:mrow>
+</m:math> or 0.5. Even though the outcomes of a few repetitions are uncertain, there is a regular pattern of outcomes when there are many repetitions. After reading about the English statistician Karl <term>Pearson</term> who tossed a coin 24,000 times with a result of 12,012 heads, one of the authors tossed a coin 2,000 times. The results were 996 heads. The fraction <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>996</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>2000</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> is equal to 0.498 which is very close to 0.5, the expected probability.</para><para id="fs-idm51841168">The theory of probability began with the study of games of chance such as poker. Predictions take the form of probabilities. To predict the likelihood of an earthquake, of rain, or whether you will get an A in this course, we use probabilities. Doctors use probability to determine the chance of a vaccination causing the disease the vaccination is supposed to prevent. A stockbroker uses probability to determine the rate of return on a client's investments. You might use probability to decide to buy a lottery ticket or not. In your study of statistics, you will use the power of mathematics through probability calculations to analyze and interpret your data.</para>
+</section>
+
+<section id="eip-159">
+<title>Key Terms</title>
+<para id="fs-idm63797184">In statistics, we generally want to study a <term>population</term>. You can think of a population as a collection of persons, things, or objects under study. To study the population, we select a <term>sample</term>. The idea of <term>sampling</term> is to select a portion (or subset) of the larger population and study that portion (the sample) to gain information about the population. Data are the result of sampling from a population.</para><para id="fs-idp7610128">Because it takes a lot of time and money to examine an entire population, sampling is a very practical technique. If you wished to compute the overall grade point average at your school, it would make sense to select a sample of students who attend the school. The data collected from the sample would be the students' grade point averages. In presidential elections, opinion poll samples of 1,000&#8211;2,000 people are taken. The opinion poll is supposed to represent the views of the people in the entire country. Manufacturers of canned carbonated drinks take samples to determine if a 16 ounce can contains 16 ounces of carbonated drink.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm52897344">From the sample data, we can calculate a statistic. A <term>statistic</term> is a number that represents a property of the sample. For example, if we consider one math class to be a sample of the population of all math classes, then the average number of points earned by students in that one math class at the end of the term is an example of a statistic. The statistic is an estimate of a population parameter. A <term>parameter</term> is a numerical characteristic of the whole population that can be estimated by a statistic. Since we considered all math classes to be the population, then the average number of points earned per student over all the math classes is an example of a parameter.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm69156368">One of the main concerns in the field of statistics is how accurately a statistic estimates a parameter. The accuracy really depends on how well the sample represents the population. The sample must contain the characteristics of the population in order to be a <term>representative sample</term>. We are interested in both the sample statistic and the population parameter in inferential statistics. In a later chapter, we will use the sample statistic to test the validity of the established population parameter.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm62450928">A <term>variable</term>, usually notated by capital letters such as <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis>, is a characteristic or measurement that can be determined for each member of a population. Variables may be <emphasis>numerical</emphasis> or <emphasis>categorical</emphasis>. <term>Numerical variables</term> take on values with equal units such as weight in pounds and time in hours. <term>Categorical variables</term> place the person or thing into a category. If we let <emphasis effect="italics">X</emphasis> equal the number of points earned by one math student at the end of a term, then <emphasis effect="italics">X</emphasis> is a numerical variable. If we let <emphasis effect="italics">Y</emphasis> be a person's party affiliation, then some examples of <emphasis effect="italics">Y</emphasis> include Republican, Democrat, and Independent. <emphasis effect="italics">Y</emphasis> is a categorical variable. We could do some math with values of <emphasis effect="italics">X</emphasis> (calculate the average number of points earned, for example), but it makes no sense to do math with values of <emphasis effect="italics">Y</emphasis> (calculating an average party affiliation makes no sense).</para><para id="fs-idm69507040"><term>Data</term> are the actual values of the variable. They may be numbers or they may be words. <emphasis>Datum</emphasis> is a single value.</para><para id="fs-idm150607232">Two words that come up often in statistics are <term>mean</term> and <term>proportion</term>. If you were to take three exams in your math classes and obtain scores of 86, 75, and 92, you would calculate your mean score by adding the three exam scores and dividing by three (your mean score would be 84.3 to one decimal place). If, in your math class, there are 40 students and 22 are men and 18 are women, then the proportion of men students is <m:math><m:mrow><m:mfrac><m:mrow><m:mn>22</m:mn></m:mrow><m:mrow><m:mn>40</m:mn></m:mrow></m:mfrac></m:mrow></m:math> and the proportion of women students is <m:math><m:mrow><m:mfrac><m:mrow><m:mn>18</m:mn></m:mrow><m:mrow><m:mn>40</m:mn></m:mrow></m:mfrac></m:mrow></m:math>. Mean and proportion are discussed in more detail in later chapters.</para>
+<note id="fs-idp118463488"><label/><title>NOTE</title><para id="fs-idm25880032">The words "<term>mean</term>" and "<term>average</term>" are often used interchangeably. The substitution of one word for the other is common practice. The technical term is "arithmetic mean," and "average" is technically a center location. However, in practice among non-statisticians, "average" is commonly accepted for "arithmetic mean."</para></note>
+<example id="fs-idm41492224">
+<exercise id="fs-idm10444032"><problem id="fs-idm63060112">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm51690528">Determine what the key terms refer to in the following study. We want to know the average (mean) amount of money first year college students spend at ABC College on school supplies that do not include books. We randomly surveyed 100 first year students at the college.  Three of those students spent $150, $200, and $225, respectively.</para></problem>
+<solution id="fs-idm78922624">
+<para id="fs-idm66686064">The <emphasis>population</emphasis> is all first year students attending ABC College this term.</para>
+<para id="fs-idm40196160">The <emphasis>sample</emphasis> could be all students enrolled in one section of a beginning statistics course at ABC College (although this sample may not represent the entire population).</para>
+<para id="fs-idm58257248">The <emphasis>parameter</emphasis> is the average (mean) amount of money spent (excluding books) by first year college students at ABC College this term.</para>
+<para id="fs-idm56787136">The <emphasis>statistic</emphasis> is the average (mean) amount of money spent (excluding books) by first year college students in the sample.</para>
+<para id="fs-idm39343328">The <emphasis>variable</emphasis> could be the amount of money spent (excluding books) by one first year student. Let <emphasis effect="italics">X</emphasis> = the amount of money spent (excluding books) by one first year student attending ABC College.</para><para id="fs-idm9924960">The <emphasis>data</emphasis> are the dollar amounts spent by the first year students. Examples of the data are $150, $200, and $225.</para>
+</solution>
+</exercise></example>
+
+<note id="fs-idp138853216" class="statistics try"><label/><title>Try It</title>
+<exercise id="fs-idp65729424"><problem id="fs-idp121971984">
+<para id="fs-idm19818720">Determine what the key terms refer to in the following study. We want to know the average (mean) amount of money spent on school uniforms each year by families with children at Knoll Academy. We randomly survey 100 families with children in the school. Three of the families spent $65, $75, and $95, respectively.</para>
+</problem>
+</exercise></note><example id="fs-idm42503168">
+<exercise id="fs-idm125077712"><problem id="fs-idm36699520">
+<para id="fs-idm41922176">Determine what the key terms refer to in the following study.</para><para id="fs-idm14780304">A study was conducted at a local college to analyze the average cumulative GPA&#8217;s of students who graduated last year. Fill in the letter of the phrase that best describes each of the items below.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm49702528">1. Population_____ 2. Statistic _____ 3. Parameter _____ 4. Sample _____ 5. Variable _____ 6. Data _____
+</para><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm9097856" list-type="enumerated" number-style="lower-alpha"><item>all students who attended the college last year</item>
+<item>the cumulative GPA of one student who graduated from the college last year</item>
+<item>3.65, 2.80, 1.50, 3.90</item>
+<item>a group of students who graduated from the college last year, randomly selected</item>
+<item>the average cumulative GPA of students who graduated from the college last year</item>
+<item>all students who graduated from the college last year</item>
+<item>the average cumulative GPA of students in the study who graduated from the college last year</item>
+</list></problem>
+<solution id="fs-idm17652592">
+<para id="fs-idm53173376"><list list-type="labeled-item" display="inline">
+<item>1. f</item>
+<item>2. g</item>
+<item>3. e</item>
+<item>4. d</item>
+<item>5. b</item>
+<item>6. c</item>
+</list>
+</para></solution>
+</exercise></example>
+<example id="fs-idm70107152"><exercise id="fs-idm53269072">
+<problem id="fs-idm41679344">
+<para id="fs-idm53163856">Determine what the key terms refer to in the following study.</para><para id="fs-idm19702944">As part of a study designed to test the safety of  automobiles, the National Transportation Safety Board collected and reviewed data about the effects of an automobile crash on  test dummies. Here is the criterion they used:</para>
+<table id="ch01_mod01_tbl003" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<tbody>
+<row>
+<entry>Speed at which Cars Crashed</entry>
+<entry>Location of &#8220;drive&#8221; (i.e. dummies)</entry>
+</row>
+<row>
+<entry>35 miles/hour</entry>
+<entry>Front Seat</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idm69168288">Cars with dummies in the front seats were crashed into a wall at a speed of 35 miles per hour. We want to know the proportion of dummies in the driver&#8217;s seat that would have had head injuries, if they had been actual drivers. We start with a simple random sample of 75 cars.</para></problem>
+<solution id="fs-idm69138080">
+<para id="fs-idm32368">The <emphasis>population</emphasis> is all cars containing dummies in the front seat.</para><para id="fs-idm42507664">The <emphasis>sample</emphasis> is the 75 cars, selected by a simple random sample.</para>
+<para id="fs-idm45479952">The <emphasis>parameter</emphasis> is the proportion of driver dummies (if they had been real people) who would have suffered head injuries in the population.</para><para id="fs-idm59321456">The <emphasis>statistic</emphasis> is proportion of driver dummies (if they had been real people) who would have suffered head injuries in the sample.</para><para id="fs-idm41923744">The <emphasis>variable</emphasis> <emphasis effect="italics">X</emphasis> = the number of driver dummies (if they had been real people) who would have suffered head injuries.</para><para id="fs-idm77048688">The <emphasis>data</emphasis> are either: yes, had head injury, or no, did not.</para></solution>
+</exercise>
+</example><example id="fs-idm64455456">
+<exercise id="fs-idm55175232">
+<problem id="fs-idm56962416">
+<para id="fs-idm74506992">Determine what the key terms refer to in the following study.</para><para id="fs-idm35536880">An insurance company would like to determine the proportion of all medical doctors
+who have been involved in one or more malpractice lawsuits. The company selects
+500 doctors at random from a professional directory and determines the number in
+the sample who have been involved in a malpractice lawsuit.</para></problem>
+<solution id="fs-idm36890624">
+<para id="fs-idm43486032">The <emphasis>population</emphasis> is all medical doctors listed in the professional directory.</para>
+<para id="fs-idp3077328">The <emphasis>parameter</emphasis> is the proportion of medical doctors who have been involved in one or more malpractice suits in the population.</para>
+<para id="fs-idm45173104">The <emphasis>sample</emphasis> is the 500 doctors selected at random from the professional directory.</para>
+<para id="fs-idp4875616">The <emphasis>statistic</emphasis> is the proportion of medical doctors who have been involved in one or more malpractice suits in the sample.</para>
+<para id="fs-idm52360480">The <emphasis>variable</emphasis> <emphasis effect="italics">X</emphasis> = the number of medical doctors who have been involved in one or more malpractice suits.</para><para id="fs-idm41698096">The <emphasis>data</emphasis> are either: yes, was involved in one or more malpractice lawsuits, or no, was not.</para></solution>
+</exercise>
+</example>
+
+<note id="fs-idm62184048" class="statistics collab"><label/><title>Collaborative Exercise</title>
+<para id="fs-idp44556000">Do the following exercise collaboratively with up to four people per group. Find a population, a sample, the parameter, the statistic, a variable, and data for the following study: You want to determine the average (mean) number of glasses of milk college students drink per day. Suppose yesterday, in your English class, you asked five students how many glasses of milk they drank the day before. The answers were 1, 0, 1, 3, and 4 glasses of milk.</para>
+</note></section>
+
+<section id="eip-525" class="references"><title>References</title><para id="eip-idm8127520">The Data and Story Library, http://lib.stat.cmu.edu/DASL/Stories/CrashTestDummies.html (accessed May 1, 2013).</para></section><section id="fs-idp10393488" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm52853984">The mathematical theory of statistics is easier to learn when you know the language. This module presents important terms that will be used throughout the text.</para></section>
+
+<section id="fs-idm17793024" class="practice">
+<title>Practice</title>
+
+
+<para id="id6060529"><emphasis effect="italics">Use the following information to answer the next five exercises.</emphasis> Studies are often done by pharmaceutical companies to determine the effectiveness of a treatment program. Suppose that a new AIDS antibody drug is currently under study. It is given to patients once the AIDS symptoms have revealed themselves. Of interest is the average (mean) length of time in months patients live once they start the treatment. Two researchers each follow a different set of 40 patients with AIDS from the start of treatment until their deaths. The following data (in months) are collected.</para><para id="element-388"><title>Researcher A:</title><list id="set-element-743" list-type="labeled-item" display="inline"><item>3</item>
+<item>4</item>
+<item>11</item>
+<item>15</item>
+<item>16</item>
+<item>17</item>
+<item>22</item>
+<item>44</item>
+<item>37</item>
+<item>16</item>
+<item>14</item>
+<item>24</item>
+<item>25</item>
+<item>15</item>
+<item>26</item>
+<item>27</item>
+<item>33</item>
+<item>29</item>
+<item>35</item>
+<item>44</item>
+<item>13</item>
+<item>21</item>
+<item>22</item>
+<item>10</item>
+<item>12</item>
+<item>8</item>
+<item>40</item>
+<item>32</item>
+<item>26</item>
+<item>27</item>
+<item>31</item>
+<item>34</item>
+<item>29</item>
+<item>17</item>
+<item>8</item>
+<item>24</item>
+<item>18</item>
+<item>47</item>
+<item>33</item>
+<item>34</item>
+</list></para><para id="fs-idp53299072"><title>Researcher B:</title><list id="set-element-556" list-type="labeled-item" display="inline"><item>3</item>
+<item>14</item>
+<item>11</item>
+<item>5</item>
+<item>16</item>
+<item>17</item>
+<item>28</item>
+<item>41</item>
+<item>31</item>
+<item>18</item>
+<item>14</item>
+<item>14</item>
+<item>26</item>
+<item>25</item>
+<item>21</item>
+<item>22</item>
+<item>31</item>
+<item>2</item>
+<item>35</item>
+<item>44</item>
+<item>23</item>
+<item>21</item>
+<item>21</item>
+<item>16</item>
+<item>12</item>
+<item>18</item>
+<item>41</item>
+<item>22</item>
+<item>16</item>
+<item>25</item>
+<item>33</item>
+<item>34</item>
+<item>29</item>
+<item>13</item>
+<item>18</item>
+<item>24</item>
+<item>23</item>
+<item>42</item>
+<item>33</item>
+<item>29</item>
+</list></para><para id="id606052900">Determine what the key terms refer to in the example for Researcher A.</para><exercise id="exerciseone"><problem id="id14666923">
+<para id="prob_1">population</para>
+</problem>
+
+<solution id="eip-idp43397312">
+<para id="eip-idp50975232">AIDS  patients.</para>
+</solution></exercise>
+          <exercise id="exercisetwo"><problem id="id14666952">
+<para id="prob_2">sample</para>
+</problem>
+
+<!-- <solution id="eip-idm6874896">
+<para id="eip-idm86460448">AIDS  patients sampled from researcher A and researcher B.</para>
+</solution> --></exercise><exercise id="exercisethree"><problem id="id14666982">
+<para id="prob_3">parameter</para>
+</problem>
+
+<solution id="eip-idm55102528">
+<para id="eip-idm55102272">The average length of time (in months) AIDS patients live after treatment.</para>
+</solution>
+</exercise>
+          <exercise id="exercisefour"><problem id="id14667012">
+<para id="prob_4">statistic</para>
+</problem>
+
+<!-- <solution id="eip-idp68684304">
+<para id="eip-idp10558736">The average length of time (in months) AIDS patients from the sample live after treatment.</para>
+</solution> --></exercise><exercise id="exercisefive"><problem id="id14667042">
+<para id="prob_5">variable</para>
+</problem>
+
+<solution id="eip-idp32103664">
+<para id="eip-idm64123264"><emphasis effect="italics">X</emphasis> = the length of time (in months) AIDS patients live after treatment</para></solution>
+</exercise>
+</section><section id="fs-idm57628896" class="free-response"><title>HOMEWORK</title><para id="eip-idm102156112"><emphasis effect="italics">For each of the following eight exercises, identify: a. the population, b. the sample,
+c. the parameter, d. the statistic, e. the variable, and f. the data. Give examples where appropriate.</emphasis></para>
+
+
+
+<exercise id="element-188"><problem id="id30125588">
+
+
+<para id="element-424">A fitness center is interested in the mean amount of time a client exercises in the center each
+week.</para></problem>
+
+<!-- <solution id="eip-idm31021440">
+<list id="eip-idm31021184" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>The population is all of the clients of the fitness center.</item>
+<item>A sample of the clients that use the fitness center for a given week.</item>
+<item>The average amount of time that all clients exercise in one week.</item>
+<item>The average amount of time that a sample of clients exercises in one week.</item>
+<item>The amount of time that a client exercises in one week.</item>
+<item>Examples are: 2 hours, 5 hours, and 7.5 hours</item>
+</list></solution> -->
+</exercise><exercise id="element-951"><problem id="id30142690">
+		<para id="element-812">Ski resorts are interested in the mean age that children take their first ski and snowboard lessons. They need this information to plan their ski classes optimally.</para></problem>
+<solution id="id30142809">
+<list id="element-36236" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>all children who take ski or snowboard lessons</item>
+<item>a group of these children</item>
+<item>the population mean age of children who take their first snowboard lesson</item>
+<item>the sample mean age of children who take their first snowboard lesson</item>
+<item><emphasis effect="italics">X</emphasis> = the age of one child who takes his or her first ski or snowboard lesson</item>
+<item>values for <emphasis effect="italics">X</emphasis>, such as 3, 7, and so on</item>
+</list></solution></exercise>
+
+
+      <exercise id="element-776"><problem id="id30142935">
+<para id="element-85">A cardiologist is interested in the mean recovery period of her patients who have had heart attacks.</para></problem>
+
+<!-- <solution id="eip-idm18256448">
+<list id="eip-idm26972912" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>the cardiologist&#8217;s patients</item>
+<item>a group of the cardiologist&#8217;s patients</item>
+<item>the mean recovery period of all of the cardiologist&#8217;s patients</item>
+<item>the mean recovery period of the group of the cardiologist&#8217;s patients</item>
+<item><emphasis effect="italics">X</emphasis> = the mean recovery period of one patient</item>
+<item>values for <emphasis effect="italics">X</emphasis>, such as 10 days, 14 days, 20 days, and so on</item>
+</list></solution> --></exercise><exercise id="element-54"><problem id="id30143063">
+		<para id="element-530">Insurance companies are interested in the mean health costs each year of their clients, so that they can determine the costs of health insurance.</para></problem>
+<solution id="id30200870">
+<list id="element-362362" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>the clients of the insurance companies</item>
+<item>a group of the clients</item>
+<item>the mean health costs of the clients</item>
+<item>the mean health costs of the sample</item>
+<item><emphasis effect="italics">X</emphasis> = the health costs of one client</item>
+<item>values for <emphasis effect="italics">X</emphasis>, such as 34, 9, 82, and so on</item>
+</list></solution></exercise>
+
+      <exercise id="element-605"><problem id="id30200997">
+<para id="element-540">A politician is interested in the proportion of voters in his district who think he is doing a good job.</para></problem>
+
+<!-- <solution id="eip-idm40279024">
+<list id="eip-idm64896032" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>all voters in the politician&#8217;s district</item>
+<item>a random selection of voters in the politician&#8217;s district</item>
+<item>the proportion of voters in this district who think this politician is doing a good job</item>
+<item>the proportion of voters in this district who think this politician is doing a good job in the sample</item>
+<item><emphasis effect="italics">X</emphasis> = the number of voters in the district who think this politician is doing a good job</item>
+<item>Yes, he is doing a good job. No, he is not doing a good job.</item>
+</list></solution> --></exercise><exercise id="element-430"><problem id="id30201124">
+		<para id="element-145">A marriage counselor is interested in the proportion of clients she counsels who stay married.
+		</para></problem>
+<solution id="id30201242">
+<list id="element-362363" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>all the clients of this counselor</item>
+<item>a group of clients of this marriage counselor</item>
+<item>the proportion of all her clients who stay married</item>
+<item>the proportion of the sample of the counselor&#8217;s clients who stay married</item>
+<item><emphasis effect="italics">X</emphasis> = the number of couples who stay married</item>
+<item>yes, no</item>
+</list></solution></exercise>
+
+      <exercise id="element-417"><problem id="id30201364">
+<para id="element-150">Political pollsters may be interested in the proportion of people who will vote for a particular
+cause.</para></problem>
+
+<!-- <solution id="eip-idm168008800">
+<list id="eip-idm4083712" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>all voters (in a certain geographic area)</item>
+<item>a random selection of all the voters</item>
+<item>the proportion of voters who are interested in this particular cause</item>
+<item>the proportion of voters who are interested in this particular cause in the sample</item>
+<item><emphasis effect="italics">X</emphasis> = the number of voters who are interested in this particular cause</item>
+<item>yes, no</item></list></solution> --></exercise><exercise id="element-467"><problem id="id30201491">
+		<para id="element-404">A marketing company is interested in the proportion of people who will buy a particular product.</para></problem>
+<solution id="id30201609">
+<list id="element-362356" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>all people (maybe in a certain geographic area, such as the United States)</item>
+<item>a group of the people</item>
+<item>the proportion of all people who will buy the product</item>
+<item>the proportion of the sample who will buy the product</item>
+<item><emphasis effect="italics">X</emphasis> = the number of people who will buy it</item>
+<item>buy, not buy</item>
+</list></solution></exercise>
+
+<para id="fs-idm1484432"><newline/>
+<emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> A Lake Tahoe Community College instructor is interested in the mean number of days Lake Tahoe Community College math students are absent from class during a quarter.
+<newline/></para><exercise id="element-230"><problem id="id30103712">
+		<para id="fs-idp15729072">What is the population she is interested in?
+		</para><list id="element-978" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>all Lake Tahoe Community College students</item>
+<item>all Lake Tahoe Community College English students</item>
+<item>all Lake Tahoe Community College students in her classes</item>
+<item>all Lake Tahoe Community College math students</item>
+      </list></problem>
+<!-- <solution id="id30103802">
+<para id="element-356234">d</para></solution> --></exercise><exercise id="element-590"><problem id="id30103831">
+		<para id="element-311">Consider the following:
+
+		</para><para id="element-131"><m:math>
+  <m:mi>X</m:mi>
+</m:math> = number of days a Lake Tahoe Community College math student is absent</para><para id="element-561">In this case, <emphasis effect="italics">X</emphasis> is an example of a:</para><list id="element-959" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>variable.</item>
+<item>population.</item>
+<item>statistic.</item>
+<item>data.</item></list></problem>
+<solution id="id30103955">
+<para id="element-35634">a</para></solution></exercise>
+
+
+<exercise id="element-992"><problem id="id30104101">
+		<para id="element-827">The instructor&#8217;s sample produces a mean number of days absent of 3.5 days. This value is an example of a:
+		</para><list id="element-303" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>parameter.</item>
+<item>data.</item>
+<item>statistic.</item>
+<item>variable.</item></list></problem>
+<!-- <solution id="id30104192">
+<para id="element-3562324">c</para></solution> --></exercise></section>
+</content>
+<glossary>
+<definition id="average">
+<term>Average</term>
+<meaning id="id16316921">also called mean; a number that describes the central tendency of the data</meaning>
+</definition>
+
+<definition id="fs-idm97064528">
+<term>Categorical Variable</term>
+<meaning id="fs-idm30253968">variables that take on values that are names or labels</meaning>
+</definition>
+
+<definition id="data">
+<term>Data</term>
+<meaning id="id15539900">a set of observations (a set of possible outcomes); most data can be put into two groups: <emphasis>qualitative</emphasis> (an attribute whose value is indicated by a label) or <emphasis>quantitative</emphasis> (an attribute whose value is indicated by a number). Quantitative data can be separated into two subgroups: <emphasis>discrete</emphasis> and <emphasis>continuous</emphasis>. Data is discrete if it is the result of counting (such as the number of students of a given ethnic group in a class or the number of books on a shelf). Data is continuous if it is the result of measuring (such as distance traveled or weight of luggage)</meaning>
+</definition>
+
+<definition id="fs-idm26909648">
+<term>Numerical Variable</term>
+<meaning id="fs-idm96926144">variables that take on values that are indicated by numbers</meaning>
+</definition>
+
+<definition id="fs-idm26606704">
+<term>Parameter</term>
+<meaning id="fs-idm15244864">a number that is used to represent a population characteristic and that generally cannot be determined easily</meaning>
+</definition>
+
+<definition id="fs-idm7877680">
+<term>Population</term>
+<meaning id="fs-idp571488">all individuals, objects, or measurements whose properties are being studied</meaning>
+</definition>
+
+<definition id="prob">
+<term>Probability</term>
+<meaning id="id17934331">a number between zero and one, inclusive, that gives the likelihood that a specific event will occur</meaning>
+</definition>
+
+
+<definition id="proportion">
+<term>Proportion</term>
+<meaning id="id15701010">the number of successes divided by the total number in the sample</meaning>
+</definition>
+
+
+<definition id="fs-idm64138416">
+<term>Representative Sample</term>
+<meaning id="fs-idm26214992">a subset of the population that has the same characteristics as the population</meaning>
+</definition>
+
+<definition id="fs-idm100365008">
+<term>Sample</term>
+<meaning id="fs-idm51261392">a subset of the population studied</meaning>
+</definition>
+
+<definition id="stat">
+<term>Statistic</term>
+<meaning id="id17366233">a numerical characteristic of the sample; a statistic estimates the corresponding population parameter.</meaning>
+</definition>
+
+<definition id="fs-idm19697904">
+<term>Variable</term>
+<meaning id="fs-idm90760848">a characteristic of interest for each person or object in a population</meaning>
+</definition>
+</glossary>
+</document>

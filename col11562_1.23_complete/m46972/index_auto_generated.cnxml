@@ -1,0 +1,2050 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+<title>The Uniform Distribution</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46972/latest</md:content-url>
+  <md:content-id>m46972</md:content-id>
+  <md:title>The Uniform Distribution</md:title>
+  <md:version>1.17</md:version>
+  <md:created>2013/07/19 13:37:40 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>probability</md:keyword>
+    <md:keyword>uniform distribution</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-957">The uniform distribution is a continuous probability distribution and is concerned with events that are equally likely to occur. When working out problems that have a uniform distribution, be careful to note if the data is inclusive or exclusive of endpoints. </para><example id="element-229">
+<para id="element-444">The data in <link target-id="element-41"/> are 55 smiling times, in seconds, of an eight-week-old baby.</para><table id="element-41" summary="">
+<tgroup cols="11">
+<tbody>
+<row>
+<entry>10.4</entry>
+<entry>19.6</entry>
+<entry>18.8</entry>
+<entry>13.9</entry>
+<entry>17.8</entry>
+<entry>16.8</entry>
+<entry>21.6</entry>
+<entry>17.9</entry>
+<entry>12.5</entry>
+<entry>11.1</entry>
+<entry>4.9</entry>
+</row>
+<row>
+<entry>12.8</entry>
+<entry>14.8</entry>
+<entry>22.8</entry>
+<entry>20.0</entry>
+<entry>15.9</entry>
+<entry>16.3</entry>
+<entry>13.4</entry>
+<entry>17.1</entry>
+<entry>14.5</entry>
+<entry>19.0</entry>
+<entry>22.8</entry>
+</row>
+<row>
+<entry>1.3</entry>
+<entry>0.7</entry>
+<entry>8.9</entry>
+<entry>11.9</entry>
+<entry>10.9</entry>
+<entry>7.3</entry>
+<entry>5.9</entry>
+<entry>3.7</entry>
+<entry>17.9</entry>
+<entry>19.2</entry>
+<entry>9.8</entry>
+</row>
+<row>
+<entry>5.8</entry>
+<entry>6.9</entry>
+<entry>2.6</entry>
+<entry>5.8</entry>
+<entry>21.7</entry>
+<entry>11.8</entry>
+<entry>3.4</entry>
+<entry>2.1</entry>
+<entry>4.5</entry>
+<entry>6.3</entry>
+<entry>10.7</entry>
+</row>
+<row>
+<entry>8.9</entry>
+<entry>9.4</entry>
+<entry>9.4</entry>
+<entry>7.6</entry>
+<entry>10.0</entry>
+<entry>3.3</entry>
+<entry>6.7</entry>
+<entry>7.8</entry>
+<entry>11.6</entry>
+<entry>13.8</entry>
+<entry>18.6</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="element-817">The sample mean = 11.49 and the sample standard deviation = 6.23.</para>
+<para id="element-60">We will assume that the smiling times, in seconds, follow a uniform distribution between zero and 23 seconds, inclusive. This means that any smiling time from zero to and including 23 seconds is <term>equally likely</term>. The histogram that could be constructed from the sample is an empirical distribution that closely matches the theoretical uniform distribution.</para><para id="element-804">Let <emphasis effect="italics">X</emphasis> = length, in seconds, of an eight-week-old baby's smile.</para><para id="element-13">The notation for the uniform distribution is</para>
+
+<para id="element-746"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(<emphasis effect="italics">a</emphasis>, <emphasis effect="italics">b</emphasis>) where <emphasis effect="italics">a</emphasis> = the lowest value of <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">b</emphasis> = the highest value of <emphasis effect="italics">x</emphasis>.</para>
+
+<para id="eip-720">The probability density function is
+<emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) =  <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> for <emphasis effect="italics">a</emphasis> &#8804; <emphasis effect="italics">x</emphasis> &#8804; <emphasis effect="italics">b</emphasis>.</para><para id="element-500">For this example, <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(0, 23) and <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>23</m:mn><m:mo>&#8722;</m:mo><m:mn>0</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> for 0 &#8804; <emphasis effect="italics">X</emphasis> &#8804; 23.</para><para id="element-771">Formulas for the theoretical mean and standard deviation are</para>
+<para id="element-147"><m:math>
+ <m:mrow>
+  <m:mi>&#956;</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi>
+   </m:mrow>
+   <m:mn>2</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> and <m:math>
+<m:mrow>
+<m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mrow>
+<m:mo stretchy="false">(</m:mo><m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:math></para><para id="element-729">For this problem, the theoretical mean and standard deviation are</para>
+<para id="element-623"><emphasis effect="italics">&#956;</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>0</m:mn><m:mtext>&#160;</m:mtext><m:mo>+</m:mo><m:mtext>&#160;</m:mtext><m:mn>23</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+= 11.50 seconds and <emphasis effect="italics">&#963;</emphasis> = <m:math>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mrow>
+<m:mo stretchy="false">(</m:mo><m:mn>23</m:mn><m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;</m:mtext><m:mn>0</m:mn><m:mo stretchy="false">)</m:mo>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+</m:mrow>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+</m:math>
+= 6.64 seconds.</para><para id="element-919">Notice that the theoretical mean and standard deviation are close to the sample mean and standard deviation in this example.</para>
+</example>
+
+<note id="fs-idp70845248" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp158465216">
+<problem id="fs-idp127611104">
+<para id="fs-idp116051680">The data that follow are the number of passengers on 35 different charter fishing boats. The sample mean = 7.9 and the sample standard deviation = 4.33. The data follow a uniform distribution where all values between and including zero and 14 are equally likely. State the values of <emphasis effect="italics">a</emphasis> and <emphasis effect="italics">b</emphasis>. Write the distribution in proper notation, and calculate the theoretical mean and standard deviation.</para><table id="fs-idp22107440" summary="">
+<tgroup cols="7">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<colspec colnum="4" colname="c4" colwidth="1*"/>
+<colspec colnum="5" colname="c5" colwidth="1*"/>
+<colspec colnum="6" colname="c6" colwidth="1*"/>
+<colspec colnum="7" colname="c7" colwidth="1*"/>
+<tbody>
+<row>
+<entry align="center">1</entry>
+<entry align="center">12</entry>
+<entry align="center">4</entry>
+<entry align="center">10</entry>
+<entry align="center">4</entry>
+<entry align="center">14</entry>
+<entry align="center">11</entry>
+</row>
+<row>
+<entry align="center">7</entry>
+<entry align="center">11</entry>
+<entry align="center">4</entry>
+<entry align="center">13</entry>
+<entry align="center">2</entry>
+<entry align="center">4</entry>
+<entry align="center">6</entry>
+</row>
+<row>
+<entry align="center">3</entry>
+<entry align="center">10</entry>
+<entry align="center">0</entry>
+<entry align="center">12</entry>
+<entry align="center">6</entry>
+<entry align="center">9</entry>
+<entry align="center">10</entry>
+</row>
+<row>
+<entry align="center">5</entry>
+<entry align="center">13</entry>
+<entry align="center">4</entry>
+<entry align="center">10</entry>
+<entry align="center">14</entry>
+<entry align="center">12</entry>
+<entry align="center">11</entry>
+</row>
+<row>
+<entry align="center">6</entry>
+<entry align="center">10</entry>
+<entry align="center">11</entry>
+<entry align="center">0</entry>
+<entry align="center">11</entry>
+<entry align="center">13</entry>
+<entry align="center">2</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+
+</note>
+
+<example id="example-170">
+<exercise id="element-156">
+<problem id="id10265850">
+<para id="element-170">a. Refer to <link target-id="element-229"/>. What is the probability that a randomly chosen eight-week-old baby smiles between two and 18 seconds?</para></problem>
+<solution id="id10265871">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-178"><emphasis effect="italics">P</emphasis>(2 &lt; <emphasis effect="italics">x</emphasis> &lt; 18) = (base)(height) = (18 &#8211; 2)<m:math display="">
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>23</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math> = <m:math display="">
+<m:mrow>
+<m:mrow>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>16</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>23</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:mrow>
+</m:mrow>
+</m:math>.</para><para id="element-179"><figure id="eip-idp133938240">
+<media id="id15176560" alt="This graph shows a uniform distribution. The horizontal axis ranges from 0 to 15. The distribution is modeled by a rectangle extending from x = 0 to x = 15. A region from x = 2 to x = 18 is shaded inside the rectangle.">
+<image src="fig-ch05_03_01N.jpg" mime-type="image/jpg" width="380"/>
+</media></figure></para></solution>
+</exercise>
+<exercise id="element-329">
+<problem id="id14797719">
+<para id="element-483">b. Find the 90<sup>th</sup> percentile for an eight-week-old baby's smiling time.
+</para></problem>
+<solution id="id14797739">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-6">b. Ninety percent of the smiling times fall below the 90<sup>th</sup> percentile, <emphasis effect="italics">k</emphasis>, so <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 0.90.</para><para id="element-180"><m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&lt;</m:mo><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>0.90</m:mn>
+</m:mrow>
+</m:math></para>
+<para id="element-182">
+<m:math><m:mo>(</m:mo><m:mtext>base</m:mtext><m:mo>)</m:mo><m:mo>(</m:mo><m:mtext>height</m:mtext><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0.90</m:mn></m:math>
+</para>
+<para id="element-183"><m:math>
+ <m:mrow>
+  <m:mtext>(</m:mtext><m:mi>k</m:mi><m:mo>&#8722;</m:mo><m:mn>0</m:mn><m:mtext>)</m:mtext><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:mn>23</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0.90</m:mn>
+ </m:mrow>
+</m:math></para><para id="element-184"><m:math>
+<m:mrow>
+<m:mi>k</m:mi><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>23</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>0.90</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>20.7</m:mn>
+</m:mrow>
+</m:math>
+
+</para>
+<para id="element-181"><figure id="eip-idp216325248">
+<media id="id9694885" alt="This shows the graph of the function f(x) = 1/15. A horiztonal line ranges from the point (0, 1/15) to the point (15, 1/15). A vertical line extends from the x-axis to the end of the line at point (15, 1/15) creating a rectangle. A region is shaded inside the rectangle from x = 0 to x = k. The shaded area represents P(x &lt; k) = 0.90.">
+<image src="fig-ch05_03_02N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+</para></solution>
+</exercise>
+<exercise id="element-412">
+<problem id="id9694925">
+<para id="element-503">c. Find the probability that a random eight-week-old baby smiles more than 12 seconds <emphasis>KNOWING</emphasis> that the baby smiles <emphasis>MORE THAN EIGHT SECONDS</emphasis>.</para></problem>
+<solution id="id15390803">
+<para id="fs-idp106518000">c. This probability question is a <emphasis>conditional</emphasis>. You are asked to find the probability that an eight-week-old baby smiles more than 12 seconds when you <emphasis>already know</emphasis> the baby has smiled for more than eight seconds.</para><para id="element-836">Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 12|<emphasis effect="italics">x</emphasis> &gt; 8) There are two ways to do the problem. <emphasis>For the first way</emphasis>, use the fact that this is a <emphasis>conditional</emphasis> and changes the sample space. The graph illustrates the new sample space. You already know the baby smiled more than eight seconds.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-837"><emphasis>Write a new</emphasis> <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>): <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <m:math display="">
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>23</m:mn><m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;8</m:mtext>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = <m:math display="">
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math>
+for 8 &lt; <emphasis effect="italics">x</emphasis> &lt; 23</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-400"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 12|<emphasis effect="italics">x</emphasis> &gt; 8) = (23 &#8722; 12)<m:math display="">
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math> = <m:math display="">
+<m:mrow>
+<m:mrow>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>11</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:mrow>
+</m:mrow>
+</m:math> </para><para id="element-401"><figure id="eip-idm134042368">
+<media id="id15318622" alt="f(X)=1/15 graph displaying a boxed region consisting of a horizontal line extending to the right from point 1/15 on the y-axis, a vertical upward line from points 8 and 23 on the x-axis, and the x-axis. A shaded region from points 12-23 occurs within this area.">
+<image src="fig-ch05_03_03N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+</para><para id="element-961"><emphasis>For the second way</emphasis>, use the conditional formula from <link document="m46938">Probability Topics</link> with the original distribution <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> (0, 23):</para><para id="element-445"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis>|<emphasis effect="italics">B</emphasis>) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>A</m:mi><m:mtext>&#160;AND&#160;</m:mtext><m:mi>B</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>B</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</para><para id="fs-idp12091856">For this problem, <emphasis effect="italics">A</emphasis> is (<emphasis effect="italics">x</emphasis> &gt; 12) and <emphasis effect="italics">B</emphasis> is (<emphasis effect="italics">x</emphasis> &gt; 8).</para>
+
+<para id="element-613">So, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; <emphasis effect="italics">12</emphasis>|<emphasis effect="italics">x</emphasis> &gt; 8) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>12</m:mn><m:mtext>&#160;AND&#160;</m:mtext><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>8</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>8</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>12</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>8</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>11</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>23</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>15</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>23</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+     <m:mrow>
+      <m:mn>11</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>15</m:mn>
+     </m:mrow>
+    </m:mfrac>
+ </m:mrow>
+</m:math></para><para id="element-644"><figure xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idm5414416"><media id="id15928918" alt="This diagram shows a horizontal X axis that intersects a vertical F of x axis at the origin. The X axis runs from 0 to 24 while the Y axis only has the fraction one twenty third located about two thirds of the way to the top. A rectangular box extends horizontally from 0 to about 23.7 on the X axis. The box extends vertically up to the fraction one twenty third on the F of x axis. The area of the box between 8 and 12 on the X axis is shaded. ">
+<image src="fig-ch_05_03_04.jpg" mime-type="image/jpg" width="380"/></media>
+
+</figure></para></solution>
+</exercise>
+</example>
+<note id="fs-idp61080304" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp178484384">
+<problem id="fs-idp81255648">
+<para id="fs-idp10982640">A distribution is given as <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> (0, 20). What is <emphasis effect="italics">P</emphasis>(2 &lt; <emphasis effect="italics">x</emphasis> &lt; 18)? Find the 90<sup>th</sup> percentile.</para></problem>
+</exercise>
+
+</note>
+<example id="element-158">
+<para id="element-697">The amount of time, in minutes, that a person must wait for a bus is uniformly distributed between zero and 15 minutes, inclusive.<newline/></para><exercise id="element-351"><problem id="id12074907">
+<para id="element-447">a. What is the probability that a person waits fewer than 12.5 minutes?</para></problem>
+<solution id="id12074926">
+<para id="element-438">a. Let <emphasis effect="italics">X</emphasis> = the number of minutes a person must wait for a bus. <emphasis effect="italics">a</emphasis> = 0 and <emphasis effect="italics">b</emphasis> = 15.
+<emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(0, 15). Write the probability density function. <emphasis effect="italics">f</emphasis> (<emphasis effect="italics">x</emphasis>) = <m:math display="">
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>15</m:mn><m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;</m:mtext><m:mn>0</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = <m:math display="">
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math>
+for 0 &#8804; <emphasis effect="italics">x</emphasis> &#8804; 15.</para><para id="element-577">Find <emphasis effect="italics">P</emphasis> (<emphasis effect="italics">x</emphasis> &lt; 12.5). Draw a graph.</para>
+<para id="element-770"><m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&lt;</m:mo><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mo stretchy="false">(</m:mo><m:mtext>base</m:mtext><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mtext>height</m:mtext><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mo stretchy="false">(</m:mo><m:mn>12.5</m:mn><m:mo>-</m:mo><m:mn>0</m:mn><m:mo stretchy="false">)</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0.8333</m:mn>
+</m:mrow>
+</m:math></para><para id="element-748">The probability a person waits less than 12.5 minutes is 0.8333.</para>
+<figure id="eip-idp99340768">
+<media id="id17238530" alt="This shows the graph of the function f(x) = 1/15. A horiztonal line ranges from the point (0, 1/15) to the point (15, 1/15). A vertical line extends from the x-axis to the end of the line at point (15, 1/15) creating a rectangle. A region is shaded inside the rectangle from x = 0 to x = 12.5."><image src="fig-ch05_03_05N.jpg" mime-type="image/jpg" width="380"/></media>
+</figure>
+</solution>
+</exercise><exercise id="element-786">
+<problem id="id15267471">
+<para id="element-1323">b. On the average, how long must a person wait? Find the mean, <emphasis effect="italics">&#956;</emphasis>, and the standard deviation, <emphasis effect="italics">&#963;</emphasis>.</para></problem>
+<solution id="id15267511">
+<para id="element-275">b. <emphasis effect="italics">&#956;</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mi>a</m:mi><m:mtext>&#160;</m:mtext><m:mo>+</m:mo><m:mtext>&#160;</m:mtext><m:mi>b</m:mi>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+= <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn><m:mtext>&#160;</m:mtext><m:mo>+</m:mo><m:mtext>&#160;</m:mtext><m:mn>0</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+= 7.5. On the average, a person must wait 7.5 minutes.
+<newline/>
+<newline/>
+<emphasis effect="italics">&#963;</emphasis> = <m:math><m:msqrt><m:mfrac>
+<m:mrow><m:mo>(</m:mo><m:mi>b</m:mi><m:mo>-</m:mo><m:mi>a</m:mi><m:msup><m:mo>)</m:mo><m:mn>2</m:mn></m:msup></m:mrow>
+<m:mrow><m:mn>12</m:mn></m:mrow></m:mfrac></m:msqrt>
+<m:mo>=</m:mo>
+<m:msqrt><m:mfrac>
+<m:mrow><m:mo>(</m:mo><m:mi>15</m:mi><m:mo>-</m:mo><m:mi>0</m:mi><m:msup><m:mo>)</m:mo><m:mn>2</m:mn></m:msup></m:mrow>
+<m:mrow><m:mn>12</m:mn></m:mrow></m:mfrac></m:msqrt>
+</m:math> = 4.3. The Standard deviation is 4.3 minutes.
+<newline/></para></solution>
+</exercise>
+<exercise id="element-375">
+<problem id="id14859813">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-44">c. Ninety percent of the time, the time a person must wait falls below what value?
+<note id="eip-idm560268464">This asks for the 90<sup>th</sup> percentile.</note></para></problem>
+<solution id="id15337330">
+<para id="element-12">c. Find the 90<sup>th</sup> percentile. Draw a graph. Let <emphasis effect="italics">k</emphasis> = the 90<sup>th</sup> percentile.
+<newline/>
+<newline/><m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&lt;</m:mo><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mo stretchy="false">(</m:mo><m:mtext>base</m:mtext><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mtext>height</m:mtext><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mo stretchy="false">(</m:mo><m:mi>k</m:mi><m:mo>&#8722;</m:mo><m:mn>0</m:mn><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo stretchy="false">)</m:mo>
+</m:mrow>
+</m:math>
+<newline/>
+<newline/>
+<m:math>
+<m:mrow>
+<m:mn>0.90</m:mn><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mi>k</m:mi>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>
+<newline/>
+<newline/><m:math>
+<m:mrow>
+<m:mi>k</m:mi><m:mo>=</m:mo><m:mo stretchy="false">(</m:mo><m:mn>0.90</m:mn><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mn>15</m:mn><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>13.5</m:mn>
+</m:mrow>
+</m:math>
+<newline/>
+<newline/>
+<emphasis effect="italics">k</emphasis> is sometimes called a critical value.
+<newline/>
+<newline/>The 90<sup>th</sup> percentile is 13.5 minutes. Ninety percent of the time, a person must wait at most 13.5 minutes.</para><para id="element-545"><figure id="eip-idp75195312">
+<media id="id16334803" alt="f(X)=1/15 graph displaying a boxed region consisting of a horizontal line extending to the right from point 1/15 on the y-axis, a vertical upward line from an arbitrary point on the x-axis, and the x and y-axes. A shaded region from points 0-k occurs within this area. The area of this probability region is equal to 0.90.">
+<image src="fig-ch05_03_06N.jpg" mime-type="image/jpg" width="380"/></media>
+</figure></para></solution>
+</exercise>
+</example>
+<note id="fs-idp13010016" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="fs-idp51205632">
+<problem id="fs-idp103521216">
+<para id="fs-idp80584752">The total duration of baseball games in the major league in the 2011 season is uniformly distributed between 447  hours and 521 hours inclusive.</para>
+<list id="fs-idp80942784" list-type="enumerated" number-style="lower-alpha"><item>Find <emphasis effect="italics">a</emphasis> and <emphasis effect="italics">b</emphasis> and describe what they represent.</item>
+<item>Write the distribution.</item>
+<item>Find the mean and the standard deviation.</item>
+<item>What is the probability that the duration of games for a team for the 2011 season is between 480 and 500 hours?</item>
+<item>What is the 65<sup>th</sup> percentile for the duration of games for a team for the 2011 season?</item>
+</list></problem>
+</exercise>
+
+</note>
+<example id="element-321"><para id="element-637">Suppose the time it takes a nine-year old to eat a donut is between 0.5 and 4 minutes, inclusive. Let <emphasis effect="italics">X</emphasis> = the time, in minutes, it takes a nine-year old child to eat a donut. Then <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> (0.5, 4).<newline/></para><exercise id="eip-idp102263568"><label/>
+<problem id="eip-idp95256048">
+<label/>
+<para id="eip-idp95256304">a. The probability that a randomly selected nine-year old child eats a donut in at least two minutes is _______.</para></problem>
+<solution id="eip-idp95256944">
+<para id="eip-idp95257200">a. 0.5714<newline/></para></solution>
+</exercise><exercise id="eip-idp95257840">
+<problem id="eip-idp95258096">
+<para id="element-546">b. Find the probability that a different nine-year old child eats a donut in more than two minutes given that the child has already been eating the donut for more than 1.5 minutes.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-938">The second question has a <term>conditional probability</term>. You are asked to find the probability that a nine-year old child eats a donut in more than two minutes given that the child has already been eating the donut for more than 1.5 minutes. Solve the problem two different ways (see <link target-id="element-156"/>). You must reduce the sample space. <emphasis>First way</emphasis>: Since you know the child has already been eating the donut for more than 1.5 minutes, you are no longer starting at <emphasis effect="italics">a</emphasis> = 0.5 minutes. Your starting point is 1.5 minutes.</para><para id="element-69"><emphasis>Write a new <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>):</emphasis></para><para id="element-269"><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>4</m:mn><m:mo>&#8722;</m:mo><m:mn>1.5</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>2</m:mn>
+<m:mn>5</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math> for 1.5 &#8804; <emphasis effect="italics">x</emphasis> &#8804; 4.</para><para id="eip-idm60988032">Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 2|<emphasis effect="italics">x</emphasis> &gt; 1.5). Draw a graph.</para><para id="eip-idp116156944"><figure id="eip-idp101580400">
+<media id="id13790135" alt="f(X)=2/5 graph displaying a boxed region consisting of a horizontal line extending to the right from point 2/5 on the y-axis, a vertical upward line from points 1.5 and 4 on the x-axis, and the x-axis. A shaded region from points 2-4 occurs within this area.">
+<image src="fig-ch05_03_07N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure></para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idm48182144"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; <emphasis effect="italics">2</emphasis>|<emphasis effect="italics">x</emphasis> &gt; 1.5) = (base)(new height) = (4 &#8722; 2)<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>2</m:mn>
+     <m:mn>5</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+<m:mo>=</m:mo><m:mfrac><m:mn>4</m:mn><m:mn>5</m:mn></m:mfrac></m:math></para></problem>
+<solution id="eip-idp15119952">
+<para id="eip-idp15120208">b. <m:math><m:mfrac><m:mn>4</m:mn><m:mn>5</m:mn></m:mfrac></m:math>
+</para></solution>
+</exercise>
+<para id="eip-idm70960944">The probability that a nine-year old child eats a donut in more than two minutes given that the child has already been eating the donut for more than 1.5 minutes is <m:math><m:mfrac><m:mn>4</m:mn><m:mn>5</m:mn></m:mfrac></m:math>.</para>
+<para id="eip-idm39713200"><emphasis>Second way:</emphasis> Draw the original graph for <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> (0.5, 4). Use the conditional formula</para><para id="eip-idm39711312"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 2|<emphasis effect="italics">x</emphasis> &gt; 1.5) = <m:math>
+ <m:mrow>
+  <m:mo>&#160;</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>2</m:mn><m:mtext>&#160;AND&#160;</m:mtext><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>1.5</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mtext>1</m:mtext><m:mtext>.5</m:mtext><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>2</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>1.5</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>2</m:mn>
+     <m:mrow>
+      <m:mn>3.5</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>2.5</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>3.5</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>0</m:mtext><m:mtext>.8</m:mtext><m:mo>=</m:mo><m:mfrac>
+   <m:mn>4</m:mn>
+   <m:mn>5</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></para></example><note id="fs-idp42235264" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="fs-idp177663840">
+<problem id="fs-idp7455808">
+<para id="fs-idp125513712">Suppose the time it takes a student to finish a quiz is uniformly distributed between six and 15 minutes, inclusive. Let <emphasis effect="italics">X</emphasis> = the time, in minutes, it takes a student to finish a quiz. Then <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> (6, 15).</para><para id="fs-idp133097024">Find the probability that a randomly selected student needs at least eight minutes to complete the quiz. Then find the probability that a different student needs at least eight minutes to finish the quiz given that she has already taken more than seven minutes.</para></problem>
+</exercise>
+</note>
+<example id="eip-323"><para id="eip-id1170213489898">Ace Heating and Air Conditioning Service finds that the amount of time a repairman needs to fix a furnace is uniformly distributed between 1.5 and four hours. Let <emphasis effect="italics">x</emphasis> = the time needed to fix a furnace. Then <emphasis effect="italics">x</emphasis> ~ <emphasis effect="italics">U</emphasis> (1.5, 4).</para>
+<exercise id="eip-idm8252240"><label/>
+<problem id="eip-idp126490560">
+<label/>
+<list id="eip-id1170199222063" list-type="enumerated" number-style="lower-alpha">
+<item>Find the probability that a randomly selected furnace repair requires more than two hours.</item>
+<item>Find the probability that a randomly selected furnace repair requires less than three hours.</item>
+<item>Find the 30<sup>th</sup> percentile of furnace repair times.</item>
+<item>The longest 25% of furnace repair times take at least how long? (In other words: find the minimum time for the longest 25% of repair times.) What percentile does this represent?</item>
+<item>Find the mean and standard deviation</item>
+</list>
+</problem>
+<solution id="eip-idp14636112">
+<para id="fs-idm59847232">a. To find <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>): <emphasis effect="italics">f</emphasis> (<emphasis effect="italics">x</emphasis>) = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>4</m:mn><m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;</m:mtext><m:mn>1.5</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>2.5</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> so <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = 0.4</para><para id="fs-idm19787408"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 2) = (base)(height) = (4 &#8211; 2)(0.4) = 0.8</para>
+<figure id="fs-idp54235200">
+<media id="fs-idm38845872" alt="This shows the graph of the function f(x) = 0.4. A horiztonal line ranges from the point (1.5, 0.4) to the point (4, 0.4). Vertical lines extend from the x-axis to the graph at x = 1.5 and x = 4 creating a rectangle. A region is shaded inside the rectangle from x = 2 to x = 4.">
+<image src="fig-ch05_03_08N.jpg" mime-type="image/jpeg" width="380"/>
+</media>
+<caption>Uniform Distribution between 1.5 and four with shaded area between two and four representing the probability that the repair time <emphasis effect="italics">x</emphasis> is greater than two</caption>
+</figure>
+</solution>
+<solution id="eip-idm39955136">
+<para id="fs-idp16376400">b. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 3) = (base)(height) = (3 &#8211; 1.5)(0.4) = 0.6</para><para id="fs-idm70722128">The graph of the rectangle showing the entire distribution would remain the same. However the graph should be shaded between <emphasis effect="italics">x</emphasis> = 1.5 and <emphasis effect="italics">x</emphasis> = 3. Note that the shaded area starts at <emphasis effect="italics">x</emphasis> = 1.5 rather than at <emphasis effect="italics">x</emphasis> = 0; since <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> (1.5, 4), <emphasis effect="italics">x</emphasis> can not be less than 1.5.</para>
+<figure id="fs-idm70679104">
+<media id="fs-idm6304128" alt="This shows the graph of the function f(x) = 0.4. A horiztonal line ranges from the point (1.5, 0.4) to the point (4, 0.4). Vertical lines extend from the x-axis to the graph at x = 1.5 and x = 4 creating a rectangle. A region is shaded inside the rectangle from x = 1.5 to x = 3.">
+<image src="fig-ch05_03_09N.jpg" mime-type="image/jpeg" width="380"/>
+</media>
+<caption>Uniform Distribution between 1.5 and four with shaded area between 1.5  and three representing the probability that the repair time <emphasis effect="italics">x</emphasis> is less than three</caption>
+</figure>
+</solution>
+<solution id="eip-idm19525808">
+<para id="fs-idp138350704">c. <figure id="figure-03"><media id="fs-idp23900752" alt="This shows the graph of the function f(x) = 0.4. A horiztonal line ranges from the point (1.5, 0.4) to the point (4, 0.4). Vertical lines extend from the x-axis to the graph at x = 1.5 and x = 4 creating a rectangle. A region is shaded inside the rectangle from x = 1.5 to x = k. The shaded area represents P(x &lt; k) = 0.3.">
+<image src="fig-ch05_03_10N.jpg" mime-type="image/jpeg" width="380"/>
+</media>
+
+<caption>Uniform Distribution between 1.5 and 4 with an area of 0.30 shaded to the left, representing the shortest 30% of repair times.</caption></figure></para><para id="fs-idm20420640"><newline/><emphasis effect="italics">P</emphasis> (<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 0.30
+<newline/>
+<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = (base)(height) = (<emphasis effect="italics">k</emphasis> &#8211; 1.5)(0.4)
+<newline/><emphasis>0.3 = (<emphasis effect="italics">k</emphasis> &#8211; 1.5) (0.4)</emphasis>; Solve to find <emphasis effect="italics">k</emphasis>:
+<newline/>0.75 = <emphasis effect="italics">k</emphasis> &#8211; 1.5, obtained by dividing both sides by 0.4
+<newline/><emphasis><emphasis effect="italics">k</emphasis> = 2.25 </emphasis>, obtained by adding 1.5 to both sides
+<newline/>The 30<sup>th</sup> percentile of repair times is 2.25 hours. 30% of repair times are 2.5 hours or less.</para>
+</solution>
+
+<solution id="eip-idp7633120">
+<para id="fs-idm25221984">d. <figure id="fs-idm51742384"><media id="fs-idp77501376" alt="">
+<image src="fig-ch05_03_11N.jpg" mime-type="image/jpeg" width="380"/>
+</media>
+<caption>Uniform Distribution between 1.5 and 4 with an area of 0.25 shaded to the right representing the longest 25% of repair times.</caption></figure></para><para id="fs-idp80199408"><newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; <emphasis effect="italics">k</emphasis>) = 0.25
+<newline/>
+<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; <emphasis effect="italics">k</emphasis>) = (base)(height) = (4 &#8211; <emphasis effect="italics">k</emphasis>)(0.4)
+<newline/><emphasis>0.25 = (4 &#8211; <emphasis effect="italics">k</emphasis>)(0.4)</emphasis>; Solve for <emphasis effect="italics">k</emphasis>:
+<newline/>0.625 = 4 &#8722; <emphasis effect="italics">k</emphasis>,
+<newline/>obtained by dividing both sides by 0.4
+<newline/>&#8722;3.375 = &#8722;<emphasis effect="italics">k</emphasis>,
+<newline/>obtained by subtracting four from both sides: <emphasis><emphasis effect="italics">k</emphasis> = 3.375</emphasis>
+<newline/>The longest 25% of furnace repairs take at least 3.375 hours (3.375 hours or longer).
+<newline/><emphasis>Note:</emphasis> Since 25% of repair times are 3.375 hours or longer, that means that 75% of repair times are 3.375 hours or less.  3.375 hours is the <emphasis>75<sup>th</sup> percentile</emphasis> of furnace repair times.</para></solution>
+<solution id="eip-idm5972976">
+<para id="fs-idp136143312">e. <m:math>
+<m:mrow>
+<m:mi>&#956;</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math> and <m:math>
+<m:mrow>
+<m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mrow>
+<m:mo stretchy="false">(</m:mo><m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+</m:mrow>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+</m:math>
+<newline/><m:math><m:reln><m:eq/>
+<m:reln><m:eq/>
+<m:mrow><m:mi>&#956;</m:mi></m:mrow>
+<m:mrow><m:mfrac><m:mrow><m:mn>1.5</m:mn><m:mo>+</m:mo><m:mn>4</m:mn></m:mrow>
+<m:mrow><m:mn>2</m:mn></m:mrow></m:mfrac></m:mrow></m:reln>
+<m:mrow><m:mn>2.75</m:mn></m:mrow></m:reln>
+</m:math>
+hours and <m:math>
+ <m:mrow>
+  <m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mn>4</m:mn><m:mo>&#8211;</m:mo><m:mn>1.5</m:mn><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mrow>
+      <m:mn>12</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:mn>0.7217</m:mn>
+ </m:mrow>
+</m:math> hours</para>
+</solution>
+
+</exercise></example><note id="fs-idm9097392" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp8673008">
+<problem id="fs-idp161676800">
+<para id="fs-idp28489760">The amount of time a service technician needs to change the oil in a car is uniformly distributed between 11 and 21 minutes. Let <emphasis effect="italics">X</emphasis> = the time needed to change the oil on a car.</para>
+<list id="fs-idp35516576" list-type="enumerated" number-style="lower-alpha">
+<item>Write the random variable <emphasis effect="italics">X</emphasis> in words. <emphasis effect="italics">X</emphasis> = __________________.</item>
+<item>Write the distribution.</item>
+<item>Graph the distribution.</item>
+<item>Find <emphasis effect="italics">P</emphasis> (<emphasis effect="italics">x</emphasis> &gt; 19).</item>
+<item>Find the 50<sup>th</sup> percentile.</item>
+</list>
+</problem>
+</exercise>
+</note>
+<section id="fs-idp87344528" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idp24264368">If <emphasis effect="italics">X</emphasis> has a uniform distribution where <emphasis effect="italics">a</emphasis> &lt; <emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">b</emphasis> or <emphasis effect="italics">a</emphasis> &#8804; <emphasis effect="italics">x</emphasis> &#8804; <emphasis effect="italics">b</emphasis>, then <emphasis effect="italics">X</emphasis> takes on values between <emphasis effect="italics">a</emphasis> and <emphasis effect="italics">b</emphasis> (may include <emphasis effect="italics">a</emphasis> and <emphasis effect="italics">b</emphasis>). All values <emphasis effect="italics">x</emphasis> are equally likely. We write <emphasis effect="italics">X</emphasis> &#8764; <emphasis effect="italics">U</emphasis>(<emphasis effect="italics">a</emphasis>, <emphasis effect="italics">b</emphasis>). The mean of <emphasis effect="italics">X</emphasis> is <m:math>
+<m:mrow>
+<m:mi>&#956;</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>. The standard deviation of <emphasis effect="italics">X</emphasis> is <m:math>
+<m:mrow>
+<m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mrow>
+<m:mo stretchy="false">(</m:mo><m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+</m:mrow>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+</m:math>. The probability density function of <emphasis effect="italics">X</emphasis> is <m:math>
+<m:mrow>
+<m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> for <emphasis effect="italics">a</emphasis> &#8804; <emphasis effect="italics">x</emphasis> &#8804; <emphasis effect="italics">b</emphasis>. The cumulative distribution function of <emphasis effect="italics">X</emphasis> is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; <emphasis effect="italics">x</emphasis>) = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>. <emphasis effect="italics">X</emphasis> is continuous.</para><figure id="fs-idp30139216">
+<media id="fs-idp10170496" alt="The graph shows a rectangle with total area equal to 1. The rectangle extends from x = a to x = b on the x-axis and has a height of 1/(b-a)." display="block">
+<image src="CNX_Stats_C05_M03_001N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+
+<para id="fs-idm34434992">The probability <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">c</emphasis> &lt; <emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">d</emphasis>) may be found by computing the area under <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>), between <emphasis effect="italics">c</emphasis> and <emphasis effect="italics">d</emphasis>. Since the corresponding area is a rectangle, the area may be found simply by multiplying the width and the height.</para></section>
+<section id="fs-idp29641328" class="formula-review">
+<title>Formula Review</title>
+<para id="delete_me"><emphasis effect="italics">X</emphasis> = a real number between <emphasis effect="italics">a</emphasis> and <emphasis effect="italics">b</emphasis> (in some instances, <emphasis effect="italics">X</emphasis> can take on the values <emphasis effect="italics">a</emphasis> and <emphasis effect="italics">b</emphasis>). <emphasis effect="italics">a</emphasis> = smallest <emphasis effect="italics">X</emphasis>; <emphasis effect="italics">b</emphasis> = largest <emphasis effect="italics">X</emphasis> </para><para id="element-912"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> (a, b)</para>
+
+<para id="element-429">The mean is <m:math>
+<m:mrow>
+<m:mi>&#956;</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+
+</m:mrow>
+</m:math></para>
+<para id="element-311">The standard deviation is <m:math>
+ <m:mrow>
+  <m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>b</m:mi><m:mtext>&#160;&#8211;&#160;</m:mtext><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mrow>
+      <m:mn>12</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math></para><para id="element-104"><emphasis>Probability density function:</emphasis>
+<m:math>
+<m:mrow>
+<m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> for <m:math>
+<m:mrow>
+<m:mi>a</m:mi><m:mo>&#8804;</m:mo><m:mi>X</m:mi><m:mo>&#8804;</m:mo><m:mi>b</m:mi>
+</m:mrow>
+</m:math></para>
+<para id="element-636"><emphasis>Area to the Left of <emphasis effect="italics">x</emphasis>:</emphasis> <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) = (<emphasis effect="italics">x</emphasis> &#8211; <emphasis effect="italics">a</emphasis>)<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para><para id="element-84"><emphasis>Area to the Right of <emphasis effect="italics">x</emphasis>:</emphasis> <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis>) = (<emphasis effect="italics">b</emphasis> &#8211; <emphasis effect="italics">x</emphasis>)<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para><para id="element-315"><emphasis>Area Between <emphasis effect="italics">c</emphasis> and <emphasis effect="italics">d</emphasis>:</emphasis> <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">c</emphasis> &lt; <emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">d</emphasis>) = (base)(height) = (<emphasis effect="italics">d</emphasis> &#8211; <emphasis effect="italics">c</emphasis>)<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para>
+<para id="fs-idp10903536">Uniform: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(<emphasis effect="italics">a</emphasis>, <emphasis effect="italics">b</emphasis>) where <emphasis effect="italics">a</emphasis> &lt; <emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">b</emphasis></para>
+<list id="fs-idm1322784" list-type="bulleted"><item>pdf: <m:math>
+<m:mrow>
+<m:mi>f</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mi>x</m:mi>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math>
+for <emphasis effect="italics">a &#8804; x &#8804; b</emphasis>
+</item>
+<item>cdf: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; <emphasis effect="italics">x</emphasis>) = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math></item>
+<item>mean <emphasis effect="italics">&#181;</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math></item>
+<item>standard deviation <emphasis effect="italics">&#963;</emphasis> <m:math>
+<m:mrow>
+<m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mrow>
+<m:mo stretchy="false">(</m:mo><m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:math></item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">c</emphasis> &lt; <emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">d</emphasis>) = (<emphasis effect="italics">d</emphasis> &#8211; <emphasis effect="italics">c</emphasis>)<m:math>
+<m:mrow>
+<m:mo stretchy="false">(</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#8211;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+</m:mfrac>
+<m:mo stretchy="false">)</m:mo>
+</m:mrow>
+</m:math></item>
+</list></section>
+<section id="eip-534" class="references">
+<title>References</title>
+<para id="eip-854">McDougall, John A. The McDougall Program for Maximum Weight Loss. Plume, 1995.</para>
+</section>
+
+<section id="fs-idp174729104" class="practice">
+<para id="fs-idp8065584"><emphasis effect="italics">Use the following information to answer the next ten questions.</emphasis> The data that follow are the square footage (in 1,000 feet squared) of 28 homes.</para><table id="fs-idp58203216" summary="">
+<tgroup cols="7">
+<tbody>
+<row>
+<entry>1.5</entry>
+<entry>2.4</entry>
+<entry>3.6</entry>
+<entry>2.6</entry>
+<entry>1.6</entry>
+<entry>2.4</entry>
+<entry>2.0</entry>
+</row>
+<row>
+<entry>3.5</entry>
+<entry>2.5</entry>
+<entry>1.8</entry>
+<entry>2.4</entry>
+<entry>2.5</entry>
+<entry>3.5</entry>
+<entry>4.0</entry>
+</row>
+<row>
+<entry>2.6</entry>
+<entry>1.6</entry>
+<entry>2.2</entry>
+<entry>1.8</entry>
+<entry>3.8</entry>
+<entry>2.5</entry>
+<entry>1.5</entry>
+</row>
+<row>
+<entry>2.8</entry>
+<entry>1.8</entry>
+<entry>4.5</entry>
+<entry>1.9</entry>
+<entry>1.9</entry>
+<entry>3.1</entry>
+<entry>1.6</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idp126502144">The sample mean = 2.50 and the sample standard deviation = 0.8302.</para>
+<para id="fs-idp1739824">The distribution can be written as <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(1.5, 4.5).</para><exercise id="fs-idp4769248"><problem id="fs-idp79412928">
+<para id="fs-idp146904144">What type of distribution is this?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm13169200">
+<problem id="fs-idp172811088">
+<para id="fs-idp55674304">In this distribution, outcomes are equally likely. What does this mean?</para>
+</problem>
+<solution id="fs-idm10294640">
+<para id="fs-idp50465824">It means that the value of <emphasis effect="italics">x</emphasis> is just as likely to be any number between 1.5 and 4.5.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp93850064">
+<problem id="fs-idp82135232">
+<para id="fs-idp115922160">What is the height of <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) for the continuous probability distribution?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm8575520">
+<problem id="fs-idp9993056">
+<para id="fs-idp31246736">What are the constraints for the values of <emphasis effect="italics">x</emphasis>?</para>
+</problem>
+<solution id="fs-idp4394640">
+<para id="fs-idp85381264">1.5 &#8804; <emphasis effect="italics">x</emphasis> &#8804; 4.5</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp126140448">
+<problem id="fs-idp57142400">
+<para id="fs-idp47973200">Graph <emphasis effect="italics">P</emphasis>(2 &lt; <emphasis effect="italics">x</emphasis> &lt; 3).</para></problem>
+</exercise>
+
+<exercise id="fs-idp86093264">
+<problem id="fs-idm3718720">
+<para id="fs-idp73360384">What is <emphasis effect="italics">P</emphasis>(2 &lt; <emphasis effect="italics">x</emphasis> &lt; 3)?</para></problem>
+<solution id="fs-idm62060864">
+<para id="fs-idp178430944">0.3333</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm8617328">
+<problem id="fs-idp51075952">
+<para id="fs-idp7137536">What is <emphasis effect="italics">P</emphasis>(x &lt; 3.5| <emphasis effect="italics">x</emphasis> &lt; 4)?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp159814864"><problem id="fs-idm12204192">
+<para id="fs-idp14507456">What is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 1.5)?</para></problem>
+<solution id="fs-idp157025920">
+<para id="fs-idp60507184">zero</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp82566640">
+<problem id="fs-idm63308704">
+<para id="fs-idp130119312">What is the 90<sup>th</sup> percentile of square footage for homes?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp64873328">
+<problem id="fs-idm2051616">
+<para id="fs-idp53438752">Find the probability that a randomly selected home has more than 3,000 square feet given that you already know the house has more than 2,000 square feet.</para>
+</problem>
+<solution id="fs-idp127353472">
+<para id="fs-idp131464880">0.6</para>
+</solution>
+</exercise>
+
+<para id="eip-358"><newline/><emphasis effect="italics">Use the following information to answer the next eight exercises.</emphasis> A distribution is given as <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(0, 12).</para><exercise id="fs-idm886512">
+<problem id="fs-idp22582240">
+<para id="fs-idp64911856">What is <emphasis effect="italics">a</emphasis>? What does it represent?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp67116592">
+<problem id="fs-idp4083728">
+<para id="fs-idp169265984">What is <emphasis effect="italics">b</emphasis>? What does it represent?</para>
+</problem>
+<solution id="fs-idm9759664">
+<para id="fs-idp91297792"><emphasis effect="italics">b</emphasis> is 12, and it represents the highest value of <emphasis effect="italics">x</emphasis>.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp93994000">
+<problem id="fs-idp50844848">
+<para id="fs-idp1142320">What is the probability density function?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp104926176">
+<problem id="fs-idp1313680">
+<para id="fs-idp57939600">What is the theoretical mean?</para>
+</problem>
+<solution id="fs-idp80682848">
+<para id="fs-idp5499456">six</para></solution>
+</exercise>
+
+<exercise id="fs-idp97956800">
+<problem id="fs-idp31731472">
+<para id="fs-idp90613376">What is the theoretical standard deviation?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp172321904">
+<problem id="fs-idp7677536">
+<para id="fs-idp81592784">Draw the graph of the distribution for <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 9).</para></problem>
+<solution id="fs-idp67560352">
+<figure id="fs-idp140107840"><media id="fs-idp124624384" alt="This graph shows a uniform distribution. The horizontal axis ranges from 0 to 12. The distribution is modeled by a rectangle extending from x = 0 to x = 12. A region from x = 9 to x = 12 is shaded inside the rectangle.">
+<image mime-type="image/jpg" src="CNX_Stats_C05_M03_item002annoN.jpg" width="380"/>
+</media>
+</figure></solution>
+</exercise>
+
+<exercise id="fs-idp49233616">
+<problem id="fs-idp8048544">
+<para id="fs-idp16092816">Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 9).</para></problem>
+</exercise>
+
+<exercise id="fs-idp16246272">
+<problem id="fs-idp5135424">
+<para id="fs-idp66487744">Find the 40<sup>th</sup> percentile.</para>
+</problem>
+<solution id="fs-idp7986272">
+<para id="fs-idp127620736">4.8</para>
+</solution>
+</exercise>
+
+<para id="eip-537"><newline/><emphasis effect="italics">Use the following information to answer the next eleven exercises.</emphasis> The age of cars in the staff parking lot of a suburban college is uniformly distributed from six months (0.5 years) to 9.5 years.</para><exercise id="fs-idp73318288">
+<problem id="fs-idp14811216">
+<para id="fs-idp52562736">What is being measured here?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp109888">
+<problem id="fs-idm2561792">
+<para id="fs-idp100044096">In words, define the random variable <emphasis effect="italics">X</emphasis>.</para>
+</problem>
+<solution id="fs-idp170212480">
+<para id="fs-idp168011792"><emphasis effect="italics">X</emphasis> = The age (in years) of cars in the staff parking lot</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp80642336">
+<problem id="fs-idp48682736">
+<para id="fs-idp72776400">Are the data discrete or continuous?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp74722352">
+<problem id="fs-idp95338368">
+<para id="fs-idp80394720">The interval of values for <emphasis effect="italics">x</emphasis> is ______.</para>
+</problem>
+<solution id="fs-idp91820176">
+<para id="fs-idp51959344">0.5 to 9.5</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp64667664">
+<problem id="fs-idp29461104">
+<para id="fs-idp10189264">The distribution for <emphasis effect="italics">X</emphasis> is ______.</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp54832288">
+<problem id="fs-idp25932272">
+<para id="fs-idp25932528">Write the probability density function.</para>
+</problem>
+<solution id="fs-idp25933040">
+<para id="fs-idp25933296"><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>9</m:mn>
+</m:mfrac>
+
+</m:mrow>
+</m:math> where <emphasis effect="italics">x</emphasis> is between 0.5 and 9.5, inclusive.</para></solution>
+</exercise>
+
+<exercise id="fs-idp50471968">
+<problem id="fs-idp138157168">
+<para id="fs-idp58117856">Graph the probability distribution.</para>
+<list id="element-420" list-type="enumerated" number-style="lower-alpha">
+<item>Sketch the graph of the probability distribution.
+<figure id="element-123987"><media id="id7261010" alt="This is a blank graph template. The vertical and horizontal axes are unlabeled.">
+<image src="fig-ch05_06_01N.jpg" mime-type="jpg/png" width="380"/>
+</media>
+</figure></item>
+<item>Identify the following values:
+<list id="element-123321" list-type="enumerated" number-style="lower-roman"><item>Lowest value for <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math>: _______</item>
+<item>Highest value for <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math>: _______</item>
+<item>Height of the rectangle: _______</item>
+<item>Label for <emphasis effect="italics">x</emphasis>-axis (words): _______</item>
+<item>Label for <emphasis effect="italics">y</emphasis>-axis (words): _______</item>
+</list></item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="eip-97"><problem id="fs-idp112317152">
+<para id="fs-idp112317408">Find the average age of the cars in the lot.</para>
+</problem>
+<solution id="fs-idp92109904">
+<para id="fs-idp92110160"><emphasis effect="italics">&#956;</emphasis> = 5</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp4577984">
+<problem id="fs-idp129225056">
+<para id="fs-idp155781392">Find the probability that a randomly chosen car in the lot was less than four years old.</para>
+<list id="element-42230" list-type="enumerated" number-style="lower-alpha"><item>Sketch the graph, and shade the area of interest.
+<figure id="element-12987"><media id="id13706334" alt="Blank graph with vertical and horizontal axes.">
+<image src="fig-ch05_06_02.png" mime-type="png/jpg" width="380"/>
+</media>
+</figure></item>
+<item>Find the probability. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 4) = _______</item>
+</list></problem>
+</exercise>
+
+<exercise id="eip-709">
+<problem id="fs-idp138916000">
+<para id="fs-idp87748944">Considering only the cars less than 7.5 years old, find the probability that a randomly chosen car in the lot was less than four years old.</para>
+<list id="element-40030" list-type="enumerated" number-style="lower-alpha"><item>Sketch the graph, shade the area of interest.
+<figure id="element-10987"><media id="id15551200" alt="This is a blank graph template. The vertical and horizontal axes are unlabeled.">
+<image src="fig-ch05_06_02.png" mime-type="png/jpg" width="380"/>
+</media>
+</figure></item>
+<item>Find the probability. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 4|<emphasis effect="italics">x</emphasis> &lt; 7.5) = _______</item>
+</list></problem>
+<solution id="fs-idp55294432">
+<list id="element-200212" list-type="enumerated" number-style="lower-alpha"><item>Check student&#8217;s solution.</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>3.5</m:mn>
+</m:mrow>
+<m:mn>7</m:mn>
+</m:mfrac>
+
+</m:mrow>
+</m:math></item>
+</list></solution>
+</exercise>
+
+<exercise id="eip-174"><problem id="fs-idp171499040">
+<para id="element-450">What has changed in the previous two problems that made the solutions different?</para>
+</problem>
+</exercise>
+
+<exercise id="eip-332">
+<problem id="fs-idp152836592">
+<para id="fs-idp23265776">Find the third quartile of ages of cars in the lot. This means you will have to find the value such that <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+
+</m:mrow>
+</m:math>, or 75%, of the cars are at most (less than or equal to) that age.</para>
+<list id="element-09898" list-type="enumerated" number-style="lower-alpha"><item>Sketch the graph, and shade the area of interest.
+<figure id="element-101987"><media id="id11206333" alt="Blank graph with vertical and horizontal axes.">
+<image src="fig-ch05_06_02.png" mime-type="png/jpg" width="380"/></media>
+</figure></item>
+<item>Find the value <emphasis effect="italics">k</emphasis> such that <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 0.75.</item>
+<item>The third quartile is _______</item>
+</list></problem>
+<solution id="fs-idp167681280">
+<list id="element-12398" list-type="enumerated" number-style="lower-alpha"><item>Check student's solution.</item>
+<item><emphasis effect="italics">k</emphasis> = 7.25</item>
+<item>7.25</item>
+</list></solution>
+</exercise>
+</section>
+
+<section id="fs-idp64788688" class="free-response">
+<title>Homework</title>
+<para id="eip-902"><emphasis effect="italics">For each probability and percentile problem, draw the picture.</emphasis></para><exercise id="fs-idp2934064">
+<problem id="fs-idp51132496">
+<para id="fs-idp77684160">Births are approximately uniformly distributed between the 52 weeks of the year. They can be said to follow a uniform distribution from one to 53 (spread of 52 weeks).</para>
+<list id="fs-idp77684416" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> ~ _________</item>
+<item>Graph the probability distribution.</item>
+<item><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = _________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = _________</item>
+<item>&#963; = _________</item>
+<item>Find the probability that a person is born at the exact moment week 19 starts.  That is, find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 19) = _________</item>
+<item><emphasis effect="italics">P</emphasis>(2 &lt; <emphasis effect="italics">x</emphasis> &lt; 31) = _________</item>
+<item>Find the probability that a person is born after week 40.</item>
+<item><emphasis effect="italics">P</emphasis>(12 &lt; <emphasis effect="italics">x</emphasis>|<emphasis effect="italics">x</emphasis> &lt; 28) = _________</item>
+<item>Find the 70<sup>th</sup> percentile.</item>
+<item>Find the minimum for the upper quarter. </item></list>
+</problem>
+</exercise>
+
+<exercise id="fs-idp169878048"><problem id="fs-idp81982224">
+<para id="fs-idp81982480">A random number generator picks a number from one to nine in a uniform manner.</para>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp176704368" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ _________</item>
+<item>Graph the probability distribution.</item>
+<item><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = _________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = _________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = _________</item>
+<item><emphasis effect="italics">P</emphasis>(3.5 &lt; <emphasis effect="italics">x</emphasis> &lt; 7.25) = _________</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 5.67)</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 5|<emphasis effect="italics">x</emphasis> &gt; 3) = _________</item>
+<item>Find the 90<sup>th</sup> percentile.</item>
+</list></problem>
+<solution id="eip-idp101962176">
+<list id="eip-idp101962432" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(1, 9)</item>
+<item>Check student&#8217;s solution.</item>
+<item><m:math>
+ <m:mrow>
+  <m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>8</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> where <m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8804;</m:mo><m:mi>x</m:mi><m:mo>&#8804;</m:mo><m:mn>9</m:mn>
+ </m:mrow>
+</m:math></item>
+<item>five</item>
+<item>2.3</item>
+<item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>15</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>32</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</item>
+<item><m:math display="">
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>333</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>800</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</item>
+<item><m:math display="">
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mn>3</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</item>
+<item>8.2</item>
+</list></solution></exercise>
+
+<exercise id="eip-994"><problem id="fs-idp69073824">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp126144656">According to a study by Dr. John McDougall of his live-in weight loss program, the people who follow his program lose between six and 15 pounds a month until they approach trim body weight. Let&#8217;s suppose that the weight loss is uniformly distributed. We are interested in the weight loss of a randomly selected individual following the program for one month.</para><list id="fs-idp80387648" list-type="enumerated" number-style="lower-alpha">
+<item>Define the random variable. <emphasis effect="italics">X</emphasis> = _________</item>
+<item><emphasis effect="italics">X</emphasis> ~ _________</item>
+<item>Graph the probability distribution.</item>
+<item><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = _________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = _________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = _________</item>
+<item>Find the probability that the individual lost more than ten pounds in a month.</item>
+<item>Suppose it is known that the individual lost more than ten pounds in a month. Find the probability that he lost less than 12 pounds in the month.</item>
+<item><emphasis effect="italics">P</emphasis>(7 &lt; <emphasis effect="italics">x</emphasis> &lt; 13|<emphasis effect="italics">x</emphasis> &gt; 9) = __________. State this in a probability question, similarly to parts g and h, draw the picture, and find the probability.</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="eip-106">
+<problem id="fs-idp116073984">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp116074240">A subway train arrives every eight minutes during rush hour. We are interested in the length of time a commuter must wait for a train to arrive. The time follows a uniform distribution.</para><list id="fs-idp85264" list-type="enumerated" number-style="lower-alpha"><item>Define the random variable. <emphasis effect="italics">X</emphasis> = _______</item>
+<item><emphasis effect="italics">X</emphasis> ~ _______</item>
+<item>Graph the probability distribution.</item>
+<item><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = _______</item>
+<item><emphasis effect="italics">&#956;</emphasis> = _______</item>
+<item><emphasis effect="italics">&#963;</emphasis> = _______</item>
+<item>Find the probability that the commuter waits less than one minute.</item>
+<item>Find the probability that the commuter waits between three and four minutes.</item>
+<item>Sixty percent of commuters wait more than how long for the train? State this in a probability question, similarly to parts g and h, draw the picture, and find the probability.</item>
+</list></problem>
+<solution id="fs-idp53345328">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp164234448" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> represents the length of time a commuter must wait for a train to arrive on the Red Line.</item>
+
+
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(0, 8)</item>
+
+
+<item>Graph the probability distribution.</item>
+
+
+<item>
+<m:math>
+ <m:mrow>
+
+	<m:mi>f</m:mi>
+	<m:mo stretchy="false">(</m:mo>
+	<m:mi>x</m:mi>
+	<m:mo stretchy="false">)</m:mo>
+	<m:mo>=</m:mo>
+	<m:mfrac>
+   		<m:mn>1</m:mn>
+   		<m:mn>8</m:mn>
+ 	 </m:mfrac>
+
+ </m:mrow>
+</m:math>
+where
+<m:math>
+	<m:mn>0</m:mn>
+	<m:mo> &#8804; </m:mo>
+	<m:mi> x </m:mi>
+	<m:mo> &#8804; </m:mo>
+	<m:mn>8</m:mn>
+
+</m:math>
+</item>
+
+
+<item>four</item>
+
+
+<item>2.31</item>
+
+
+<item>
+<m:math>
+	<m:mrow>
+		<m:mfrac>
+			<m:mn>1</m:mn>
+			<m:mn>8</m:mn>
+		</m:mfrac>
+	</m:mrow>
+</m:math>
+</item>
+
+
+<item>
+<m:math>
+	<m:mrow>
+		<m:mfrac>
+			<m:mn>1</m:mn>
+			<m:mn>8</m:mn>
+		</m:mfrac>
+	</m:mrow>
+</m:math>
+</item>
+
+
+
+<item>3.2</item>
+</list></solution>
+</exercise>
+
+<exercise id="eip-819"><problem id="fs-idp174184320">
+<para id="fs-idp125382704">The age of a first grader on September 1 at Garden Elementary School is uniformly distributed from 5.8 to 6.8 years.  We randomly select one first grader from the class.</para>
+<list id="fs-idp137837776" list-type="enumerated" number-style="lower-alpha"><item>Define the random variable. <emphasis effect="italics">X</emphasis> = _________</item>
+<item><emphasis effect="italics">X</emphasis> ~ _________</item>
+<item>Graph the probability distribution.</item>
+<item><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = _________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = _________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = _________</item>
+<item>Find the probability that she is over 6.5 years old.</item>
+<item>Find the probability that she is between four and six years old.</item>
+<item>Find the 70<sup>th</sup> percentile for the age of first graders on September 1 at Garden Elementary School.</item>
+</list></problem>
+</exercise>
+
+<para id="eip-192"><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> The Sky Train from the terminal to the rental&#8211;car and long&#8211;term parking center is supposed to arrive every eight minutes. The waiting times for the train are known to follow a uniform distribution.</para><exercise id="eip-518">
+<problem id="fs-idp172910688">
+<para id="fs-idp114358400">What is the average waiting time (in minutes)?</para>
+<list id="fs-idp178644288" list-type="enumerated" number-style="lower-alpha">
+<item>zero</item>
+<item>two</item>
+<item>three</item>
+<item>four</item>
+</list>
+</problem>
+<solution id="fs-idp175490192">
+<para id="fs-idp31654800">d</para>
+</solution>
+</exercise>
+
+<exercise id="eip-255">
+<problem id="eip-idp37322992">
+<para id="eip-idp37323248">Find the 30<sup>th</sup> percentile for the waiting times (in minutes).</para>
+<list id="eip-idp82285888" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>two</item>
+<item>2.4</item>
+<item>2.75</item>
+<item>three</item>
+</list></problem>
+</exercise>
+
+<exercise id="eip-412">
+<problem id="fs-idp2555712">
+<para id="fs-idp2555968">The probability of waiting more than seven minutes given a person has waited more than four minutes is?</para>
+<list id="fs-idp93854368" list-type="enumerated" number-style="lower-alpha">
+<item>0.125</item>
+<item>0.25</item>
+<item>0.5</item>
+<item>0.75</item>
+</list>
+</problem>
+<solution id="fs-idp94217472">
+<para id="fs-idp94217728">b</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp57726432">
+<problem id="fs-idm12724496">
+<para id="fs-idm12724240">The time (in minutes) until the next bus departs a major bus depot follows a distribution with <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> where <emphasis effect="italics">x</emphasis> goes from 25 to 45 minutes.</para><list id="fs-idm12672944" list-type="enumerated" number-style="lower-alpha"><item>Define the random variable. <emphasis effect="italics">X</emphasis> = ________</item>
+<item><emphasis effect="italics">X</emphasis> ~ ________</item>
+<item>Graph the probability distribution.</item>
+<item>The distribution is ______________ (name of distribution). It is _____________ (discrete or continuous).</item>
+<item><emphasis effect="italics">&#956;</emphasis> = ________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = ________</item>
+<item>Find the probability that the time is at most 30 minutes. Sketch and label a graph of the distribution. Shade the area of interest.  Write the answer in a probability statement.</item>
+<item>Find the probability that the time is between 30 and 40 minutes. Sketch and label a graph of the distribution. Shade the area of interest. Write the answer in a probability statement.</item>
+<item><emphasis effect="italics">P</emphasis>(25 &lt; <emphasis effect="italics">x</emphasis> &lt; 55) = _________. State this in a probability statement, similarly to parts g and h, draw the picture, and find the probability.</item>
+<item>Find the 90<sup>th</sup> percentile. This means that 90% of the time, the time is less than _____ minutes.</item>
+<item>Find the 75<sup>th</sup> percentile. In a complete sentence, state what this means. (See part j.)</item>
+<item>Find the probability that the time is more than 40 minutes given (or knowing that) it is at least 30 minutes.</item>
+</list></problem>
+</exercise>
+
+<exercise id="fs-idm19928432">
+<problem id="fs-idm19928176"><para id="fs-idm19928048">Suppose that the value of a stock varies each day from $16 to $25 with a uniform distribution.</para>
+<list id="fs-idp52534224" list-type="enumerated" number-style="lower-alpha">
+<item>Find the probability that the value of the stock is more than $19.</item>
+<item>Find the probability that the value of the stock is between $19 and $22.</item>
+<item>Find the upper quartile - 25% of all days the stock is above what value? Draw the graph.</item>
+<item>Given that the stock is greater than $18, find the probability that the stock is more than $21.</item>
+</list>
+</problem>
+<solution id="fs-idp30733472">
+<list id="fs-idp30733728" list-type="enumerated" number-style="lower-alpha"><item>The probability density function of <emphasis effect="italics">X</emphasis> is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>25</m:mn><m:mo>&#8722;</m:mo><m:mn>16</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>9</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>.
+<newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 19) = (25 &#8211; 19) <m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>9</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>
+ = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>6</m:mn>
+   <m:mn>9</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mn>3</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>.
+<figure id="fs-idp56920896"><media id="fs-idp56921152" alt="">
+<image src="soln_01aF.jpg" mime-type="png/jpg" width="380"/>
+</media>
+</figure></item>
+<item><emphasis effect="italics">P</emphasis>(19 &lt; <emphasis effect="italics">X</emphasis> &lt; 22) = (22 &#8211; 19) <m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>9</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>3</m:mn>
+   <m:mn>9</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>3</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>.
+<figure id="fs-idp47544128"><media id="fs-idp47544384" alt="">
+<image mime-type="png/jpg" src="soln_01bF.jpg" width="380"/>
+</media>
+</figure></item>
+<item>The area must be 0.25, and 0.25 = (width)<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>9</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>, so width = (0.25)(9) = 2.25. Thus, the value is 25 &#8211; 2.25 = 22.75.</item>
+<item>This is a conditional probability question.  P(x &gt; 21| x &gt; 18).  You can do this two ways:
+    <list id="fs-idp37941792" list-type="bulleted">
+<item>Draw the graph where a is now 18 and b is still 25.  The height is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mn>25</m:mn><m:mo>&#8722;</m:mo><m:mn>18</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>7</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math><newline/>So, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 21|<emphasis effect="italics">x</emphasis> &gt; 18) = (25 &#8211; 21)<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>7</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = 4/7.</item>
+<item>Use the formula: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 21|<emphasis effect="italics">x</emphasis> &gt; 18) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>21</m:mn><m:mtext>&#160;AND&#160;</m:mtext><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>18</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>18</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+<newline/>= <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>21</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&gt;</m:mo><m:mn>18</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mn>25</m:mn><m:mo>&#8722;</m:mo><m:mn>21</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mn>25</m:mn><m:mo>&#8722;</m:mo><m:mn>18</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>4</m:mn>
+   <m:mn>7</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>.</item>
+    </list>
+</item>
+</list></solution>
+</exercise>
+
+<exercise id="fs-idp90929648">
+<problem id="fs-idp90929904"><para id="fs-idp100719504">A fireworks show is designed so that the time between fireworks is between one and five seconds, and follows a uniform distribution.</para>
+<list id="fs-idp100720032" list-type="enumerated" number-style="lower-alpha">
+<item>Find the average time between fireworks.</item>
+<item>Find probability that the time between fireworks is greater than four seconds.</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="fs-idp96470224">
+<problem id="fs-idp96470480">
+<para id="fs-idp182386192">The number of miles driven by a truck driver falls between 300 and 700, and follows a uniform distribution.</para>
+<list id="fs-idp182386704" list-type="enumerated" number-style="lower-alpha">
+<item>Find the probability that the truck driver goes more than 650 miles in a day.</item>
+<item>Find the probability that the truck drivers goes between 400 and 650 miles in a day.</item>
+<item>At least how many miles does the truck driver travel on the furthest 10% of days?</item>
+</list>
+</problem>
+<solution id="fs-idp168190128">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp14788896" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 650) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>700</m:mn><m:mo>&#8722;</m:mo><m:mn>650</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>700</m:mn><m:mo>&#8722;</m:mo><m:mn>300</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>400</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>8</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 0.125.</item>
+<item><emphasis effect="italics">P</emphasis>(400 &lt; <emphasis effect="italics">X</emphasis> &lt; 650) = <m:math display="">
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>650</m:mn><m:mo>&#8722;</m:mo><m:mn>400</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>700</m:mn><m:mo>&#8722;</m:mo><m:mn>300</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>250</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>400</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 0.625</item>
+<item>0.10 = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mtext>width</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mtext>700</m:mtext><m:mo>&#8722;</m:mo><m:mtext>300</m:mtext>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>, so width = 400(0.10) = 40. Since 700 &#8211; 40 = 660, the drivers travel at least 660 miles on the furthest 10% of days.</item>
+</list></solution>
+</exercise>
+
+
+</section>
+</content>
+<glossary>
+<definition id="condprob">
+<term>Conditional Probability</term>
+<meaning id="id13790404">the likelihood that an event will occur given that another event has already occurred.</meaning>
+</definition>
+</glossary>
+</document>

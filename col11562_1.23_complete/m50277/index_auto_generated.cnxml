@@ -1,0 +1,115 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Hypothesis Testing of a Single Mean and Single Proportion</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50277/latest</md:content-url>
+  <md:content-id>m50277</md:content-id>
+  <md:title>Hypothesis Testing of a Single Mean and Single Proportion</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/09 04:46:34 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternative hypothesis</md:keyword>
+    <md:keyword>central limit theorem</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>random variable</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1171854730054" class="statistics lab"><label/><title>Hypothesis Testing of a Single Mean and Single Proportion </title>
+<para id="id9325443">Class Time: </para>
+    <para id="id9325450">Names:</para>
+      <list id="id3727711" list-type="bulleted"><title>Student Learning Outcomes</title><item>The student will select the appropriate distributions to use in each case.</item>
+        <item>The student will conduct hypothesis tests and interpret the results.</item>
+      </list><para id="element-692"><title>Television Survey</title>In a recent survey, it was stated that Americans watch television on average four hours per day. Assume that <emphasis effect="italics">&#963;</emphasis> = 2. Using your class as the sample, conduct a hypothesis test to determine if the average for students at your school is lower.</para>
+<list id="list-9283749" mark-suffix="." list-type="enumerated"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: _____________</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: _____________</item>
+<item>In words, define the random variable. __________ = ______________________</item>
+<item>The distribution to use for the test is _______________________.</item>
+<item>Determine the test statistic using your data.</item>
+<item>Draw a graph and label it appropriately.Shade the actual level of significance.
+<list id="list-25986787634" list-type="enumerated" number-style="lower-alpha">
+<item>Graph:<figure id="id11610612"><media id="id11610617" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch09_18_01.png" mime-type="image/png" width="380"/></media></figure></item>
+<item>Determine the <emphasis effect="italics">p</emphasis>-value.</item>
+</list>
+</item>
+<item>Do you or do you not reject the null hypothesis? Why?</item>
+<item>Write a clear conclusion using a complete sentence.</item>
+</list><para id="element-40a"><title>Language Survey</title>About 42.3% of Californians and 19.6% of all Americans over age five speak a language other than English at home. Using your class as the sample, conduct a hypothesis test to determine if the percent of the students at your school who speak a language other than English at home is different from 42.3%.</para>
+<list id="list-2349867965" mark-suffix="." list-type="enumerated"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: ___________</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: ___________</item>
+<item>In words, define the random variable. __________ = _______________</item>
+<item> The distribution to use for the test is ________________</item>
+<item>Determine the test statistic using your data.</item>
+<item>Draw a graph and label it appropriately. Shade the actual level of significance.
+<list id="list-234978687" list-type="enumerated" number-style="lower-alpha">
+<item>Graph:<figure id="id11513524"><media id="id11513529" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch09_18_02.png" mime-type="image/png" width="380"/></media></figure></item>
+<item>Determine the <emphasis effect="italics">p</emphasis>-value.</item>
+</list>
+</item>
+<item> Do you or do you not reject the null hypothesis? Why?</item>
+<item> Write a clear conclusion using a complete sentence.</item>
+</list><para id="element-479"><title>Jeans Survey</title>Suppose that young adults own an average of three pairs of jeans. Survey eight people from your class to determine if the average is higher than three. Assume the population is normal.</para>
+<list id="list-234876875" mark-suffix="." list-type="enumerated"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: _____________</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: _____________</item>
+<item>In words, define the random variable. __________ = ______________________</item>
+<item>The distribution to use for the test is _______________________.</item>
+<item>Determine the test statistic using your data.</item>
+<item>Draw a graph and label it appropriately. Shade the actual level of significance.
+<list id="list-23492347" list-type="enumerated" number-style="lower-alpha">
+<item>Graph:<figure id="id11513704"><media id="id11513708" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch09_18_03.png" mime-type="image/png" width="380"/></media></figure></item>
+<item>Determine  the <emphasis effect="italics">p</emphasis>-value.</item>
+</list>
+</item>
+	<item> Do you or do you not reject the null hypothesis? Why?</item>
+	<item> Write a clear conclusion using a complete sentence.</item>
+</list></note></content>
+
+</document>

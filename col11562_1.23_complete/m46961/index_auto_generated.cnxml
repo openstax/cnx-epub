@@ -1,0 +1,782 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Poisson Distribution</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46961/latest</md:content-url>
+  <md:content-id>m46961</md:content-id>
+  <md:title>Poisson Distribution</md:title>
+  <md:version>1.8</md:version>
+  <md:created>2013/07/19 08:29:52 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>Poisson distribution</md:keyword>
+    <md:keyword>Poisson probability distribution</md:keyword>
+    <md:keyword>Poisson probability distribution function</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="delete_me">There are two main characteristics of a Poisson experiment.</para><list id="element-1" list-type="enumerated"><item>The <term>Poisson probability distribution</term> gives the probability of a number of events occurring in a <emphasis>fixed interval</emphasis> of time or space if these events happen with a known average rate and independently of the time since the last event. For example, a book editor might be interested in the number of words spelled incorrectly in a particular book. It might be that, on the average, there are five words spelled incorrectly in 100 pages. The interval is the 100 pages.</item>
+<item>The Poisson distribution may be used to approximate the binomial if the probability of success is "small" (such as 0.01) and the number of trials is "large" (such as 1,000). You will verify the relationship in the homework exercises. <emphasis effect="italics">n</emphasis> is the number of trials, and <emphasis effect="italics">p</emphasis> is the probability of a "success."</item>
+</list><para id="fs-idp39944848">The random variable <emphasis effect="italics">X</emphasis> = the number of occurrences in the interval of interest.</para>
+
+<example id="element-743">
+<para id="element-746">The average number of loaves of bread put on a shelf in a bakery in a half-hour period is 12. Of interest is the number of loaves of bread put on the shelf in five minutes. The time interval of interest is five minutes. What is the probability that the number of loaves, selected randomly, put on the shelf in five minutes is three?</para><para id="element-747">Let <emphasis effect="italics">X</emphasis> = the number of loaves of bread put on the shelf in five minutes. If the average number of loaves put on the shelf in 30 minutes (half-hour) is 12, <emphasis>then the average number of loaves put on the shelf in five minutes is</emphasis> <m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>5</m:mn>
+     <m:mrow>
+      <m:mn>30</m:mn>
+     </m:mrow>
+    </m:mfrac>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>(12) = 2 loaves of bread.</para>
+
+<para id="element-749">The probability question asks you to find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 3).</para></example>
+
+<note id="fs-idp39470352" class="statistics try"><label/><title>Try It</title>
+
+<exercise id="fs-idm102800576">
+<problem id="fs-idm136652096">
+<para id="fs-idm76340608">The average number of fish caught in an hour is eight. Of interest is the number of fish caught in 15 minutes. The time interval of interest is 15 minutes. What is the average number of fish caught in 15 minutes?</para></problem>
+
+</exercise>
+</note><example id="element-403">
+<exercise id="fs-idp21926144"><problem id="fs-idp93226496"><para id="element-244">A bank expects to receive six bad checks per day, on average. What is the probability of the bank getting fewer than five bad checks on any given day? Of interest is the number of checks the bank receives in one day, so the time interval of interest is one day. Let <emphasis effect="italics">X</emphasis> = the number of bad checks the bank receives in one day. If the bank expects to receive six bad checks per day then the average is six checks per day. Write a mathematical statement for the probability question.</para></problem>
+<solution id="fs-idp61940464">
+<para id="fs-idm21074048"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 5)</para></solution>
+</exercise>
+</example>
+
+
+<note id="fs-idm3960864" class="statistics try"><label/><title>Try It</title>
+
+<exercise id="fs-idm122013280">
+<problem id="fs-idp1855472">
+<para id="fs-idm64281696">An electronics store expects to have ten returns per day on average. The manager wants to know the probability of the store getting fewer than eight returns on any given day. State the probability question mathematically.</para>
+</problem>
+</exercise>
+</note><example id="element-774">
+<para id="element-234">You notice that a news reporter says "uh," on average, two times per broadcast. What is the probability that the news reporter says "uh" more than two times per broadcast.</para>
+
+<para id="element-235">This is a Poisson problem because you are interested in knowing the number of times the news reporter says "uh" during a broadcast.<newline count="2"/></para><exercise id="element-895">
+<problem id="id18394368">
+  <para id="element-734">a. What is the interval of interest?</para>
+</problem>
+
+<solution id="id18394386">
+  <para id="element-227">a. one broadcast<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="element-485">
+<problem id="id18394413">
+  <para id="element-10">b. What is the average number of times the news reporter says "uh" during one broadcast?</para></problem>
+
+<solution id="id18394432">
+  <para id="element-40">b. 2<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="element-497"><problem id="id18394461">
+  <para id="element-817">c. Let <emphasis effect="italics">X</emphasis> = ____________. What values does <emphasis effect="italics">X</emphasis> take on?</para>
+</problem>
+
+<solution id="id18394489">
+  <para id="element-112">c. Let <emphasis effect="italics">X</emphasis> = the number of times the news reporter says "uh" during one broadcast.
+<newline/><emphasis effect="italics">x</emphasis> = 0, 1, 2, 3, ...<newline count="2"/>
+  </para></solution>
+</exercise><exercise id="element-544"><problem id="id18394534">
+  <para id="element-423">d. The probability question is <emphasis effect="italics">P</emphasis>(______).</para></problem>
+
+<solution id="id18394557">
+  <para id="element-683">d. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 2)</para></solution>
+</exercise>
+</example>
+
+
+<note id="fs-idm101937776" class="statistics try"><label/><title>Try It</title>
+
+<exercise id="fs-idm138494832">
+<problem id="fs-idm76741440">
+<para id="fs-idm124704784">An emergency room at a particular hospital gets an average of five patients per hour. A doctor wants to know the probability that the ER gets more than five patients per hour. Give the reason why this would be a Poisson distribution.</para></problem>
+</exercise>
+</note><section id="element-210">
+<title>Notation for the Poisson: P = Poisson Probability Distribution Function</title>
+<para id="element-272"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#956;</emphasis>)</para>
+
+<para id="element-273">Read this as "<emphasis effect="italics">X</emphasis> is a random variable with a Poisson distribution." The parameter is <emphasis effect="italics">&#956;</emphasis> (or <emphasis effect="italics">&#955;</emphasis>); <emphasis effect="italics">&#956;</emphasis> (or <emphasis effect="italics">&#955;</emphasis>) = the mean for the interval of interest.</para>
+</section>
+
+<example id="element-784"><para id="element-690">Leah's answering machine receives about six telephone calls between 8 a.m. and 10 a.m. What is the probability that Leah receives more than one call <emphasis>in the next 15 minutes?</emphasis></para><para id="element-691">Let <emphasis effect="italics">X</emphasis> = the number of calls Leah receives in 15 minutes. (The <emphasis>interval of interest</emphasis> is 15 minutes or <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>4</m:mn>
+  </m:mfrac>
+ </m:mrow>
+</m:math> hour.)</para><para id="element-692"><emphasis effect="italics">x</emphasis> = 0, 1, 2, 3, ...</para>
+<para id="element-693">If Leah receives, on the average, six telephone calls in two hours, and there are eight 15 minute intervals in two hours, then Leah receives</para><para id="element-694"><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>8</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>(6) = 0.75 calls in 15 minutes, on average. So, <emphasis effect="italics">&#956;</emphasis> = 0.75 for this problem.</para>
+<para id="element-696"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(0.75)</para>
+
+<para id="element-697" class="finger">Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 1). <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 1) = 0.1734 (calculator or computer)</para>
+
+<note id="fs-idm23681840" class="statistics calculator"><label/>
+<list id="fs-idp1265216" list-type="bulleted"><item>Press 1 &#8211; and then press 2<sup>nd</sup> DISTR.</item>
+<item>Arrow down to poissoncdf. Press ENTER.</item>
+<item>Enter (.75,1).</item>
+<item>The result is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 1) = 0.1734.</item>
+</list><note id="eip-706" class="finger"><label/><title>Note</title>
+<para id="fs-idm154468640">The TI calculators use <emphasis effect="italics">&#955;</emphasis> (lambda) for the mean.</para>
+</note></note><para id="element-886">The probability that Leah receives more than one telephone call in the next 15 minutes is about 0.1734: <newline count="1"/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 1) = 1 &#8722; poissoncdf(0.75, 1).</para><para id="element-89">The graph of <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(0.75) is:</para>
+
+<figure id="fs-idm13011872"><media id="id18951496" display="block" alt="This graphs shows a poisson probability distribution. It has 5 bars that decrease in height from left to right. The x-axis shows values in increments of 1 starting with 0, representing the number of calls Leah receives within 15 minutes. The y-axis ranges from 0 to 0.5 in increments of 0.1.">
+<image src="fig-ch04_08_01N.jpg" mime-type="image/jpg" width="400"/>
+</media></figure><para id="element-869">The <emphasis effect="italics">y</emphasis>-axis contains the probability of <emphasis effect="italics">x</emphasis> where <emphasis effect="italics">X</emphasis> = the number of calls in 15 minutes.</para></example>
+
+
+<note id="fs-idm14071904" class="statistics try finger"><label/><title>Try It</title>
+
+<exercise id="fs-idm114328016" class="finger">
+<problem id="fs-idm126244848">
+<para id="fs-idm2292064">A customer service center receives about ten emails every half-hour. What is the probability that the customer service center receives more than four emails in the next six minutes? Use the TI-83+ or TI-84 calculator to find the answer.</para></problem>
+</exercise>
+</note><example id="fs-idm98662832">
+
+<para id="fs-idm122953024">According to Baydin, an email management company, an email user gets, on average, 147 emails per day. Let <emphasis effect="italics">X</emphasis> = the number of emails an email user receives per day. The discrete random variable <emphasis effect="italics">X</emphasis> takes on the values <emphasis effect="italics">x</emphasis> = 0, 1, 2 &#8230;. The random variable <emphasis effect="italics">X</emphasis> has a Poisson distribution: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(147). The mean is 147 emails.</para>
+
+<exercise id="fs-idm81055280">
+<problem id="fs-idm139603200">
+<list id="fs-idm148062160" list-type="enumerated" number-style="lower-alpha">
+<item>What is the probability that an email user receives exactly 160 emails per day?</item>
+<item>What is the probability that an email user receives at most 160 emails per day?</item>
+<item>What is the standard deviation?</item>
+</list>
+</problem>
+<solution id="fs-idm126813888">
+<list id="fs-idm100902832" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 160) = poissonpdf(147, 160) &#8776; 0.0180</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 160) = poissoncdf(147, 160) &#8776; 0.8666</item>
+<item>Standard Deviation = <m:math>
+ <m:mrow>
+  <m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mi>&#956;</m:mi>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mn>147</m:mn>
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>&#8776;</m:mo><m:mn>12.1244</m:mn>
+ </m:mrow>
+</m:math>
+</item></list></solution>
+</exercise>
+
+</example>
+
+<note id="fs-idm17831600" class="statistics try"><label/><title>Try It</title>
+
+<exercise id="fs-idm128601120">
+<problem id="fs-idm195364880">
+
+<para id="fs-idm191065552">According to a recent poll by the Pew Internet Project, girls between the ages of 14 and 17 send an average of 187 text messages each day. Let <emphasis effect="italics">X</emphasis> = the number of texts that a girl aged 14 to 17 sends per day. The discrete random variable <emphasis effect="italics">X</emphasis> takes on the values <emphasis effect="italics">x</emphasis> = 0, 1, 2 &#8230;. The random variable <emphasis effect="italics">X</emphasis> has a Poisson distribution: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(187). The mean is 187 text messages.</para>
+
+<list id="fs-idm153913056" list-type="enumerated" number-style="lower-alpha"><item>What is the probability that a teen girl sends exactly 175 texts per day?</item>
+<item>What is the probability that a teen girl sends at most 150 texts per day?</item>
+<item>What is the standard deviation?</item>
+</list></problem>
+</exercise>
+</note><example id="fs-idp46630000">
+<para id="fs-idm138564992">Text message users receive or send an average of 41.5 text messages per day.</para>
+<exercise id="fs-idm133688624">
+<problem id="fs-idm129087696">
+<list id="fs-idm126097296" list-type="enumerated" number-style="lower-alpha"><item>How many text messages does a text message user receive or send per hour?</item>
+<item>What is the probability that a text message user receives or sends two messages per hour?</item>
+<item>What is the probability that a text message user receives or sends more than two messages per hour?</item>
+</list></problem>
+<solution id="fs-idm60470976">
+<list id="fs-idm97821584" list-type="enumerated" number-style="lower-alpha"><item>Let <emphasis effect="italics">X</emphasis> = the number of texts that a user sends or receives in one hour. The average number of texts received per hour is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>41.5</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>24</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> &#8776; 1.7292.</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(1.7292), so <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 2) = poissonpdf(1.7292, 2) &#8776; 0.2653</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 2) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 2) = 1 &#8211; poissoncdf(1.7292, 2) &#8776; 1 &#8211; 0.7495 = 0.2505</item>
+</list></solution>
+</exercise>
+</example>
+
+<note id="fs-idm6127376" class="statistics try"><label/><title>Try It</title>
+
+<exercise id="eip-693">
+<problem id="fs-idm114876624">
+<para id="fs-idm31960976">Atlanta&#8217;s Hartsfield-Jackson International Airport is the busiest airport in the world. On average there are 2,500 arrivals and departures each day.</para>
+
+
+<list id="fs-idm85294848" list-type="enumerated" number-style="lower-alpha"><item>How many airplanes arrive and depart the airport per hour?</item>
+<item>What is the probability that there are exactly 100 arrivals and departures in one hour? </item>
+<item>What is the probability that there are at most 100 arrivals and departures in one hour?</item>
+</list></problem>
+</exercise></note><example id="fs-idm140754736">
+<exercise id="fs-idm140268064">
+<problem id="fs-idm63493200">
+<para id="fs-idm59600144">On May 13, 2013, starting at 4:30 PM, the probability of low seismic activity for the next 48 hours in Alaska was reported as about 1.02%. Use this information for the next 200 days to find the probability that there will be low seismic activity in ten of the next 200 days. Use both the binomial and Poisson distributions to calculate the probabilities. Are they close?</para></problem>
+<solution id="fs-idm57643184">
+<para id="fs-idm69654032">Let <emphasis effect="italics">X</emphasis> = the number of days with low seismic activity.</para><para id="fs-idm57624224">Using the binomial distribution:
+  <list id="fs-idp4019536" list-type="bulleted" bullet-style="none"><item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 10) = binompdf(200, .0102, 10) &#8776; 0.000039</item></list></para>
+<para id="fs-idm136827536">Using the Poisson distribution:
+<list id="fs-idm9822304" list-type="bulleted" bullet-style="none"><item>Calculate <emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">np</emphasis> = 200(0.0102) &#8776; 2.04</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 10) = poissonpdf(2.04, 10) &#8776; 0.000045</item>
+</list></para>
+<para id="fs-idm44106800">We expect the approximation to be good because <emphasis effect="italics">n</emphasis> is large (greater than 20) and <emphasis effect="italics">p</emphasis> is small (less than 0.05). The results are close&#8212;both probabilities reported are almost 0.</para></solution>
+</exercise>
+
+</example>
+
+<note id="fs-idp26868464" class="statistics try"><label/><title>Try It</title>
+<exercise id="eip-idp124175712">
+<problem id="eip-idp124175968">
+<para id="eip-idp124176224">On May 13, 2013, starting at 4:30 PM, the probability of moderate seismic activity for the next 48 hours in the Kuril Islands off the coast of Japan was reported at about 1.43%. Use this information for the next 100 days to find the probability that there will be low seismic activity in five of the next 100 days. Use both the binomial and Poisson distributions to calculate the probabilities. Are they close?</para></problem>
+</exercise></note><section id="fs-idm74033600" class="references"><title>References</title><para id="fs-idm50742304">&#8220;ATL Fact Sheet,&#8221; Department of Aviation at the Hartsfield-Jackson Atlanta International Airport, 2013. Available online at  http://www.atlanta-airport.com/Airport/ATL/ATL_FactSheet.aspx (accessed May 15, 2013).</para>
+<para id="fs-idm119939248">Center for Disease Control and Prevention. &#8220;Teen Drivers: Fact Sheet,&#8221; Injury Prevention &amp; Control: Motor Vehicle Safety,  October 2, 2012. Available online at http://www.cdc.gov/Motorvehiclesafety/Teen_Drivers/teendrivers_factsheet.html (accessed May 15, 2013).</para>
+<para id="fs-idm54517952">&#8220;Children and Childrearing,&#8221; Ministry of Health, Labour, and Welfare. Available online at http://www.mhlw.go.jp/english/policy/children/children-childrearing/index.html (accessed May 15, 2013).</para>
+<para id="fs-idp39029744">&#8220;Eating Disorder Statistics,&#8221; South Carolina Department of Mental Health, 2006. Available online at http://www.state.sc.us/dmh/anorexia/statistics.htm (accessed May 15, 2013).</para>
+<para id="fs-idm985072">&#8220;Giving Birth in Manila: The maternity ward at the Dr Jose Fabella Memorial Hospital in Manila, the busiest in the Philippines, where there is an average of 60 births a day,&#8221; theguardian, 2013. Available online at http://www.theguardian.com/world/gallery/2011/jun/08/philippines-health#/?picture=375471900&amp;index=2 (accessed May 15, 2013).</para>
+<para id="fs-idp4182624">&#8220;How Americans Use Text Messaging,&#8221; Pew Internet, 2013. Available online at http://pewinternet.org/Reports/2011/Cell-Phone-Texting-2011/Main-Report.aspx (accessed May 15, 2013).</para>
+<para id="fs-idp26429248">Lenhart, Amanda. &#8220;Teens, Smartphones &amp; Testing: Texting volum is up while the frequency of voice calling is down. About one in four teens say they own smartphones,&#8221;  Pew Internet, 2012. Available online at http://www.pewinternet.org/~/media/Files/Reports/2012/PIP_Teens_Smartphones_and_Texting.pdf (accessed May 15, 2013).</para>
+<para id="fs-idp64516624">&#8220;One born every minute: the maternity unit where mothers are THREE to a bed,&#8221; MailOnline. Available online at http://www.dailymail.co.uk/news/article-2001422/Busiest-maternity-ward-planet-averages-60-babies-day-mothers-bed.html (accessed May 15, 2013).</para>
+<para id="eip-idp231756384">Vanderkam, Laura. &#8220;Stop Checking Your Email, Now.&#8221; CNNMoney, 2013. Available online at http://management.fortune.cnn.com/2012/10/08/stop-checking-your-email-now/ (accessed May 15, 2013).</para>
+<para id="fs-idm47256464">&#8220;World Earthquakes: Live Earthquake News and Highlights,&#8221; World Earthquakes, 2012. http://www.world-earthquakes.com/index.php?option=ethq_prediction (accessed May 15, 2013).</para>
+</section><section id="fs-idm134097152" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm58971248">A <term>Poisson probability distribution</term> of a discrete random variable gives the probability of a number of events occurring in a fixed interval of time or space, if these events happen at a known average rate and independently of the time since the last event. The Poisson distribution may be used to approximate the binomial, if the probability of success is "small" (less than or equal to 0.05) and the number of trials is "large" (greater than or equal to 20).</para>
+</section>
+
+<section id="fs-idm139197072" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idm105067808"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#956;</emphasis>) means that <emphasis effect="italics">X</emphasis> has a Poisson probability distribution where <emphasis effect="italics">X</emphasis> = the number of occurrences in the interval of interest.</para>
+<para id="fs-idm134113552"><emphasis effect="italics">X</emphasis> takes on the values <emphasis effect="italics">x</emphasis> = 0, 1, 2, 3, ...</para>
+<para id="fs-idm48398160">The mean <emphasis effect="italics">&#956;</emphasis> is typically given.</para>
+<para id="fs-idm115241024">The variance is <emphasis effect="italics">&#963;</emphasis><sup>2</sup> = <emphasis effect="italics">&#956;</emphasis>, and the standard deviation is <newline/><m:math>
+ <m:mrow>
+  <m:mi>&#963;</m:mi><m:mtext>&#160;=&#160;</m:mtext><m:msqrt>
+   <m:mi>&#956;</m:mi>
+  </m:msqrt>
+ </m:mrow>
+</m:math>.</para>
+<para id="fs-idm63034992">When <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#956;</emphasis>) is used to approximate a binomial distribution, <emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">np</emphasis> where <emphasis effect="italics">n</emphasis> represents the number of independent trials and <emphasis effect="italics">p</emphasis> represents the probability of success in a single trial.</para>
+</section>
+
+<section id="fs-idm62678864" class="practice">
+<para id="fs-idm5290048"><emphasis effect="italics">Use the following information to answer the next six exercises:</emphasis> On average, a clothing store gets 120 customers per day.</para>
+<exercise id="fs-idm137455952"><problem id="fs-idm15562000">
+<para id="fs-idm141921744">Assume the event occurs independently in any given day. Define the random variable <emphasis effect="italics">X</emphasis>.</para>
+</problem>
+
+<!-- <solution id="fs-idm218580928">
+<para id="fs-idm140971904"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(120)</para>
+</solution> -->
+</exercise><exercise id="fs-idm144498128">
+<problem id="fs-idm102578848">
+<para id="fs-idm36079552">What values does <emphasis effect="italics">X</emphasis> take on?</para></problem>
+<solution id="fs-idm121973568">
+<para id="fs-idm51882224">0, 1, 2, 3, 4, &#8230;</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm120323120"><problem id="fs-idm141308992">
+<para id="fs-idm125348432">What is the probability of getting 150 customers in one day?</para>
+</problem>
+
+<!-- <solution id="fs-idm98751248">
+<para id="fs-idm34196064">0.0010</para>
+</solution> -->
+</exercise><exercise id="fs-idp38717104">
+<problem id="fs-idm75947232">
+<para id="fs-idm120490528">What is the probability of getting 35 customers in the first four hours? Assume the store is open 12 hours each day.</para>
+</problem>
+<solution id="fs-idm103570128">
+<para id="fs-idm14407824">0.0485</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp22578880"><problem id="fs-idm144336">
+<para id="fs-idm71278400">What is the probability that the store will have more than 12 customers in the first hour?</para>
+</problem>
+
+<!-- <solution id="fs-idm122562880">
+<para id="fs-idm100563824">0.2084</para>
+</solution> -->
+</exercise><exercise id="fs-idm69114848">
+<problem id="fs-idm7126816">
+<para id="fs-idm167446384">What is the probability that the store will have fewer than 12 customers in the first two hours?</para>
+</problem>
+<solution id="fs-idm141658912"><para id="fs-idp32700704">0.0214</para></solution>
+</exercise>
+
+<exercise id="fs-idm48809408"><problem id="fs-idp8030848">
+<para id="fs-idm100699568">Which type of distribution can the Poisson model be used to approximate? When would you do this?</para>
+</problem>
+
+<!-- <solution id="fs-idm58434144">
+<para id="fs-idm141703168">The Poisson distribution can approximate a binomial distribution, which you would do if the probability of success is small and the number of trials is large.</para>
+</solution> -->
+</exercise><para id="fs-idm115873936"><newline/><emphasis effect="italics">Use the following information to answer the next six exercises:</emphasis> On average, eight teens in the U.S. die from motor vehicle injuries per day. As a result, states across the country are debating raising the driving age.</para><exercise id="exerciseone">
+<problem id="id10004804">
+<para id="prob_1">Assume the event occurs independently in any given day. In words, define the random variable <emphasis effect="italics">X</emphasis>.</para>
+</problem>
+<solution id="fs-idm5329552">
+<para id="fs-idm5329296"><emphasis effect="italics">X</emphasis> = the number of U.S. teens who die from motor vehicle injuries per day.</para>
+</solution>
+</exercise>
+<exercise id="exercisetwo"><problem id="id10004833"><para id="fs-idp4167264"><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</para>
+</problem>
+
+<!-- <solution id="fs-idp14476864">
+<para id="fs-idp14477120"><emphasis effect="italics">P</emphasis>(8)</para>
+</solution> -->
+</exercise><exercise id="exercisethree"><problem id="id10020224">
+<para id="prob_3">What values does <emphasis effect="italics">X</emphasis> take on?</para>
+</problem>
+<solution id="id10020246">
+<para id="element-88758324234">0, 1, 2, 3, 4, ...</para>
+</solution></exercise>
+
+<exercise id="exercisefour"><problem id="id10020274">
+<para id="prob_4">For the given values of the random variable <emphasis effect="italics">X</emphasis>, fill in the corresponding probabilities.</para>
+</problem>
+
+<!-- <solution id="fs-idp29073952">
+<table id="element-222" summary="">
+<tgroup cols="2"><thead>
+  <row>
+    <entry><emphasis effect="italics">x</emphasis></entry>
+    <entry><emphasis effect="italics">P(x)</emphasis></entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>0</entry>
+    <entry>0.0003</entry>
+  </row>
+  <row>
+    <entry>4</entry>
+    <entry>0.0573</entry>
+  </row>
+  <row>
+    <entry>8</entry>
+    <entry>0.1396</entry>
+  </row>
+  <row>
+    <entry>10</entry>
+    <entry>0.993</entry>
+  </row>
+  <row>
+    <entry>11</entry>
+    <entry>0.0722</entry>
+  </row>
+  <row>
+    <entry>15</entry>
+    <entry>0.0090</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</solution> -->
+</exercise><exercise id="exercisefive">
+<problem id="id10039817">
+<para id="prob_5">Is it likely that there will be no teens killed from motor vehicle injuries on any given day in the U.S? Justify your answer numerically.</para>
+</problem>
+<solution id="id10039834">
+<para id="element-887532428234">No</para>
+</solution></exercise>
+
+<exercise id="exercisesix"><problem id="id10039858">
+<para id="prob_6">Is it likely that there will be more than 20 teens killed from motor vehicle injuries on any given day in the U.S.? Justify your answer numerically.</para></problem>
+<!-- <solution id="id10039877">
+<para id="element-88758232434">No</para>
+</solution> --></exercise></section>
+
+<section id="fs-idm132424448" class="free-response"><title>HOMEWORK</title><exercise id="fs-idm121525168">
+<problem id="fs-idm79533728">
+<para id="fs-idm79533600">The switchboard in a Minneapolis law office gets an average of 5.5 incoming phone calls during the noon hour on Mondays. Experience shows that the existing staff can handle up to six calls in an hour. Let <emphasis effect="italics">X</emphasis> = the number of calls received at noon.</para><list id="fs-idm21340336" list-type="enumerated" number-style="lower-alpha">
+<item>Find the mean and standard deviation of <emphasis effect="italics">X</emphasis>.</item>
+<item>What is the probability that the office receives at most six calls at noon on Monday?</item>
+<item>Find the probability that the law office receives six calls at noon. What does this mean to the law office staff who get, on average, 5.5 incoming phone calls at noon?</item>
+<item>What is the probability that the office receives more than eight calls at noon?</item>
+</list>
+</problem>
+<solution id="fs-idm105838640">
+<list id="fs-idp36488944" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(5.5); <emphasis effect="italics">&#956;</emphasis> = 5.5; <m:math>
+ <m:mrow>
+  <m:mi>&#963;</m:mi><m:mtext>&#160;=&#160;</m:mtext><m:msqrt>
+   <m:mrow>
+    <m:mn>5.5</m:mn>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> &#8776; 2.3452</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 6) = poissoncdf(5.5, 6) &#8776; 0.6860</item>
+<item>There is a 15.7% probability that the law staff will receive more calls than they can handle.</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 8) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 8) = 1 &#8211; poissoncdf(5.5, 8) &#8776; 1 &#8211; 0.8944 = 0.1056</item>
+</list></solution>
+</exercise>
+
+<exercise id="fs-idm13950096"><problem id="fs-idm19674416">
+<para id="fs-idm106996656">The maternity ward at Dr. Jose Fabella Memorial Hospital in Manila in the Philippines is one of the busiest in the world with an average of 60 births per day. Let <emphasis effect="italics">X</emphasis> = the number of births in an hour.</para>
+<list id="fs-idm55326000" list-type="enumerated" number-style="lower-alpha">
+<item>Find the mean and standard deviation of <emphasis effect="italics">X</emphasis>.</item>
+<item>Sketch a graph of the probability distribution of <emphasis effect="italics">X</emphasis>.</item>
+<item>What is the probability that the maternity ward will deliver three babies in one hour?</item>
+<item>What is the probability that the maternity ward will deliver at most three babies in one hour?</item>
+<item>What is the probability that the maternity ward will deliver more than five babies in one hour?</item>
+</list>
+</problem>
+
+<!-- <solution id="fs-idm62476208">
+<list id="fs-idm102690800" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(2.5); <emphasis effect="italics">&#956;</emphasis> = 2.5; <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mn>2.5</m:mn>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> &#8776; 1.5811</item>
+<item>
+
+
+<figure id="fs-idm108814544"><media id="fs-idm144587168" alt="This graphs shows a poisson probability distribution. It has 11 bars that are skewed to the right. The x-axis shows values in increments of 1 starting with 0, representing the number of births in 1 hour. The y-axis ranges from 0 to 0.3 in increments of 0.05." display="block">
+<image mime-type="image/jpg" width="350" src="CNX_Stats_C04_M08_001anno.jpg"/>
+</media></figure></item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 3) = poissonpdf(2.5, 3) &#8776; 0.2138</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 3) = poissoncdf(2.5, 3) &#8776; 0.7576</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 5) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 5) = 1 &#8211; poissoncdf(2.5, 5) &#8776; 0.0420</item>
+</list></solution> --></exercise><exercise id="fs-idm138910624">
+<problem id="fs-idm100655456">
+<para id="fs-idm66459264">A manufacturer of Christmas tree light bulbs knows that 3% of its bulbs are defective. Find the probability that a string of 100 lights contains at most four defective bulbs using both the binomial and Poisson distributions.</para>
+</problem>
+<solution id="fs-idp12030224">
+<para id="fs-idm105213344">Let <emphasis effect="italics">X</emphasis> = the number of defective bulbs in a string.</para>
+<para id="fs-idp36557712">Using the Poisson distribution:
+  <list id="fs-idm79935312" list-type="bulleted">
+  <item><emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">np</emphasis> = 100(0.03) = 3</item>
+  <item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(3)</item>
+	<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 4) = poissoncdf(3, 4) &#8776; 0.8153</item>
+</list>
+</para><para id="fs-idm133149600">Using the binomial distribution:
+<list id="fs-idm216696064" list-type="bulleted">
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">B</emphasis>(100, 0.03)</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 4) = binomcdf(100, 0.03, 4) &#8776; 0.8179</item>
+</list>
+</para><para id="fs-idm98643728">The Poisson approximation is very good&#8212;the difference between the probabilities is only 0.0026.</para>
+</solution>
+</exercise>
+
+<exercise id="element-484">
+<problem id="id12819874">
+  <para id="element-907">The average number of children a Japanese woman has in her lifetime is 1.37. Suppose that one Japanese woman is randomly chosen.</para>
+
+<list id="element-102" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that she has no children.</item>
+<item>Find the probability that she has fewer children than the Japanese average.</item>
+<item>Find the probability that she has more children than the Japanese average.</item></list>
+</problem>
+</exercise>
+
+<exercise id="element-625">
+<problem id="id13721609">
+  <para id="element-894">The average number of children a Spanish woman has in her lifetime is 1.47. Suppose that one Spanish woman is randomly chosen.</para>
+<list id="element-489" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the Random Variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that she has no children.</item>
+<item>Find the probability that she has fewer children than the Spanish average.</item>
+<item>Find the probability that she has more children than the Spanish average .</item></list></problem>
+
+<solution id="id9238209">
+  <list id="element-766" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of children for a Spanish woman</item>
+<item>0, 1, 2, 3,...</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(1.47)</item>
+<item>0.2299</item>
+<item>0.5679</item>
+<item>0.4321</item></list></solution>
+</exercise>
+
+
+<exercise id="eip-241"><problem id="eip-550">
+  <para id="eip-509">Fertile, female cats produce an average of three litters per year. Suppose that one fertile, female cat is randomly chosen. In one year, find the probability she produces:</para>
+
+<list id="eip-idm49807776" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _______</item>
+<item>Find the probability that she has no litters in one year.</item>
+<item>Find the probability that she has at least two litters in one year.</item>
+<item>Find the probability that she has exactly three litters in one year.</item>
+</list>
+</problem>
+
+<!-- <solution id="fs-idp96709152">
+<list id="fs-idp49358560" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of litters a fertile, female cat produces per year</item>
+<item>0, 1, 2, 3, ...</item>
+<item>X ~ P(3)</item>
+<item>0.0498</item>
+<item>0.8009</item>
+<item>0.2240</item>
+</list>
+</solution> --></exercise><exercise id="element-476"><problem id="id13736070">
+  <para id="element-857">The chance of having an extra fortune in a fortune cookie is about 3%. Given a bag of 144 fortune cookies, we are interested in the number of cookies with an extra fortune. Two distributions may be used to solve this problem, but only use one distribution to solve the problem.</para>
+<list id="element-454" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>How many cookies do we expect to have an extra fortune?</item>
+<item>Find the probability that none of the cookies have an extra fortune.</item>
+<item>Find the probability that more than three have an extra fortune.</item>
+<item>As <emphasis effect="italics">n</emphasis> increases, what happens involving the probabilities using the two distributions? Explain in complete sentences.</item></list>
+</problem>
+
+<solution id="id11881046">
+  <list id="element-146" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of fortune cookies that have an extra fortune</item>
+<item>0, 1, 2, 3,... 144</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">B</emphasis>(144, 0.03) or <emphasis effect="italics">P</emphasis>(4.32)</item>
+<item>4.32</item>
+<item>0.0124 or 0.0133</item>
+<item>0.6300 or 0.6264</item>
+<item>As <emphasis effect="italics">n</emphasis> gets larger, the probabilities get closer together.</item>
+</list>
+</solution>
+</exercise>
+
+
+<exercise id="element-255"><problem id="id17404044">
+  <para id="element-311">According to the South Carolina Department of Mental Health web site, for every 200 U.S. women, the average number who suffer from anorexia is one. Out of a randomly chosen group of 600 U.S. women determine the following.</para>
+<list id="element-164" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of<emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>How many are expected to suffer from anorexia?</item>
+<item>Find the probability that no one suffers from anorexia.</item>
+<item>Find the probability that more than four suffer from anorexia.</item></list>
+</problem>
+
+<!-- <solution id="id13728739">
+  <list id="element-687" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of women that suffer from anorexia</item>
+<item>0, 1, 2, 3, ..., 600</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(3)</item>
+<item>3</item>
+<item>0.0498</item>
+<item>0.1847</item></list></solution> --></exercise><exercise id="element-557">
+<problem id="id13739144">
+  <para id="element-345">The chance of an IRS audit for a tax return with over $25,000 in income is about 2% per year. Suppose that 100 people with tax returns over $25,000 are randomly picked. We are interested in the number of people audited in one year. Use a Poisson distribution to anwer the following questions.</para>
+<list id="element-832" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>How many are expected to be audited?</item>
+<item>Find the probability that no one was audited.</item>
+<item>Find the probability that at least three were audited.</item></list>
+</problem>
+
+<solution id="id16429001">
+  <list id="element-450" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of people audited in one year</item>
+<item>0, 1, 2, ..., 100</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(2)</item>
+<item>2</item>
+<item>0.1353</item>
+<item>0.3233</item></list>
+</solution>
+</exercise>
+
+<exercise id="element-427"><problem id="id16954673">
+  <para id="element-865"> Approximately 8% of students at a local high school participate in after-school sports all four years of high school. A group of 60 seniors is randomly chosen. Of interest is the number that participated in after-school sports all four years of high school.</para>
+<list id="element-982" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>How many seniors are expected to have participated in after-school sports all four years of high school?</item>
+<item>Based on numerical values, would you be surprised if none of the seniors participated in after-school sports all four years of high school? Justify your answer numerically.</item>
+<item>Based on numerical values, is it more likely that four or that five of the seniors participated in after-school sports all four years of high school? Justify your answer numerically.</item></list>
+</problem>
+
+<!-- <solution id="id18997392">
+<list id="listyyy" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of seniors who participated in after-school sports all four years of high school</item>
+<item>0, 1, 2, 3, ... 60</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(4.8)</item>
+<item>4.8</item>
+<item>Yes</item>
+<item>4</item></list>
+</solution> --></exercise><exercise id="element-221"><problem id="id12999900">
+  <para id="element-433">On average, Pierre, an amateur chef, drops three pieces of egg shell into every two cake batters he makes. Suppose that you buy one of his cakes.</para>
+
+<list id="element-831" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>On average, how many pieces of egg shell do you expect to be in the cake?</item>
+<item>What is the probability that there will not be any pieces of egg shell in the cake?</item>
+<item>Let&#8217;s say that you buy one of Pierre&#8217;s cakes each week for six weeks. What is the probability that there will not be any egg shell in any of the cakes?</item>
+<item>Based upon the average given for Pierre, is it possible for there to be seven pieces of shell in the cake? Why?</item></list>
+</problem>
+
+<solution id="id15855021">
+  <list id="element-336" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the number of shell pieces in one cake</item>
+<item>0, 1, 2, 3,...</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(1.5)</item>
+<item>1.5</item>
+<item>0.2231</item>
+<item>0.0001</item>
+<item>Yes</item></list></solution>
+</exercise>
+
+
+<para id="fs-idm93659760"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> The average number of times per week that Mrs. Plum&#8217;s cats wake her up at night because they want to play is ten. We are interested in the number of times her cats wake her up each week.</para>
+
+
+<exercise id="element-528"><problem id="id18796029">
+  <para id="element-338">In words, the random variable <emphasis effect="italics">X</emphasis> = _________________</para>
+
+<list id="element-801" list-type="enumerated" number-style="lower-alpha">
+<item>the number of times Mrs. Plum&#8217;s cats wake her up each week.</item>
+<item>the number of times Mrs. Plum&#8217;s cats wake her up each hour.</item>
+<item>the number of times Mrs. Plum&#8217;s cats wake her up each night.</item>
+<item>the number of times Mrs. Plum&#8217;s cats wake her up.</item></list>
+</problem>
+
+<!-- <solution id="id13453446">
+  <para id="element-295">a</para>
+</solution> -->
+</exercise><exercise id="fs-idp14208992"><problem id="id10544357">
+  <para id="element-91">Find the probability that her cats will wake her up no more than five times next week.</para>
+
+<list id="element-217" list-type="enumerated" number-style="lower-alpha">
+<item>0.5000</item>
+<item>0.9329</item>
+<item>0.0378</item>
+<item>0.0671</item>
+</list>
+</problem>
+
+<solution id="id16301942">
+  <para id="element-897">d</para>
+</solution>
+</exercise>
+
+</section></content>
+
+  <glossary>
+<definition id="poisson">
+    <term>Poisson Probability Distribution</term>
+    <meaning id="id14162739">a discrete random variable (RV) that counts the number of times a certain event will occur in a specific interval; characteristics of the variable:
+<list id="fs-id44682301" list-type="bulleted">
+<item>The probability that the event occurs in a given interval is the same for all intervals.</item>
+<item>The events occur with a known mean and independently of the time since the last event.</item>
+</list>
+The distribution is defined by the mean <emphasis effect="italics">&#956;</emphasis> of the event in the interval. Notation: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#956;</emphasis>). The mean is <emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">np</emphasis>. The standard deviation is <m:math>
+ <m:mrow>
+  <m:mi>&#963;</m:mi><m:mtext>&#160;=&#160;</m:mtext><m:msqrt>
+   <m:mi>&#956;</m:mi>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>. The probability of having exactly <emphasis effect="italics">x</emphasis>  successes in <emphasis effect="italics">r</emphasis>  trials is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = x ) = <m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mi>&#956;</m:mi>
+   </m:mrow>
+  </m:msup>
+  <m:mo stretchy="false">)</m:mo><m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mi>&#956;</m:mi>
+     <m:mi>x</m:mi>
+    </m:msup>
+
+   </m:mrow>
+   <m:mrow>
+    <m:mi>x</m:mi><m:mo>!</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>. The Poisson distribution is often used to approximate the binomial distribution, when <emphasis effect="italics">n</emphasis> is &#8220;large&#8221; and <emphasis effect="italics">p</emphasis> is &#8220;small&#8221; (a general rule is that <emphasis effect="italics">n</emphasis> should be greater than or equal to 20 and <emphasis effect="italics">p</emphasis> should be less than or equal to 0.05).</meaning>
+  </definition>
+</glossary>
+</document>

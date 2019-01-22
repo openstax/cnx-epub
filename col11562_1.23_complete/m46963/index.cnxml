@@ -1,0 +1,594 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Probability Distribution Function (PDF) for a Discrete Random Variable</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46963/latest</md:content-url>
+  <md:content-id>m46963</md:content-id>
+  <md:title>Probability Distribution Function (PDF) for a Discrete Random Variable</md:title>
+  <md:version>1.7</md:version>
+  <md:created>2013/07/19 08:29:22 -0500</md:created>
+  <md:revised>2018/09/06 16:08:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>discrete random variable</md:keyword>
+    <md:keyword>probability distribution</md:keyword>
+    <md:keyword>probability distribution function</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="delete_me">A discrete <term>probability distribution function</term> has two characteristics:</para>
+
+<list id="element-yu2" list-type="enumerated" number-style="arabic"><item>Each probability is between zero and one, inclusive.</item>
+<item>The sum of the probabilities is one.</item>
+</list><example id="example1">
+<para id="element-165">A child psychologist is interested in the number of times a newborn baby's crying wakes its mother after midnight. For a random sample of 50 mothers, the following information was obtained. Let <emphasis effect="italics">X</emphasis> = the number of times per week a newborn baby's crying wakes its mother after midnight. For this example, <emphasis effect="italics">x</emphasis> = 0, 1, 2, 3, 4, 5.</para>
+
+<para id="fs-idp70402976"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>) = probability that <emphasis effect="italics">X</emphasis> takes on a value <emphasis effect="italics">x</emphasis>.</para><table id="M02_Ch04_tbl001" summary="PDF table for the the number of times a newborn wakes its mother after midnight and probabilities.">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+    <entry><emphasis effect="italics">x</emphasis></entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+  </row>
+</thead>
+<tbody>
+    <row>
+    <entry>0</entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 0) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></entry>
+  </row>
+  <row>
+    <entry>1</entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 1) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>11</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></entry>
+  </row>
+ <row>
+    <entry>2</entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 2) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>23</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</entry>
+  </row>
+ <row>
+    <entry>3</entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 3) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>9</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></entry>
+  </row>
+ <row>
+    <entry>4</entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 4) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>4</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</entry>
+  </row>
+ <row>
+    <entry>5</entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 5) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table>
+
+<para id="element-260"><emphasis effect="italics">X</emphasis> takes on the values 0, 1, 2, 3, 4, 5. This is a discrete PDF because:</para>
+<list id="enumprac" list-type="enumerated" number-style="lower-alpha">
+<item>Each <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>) is between zero and one, inclusive.</item>
+<item>The sum of the probabilities is one, that is, </item></list>
+
+<para id="fs-idm17614256">
+<equation id="fifsum"><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>+</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>11</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>+</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>23</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>+</m:mo><m:mfrac>
+   <m:mn>9</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>+</m:mo><m:mfrac>
+   <m:mn>4</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>+</m:mo><m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>1</m:mn>
+ </m:mrow>
+</m:math>
+</equation></para>
+</example>
+
+<note id="fs-idm96796576" class="statistics try"><label/><title>Try It</title>
+
+<exercise id="fs-idp42457440">
+<problem id="fs-idp103638368">
+<para id="fs-idp104932624">A hospital researcher is interested in the number of times the average post-op patient will ring the nurse during a 12-hour shift. For a random sample of 50 patients, the following information was obtained. Let <emphasis effect="italics">X</emphasis> = the number of times a patient rings the nurse during a 12-hour shift. For this exercise, <emphasis effect="italics">x</emphasis> = 0, 1, 2, 3, 4, 5. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>) = the probability that <emphasis effect="italics">X</emphasis> takes on value <emphasis effect="italics">x</emphasis>. Why is this a discrete probability distribution function (two reasons)?</para>
+
+<table id="fs-idp71433824" summary="Exercise 1 Table">
+<tgroup cols="2" align="center"><colspec colname="c1" colnum="1"/>
+<colspec colname="c2" colnum="2"/>
+<thead>
+<row>
+<entry><emphasis effect="italics">X</emphasis></entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 0) = <m:math><m:mrow><m:mfrac><m:mn>4</m:mn><m:mrow><m:mn>50</m:mn></m:mrow></m:mfrac></m:mrow></m:math></entry>
+</row>
+<row>
+<entry>1</entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 1) = <m:math><m:mrow><m:mfrac><m:mn>8</m:mn><m:mrow><m:mn>50</m:mn></m:mrow></m:mfrac></m:mrow></m:math></entry>
+</row>
+<row>
+<entry>2</entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 2) = <m:math><m:mrow><m:mfrac><m:mrow><m:mn>16</m:mn></m:mrow><m:mrow><m:mn>50</m:mn></m:mrow></m:mfrac></m:mrow></m:math></entry>
+</row>
+<row>
+<entry>3</entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 3) = <m:math><m:mrow><m:mfrac><m:mrow><m:mn>14</m:mn></m:mrow><m:mrow><m:mn>50</m:mn></m:mrow></m:mfrac></m:mrow> </m:math></entry>
+</row>
+<row>
+<entry>4</entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 4) = <m:math><m:mrow><m:mfrac><m:mn>6</m:mn><m:mrow><m:mn>50</m:mn></m:mrow></m:mfrac></m:mrow></m:math></entry>
+</row>
+<row>
+<entry>5</entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 5) = <m:math><m:semantics><m:mrow><m:mfrac><m:mn>2</m:mn><m:mrow><m:mn>50</m:mn></m:mrow></m:mfrac></m:mrow></m:semantics></m:math></entry>
+</row>
+</tbody>
+
+</tgroup>
+</table></problem>
+
+</exercise>
+</note><example id="element-852"><para id="element-500">Suppose Nancy has classes <emphasis>three days</emphasis> a week. She attends classes three days a week <emphasis>80%</emphasis> of the time, <emphasis>two days 15%</emphasis> of the time, <emphasis>one day 4%</emphasis> of the time, and <emphasis>no days 1%</emphasis> of the time. Suppose one week is randomly selected.<newline count="2"/></para>
+
+<exercise id="eip-466">
+<problem id="eip-idp158961632">
+  <para id="eip-idp110729456">a. Let <emphasis effect="italics">X</emphasis> = the number of days Nancy ____________________.</para>
+</problem>
+
+<solution id="eip-idp214323360">
+<para id="eip-idp133021120">a. Let <emphasis effect="italics">X</emphasis> = the number of days Nancy attends class per week.<newline count="2"/></para>
+</solution>
+</exercise>
+
+<exercise id="eip-694">
+<problem id="eip-idp2555296">
+  <para id="eip-idm52442560">b. <emphasis effect="italics">X</emphasis> takes on what values?</para></problem>
+<solution id="eip-idm30850864">
+  <para id="eip-idm11988624">b. 0, 1, 2, and 3<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="eip-439"><problem id="eip-idp58531312">
+  <para id="eip-idm2356304">c. Suppose one week is randomly chosen. Construct a probability distribution table (called a PDF table) like the one in <link target-id="example1" document=""/>. The table should have two columns labeled <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>). What does the <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>) column sum to?</para></problem>
+
+<solution id="eip-idp64718704"><para id="eip-idp146953184">c.
+  <table id="eip-idp64719200" summary="PDF table of the number of times Nancy attends class per week and probabilities.">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+    <entry><emphasis effect="italics">x</emphasis></entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>0</entry>
+    <entry>0.01</entry>
+  </row>
+  <row>
+    <entry>1</entry>
+    <entry>0.04</entry>
+  </row>
+  <row>
+    <entry>2</entry>
+    <entry>0.15</entry>
+  </row>
+  <row>
+    <entry>3</entry>
+    <entry>0.80</entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table>
+</para>
+</solution>
+</exercise></example><note id="fs-idm157100592" class="statistics try"><label/><title>Try It</title>
+<exercise id="fs-idp17767152">
+<problem id="fs-idm59642592">
+<para id="fs-idp10711280">Jeremiah has basketball practice two days a week. Ninety percent of the time, he attends both practices. Eight percent of the time, he attends one practice. Two percent of the time, he does not attend either practice. What is <emphasis effect="italics">X</emphasis> and what values does it take on?</para></problem>
+</exercise>
+</note><section id="fs-idp97044640" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm43618304">The characteristics of a probability distribution function (PDF) for a discrete random variable are as follows:</para>
+<list id="fs-idm39706128" list-type="enumerated" number-style="arabic">
+<item>Each probability is between zero and one, inclusive (<emphasis effect="italics">inclusive</emphasis> means to include zero and one).</item>
+<item>The sum of the probabilities is one.</item>
+</list>
+</section>
+
+<section id="fs-idp69020960" class="practice">
+<title/>
+<para id="fs-idm83247344"><emphasis effect="italics">Use the following information to answer the next five exercises:</emphasis> A company wants to evaluate its attrition rate, in other words, how long new hires stay with the company. Over the years, they have established the following probability distribution.</para>
+
+<para id="fs-idm71612400">Let <emphasis effect="italics">X</emphasis> = the number of years a new hire will stay with the company.</para>
+
+<para id="fs-idm48855200">Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>) = the probability that a new hire will stay with the company <emphasis effect="italics">x</emphasis> years.</para>
+
+<exercise id="fs-idm11913472">
+<problem id="fs-idm62074368">
+<para id="fs-idm17761312">Complete <link target-id="M02_Ch03_tbl004" document=""/> using the data provided.</para><table id="M02_Ch03_tbl004" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row><entry><emphasis effect="italics">x</emphasis></entry><entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry></row>
+</thead>
+<tbody>
+<row><entry>0</entry><entry>0.12</entry></row>
+<row><entry>1</entry><entry>0.18</entry></row>
+<row><entry>2</entry><entry>0.30</entry></row>
+<row><entry>3</entry><entry>0.15</entry></row>
+<row><entry>4</entry><entry/></row>
+<row><entry>5</entry><entry>0.10</entry></row>
+<row><entry>6</entry><entry>0.05</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="fs-idp35913488">
+<table id="fs-idm128424048" summary="">
+<tgroup cols="2" align="center">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row><entry><emphasis effect="italics">x</emphasis></entry><entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry></row>
+</thead>
+<tbody>
+<row><entry>0</entry><entry>0.12</entry></row>
+<row><entry>1</entry><entry>0.18</entry></row>
+<row><entry>2</entry><entry>0.30</entry></row>
+<row><entry>3</entry><entry>0.15</entry></row>
+<row><entry>4</entry><entry>0.10</entry></row>
+<row><entry>5</entry><entry>0.10</entry></row>
+<row><entry>6</entry><entry>0.05</entry></row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise>
+
+<exercise id="fs-idm3556768"><problem id="fs-idm46583824">
+<para id="fs-idm39567616"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 4) = _______</para></problem>
+
+<!-- <solution id="fs-idm8550336">
+<para id="fs-idp109017952">0.10</para></solution> -->
+</exercise><exercise id="fs-idp21614176">
+<problem id="fs-idp34115424">
+<para id="fs-idp9314928"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8805; 5) = _______</para></problem>
+<solution id="fs-idm43709152"><para id="fs-idp98025120">0.10 + 0.05 = 0.15</para></solution>
+</exercise>
+
+<exercise id="fs-idp88464496"><problem id="fs-idm14331664">
+<para id="fs-idm3848192">On average, how long would you expect a new hire to stay with the company?</para>
+</problem>
+
+<!-- <solution id="fs-idm42046896">
+<para id="fs-idm60500016">0 + 0.18 + 0.60 + 0.45 + 0.40 + 0.50 + 0.30 = 2.43 years</para></solution> -->
+</exercise><exercise id="fs-idp18018320">
+<problem id="fs-idm39505296">
+<para id="fs-idm15015472">What does the column &#8220;<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)&#8221; sum to?</para></problem>
+<solution id="fs-idm46445984"><para id="fs-idp107818160">1</para></solution>
+</exercise>
+
+<para id="fs-idm61093248"><newline/><emphasis effect="italics">Use the following information to answer the next six exercises:</emphasis> A baker is deciding how many batches of muffins to make to sell in his bakery. He wants to make enough to sell every one and no fewer. Through observation, the baker has established a probability distribution.</para><table id="fs-idm43289680" summary="">
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row><entry><emphasis effect="italics">x</emphasis></entry><entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry></row>
+</thead>
+
+<tbody>
+<row><entry>1</entry><entry>0.15</entry></row>
+<row><entry>2</entry><entry>0.35</entry></row>
+<row><entry>3</entry><entry>0.40</entry></row>
+<row><entry>4</entry><entry>0.10</entry></row>
+</tbody>
+</tgroup>
+</table><exercise id="fs-idm2415264"><problem id="fs-idm15926960">
+<para id="fs-idm161865296">Define the random variable <emphasis effect="italics">X</emphasis>.</para></problem>
+
+<!-- <solution id="fs-idm3118640"><para id="fs-idm66349888">Let <emphasis effect="italics">X</emphasis> = the number of batches that the baker will sell.</para></solution> -->
+</exercise><exercise id="fs-idm14204160">
+<problem id="fs-idp91033728">
+<para id="fs-idp57653024">What is the probability the baker will sell more than one batch? <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 1) =  _______</para></problem>
+<solution id="fs-idm77654992">
+<para id="fs-idp67916960">0.35 + 0.40 + 0.10 = 0.85</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp60250832"><problem id="fs-idm40729216">
+<para id="fs-idm50895232">What is the probability the baker will sell exactly one
+batch? <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 1) =  _______</para>
+</problem>
+
+<!-- <solution id="fs-idp10419040">
+<para id="fs-idm18762736">0.15</para>
+</solution> -->
+</exercise><exercise id="fs-idp100680048">
+<problem id="fs-idm6782176">
+<para id="fs-idm12192384">On average, how many batches should the baker make?</para>
+</problem>
+<solution id="fs-idm19316912">
+<para id="fs-idp105326384">1(0.15) + 2(0.35) + 3(0.40) + 4(0.10) = 0.15 + 0.70 + 1.20 + 0.40 = 2.45</para>
+</solution>
+</exercise>
+
+
+<para id="fs-idp26455296"><newline/><emphasis effect="italics">Use the following information to answer the next four exercises:</emphasis> Ellen has music practice three days a week. She practices for all of the three days 85% of the time, two days 8% of the time, one day 4% of the time, and no days 3% of the time. One week is selected at random.</para><exercise id="fs-idp80631856"><problem id="fs-idm38076272">
+<para id="fs-idp104793536">Define the random variable <emphasis effect="italics">X</emphasis>.</para>
+</problem>
+
+<!-- <solution id="fs-idp17316544">
+<para id="fs-idp31866688">Let <emphasis effect="italics">X</emphasis> = the number of days Ellen attends practice per week.</para>
+</solution> -->
+</exercise><exercise id="fs-idp105752304">
+<problem id="fs-idp98145520">
+<para id="fs-idp107988576">Construct a probability distribution table for the data.</para></problem>
+<solution id="fs-idp99205248">
+<table id="fs-idp25484752" summary="Table...">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row><entry><emphasis effect="italics">x</emphasis></entry><entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry></row>
+</thead>
+<tbody>
+<row><entry>0</entry><entry>0.03</entry></row>
+<row><entry>1</entry><entry>0.04</entry></row>
+<row><entry>2</entry><entry>0.08</entry></row>
+<row><entry>3</entry><entry>0.85</entry></row>
+</tbody>
+
+</tgroup>
+</table></solution>
+</exercise>
+
+<exercise id="fs-idm12290976"><problem id="fs-idp102593056">
+<para id="fs-idm54887552">We know that for a probability distribution function to be discrete, it must have two characteristics. One is that the sum of the probabilities is one. What is the other characteristic?</para></problem>
+
+<!-- <solution id="fs-idm2771440">
+<para id="fs-idp5181696">Each probability is between zero and one, inclusive.</para>
+</solution> -->
+</exercise><para id="fs-idp62348192"><newline/><emphasis effect="italics">Use the following information to answer the next five exercises:</emphasis> Javier volunteers in community events each month. He does not do more than five events in a month. He attends exactly five events 35% of the time, four events 25% of the time, three events 20% of the time, two events 10% of the time, one event 5% of the time, and no events 5% of the time.</para><exercise id="fs-idp45989040">
+<problem id="fs-idp107021152">
+<para id="fs-idp1699120">Define the random variable <emphasis effect="italics">X</emphasis>.</para>
+</problem>
+<solution id="fs-idp75230208">
+<para id="fs-idp99642016">Let <emphasis effect="italics">X</emphasis> = the number of events Javier volunteers for each month.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp99208272"><problem id="fs-idp102814688">
+<para id="fs-idm38746304">What values does <emphasis effect="italics">x</emphasis> take on?</para></problem>
+
+<!-- <solution id="fs-idm3527216">
+<para id="fs-idp5781360">0, 1, 2, 3, 4, 5</para>
+</solution> -->
+</exercise><exercise id="fs-idm44182368">
+<problem id="fs-idm60355136">
+<para id="fs-idp106732192">Construct a PDF table.</para>
+</problem>
+<solution id="fs-idp9913600">
+<table id="fs-idm82394208" summary="Table...">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead><row><entry><emphasis effect="italics">x</emphasis></entry><entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry></row></thead>
+<tbody>
+<row><entry>0</entry><entry>0.05</entry></row>
+<row><entry>1</entry><entry>0.05</entry></row>
+<row><entry>2</entry><entry>0.10</entry></row>
+<row><entry>3</entry><entry>0.20</entry></row>
+<row><entry>4</entry><entry>0.25</entry></row>
+<row><entry>5</entry><entry>0.35</entry></row>
+</tbody>
+
+</tgroup>
+</table></solution>
+</exercise>
+
+<exercise id="fs-idm51474800"><problem id="fs-idp105026400">
+<para id="fs-idm62777200">Find the probability that Javier volunteers for less than three events each month. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 3) = _______</para></problem>
+
+<!-- <solution id="fs-idp58199168">
+<para id="fs-idm17855008">0.05 + 0.05 + 0.10 = 0.20</para>
+</solution> --></exercise><exercise id="fs-idm38193104">
+<problem id="fs-idm1831824">
+<para id="fs-idp54225264">Find the probability that Javier volunteers for at least one event each month. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 0) = _______</para>
+</problem>
+<solution id="fs-idm39812848">
+<para id="fs-idp75344688">1 &#8211; 0.05 = 0.95</para></solution>
+</exercise>
+
+</section>
+
+<section id="fs-idp99695744" class="free-response">
+<title>Homework</title>
+
+<exercise id="fs-idp971520">
+<problem id="fs-idp65369008">
+  <para id="fs-idp99566944">Suppose that the PDF for the number of years it takes to earn a Bachelor of Science (B.S.) degree is given in <link target-id="M03_Ch04_tbl010" document=""/>.</para>
+
+<table id="M03_Ch04_tbl010" summary="Exercise 30 Table">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry><emphasis effect="italics">x</emphasis></entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>3</entry>
+<entry>0.05</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>0.40</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>0.30</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>0.15</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>0.10</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table><list id="element-99" list-type="enumerated" number-style="lower-alpha"><item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>What does it mean that the values zero, one, and two are not included for <emphasis effect="italics">x</emphasis> in the PDF?</item>
+</list></problem>
+</exercise></section></content>
+
+  <glossary>
+ <definition id="pdfelab">
+<term>Probability Distribution Function (PDF)</term>
+<meaning id="id1165407642895">a mathematical description of a discrete random variable (<emphasis effect="italics">RV</emphasis>), given either in the form of an equation (formula) or in the form of a table listing all the possible outcomes of an experiment and the probability associated with each outcome.</meaning></definition>
+</glossary>
+</document>

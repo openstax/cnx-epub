@@ -1,0 +1,254 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Discrete Distribution (Playing Card Experiment)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50257/latest</md:content-url>
+  <md:content-id>m50257</md:content-id>
+  <md:title>Discrete Distribution (Playing Card Experiment)</md:title>
+  <md:version>1.6</md:version>
+  <md:created>2014/05/08 16:48:24 -0500</md:created>
+  <md:revised>2018/08/27 14:22:39 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>Poisson distribution</md:keyword>
+    <md:keyword>Poisson probability distribution</md:keyword>
+    <md:keyword>Poisson probability distribution function</md:keyword>
+  </md:keywordlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1167902738757" class="statistics lab"><label/><title>Discrete Distribution (Playing Card Experiment) </title>
+
+<para id="id6097603">Class Time:</para>
+<para id="id3675915">Names:</para>
+
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="id11235020" list-type="bulleted"><title>Student Learning Outcomes</title><item>The student will compare empirical data and a theoretical distribution to determine if an everyday experiment fits a discrete distribution.</item>
+<item>The student will compare technology-generated simulation and a theoretical distribution.</item>
+<item>The student will demonstrate an understanding of long-term probabilities.</item>
+</list><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="id3383537" list-type="bulleted"><title>Supplies</title><item>One full deck of playing cards</item>
+<item>One programming calculator</item></list><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="proceduresec"><title>Procedure</title>The experimental procedure for empirical data is to pick one card from a deck of shuffled cards.</para><list id="list-982763895" list-type="enumerated"><item>The theoretical probability of picking a diamond from a deck is _________.</item>
+<item>Shuffle a deck of cards.</item>
+<item>Pick one card from it.</item>
+<item>Record whether it was a diamond or not a diamond.</item>
+<item>Put the card back and reshuffle.</item>
+<item>Do this a total of ten times.</item>
+<item>Record the number of diamonds picked.</item>
+<item>Let <emphasis effect="italics">X</emphasis> = number of diamonds. Theoretically, <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">B</emphasis>(_____,_____)</item>
+</list><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="list-23562621" list-type="enumerated"><title id="OrgData">Organize the Data</title><item>Record the number of diamonds picked for your class with playing cards in <link target-id="lab1_tbl001" document=""/>. Then calculate the relative frequency.
+<table id="lab1_tbl001" summary="Table for recording values with. The first column is for number of diamonds picked (x) from 0-10, blank second column is for frequency, and the blank third column is for relative frequency.">
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry><emphasis effect="italics">x</emphasis></entry>
+<entry>Frequency</entry>
+<entry>Relative Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>1</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>8</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>9</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+<row>
+<entry>10</entry>
+<entry>__________</entry>
+<entry align="center">__________</entry>
+</row>
+</tbody>
+</tgroup>
+</table></item>
+<item>Calculate the following:
+<list id="list-2356" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> = ________</item>
+<item><emphasis effect="italics">s</emphasis> = ________</item>
+</list></item>
+<item>Construct a histogram of the empirical data.
+<figure id="figreld">
+<media id="id5973001" alt="This is a blank graph template. The x-axis is labeled Number of diamonds. The y-axis is labeled Relative frequency.">
+<image src="fig-ch04_17_01.png" mime-type="image/png" width="400" print-width="4in"/></media>
+</figure>
+</item>
+</list><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="list-742309876" list-type="enumerated" number-style="lower-alpha"><title id="TheoDist">Theoretical Distribution</title><item>Build the theoretical PDF chart based on the distribution in the <link target-id="proceduresec" document="">Procedure</link> section.
+<table id="lab1_tbl002" class="unnumbered" summary="The experiment is for each class member or group to shuffle a 52-card deck of cards, pick one card and record if it is a diamond. This is done 10 times. The table shows the results of the number of diamonds picked and the relative frequency."><label/>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry><emphasis effect="italics">x</emphasis></entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry/>
+</row>
+<row>
+<entry>1</entry>
+<entry/>
+</row>
+<row>
+<entry>2</entry>
+<entry/>
+</row>
+<row>
+<entry>3</entry>
+<entry/>
+</row>
+<row>
+<entry>4</entry>
+<entry/>
+</row>
+<row>
+<entry>5</entry>
+<entry/>
+</row>
+<row>
+<entry>6</entry>
+<entry/>
+</row>
+<row>
+<entry>7</entry>
+<entry/>
+</row>
+<row>
+<entry>8</entry>
+<entry/>
+</row>
+<row>
+<entry>9</entry>
+<entry/>
+</row>
+<row>
+<entry>10</entry>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+<item>Calculate the following:
+<list id="element-11885" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">&#956;</emphasis> = ____________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = ____________</item></list></item>
+<item>Construct a histogram of the theoretical distribution.
+<figure id="id5962835">
+<media id="id5962839" alt="This is a blank graph template. The x-axis is labeled Number of diamonds. The y-axis is labeled Probability.">
+<image src="fig-ch04_17_02.png" mime-type="image/png" width="400"/></media>
+</figure></item>
+</list><para id="fs-idp120856768"><title>Using the Data</title></para>
+<note id="id5378437"><label/><title>NOTE</title>
+<para id="eip-idp140551535389872"><emphasis effect="italics">RF</emphasis> = relative frequency</para>
+</note><para id="element-982735">Use the table from the <link target-id="TheoDist" document="">Theoretical Distribution</link> section to calculate the following answers. Round your answers to four decimal places.</para>
+
+<list id="list-928735" list-type="bulleted">
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 3) = _______________________</item>
+<item><emphasis effect="italics">P</emphasis>(1 &lt; <emphasis effect="italics">x</emphasis> &lt; 4) = _______________________</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8805; 8) = _______________________</item>
+</list>
+
+<para id="element-806">Use the data from the <link target-id="OrgData" document="">Organize the Data</link> section to calculate the following answers. Round your answers to four decimal places.
+<list id="list-92763594" list-type="bulleted"><item><emphasis effect="italics">RF</emphasis>(<emphasis effect="italics">x</emphasis> = 3) = _______________________</item>
+<item><emphasis effect="italics">RF</emphasis>(1 &lt; <emphasis effect="italics">x</emphasis> &lt; 4) = _______________________</item>
+<item><emphasis effect="italics">RF</emphasis>(<emphasis effect="italics">x</emphasis> &#8805; 8) = _______________________</item>
+</list></para>
+
+
+<para id="element-420"><title>Discussion Questions</title>For questions 1 and 2, think about the shapes of the two graphs, the probabilities, the relative frequencies, the means, and the standard deviations.</para><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="list-23526" list-type="enumerated"><item id="q1">Knowing that data vary, describe three similarities between the graphs and distributions of the theoretical, empirical, and simulation distributions. Use complete sentences.</item>
+<item id="q2">Describe the three most significant differences between the graphs or distributions of the theoretical, empirical, and simulation distributions.</item>
+<item id="q3">Using your answers from questions 1 and 2, does it appear that the two sets of data fit the theoretical distribution? In complete sentences, explain why or why not.</item>
+<item id="q4">Suppose that the experiment had been repeated 500 times. Would you expect <link target-id="lab1_tbl001" document=""/> or <link target-id="lab1_tbl002" document=""/> to change, and how would it change? Why? Why wouldn&#8217;t the other table(s) change?</item>
+</list></note></content>
+
+</document>

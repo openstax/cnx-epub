@@ -1,0 +1,3039 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Two Population Means with Unknown Standard Deviations</title><meta name="created-time" content="2013/07/19 14:32:28 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="cohen&#8217;s d, degrees of freedom, random variable, standard error"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Two Population Means with Unknown Standard Deviations</div>
+<ol id="element-984">
+<li>The two independent samples are simple random samples from two distinct populations.</li>
+<li>For the two distinct populations:
+<ul id="fs-idm39244848">
+<li>if the sample sizes are small, the distributions are important (should be normal)</li>
+<li>if the sample sizes are large, the distributions are not important (need not be normal)</li>
+</ul>
+</li>
+</ol>
+<div data-type="note" data-has-label="true" id="fs-idm107349216" data-label="NOTE"> The test comparing two independent population means with unknown and possibly unequal population standard deviations is called the Aspin-Welch t-test.  The degrees of freedom formula was developed by Aspin-Welch.</div>
+<p id="delete_me">The comparison of two population means is very common. A difference between the two samples depends on both the means and the standard deviations. Very different means can occur by chance if there is great variation among the individual samples. In order to account for the variation, we take the difference of the sample means,
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+   <mn>1</mn>
+  </msub>
+</mrow><annotation-xml encoding="MathML-Content"><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+   <mn>1</mn>
+  </msub></annotation-xml></semantics></math> &#8211; <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+</mrow><annotation-xml encoding="MathML-Content"><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub></annotation-xml></semantics></math>, and divide by the standard error in order to standardize the difference. The result is a t-score test statistic.</p><p id="element-254">Because we do not know the population standard deviations, we estimate them using the two sample standard deviations from our independent samples. For the hypothesis test, we calculate the estimated standard deviation, or <span data-type="term">standard error</span>, of <strong>the difference in sample means</strong>, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+</mrow><annotation-xml encoding="MathML-Content"><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub></annotation-xml></semantics></math> &#8211; <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+</mrow><annotation-xml encoding="MathML-Content"><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub></annotation-xml></semantics></math>.
+</p><div data-type="equation" id="std_err"><span data-type="title">The standard error is:</span><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<msqrt>
+<mfrac>
+<mrow>
+<mo>(</mo>
+<msub>
+<mi>s</mi>
+<mn>1</mn>
+</msub>
+<msup>
+<mo>)</mo>
+<mn>2</mn>
+</msup>
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mn>1</mn>
+</msub>
+</mrow>
+</mfrac>
+<mo>+</mo>
+<mfrac>
+<mrow>
+<mo>(</mo>
+<msub>
+<mi>s</mi>
+<mn>2</mn>
+</msub>
+<msup>
+<mo>)</mo>
+<mn>2</mn>
+</msup>
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mn>2</mn>
+</msub>
+</mrow>
+</mfrac>
+</msqrt>
+</mrow><annotation-xml encoding="MathML-Content"><msqrt>
+<mfrac>
+<mrow>
+<mo>(</mo>
+<msub>
+<mi>s</mi>
+<mn>1</mn>
+</msub>
+<msup>
+<mo>)</mo>
+<mn>2</mn>
+</msup>
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mn>1</mn>
+</msub>
+</mrow>
+</mfrac>
+<mo>+</mo>
+<mfrac>
+<mrow>
+<mo>(</mo>
+<msub>
+<mi>s</mi>
+<mn>2</mn>
+</msub>
+<msup>
+<mo>)</mo>
+<mn>2</mn>
+</msup>
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mn>2</mn>
+</msub>
+</mrow>
+</mfrac>
+</msqrt></annotation-xml></semantics></math></div><p id="element-817">The test statistic (<em data-effect="italics">t</em>-score) is calculated as follows:
+  </p><div data-type="equation" id="t-score2"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mtext>(</mtext><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>1</mn>
+    </msub>
+    <mo>&#8211;</mo><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>2</mn>
+    </msub>
+    <mtext>)</mtext><mo>&#8211;</mo><mtext>(</mtext><msub>
+     <mi>&#956;</mi>
+     <mn>1</mn>
+    </msub>
+    <mo>&#8211;</mo><msub>
+     <mi>&#956;</mi>
+     <mn>2</mn>
+    </msub>
+    <mtext>)</mtext>
+   </mrow>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mtext>(</mtext><msub>
+           <mi>s</mi>
+           <mn>1</mn>
+          </msub>
+          <mtext>)</mtext>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>1</mn>
+        </msub>
+
+       </mrow>
+      </mfrac>
+      <mo>+</mo><mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mtext>(</mtext><msub>
+           <mi>s</mi>
+           <mn>2</mn>
+          </msub>
+          <mtext>)</mtext>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>2</mn>
+        </msub>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mtext>(</mtext><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>1</mn>
+    </msub>
+    <mo>&#8211;</mo><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>2</mn>
+    </msub>
+    <mtext>)</mtext><mo>&#8211;</mo><mtext>(</mtext><msub>
+     <mi>&#956;</mi>
+     <mn>1</mn>
+    </msub>
+    <mo>&#8211;</mo><msub>
+     <mi>&#956;</mi>
+     <mn>2</mn>
+    </msub>
+    <mtext>)</mtext>
+   </mrow>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mtext>(</mtext><msub>
+           <mi>s</mi>
+           <mn>1</mn>
+          </msub>
+          <mtext>)</mtext>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>1</mn>
+        </msub>
+
+       </mrow>
+      </mfrac>
+      <mo>+</mo><mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mtext>(</mtext><msub>
+           <mi>s</mi>
+           <mn>2</mn>
+          </msub>
+          <mtext>)</mtext>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>2</mn>
+        </msub>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></div><div data-type="list" id="list1"><div data-type="title">where:</div><ul><li><em data-effect="italics">s</em><sub>1</sub> and <em data-effect="italics">s</em><sub>2</sub>, the sample standard deviations, are estimates of <em data-effect="italics">&#963;</em><sub>1</sub> and <em data-effect="italics">&#963;</em><sub>2</sub>, respectively.</li>
+  <li><em data-effect="italics">&#963;</em><sub>1</sub> and <em data-effect="italics">&#963;</em><sub>1</sub> are the unknown population standard deviations.</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+</mrow><annotation-xml encoding="MathML-Content"><msub>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub></annotation-xml></semantics></math>
+and
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+</mrow><annotation-xml encoding="MathML-Content"><msub>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub></annotation-xml></semantics></math>
+are the sample means. <em data-effect="italics">&#956;</em><sub>1</sub> and <em data-effect="italics">&#956;</em><sub>2</sub> are the population means.</li>
+</ul></div>
+<p id="element-256" class="finger">The number of <span data-type="term">degrees of freedom (<em data-effect="italics">df</em>)</span> requires a somewhat complicated calculation. However, a computer or calculator calculates it easily. The <em data-effect="italics">df</em> are not always a whole number. The test statistic calculated previously is approximated by the Student's <em data-effect="italics">t</em>-distribution with <em data-effect="italics">df</em> as follows:
+</p><div data-type="equation" id="eq_df"><span data-type="title">Degrees of freedom</span><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+ <mrow>
+  <mi>d</mi><mi>f</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>1</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>1</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+        <mo>+</mo><mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>2</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>1</mn>
+        </msub>
+        <mo>&#8211;</mo><mn>1</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow><msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup><mrow>
+          <mo stretchy="false">(</mo><msub>
+           <mi>s</mi>
+           <mn>1</mn>
+          </msub>
+          <mo stretchy="false">)</mo>
+          </mrow><mn>2</mn></msup>
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>1</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo>+</mo><mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>2</mn>
+        </msub>
+        <mo>&#8211;</mo><mn>1</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow><msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>2</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>d</mi><mi>f</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>1</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>1</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+        <mo>+</mo><mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>2</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>1</mn>
+        </msub>
+        <mo>&#8211;</mo><mn>1</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow><msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup><mrow>
+          <mo stretchy="false">(</mo><msub>
+           <mi>s</mi>
+           <mn>1</mn>
+          </msub>
+          <mo stretchy="false">)</mo>
+          </mrow><mn>2</mn></msup>
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>1</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo>+</mo><mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>2</mn>
+        </msub>
+        <mo>&#8211;</mo><mn>1</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow><msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>2</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></div><p id="element-316">When both sample sizes <em data-effect="italics">n</em><sub>1</sub> and <em data-effect="italics">n</em><sub>2</sub> are five or larger, the Student's <em data-effect="italics">t</em> approximation is very good. Notice that the sample variances (<em data-effect="italics">s</em><sub>1</sub>)<sup>2</sup> and (<em data-effect="italics">s</em><sub>2</sub>)<sup>2</sup> are not pooled. (If the question comes up, do not pool the variances.)
+</p><div data-type="note" data-has-label="true" id="fs-idm74088160" class="finger" data-label="NOTE">It is not necessary to compute this by hand. A calculator or computer easily computes it.</div><div data-type="example" id="element-208"><div data-type="title">Independent groups</div>
+  <p id="element-687">The average amount of time boys and girls aged seven to 11 spend playing sports each day is believed to be the same. A study is done and data are collected, resulting in the data in <a href="#uid888" class="autogenerated-content">[link]</a>. Each populations has a normal distribution.</p>
+
+<table id="uid888" summary="This table presents the sample size in the second column, average hours a day in the third column, and the sample standard deviation in the fourth column. The first row is for girls and the second row is for boys."><thead valign="top">
+<tr>
+<th data-align="center"/>
+<th data-align="center">Sample Size</th>
+<th data-align="center">Average Number of Hours Playing Sports Per Day</th>
+<th data-align="center">Sample Standard Deviation</th>
+</tr>
+</thead><tbody valign="top">
+<tr>
+<td>Girls</td>
+<td>9</td>
+<td>2</td>
+<td><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mn>0.866</mn></mrow><annotation-xml encoding="MathML-Content"><mn>0.866</mn></annotation-xml></semantics></math></td>
+</tr>
+<tr>
+<td>Boys</td>
+<td>16</td>
+<td>3.2</td>
+<td>1.00</td>
+</tr>
+</tbody></table><div data-type="exercise" id="element-114">
+<div data-type="problem" id="id6322791">
+<p id="element-939">Is there a difference in the mean amount of time boys and girls aged seven to 11 play sports each day? Test at the 5% level of significance.</p></div>
+<div data-type="solution" id="id21329984">
+  <p id="element-296"><strong>The population standard deviations are not known.</strong> Let <em data-effect="italics">g</em> be the subscript for girls and <em data-effect="italics">b</em> be the subscript for boys. Then, <em data-effect="italics">&#956;<sub>g</sub></em> is the population mean for girls and <em data-effect="italics">&#956;<sub>b</sub></em> is the population mean for boys. This is a test of two <strong>independent groups</strong>, two population <strong>means</strong>.</p>
+<p id="element-221"><span data-type="term">Random variable</span>:
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+ <mrow>
+  <msub>
+   <mrow>
+    <mover accent="true">
+     <mi>X</mi>
+     <mo stretchy="true">&#175;</mo>
+    </mover>
+
+   </mrow>
+   <mi>g</mi>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mrow>
+    <mover accent="true">
+     <mi>X</mi>
+     <mo stretchy="true">&#175;</mo>
+    </mover>
+
+   </mrow>
+   <mi>b</mi>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mrow>
+    <mover accent="true">
+     <mi>X</mi>
+     <mo stretchy="true">&#175;</mo>
+    </mover>
+
+   </mrow>
+   <mi>g</mi>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mrow>
+    <mover accent="true">
+     <mi>X</mi>
+     <mo stretchy="true">&#175;</mo>
+    </mover>
+
+   </mrow>
+   <mi>b</mi>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math>
+ = difference in the sample mean amount of time girls and boys play sports each day.
+
+<div data-type="newline"><br/></div><em data-effect="italics">H</em><sub>0</sub>: <em data-effect="italics">&#956;<sub>g</sub></em> = <em data-effect="italics">&#956;<sub>b</sub></em>&#8195;&#8195;<em data-effect="italics">H<sub>0</sub></em>: <em data-effect="italics">&#956;<sub>g</sub></em> &#8211; <em data-effect="italics">&#956;<sub>b</sub></em> = 0
+
+<div data-type="newline"><br/></div><em data-effect="italics">H<sub>a</sub></em>: <em data-effect="italics">&#956;<sub>g</sub></em> &#8800; <em data-effect="italics">&#956;<sub>b</sub></em>&#8195;&#8195;<em data-effect="italics">H<sub>a</sub></em>: <em data-effect="italics">&#956;<sub>g</sub></em> &#8211; <em data-effect="italics">&#956;<sub>b</sub></em> &#8800; 0
+<div data-type="newline"><br/></div>The words <strong>"the same"</strong> tell you <em data-effect="italics">H<sub>0</sub></em> has an "=". Since there are no other words to indicate <em data-effect="italics">H<sub>a</sub></em>, assume it says <strong>"is different."</strong>
+This is a two-tailed test.</p><p id="element-529"><strong>Distribution for the test:</strong>
+Use <em data-effect="italics">t<sub>df</sub></em> where <em data-effect="italics">df</em> is calculated using the <em data-effect="italics">df</em> formula for independent groups, two population means. Using a calculator, <em data-effect="italics">df</em> is approximately 18.8462. <strong>Do not pool the variances.</strong></p>
+
+<p id="element-573"><strong>Calculate the <em data-effect="italics">p</em>-value using a Student's <em data-effect="italics">t</em>-distribution:</strong> <em data-effect="italics">p</em>-value = 0.0054</p><p id="element-90"><strong>Graph:</strong></p>
+<figure id="hyptest22_cmp1"><span data-type="media" id="id18963169" data-alt="This is a normal distribution curve representing the difference in the average amount of time girls and boys play sports all day. The mean is equal to zero, and the values -1.2, 0, and 1.2 are labeled on the horizontal axis. Two vertical lines extend from -1.2 and 1.2 to the curve. The region to the left of x = -1.2 and the region to the right of x = 1.2 are shaded to represent the p-value. The area of each region is 0.0028.">
+<img src="/resources/219dc5b9cc62017e5f30888eb68e03577cf4b353/fig-ch10_02_01.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve representing the difference in the average amount of time girls and boys play sports all day. The mean is equal to zero, and the values -1.2, 0, and 1.2 are labeled on the horizontal axis. Two vertical lines extend from -1.2 and 1.2 to the curve. The region to the left of x = -1.2 and the region to the right of x = 1.2 are shaded to represent the p-value. The area of each region is 0.0028." width="380"/>
+</span>
+</figure>
+
+  <p id="element-222"><div data-type="newline"><br/></div><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <msub>
+        <mi>s</mi>
+        <mi>g</mi>
+      </msub>
+      <mo>=</mo>
+        <mrow>
+          <mn>0.866</mn>
+        </mrow>
+
+
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+        <mi>s</mi>
+        <mi>g</mi>
+      </msub>
+      <mo>=</mo>
+        <mrow>
+          <mn>0.866</mn>
+        </mrow>
+
+
+    </mrow></annotation-xml></semantics></math>
+<div data-type="newline"><br/></div><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<msub>
+<mi>s</mi>
+<mi>b</mi>
+</msub>
+<mo>=</mo>
+<mn>1</mn>
+</mrow><annotation-xml encoding="MathML-Content"><msub>
+<mi>s</mi>
+<mi>b</mi>
+</msub><mo>=</mo><mn>1</mn></annotation-xml></semantics></math>
+
+<div data-type="newline"><br/></div>So, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mi>g</mi>
+  </msub>
+  <mo>&#8211;</mo><msub>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mi>b</mi>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mi>g</mi>
+  </msub>
+  <mo>&#8211;</mo><msub>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mi>b</mi>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> = 2 &#8211; 3.2 = &#8211;1.2
+<div data-type="newline"><br/></div>Half the <em data-effect="italics">p</em>-value is below &#8211;1.2 and half is above 1.2.</p><p id="element-823"><strong>Make a decision:</strong> Since <em data-effect="italics">&#945;</em> &gt; <em data-effect="italics">p</em>-value, reject <em data-effect="italics">H<sub>0</sub></em>. This means you reject <em data-effect="italics">&#956;<sub>g</sub></em> = <em data-effect="italics">&#956;<sub>b</sub></em>. The means are different.</p>
+
+<div data-type="note" data-has-label="true" id="fs-idp61535456" class="statistics calculator" data-label="">
+<p id="fs-idp144406384">Press <code>STAT</code>. Arrow over to <code>TESTS</code> and press <code>4:2-SampTTest</code>. Arrow over to Stats and press <code>ENTER</code>. Arrow down and enter <code>2</code> for the first sample mean, <code>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mn>0.866</mn>
+</mrow><annotation-xml encoding="MathML-Content"><mn>0.866</mn></annotation-xml></semantics></math>
+</code> for Sx1, <code>9</code> for n1, <code>3.2</code> for the
+second sample mean, <code>1</code> for Sx2, and <code>16</code> for n2. Arrow down to &#956;1: and arrow to <code>does not equal</code> &#956;2. Press <code>ENTER</code>. Arrow down to Pooled: and <code>No</code>. Press <code>ENTER</code>. Arrow down to <code>Calculate</code> and press <code>ENTER</code>. The <em data-effect="italics">p</em>-value is <em data-effect="italics">p</em> = 0.0054, the dfs are approximately 18.8462, and the test statistic is -3.14. Do the procedure again but instead of Calculate do Draw.</p></div>
+
+<p id="element-914"><strong>Conclusion:</strong> At the 5% level of significance, the sample data show there is sufficient evidence to conclude that the mean number of hours that girls and boys aged seven to 11 play sports per day is different (mean number of hours  boys aged seven to 11 play sports per day is greater than the mean number of hours played by girls OR the mean number of hours  girls aged seven to 11 play sports per day is greater than the mean number of hours played by boys).</p>
+
+</div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idp67783984" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm235264144">
+<div data-type="problem" id="fs-idm162906288">
+  <p id="fs-idm193306272">Two samples are shown in <a href="#fs-idm99631856" class="autogenerated-content">[link]</a>. Both have normal distributions. The means for the two populations are thought to be the same. Is there a difference in the means? Test at the 5% level of significance.</p>
+
+<table id="fs-idm99631856" summary=""><thead>
+<tr>
+<th/>
+<th>Sample Size</th>
+<th>Sample Mean</th>
+<th>Sample Standard Deviation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Population A</td>
+<td>25</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Population B</td>
+<td>16</td>
+<td>4.7</td>
+<td>1.2</td>
+</tr>
+</tbody></table>
+
+</div>
+</div>
+
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idm50414208" data-label=""><div data-type="title">NOTE</div>
+<p id="fs-idm204425680">When the sum of the sample sizes is larger than 30 (<em data-effect="italics">n</em><sub>1</sub> + <em data-effect="italics">n</em><sub>2</sub> &gt; 30) you can use the normal distribution to approximate the Student's <em data-effect="italics">t</em>.</p></div>
+
+<div data-type="example" id="element-968"><p id="element-980">A study is done by a community group in two neighboring colleges to determine which one graduates students with more math classes. College A samples 11 graduates. Their average is four math classes with a standard deviation of 1.5 math classes. College B samples nine graduates. Their average is 3.5 math classes with a standard deviation of one math class. The community group believes that a student who graduates from college A <strong>has taken more math classes,</strong> on the average. Both populations have a normal distribution. Test at a 1% significance level. Answer the following questions.<div data-type="newline" data-count="2"><br/><br/></div></p><div data-type="exercise" id="fs-idm178911728"><div data-type="problem" id="fs-idm177203296">
+<p id="fs-idm171395200">a. Is this a test of two means or two proportions?</p>
+</div>
+<div data-type="solution" id="fs-idm36568576">
+<p id="fs-idm78962816">a. two means<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div><div data-type="exercise" id="fs-idm194746624">
+<div data-type="problem" id="fs-idm227630576">
+<p id="fs-idm227630448">b. Are the populations standard deviations known or unknown?</p></div>
+<div data-type="solution" id="fs-idm217237904">
+<p id="fs-idm217237776">b. unknown<div data-type="newline" data-count="2"><br/><br/></div></p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm164304912">
+<div data-type="problem" id="fs-idm35318288">
+<p id="fs-idm220657088">c. Which distribution do you use to perform the test?</p></div>
+<div data-type="solution" id="fs-idm153443152"><p id="fs-idm145309056">c. Student's <em data-effect="italics">t</em><div data-type="newline" data-count="2"><br/><br/></div></p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm130995312">
+<div data-type="problem" id="fs-idm143520064">
+<p id="fs-idm143519936">d. What is the random variable?</p>
+</div>
+<div data-type="solution" id="fs-idm222952320">
+<p id="fs-idm222952192">d. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <msub>
+        <mover accent="true">
+          <mi>X</mi>
+          <mo>&#175;</mo>
+        </mover>
+        <mi>A</mi>
+      </msub>
+      <mo>-</mo><msub>
+        <mover accent="true">
+          <mi>X</mi>
+          <mo>&#175;</mo>
+        </mover>
+        <mi>B</mi>
+      </msub>
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+        <mover accent="true">
+          <mi>X</mi>
+          <mo>&#175;</mo>
+        </mover>
+        <mi>A</mi>
+      </msub>
+      <mo>-</mo><msub>
+        <mover accent="true">
+          <mi>X</mi>
+          <mo>&#175;</mo>
+        </mover>
+        <mi>B</mi>
+      </msub>
+    </mrow></annotation-xml></semantics></math><div data-type="newline" data-count="2"><br/><br/></div></p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm301029872">
+<div data-type="problem" id="fs-idm176701568">
+<p id="fs-idm151272736">e. What are the null and alternate hypotheses? Write the null and alternate hypotheses in words and in symbols.</p>
+</div>
+<div data-type="solution" id="fs-idm147502464">
+<p id="fs-idm206451408">e. </p><ul id="fs-idp21552016"><li>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <msub>
+        <mi>H</mi>
+        <mi>o</mi>
+      </msub>
+      <mo>:</mo><msub>
+        <mi>&#956;</mi>
+        <mi>A</mi>
+      </msub>
+      <mo>&#8804;</mo><msub>
+        <mi>&#956;</mi>
+        <mi>B</mi>
+      </msub>
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+        <mi>H</mi>
+        <mi>o</mi>
+      </msub>
+      <mo>:</mo><msub>
+        <mi>&#956;</mi>
+        <mi>A</mi>
+      </msub>
+      <mo>&#8804;</mo><msub>
+        <mi>&#956;</mi>
+        <mi>B</mi>
+      </msub>
+    </mrow></annotation-xml></semantics></math>
+</li>
+<li>
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <msub>
+        <mi>H</mi>
+        <mi>a</mi>
+      </msub>
+      <mo>:</mo><msub>
+        <mi>&#956;</mi>
+        <mi>A</mi>
+      </msub>
+      <mo>&gt;</mo><msub>
+        <mi>&#956;</mi>
+        <mi>B</mi>
+      </msub>
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+        <mi>H</mi>
+        <mi>a</mi>
+      </msub>
+      <mo>:</mo><msub>
+        <mi>&#956;</mi>
+        <mi>A</mi>
+      </msub>
+      <mo>&gt;</mo><msub>
+        <mi>&#956;</mi>
+        <mi>B</mi>
+      </msub>
+    </mrow></annotation-xml></semantics></math>
+</li></ul><p><div data-type="newline" data-count="2"><br/><br/></div></p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm39370224">
+<div data-type="problem" id="fs-idm154517184">
+<p id="fs-idm154517056">f. Is this test right-, left-, or two-tailed?</p></div>
+<div data-type="solution" id="fs-idm168558752"><p id="fs-idm168558624">f.
+</p><figure id="eip-idm29208032">
+  <span data-type="media" id="eip-idm4786768" data-alt="This is a normal distribution curve with mean equal to 0. A vertical line near the tail of the curve to the right of zero extends from the axis to the curve. The region under the curve to the right of the line is shaded.">
+<img src="/resources/70782e8d6a8ad9163855f668c5223866c7e0315d/CNX_Stats_C10_M02_001anno.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve with mean equal to 0. A vertical line near the tail of the curve to the right of zero extends from the axis to the curve. The region under the curve to the right of the line is shaded." width="380"/>
+</span>
+</figure><p>
+
+<div data-type="newline"><br/></div>right<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm146752960">
+<div data-type="problem" id="fs-idm148661808"><p id="fs-idm148661680">g. What is the <em data-effect="italics">p</em>-value?</p></div>
+<div data-type="solution" id="fs-idm79675952"><p id="fs-idm106536048">g. 0.1928<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm176691440">
+<div data-type="problem" id="fs-idp29101808"><p id="fs-idp29101936">h. Do you reject or not reject the null hypothesis?</p></div>
+<div data-type="solution" id="fs-idm36842944"><p id="fs-idm36842816">h. Do not reject.<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm65144592">
+<div data-type="problem" id="fs-idm153855872"><p id="fs-idm41056320">i. <strong>Conclusion:</strong></p></div>
+<div data-type="solution" id="fs-idm31976880"><p id="fs-idm31976752">i. At the 1% level of significance, from the sample data, there is not sufficient evidence to conclude that a student who graduates from college A has taken more math classes, on the average, than a student who graduates from college B.</p></div>
+</div>
+</div><div data-type="note" data-has-label="true" id="fs-idp145514592" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="eip-idp166826064">
+<div data-type="problem" id="eip-idp166826320">
+  <p id="fs-idm170467472">A study is done to determine if Company A retains its workers longer than Company B. Company A samples 15 workers, and their average time with the company is five years with a standard deviation of 1.2. Company B samples 20 workers, and their average time with the company is 4.5 years with a standard deviation of 0.8. The populations are normally distributed.</p>
+    <ol id="fs-idp55515664" type="a">
+    <li>Are the population standard deviations known?</li>
+    <li>Conduct an appropriate hypothesis test. At the 5% significance level, what is your conclusion?</li>
+</ol>
+</div>
+</div></div><div data-type="example" id="fs-idm22935408">
+
+<p id="fs-idm10086800">A professor at a large community college wanted to determine whether there is a difference in the means of final exam scores between students who took his statistics course online and the students who took his face-to-face statistics class.  He believed that the mean of the final exam scores for the online class would be lower than that of the face-to-face class.  Was the professor correct? The randomly selected 30 final exam scores from each group are listed in <a href="#fs-idm34056944" class="autogenerated-content">[link]</a> and <a href="#fs-idm124378288" class="autogenerated-content">[link]</a>.</p>
+
+<table id="fs-idm34056944" summary=""><caption><span data-type="title">Online Class</span></caption><tbody>
+<tr>
+<td>67.6</td>
+<td>41.2</td>
+<td>85.3</td>
+<td>55.9</td>
+<td>82.4</td>
+<td>91.2</td>
+<td>73.5</td>
+<td>94.1</td>
+<td>64.7</td>
+<td>64.7</td>
+</tr>
+<tr>
+<td>70.6</td>
+<td>38.2</td>
+<td>61.8</td>
+<td>88.2</td>
+<td>70.6</td>
+<td>58.8</td>
+<td>91.2</td>
+<td>73.5</td>
+<td>82.4</td>
+<td>35.5</td>
+</tr>
+<tr>
+<td>94.1</td>
+<td>88.2</td>
+<td>64.7</td>
+<td>55.9</td>
+<td>88.2</td>
+<td>97.1</td>
+<td>85.3</td>
+<td>61.8</td>
+<td>79.4</td>
+<td>79.4</td>
+</tr>
+</tbody></table>
+
+<table id="fs-idm124378288" summary=""><caption><span data-type="title">Face-to-face Class</span></caption><tbody>
+<tr>
+<td>77.9</td>
+<td>95.3</td>
+<td>81.2</td>
+<td>74.1</td>
+<td>98.8</td>
+<td>88.2</td>
+<td>85.9</td>
+<td>92.9</td>
+<td>87.1</td>
+<td>88.2</td>
+</tr>
+<tr>
+<td>69.4</td>
+<td>57.6</td>
+<td>69.4</td>
+<td>67.1</td>
+<td>97.6</td>
+<td>85.9</td>
+<td>88.2</td>
+<td>91.8</td>
+<td>78.8</td>
+<td>71.8</td>
+</tr>
+<tr>
+<td>98.8</td>
+<td>61.2</td>
+<td>92.9</td>
+<td>90.6</td>
+<td>97.6</td>
+<td>100</td>
+<td>95.3</td>
+<td>83.5</td>
+<td>92.9</td>
+<td>89.4</td>
+</tr>
+</tbody></table>
+
+<div data-type="exercise" id="fs-idm298748224">
+<div data-type="problem" id="fs-idm181409216">
+<p id="fs-idm28696464">Is the mean of the Final Exam scores of the online class lower than the mean of the Final Exam scores of the face-to-face class? Test at a 5% significance level. Answer the following questions:</p>
+
+<ol id="fs-idp180387984" type="a">
+<li>Is this a test of two means or two proportions?</li>
+  <li>Are the population standard deviations known or unknown?</li>
+  <li>Which distribution do you use to perform the test?</li>
+  <li>What is the random variable?</li>
+  <li>What are the null and alternative hypotheses?  Write the null and alternative hypotheses in words and in symbols.</li>
+  <li>Is this test right, left, or two tailed?</li>
+  <li>What is the <em data-effect="italics">p</em>-value?</li>
+  <li>Do you reject or not reject the null hypothesis?</li>
+  <li>At the ___ level of significance, from the sample data, there ______ (is/is not) sufficient evidence to conclude that ______.</li>
+  </ol>
+
+<p id="fs-idp169691824">(See the conclusion in <a href="#element-968" class="autogenerated-content">[link]</a>, and write yours in a similar fashion)</p>
+
+<div data-type="note" data-has-label="true" id="fs-idm11616112" class="statistics calculator" data-label="">
+<p id="fs-idm206958928">First put the data for each group into two lists (such as L1 and L2). Press STAT. Arrow over to TESTS and press 4:2SampTTest. Make sure Data is highlighted and press ENTER. Arrow down and enter L1 for the first list and L2 for the second list. Arrow down to <em data-effect="italics">&#956;</em><sub>1</sub>: and arrow to &#8800; <em data-effect="italics">&#956;</em><sub>2</sub> (does not equal). Press ENTER. Arrow down to Pooled: No. Press ENTER. Arrow down to Calculate and press ENTER.</p>
+</div><div data-type="note" data-has-label="true" id="fs-idm107478368" data-label=""><div data-type="title">Note</div>
+<p id="fs-idm218153776">Be careful not to mix up the information for Group 1 and Group 2!</p>
+</div></div>
+
+<div data-type="solution" id="fs-idm168184384">
+<ol id="fs-idm11713040" type="a"><li>two means</li>
+<li>unknown</li>
+<li>Student's <em data-effect="italics">t</em></li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8211;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8211;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math></li>
+    <li><ol id="fs-idm109578096">
+      <li><em data-effect="italics">H<sub>0</sub></em>: <em data-effect="italics">&#956;<sub>1</sub></em> = <em data-effect="italics">&#956;<sub>2</sub></em> Null hypothesis: the means of the final exam scores are equal for the online and face-to-face statistics classes.</li>
+      <li><em data-effect="italics">H<sub>a</sub></em>: <em data-effect="italics">&#956;<sub>1</sub></em> &lt; <em data-effect="italics">&#956;<sub>2</sub></em> Alternative hypothesis: the mean of the final exam scores of the online class is less than the mean of the final exam scores of the face-to-face class.</li>
+    </ol>
+    </li>
+
+    <li>left-tailed</li>
+    <li><em data-effect="italics">p</em>-value = 0.0011
+      <figure id="fs-idm98197120"><span data-type="media" id="fs-idp598000" data-alt="This is a normal distribution curve with mean equal to zero. A vertical line near the tail of the curve to the left of zero extends from the axis to the curve. The region under the curve to the left of the line is shaded representing p-value = 0.0011.">
+      <img src="/resources/30b8f681a7471d241b0674f60f2c05602b6ee9c5/CNX_Stats_C10_M02_002annoN.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve with mean equal to zero. A vertical line near the tail of the curve to the left of zero extends from the axis to the curve. The region under the curve to the left of the line is shaded representing p-value = 0.0011." width="380"/>
+    </span>
+    </figure></li>
+    <li>Reject the null hypothesis</li>
+
+   <li>The professor was correct. The evidence shows that the mean of the final exam scores for the online class is lower than that of the face-to-face class.
+<div data-type="newline"><br/></div>At the <u data-effect="underline">5%</u> level of significance, from the sample data, there is (is/is not) sufficient evidence to conclude that the mean of the final exam scores for the online class is less than <u data-effect="underline">the mean of final exam scores of the face-to-face class.</u>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<p id="eip-358"><span data-type="title">Cohen's Standards for Small, Medium, and Large Effect Sizes</span><span data-type="term">Cohen's <em data-effect="italics">d</em></span> is a measure of effect size based on the differences between two means. Cohen&#8217;s <em data-effect="italics">d</em>, named for United States statistician Jacob Cohen, measures the relative strength of the differences between the means of two populations based on sample data. The calculated value of effect size is then compared to Cohen&#8217;s standards of small, medium, and large effect sizes.</p><table id="fs-idp93235584" summary=""><caption><span data-type="title">Cohen's Standard Effect Sizes</span></caption><thead>
+<tr>
+<th>Size of effect</th>
+<th><em data-effect="italics">d</em></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Small</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>medium</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>0.8</td>
+</tr>
+</tbody></table>
+<p id="fs-idm52480352">Cohen's <em data-effect="italics">d</em> is the measure of the difference between two means divided by the pooled standard deviation: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>d</mi><mo>=</mo><mfrac>
+<mrow>
+<msub>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+<mn>1</mn>
+</msub>
+<mo>&#8211;</mo><msub>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+<mn>2</mn>
+</msub>
+
+</mrow>
+<mrow>
+<msub>
+<mi>s</mi>
+<mrow>
+<mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>d</mi><mo>=</mo><mfrac>
+<mrow>
+<msub>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+<mn>1</mn>
+</msub>
+<mo>&#8211;</mo><msub>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+<mn>2</mn>
+</msub>
+
+</mrow>
+<mrow>
+<msub>
+<mi>s</mi>
+<mrow>
+<mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</mrow></annotation-xml></semantics></math> where <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<msub>
+<mi>s</mi>
+<mrow>
+<mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+</mrow>
+</msub>
+<mo>=</mo><msqrt>
+<mrow>
+<mfrac>
+<mrow>
+<mo stretchy="false">(</mo><msub>
+<mi>n</mi>
+<mn>1</mn>
+</msub>
+<mo>&#8211;</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup>
+<mi>s</mi>
+<mn>1</mn>
+<mn>2</mn>
+</msubsup>
+<mo>+</mo><mo stretchy="false">(</mo><msub>
+<mi>n</mi>
+<mn>2</mn>
+</msub>
+<mo>&#8211;</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup>
+<mi>s</mi>
+<mn>2</mn>
+<mn>2</mn>
+</msubsup>
+
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mn>1</mn>
+</msub>
+<mo>+</mo><msub>
+<mi>n</mi>
+<mn>2</mn>
+</msub>
+<mo>&#8211;</mo><mn>2</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</msqrt>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<msub>
+<mi>s</mi>
+<mrow>
+<mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+</mrow>
+</msub>
+<mo>=</mo><msqrt>
+<mrow>
+<mfrac>
+<mrow>
+<mo stretchy="false">(</mo><msub>
+<mi>n</mi>
+<mn>1</mn>
+</msub>
+<mo>&#8211;</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup>
+<mi>s</mi>
+<mn>1</mn>
+<mn>2</mn>
+</msubsup>
+<mo>+</mo><mo stretchy="false">(</mo><msub>
+<mi>n</mi>
+<mn>2</mn>
+</msub>
+<mo>&#8211;</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup>
+<mi>s</mi>
+<mn>2</mn>
+<mn>2</mn>
+</msubsup>
+
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mn>1</mn>
+</msub>
+<mo>+</mo><msub>
+<mi>n</mi>
+<mn>2</mn>
+</msub>
+<mo>&#8211;</mo><mn>2</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</msqrt>
+
+</mrow></annotation-xml></semantics></math></p>
+<div data-type="example" id="fs-idm100194752">
+<div data-type="exercise" id="fs-idm122689856">
+<div data-type="problem" id="fs-idm122689600">
+<p id="fs-idm1441280">Calculate Cohen&#8217;s <em data-effect="italics">d</em> for <a href="#element-968" class="autogenerated-content">[link]</a>. Is the size of the effect small, medium, or large? Explain what the size of the effect means for this problem.</p>
+</div>
+
+<div data-type="solution" id="fs-idm42685344">
+  <p id="fs-idp179952160"><em data-effect="italics">&#956;</em><sub>1</sub> = 4 <em data-effect="italics">s</em><sub>1</sub> = 1.5 <em data-effect="italics">n</em><sub>1</sub> = 11
+<div data-type="newline"><br/></div><em data-effect="italics">&#956;</em><sub>2</sub> = 3.5 <em data-effect="italics">s</em><sub>2</sub> = 1  <em data-effect="italics">n</em><sub>2</sub> = 9
+<div data-type="newline"><br/></div><em data-effect="italics">d</em> = 0.384
+<div data-type="newline"><br/></div>The effect is small because 0.384 is between Cohen&#8217;s value of 0.2 for small effect size and 0.5 for medium effect size. The size of the differences of the means for the two colleges is small indicating that there is not a significant difference between them.</p>
+  </div>
+</div>
+</div>
+
+<div data-type="example" id="fs-idm112602048">
+<div data-type="exercise" id="fs-idm163588752">
+<div data-type="problem" id="fs-idm118829104"><p id="fs-idm174261728">Calculate Cohen&#8217;s <em data-effect="italics">d</em> for <a href="#fs-idm22935408" class="autogenerated-content">[link]</a>. Is the size of the effect small, medium or large? Explain what the size of the effect means for this problem.</p></div>
+<div data-type="solution" id="fs-idm177693104">
+<p id="fs-idm86592608"><em data-effect="italics">d</em> = 0.834; Large, because 0.834 is greater than Cohen&#8217;s 0.8 for a large effect size.  The size of the differences between the means of the Final Exam scores of online students and students in a face-to-face class is large indicating a significant difference.</p></div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idp145071264" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<p id="fs-idm62120944">Weighted alpha is a measure of risk-adjusted performance of stocks over a period of a year. A high positive weighted alpha signifies a stock whose price has risen while a small positive weighted alpha indicates an unchanged stock price during the time period. Weighted alpha is used to identify companies with strong upward or downward trends. The weighted alpha for the top 30 stocks of banks in the northeast and in the west as identified by Nasdaq on May 24, 2013 are listed in <a href="#fs-idm242901296" class="autogenerated-content">[link]</a> and <a href="#fs-idm167801152" class="autogenerated-content">[link]</a>, respectively.</p>
+<table id="fs-idm242901296" summary=""><caption><span data-type="title">Northeast</span></caption><tbody>
+<tr>
+<td>94.2</td>
+<td>75.2</td>
+<td>69.6</td>
+<td>52.0</td>
+<td>48.0</td>
+<td>41.9</td>
+<td>36.4</td>
+<td>33.4</td>
+<td>31.5</td>
+<td>27.6</td>
+</tr>
+<tr>
+<td>77.3</td>
+<td>71.9</td>
+<td>67.5</td>
+<td>50.6</td>
+<td>46.2</td>
+<td>38.4</td>
+<td>35.2</td>
+<td>33.0</td>
+<td>28.7</td>
+<td>26.5</td>
+</tr>
+<tr>
+<td>76.3</td>
+<td>71.7</td>
+<td>56.3</td>
+<td>48.7</td>
+<td>43.2</td>
+<td>37.6</td>
+<td>33.7</td>
+<td>31.8</td>
+<td>28.5</td>
+<td>26.0</td>
+</tr>
+</tbody></table>
+<table id="fs-idm167801152" summary=""><caption><span data-type="title">West</span></caption><tbody>
+<tr>
+<td>126.0</td>
+<td>70.6</td>
+<td>65.2</td>
+<td>51.4</td>
+<td>45.5</td>
+<td>37.0</td>
+<td>33.0</td>
+<td>29.6</td>
+<td>23.7</td>
+<td>22.6</td>
+</tr>
+<tr>
+<td>116.1</td>
+<td>70.6</td>
+<td>58.2</td>
+<td>51.2</td>
+<td>43.2</td>
+<td>36.0</td>
+<td>31.4</td>
+<td>28.7</td>
+<td>23.5</td>
+<td>21.6</td>
+</tr>
+<tr>
+<td>78.2</td>
+<td>68.2</td>
+<td>55.6</td>
+<td>50.3</td>
+<td>39.0</td>
+<td>34.1</td>
+<td>31.0</td>
+<td>25.3</td>
+<td>23.4</td>
+<td>21.5</td>
+</tr>
+</tbody></table>
+
+<div data-type="exercise" id="fs-idm120507648">
+<div data-type="problem" id="eip-idp51089200">
+<p id="fs-idm100910544">Is there a difference in the weighted alpha of the top 30 stocks of banks in the northeast and in the west? Test at a 5% significance level. Answer the following questions:</p>
+  <ol id="fs-idp33249296" type="a"><li>Is this a test of two means or two proportions?</li>
+<li>Are the population standard deviations known or unknown?</li>
+<li>Which distribution do you use to perform the test?</li>
+<li>What is the random variable?</li>
+<li>What are the null and alternative hypotheses? Write the null and alternative hypotheses in words and in symbols.</li>
+<li>Is this test right, left, or two tailed?</li>
+<li>What is the <em data-effect="italics">p</em>-value?</li>
+<li>Do you reject or not reject the null hypothesis?</li>
+<li>At the ___ level of significance, from the sample data, there ______ (is/is not) sufficient evidence to conclude that ______.</li>
+<li>Calculate Cohen&#8217;s <em data-effect="italics">d</em> and interpret it.</li>
+</ol></div>
+</div>
+</div>
+
+<section data-depth="1" id="eip-137" class="references"><h3 data-type="title">References</h3>
+<p id="eip-204">Data from Graduating Engineer + Computer Careers. Available online at http://www.graduatingengineer.com</p><p id="fs-idp6735712">Data from <em data-effect="italics">Microsoft Bookshelf</em>.</p><p id="fs-idm54110288">Data from the United States Senate website, available online at www.Senate.gov (accessed June 17, 2013).</p>
+<p id="fs-idp26924704">&#8220;List of current United States Senators by Age.&#8221; Wikipedia. Available online at http://en.wikipedia.org/wiki/List_of_current_United_States_Senators_by_age (accessed June 17, 2013).</p>
+
+<p id="fs-idp67778720">&#8220;Sectoring by Industry Groups.&#8221; Nasdaq. Available online at http://www.nasdaq.com/markets/barchart-sectors.aspx?page=sectors&amp;base=industry (accessed June 17, 2013).</p>
+<p id="fs-idp92967520">&#8220;Strip Clubs: Where Prostitution and Trafficking Happen.&#8221; Prostitution Research and Education, 2013. Available online at www.prostitutionresearch.com/ProsViolPosttrauStress.html (accessed June 17, 2013).</p>
+<p id="fs-idp130720928">&#8220;World Series History.&#8221; Baseball-Almanac, 2013. Available online at http://www.baseball-almanac.com/ws/wsmenu.shtml (accessed June 17, 2013).</p>
+
+</section>
+<section data-depth="1" id="fs-idm178063424" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="fs-idm116979232">Two population means from independent samples where the population standard deviations are not known</p>
+<ul id="fs-idm111534432"><li>Random Variable: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> = the difference of the sampling means</li>
+<li>Distribution: Student's <em data-effect="italics">t</em>-distribution with degrees of freedom (variances not pooled)</li>
+</ul></section>
+<section data-depth="1" id="fs-idm147993376" class="formula-review"><h3 data-type="title">Formula Review</h3>
+  <p id="fs-idm5111056">Standard error: <em data-effect="italics">SE</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <msqrt>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <msup>
+                <mrow>
+                  <mo stretchy="false">(</mo><msub>
+                    <mi>s</mi>
+                    <mn>1</mn>
+                  </msub>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>n</mi>
+                <mn>1</mn>
+              </msub>
+
+            </mrow>
+          </mfrac>
+          <mo>+</mo><mfrac>
+            <mrow>
+              <msup>
+                <mrow>
+                  <mo stretchy="false">(</mo><msub>
+                    <mi>s</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>n</mi>
+                <mn>2</mn>
+              </msub>
+
+            </mrow>
+          </mfrac>
+
+        </mrow>
+      </msqrt>
+
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msqrt>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <msup>
+                <mrow>
+                  <mo stretchy="false">(</mo><msub>
+                    <mi>s</mi>
+                    <mn>1</mn>
+                  </msub>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>n</mi>
+                <mn>1</mn>
+              </msub>
+
+            </mrow>
+          </mfrac>
+          <mo>+</mo><mfrac>
+            <mrow>
+              <msup>
+                <mrow>
+                  <mo stretchy="false">(</mo><msub>
+                    <mi>s</mi>
+                    <mn>2</mn>
+                  </msub>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>n</mi>
+                <mn>2</mn>
+              </msub>
+
+            </mrow>
+          </mfrac>
+
+        </mrow>
+      </msqrt>
+
+    </mrow></annotation-xml></semantics></math>
+    </p>
+<p id="fs-idm105811424">Test statistic (<em data-effect="italics">t</em>-score): <em data-effect="italics">t</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mo stretchy="false">(</mo><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>1</mn>
+    </msub>
+    <mo>&#8722;</mo><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>2</mn>
+    </msub>
+    <mo stretchy="false">)</mo><mo>&#8722;</mo><mo stretchy="false">(</mo><msub>
+     <mi>&#956;</mi>
+     <mn>1</mn>
+    </msub>
+    <mo>&#8722;</mo><msub>
+     <mi>&#956;</mi>
+     <mn>2</mn>
+    </msub>
+    <mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mo stretchy="false">(</mo><msub>
+           <mi>s</mi>
+           <mn>1</mn>
+          </msub>
+          <mo stretchy="false">)</mo>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>1</mn>
+        </msub>
+
+       </mrow>
+      </mfrac>
+      <mo>+</mo><mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mo stretchy="false">(</mo><msub>
+           <mi>s</mi>
+           <mn>2</mn>
+          </msub>
+          <mo stretchy="false">)</mo>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>2</mn>
+        </msub>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mo stretchy="false">(</mo><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>1</mn>
+    </msub>
+    <mo>&#8722;</mo><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>2</mn>
+    </msub>
+    <mo stretchy="false">)</mo><mo>&#8722;</mo><mo stretchy="false">(</mo><msub>
+     <mi>&#956;</mi>
+     <mn>1</mn>
+    </msub>
+    <mo>&#8722;</mo><msub>
+     <mi>&#956;</mi>
+     <mn>2</mn>
+    </msub>
+    <mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mo stretchy="false">(</mo><msub>
+           <mi>s</mi>
+           <mn>1</mn>
+          </msub>
+          <mo stretchy="false">)</mo>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>1</mn>
+        </msub>
+
+       </mrow>
+      </mfrac>
+      <mo>+</mo><mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mo stretchy="false">(</mo><msub>
+           <mi>s</mi>
+           <mn>2</mn>
+          </msub>
+          <mo stretchy="false">)</mo>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>2</mn>
+        </msub>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>
+</p><p id="fs-idm96358640">Degrees of freedom:<div data-type="newline"><br/></div>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>d</mi><mi>f</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>1</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>1</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+        <mo>+</mo><mo>&#160;</mo><mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>2</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>1</mn>
+        </msub>
+        <mo>&#8722;</mo><mn>1</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow><msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow><msup><mrow>
+          <mo stretchy="false">(</mo><msub>
+           <mi>s</mi>
+           <mn>1</mn>
+          </msub>
+          <mo stretchy="false">)</mo></mrow>
+          <mn>2</mn></msup>
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>1</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo>+</mo><mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>2</mn>
+        </msub>
+        <mo>&#8722;</mo><mn>1</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow><msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>2</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>d</mi><mi>f</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>1</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>1</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+        <mo>+</mo><mo>&#160;</mo><mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>2</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>1</mn>
+        </msub>
+        <mo>&#8722;</mo><mn>1</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow><msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow><msup><mrow>
+          <mo stretchy="false">(</mo><msub>
+           <mi>s</mi>
+           <mn>1</mn>
+          </msub>
+          <mo stretchy="false">)</mo></mrow>
+          <mn>2</mn></msup>
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>1</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo>+</mo><mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mrow>
+        <msub>
+         <mi>n</mi>
+         <mn>2</mn>
+        </msub>
+        <mo>&#8722;</mo><mn>1</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow><msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <msup>
+           <mrow>
+            <mo stretchy="false">(</mo><msub>
+             <mi>s</mi>
+             <mn>2</mn>
+            </msub>
+            <mo stretchy="false">)</mo>
+           </mrow>
+           <mn>2</mn>
+          </msup>
+
+         </mrow>
+         <mrow>
+          <msub>
+           <mi>n</mi>
+           <mn>2</mn>
+          </msub>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></p><p id="fs-idm98284352">where:</p>
+<p id="fs-idm92032864"><em data-effect="italics">s</em><sub>1</sub> and <em data-effect="italics">s</em><sub>2</sub> are the sample standard deviations, and <em data-effect="italics">n</em><sub>1</sub> and <em data-effect="italics">n</em><sub>2</sub> are the sample sizes.</p>
+<p id="fs-idm32210368"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<msub>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+<mn>1</mn>
+</msub>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<msub>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+<mn>1</mn>
+</msub>
+</mrow></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<msub>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+<mn>2</mn>
+</msub>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<msub>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+<mn>2</mn>
+</msub>
+</mrow></annotation-xml></semantics></math> are the sample means.</p>
+<p id="fs-idm117522208">Cohen&#8217;s <em data-effect="italics">d</em> is the measure of effect size:</p>
+<p id="fs-idm117521824"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>d</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>1</mn>
+    </msub>
+    <mo>&#8722;</mo><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>2</mn>
+    </msub>
+
+   </mrow>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mrow>
+      <mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+     </mrow>
+    </msub>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>d</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>1</mn>
+    </msub>
+    <mo>&#8722;</mo><msub>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+     <mn>2</mn>
+    </msub>
+
+   </mrow>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mrow>
+      <mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+     </mrow>
+    </msub>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>
+
+<div data-type="newline"><br/></div>where <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>s</mi>
+   <mrow>
+    <mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+   </mrow>
+  </msub>
+  <mo>=</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>n</mi>
+       <mn>1</mn>
+      </msub>
+      <mo>&#8722;</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup>
+       <mi>s</mi>
+       <mn>1</mn>
+       <mn>2</mn>
+      </msubsup>
+      <mo>+</mo><mo stretchy="false">(</mo><msub>
+       <mi>n</mi>
+       <mn>2</mn>
+      </msub>
+      <mo>&#8722;</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup>
+       <mi>s</mi>
+       <mn>2</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+     <mrow>
+      <msub>
+       <mi>n</mi>
+       <mn>1</mn>
+      </msub>
+      <mo>+</mo><msub>
+       <mi>n</mi>
+       <mn>2</mn>
+      </msub>
+      <mo>&#8722;</mo><mn>2</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>s</mi>
+   <mrow>
+    <mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+   </mrow>
+  </msub>
+  <mo>=</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>n</mi>
+       <mn>1</mn>
+      </msub>
+      <mo>&#8722;</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup>
+       <mi>s</mi>
+       <mn>1</mn>
+       <mn>2</mn>
+      </msubsup>
+      <mo>+</mo><mo stretchy="false">(</mo><msub>
+       <mi>n</mi>
+       <mn>2</mn>
+      </msub>
+      <mo>&#8722;</mo><mn>1</mn><mo stretchy="false">)</mo><msubsup>
+       <mi>s</mi>
+       <mn>2</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+     <mrow>
+      <msub>
+       <mi>n</mi>
+       <mn>1</mn>
+      </msub>
+      <mo>+</mo><msub>
+       <mi>n</mi>
+       <mn>2</mn>
+      </msub>
+      <mo>&#8722;</mo><mn>2</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math></p></section>
+
+
+<section data-depth="1" id="fs-idm9464368" class="practice">
+<p id="fs-idm124875168"><em data-effect="italics">Use the following information to answer the next 15 exercises:</em> Indicate if the hypothesis test is for</p><ol id="fs-idm45665008" type="a">
+<li>independent group means, population standard deviations, and/or variances known</li>
+<li>independent group means, population standard deviations, and/or variances unknown</li>
+<li>matched or paired samples</li>
+<li>single mean</li>
+<li>two proportions</li>
+<li>single proportion</li>
+</ol>
+
+<div data-type="exercise" id="fs-idm22935904">
+<div data-type="problem" id="fs-idm124875424">
+<p id="fs-idm84013008">It is believed that 70% of males pass their drivers test in the first attempt, while 65% of females pass the test in the first attempt. Of interest is whether the proportions are in fact equal.</p>
+</div>
+<div data-type="solution" id="fs-idm235455488">
+<p id="fs-idm173588752">two proportions</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm146907648">
+<div data-type="problem" id="fs-idm146907392">
+<p id="fs-idm146907136">A new laundry detergent is tested on consumers. Of interest is the proportion of consumers who prefer the new brand over the leading competitor. A study is done to test this.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm161821520">
+<div data-type="problem" id="fs-idm161821264">
+<p id="fs-idm164006592">A new windshield treatment claims to repel water more effectively. Ten windshields are tested by simulating rain without the new treatment. The same windshields are then treated, and the experiment is run again. A hypothesis test is conducted.</p>
+</div>
+<div data-type="solution" id="fs-idm127047328">
+<p id="fs-idm127047072">matched or paired samples</p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm120536064">
+<div data-type="problem" id="fs-idm68027168">
+<p id="fs-idm68026912">The known standard deviation in salary for all mid-level professionals in the financial industry is $11,000. Company A and Company B are in the financial industry. Suppose samples are taken of mid-level professionals from Company A and from Company B. The sample mean salary for mid-level professionals in Company A is $80,000. The sample mean salary for mid-level professionals in Company B is $96,000.  Company A and Company B management want to know if their mid-level professionals are paid differently, on average.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idp21825264">
+<div data-type="problem" id="fs-idp21825520">
+<p id="fs-idm175592768">The average worker in Germany gets eight weeks of paid vacation.</p>
+</div>
+<div data-type="solution" id="fs-idm81349024">
+<p id="fs-idm81348768">single mean</p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm170345552">
+<div data-type="problem" id="fs-idm170345296">
+<p id="fs-idm39186912">According to a television commercial, 80% of dentists agree that Ultrafresh toothpaste is the best on the market.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idp3576048">
+<div data-type="problem" id="fs-idm27505984">
+<p id="fs-idm27505728">It is believed that the average grade on an English essay in a particular school system for females is higher than for males.  A random sample of 31 females had a mean score of 82 with a standard deviation of three, and a random sample of 25 males had a mean score of 76 with a standard deviation of four.</p>
+</div>
+<div data-type="solution" id="fs-idm27710704">
+<p id="fs-idm54785888">independent group means, population standard deviations and/or variances unknown</p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm32687376">
+<div data-type="problem" id="fs-idm32687120">
+  <p id="fs-idm32686864">The league mean batting average is 0.280 with a known standard deviation of 0.06. The Rattlers and the Vikings belong to the league.  The mean batting average for a sample of eight Rattlers is 0.210, and the mean batting average for a sample of eight Vikings is 0.260. There are 24 players on the Rattlers and 19 players on the Vikings. Are the batting averages of the Rattlers and Vikings statistically different?</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm36046944">
+<div data-type="problem" id="fs-idm36046688">
+<p id="fs-idm3190160">In a random sample of 100 forests in the United States, 56 were coniferous or contained conifers. In a random sample of 80 forests in Mexico, 40 were coniferous or contained conifers. Is the proportion of conifers in the United States statistically more than the proportion of conifers in Mexico?</p></div>
+<div data-type="solution" id="fs-idm7896320">
+<p id="fs-idm7896064">two proportions</p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm84811344"><div data-type="problem" id="fs-idm84811088">
+<p id="fs-idm16418448">A new medicine is said to help improve sleep. Eight subjects are picked at random and given the medicine. The means hours slept for each person were recorded before starting the medication and after.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm111997184">
+<div data-type="problem" id="fs-idm111996928">
+<p id="fs-idm35434864">It is thought that teenagers sleep more than adults on average. A study is done to verify this. A sample of 16 teenagers has a mean of 8.9 hours slept and a standard deviation of 1.2. A sample of 12 adults has a mean of 6.9 hours slept and a standard deviation of 0.6.</p>
+</div>
+<div data-type="solution" id="fs-idm5318624">
+<p id="fs-idm5318368">independent group means, population standard deviations and/or variances unknown</p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm83613168">
+<div data-type="problem" id="fs-idm83612912">
+  <p id="fs-idm122472032">Varsity athletes practice five times a week, on average.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm155074576">
+<div data-type="problem" id="fs-idm187988384">
+<p id="fs-idm187988128">A sample of 12 in-state graduate school programs at school A has a mean tuition of $64,000 with a standard deviation of $8,000. At school B, a sample of 16 in-state graduate programs has a mean of $80,000 with a standard deviation of $6,000.  On average, are the mean tuitions different?</p>
+</div>
+<div data-type="solution" id="fs-idm63313632">
+<p id="fs-idm86332592">independent group means, population standard deviations and/or variances unknown</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm86331952">
+<div data-type="problem" id="fs-idm109695328">
+<p id="fs-idm109695072">A new WiFi range booster is being offered to consumers. A researcher tests the native range of 12 different routers under the same conditions. The ranges are recorded. Then the researcher uses the new WiFi range booster and records the new ranges. Does the new WiFi range booster do a better job?</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm152397632">
+<div data-type="problem" id="fs-idm187246864">
+<p id="fs-idm187246608">A high school principal claims that 30% of student athletes drive themselves to school, while 4% of non-athletes drive themselves to school. In a sample of 20 student athletes, 45% drive themselves to school. In a sample of 35 non-athlete students, 6% drive themselves to school. Is the percent of student athletes who drive themselves to school more than the percent of nonathletes?</p>
+</div>
+<div data-type="solution" id="fs-idm178089840">
+<p id="fs-idm174648448">two proportions</p>
+</div>
+</div>
+
+<p id="eip-980"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next three exercises:</em> A study is done to determine which of two soft drinks has more sugar. There are 13 cans of Beverage A in a sample and six cans of Beverage B. The mean amount of sugar in Beverage A is 36 grams with a standard deviation of 0.6 grams. The mean amount of sugar in Beverage B is 38 grams with a standard deviation of 0.8 grams. The researchers believe that Beverage B has more sugar than Beverage A, on average. Both populations have normal distributions.</p><div data-type="exercise" id="fs-idm174647808">
+<div data-type="problem" id="fs-idm80739952">
+<p id="fs-idm174134640">Are standard deviations known or unknown?</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm213711120">
+<div data-type="problem" id="fs-idm213710864">
+<p id="fs-idm213710608">What is the random variable?</p>
+</div>
+<div data-type="solution" id="fs-idm10993824">
+  <p id="fs-idm10993568">The random variable is the difference between the mean amounts of sugar in the two soft drinks.</p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm106857024">
+<div data-type="problem" id="fs-idm38595520">
+  <p id="fs-idm38595264">Is this a one-tailed or two-tailed test?</p>
+</div>
+</div>
+
+ <p id="eip-356"><em data-effect="italics">Use the following information to answer the next 12 exercises:</em> The U.S. Center for Disease Control reports that the mean life expectancy was 47.6 years for whites born in 1900 and 33.0 years for nonwhites. Suppose that you randomly survey death records for people born in 1900 in a certain county. Of the 124 whites, the mean life span was 45.3 years with a standard deviation of 12.7 years. Of the 82 nonwhites, the mean life span was 34.1 years with a standard deviation of 15.6 years. Conduct a hypothesis test to see if the mean life spans in the county were the same for whites and nonwhites.</p><div data-type="exercise" id="fs-idm77134224">
+<div data-type="problem" id="fs-idm77133968">
+<p id="fs-idm82811296">Is this a test of means or proportions?</p>
+</div>
+<div data-type="solution" id="fs-idm82810784">
+<p id="fs-idm5951248">means</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm87532368">
+<div data-type="problem" id="fs-idm87532112">
+<p id="fs-idm87531856">State the null and alternative hypotheses.</p>
+  <ol id="fs-idm126031792" type="a">
+    <li><em data-effect="italics">H<sub>0</sub></em>: __________</li>
+    <li><em data-effect="italics">H<sub>a</sub></em>: __________</li>
+  </ol>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idp13932064">
+<div data-type="problem" id="fs-idm162071840">
+<p id="fs-idm162071584">Is this a right-tailed, left-tailed, or two-tailed test?</p>
+</div>
+<div data-type="solution" id="fs-idm104897488">
+<p id="fs-idm104897232">two-tailed</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm104977072">
+<div data-type="problem" id="fs-idm104976816">
+  <p id="fs-idm161761248">In symbols, what is the random variable of interest for this test?</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm147822240">
+<div data-type="problem" id="fs-idm147821984">
+<p id="fs-idm147821728">In words, define the random variable of interest for this test.</p>
+</div>
+<div data-type="solution" id="fs-idm2327840">
+<p id="fs-idm2327584">the difference between the mean life spans of whites and nonwhites</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm17957104">
+<div data-type="problem" id="fs-idm17956848">
+<p id="fs-idm100280816">Which distribution (normal or Student's <em data-effect="italics">t</em>) would you use for this hypothesis test?</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm121049024">
+<div data-type="problem" id="fs-idm121048768">
+  <p id="fs-idm121048512">Explain why you chose the distribution you did for <a href="#fs-idm17957104" class="autogenerated-content">[link]</a>.</p></div>
+<div data-type="solution" id="eip-idp105137344">
+<p id="eip-idp105137600">This is a comparison of two population means with unknown population standard deviations.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm96874480">
+<div data-type="problem" id="fs-idm96874224">
+<p id="fs-idm263989856">Calculate the test statistic and <em data-effect="italics">p</em>-value. </p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm120924688">
+<div data-type="problem" id="fs-idm120924432">
+<p id="fs-idm120924176">Sketch a graph of the situation. Label the horizontal axis. Mark the hypothesized difference and the sample difference. Shade the area corresponding to the <em data-effect="italics">p</em>-value.</p>
+</div>
+  <div data-type="solution" id="fs-idp104610560">
+    <p id="fs-idp104610816">Check student&#8217;s solution.</p>
+  </div>
+</div>
+
+<div data-type="exercise" id="fs-idm47382320">
+<div data-type="problem" id="fs-idm47382064">
+<p id="fs-idm174192304">Find the <em data-effect="italics">p</em>-value.</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm129306608">
+<div data-type="problem" id="fs-idm129306352">
+  <p id="fs-idm148755040">At a pre-conceived <em data-effect="italics">&#945;</em> = 0.05, what is your:
+</p><ol id="fs-idp598432" type="a">
+   <li>Decision:</li>
+   <li>Reason for the decision:</li>
+   <li>Conclusion (write out in a complete sentence):</li>
+    </ol>
+</div>
+<div data-type="solution" id="fs-idm110404384">
+  <ol id="fs-idp229240368" type="a">
+    <li>Reject the null hypothesis</li>
+      <li><em data-effect="italics">p</em>-value &lt; 0.05</li>
+      <li>There is not enough evidence at the 5% level of significance to support the claim that life expectancy in the 1900s is different between whites and nonwhites.</li>
+  </ol>
+  </div>
+</div>
+
+<div data-type="exercise" id="fs-idm127412752"><div data-type="problem" id="fs-idm126248464">
+<p id="fs-idm126248208">Does it appear that the means are the same? Why or why not?</p>
+</div>
+</div>
+</section>
+
+<section data-depth="1" id="fs-idm173509824" class="free-response"><h3 data-type="title">Homework</h3>
+<p id="eip-747"><em data-effect="italics">DIRECTIONS: For each of the word problems, use a solution sheet to do the hypothesis test. The solution sheet is found in <a href="/contents/c0449c55-aa47-4f1c-bd5f-0521652f0e82">Appendix E</a>. Please feel free to make copies of the solution sheets. For the online version of the book, it is suggested that you copy the .doc or the .pdf files.</em></p><div data-type="note" data-has-label="true" id="eip-792" data-label=""><div data-type="title">NOTE</div>
+    <p id="eip-idp140444868962512">If you are using a Student's <em data-effect="italics">t</em>-distribution for a homework problem in what follows, including for paired data, you may assume that the underlying population is normally distributed. (When using these tests in a real situation, you must first prove that assumption, however.)</p></div><div data-type="exercise" id="fs-idm164128"><div data-type="problem" id="fs-idm163872">
+<p id="fs-idm163616">The mean number of English courses taken in a two&#8211;year time period by male and female college students is believed to be about the same. An experiment is conducted and data are collected from 29 males and 16 females. The males took an average of three English courses with a standard deviation of 0.8. The females took an average of four English courses with a standard deviation of 1.0. Are the means statistically the same?</p>
+</div>
+</div>
+
+
+<div data-type="exercise" id="fs-idm8894688">
+<div data-type="problem" id="fs-idm8894432">
+<p id="fs-idm185269312">A student at a four-year college claims that mean enrollment at four&#8211;year colleges is higher than at two&#8211;year colleges in the United States. Two surveys are conducted. Of the 35 two&#8211;year colleges surveyed, the mean enrollment was 5,068 with a standard deviation of 4,777. Of the 35 four-year colleges surveyed, the mean enrollment was 5,466 with a standard deviation of 8,191.</p></div>
+<div data-type="solution" id="fs-idp138385488">
+  <p id="fs-idm89316432">Subscripts: 1: two-year colleges; 2: four-year colleges</p>
+  <ol id="fs-idm89316048" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: <em data-effect="italics">&#956;<sub>1</sub></em> &#8805; <em data-effect="italics">&#956;<sub>2</sub></em></li>
+    <li><em data-effect="italics">H<sub>a</sub></em>: <em data-effect="italics">&#956;<sub>1</sub></em> &lt; <em data-effect="italics">&#956;<sub>2</sub></em></li>
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8211;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8211;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> is the difference between the mean enrollments of the two-year colleges and the four-year colleges.</li>
+    <li>Student&#8217;s-<em data-effect="italics">t</em></li>
+    <li>test statistic: -0.2480</li>
+    <li><em data-effect="italics">p</em>-value: 0.4019</li>
+    <li>Check student&#8217;s solution.</li>
+    <li>
+      <ol id="fs-idp113692848" type="i">
+        <li>Alpha: 0.05</li>
+        <li>Decision: Do not reject</li>
+        <li>Reason for Decision: <em data-effect="italics">p</em>-value &gt; alpha</li>
+        <li>Conclusion: At the 5% significance level, there is sufficient evidence to conclude that the mean enrollment at four-year colleges is higher than at two-year colleges.</li>
+      </ol>
+    </li>
+  </ol></div>
+</div>
+
+<div data-type="exercise" id="fs-idm39083984">
+<div data-type="problem" id="fs-idm39083728">
+<p id="fs-idm53880736">At Rachel&#8217;s 11<sup>th</sup> birthday party, eight girls were timed to see how long (in seconds) they could hold their breath in a relaxed position. After a two-minute rest, they timed themselves while jumping. The girls thought that the mean difference between their jumping and relaxed times would be zero. Test their hypothesis.</p>
+<table id="fs-idm53880480" summary="The table presents the first column as the relaxed time in seconds and the second column as the jumping time in seconds."><thead>
+<tr>
+<th>Relaxed time (seconds)</th>
+<th>Jumping time (seconds)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>26</td>
+<td>21</td>
+</tr>
+<tr>
+<td>47</td>
+<td>40</td>
+</tr>
+<tr>
+<td>30</td>
+<td>28</td>
+</tr>
+<tr>
+<td>22</td>
+<td>21</td>
+</tr>
+<tr>
+<td>23</td>
+<td>25</td>
+</tr>
+<tr>
+<td>45</td>
+<td>43</td>
+</tr>
+<tr>
+<td>37</td>
+<td>35</td>
+</tr>
+<tr>
+<td>29</td>
+<td>32</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm122985232">
+<div data-type="problem" id="fs-idm122984976">
+<p id="fs-idm122984720">Mean entry-level salaries for college graduates with mechanical engineering degrees and electrical engineering degrees are believed to be approximately the same. A recruiting office thinks that the mean mechanical engineering salary is actually lower than the mean electrical engineering salary. The recruiting office randomly surveys 50 entry level mechanical engineers and 60 entry level electrical engineers. Their mean salaries were $46,100 and $46,700, respectively. Their standard deviations were $3,450 and $4,210, respectively. Conduct a hypothesis test to determine if you agree that the mean entry-level mechanical engineering salary is lower than the mean entry-level electrical engineering salary.</p>
+</div>
+<div data-type="solution" id="fs-idm188189904">
+  <p id="fs-idp57225296">Subscripts:  1: mechanical engineering;  2: electrical engineering</p>
+  <ol id="fs-idp195702880" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: <em data-effect="italics">&#181;<sub>1</sub></em> &#8805; <em data-effect="italics">&#181;<sub>2</sub></em></li>
+    <li><em data-effect="italics">H<sub>a</sub></em>: <em data-effect="italics">&#181;<sub>1</sub></em> &lt; <em data-effect="italics">&#181;<sub>2</sub></em></li>
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> is the difference between the mean entry level salaries of mechanical engineers and electrical engineers.</li>
+    <li><em data-effect="italics">t</em><sub>108</sub></li>
+    <li>test statistic: <em data-effect="italics">t</em> = &#8211;0.82</li>
+    <li><em data-effect="italics">p</em>-value: 0.2061</li>
+    <li>Check student&#8217;s solution.</li>
+    <li>
+    <ol id="fs-idp3469344" type="i">
+      <li>Alpha: 0.05</li>
+      <li>Decision: Do not reject the null hypothesis.</li>
+      <li>Reason for Decision: <em data-effect="italics">p</em>-value &gt; alpha</li>
+      <li>Conclusion: At the 5% significance level, there is insufficient evidence to conclude that the mean entry-level salaries of mechanical engineers is lower than that of electrical engineers.</li>
+    </ol>
+    </li>
+  </ol></div>
+</div>
+
+
+ <div data-type="exercise" id="fs-idm62206688">
+<div data-type="problem" id="fs-idm62206432">
+<p id="fs-idm105723088">Marketing companies have collected data implying that teenage girls use more ring tones on their cellular phones than teenage boys do. In one particular study of 40 randomly chosen teenage girls and boys (20 of each) with cellular phones, the mean number of ring tones for the girls was 3.2 with a standard deviation of 1.5. The mean for the boys was 1.7 with a standard deviation of 0.8. Conduct a hypothesis test to determine if the means are approximately the same or if the girls&#8217; mean is higher than the boys&#8217; mean.</p>
+</div>
+  </div>
+
+
+<p id="eip-21"><em data-effect="italics">Use the information from <a href="/contents/3ef830bc-5247-460a-9007-e3fd762e5e93" class="autogenerated-content">[link]</a> to answer the next four exercises.</em></p><div data-type="exercise" id="fs-idm50796704">
+<div data-type="problem" id="fs-idm50796448">
+<p id="fs-idm98236496">Using the data from Lap 1 only, conduct a hypothesis test to determine if the mean time for completing a lap in races is the same as it is in practices.</p>
+</div>
+<div data-type="solution" id="fs-idm73210192">
+  <ol id="fs-idp184583584" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: <em data-effect="italics">&#181;<sub>1</sub></em> = <em data-effect="italics">&#181;<sub>2</sub></em></li>
+      <li><em data-effect="italics">H<sub>a</sub></em>: <em data-effect="italics">&#181;<sub>1</sub></em> &#8800; <em data-effect="italics">&#181;<sub>2</sub></em></li>
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> is the difference between the mean times for completing a lap in races and in practices.</li>
+      <li><em data-effect="italics">t</em><sub>20.32</sub></li>
+      <li>test statistic: &#8211;4.70</li>
+      <li><em data-effect="italics">p</em>-value: 0.0001</li>
+      <li>Check student&#8217;s solution. </li>
+      <li>
+        <ol id="fs-idp173433584" type="i">
+          <li>Alpha: 0.05</li>
+          <li>Decision: Reject the null hypothesis.</li>
+          <li>Reason for Decision: <em data-effect="italics">p</em>-value &lt; alpha</li>
+          <li>Conclusion: At the 5% significance level, there is sufficient evidence to conclude that the mean time for completing a lap in races is different from that in practices.</li>
+        </ol>
+      </li>
+  </ol></div>
+</div>
+
+<div data-type="exercise" id="fs-idm2195248">
+<div data-type="problem" id="fs-idm2194992">
+  <p id="fs-idm241101904">Repeat the test in <a href="#fs-idm50796704">Exercise 10.83</a>, but use Lap 5 data this time.</p></div>
+  </div>
+
+
+<div data-type="exercise" id="fs-idm170930784">
+<div data-type="problem" id="fs-idm54834800">
+  <p id="fs-idm54834544">Repeat the test in <a href="#fs-idm50796704">Exercise 10.83</a>, but this time combine the data from Laps 1 and 5.</p></div>
+<div data-type="solution" id="fs-idm39528240">
+  <ol id="fs-idp172770560" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: <em data-effect="italics">&#181;<sub>1</sub></em> = <em data-effect="italics">&#181;<sub>2</sub></em></li>
+    <li><em data-effect="italics">H<sub>a</sub></em>: <em data-effect="italics">&#181;<sub>1</sub></em> &#8800; <em data-effect="italics">&#181;<sub>2</sub></em></li>
+      <li>is the difference between the mean times for completing a lap in races and in practices.</li>
+      <li><em data-effect="italics">t</em><sub>40.94</sub></li>
+      <li>test statistic: &#8211;5.08</li>
+      <li><em data-effect="italics">p</em>-value: zero</li>
+      <li>Check student&#8217;s solution.</li>
+      <li>
+      <ol id="fs-idp77676896" type="i"><li>Alpha: 0.05</li>
+        <li>Decision: Reject the null hypothesis.</li>
+        <li>Reason for Decision: <em data-effect="italics">p</em>-value &lt; alpha</li>
+        <li>Conclusion: At the 5% significance level, there is sufficient evidence to conclude that the mean time for completing a lap in races is different from that in practices.</li>
+      </ol></li>
+  </ol></div>
+</div>
+
+<div data-type="exercise" id="fs-idm80120272">
+<div data-type="problem" id="fs-idm80120016">
+<p id="fs-idm80119760">In two to three complete sentences, explain in detail how you might use Terri Vogel&#8217;s data to answer the following question. &#8220;Does Terri Vogel drive faster in races than she does in practices?&#8221;</p>
+</div>
+</div>
+
+
+  <p id="eip-566"><em data-effect="italics">Use the following information to answer the next two exercises.</em> The Eastern and Western Major League Soccer conferences have a new Reserve Division that allows new players to develop their skills. Data for a randomly picked date showed the following annual goals.</p>
+
+<table id="eip-843" summary="Eastern and Western Major League Soccer"><thead><tr>
+    <th>Western</th>
+    <th>Eastern</th>
+  </tr></thead><tbody>
+  <tr>
+    <td>Los Angeles 9</td>
+    <td>D.C. United 9</td>
+  </tr>
+  <tr>
+    <td>FC Dallas 3</td>
+    <td>Chicago 8</td>
+  </tr>
+  <tr>
+    <td>Chivas USA 4</td>
+    <td>Columbus 7</td>
+  </tr>
+  <tr>
+    <td>Real Salt Lake 3</td>
+    <td>New England 6</td>
+  </tr>
+  <tr>
+    <td>Colorado 4</td>
+    <td>MetroStars 5</td>
+  </tr>
+  <tr>
+    <td>San Jose 4</td>
+    <td>Kansas City 3</td>
+  </tr>
+</tbody></table>
+
+<p id="eip-549"><em data-effect="italics">Conduct a hypothesis test to answer the next two exercises.</em></p><div data-type="exercise" id="fs-idm67199056">
+<div data-type="problem" id="fs-idm67198800">
+<p id="fs-idm67198544">The <strong>exact</strong> distribution for the hypothesis test is:</p>
+  <ol id="fs-idm91569200" type="a"><li>the normal distribution</li>
+    <li>the Student's <em data-effect="italics">t</em>-distribution</li>
+    <li>the uniform distribution</li>
+    <li>the exponential distribution</li>
+  </ol></div>
+</div>
+
+<div data-type="exercise" id="fs-idm3207760">
+<div data-type="problem" id="fs-idm104292672">
+<p id="fs-idm104292416">If the level of significance is 0.05, the conclusion is:</p>
+  <ol id="fs-idm104292032" type="a"><li>There is sufficient evidence to conclude that the <strong>W</strong> Division teams score fewer goals, on average, than the <strong>E</strong> teams </li>
+    <li>There is insufficient evidence to conclude that the <strong>W</strong> Division teams score more goals, on average, than the <strong>E</strong> teams.</li>
+    <li>There is insufficient evidence to conclude that the <strong>W</strong> teams score fewer goals, on average, than the <strong>E</strong> teams score.</li>
+    <li>Unable to determine</li>
+  </ol></div>
+<div data-type="solution" id="fs-idm178991312">
+<p id="fs-idm178991056">c</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm108118736"><div data-type="problem" id="fs-idm122622576">
+<p id="eip-idp273849808">Suppose a statistics instructor believes that there is no significant difference between the mean class scores of statistics day students on Exam 2 and statistics night students on Exam 2. She takes random samples from each of the populations. The mean and standard deviation for 35 statistics day students were 75.86 and 16.91. The mean and standard deviation for 37 statistics night students were 75.41 and 19.73. The &#8220;day&#8221; subscript refers to the statistics day students. The &#8220;night&#8221; subscript refers to the statistics night students. A concluding statement is:</p><ol id="fs-idm122621936" type="a">
+    <li>There is sufficient evidence to conclude that  statistics night students' mean on Exam 2 is better than the statistics day  students' mean on Exam 2.</li>
+    <li>There is insufficient evidence to conclude that the statistics day  students' mean on Exam 2 is better than the statistics night students' mean on Exam 2.</li>
+    <li>There is insufficient evidence to conclude that there is a significant difference between the means of the statistics day students and night students on Exam 2.</li>
+    <li>There is sufficient evidence to conclude that there is a significant difference between the means of the statistics day students and night students on Exam 2.</li>
+  </ol>
+
+</div>
+  </div>
+
+<div data-type="exercise" id="fs-idm81478720">
+      <div data-type="problem" id="fs-idp12884432">
+        <p id="fs-idp12884688">Researchers interviewed street prostitutes in Canada and the United States. The mean age of the 100 Canadian prostitutes upon entering prostitution was 18 with a standard deviation of six. The mean age of the 130 United States prostitutes upon entering prostitution was 20 with a standard deviation of eight. Is the mean age of entering prostitution in Canada lower than the mean age in the United States? Test at a 1% significance level.</p></div>
+      <div data-type="solution" id="fs-idm189266736">
+        <p id="fs-idm189266480">Test: two independent sample means, population standard deviations unknown.</p>
+        <p id="fs-idm7792944">Random variable: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>1</mn>
+  </msub>
+  <mo>&#8722;</mo><msub>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+
+   <mn>2</mn>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math></p>
+
+<p id="fs-idm96995296">Distribution: <em data-effect="italics">H<sub>0</sub></em>: <em data-effect="italics">&#956;</em><sub>1</sub> = <em data-effect="italics">&#956;</em><sub>2</sub> <em data-effect="italics">H<sub>a</sub></em>: <em data-effect="italics">&#956;</em><sub>1</sub> &lt; <em data-effect="italics">&#956;</em><sub>2</sub> The mean age of entering prostitution in Canada is lower than the mean age in the United States.</p><figure id="fs-idm122708400"><span data-type="media" id="fs-idm5558192" data-alt="This is a normal distribution curve with mean equal to zero. A vertical line near the tail of the curve to the left of zero extends from the axis to the curve. The region under the curve to the left of the line is shaded representing p-value = 0.0157.">
+          <img src="/resources/3b452ed03c9afdb9c651c827292c7464dc6742db/CNX_Stats_C10_M02_005anno.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve with mean equal to zero. A vertical line near the tail of the curve to the left of zero extends from the axis to the curve. The region under the curve to the left of the line is shaded representing p-value = 0.0157." width="380"/>
+        </span>
+        </figure><p id="fs-idm95276832">Graph: left-tailed</p>
+        <p id="fs-idm5467280"><em data-effect="italics">p</em>-value : 0.0151</p><p id="fs-idm171100928">Decision: Do not reject <em data-effect="italics">H</em><sub>0</sub>.</p><p id="fs-idm125542800">Conclusion: At the 1% level of significance, from the sample data, there is not sufficient evidence to conclude that the mean age of entering prostitution in Canada is lower than the mean age in the United States.</p>
+      </div>
+    </div>
+
+    <div data-type="exercise" id="fs-idm65734896">
+      <div data-type="problem" id="fs-idm65734640">
+        <p id="fs-idp44866512">A powder diet is tested on 49 people, and a liquid diet is tested on 36 different people. Of interest is whether the liquid diet yields a higher mean weight loss than the powder diet. The powder diet group had a mean weight loss of 42 pounds with a standard deviation of 12 pounds. The liquid diet group had a mean weight loss of 45 pounds with a standard deviation of 14 pounds.</p>
+      </div>
+    </div>
+
+    <div data-type="exercise" id="eip-17">
+      <div data-type="problem" id="eip-334">
+        <p id="eip-853">Suppose a statistics instructor believes that there is no significant difference between the mean class scores of statistics day students on Exam 2 and statistics night students on Exam 2. She takes random samples from each of the populations. The mean and standard deviation for 35 statistics day students were 75.86 and 16.91, respectively. The mean and standard deviation for 37 statistics night students were 75.41 and 19.73. The &#8220;day&#8221; subscript refers to the statistics day students. The &#8220;night&#8221; subscript refers to the statistics night students. An appropriate alternative hypothesis for the hypothesis test is:</p>
+
+        <ol id="eip-idp47881856" type="a">
+          <li><em data-effect="italics">&#956;</em><sub>day</sub> &gt; <em data-effect="italics">&#956;</em><sub>night</sub></li>
+          <li><em data-effect="italics">&#956;</em><sub>day</sub> &lt; <em data-effect="italics">&#956;</em><sub>night</sub></li>
+          <li><em data-effect="italics">&#956;</em><sub>day</sub> = <em data-effect="italics">&#956;</em><sub>night</sub></li>
+          <li><em data-effect="italics">&#956;</em><sub>day</sub> &#8800; <em data-effect="italics">&#956;</em><sub>night</sub></li>
+        </ol>
+      </div>
+      <div data-type="solution" id="eip-605"><p id="eip-279">d</p></div>
+    </div>
+
+</section>
+<div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+<dl id="degrefree">
+<dt>Degrees of Freedom (<em data-effect="italics">df</em>)</dt>
+<dd id="id21146024">the number of objects in a sample that are free to vary.</dd>
+</dl>
+<dl id="stddev">
+<dt>Standard Deviation</dt>
+<dd id="id10539417">A number that is equal to the square root of the variance and measures how far data values are from their mean; notation: <em data-effect="italics">s</em> for sample standard deviation and <em data-effect="italics">&#963;</em> for population standard deviation.</dd>
+</dl>
+<dl id="variable">
+<dt>Variable (Random Variable)</dt>
+<dd id="id1167450448490">a characteristic of interest in a population being studied. Common notation for variables are upper-case Latin letters <em data-effect="italics">X</em>, <em data-effect="italics">Y</em>, <em data-effect="italics">Z</em>,...  Common notation for a specific value from the domain (set of all possible values of a variable) are lower-case Latin letters <em data-effect="italics">x</em>, <em data-effect="italics">y</em>, <em data-effect="italics">z</em>,.... For example, if <em data-effect="italics">X</em> is the number of children in a family, then <em data-effect="italics">x</em> represents a specific integer 0, 1, 2, 3, .... Variables in statistics differ from variables in intermediate algebra in two following ways.
+    <ul id="fs-idp40452080">
+      <li>The domain of the random variable (RV) is not necessarily a numerical set; the domain may be expressed in words; for example, if <em data-effect="italics">X</em> = hair color, then the domain is {black, blond, gray, green, orange}.</li>
+    <li> We can tell what specific value <em data-effect="italics">x</em> of the random variable <em data-effect="italics">X</em> takes only after performing the experiment.</li>
+    </ul>
+  </dd>
+</dl>
+</div></body>
+
+</html>

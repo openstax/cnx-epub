@@ -1,0 +1,1829 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+<title>PracticeTest 2</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+mdml-version="0.5">
+<!-- WARNING! The 'metadata' section is read only. Do not edit below.
+Changes to the metadata section in the source will not be saved. -->
+<md:repository>http://staging2.cnx.org/content</md:repository>
+<md:content-id>new</md:content-id>
+<md:title>PracticeTest 2</md:title>
+<md:version>**new**</md:version>
+<md:created>2013/10/18 03:23:26.032 GMT-5</md:created>
+<md:revised>2013/10/18 03:25:34.087 GMT-5</md:revised>
+<md:actors>
+<md:person userid="words_stats">
+<md:firstname>Words</md:firstname>
+<md:surname>Numbers</md:surname>
+<md:fullname>Words Numbers</md:fullname>
+<md:email>techsupport@cnx.org</md:email>
+</md:person>
+</md:actors>
+<md:roles>
+<md:role type="author">words_stats</md:role>
+<md:role type="maintainer">words_stats</md:role>
+<md:role type="licensor">words_stats</md:role>
+</md:roles>
+<md:license url="http://creativecommons.org/licenses/by/3.0/" />
+<!-- For information on license requirements for use or modification, see license url in the
+above <md:license> element.
+For information on formatting required attribution, see the URL:
+CONTENT_URL/content_info#cnx_cite_header
+where CONTENT_URL is the value provided above in the <md:content-url> element.
+-->
+<md:subjectlist>
+<md:subject>Mathematics and Statistics</md:subject>
+</md:subjectlist>
+<md:abstract></md:abstract>
+<md:language>en</md:language>
+<!-- WARNING! The 'metadata' section is read only. Do not edit above.
+Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<section>
+<title><para>Probability Distribution Function (PDF) for a Discrete Random Variable</para></title>
+<para><para><emphasis effect="italics">Use the following information to answer the next five exercises.</emphasis> You conduct a survey among a random sample of students at a particular university. The data collected includes their major, the number of classes they took the previous semester, and amount of money they spent on books purchased for classes in the previous semester.</para></para>
+
+<exercise>
+<problem><para>If <emphasis effect="italics">X</emphasis> = student’s major, then what is the domain of <emphasis effect="italics">X</emphasis>?</para></problem>
+<solution><para>The domain of <emphasis effect="italics">X</emphasis> = {English, Mathematics,….], i.e., a  list of all the majors offered at the university, plus “undeclared.”</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>If <emphasis effect="italics">Y</emphasis> = the number of classes taken in the previous semester, what is the domain of <emphasis effect="italics">Y</emphasis>?</para></problem>
+<solution><para>The domain of <emphasis effect="italics">Y</emphasis> = {0, 1, 2, …}, i.e., the integers from 0 to the upper limit of classes allowed by the university.</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>If <emphasis effect="italics">Z</emphasis> = the amount of money spent on books in the previous semester, what is the domain of <emphasis effect="italics">Z</emphasis>?</para></problem>
+<solution><para>The domain of <emphasis effect="italics">Z</emphasis> = any amount of money from 0 upwards.</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>Why are <emphasis effect="italics">X</emphasis>, <emphasis effect="italics">Y</emphasis>, and <emphasis effect="italics">Z</emphasis> in the previous example random variables?</para></problem>
+<solution><para>Because they can take any value within their domain, and their value for any particular case is not known until the survey is completed.</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>After collecting data, you find that for one case, <emphasis effect="italics">z</emphasis> = –7. Is this a possible value for <emphasis effect="italics">Z</emphasis>?</para></problem>
+<solution>
+<para>No, because the domain of <emphasis effect="italics">Z</emphasis> includes only positive numbers (you can’t spend a negative amount of money). Possibly the value –7 is a data entry error, or a special code to indicated that the student did not answer the question.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What are the two essential characteristics of a discrete probability distribution?</para></problem>
+<solution><para>The probabilities must sum to 1.0, and the probabilities of each event must be between 0 and 1, inclusive.</para></solution>
+</exercise>
+
+<exercise>
+<problem><para><emphasis effect="italics">Use this discrete probability distribution represented in this table to answer the following six  questions.</emphasis> The university library records the number of books checked out by each patron over the course of one day, with the following result:</para>
+<para>Define the random variable X for this example. </para>
+<table summary="..">
+<title></title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>x</entry>
+<entry>P(x)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry>0.20</entry>
+</row>
+<row>
+<entry>1</entry>
+<entry>0.45</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>0.20</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>0.10</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>0.05</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution>
+<para>Let <emphasis effect="italics">X</emphasis> = the number of books checked out by a patron. </para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> > 2)?</para></problem>
+<solution><para><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> > 2) = 0.10 + 0.05 = 0.15</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the probability that a patron will check out at least one book?</para></problem>
+<solution><para><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> ≥ 0) = 1 – 0.20 = 0.80</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the probability a patron will take out no more than three books?</para></problem>
+<solution><para><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> ≤ 3) = 1 – 0.05 = 0.95</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>If the table listed <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>) as 0.15, how would you know that there was a mistake?</para></problem>
+<solution>The probabilities would sum to 1.10, and the total probability in a distribution must always equal 1.0.</solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the average number of books taken out by a patron?</para></problem>
+<solution><para><m:math>
+<m:mover accent='true'>
+<m:mi>x</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+
+</m:math> = 0(0.20) + 1(0.45) + 2(0.20) + 3(0.10) + 4(0.05) = 1.35</para></solution>
+</exercise>
+</section>
+
+<section>
+<title>Mean or Expected Value and Standard Deviation</title>
+
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> Three jobs are open in a company: one in the accounting department, one in the human resources department, and one in the sales department. The accounting job receives 30 applicants, and the human resources and sales department 60 applicants.</para>
+
+<exercise>
+<problem><para>If <emphasis effect="italics">X</emphasis> = the number of applications for a job, use this information to fill in the table below.</para>
+<table summary="..">
+<title></title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>x</entry>
+<entry>P(x)</entry>
+<entry>xP(x)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry></entry>
+<entry> </entry>
+<entry> </entry>
+</row>
+<row>
+<entry></entry>
+<entry> </entry>
+<entry> </entry>
+</row>
+<row>
+<entry></entry>
+<entry> </entry>
+<entry> </entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+
+<solution>
+<table summary="..">
+<title></title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>x</entry>
+<entry>P(x)</entry>
+<entry>xP(x)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>30</entry>
+<entry>0.33</entry>
+<entry>9.90</entry>
+</row>
+<row>
+<entry>40</entry>
+<entry>0.33</entry>
+<entry>13.20</entry>
+</row>
+<row>
+<entry>60</entry>
+<entry>0.33</entry>
+<entry>19.80</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the mean number of applicants?</para></problem>
+<solution><para><m:math>
+<m:mover accent='true'>
+<m:mi>x</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+
+</m:math> = 9.90 + 13.20 + 19.80 = 42.90</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the PDF for <emphasis effect="italics">X</emphasis>?</para></problem>
+<solution>
+<para><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 30) = 0.33
+<newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 40) = 0.33
+<newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 60) = 0.33
+</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>Add a fourth column to the table, for (<emphasis effect="italics">x</emphasis> – <emphasis effect="italics">μ</emphasis>)<sup>2</sup><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>).</para></problem>
+<solution>
+<table summary="..">
+<title></title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry><emphasis effect="italics">x</emphasis></entry>
+<entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+<entry><emphasis effect="italics">xP</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+<entry>(<emphasis effect="italics">x</emphasis> – <emphasis effect="italics">μ</emphasis>)<sup>2</sup><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>30</entry>
+<entry>0.33</entry>
+<entry>9.90</entry>
+<entry>(30-42.90)2(0.33) = 54.91</entry>
+</row>
+<row>
+<entry>40</entry>
+<entry>0.33</entry>
+<entry>13.20</entry>
+<entry>(40-42.90)2(0.33) = 2.78</entry>
+</row>
+<row>
+<entry>60</entry>
+<entry>0.33</entry>
+<entry>19.90</entry>
+<entry>(60-42.90)2(0.33) = 96.49</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the standard deviation of X?</para></problem>
+<solution><para><m:math>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mn>54.91</m:mn><m:mo>+</m:mo><m:mn>2.78</m:mn><m:mo>+</m:mo><m:mn>96.49</m:mn>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>12.42</m:mn>
+</m:mrow>
+</m:math>
+</para></solution>
+</exercise>
+</section>
+
+<section>
+<title>Binomial Distribution</title>
+<exercise>
+<problem><para>In a binomial experiment, if <emphasis effect="italics">p</emphasis> = 0.65, what does <emphasis effect="italics">q</emphasis> equal?</para></problem>
+<solution><para><emphasis effect="italics">q</emphasis> = 1 – 0.65 = 0.35</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>What are the required characteristics of a binomial experiment?</para></problem>
+<solution>
+<list list-type="enumerated">
+<item>There are a fixed number of trials.</item>
+<item>There are only two possible outcomes, and they add up to 1.</item>
+<item>The trials are independent and conducted under identical conditions.</item>
+</list>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Joe conducts an experiment to see how many times he has to flip a coin before he gets four heads in a row. Does this qualify as a binomial experiment?</para>
+</problem>
+<solution><para>No, because there are not a fixed number of trials</para></solution>
+</exercise>
+
+<para><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> In a particularly community, 65 percent of households include at least one person who has graduated from college. You randomly sample 100 households in this community. Let <emphasis effect="italics">X</emphasis> = the number of households including at least one college graduate</para>
+
+<exercise>
+<problem><para>Describe the probability distribution of <emphasis effect="italics">X</emphasis>.</para></problem>
+<solution><para><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">B</emphasis>(100, 0.65)</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the mean of <emphasis effect="italics">X</emphasis>?</para></problem>
+<solution><para><emphasis effect="italics">μ</emphasis> = <emphasis effect="italics">np</emphasis> = 100(0.65) = 65</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the standard deviation of <emphasis effect="italics">X</emphasis>?</para></problem>
+<solution><para><m:math>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mi>n</m:mi><m:mi>p</m:mi><m:mi>q</m:mi>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mn>100</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>0.65</m:mn><m:mo stretchy='false'>)</m:mo><m:mo stretchy='false'>(</m:mo><m:mn>0.35</m:mn><m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>4.77</m:mn>
+</m:mrow>
+</m:math></para></solution>
+</exercise>
+
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> Joe is the star of his school’s baseball team. His batting average is 0.400, meaning that for every ten times he comes to bat (an at-bat), four of those times he gets a hit. You decide to track his batting performance his next 20 at-bats.</para>
+
+<exercise>
+<problem><para>Define the random variable <emphasis effect="italics">X</emphasis> in this experiment.</para></problem>
+<solution><para><emphasis effect="italics">X</emphasis> = Joe gets a hit in one at-bat (in one occasion of his coming to bat)</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>Assuming Joe’s probability of getting a hit is independent and identical across all 20 at-bats, describe the distribution of <emphasis effect="italics">X</emphasis>.</para></problem>
+<solution><para><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">B</emphasis>(20, 0.4)</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>Given this information, what number of hits do you predict Joe will get? </para></problem>
+<solution><para><emphasis effect="italics">μ</emphasis> = <emphasis effect="italics">np</emphasis> = 20(0.4) = 8</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the standard deviation of <emphasis effect="italics">X</emphasis>?</para></problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mi>n</m:mi><m:mi>p</m:mi><m:mi>q</m:mi>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mn>20</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>0.40</m:mn><m:mo stretchy='false'>)</m:mo><m:mo stretchy='false'>(</m:mo><m:mn>0.60</m:mn><m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>2.19</m:mn>
+</m:mrow>
+</m:math></para></solution>
+</exercise>
+</section>
+<section>
+<title>4.4: Geometric Distribution</title>
+<exercise>
+<problem>
+<para>What are the three major characteristics of a geometric experiment?</para>
+</problem>
+<solution>
+<para>
+<list list-type="enumerated">
+<item>A series of Bernoulli trials are conducted until one is a success, and then the experiment stops.</item>
+<item>At least one trial is conducted, but there is no upper limit to the number of trials.</item>
+<item>The probability of success or failure is the same for each trial.</item>
+</list>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You decide to conduct a geometric experiment by flipping a coin until it comes up heads. This takes five trials. Represent the outcomes of this trial, using H for heads and <emphasis effect="italics">T</emphasis> for tails.</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">T T T T H</emphasis></para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You are conducting a geometric experiment by drawing cards from a normal 52-card pack, with replacement, until you draw the Queen of Hearts. What is the domain of <emphasis effect="italics">X</emphasis> for this experiment?</para>
+</problem>
+<solution>
+<para>The domain of <emphasis effect="italics">X</emphasis> =  {1, 2, 3, 4, 5, ….n}. Because you are drawing with replacement, there is no upper bound to the number of draws that may be necessary.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You are conducting a geometric experiment by drawing cards from a normal 52-card deck, without replacement, until you draw a red card. What is the domain of <emphasis effect="italics">X</emphasis> for this experiment?</para>
+</problem>
+<solution>
+<para>The domain of <emphasis effect="italics">X</emphasis> = {1, 2, 3, 4, 5, 6, 7, 8., 9, 10, 11, 12…27}. Because you are drawing without replacement, and 26 of the 52 cards are red, you have to draw a red card within the first 17 draws.</para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> In a particular university, 27 percent of students are engineering majors. You decide to select students at random until you choose one that is an engineering major. Let <emphasis effect="italics">X</emphasis> = the number of students you select until you find one that is an engineering major.</para>
+<exercise>
+<problem>
+<para>What is the probability distribution of <emphasis effect="italics">X</emphasis>?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(0.24)</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the mean of X?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>&#x03BC;</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+<m:mn>1</m:mn>
+<m:mi>p</m:mi>
+</m:mfrac>
+<m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>0.27</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>3.70</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the standard deviation of X?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>&#x03C3;</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:mi>p</m:mi>
+</m:mrow>
+<m:mrow>
+<m:msup>
+<m:mi>p</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:mn>0.27</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msup>
+<m:mrow>
+<m:mn>0.27</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>3.16</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>4.5: Hypergeometric Distribution</title>
+<exercise>
+<problem>
+<para>You draw a random sample of ten students to participate in a survey, from a group of 30, consisting of 16 boys and 14 girls. You are interested in the probability that seven of the students chosen will be boys. Does this qualify as a hypergeometric experiment? List the conditions and whether or not they are met.</para>
+</problem>
+<solution>
+<para>Yes, because you are sampling from a population composed of two groups (boys and girls), have a group of interest (boys), and are sampling without replacement (hence, the probabilities change with each pick, and you are not performing Bernoulli trials).</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You draw five cards, without replacement, from a normal 52-card deck of playing cards, and are interested in the probability that two of the cards are spades. What are the group of interest, size of the group of interest, and sample size for this example?</para>
+</problem>
+<solution>
+<para>The group of interest is the cards that are spades, the size of the group of interest is 13, and the sample size is five.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>4.6: Poisson Distribution</title>
+<exercise>
+<problem>
+<para>What are the key characteristics of the Poisson distribution?</para>
+</problem>
+<solution>
+<para>A Poisson distribution models the number of events occurring in a fixed interval of time or space, when the events are independent and the average rate of the events is known.</para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use the following  information to answer the next three exercises.</emphasis> The number of drivers to arrive at a toll booth in an hour can be modeled by the Poisson distribution.</para>
+<exercise>
+<problem>
+<para>If <emphasis effect="italics">X</emphasis> = the number of drivers, and the average numbers of drivers per hour is four, how would you express this distribution?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(4)</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the domain of <emphasis effect="italics">X</emphasis>?</para>
+</problem>
+<solution>
+<para>The domain of <emphasis effect="italics">X</emphasis> = {0, 1, 2, 3, …..) i.e., any integer from 0 upwards.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What are the mean and standard deviation of <emphasis effect="italics">X</emphasis>?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mi>&#x03BC;</m:mi><m:mo>=</m:mo><m:mn>4</m:mn>
+</m:math>
+<newline/><m:math>
+<m:mi>&#x03C3;</m:mi><m:mo>=</m:mo><m:msqrt>
+<m:mn>4</m:mn>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>2</m:mn>
+</m:math></para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>5.1: Continuous Probability Functions</title>
+<exercise>
+<problem>
+<para>You conduct a survey of students to see how many books they purchased the previous semester, the total amount they paid for those books, the number they sold after the semester was over, and the amount of money they received for the books they sold. Which variables in this survey are discrete, and which are continuous?</para>
+</problem>
+<solution>
+<para>The discrete variables are the number of books purchased, and the number of books sold after the end of the semester. The continuous variables are the amount of money spent for the books, and the amount of money received when they were sold.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>With continuous random variables, we never calculate the probability that <emphasis effect="italics">X</emphasis> has a particular value, but always speak in terms of the probability that <emphasis effect="italics">X</emphasis> has a value within a particular range. Why is this?</para>
+</problem>
+<solution>
+<para>Because for a continuous random variable, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = <emphasis effect="italics">c</emphasis>) = 0, where <emphasis effect="italics">c</emphasis> is any single value. Instead, we calculate <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">c</emphasis> &lt; <emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">d</emphasis>), i.e., the probability that the value of <emphasis effect="italics">x</emphasis> is between the values <emphasis effect="italics">c</emphasis> and <emphasis effect="italics">d</emphasis>.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>For a continuous random variable, why are <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">c</emphasis>) and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> ≤ <emphasis effect="italics">c</emphasis>) equivalent statements?</para>
+</problem>
+<solution>
+<para>Because <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = <emphasis effect="italics">c</emphasis>) = 0 for any continuous random variable.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>For a continuous probability function, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 5) = 0.35. What is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 5), and how do you know?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 5) = 1 &#x2013; 0.35 = 0.65, because the total probability of a continuous probability function is always 1.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Describe how you would draw the continuous probability distribution described by the function <m:math>
+<m:mrow>
+<m:mi>f</m:mi><m:mo stretchy='false'>(</m:mo><m:mi>x</m:mi><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> for <m:math>
+<m:mrow>
+<m:mn>0</m:mn><m:mo>&#x2264;</m:mo><m:mi>x</m:mi><m:mo>&#x2264;</m:mo><m:mn>10</m:mn>
+</m:mrow>
+</m:math>. What type of a distribution is this?</para>
+</problem>
+<solution>
+<para>This is a uniform probability distribution. You would draw it as a rectangle with the vertical sides at 0 and 20, and the horizontal sides at <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> and 0.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>For the continuous probability distribution described by the function <m:math>
+<m:mrow>
+<m:mi>f</m:mi><m:mo stretchy='false'>(</m:mo><m:mi>x</m:mi><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> for <m:math>
+<m:mrow>
+<m:mn>0</m:mn><m:mo>&#x2264;</m:mo><m:mi>x</m:mi><m:mo>&#x2264;</m:mo><m:mn>10</m:mn>
+</m:mrow>
+</m:math>, what is the <emphasis effect="italics">P</emphasis>(0 &lt; <emphasis effect="italics">x</emphasis> &lt; 4)?
+</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>0</m:mn><m:mtext>&#x00A0;</m:mtext><m:mo>&#x003C;</m:mo><m:mi>x</m:mi><m:mo>&#x00A0;</m:mo><m:mo>&#x003C;</m:mo><m:mn>4</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>4</m:mn><m:mo>&#x2212;</m:mo><m:mn>0</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mn>0.4</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>5.2: The Uniform Distribution</title>
+<exercise>
+<problem>
+<para>For the continuous probability distribution described by the function <m:math>
+<m:mrow>
+<m:mi>f</m:mi><m:mo stretchy='false'>(</m:mo><m:mi>x</m:mi><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> for <m:math>
+<m:mrow>
+<m:mn>0</m:mn><m:mo>&#x2264;</m:mo><m:mi>x</m:mi><m:mo>&#x2264;</m:mo><m:mn>10</m:mn>
+</m:mrow>
+</m:math>, what is the <emphasis effect="italics">P</emphasis>(2 &lt; <emphasis effect="italics">x</emphasis> &lt; 5)?
+</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>2</m:mn><m:mtext>&#x00A0;</m:mtext><m:mo>&#x003C;</m:mo><m:mi>x</m:mi><m:mo>&#x00A0;</m:mo><m:mo>&#x003C;</m:mo><m:mn>5</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>5</m:mn><m:mo>&#x2212;</m:mo><m:mn>2</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mn>0.3</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> The number of minutes that a patient waits at a medical clinic to see a doctor is represented by a uniform distribution between zero and 30 minutes, inclusive.</para>
+<exercise>
+<problem>
+<para>If <emphasis effect="italics">X</emphasis> equals the number of minutes a person waits, what is the distribution of <emphasis effect="italics">X</emphasis>?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(0, 15)</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Write the probability density function for this distribution.</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>f</m:mi><m:mo stretchy='false'>(</m:mo><m:mi>x</m:mi><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#x2212;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> for <m:math display="">
+<m:mrow>
+<m:mo stretchy='false'>(</m:mo><m:mi>a</m:mi><m:mo>&#x2264;</m:mo><m:mi>x</m:mi><m:mo>&#x2264;</m:mo><m:mi>b</m:mi><m:mo stretchy='false'>)</m:mo><m:mtext>&#x00A0;so&#x00A0;</m:mtext><m:mi>f</m:mi><m:mo stretchy='false'>(</m:mo><m:mi>x</m:mi><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>30</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> for <m:math display="">
+<m:mrow>
+<m:mo stretchy='false'>(</m:mo><m:mn>0</m:mn><m:mo>&#x2264;</m:mo><m:mi>x</m:mi><m:mo>&#x2264;</m:mo><m:mn>30</m:mn><m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the mean and standard deviation for waiting time?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>&#x03BC;</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mn>0</m:mn><m:mo>+</m:mo><m:mn>30</m:mn>
+</m:mrow>
+<m:mn>5</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>15.0</m:mn>
+</m:mrow>
+</m:math>
+<newline/><m:math>
+<m:mrow>
+<m:mi>&#x03C3;</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mrow>
+<m:mo stretchy='false'>(</m:mo><m:mi>b</m:mi><m:mo>&#x2212;</m:mo><m:mi>a</m:mi><m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>30</m:mn><m:mo>&#x2212;</m:mo><m:mn>0</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>8.66</m:mn>
+</m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the probability that a patient waits less than ten minutes?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mi>x</m:mi><m:mo>&#x003C;</m:mo><m:mn>10</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>30</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mn>0.33</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>5.3: The Exponential Distribution</title>
+<exercise>
+<problem>
+<para>The distribution of the variable <emphasis effect="italics">X</emphasis>, representing the average time to failure for an automobile battery, can be written as: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(<emphasis effect="italics">m</emphasis>). Describe this distribution in words.</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">X</emphasis> has an exponential distribution with decay parameter <emphasis effect="italics">m</emphasis> and mean and standard deviation <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mi>m</m:mi>
+</m:mfrac>
+</m:mrow>
+</m:math>. In this distribution, there will be a relatively large numbers of small values, with values becoming less common as they become larger.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If the value of <emphasis effect="italics">m</emphasis> for an exponential distribution is ten, what are the mean and standard deviation for the distribution?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>&#x03BC;</m:mi><m:mo>=</m:mo><m:mi>&#x03C3;</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mi>m</m:mi>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.1</m:mn>
+</m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Write the probability density function for a variable distributed as:
+<newline/><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(0.2).</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = 0.2e<sup>&#x2013;0.2<emphasis effect="italics">x</emphasis></sup> where <emphasis effect="italics">x</emphasis> ≥ 0.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>6.1: The Standard Normal Distribution</title>
+<exercise>
+<problem>
+<para>Translate this statement about the distribution of a random variable <emphasis effect="italics">X</emphasis> into words: <emphasis effect="italics">X</emphasis> ~ (100, 15).</para>
+</problem>
+<solution>
+<para>The random variable <emphasis effect="italics">X</emphasis> has a normal distribution with a mean of 100 and a standard deviation of 15.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If the variable X has the standard normal distribution, express this symbolically.</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(0,1)</para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use the following information for the next six exercises.</emphasis> According to the World Health Organization, distribution of height in centimeters for girls aged five years and no months has the distribution: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(109, 4.5).</para>
+<exercise>
+<problem>
+<para>What is the <emphasis effect="italics">z</emphasis>-score for a height of 112 inches?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>x</m:mi><m:mo>&#x2212;</m:mo><m:mi>&#x03BC;</m:mi>
+</m:mrow>
+<m:mi>&#x03C3;</m:mi>
+</m:mfrac>
+
+</m:mrow>
+</m:math> so <m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>112</m:mn><m:mo>&#x2212;</m:mo><m:mn>109</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>4.5</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.67</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the <emphasis effect="italics">z</emphasis>-score for a height of 100 centimeters?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>x</m:mi><m:mo>&#x2212;</m:mo><m:mi>&#x03BC;</m:mi>
+</m:mrow>
+<m:mi>&#x03C3;</m:mi>
+</m:mfrac>
+
+</m:mrow>
+</m:math> so <m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>100</m:mn><m:mo>&#x2212;</m:mo><m:mn>109</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>4.5</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mo>&#x2212;</m:mo><m:mn>2.00</m:mn>
+</m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Find the <emphasis effect="italics">z</emphasis>-score for a height of 105 centimeters and explain what that means In the context of the population.</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mtext>&#x00A0;</m:mtext><m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>105</m:mn><m:mo>&#x2212;</m:mo><m:mn>109</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>4.5</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mo>&#x2212;</m:mo><m:mn>0.89</m:mn>
+</m:mrow>
+</m:math>
+<newline/>This girl is shorter than average for her age, by 0.89 standard deviations.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What height corresponds to a z-score of 1.5 in this population?</para>
+</problem>
+<solution>
+<para>109 + (1.5)(4.5) = 115.75 cm</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Using the empirical rule, we expect about 68 percent of the values in a normal distribution to lie within one standard deviation above or below the mean. What does this mean, in terms of a specific range of values, for this distribution?</para>
+</problem>
+<solution>
+<para>We expect about 68 percent of the heights of girls of age five years and zero months to be between 104.5 cm and 113.5 cm.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Using the empirical rule, about what percent of heights in this distribution do you expect to be between 95.5 cm and 122.5 cm?</para>
+</problem>
+<solution>
+<para>We expect 99.7 percent of the heights in this distribution to be between 95.5 cm and 122.5 cm, because that range represents the values three standard deviations above and below the mean.</para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> The distributor of lotto tickets claims that 20 percent of the tickets are winners. You draw a sample of 500 tickets to test this proposition.</para>
+</section>
+<section>
+<title>6.2: Using the Normal Distribution</title>
+<exercise>
+<problem>
+<para>Can you use the normal approximation to the binomial for your calculations? Why or why not.</para>
+</problem>
+<solution>
+<para>Yes, because both np and nq are greater than five.
+<newline/><emphasis effect="italics">np</emphasis> = (500)(0.20) = 100 and <emphasis effect="italics">nq</emphasis> = 500(0.80) = 400</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What are the expected mean and standard deviation for your sample, assuming the distributor’s claim is true?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mi>&#x03BC;</m:mi><m:mo>=</m:mo><m:mi>n</m:mi><m:mi>p</m:mi><m:mo>=</m:mo><m:mo stretchy='false'>(</m:mo><m:mn>500</m:mn><m:mo stretchy='false'>)</m:mo><m:mo stretchy='false'>(</m:mo><m:mn>0.20</m:mn><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mn>100</m:mn>
+</m:math>
+<newline/><m:math>
+<m:mi>&#x03C3;</m:mi><m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mi>n</m:mi><m:mi>p</m:mi><m:mi>q</m:mi>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mn>500</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>0.20</m:mn><m:mo stretchy='false'>)</m:mo><m:mo stretchy='false'>(</m:mo><m:mn>0.80</m:mn><m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>8.94</m:mn>
+</m:math></para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the probability that your sample will have a mean greater than 100?</para>
+</problem>
+<solution>
+<para>Fifty percent, because in a normal distribution, half the values lie above the mean.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If the <emphasis effect="italics">z</emphasis>-score for your sample result is &#x2013;2.00, explain what this means, using the empirical rule.</para>
+</problem>
+<solution>
+<para>The results of our sample were two standard deviations below the mean, suggesting it is unlikely that 20 percent of the lotto tickets are winners, as claimed by the distributor, and that the true percent of winners is lower. Applying the Empirical Rule, If that claim were true, we would expect to see a result this far below the mean only about 2.5 percent of the time.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>7.1: The Central Limit Theorem for Sample Means (Averages)</title>
+<exercise>
+<problem>
+<para>What does the central limit theorem state with regard to the distribution of sample means?</para>
+</problem>
+<solution>
+<para>The central limit theorem states that if samples of sufficient size drawn from a population, the distribution of sample means will be normal, even if the distribution of the population is not normal.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>The distribution of results from flipping a fair coin is uniform: heads and tails are equally likely on any flip, and over a large number of trials, you expect about the same number of heads and tails. Yet if you conduct a study by flipping 30 coins and recording the number of heads, and repeat this 100 times, the distribution of the mean number of heads will be approximately normal. How is this possible?</para>
+</problem>
+<solution>
+<para>The sample size of 30 is sufficiently large in this example to apply the central limit theorem. This theorem ] states that for samples of sufficient size drawn from a population, the sampling distribution of the sample mean will approach normality, regardless of the distribution of the population from which the samples were drawn.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>The mean of a normally-distributed population is 50, and the standard deviation is four. If you draw 100 samples of size 40 from this population, describe what you would expect to see in terms of the sampling distribution of the sample mean.</para>
+</problem>
+<solution>
+<para>You would not expect each sample to have a mean of 50, because of sampling variability. However, you would expect the sampling distribution of the sample means to cluster around 50, with an approximately normal distribution, so that values close to 50 are more common than values further removed from 50.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para><emphasis effect="italics">X</emphasis> is a random variable with a mean of 25 and a standard deviation of two. Write the distribution for the sample mean of samples of size 100 drawn from this population.</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>X</m:mi>
+<m:mo stretchy='true'>&#x00AF;</m:mo>
+</m:mover>
+<m:mo>&#x223C;</m:mo><m:mi>N</m:mi><m:mo stretchy='false'>(</m:mo><m:mn>25</m:mn><m:mo>,</m:mo><m:mn>0.2</m:mn><m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+</m:math> because <m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>X</m:mi>
+<m:mo stretchy='true'>&#x00AF;</m:mo>
+</m:mover>
+<m:mo>&#x223C;</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03BC;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo>,</m:mo><m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Your friend is doing an experiment drawing samples of size 50 from a population with a mean of 117 and a standard deviation of 16. This sample size is large enough to allow use of the central limit theorem, so he says the standard deviation of the sampling distribution of sample means will also be 16. Explain why this is wrong, and calculate the correct value.</para>
+</problem>
+<solution>
+<para>The standard deviation of the sampling distribution of the sample means can be calculated using the formula <m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>, which in this case is <m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>16</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>50</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>. The correct value for the standard deviation of the sampling distribution of the sample means is therefore 2.26.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You are reading a research article that refers to “the standard error of the mean.” What does this mean, and how is it calculated?</para>
+</problem>
+<solution>
+<para>The standard error of the mean is another name for the standard deviation of the sampling distribution of the sample mean. Given samples of size n drawn from a population with standard deviation <emphasis effect="italics">σ<sub>x</sub></emphasis>, the standard error of the mean is <m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>.</para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use the following information to answer the next six exercises.</emphasis> You repeatedly draw samples of n = 100  from a population with a mean of 75 and a standard deviation of 4.5.</para>
+<exercise>
+<problem>
+<para>What is the expected distribution of the sample means?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(75, 0.45)</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>One of your friends tries to convince you that the standard error of the mean should be 4.5. Explain what error your friend made.</para>
+</problem>
+<solution>
+<para>Your friend forgot to divide the standard deviation by the square root of <emphasis effect="italics">n</emphasis>.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the <emphasis effect="italics">z</emphasis>-score for a sample mean of 76?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>x</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+<m:mo>&#x2212;</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+<m:mi>&#x03BC;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mn>76</m:mn><m:mo>&#x2212;</m:mo><m:mn>75</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>4.5</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>2.2</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the <emphasis effect="italics">z</emphasis>-score for a sample mean of 74.7?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>x</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+<m:mo>&#x2212;</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+<m:mi>&#x03BC;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mn>74.7</m:mn><m:mo>&#x2212;</m:mo><m:mn>75</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>4.5</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mo>&#x2212;</m:mo><m:mn>0.67</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What sample mean corresponds to a <emphasis effect="italics">z</emphasis>-score of 1.5?</para>
+</problem>
+<solution>
+<para>75 + (1.5)(0.45) = 75.675</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If you decrease the sample size to 50, will the standard error of the mean be smaller or larger? What would be its value?</para>
+</problem>
+<solution>
+<para>The standard error of the mean will be larger, because you will be dividing by a smaller number. The standard error of the mean for samples of size <emphasis effect="italics">n</emphasis> = 50 is:
+<newline/><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mn>4.5</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>50</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.64</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use the following information to answer the next two questions.</emphasis> We use the empirical rule to analyze data for samples of size 60 drawn from a population with a mean of 70 and a standard deviation of 9.</para>
+<exercise>
+<problem>
+<para>What range of values would you expect to include 68 percent of the sample means?</para>
+</problem>
+<solution>
+<para>You would expect this range to include values up to one standard deviation above or below the mean of the sample means. In this case:
+<newline/><m:math>
+<m:mrow>
+<m:mn>70</m:mn><m:mo>+</m:mo><m:mfrac>
+<m:mn>9</m:mn>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>60</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>71.16</m:mn>
+</m:mrow>
+</m:math> and <m:math>
+<m:mrow>
+<m:mn>70</m:mn><m:mo>&#x2212;</m:mo><m:mfrac>
+<m:mn>9</m:mn>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>60</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>68.84</m:mn>
+</m:mrow>
+</m:math> so you would expect 68 percent of the sample means to be between 68.84 and 71.16.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If you increased the sample size to 100, what range would you expect to contain 68 percent of the sample means, applying the empirical rule?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mn>70</m:mn><m:mo>+</m:mo><m:mfrac>
+<m:mn>9</m:mn>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>100</m:mn>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>70.9</m:mn>
+</m:mrow>
+</m:math> and <m:math>
+<m:mrow>
+<m:mn>70</m:mn><m:mo>&#x2212;</m:mo><m:mfrac>
+<m:mn>9</m:mn>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>100</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>69.1</m:mn>
+</m:mrow>
+</m:math> so you would expect 68 percent of the sample means to be between 69.1 and 70.9. Note that this is a narrower interval due to the increased sample size.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>7.2: The Central Limit Theorem for Sums</title>
+<exercise>
+<problem>
+<para>How does the central limit theorem apply to sums of random variables?</para>
+</problem>
+<solution>
+<para>For a random variable <emphasis effect="italics">X</emphasis>, the random variable <emphasis effect="italics">ΣX</emphasis> will tend to become normally distributed as the size n of the samples used to compute the sum increases.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Explain how the rules applying the central limit theorem to sample means, and to sums of a random variable, are similar.</para>
+</problem>
+<solution>
+<para>Both rules state that the distribution of a quantity (the mean or the sum) calculated on samples drawn from a population will tend to have a normal distribution, as the sample size increases, regardless of the distribution of population from which the samples are drawn.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If you repeatedly draw samples of size 50 from a population with a mean of 80 and a standard deviation of four, and calculate the sum of each sample, what is the expected distribution of these sums?</para>
+</problem>
+<solution>
+<para><m:math display="">
+<m:mrow>
+<m:mi>&#x03A3;</m:mi><m:mi>X</m:mi><m:mo>&#x223C;</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mi>n</m:mi><m:msub>
+<m:mi>&#x03BC;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo>,</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo stretchy='false'>(</m:mo><m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math> so <m:math display="">
+<m:mrow>
+<m:mi>&#x03A3;</m:mi><m:mi>X</m:mi><m:mo>&#x223C;</m:mo><m:mi>N</m:mi><m:mo stretchy='false'>(</m:mo><m:mn>4000</m:mn><m:mo>,</m:mo><m:mn>28.3</m:mn><m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> You draw one sample of size 40 from a population with a mean of 125 and a standard deviation of seven.</para>
+<exercise>
+<problem>
+<para>Compute the sum. What is the probability that the sum for your sample will be less than 5,000?</para>
+</problem>
+<solution>
+<para>The probability is 0.50, because 5,000 is the mean of the sampling distribution of sums of size 40 from this population. Sums of random variables computed from a sample of sufficient size are normally distributed, and in a normal distribution, half the values lie below the mean.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If you drew samples of this size repeatedly, computing the sum each time, what range of values would you expect to contain 95 percent of the sample sums?</para>
+</problem>
+<solution>
+<para>Using the empirical rule, you would expect 95 percent of the values to be within two standard deviations of the mean. Using the formula for the standard deviation is for a sample sum: <m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo stretchy='false'>(</m:mo><m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>40</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo stretchy='false'>(</m:mo><m:mn>7</m:mn><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mn>44.3</m:mn>
+</m:mrow>
+</m:math> so you would expect 95 percent of the values to be between 5,000 + (2)(44.3) and 5,000 &#x2013; (2)(44.3), or between 4,911.4 and 5,88.6.
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What value is one standard deviation below the mean?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>&#x03BC;</m:mi><m:mo>&#x2212;</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>5000</m:mn><m:mo>&#x2212;</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>40</m:mn>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mn>7</m:mn>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>4955.7</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What value corresponds to a <emphasis effect="italics">z</emphasis>-score of 2.2?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mn>5000</m:mn><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>2.2</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>40</m:mn>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mn>7</m:mn>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>5097.4</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>7.3: Using the Central Limit Theorem</title>
+<exercise>
+<problem>
+<para>What does the law of large numbers say about the relationship between the sample mean and the population mean?</para>
+</problem>
+<solution>
+<para>The law of large numbers says that as sample size increases, the sample mean tends to get nearer and nearer to the population mean.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Applying the law of large numbers, which sample mean would expect to be closer to the population mean, a sample of size ten or a sample of size 100?</para>
+</problem>
+<solution>
+<para>You would expect the mean from a sample of size 100 to be nearer to the population mean, because the law of large numbers says that as sample size increases, the sample mean tends to approach the population mea.</para>
+</solution>
+</exercise>
+<para><emphasis effect="italics">Use this information for the next three questions.</emphasis> A manufacturer makes screws with a mean diameter of 0.15 cm (centimeters) and a range of 0.10 cm to 0.20 cm; within that range, the distribution is uniform.</para>
+<exercise>
+<problem>
+<para>If <emphasis effect="italics">X</emphasis> = the diameter of one screw, what is the distribution of <emphasis effect="italics">X</emphasis>?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(0.10, 0.20)</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Suppose you repeatedly draw samples of size 100 and calculate their mean. Applying the central limit theorem, what is the distribution of these sample means?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>x</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+<m:mo>&#x223C;</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03BC;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo>,</m:mo><m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math> and the standard deviation of a uniform distribution is <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#x2212;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>. In this example, the standard deviation of the distribution is <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mi>b</m:mi><m:mo>&#x2212;</m:mo><m:mi>a</m:mi>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>0.10</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.03</m:mn>
+</m:mrow>
+</m:math>
+<newline/>so <m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>X</m:mi>
+<m:mo stretchy='true'>&#x00AF;</m:mo>
+</m:mover>
+<m:mo>&#x223C;</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>0.15</m:mn><m:mo>,</m:mo><m:mn>0.003</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Suppose you repeatedly draw samples of 60 and calculate their sum. Applying the central limit theorem, what is the distribution of these sample sums?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>&#x03A3;</m:mi><m:mi>X</m:mi><m:mo>&#x223C;</m:mo><m:mi>N</m:mi><m:mo stretchy='false'>(</m:mo><m:mo stretchy='false'>(</m:mo><m:mi>n</m:mi><m:mo stretchy='false'>)</m:mo><m:mo stretchy='false'>(</m:mo><m:msub>
+<m:mi>&#x03BC;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo stretchy='false'>)</m:mo><m:mo>,</m:mo><m:mo stretchy='false'>(</m:mo><m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+<m:mo stretchy='false'>)</m:mo><m:mo stretchy='false'>(</m:mo><m:msub>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mo stretchy='false'>)</m:mo><m:mo stretchy='false'>)</m:mo><m:mtext>&#x00A0;so&#x00A0;</m:mtext><m:mi>&#x03A3;</m:mi><m:mi>X</m:mi><m:mo>&#x223C;</m:mo><m:mi>N</m:mi><m:mo stretchy='false'>(</m:mo><m:mn>9.0</m:mn><m:mo>,</m:mo><m:mn>0.23</m:mn><m:mo stretchy='false'>)</m:mo>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+</section>
+</content>
+</document>

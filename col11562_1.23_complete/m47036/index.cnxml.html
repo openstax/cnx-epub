@@ -1,0 +1,613 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Distribution Needed for Hypothesis Testing</title><meta name="created-time" content="2013/07/19 14:18:06 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="alternate hypothesis, alternate hypothesis, alternative hypothesis, binomial distribution, normal distribution, null hypothesis, null hypothesis, p-value, simple random sample, single population mean, single population proportion, standard deviation, student&#8217;s t-distribution"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Distribution Needed for Hypothesis Testing</div>
+  <p id="fs-idm27402752">Earlier in the course, we discussed sampling distributions. <strong>Particular distributions are associated with hypothesis testing.</strong> Perform tests of a population mean using a <span data-type="term">normal distribution</span> or a <span data-type="term">Student's <em data-effect="italics">t</em>-distribution</span>. (Remember, use a Student's <em data-effect="italics">t</em>-distribution when the population <span data-type="term">standard deviation</span> is unknown and the distribution of the sample mean is approximately normal.) We perform tests of a population proportion using a normal distribution (usually <em data-effect="italics">n</em> is large).</p><p id="element-418">If you are testing a <span data-type="term">single population mean</span>, the distribution for the test is for <strong>means</strong>:</p><p id="element-363"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <mover accent="true">
+        <mi>X</mi>
+        <mo>&#175;</mo>
+      </mover>
+      <mo>~</mo><mi>N</mi><mrow><mo>(</mo>
+        <mrow>
+          <msub>
+            <mi>&#956;</mi>
+            <mi>X</mi>
+          </msub>
+          <mo>,</mo><mfrac>
+            <mrow>
+              <msub>
+                <mi>&#963;</mi>
+                <mi>X</mi>
+              </msub>
+              
+            </mrow>
+            <mrow>
+              <msqrt>
+                <mi>n</mi>
+              </msqrt>
+              
+            </mrow>
+          </mfrac>
+          
+        </mrow>
+        <mo>)</mo></mrow>
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mover accent="true">
+        <mi>X</mi>
+        <mo>&#175;</mo>
+      </mover>
+      <mo>~</mo><mi>N</mi><mrow><mo>(</mo>
+        <mrow>
+          <msub>
+            <mi>&#956;</mi>
+            <mi>X</mi>
+          </msub>
+          <mo>,</mo><mfrac>
+            <mrow>
+              <msub>
+                <mi>&#963;</mi>
+                <mi>X</mi>
+              </msub>
+              
+            </mrow>
+            <mrow>
+              <msqrt>
+                <mi>n</mi>
+              </msqrt>
+              
+            </mrow>
+          </mfrac>
+          
+        </mrow>
+        <mo>)</mo></mrow>
+    </mrow></annotation-xml></semantics></math> or <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mi>d</mi><mi>f</mi>
+   </mrow>
+  </msub>
+  
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mi>d</mi><mi>f</mi>
+   </mrow>
+  </msub>
+  
+ </mrow></annotation-xml></semantics></math></p><p id="element-838">The population parameter is <em data-effect="italics">&#956;</em>. The estimated value (point estimate) for &#956; is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+    </mover>
+  </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math>, the sample mean.</p><p id="element-245">If you are testing a <span data-type="term">single population proportion</span>, the distribution for the test is for
+  proportions or percentages:</p><p id="element-851"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <msup>
+        <mi>P</mi>
+        <mo>&#8242;</mo>
+      </msup>
+      <mo>~</mo><mi>N</mi><mrow><mo>(</mo>
+        <mrow>
+          <mi>p</mi><mo>,</mo><msqrt>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mi>p</mi><mo>&#8901;</mo><mi>q</mi>
+                </mrow>
+                <mi>n</mi>
+              </mfrac>
+              
+            </mrow>
+          </msqrt>
+          
+        </mrow>
+        <mo>)</mo></mrow>
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msup>
+        <mi>P</mi>
+        <mo>&#8242;</mo>
+      </msup>
+      <mo>~</mo><mi>N</mi><mrow><mo>(</mo>
+        <mrow>
+          <mi>p</mi><mo>,</mo><msqrt>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mi>p</mi><mo>&#8901;</mo><mi>q</mi>
+                </mrow>
+                <mi>n</mi>
+              </mfrac>
+              
+            </mrow>
+          </msqrt>
+          
+        </mrow>
+        <mo>)</mo></mrow>
+    </mrow></annotation-xml></semantics></math></p>
+  <p id="element-128">The population parameter is <em data-effect="italics">p</em>. The estimated value (point estimate) for <em data-effect="italics">p</em> is <em data-effect="italics">p&#8242;</em>. <em data-effect="italics">p&#8242;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+      <mrow>
+        <mfrac>
+          <mi>x</mi>
+          <mi>n</mi>
+        </mfrac>
+      </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+        <mfrac>
+          <mi>x</mi>
+          <mi>n</mi>
+        </mfrac>
+      </mrow></annotation-xml></semantics></math> where <em data-effect="italics">x</em> is the number of successes and <em data-effect="italics">n</em> is the sample size.</p>
+<section data-depth="1" id="fs-idp38268576"><h3 data-type="title">Assumptions</h3><p id="fs-idp18826944">When you perform a <span data-type="term">hypothesis test</span> <strong>of a single population mean <em data-effect="italics">&#956;</em></strong> using a
+<span data-type="term">Student's <em data-effect="italics">t</em>-distribution</span> (often called a t-test), there are fundamental assumptions that need to be met in order for the test to work properly. Your data should be a <span data-type="term">simple random sample</span> that comes from a population that is approximately <span data-type="term">normally distributed</span>. You use the sample <span data-type="term">standard deviation</span> to approximate the population standard deviation. (Note that if the sample size is sufficiently large, a t-test will work even if the population is not approximately normally distributed).</p><p id="element-849">When you perform a <strong>hypothesis test of a single population mean <em data-effect="italics">&#956;</em></strong> using a
+normal distribution (often called a <em data-effect="italics">z</em>-test), you take a simple random sample from the population. The population you are testing is normally distributed or your sample size is sufficiently large. You know the value of the population standard deviation which, in reality, is rarely known.</p><p id="element-395">When you perform a <strong>hypothesis test of a single population proportion <em data-effect="italics">p</em></strong>, you
+  take a simple random sample from the population. You must meet the conditions for a <span data-type="term">binomial distribution</span> which are: there are a certain number <em data-effect="italics">n</em> of independent trials, the outcomes of any trial are success or failure, and each trial has the same probability of a success <em data-effect="italics">p</em>. The shape of the binomial distribution needs to be similar to the shape of the normal distribution. To ensure this, the quantities <em data-effect="italics">np</em> and <em data-effect="italics">nq</em> must both be greater than five (<em data-effect="italics">np</em> &gt; 5 and <em data-effect="italics">nq</em> &gt; 5). Then the binomial distribution of a sample (estimated) proportion can be approximated by the normal distribution with <em data-effect="italics">&#956;</em> = <em data-effect="italics">p</em> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <mi>&#963;</mi><mo>=</mo><msqrt>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mi>p</mi><mi>q</mi>
+            </mrow>
+            <mi>n</mi>
+          </mfrac>
+          
+        </mrow>
+      </msqrt>
+      
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>&#963;</mi><mo>=</mo><msqrt>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mi>p</mi><mi>q</mi>
+            </mrow>
+            <mi>n</mi>
+          </mfrac>
+          
+        </mrow>
+      </msqrt>
+      
+    </mrow></annotation-xml></semantics></math>.
+
+Remember that <em data-effect="italics">q</em> = 1 &#8211; <em data-effect="italics">p</em>.</p></section><section data-depth="1" id="eip-952" class="summary"><h3 data-type="title">Chapter Review</h3>
+  <p id="eip-948">In order for a hypothesis test&#8217;s results to be generalized to a population, certain requirements must be satisfied. </p>
+  <p id="eip-996">When testing for a single population mean:</p>
+  <ol id="eip-idp106869104" data-mark-suffix="." type="1"><li>A Student's <em data-effect="italics">t</em>-test should be used if the data come from a simple, random sample and the population is approximately normally distributed, or the sample size is large, with an unknown standard deviation.</li>
+    <li>The normal test will work if the data come from a simple, random sample and the population
+      is approximately normally distributed, or the sample size is large, with a known standard
+      deviation.</li>
+  </ol><p id="fs-idp12045392">When testing a single population proportion use a normal test for a single population proportion if the data comes from a simple, random sample, fill the requirements for a binomial distribution, and the mean number of success and the mean number of failures satisfy the conditions: <em data-effect="italics">np</em> &gt; 5 and <em data-effect="italics">nq</em> &gt; <em data-effect="italics">n</em> where <em data-effect="italics">n</em> is the sample size, <em data-effect="italics">p</em> is the probability of a success, and <em data-effect="italics">q</em> is the probability of a failure.</p>
+</section>
+
+
+  <section data-depth="1" id="eip-772" class="formula-review"><h3 data-type="title">Formula Review</h3>
+  <p id="element-678">If there is no given preconceived <em data-effect="italics">&#945;</em>, then use <em data-effect="italics">&#945;</em> = 0.05.</p>
+    <div data-type="list" id="element-254"><div data-type="title">Types of Hypothesis Tests</div><ul><li>Single population mean, <strong>known</strong> population variance (or standard deviation): <strong>Normal
+    test</strong>.</li>
+    <li>Single population mean, <strong>unknown</strong> population variance (or standard deviation): <strong>Student's <em data-effect="italics">t</em>-test</strong>.</li>
+    <li>Single population proportion: <strong>Normal test</strong>.</li>
+      <li>For a <strong>single population mean</strong>, we may use a normal distribution with the following mean and standard deviation. Means: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+        <mrow>
+          <mi>&#956;</mi><mo>=</mo><msub>
+            <mi>&#956;</mi>
+            <mover accent="true">
+              <mi>x</mi>
+              <mo>&#175;</mo>
+            </mover>
+            
+          </msub>
+          
+        </mrow>
+      </mrow><annotation-xml encoding="MathML-Content"><mrow>
+          <mi>&#956;</mi><mo>=</mo><msub>
+            <mi>&#956;</mi>
+            <mover accent="true">
+              <mi>x</mi>
+              <mo>&#175;</mo>
+            </mover>
+            
+          </msub>
+          
+        </mrow></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+        <mrow>
+          <msub>
+            <mi>&#963;</mi>
+            <mover accent="true">
+              <mi>x</mi>
+              <mo>&#175;</mo>
+            </mover>
+            
+          </msub>
+          <mo>=</mo><mfrac>
+            <mrow>
+              <msub>
+                <mi>&#963;</mi>
+                <mi>x</mi>
+              </msub>
+              
+            </mrow>
+            <mrow>
+              <msqrt>
+                <mi>n</mi>
+              </msqrt>
+              
+            </mrow>
+          </mfrac>
+          
+        </mrow>
+      </mrow><annotation-xml encoding="MathML-Content"><mrow>
+          <msub>
+            <mi>&#963;</mi>
+            <mover accent="true">
+              <mi>x</mi>
+              <mo>&#175;</mo>
+            </mover>
+            
+          </msub>
+          <mo>=</mo><mfrac>
+            <mrow>
+              <msub>
+                <mi>&#963;</mi>
+                <mi>x</mi>
+              </msub>
+              
+            </mrow>
+            <mrow>
+              <msqrt>
+                <mi>n</mi>
+              </msqrt>
+              
+            </mrow>
+          </mfrac>
+          
+        </mrow></annotation-xml></semantics></math></li>
+      <li>A <strong>single population proportion</strong>, we may use a normal distribution with the following mean and standard deviation. Proportions:  <em data-effect="italics">&#181;</em> = <strong><em data-effect="italics">p</em></strong> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+        <mrow>
+          <mi>&#963;</mi><mo>=</mo><msqrt>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mi>p</mi><mi>q</mi>
+                </mrow>
+                <mi>n</mi>
+              </mfrac>
+              
+            </mrow>
+          </msqrt>
+          
+        </mrow>
+      </mrow><annotation-xml encoding="MathML-Content"><mrow>
+          <mi>&#963;</mi><mo>=</mo><msqrt>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mi>p</mi><mi>q</mi>
+                </mrow>
+                <mi>n</mi>
+              </mfrac>
+              
+            </mrow>
+          </msqrt>
+          
+        </mrow></annotation-xml></semantics></math>. </li>
+    </ul></div></section>
+
+
+<section data-depth="1" id="eip-496" class="practice">
+  <div data-type="exercise" id="eip-176"><div data-type="problem" id="eip-548">
+  <p id="eip-434">Which two distributions can you use for hypothesis testing for this chapter?</p>
+</div>
+
+<div data-type="solution" id="eip-482">
+  <p id="eip-665">A normal distribution or a Student&#8217;s <em data-effect="italics">t</em>-distribution</p></div>
+</div><div data-type="exercise" id="eip-492"><div data-type="problem" id="eip-819">
+  <p id="eip-696">Which distribution do you use when you are testing a population mean and the population standard deviation is known? Assume a normal distribution, with n &#8805; 30.</p></div></div><div data-type="exercise" id="eip-579">
+    <div data-type="problem" id="eip-177">
+  <p id="eip-756">Which distribution do you use when the standard deviation is not known and you are testing one population mean? Assume sample size is large.</p>
+</div>
+
+<div data-type="solution" id="eip-957">
+  <p id="eip-853">Use a Student&#8217;s <em data-effect="italics">t</em>-distribution</p></div>
+  </div>
+  <div data-type="exercise" id="eip-692"><div data-type="problem" id="eip-962">
+  <p id="eip-204">A population mean is 13. The sample mean is 12.8, and the sample standard deviation is two. The sample size is 20. What distribution should you use to perform a hypothesis test? Assume the underlying population is normal.</p>
+</div>  </div><div data-type="exercise" id="eip-917">
+    <div data-type="problem" id="eip-265">
+  <p id="eip-995">A population has a mean is 25 and a standard deviation of five. The sample mean is 24, and the sample size is 108. What distribution should you use to perform a hypothesis test?</p>
+</div>
+
+<div data-type="solution" id="eip-953">
+  <p id="eip-267">a normal distribution for a single population mean</p>
+</div>
+  </div>
+  <div data-type="exercise" id="eip-138"><div data-type="problem" id="eip-208">
+  <p id="eip-449">It is thought that 42% of respondents in a taste test would prefer Brand <em data-effect="italics">A</em>. In a particular test of 100 people, 39% preferred Brand <em data-effect="italics">A</em>. What distribution should you use to perform a hypothesis test?</p>
+</div></div><div data-type="exercise" id="eip-637"><div data-type="problem" id="eip-74">
+  <p id="eip-239">You are performing a hypothesis test of a single population mean using a Student&#8217;s <em data-effect="italics">t</em>-distribution. What must you assume about the distribution of the data?</p></div>
+
+<div data-type="solution" id="eip-520">
+  <p id="eip-20">It must be approximately normally distributed.</p>
+</div>
+</div>
+  <div data-type="exercise" id="eip-315"><div data-type="problem" id="eip-505">
+  <p id="eip-972">You are performing a hypothesis test of a single population mean using a Student&#8217;s <em data-effect="italics">t</em>-distribution. The data are not from a simple random sample. Can you accurately perform the hypothesis test?</p></div></div><div data-type="exercise" id="eip-254">
+    <div data-type="problem" id="eip-543">
+      <p id="eip-372">You are performing a hypothesis test of a single population proportion. What must be true about the quantities of <em data-effect="italics">np</em> and <em data-effect="italics">nq</em>?</p>
+</div>
+
+<div data-type="solution" id="eip-509">
+  <p id="eip-285">They must both be greater than five.</p>
+</div>
+  </div><div data-type="exercise" id="eip-354"><div data-type="problem" id="eip-633">
+  <p id="eip-457">You are performing a hypothesis test of a single population proportion. You find out that <em data-effect="italics">np</em> is less than five. What must you do to be able to perform a valid hypothesis test?</p>
+</div></div><div data-type="exercise" id="fs-idp17688688">
+    <div data-type="problem" id="eip-577">
+      <p id="eip-129">You are performing a hypothesis test of a single population proportion. The data come from which distribution?</p>
+</div>
+
+<div data-type="solution" id="eip-979">
+  <p id="eip-676">binomial distribution<div data-type="newline"><br/></div></p>
+</div>
+</div>
+
+</section>
+
+<section data-depth="1" id="fs-idm173512608" class="free-response"><h3 data-type="title">Homework</h3>
+
+<div data-type="exercise" id="fs-idm140519760">
+  <div data-type="problem" id="fs-idm140519632"><p id="fs-idp12923264">It is believed that Lake Tahoe Community College (LTCC) Intermediate Algebra students get less than seven hours of sleep per night, on average. A survey of 22 LTCC Intermediate Algebra students generated a mean of 7.24 hours with a standard deviation of 1.93 hours. At a level of significance of 5%, do LTCC Intermediate Algebra students get less than seven hours of sleep per night, on average? The distribution to be used for this test is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+    </mover>
+    
+  </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math> ~ ________________</p><ol id="fs-idm141858480" type="a">
+      <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+        <mrow>
+          <mi>N</mi><mo stretchy="false">(</mo><mn>7.24</mn><mo>,</mo><mfrac>
+            <mrow>
+              <mn>1.93</mn>
+            </mrow>
+            <mrow>
+              <msqrt>
+                <mrow>
+                  <mn>22</mn>
+                </mrow>
+              </msqrt>
+              
+            </mrow>
+          </mfrac>
+          <mo stretchy="false">)</mo>
+        </mrow>
+      </mrow><annotation-xml encoding="MathML-Content"><mrow>
+          <mi>N</mi><mo stretchy="false">(</mo><mn>7.24</mn><mo>,</mo><mfrac>
+            <mrow>
+              <mn>1.93</mn>
+            </mrow>
+            <mrow>
+              <msqrt>
+                <mrow>
+                  <mn>22</mn>
+                </mrow>
+              </msqrt>
+              
+            </mrow>
+          </mfrac>
+          <mo stretchy="false">)</mo>
+        </mrow></annotation-xml></semantics></math></li>
+      <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+        <mrow>
+          <mi>N</mi><mo stretchy="false">(</mo><mn>7.24</mn><mo>,</mo><mn>1.93</mn><mo stretchy="false">)</mo>
+        </mrow>
+      </mrow><annotation-xml encoding="MathML-Content"><mrow>
+          <mi>N</mi><mo stretchy="false">(</mo><mn>7.24</mn><mo>,</mo><mn>1.93</mn><mo stretchy="false">)</mo>
+        </mrow></annotation-xml></semantics></math></li>
+      <li><em data-effect="italics">t</em><sub>22</sub></li>
+      <li><em data-effect="italics">t</em><sub>21</sub></li>
+    </ol>
+    
+  </div>
+
+<div data-type="solution" id="fs-idp8543664">
+<p id="fs-idm76617584">d</p>
+</div>
+</div>
+
+</section>
+
+<div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+<dl id="bidist">
+    <dt>Binomial Distribution</dt>
+    <dd id="fs-idm119055264">a discrete random variable (RV) that arises from Bernoulli trials. There are a fixed number, <em data-effect="italics">n</em>, of independent trials. &#8220;Independent&#8221; means that the result of any trial (for example, trial 1) does not affect the results of the following trials, and all trials are conducted under the same conditions. Under these circumstances the binomial RV &#935; is defined as the number of successes in <em data-effect="italics">n</em> trials. The notation is: <em data-effect="italics">X ~ B(n, p)</em> <em data-effect="italics">&#956;</em> = <em data-effect="italics">np</em>  and the standard deviation is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>&#963;</mi><mo>=</mo><mo>&#160;</mo><msqrt>
+   <mrow>
+    <mi>n</mi><mi>p</mi><mi>q</mi>
+   </mrow>
+  </msqrt>
+  
+ </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>&#963;</mi><mo>=</mo><mo>&#160;</mo><msqrt>
+   <mrow>
+    <mi>n</mi><mi>p</mi><mi>q</mi>
+   </mrow>
+  </msqrt>
+  
+ </mrow></annotation-xml></semantics></math>. The probability of exactly <em data-effect="italics">x</em> successes in <em data-effect="italics">n</em> trials is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+      <mrow>
+        <mi>P</mi><mo stretchy="false">(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo>(</mo>
+          <mrow>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mi>n</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>x</mi>
+                </mtd>
+              </mtr>
+              
+            </mtable>
+          </mrow>
+          <mo>)</mo></mrow><msup>
+            <mi>p</mi>
+            <mi>x</mi>
+          </msup>
+        <msup>
+          <mi>q</mi>
+          <mrow>
+            <mi>n</mi><mo>&#8722;</mo><mi>x</mi>
+          </mrow>
+        </msup>
+        
+      </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+        <mi>P</mi><mo stretchy="false">(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo>(</mo>
+          <mrow>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mi>n</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>x</mi>
+                </mtd>
+              </mtr>
+              
+            </mtable>
+          </mrow>
+          <mo>)</mo></mrow><msup>
+            <mi>p</mi>
+            <mi>x</mi>
+          </msup>
+        <msup>
+          <mi>q</mi>
+          <mrow>
+            <mi>n</mi><mo>&#8722;</mo><mi>x</mi>
+          </mrow>
+        </msup>
+        
+      </mrow></annotation-xml></semantics></math>.
+</dd>
+  </dl>
+
+
+<dl id="normdist">
+    <dt>Normal Distribution</dt>
+  <dd id="id42733014">a continuous random variable (RV) with pdf <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+      <mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&#160;</mo><mfrac>
+        <mn>1</mn>
+        <mrow>
+          <mi>&#963;</mi><msqrt>
+            <mrow>
+              <mn>2</mn><mi>&#960;</mi>
+            </mrow>
+          </msqrt>
+          
+        </mrow>
+      </mfrac>
+      <msup>
+        <mi>e</mi>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mo>&#8722;</mo><msup>
+                <mrow>
+                  <mo stretchy="false">(</mo><mi>x</mi><mo>&#8722;</mo><mi>&#956;</mi><mo stretchy="false">)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+              
+            </mrow>
+            <mrow>
+              <mn>2</mn><msup>
+                <mi>&#963;</mi>
+                <mn>2</mn>
+              </msup>
+              
+            </mrow>
+          </mfrac>
+          
+        </mrow>
+      </msup>
+      
+    </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&#160;</mo><mfrac>
+        <mn>1</mn>
+        <mrow>
+          <mi>&#963;</mi><msqrt>
+            <mrow>
+              <mn>2</mn><mi>&#960;</mi>
+            </mrow>
+          </msqrt>
+          
+        </mrow>
+      </mfrac>
+      <msup>
+        <mi>e</mi>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mo>&#8722;</mo><msup>
+                <mrow>
+                  <mo stretchy="false">(</mo><mi>x</mi><mo>&#8722;</mo><mi>&#956;</mi><mo stretchy="false">)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+              
+            </mrow>
+            <mrow>
+              <mn>2</mn><msup>
+                <mi>&#963;</mi>
+                <mn>2</mn>
+              </msup>
+              
+            </mrow>
+          </mfrac>
+          
+        </mrow>
+      </msup>
+      
+    </mrow></annotation-xml></semantics></math>, where <em data-effect="italics">&#956;</em> is the mean of the distribution, and <em data-effect="italics">&#963;</em> is the standard deviation, notation: <em data-effect="italics">X ~ N</em>(<em data-effect="italics">&#956;</em>, <em data-effect="italics">&#963;</em>). If <em data-effect="italics">&#956;</em> = 0 and <em data-effect="italics">&#963;</em> = 1, the RV is called <strong>the standard normal distribution</strong>.</dd>
+  </dl>
+
+  <dl id="stddev">
+    <dt>Standard Deviation</dt>
+    <dd id="id20302532">a number that is equal to the square root of the variance and measures how far data values are from their mean; notation: <em data-effect="italics">s</em> for sample standard deviation and <em data-effect="italics">&#963;</em> for population standard deviation.</dd>
+  </dl>
+
+<dl id="studenttdist">
+    <dt>Student's <em data-effect="italics">t</em>-Distribution</dt>
+    <dd id="id8759760">investigated and reported by William S. Gossett in 1908 and published under the pseudonym Student. The major characteristics of the random variable (RV) are: 
+<ul id="tdist1">
+  <li>It is continuous and assumes any real values.</li>
+  <li>The pdf is symmetrical about its mean of zero. However, it is more spread out and flatter at the apex than the normal distribution.</li>
+  <li>It approaches the standard normal distribution as <em data-effect="italics">n</em> gets larger.</li>
+  <li>There is a "family" of t distributions: every representative of the family is completely defined by the number of degrees of freedom which is one less than the number of data items.</li></ul></dd>
+  </dl>
+
+
+</div></body>
+
+</html>

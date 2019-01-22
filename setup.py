@@ -11,7 +11,7 @@ install_requires = [
     'jinja2',
     'lxml',
     'requests',
-    'python-memcached'
+    'python-memcached',
     ]
 collation_requires = [
     'cnx-easybake',

@@ -1,0 +1,3620 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>A Single Population Mean using the Normal Distribution</title><meta name="created-time" content="2013/07/19 03:55:01 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/3.0/"/><meta name="keywords" content="confidence level, EBM, empirical rule, error bound, error bound for a population mean, inferential statistics, margin of error, normal distribution, parameter, point estimate, sample mean, sample size, z-score"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">A Single Population Mean using the Normal Distribution</div>
+    <p id="eip-351">A confidence interval for a population mean with a known standard deviation is based on the fact that the sample means follow an approximately normal distribution. Suppose that our sample has a mean of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mover accent="true">
+       <mi>x</mi>
+       <mo>&#175;</mo>
+      </mover>
+      <mtext>&#160;=&#160;10</mtext>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mover accent="true">
+       <mi>x</mi>
+       <mo>&#175;</mo>
+      </mover>
+      <mtext>&#160;=&#160;10</mtext>
+     </mrow></annotation-xml></semantics></math> and we have constructed the 90% confidence interval (5, 15) where <em data-effect="italics">EBM</em> = 5. </p>
+
+<section data-depth="1" id="eip-548"><h3 data-type="title">Calculating the Confidence Interval</h3>
+<p id="eip-id1171249700620">To construct a confidence interval for a single unknown population mean <em data-effect="italics">&#956;</em>, <strong>where the population standard deviation is known</strong>, we need <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> as an estimate for <em data-effect="italics">&#956;</em> and we need the margin of error. Here, the margin of error (<em data-effect="italics">EBM</em>) is called the <span data-type="term">error bound for a population mean</span> (abbreviated <strong><em data-effect="italics">EBM</em></strong>). The sample mean <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover></annotation-xml></semantics></math> is the <strong>point estimate</strong> of the unknown population mean <em data-effect="italics">&#956;</em>.</p>
+      <p id="eip-660"><strong>The confidence interval estimate will have the form:</strong></p>
+      <p id="fs-idm11177728">(point estimate - error bound, point estimate + error bound) or, in symbols,(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo>,</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mtext>+</mtext><mi>E</mi><mi>B</mi><mi>M</mi>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo>,</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mtext>+</mtext><mi>E</mi><mi>B</mi><mi>M</mi>
+ </mrow></annotation-xml></semantics></math>)</p><p id="eip-id1171253180187">The margin of error (<em data-effect="italics">EBM</em>) depends on the <span data-type="term">confidence level</span> (abbreviated <strong><em data-effect="italics">CL</em></strong>). The confidence level is often considered the probability that the calculated confidence interval estimate will contain the true population parameter. However, it is more accurate to state that the confidence level is the percent of confidence intervals that contain the true population parameter when repeated samples are taken. Most often, it is the choice of the person constructing the confidence interval to choose a confidence level of 90% or higher because that person wants to be reasonably certain of his or her conclusions.</p>
+
+    <p id="eip-id1171259743972">There is another probability called alpha (<em data-effect="italics">&#945;</em>). <em data-effect="italics">&#945;</em> is related to the confidence level, <em data-effect="italics">CL</em>. <em data-effect="italics">&#945;</em> is the probability that the interval does not contain the unknown population parameter.
+    <div data-type="newline"><br/></div>Mathematically, <em data-effect="italics">&#945;</em> + <em data-effect="italics">CL</em> = 1.</p>
+
+    <div data-type="example" id="eip-id1171253594561">
+    <ul data-labeled-item="true" id="eip-37">
+    <li>Suppose we have collected data from a sample. We know the sample mean but we do not know the mean for the entire population.</li>
+    <li>The sample mean is seven, and the error bound for the mean is 2.5.</li>
+    </ul>
+    <p id="eip-id1171253752196"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = 7 and <em data-effect="italics">EBM</em> = 2.5</p>
+<p id="eip-id1171253247744"> The confidence interval is (7 &#8211; 2.5, 7 + 2.5), and calculating the values gives (4.5, 9.5).</p>
+    <p id="eip-id1171248980360">If the confidence level (<em data-effect="italics">CL</em>) is 95%, then we say that, "We estimate with 95% confidence that the true value of the population mean is between 4.5 and 9.5."</p>
+    </div>
+
+    <div data-type="note" data-has-label="true" id="fs-idp2956752" class="statistics try" data-label=""><div data-type="title">Try It</div>
+    <div data-type="exercise" id="eip-273"><div data-type="problem" id="eip-404">
+    <p id="eip-488">Suppose we have data from a sample. The sample mean is 15, and the error bound for the mean is 3.2.</p>
+    <p id="eip-idm56205568">What is the confidence interval estimate for the population mean?</p>
+    </div>
+    </div></div>
+    <p id="eip-id1171249556158">A confidence interval for a population mean with a known standard deviation is based on the fact that the sample means follow an approximately normal distribution. Suppose that our sample has a mean of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = 10, and we have constructed the 90% confidence interval (5, 15) where <em data-effect="italics">EBM</em> = 5.</p><p id="eip-id1171249132425">To get a 90% confidence interval, we must include the central 90% of the probability of the normal distribution. If we include the central 90%, we leave out a total of <em data-effect="italics">&#945;</em> = 10% in both tails, or 5% in each tail, of the normal distribution.</p>
+      <figure id="fs-idm23539888"><span data-type="media" id="id1164459043434" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 10 on the horizontal axis. The points 5 and 15 are labeled on the axis. Vertical lines are drawn from these points to the curve, and the region between the lines is shaded. The shaded region has area equal to 0.90.">
+    <img src="/resources/ddcfd63de677b7b384566f37a13ecd00918dbd9c/fig-ch08_02_01N.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 10 on the horizontal axis. The points 5 and 15 are labeled on the axis. Vertical lines are drawn from these points to the curve, and the region between the lines is shaded. The shaded region has area equal to 0.90." width="380"/>
+    </span>
+    </figure><p id="eip-id1171253598112">To capture the central 90%, we must go out 1.645 "standard deviations" on either side of the calculated sample mean. The value 1.645 is the <em data-effect="italics">z</em>-score from a standard normal probability distribution that puts an area of 0.90 in the center, an area of 0.05 in the far left tail, and an area of 0.05 in the far right tail.</p>
+
+    <p id="eip-id1171249345209">It is important that the "standard deviation" used must be appropriate for the parameter we are estimating, so in this section we need to use the standard deviation that applies to sample means, which is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math>. The fraction <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math>, is commonly called the "standard error of the mean" in order to distinguish clearly the standard deviation for a mean from the population standard deviation <em data-effect="italics">&#963;</em>.</p>
+
+<div data-type="list" id="eip-id1171260540557"><div data-type="title"><strong>In summary, as a result of the central limit theorem:</strong></div><ul>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> is normally distributed, that is, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> ~ <em data-effect="italics">N</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>&#956;</mi>
+         <mi>X</mi>
+        </msub>
+        <mo>,</mo><mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>&#956;</mi>
+         <mi>X</mi>
+        </msub>
+        <mo>,</mo><mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math>.</li>
+    <li><strong>When the population standard deviation <em data-effect="italics">&#963;</em> is known, we use a normal distribution to calculate the error bound.</strong></li>
+    </ul></div>
+<section data-depth="2" id="fs-idm57905968"><h4 data-type="title">Calculating the Confidence Interval</h4><p id="fs-idp100429424">To construct a confidence interval estimate for an unknown population mean, we need data from a random sample.  The steps to construct and interpret the confidence interval are:</p>
+<ul id="eip-id1171253322089">
+<li> Calculate the sample mean <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> from the sample data. Remember, in this section we already know the population standard deviation  <em data-effect="italics">&#963;</em>.</li>
+    <li>Find the <em data-effect="italics">z</em>-score that corresponds to the confidence level.</li>
+    <li>Calculate the error bound <em data-effect="italics">EBM</em>.</li>
+    <li>Construct the confidence interval.</li>
+    <li>Write a sentence that interprets the estimate in the context of the situation in the problem. (Explain what the confidence interval means, in the words of the problem.)</li>
+    </ul>
+    <p id="eip-id1171252935175">We will first examine each step in more detail, and then illustrate the process with some examples.</p>
+</section>
+<section data-depth="2" id="fs-idm60964192"><h4 data-type="title">Finding the <em data-effect="italics">z</em>-score for the Stated Confidence Level</h4><p id="fs-idp7628608">When we know the population standard deviation <em data-effect="italics">&#963;</em>, we use a standard normal distribution to calculate the error bound EBM and construct the confidence interval. We need to find the value of <em data-effect="italics">z</em> that puts an area equal to the confidence level (in decimal form) in the middle of the standard normal distribution <em data-effect="italics">Z</em> ~ <em data-effect="italics">N</em>(0, 1).</p>
+<p id="eip-id1171249080440">The confidence level, <em data-effect="italics">CL</em>, is the area in the middle of the standard normal distribution. <em data-effect="italics">CL</em> = 1 &#8211; <em data-effect="italics">&#945;</em>, so <em data-effect="italics">&#945;</em> is the area that is split equally between the two tails. Each of the tails contains an area equal to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math>.</p>
+<p id="eip-id1171266449435">The z-score that has an area to the right of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> is denoted by <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math>.</p>
+<p id="eip-id1171258387350">For example, when <em data-effect="italics">CL</em> = 0.95, <em data-effect="italics">&#945;</em> = 0.05 and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = 0.025; we write <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math> = <em data-effect="italics">z</em><sub>0.025</sub>.</p>
+
+    <p id="eip-id1171262711575">The area to the right of <em data-effect="italics">z</em><sub>0.025</sub> is 0.025 and the area to the left of <em data-effect="italics">z</em><sub>0.025</sub> is 1 &#8211; 0.025 = 0.975.</p>
+    <p id="eip-id1171249206094"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>z</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mtext>&#160;=&#160;</mtext><msub>
+   <mi>z</mi>
+   <mrow>
+    <mn>0.</mn><mtext>025</mtext>
+   </mrow>
+  </msub>
+  <mtext>&#160;=&#160;1</mtext><mtext>.96</mtext>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>z</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mtext>&#160;=&#160;</mtext><msub>
+   <mi>z</mi>
+   <mrow>
+    <mn>0.</mn><mtext>025</mtext>
+   </mrow>
+  </msub>
+  <mtext>&#160;=&#160;1</mtext><mtext>.96</mtext>
+ </mrow></annotation-xml></semantics></math>, using a calculator, computer or a standard normal probability table.</p>
+
+<div data-type="note" data-has-label="true" id="fs-idm6917168" class="statistics calculator" data-label="">
+<p id="fs-idp47831024"><code>invNorm</code>(0.975, 0, 1) = 1.96</p>
+</div>
+<div data-type="note" data-has-label="true" id="eip-831" data-label=""><div data-type="title">Note</div>
+<p id="fs-idm49071376">Remember to use the area to the LEFT of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math>; in this chapter the last two inputs in the invNorm command are 0, 1, because you are using a standard normal distribution <em data-effect="italics">Z</em> ~ <em data-effect="italics">N</em>(0, 1).</p>
+</div></section><section data-depth="2" id="fs-idp84332448"><h4 data-type="title">Calculating the Error Bound (<em data-effect="italics">EBM</em>)</h4>
+    <p id="fs-idp74136672">The error bound formula for an unknown population mean <em data-effect="italics">&#956;</em> when the population standard deviation <em data-effect="italics">&#963;</em> is known is</p>
+    <ul id="eip-id1171249476212"><li><em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>&#963;</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>&#963;</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></li>
+    </ul></section>
+<section data-depth="2" id="fs-idm53546816"><h4 data-type="title">Constructing the Confidence Interval</h4>
+<ul id="fs-idm73276912"><li>The confidence interval estimate has the format
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo>,</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>+</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo>,</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>+</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math>.</li></ul><p id="eip-id1171253190648">The graph gives a picture of the entire situation.</p>
+<p id="eip-id1171259600150"><em data-effect="italics">CL</em> + <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> + <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = <em data-effect="italics">CL</em> + <em data-effect="italics">&#945;</em> = 1.</p>
+<figure id="fs-idp113086400"><span data-type="media" id="id1164466599913" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point x-bar on the horizontal axis. The points x-bar - EBM and x-bar + EBM are labeled on the axis. Vertical lines are drawn from these points to the curve, and the region between the lines is shaded. The shaded region has area equal to 1 - a and represents the confidence level. Each unshaded tail has area a/2.">
+<img src="/resources/d41c5a290f2f6753460b1119861889bfa18caf65/fig-ch08_02_02N.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve. The peak of the curve coincides with the point x-bar on the horizontal axis. The points x-bar - EBM and x-bar + EBM are labeled on the axis. Vertical lines are drawn from these points to the curve, and the region between the lines is shaded. The shaded region has area equal to 1 - a and represents the confidence level. Each unshaded tail has area a/2." width="380"/>
+</span>
+</figure></section>
+<section data-depth="2" id="fs-idm103016896"><h4 data-type="title">Writing the Interpretation</h4><p id="fs-idp86836496">The interpretation should clearly state the confidence level (<em data-effect="italics">CL</em>), explain what population parameter is being estimated (here, a <strong>population mean</strong>), and state the confidence interval (both endpoints). "We estimate with ___% confidence that the true population mean (include the context of the problem) is between ___ and ___ (include appropriate units)."</p>
+<div data-type="example" id="eip-id1171257291379"><p id="eip-id1171249543224">Suppose scores on exams in statistics are normally distributed with an unknown population mean and a population standard deviation of three points. A random sample of 36 scores is taken and gives a sample mean (sample mean score) of 68. Find a confidence interval estimate for the population mean exam score (the mean score on all exams).</p>
+<div data-type="exercise" id="eip-id1171264272125"><div data-type="problem" id="id1164450499992">
+<p id="eip-id1171254920718">Find a 90% confidence interval for the true (population) mean of statistics exam scores.
+
+    </p></div>
+    <div data-type="solution" id="id1164449849393">
+    <ul id="eip-id1170665387344"><li>You can use technology to calculate the confidence interval directly.</li>
+    <li>The first solution is shown step-by-step (Solution A).</li>
+    <li>The second solution uses the TI-83, 83+, and 84+ calculators (Solution B).<div data-type="newline"><br/></div></li>
+    </ul><p id="eip-id1171260460763"><span data-type="title">Solution A</span>To find the confidence interval, you need the sample mean, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math>, and the <em data-effect="italics">EBM</em>.</p>
+    <ul data-labeled-item="true" id="eip-id1171249631187"><li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = 68</li>
+    <li>
+    <em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math></li>
+    <li><em data-effect="italics">&#963;</em> = 3; <em data-effect="italics">n</em> = 36; The confidence level is 90% (<em data-effect="italics">CL</em> = 0.90)</li>
+    </ul>
+
+    <p id="eip-id1171269290538"><em data-effect="italics">CL</em> = 0.90 so <em data-effect="italics">&#945;</em> = 1 &#8211; <em data-effect="italics">CL</em> = 1 &#8211; 0.90 = 0.10</p>
+    <p id="eip-id1171249664419"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = 0.05 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+      <mo>=</mo><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.05</mn>
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+      <mo>=</mo><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.05</mn>
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math></p>
+    <p id="eip-id1171249710090">The area to the right of <em data-effect="italics">z</em><sub>0.05</sub> is 0.05 and the area to the left of <em data-effect="italics">z</em><sub>0.05</sub> is 1 &#8211; 0.05 = 0.95.</p>
+    <p id="element-55"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+      <mtext>&#160;=&#160;</mtext><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.05</mn>
+       </mrow>
+      </msub>
+      <mtext>&#160;=&#160;1</mtext><mtext>.645</mtext>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+      <mtext>&#160;=&#160;</mtext><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.05</mn>
+       </mrow>
+      </msub>
+      <mtext>&#160;=&#160;1</mtext><mtext>.645</mtext>
+     </mrow></annotation-xml></semantics></math></p>
+    <p id="eip-id1171251216060">using invNorm(0.95, 0, 1) on the TI-83,83+, and 84+ calculators. This can also be found using appropriate commands on other calculators, using a computer, or using a probability table for the standard normal distribution.</p>
+    <p id="eip-id1171261548281"><em data-effect="italics">EBM</em> = (1.645)<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>3</mn>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>36</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>3</mn>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>36</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math> = 0.8225</p>
+    <p id="eip-id1171249016439"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> - <em data-effect="italics">EBM</em> = 68 - 0.8225 = 67.1775</p>
+    <p id="eip-id1171247927262">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> + <em data-effect="italics">EBM</em> = 68 + 0.8225 = 68.8225</p>
+    <p id="eip-id1171262340763">The 90% confidence interval is <strong>(67.1775, 68.8225).</strong><div data-type="newline"><br/></div></p>
+    </div>
+
+<div data-type="solution" id="eip-idp129183584">
+<p id="eip-idm50696864"><span data-type="title">Solution B</span></p>
+    <div data-type="note" data-has-label="true" id="fs-idp129429152" class="statistics calculator" data-label="">
+    <p id="eip-542">Press <code>STAT</code> and arrow over to <code>TESTS</code>.
+    <div data-type="newline"><br/></div>Arrow down to <code>7:ZInterval</code>.
+    <div data-type="newline"><br/></div>Press <code>ENTER</code>.
+    <div data-type="newline"><br/></div>Arrow to <code>Stats</code> and press <code>ENTER</code>.
+    <div data-type="newline"><br/></div>Arrow down and enter three for <em data-effect="italics">&#963;</em>, 68 for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math>, 36 for <em data-effect="italics">n</em>, and .90 for <code>C-level</code>.
+    <div data-type="newline"><br/></div>Arrow down to <code>Calculate</code> and press <code>ENTER</code>.
+    <div data-type="newline"><br/></div>The confidence interval is (to three decimal places)(67.178, 68.822).</p>
+    </div>
+
+    <p id="eip-id1171248950887"><span data-type="title">Interpretation</span>We estimate with 90% confidence that the true population mean exam score for all statistics students is between 67.18 and 68.82.</p>
+
+    <p id="eip-id1171264042411"><span data-type="title">Explanation of 90% Confidence Level</span>
+    Ninety percent of all confidence intervals constructed in this way contain the true mean statistics exam score. For example, if we constructed 100 of these confidence intervals, we would expect 90 of them to contain the true population mean exam score.</p>
+    </div>
+    </div></div><div data-type="note" data-has-label="true" id="fs-idm85249264" class="statistics try" data-label=""><div data-type="title">Try It</div>
+
+    <p id="eip-idm104826624">Suppose average pizza delivery times are normally distributed with an unknown population mean and a population standard deviation of six minutes. A random sample of 28 pizza delivery restaurants is taken and has a sample mean delivery time of 36 minutes.</p>
+    <div data-type="exercise" id="eip-24">
+    <div data-type="problem" id="eip-140">
+    <p id="eip-887">Find a 90% confidence interval estimate for the population mean delivery time.</p>
+    </div>
+    <div data-type="solution" id="eip-337" data-label="">
+    <p id="eip-637">(34.1347, 37.8653)</p>
+    </div>
+    </div>
+    </div>
+<div data-type="example" id="example3"><p id="eip-431">The Specific Absorption Rate (SAR) for a cell phone measures the amount of radio frequency (RF) energy absorbed by the user&#8217;s body when using the handset. Every cell phone emits RF energy. Different phone models have different SAR measures. To receive certification from the Federal Communications Commission (FCC) for sale in the United States, the SAR level for a cell phone must be no more than 1.6 watts per kilogram. <a href="#M02_CH08-tbl001" class="autogenerated-content">[link]</a> shows the highest SAR level for a random selection of cell phone models as measured by the FCC.</p>
+    <table id="M02_CH08-tbl001" summary=".."><thead>
+    <tr>
+    <th>Phone Model</th>
+    <th>SAR</th>
+    <th>Phone Model</th>
+    <th>SAR</th>
+    <th>Phone Model</th>
+    <th>SAR</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+    <td>Apple iPhone 4S</td>
+    <td>1.11</td>
+    <td>LG Ally</td>
+    <td>1.36</td>
+    <td>Pantech Laser</td>
+    <td>0.74</td>
+    </tr>
+    <tr>
+    <td>BlackBerry Pearl 8120</td>
+    <td>1.48</td>
+    <td>LG AX275</td>
+    <td>1.34</td>
+    <td>Samsung Character</td>
+    <td>0.5</td>
+    </tr>
+    <tr>
+    <td>BlackBerry Tour 9630</td>
+    <td>1.43</td>
+    <td>LG Cosmos</td>
+    <td>1.18</td>
+    <td>Samsung Epic 4G Touch</td>
+    <td>0.4</td>
+    </tr>
+    <tr>
+    <td>Cricket TXTM8</td>
+    <td>1.3</td>
+    <td>LG CU515</td>
+    <td>1.3</td>
+    <td>Samsung M240</td>
+    <td>0.867</td>
+    </tr>
+    <tr>
+    <td>HP/Palm Centro</td>
+    <td>1.09</td>
+    <td>LG Trax CU575</td>
+    <td>1.26</td>
+    <td>Samsung Messager III SCH-R750</td>
+    <td>0.68</td>
+    </tr>
+    <tr>
+    <td>HTC One V</td>
+    <td>0.455</td>
+    <td>Motorola Q9h</td>
+    <td>1.29</td>
+    <td>Samsung Nexus S</td>
+    <td>0.51</td>
+    </tr>
+    <tr>
+    <td>HTC Touch Pro 2</td>
+    <td>1.41</td>
+    <td>Motorola Razr2 V8</td>
+    <td>0.36</td>
+    <td>Samsung SGH-A227</td>
+    <td>1.13</td>
+    </tr>
+    <tr>
+    <td>Huawei M835 Ideos</td>
+    <td>0.82</td>
+    <td>Motorola Razr2 V9</td>
+    <td>0.52</td>
+    <td>SGH-a107 GoPhone</td>
+    <td>0.3</td>
+    </tr>
+    <tr>
+    <td>Kyocera DuraPlus</td>
+    <td>0.78</td>
+    <td>Motorola V195s</td>
+    <td>1.6</td>
+    <td>Sony W350a</td>
+    <td>1.48</td>
+    </tr>
+    <tr>
+    <td>Kyocera K127 Marbl</td>
+    <td>1.25</td>
+    <td>Nokia 1680</td>
+    <td>1.39</td>
+    <td>T-Mobile Concord</td>
+    <td>1.38</td>
+    </tr>
+    </tbody></table>
+    <div data-type="exercise" id="eip-377"><div data-type="problem" id="eip-199">
+    <p id="eip-289">Find a 98% confidence interval for the true (population) mean of the Specific Absorption Rates (SARs) for cell phones. Assume that the population standard deviation is <em data-effect="italics">&#963;</em> = 0.337.<div data-type="newline"><br/></div></p></div>
+    <div data-type="solution" id="eip-311">
+
+    <p id="eip-303"><span data-type="title">Solution A</span>To find the confidence interval, start by finding the point estimate: the sample mean.</p>
+    <p id="eip-idm144115024"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>=</mo><mn>1.024</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>=</mo><mn>1.024</mn>
+ </mrow></annotation-xml></semantics></math></p><p id="eip-idm41535920">Next, find the <em data-effect="italics">EBM</em>. Because you are creating a 98% confidence interval, <em data-effect="italics">CL</em> = 0.98.</p>
+
+    <figure id="fs-idp138152784"><span data-type="media" id="eip-idp25198592" data-alt="This is a normal distribution curve. The point z0.01 is labeled at the right edge of the curve and the region to the right of this point is shaded. The area of this shaded region equals 0.01. The unshaded area equals 0.99.">
+    <img src="/resources/7b45b9c16922718c509bfff474556d3616857db8/CNX_Stats_C08_M02_001.jpg" data-media-type="image/jpeg" alt="This is a normal distribution curve. The point z0.01 is labeled at the right edge of the curve and the region to the right of this point is shaded. The area of this shaded region equals 0.01. The unshaded area equals 0.99." width="380"/>
+    </span>
+    </figure>
+
+    <p id="eip-idp4350608">You need to find <em data-effect="italics">z</em><sub>0.01</sub> having the property that the area under the normal density curve to the right of <em data-effect="italics">z</em><sub>0.01</sub> is 0.01 and the area to the left is 0.99. Use your calculator, a computer, or a probability table for the standard normal distribution to find <em data-effect="italics">z</em><sub>0.01</sub> = 2.326.</p>
+    <p id="eip-idm15410448"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mo stretchy="false">(</mo><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.01</mn>
+       </mrow>
+      </msub>
+      <mo stretchy="false">)</mo><mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+      <mo>=</mo><mo stretchy="false">(</mo><mn>2.326</mn><mo stretchy="false">)</mo><mfrac>
+       <mrow>
+        <mn>0.337</mn>
+       </mrow>
+       <mrow>
+        <msqrt>
+         <mrow>
+          <mn>30</mn>
+         </mrow>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+      <mo>=</mo><mn>0.1431</mn>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mo stretchy="false">(</mo><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.01</mn>
+       </mrow>
+      </msub>
+      <mo stretchy="false">)</mo><mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+      <mo>=</mo><mo stretchy="false">(</mo><mn>2.326</mn><mo stretchy="false">)</mo><mfrac>
+       <mrow>
+        <mn>0.337</mn>
+       </mrow>
+       <mrow>
+        <msqrt>
+         <mrow>
+          <mn>30</mn>
+         </mrow>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+      <mo>=</mo><mn>0.1431</mn>
+     </mrow></annotation-xml></semantics></math></p>
+    <p id="eip-idm15410192">To find the 98% confidence interval, find <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mo>&#160;</mo><mover accent="true">
+       <mi>x</mi>
+       <mo>&#175;</mo>
+      </mover>
+      <mo>&#177;</mo><mi>E</mi><mi>B</mi><mi>M</mi>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mo>&#160;</mo><mover accent="true">
+       <mi>x</mi>
+       <mo>&#175;</mo>
+      </mover>
+      <mo>&#177;</mo><mi>E</mi><mi>B</mi><mi>M</mi>
+     </mrow></annotation-xml></semantics></math>.</p>
+    <p id="eip-idm89961776"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> &#8211; <em data-effect="italics">EBM</em> = 1.024 &#8211; 0.1431 = 0.8809</p>
+    <p id="eip-idm89961520"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> &#8211; <em data-effect="italics">EBM</em> = 1.024 &#8211; 0.1431 = 1.1671</p><p id="eip-idm89961264">We estimate with 98% confidence that the true SAR mean for the population of cell phones in the United States is between 0.8809 and 1.1671 watts per kilogram.</p>
+    </div>
+    <div data-type="solution" id="eip-idm108144592">
+<p id="eip-idm52012352"><span data-type="title">Solution B</span></p>
+    <div data-type="note" data-has-label="true" id="fs-idm71087104" class="statistics calculator" data-label="">
+    <ul data-labeled-item="true" id="eip-idp8586624">
+    <li>Press STAT and arrow over to TESTS.</li>
+    <li>Arrow down to 7:ZInterval.</li>
+    <li>Press ENTER.</li>
+    <li>Arrow to Stats and press ENTER.</li>
+    <li>Arrow down and enter the following values:
+    <ul data-labeled-item="true" id="eip-idm28766480"><li><em data-effect="italics">&#963;</em>: 0.337</li>
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>:</mo><mn>1.024</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>:</mo><mn>1.024</mn>
+ </mrow></annotation-xml></semantics></math></li>
+    <li><em data-effect="italics">n</em>: 30</li>
+    <li><em data-effect="italics">C</em>-level: 0.98</li>
+    </ul></li>
+    <li>Arrow down to Calculate and press ENTER.</li>
+    <li>The confidence interval is (to three decimal places) (0.881, 1.167).</li>
+    </ul></div>
+    </div>
+    </div></div><div data-type="note" data-has-label="true" id="fs-idp77326048" class="statistics try" data-label=""><div data-type="title">Try It</div>
+
+    <div data-type="exercise" id="eip-158">
+    <div data-type="problem" id="eip-555">
+      <p id="eip-136"><a href="#M02_CH08-tbl002" class="autogenerated-content">[link]</a> shows a different random sampling of 20 cell phone models. Use this data to calculate a 93% confidence interval for the true mean SAR for cell phones certified for use in the United States. As previously, assume that the population standard deviation is <em data-effect="italics">&#963;</em> = 0.337.</p>
+      <table id="M02_CH08-tbl002" summary=".."><thead>
+    <tr>
+    <th><strong>Phone Model</strong></th>
+    <th><strong>SAR</strong></th>
+    <th><strong>Phone Model</strong></th>
+    <th><strong>SAR</strong></th>
+    </tr>
+    </thead><tbody>
+    <tr>
+    <td>Blackberry Pearl 8120</td>
+    <td>1.48</td>
+    <td>Nokia E71x</td>
+    <td>1.53</td>
+    </tr>
+    <tr>
+    <td>HTC Evo Design 4G</td>
+    <td>0.8</td>
+    <td>Nokia N75</td>
+    <td>0.68</td>
+    </tr>
+    <tr>
+    <td>HTC Freestyle</td>
+    <td>1.15</td>
+    <td>Nokia N79</td>
+    <td>1.4</td>
+    </tr>
+    <tr>
+    <td>LG Ally</td>
+    <td>1.36</td>
+    <td>Sagem Puma</td>
+    <td>1.24</td>
+    </tr>
+    <tr>
+    <td>LG Fathom</td>
+    <td>0.77</td>
+    <td>Samsung Fascinate</td>
+    <td>0.57</td>
+    </tr>
+    <tr>
+    <td>LG Optimus Vu</td>
+    <td>0.462</td>
+    <td>Samsung Infuse 4G</td>
+    <td>0.2</td>
+    </tr>
+    <tr>
+    <td>Motorola Cliq XT</td>
+    <td>1.36</td>
+    <td>Samsung Nexus S</td>
+    <td>0.51</td>
+    </tr>
+    <tr>
+    <td>Motorola Droid Pro</td>
+    <td>1.39</td>
+    <td>Samsung Replenish</td>
+    <td>0.3</td>
+    </tr>
+    <tr>
+    <td>Motorola Droid Razr M</td>
+    <td>1.3</td>
+    <td>Sony W518a Walkman</td>
+    <td>0.73</td>
+    </tr>
+    <tr>
+    <td>Nokia 7705 Twist</td>
+    <td>0.7</td>
+    <td>ZTE C79</td>
+    <td>0.869</td>
+    </tr>
+    </tbody></table>
+    </div>
+    </div>
+    </div>
+<p id="eip-idp5304592">Notice the difference in the confidence intervals calculated in <a href="#example3" class="autogenerated-content">[link]</a> and the following <a href="#fs-idp77326048">Try It</a> exercise. These intervals are different for several reasons: they were calculated from different samples, the samples were different sizes, and the intervals were calculated for different levels of confidence. Even though the intervals are different, they do not yield conflicting information. The effects of these kinds of changes are the subject of the next section in this chapter.</p></section><section data-depth="2" id="eip-783"><h4 data-type="title">Changing the Confidence Level or Sample Size</h4><div data-type="example" id="element-1217">
+    <div data-type="exercise" id="element-971"><div data-type="problem" id="id1164450104012">
+    <p id="element-214">Suppose we change the original problem in <a href="#eip-id1171257291379" class="autogenerated-content">[link]</a> by using a 95% confidence level. Find a 95% confidence interval for the true (population) mean statistics exam score.</p></div>
+    <div data-type="solution" id="id1164461631257">
+    <p id="element-701">To find the confidence interval, you need the sample mean, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math>, and the <em data-effect="italics">EBM</em>.</p>
+    <ul data-labeled-item="true" id="element-5">
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = 68</li>
+    <li><em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math></li>
+    <li><em data-effect="italics">&#963;</em> = 3; <em data-effect="italics">n</em> = 36; The confidence level is 95% (<em data-effect="italics">CL</em> = 0.95).</li>
+    </ul>
+<p id="element-547"><em data-effect="italics">CL</em> = 0.95 so <em data-effect="italics">&#945;</em> = 1 &#8211; <em data-effect="italics">CL</em> = 1 &#8211; 0.95 = 0.05</p>
+    <p id="element-769"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+      <mo>=</mo><mn>0.025</mn><mtext>&#8195;</mtext><mtext>&#8201;</mtext><mtext>&#8201;</mtext><msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+      <mo>=</mo><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.025</mn>
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+      <mo>=</mo><mn>0.025</mn><mtext>&#8195;</mtext><mtext>&#8201;</mtext><mtext>&#8201;</mtext><msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+      <mo>=</mo><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.025</mn>
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math></p>
+    <p id="element-370">The area to the right of <em data-effect="italics">z</em><sub>0.025</sub> is 0.025 and the area to the left of <em data-effect="italics">z</em><sub>0.025</sub> is 1 &#8211; 0.025 = 0.975.</p>
+    <p id="element-669"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+      <mo>=</mo><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.025</mn>
+       </mrow>
+      </msub>
+      <mo>=</mo><mn>1.96</mn>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+      <mo>=</mo><msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.025</mn>
+       </mrow>
+      </msub>
+      <mo>=</mo><mn>1.96</mn>
+     </mrow></annotation-xml></semantics></math></p>
+    <p id="fs-idm2686672" class="finger">when using invnorm(0.975,0,1) on the TI-83, 83+, or 84+ calculators. (This can also be found using appropriate commands on other calculators, using a computer, or using a probability table for the standard normal distribution.)</p><p id="element-88"><em data-effect="italics">EBM</em> = (1.96)<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>3</mn>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>36</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>3</mn>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>36</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math> = 0.98</p>
+    <p id="element-956"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> &#8211; <em data-effect="italics">EBM</em> = 68 &#8211; 0.98 = 67.02</p>
+    <p id="element-64"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> + <em data-effect="italics">EBM</em> = 68 + 0.98 = 68.98</p>
+    <p id="fs-idp120322464">Notice that the <em data-effect="italics">EBM</em> is larger for a 95% confidence level in the original problem.</p>
+<p id="fs-idp25970000"><span data-type="title">Interpretation</span>We estimate with 95% confidence that the true population mean for all statistics exam scores is between 67.02 and 68.98.</p><p id="fs-idp48227696"><span data-type="title">Explanation of 95% Confidence Level</span>
+    Ninety-five percent of all confidence intervals constructed in this way contain the true value of the population mean statistics exam score.</p>
+
+    <p id="fs-idp38701776"><span data-type="title">Comparing the results</span>
+    The 90% confidence interval is (67.18, 68.82). The 95% confidence interval is (67.02, 68.98). The 95% confidence interval is wider. If you look at the graphs, because the area 0.95 is larger than the area 0.90, it makes sense that the 95% confidence interval is wider. To be more confident that the confidence interval actually does contain the true value of the population mean for all statistics exam scores, the confidence interval necessarily needs to be wider.</p>
+
+    <figure id="conf_intvls_cfpm3"><span data-type="media" id="id1164459044969" data-alt="Part (a) shows a normal distribution curve. A central region with area equal to 0.90 is shaded. Each unshaded tail of the curve has area equal to 0.05. Part (b) shows a normal distribution curve. A central region with area equal to 0.95 is shaded. Each unshaded tail of the curve has area equal to 0.025.">
+    <img src="/resources/66bc6e14b0b45f5bc4ac4a9a53b64fd664eef649/fig-ch08_02_03.jpg" data-media-type="image/jpg" alt="Part (a) shows a normal distribution curve. A central region with area equal to 0.90 is shaded. Each unshaded tail of the curve has area equal to 0.05. Part (b) shows a normal distribution curve. A central region with area equal to 0.95 is shaded. Each unshaded tail of the curve has area equal to 0.025." width="450"/>
+    </span>
+    </figure>
+
+    <div data-type="list" id="eip-703"><div data-type="title"><strong>Summary: Effect of Changing the Confidence Level</strong></div><ul>
+    <li>Increasing the confidence level increases the error bound, making the confidence interval wider.</li>
+    <li>Decreasing the confidence level decreases the error bound, making the confidence interval narrower.</li>
+    </ul></div>
+    </div>
+    </div></div>
+    </section><div data-type="note" data-has-label="true" id="fs-idm35811600" class="statistics try" data-label=""><div data-type="title">Try It</div>
+    <div data-type="exercise" id="eip-847"><div data-type="problem" id="eip-565">
+      <p id="eip-idp138029248">Refer back to the pizza-delivery <a href="#fs-idm85249264">Try It</a> exercise. The population standard deviation is six minutes and the sample mean deliver time is 36 minutes. Use a sample size of 20. Find a 95% confidence interval estimate for the true mean pizza delivery time.</p></div>
+    </div></div>
+
+    <div data-type="example" id="element-542"><p id="element-338">Suppose we change the original problem in <a href="#eip-id1171257291379" class="autogenerated-content">[link]</a> to see what happens to the error bound if the sample size is changed.</p><div data-type="exercise" id="element-442">
+    <div data-type="problem" id="id1164455008611">
+    <p id="element-98">Leave everything the same except the sample size.  Use the original 90% confidence level. What happens to the error bound and the confidence interval if we increase the sample size and use <em data-effect="italics">n</em> = 100 instead of <em data-effect="italics">n</em> = 36?  What happens if we decrease the sample size to <em data-effect="italics">n</em> = 25 instead of <em data-effect="italics">n</em> = 36? </p>
+    <ul id="element-119"><li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = 68</li>
+    <li><em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math></li>
+    <li><em data-effect="italics">&#963;</em> = 3; The confidence level is 90% (<em data-effect="italics">CL</em>=0.90); <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math> = <em data-effect="italics">z</em><sub>0.05</sub> = 1.645.</li>
+    </ul></div>
+    <div data-type="solution" id="id5851674" data-label="">
+    <p id="element-124"><span data-type="title">Solution A</span>If we <strong>increase</strong> the sample size <em data-effect="italics">n</em> to 100, we <strong>decrease</strong> the error bound.</p>
+    <p id="element-412">When <em data-effect="italics">n</em> = 100: <em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math> = (1.645)<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>3</mn>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>100</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>3</mn>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>100</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math> = 0.4935.</p>
+    </div>
+    <div data-type="solution" id="id1164463763522" data-label="">
+
+    <p id="element-125"><span data-type="title">Solution B</span>If we <strong>decrease</strong> the sample size <em data-effect="italics">n</em> to 25, we <strong>increase</strong> the error bound.
+    </p>
+
+    <p id="element-9">When <em data-effect="italics">n</em> = 25: <em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math> = (1.645)<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>3</mn>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>25</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>3</mn>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>25</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math> = 0.987.</p>
+    </div>
+    </div>
+
+    <div data-type="list" id="element-364"><div data-type="title">Summary: Effect of Changing the Sample Size</div><ul>
+    <li>Increasing the sample size causes the  error bound to decrease, making the confidence interval narrower.</li>
+    <li>Decreasing the sample size causes the error bound to increase, making the confidence interval wider.</li>
+    </ul></div>
+    </div><div data-type="note" data-has-label="true" id="fs-idm59608800" class="statistics try" data-label=""><div data-type="title">Try It</div>
+
+    <div data-type="exercise" id="eip-159">
+    <div data-type="problem" id="eip-53">
+      <p id="eip-929">Refer back to the pizza-delivery <a href="#fs-idm85249264">Try It</a> exercise. The mean delivery time is 36 minutes and the population standard deviation is six minutes. Assume the sample size is changed to 50 restaurants with the same sample mean. Find a 90% confidence interval estimate for the population mean delivery time.</p></div>
+    </div>
+    </div>
+   </section>
+<section data-depth="1" id="eip-710"><h3 data-type="title">Working Backwards to Find the Error Bound or Sample Mean</h3>
+    <p id="eip-719">When we calculate a confidence interval, we find the sample mean, calculate the error bound, and use them to calculate the confidence interval. However, sometimes when we read statistical studies, the study may state the confidence interval only. If we know the confidence interval, we can work backwards to find both the error bound and the sample mean.</p>
+    <div data-type="list" id="eip-109"><div data-type="title"><strong>Finding the Error Bound</strong></div><ul>
+    <li>From the upper value for the interval, subtract the sample mean,</li>
+    <li>OR, from the upper value for the interval, subtract the lower value.  Then divide the difference by two.</li>
+    </ul></div>
+    <div data-type="list" id="eip-364"><div data-type="title"><strong>Finding the Sample Mean</strong></div><ul>
+    <li>Subtract the error bound from the upper value of the confidence interval,</li>
+    <li>OR, average the upper and lower endpoints of the confidence interval.</li>
+    </ul></div>
+    <p id="eip-117">Notice that there are two methods to perform each calculation. You can choose the method that is easier to use with the information you know.</p>
+
+    <div data-type="example" id="eip-209">
+    <p id="element-108">Suppose we know that a confidence interval is <strong>(67.18, 68.82)</strong> and we want to find the error bound. We may know that the sample mean is 68, or perhaps our source only gave the confidence interval and did not tell us the value of the sample mean.</p><div data-type="list" id="element-733"><div data-type="title">Calculate the Error Bound:</div><ul>
+    <li>If we know that the sample mean is 68: <em data-effect="italics">EBM</em> = 68.82 &#8211; 68 = 0.82.</li>
+    <li>If we don't know the sample mean: <em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>68.82</mn><mo>&#8722;</mo><mn>67.18</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>68.82</mn><mo>&#8722;</mo><mn>67.18</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = 0.82.</li>
+    </ul></div>
+    <div data-type="list" id="fs-idm83129664"><div data-type="title">Calculate the Sample Mean:</div><ul><li>If we know the error bound:
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = 68.82 &#8211; 0.82 = 68</li>
+    <li>If we don't know the error bound: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>67.18</mn><mo>+</mo><mn>68.82</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>67.18</mn><mo>+</mo><mn>68.82</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = 68.</li>
+    </ul></div></div>
+    </section>
+
+    <div data-type="note" data-has-label="true" id="fs-idm38498176" class="statistics try" data-label=""><div data-type="title">Try It</div>
+    <div data-type="exercise" id="eip-998">
+    <div data-type="problem" id="eip-253">
+    <p id="eip-94">Suppose we know that a confidence interval is (42.12, 47.88). Find the error bound and the sample mean.</p>
+    </div>
+    </div>
+    </div>
+
+    <section data-depth="1" id="eip-865"><h3 data-type="title">Calculating the Sample Size <em data-effect="italics">n</em></h3>
+    <p id="eip-630">If researchers desire a specific margin of error, then they can use the error bound formula to calculate the required sample size.</p>
+    <p id="eip-517">The error bound formula for a population mean when the population standard deviation is known is <div data-type="newline"><br/></div><em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mi>&#963;</mi>
+         <mrow>
+          <msqrt>
+           <mi>n</mi>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math>.</p>
+    <p id="eip-975">The formula for sample size is <em data-effect="italics">n</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math>, found by solving the error bound formula for <em data-effect="italics">n</em>.</p><p id="eip-409">In this formula, <em data-effect="italics">z</em> is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math>, corresponding to the desired confidence level. A researcher planning a study who wants a specified confidence level and error bound can use this formula to calculate the size of the sample needed for the study.</p>
+    <div data-type="example" id="eip-324">
+    <p id="eip-796">The population standard deviation for the age of Foothill College students is 15 years. If we want to be 95% confident that the sample mean age is within two years of the true population mean age of Foothill College students, how many randomly selected Foothill College students must be surveyed?</p>
+    <ul data-labeled-item="true" id="eip-110">
+    <li>From the problem, we know that <em data-effect="italics">&#963;</em> = 15 and <em data-effect="italics">EBM</em> = 2.</li>
+    <li><em data-effect="italics">z</em> = <em data-effect="italics">z</em><sub>0.025</sub> = 1.96, because the confidence level is 95%.</li>
+    </ul>
+    <ul data-labeled-item="true" id="eip-501">
+    <li><em data-effect="italics">n</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mn>1.96</mn>
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mn>15</mn>
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mn>2</mn>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mn>1.96</mn>
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <mn>15</mn>
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mn>2</mn>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> = 216.09 using the sample size equation.</li>
+    <li> Use <em data-effect="italics">n</em> = 217: Always round the answer UP to the next higher integer to ensure that the sample size is large enough.</li>
+    </ul><p id="eip-893">Therefore, 217 Foothill College students should be surveyed in order to be 95% confident that we are within two years of the true population mean age of Foothill College students.</p>
+    </div>
+
+    <div data-type="note" data-has-label="true" id="fs-idm26211984" class="statistics try" data-label=""><div data-type="title">Try It</div>
+    <div data-type="exercise" id="eip-669">
+    <div data-type="problem" id="eip-635">
+    <p id="eip-731">The population standard deviation for the height of high school basketball players is three inches. If we want to be 95% confident that the sample mean height is within one inch of the true population mean height, how many randomly selected students must be surveyed?</p>
+    </div>
+    </div>
+    </div>
+</section>
+<section data-depth="1" id="eip-493" class="references"><h3 data-type="title">References</h3><p id="eip-idp49185344">&#8220;American Fact Finder.&#8221; U.S. Census Bureau. Available online at  http://factfinder2.census.gov/faces/nav/jsf/pages/searchresults.xhtml?refresh=t (accessed July 2, 2013).</p>
+<p id="eip-idp49186128">&#8220;Disclosure Data Catalog: Candidate Summary Report 2012.&#8221; U.S. Federal Election Commission. Available online at http://www.fec.gov/data/index.jsp (accessed July 2, 2013).</p>
+<p id="eip-idp131915104">&#8220;Headcount Enrollment Trends by Student Demographics Ten-Year Fall Trends to Most Recently Completed Fall.&#8221; Foothill De Anza Community College District. Available online at http://research.fhda.edu/factbook/FH_Demo_Trends/FoothillDemographicTrends.htm (accessed September 30,2013).</p>
+<p id="eip-idp131915488">Kuczmarski, Robert J., Cynthia L. Ogden, Shumei S. Guo, Laurence M. Grummer-Strawn, Katherine M. Flegal, Zuguo Mei, Rong Wei, Lester R. Curtin, Alex F. Roche, Clifford L. Johnson. &#8220;2000 CDC Growth Charts for the United States: Methods and Development.&#8221; Centers for Disease Control and Prevention. Available online at http://www.cdc.gov/growthcharts/2000growthchart-us.pdf (accessed July 2, 2013).</p>
+<p id="eip-idp131915872">La, Lynn, Kent German. "Cell Phone Radiation Levels." c|net part of CBX Interactive Inc. Available online at http://reviews.cnet.com/cell-phone-radiation-levels/ (accessed July 2, 2013).</p>
+<p id="eip-idp55624496">&#8220;Mean Income in the Past 12 Months (in 2011 Inflaction-Adjusted Dollars): 2011 American Community Survey 1-Year Estimates.&#8221; American Fact Finder, U.S. Census Bureau. Available online at  http://factfinder2.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=ACS_11_1YR_S1902&amp;prodType=table (accessed July 2, 2013).</p>
+<p id="eip-idp158475920">&#8220;Metadata Description of Candidate Summary File.&#8221; U.S. Federal Election Commission. Available online at http://www.fec.gov/finance/disclosure/metadata/metadataforcandidatesummary.shtml (accessed July 2, 2013).</p>
+<p id="eip-idp158476848">&#8220;National Health and Nutrition Examination Survey.&#8221; Centers for Disease Control and Prevention. Available online at http://www.cdc.gov/nchs/nhanes.htm (accessed July 2, 2013).</p></section><section data-depth="1" id="eip-330" class="summary"><h3 data-type="title">Chapter Review</h3>
+    <p id="eip-120">In this module, we learned how to calculate the confidence interval for a single population mean where the population standard deviation is known. When estimating a population mean, the margin of error is called the error bound for a population mean (<em data-effect="italics">EBM</em>). A confidence interval has the general form:</p>
+    <p id="fs-idm46112">(lower bound, upper bound) = (point estimate &#8211; <em data-effect="italics">EBM</em>, point estimate + <em data-effect="italics">EBM</em>)</p>
+    <p id="eip-430">The calculation of <em data-effect="italics">EBM</em> depends on the size of the sample and the level of confidence desired. The confidence level is the percent of all possible samples that can be expected to include the true population parameter. As the confidence level increases, the corresponding <em data-effect="italics">EBM</em> increases as well. As the sample size increases, the <em data-effect="italics">EBM</em> decreases. By the central limit theorem,</p>
+    <p id="fs-idm70707712"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mi>z</mi><mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mi>z</mi><mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math></p>
+    <p id="eip-974">Given a confidence interval, you can work backwards to find the error bound (<em data-effect="italics">EBM</em>) or the sample mean. To find the error bound, find the difference of the upper bound of the interval and the mean. If you do not know the sample mean, you can find the error bound by calculating half the difference of the upper and lower bounds.  To find the sample mean given a confidence interval, find the difference of the upper bound and the error bound. If the error bound is unknown, then average the upper and lower bounds of the confidence interval to find the sample mean.</p>
+     <p id="eip-211">Sometimes researchers know in advance that they want to estimate a population mean within a specific margin of error for a given level of confidence. In that case, solve the <em data-effect="italics">EBM</em> formula for <em data-effect="italics">n</em> to discover the size of the sample that is needed to achieve this goal:</p>
+    <p id="fs-idm4091408"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mi>n</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>n</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math></p></section>
+
+    <section data-depth="1" id="eip-191" class="formula-review"><h3 data-type="title">Formula Review</h3>
+    <p id="eip-524"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>X</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>~</mo><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>&#956;</mi>
+     <mi>X</mi>
+    </msub>
+    <mo>,</mo><mfrac>
+     <mi>&#963;</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>X</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>~</mo><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>&#956;</mi>
+     <mi>X</mi>
+    </msub>
+    <mo>,</mo><mfrac>
+     <mi>&#963;</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> The distribution of sample means is normally distributed with mean equal to the population mean and standard deviation given by the population standard deviation divided by the square root of the sample size.</p>
+      <p id="eip-461">The general form for a confidence interval for a single population mean, known standard deviation, normal distribution is given by
+    <div data-type="newline"><br/></div>(lower bound, upper bound) = (point estimate &#8211; <em data-effect="italics">EBM</em>, point estimate + <em data-effect="italics">EBM</em>)
+    <div data-type="newline"><br/></div>= <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>&#8722;</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo>,</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>+</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>&#8722;</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo>,</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>+</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math>
+    <div data-type="newline"><br/></div>= <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8722;</mo><mi>z</mi><mfrac>
+     <mi>&#963;</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+    <mo>,</mo><mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>+</mo><mi>z</mi><mfrac>
+     <mi>&#963;</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8722;</mo><mi>z</mi><mfrac>
+     <mi>&#963;</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+    <mo>,</mo><mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>+</mo><mi>z</mi><mfrac>
+     <mi>&#963;</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></p>
+    <p id="eip-880">
+    <em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mi>z</mi><mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>z</mi><mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = the error bound for the mean, or the margin of error for a single population mean; this formula is used when the population standard deviation is known.</p>
+    <p id="eip-277"><em data-effect="italics">CL</em> = confidence level, or the proportion of confidence intervals created that are expected to contain the true population parameter</p>
+      <p id="eip-401"><em data-effect="italics">&#945;</em> = 1 &#8211; <em data-effect="italics">CL</em> = the proportion of confidence intervals that will not contain the population parameter</p>
+    <p id="eip-468"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math> = the <em data-effect="italics">z</em>-score with the property that the area to the right of the z-score is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mo>&#160;</mo><mfrac>
+       <mo>&#8733;</mo>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mo>&#160;</mo><mfrac>
+       <mo>&#8733;</mo>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> this is the <em data-effect="italics">z</em>-score used in the calculation of <em data-effect="italics">"EBM</em> where &#945; = 1 &#8211; <em data-effect="italics">CL</em>.</p>
+    <p id="eip-709"><em data-effect="italics">n</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = the formula used to determine the sample size (<em data-effect="italics">n</em>) needed to achieve a desired margin of error at a given level of confidence</p>
+
+    <p id="eip-73">General form of a confidence interval</p>
+    <p id="fs-idp49175936">(lower value, upper value) = (point&#160;estimate&#8722;error bound, point estimate + error bound)</p>
+    <p id="eip-863">To find the error bound when you know the confidence interval</p>
+    <p id="eip-622">error bound = upper value&#8722;point&#160;estimate OR error bound = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mtext>upper&#160;value</mtext><mo>&#8722;</mo><mtext>lower&#160;value</mtext>
+       </mrow>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mrow>
+        <mtext>upper&#160;value</mtext><mo>&#8722;</mo><mtext>lower&#160;value</mtext>
+       </mrow>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math></p>
+      <p id="eip-531">Single Population Mean, Known Standard Deviation, Normal Distribution</p>
+      <p id="eip-212">Use the Normal Distribution for Means, Population Standard Deviation is Known <em data-effect="italics">EBM</em> = <em data-effect="italics">z</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+      <mo>&#8901;</mo><mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+      <mo>&#8901;</mo><mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math></p>
+      <p id="eip-889">The confidence interval has the format (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> &#8722; <em data-effect="italics">EBM</em>, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> + <em data-effect="italics">EBM</em>).</p>
+    </section>
+    <section data-depth="1" id="eip-673" class="practice">
+<p id="eip-93"><em data-effect="italics">Use the following information to answer the next five exercises:</em> The standard deviation of the weights of elephants is known to be approximately 15 pounds. We wish to construct a 95% confidence interval for the mean weight of newborn elephant calves. Fifty newborn elephants are weighed. The sample mean is 244 pounds. The sample standard deviation is 11 pounds.</p>
+    <div data-type="exercise" id="eip-499">
+    <div data-type="problem" id="eip-759">
+    <p id="eip-836">Identify the following:</p>
+    <ol id="fs-idm9196736" type="a">
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = _____</li>
+      <li><em data-effect="italics">&#963;</em> = _____</li>
+      <li><em data-effect="italics">n</em> = _____</li>
+    </ol>
+    </div>
+    <div data-type="solution" id="eip-837">
+    <ol id="fs-idp24073552" type="a">
+    <li>244</li>
+    <li>15</li>
+    <li>50</li>
+    </ol>
+    </div>
+    </div>
+
+
+    <div data-type="exercise" id="eip-681"><div data-type="problem" id="eip-188">
+      <p id="eip-832">In words, define the random variables <em data-effect="italics">X</em> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math>.</p>
+    </div>
+    </div><div data-type="exercise" id="eip-568">
+    <div data-type="problem" id="eip-520">
+    <p id="eip-935">Which distribution should you use for this problem?</p>
+    </div>
+    <div data-type="solution" id="eip-466">
+      <p id="eip-224"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mi>N</mi><mrow><mo>(</mo>
+       <mrow>
+        <mn>244</mn><mo>,</mo><mfrac>
+         <mrow>
+          <mn>15</mn>
+         </mrow>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>50</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>N</mi><mrow><mo>(</mo>
+       <mrow>
+        <mn>244</mn><mo>,</mo><mfrac>
+         <mrow>
+          <mn>15</mn>
+         </mrow>
+         <mrow>
+          <msqrt>
+           <mrow>
+            <mn>50</mn>
+           </mrow>
+          </msqrt>
+
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow></annotation-xml></semantics></math></p></div>
+    </div>
+
+    <div data-type="exercise" id="eip-815"><div data-type="problem" id="eip-448">
+    <p id="eip-406">Construct a 95% confidence interval for the population mean weight of newborn elephants. State the confidence interval, sketch the graph, and calculate the error bound.</p>
+    </div>
+    </div><div data-type="exercise" id="eip-773">
+    <div data-type="problem" id="eip-306">
+    <p id="eip-619">What will happen to the confidence interval obtained, if 500 newborn elephants are weighed instead of 50? Why?</p>
+    </div>
+    <div data-type="solution" id="eip-714">
+      <p id="eip-827">As the sample size increases, there will be less variability in the mean, so the interval size decreases.</p>
+    </div>
+    </div>
+<p id="eip-526"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next seven exercises:</em> The U.S. Census Bureau conducts a study to determine the time needed to complete the short form. The Bureau surveys 200 people. The sample mean is 8.2 minutes. There is a known standard deviation of 2.2 minutes. The population distribution is assumed to be normal.</p><div data-type="exercise" id="eip-250"><div data-type="problem" id="eip-951">
+    <p id="eip-idm61282736">Identify the following:</p>
+
+    <ol id="fs-idm21105152" type="a">
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = _____</li>
+    <li><em data-effect="italics">&#963;</em> = _____</li>
+    <li><em data-effect="italics">n</em> = _____</li>
+    </ol>
+    </div>
+</div><div data-type="exercise" id="eip-322">
+    <div data-type="problem" id="eip-898">
+      <p id="eip-22">In words, define the random variables <em data-effect="italics">X</em> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math>.</p>
+    </div>
+    <div data-type="solution" id="eip-961">
+    <p id="eip-266"><em data-effect="italics">X</em> is the time in minutes it takes to complete the U.S. Census short form. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> is the mean time it took a sample of 200 people to complete the U.S. Census short form.</p></div>
+    </div>
+    <div data-type="exercise" id="eip-818"><div data-type="problem" id="eip-507">
+    <p id="eip-749">Which distribution should you use for this problem?</p>
+    </div>
+    </div><div data-type="exercise" id="eip-899"><div data-type="problem" id="eip-204">
+    <p id="eip-801">Construct a 90% confidence interval for the population mean time to complete the forms. State the confidence interval, sketch the graph, and calculate the error bound.</p>
+    </div>
+    <div data-type="solution" id="eip-819">
+    <p id="eip-16">CI: (7.9441, 8.4559)</p>
+<figure id="eip-idm5552576">
+      <span data-type="media" id="eip-idm128260720" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 8.2 on the horizontal axis.  A central region is shaded between points 7.94 and 8.46.">
+    <img src="/resources/144e90891b3c51127f4484b53b16c97d463b4a20/CNX_Stats_C08_M02_item002annoN.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 8.2 on the horizontal axis.  A central region is shaded between points 7.94 and 8.46." width="380"/>
+    </span>
+</figure>
+<p id="eip-idm5550160"><em data-effect="italics">EBM</em> = 0.26</p>
+    </div>
+    </div><div data-type="exercise" id="eip-846"><div data-type="problem" id="eip-804">
+    <p id="eip-756">If the Census wants to increase its level of confidence and keep the error bound the same by taking another survey, what changes should it make?</p>
+    </div>
+    </div><div data-type="exercise" id="eip-366">
+    <div data-type="problem" id="eip-478">
+    <p id="eip-583">If the Census did another survey, kept the error bound the same, and surveyed only 50 people instead of 200, what would happen to the level of confidence? Why?</p>
+    </div>
+    <div data-type="solution" id="eip-707">
+    <p id="eip-615">The level of confidence would decrease because decreasing <em data-effect="italics">n</em> makes the confidence interval wider, so at the same error bound, the confidence level decreases.</p>
+    </div>
+    </div>
+
+    <div data-type="exercise" id="eip-838"><div data-type="problem" id="eip-429">
+    <p id="eip-193">Suppose the Census needed to be 98% confident of the population mean length of time. Would the Census have to survey more people? Why or why not?</p>
+    </div>
+    </div><p id="eip-98"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next ten exercises:</em> A sample of 20 heads of lettuce was selected. Assume that the population distribution of head weight is normal. The weight of each head of lettuce was then recorded. The mean weight was 2.2 pounds with a standard deviation of 0.1 pounds. The population standard deviation is known to be 0.2 pounds.</p><div data-type="exercise" id="eip-924">
+    <div data-type="problem" id="eip-495">
+    <p id="eip-997">Identify the following:</p>
+    <ol id="fs-idm74017152" type="a">
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = ______</li>
+    <li><em data-effect="italics">&#963;</em> = ______</li>
+    <li><em data-effect="italics">n</em> = ______</li>
+    </ol>
+    </div>
+    <div data-type="solution" id="eip-697">
+    <ol id="fs-idm35892368" type="a"><li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = 2.2</li>
+    <li><em data-effect="italics">&#963;</em> = 0.2</li>
+    <li><em data-effect="italics">n</em> = 20</li></ol></div>
+    </div>
+    <div data-type="exercise" id="eip-700"><div data-type="problem" id="eip-312">
+      <p id="eip-361">In words, define the random variable <em data-effect="italics">X</em>.</p>
+    </div>
+    </div><div data-type="exercise" id="eip-64">
+    <div data-type="problem" id="eip-1000">
+      <p id="eip-474">In words, define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math>.</p>
+    </div>
+    <div data-type="solution" id="eip-778">
+    <p id="eip-692">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> is the mean weight of a sample of 20 heads of lettuce.</p>
+    </div>
+    </div>
+    <div data-type="exercise" id="eip-187"><div data-type="problem" id="eip-508">
+    <p id="eip-925">Which distribution should you use for this problem?</p>
+    </div>
+    </div><div data-type="exercise" id="eip-833">
+    <div data-type="problem" id="eip-640">
+    <p id="eip-422">Construct a 90% confidence interval for the population mean weight of the heads of lettuce. State the confidence interval, sketch the graph, and calculate the error bound.</p>
+    </div>
+    <div data-type="solution" id="eip-5">
+      <p id="fs-idm25106704"><em data-effect="italics">EBM</em> = 0.07
+      <div data-type="newline"><br/></div>CI: (2.1264, 2.2736)</p>
+
+    <figure id="fs-idp82050400">
+    <span data-type="media" id="eip-idp84209776" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 2.2 on the horizontal axis. A central region is shaded between points 2.13 and 2.27.">
+    <img src="/resources/377931acb5051d0df1bb97e3856959e477466144/CNX_Stats_C08_M02_item003annoN.jpg" data-media-type="image/jpeg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 2.2 on the horizontal axis. A central region is shaded between points 2.13 and 2.27." width="380"/>
+    </span></figure>
+    </div>
+    </div>
+
+    <div data-type="exercise" id="eip-342"><div data-type="problem" id="eip-481">
+    <p id="eip-530">Construct a 95% confidence interval for the population mean weight of the heads of lettuce. State the confidence interval, sketch the graph, and calculate the error bound.</p>
+    </div>
+    </div><div data-type="exercise" id="eip-656">
+    <div data-type="problem" id="eip-643">
+      <p id="eip-363">In complete sentences, explain why the confidence interval in <a href="#eip-833" class="autogenerated-content">[link]</a> is larger than in <a href="#eip-342" class="autogenerated-content">[link]</a>.</p></div>
+    <div data-type="solution" id="eip-352">
+      <p id="eip-564">The interval is greater because the level of confidence increased. If the only change made in the analysis is a change in confidence level, then all we are doing is changing how much area is being calculated for the normal distribution. Therefore, a larger confidence level results in larger areas and larger intervals.</p>
+    </div>
+    </div>
+    <div data-type="exercise" id="eip-598"><div data-type="problem" id="eip-866">
+      <p id="eip-323">In complete sentences, give an interpretation of what the interval in <a href="#eip-342" class="autogenerated-content">[link]</a> means.</p></div>
+    </div><div data-type="exercise" id="eip-909">
+    <div data-type="problem" id="eip-553">
+    <p id="eip-711">What would happen if 40 heads of lettuce were sampled instead of 20, and the error bound remained the same?</p>
+    </div>
+    <div data-type="solution" id="eip-105">
+      <p id="eip-799">The confidence level would increase.</p>
+    </div>
+    </div>
+    <div data-type="exercise" id="eip-602"><div data-type="problem" id="eip-174">
+    <p id="eip-3">What would happen if 40 heads of lettuce were sampled instead of 20, and the confidence level remained the same?</p>
+    </div>
+    </div><p id="element-797"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next 14 exercises:</em> The mean age for all Foothill College students for a recent Fall term was 33.2. The population standard deviation has been pretty consistent at 15. Suppose that twenty-five Winter students were randomly selected. The mean age for the sample was 30.4. We are interested in the true mean age for Winter Foothill College students. Let <em data-effect="italics">X</em> = the age of a Winter Foothill College student.</p><div data-type="exercise" id="element-463"><div data-type="problem" id="id27460377">
+
+      <p id="element-111"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+        <mover accent="true">
+          <mi>x</mi>
+          <mo>&#175;</mo>
+        </mover>
+      </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+          <mi>x</mi>
+          <mo>&#175;</mo>
+        </mover></annotation-xml></semantics></math> = _____</p>
+    </div>
+
+    <div data-type="solution" id="id27460420">
+      <p id="element-345">30.4</p>
+    </div>
+    </div>
+
+    <div data-type="exercise" id="fs-idm37850320"><div data-type="problem" id="id24602664">
+      <p id="element-514"><em data-effect="italics">n</em> = _____</p>
+    </div>
+    </div><div data-type="exercise" id="element-608"><div data-type="problem" id="id24602706">
+      <p id="element-390">________ = 15</p>
+    </div>
+
+    <div data-type="solution" id="id24602722">
+      <p id="element-253"><em data-effect="italics">&#963;</em></p>
+    </div>
+    </div>
+
+    <div data-type="exercise" id="element-440"><div data-type="problem" id="id24602748">
+      <p id="element-266">In words, define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math>.</p>
+    </div>
+
+    </div><div data-type="exercise" id="element-917"><div data-type="problem" id="id27453935">
+      <p id="element-875">What is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+          <mover accent="true">
+            <mi>x</mi>
+            <mo>&#175;</mo>
+          </mover>
+        </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+            <mi>x</mi>
+            <mo>&#175;</mo>
+          </mover></annotation-xml></semantics></math> estimating?</p>
+    </div>
+
+    <div data-type="solution" id="id27453976">
+      <p id="element-983"><em data-effect="italics">&#956;</em></p>
+    </div>
+    </div>
+<div data-type="exercise" id="element-724"><div data-type="problem" id="id27454018">
+      <p id="element-451">Is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+    <msub>
+    <mi>&#963;</mi>
+    <mi>x</mi>
+    </msub>
+    </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msub>
+    <mi>&#963;</mi>
+    <mi>x</mi>
+    </msub>
+    </mrow></annotation-xml></semantics></math> known?
+
+      </p>
+    </div>
+
+    </div><div data-type="exercise" id="element-524"><div data-type="problem" id="id27077775">
+      <p id="element-334">As a result of your answer to <a href="#element-440" class="autogenerated-content">[link]</a>, state the exact distribution to use when calculating the confidence interval.</p>
+    </div>
+
+    <div data-type="solution" id="id27077795">
+      <p id="element-919">normal</p>
+    </div>
+    </div>
+
+    <p id="element-251"><em data-effect="italics">Construct a 95% Confidence Interval for the true mean age of Winter Foothill College students  by working out then answering the next seven exercises</em>.</p><div data-type="exercise" id="fs-idm67667568"><div data-type="problem" id="id27077853">
+      <p id="element-1">How much area is in both tails (combined)? <em data-effect="italics">&#945;</em> =________</p>
+    </div>
+
+    </div><div data-type="exercise" id="element-888"><div data-type="problem" id="id27077926">
+      <p id="element-497">How much area is in each tail? <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> =________</p></div>
+
+    <div data-type="solution" id="id27077976">
+      <p id="element-748">0.025</p>
+    </div>
+    </div><div data-type="exercise" id="element-74"><div data-type="problem" id="id27078002">
+      <p id="element-402">Identify the following specifications:
+    </p><ol id="list-24352436" type="a">
+    <li>lower limit</li>
+    <li>upper limit</li>
+    <li>error bound</li>
+    </ol>
+    </div>
+    </div><div data-type="exercise" id="element-767"><div data-type="problem" id="id27456560">
+      <p id="element-539">The 95% confidence interval is:__________________.</p>
+    </div>
+
+    <div data-type="solution" id="id27456579">
+      <p id="element-702">(24.52,36.28)</p>
+    </div>
+    </div><div data-type="exercise" id="fs-idm6858288"><div data-type="problem" id="fs-idm6858032">
+      <p id="eip-810">Fill in the blanks on the graph with the areas, upper and lower limits of the confidence interval, and the sample mean.</p>
+
+    <figure id="five-0"><span data-type="media" id="id27456676" data-alt="Normal distribution curve with two vertical upward lines from the x-axis to the curve. The confidence interval is between these two lines. The residual areas are on either side."><img src="/resources/5ab7b037fcc9ba8830d84f15cbe14c7c2bf04630/fig-ch08_06_01.jpg" data-media-type="image/jpg" alt="Normal distribution curve with two vertical upward lines from the x-axis to the curve. The confidence interval is between these two lines. The residual areas are on either side." width="380"/></span></figure></div>
+     </div><div data-type="exercise" id="element-158"><div data-type="problem" id="id27481688">
+      <p id="element-46">In one complete sentence, explain what the interval means.</p>
+      </div>
+<div data-type="solution" id="fs-idm27075232"><p id="fs-idm27075104">We are 95% confident that the true mean age for Winger Foothill College students is between 24.52 and 36.28.</p></div>
+    </div><div data-type="exercise" id="element-449"><div data-type="problem" id="id27481732">
+      <p id="element-992">Using the same mean, standard deviation, and level of confidence, suppose that <em data-effect="italics">n</em> were 69 instead of 25. Would the error bound become larger or smaller? How do you know?</p>
+    </div>
+
+    </div><div data-type="exercise" id="element-395"><div data-type="problem" id="id27481777">
+      <p id="element-630">Using the same mean, standard deviation, and sample size, how would the error bound change if the confidence level were reduced to 90%? Why?</p>
+    </div>
+      <div data-type="solution" id="fs-idm23029072"><p id="fs-idm23028944">The error bound for the mean would decrease because as the CL decreases, you need less area under the normal curve (which translates into a smaller interval) to capture the true population mean.</p></div>
+    </div>
+    </section>
+
+    <section data-depth="1" id="fs-idm104841536" class="free-response"><h3 data-type="title">Homework</h3>
+    <div data-type="exercise" id="exer1">
+    <div data-type="problem" id="id4953529"><p id="para1">Among various ethnic groups, the standard deviation of heights is known to be approximately three inches. We wish to construct a 95% confidence interval for the mean height of male Swedes. Forty-eight male Swedes are surveyed. The sample mean is 71 inches. The sample standard deviation is 2.8 inches.
+
+      </p><ol id="list1" type="a">
+        <li>
+         <ol id="list2" type="i">
+           <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+             <mover accent="true">
+               <mi>x</mi>
+               <mo>&#175;</mo>
+             </mover>
+           </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+               <mi>x</mi>
+               <mo>&#175;</mo>
+             </mover></annotation-xml></semantics></math> =________</li>
+          <li><em data-effect="italics">&#963;</em> =________</li>
+           <li><em data-effect="italics">n</em> =________</li>
+         </ol></li>
+          <li>In words, define the random variables <em data-effect="italics">X</em> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+            <mover accent="true">
+              <mi>X</mi>
+              <mo>&#175;</mo>
+            </mover>
+          </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+              <mi>X</mi>
+              <mo>&#175;</mo>
+            </mover></annotation-xml></semantics></math>.</li>
+          <li>Which distribution should you use for this problem? Explain your choice.</li>
+          <li>Construct a 95% confidence interval for the population mean height of male Swedes.
+            <ol id="list4" type="i">
+              <li>State the confidence interval.</li>
+          <li>Sketch the graph.</li>
+        <li>Calculate the error bound.</li>
+            </ol>
+          </li>
+    <li>What will happen to the level of confidence obtained if 1,000 male Swedes are surveyed instead of 48? Why?</li>
+    </ol></div>
+
+    <div data-type="solution" id="solution1"><ol id="list_s1" type="a"><li>
+        <ol id="list_s2" type="i"><li>71</li>
+    <li>3</li>
+    <li>48</li>
+        </ol>
+        </li>
+          <li> X is the height of a Swiss male, and is the mean height from a sample of 48 Swiss males.
+    </li>
+<li>Normal. We know the standard deviation for the population, and the sample size is greater than 30.</li>
+    <li>
+      <ol id="list_s3" type="i"><li>CI: (70.151, 71.49)</li>
+        <li><figure id="figure1234"><span data-type="media" id="m1" data-alt=""><img src="/resources/4170bcbdd79294a2be6ea21ad25538f683946b8d/fig-ch08_09_01.jpg" data-media-type="image/jpg" alt="" width="380"/></span></figure></li>
+        <li><em data-effect="italics">EBM</em> = 0.849</li>
+        </ol>
+    </li>
+    <li> The confidence interval will decrease in size, because the sample size increased. Recall, when all factors remain unchanged, an increase in sample size decreases variability. Thus, we do not need as large an interval to capture the true population mean.</li></ol>
+    </div>
+    </div>
+
+      <div data-type="exercise" id="exer8"><div data-type="problem" id="id6331607">
+    <p id="para17">Announcements for 84 upcoming engineering conferences were randomly picked from a stack of IEEE Spectrum magazines. The mean length of the conferences was 3.94 days, with a standard deviation of 1.28 days. Assume the underlying population is normal.</p>
+          <ol id="list18" type="a"><li>In words, define the random variables <em data-effect="italics">X</em> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>X</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math>.</li>
+          <li>Which distribution should you use for this problem? Explain your choice.</li>
+          <li>Construct a 95% confidence interval for the population mean length of engineering conferences.
+            <ol id="list18_5" type="i">
+              <li>State the confidence interval. </li>
+          <li>Sketch the graph.</li>
+        <li>Calculate the error bound.</li>
+            </ol>
+          </li>
+          </ol>
+      </div>
+      </div><div data-type="exercise" id="exer6"><div data-type="problem" id="id3373222">
+    <p id="para13">Suppose that an accounting firm does a study to determine the time needed to complete one person&#8217;s tax forms. It randomly surveys 100 people. The sample mean is 23.6 hours. There is a known standard deviation of 7.0 hours. The population distribution is assumed to be normal.</p>
+
+    <ol id="list15a" type="a">
+        <li>
+          <ol id="list16" type="i">
+            <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+              <mover accent="true">
+                <mi>x</mi>
+                <mo>&#175;</mo>
+              </mover>
+            </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+                <mi>x</mi>
+                <mo>&#175;</mo>
+              </mover></annotation-xml></semantics></math> =________</li>
+    <li><em data-effect="italics">&#963;</em> =________</li>
+            <li><em data-effect="italics">n</em> =________</li>
+          </ol>
+          </li>
+            <li>In words, define the random variables <em data-effect="italics">X</em> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math>.</li>
+          <li>Which distribution should you use for this problem? Explain your choice.</li>
+        <li>Construct a 90% confidence interval for the population mean time to complete the tax forms.
+          <ol id="list17" type="i">
+            <li>State the confidence interval.</li>
+           <li>Sketch the graph.</li>
+           <li>Calculate the error bound.</li>
+          </ol>
+        </li>
+    <li>If the firm wished to increase its level of confidence and keep the error bound the same by taking another survey, what changes should it make?</li>
+          <li>If the firm did another survey, kept the error bound the same, and only surveyed 49 people, what would happen to the level of confidence? Why?</li>
+          <li>Suppose that the firm decided that it needed to be at least 96% confident of the population mean length of time to within one hour. How would the number of people the firm surveys change? Why?</li>
+        </ol></div>
+<div data-type="solution" id="eip-idm99051168">
+    <ol id="list15" type="a"><li>
+<ol id="list1a6" type="i">
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mover accent="true"><mi>x</mi><mo>&#175;</mo></mover></mrow><annotation-xml encoding="MathML-Content"><mover accent="true"><mi>x</mi><mo>&#175;</mo></mover></annotation-xml></semantics></math> = 23.6</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>&#963;</mi></mrow><annotation-xml encoding="MathML-Content"><mi>&#963;</mi></annotation-xml></semantics></math> =  7</li>
+<li>n =  100</li>
+</ol></li>
+<li><em data-effect="italics">X</em> is the time needed to complete an individual tax form. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mover accent="true"><mi>X</mi><mo>&#175;</mo></mover></mrow><annotation-xml encoding="MathML-Content"><mover accent="true"><mi>X</mi><mo>&#175;</mo></mover></annotation-xml></semantics></math> is the mean time to complete tax forms from a sample of 100 customers.</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mn>23.6</mn><mo>,</mo><mfrac>
+     <mn>7</mn>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>100</mn>
+       </mrow>
+      </msqrt>
+     </mrow>
+    </mfrac>
+   </mrow>
+  <mo>)</mo></mrow></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mn>23.6</mn><mo>,</mo><mfrac>
+     <mn>7</mn>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>100</mn>
+       </mrow>
+      </msqrt>
+     </mrow>
+    </mfrac>
+   </mrow>
+  <mo>)</mo></mrow></mrow></annotation-xml></semantics></math> because we know sigma.</li>
+<li>
+<ol id="list1b6" type="i">
+<li>(22.228, 24.972)</li>
+<li>
+<figure id="eip-idp4235472"><span data-type="media" id="eip-id1706129a" data-alt=""><img src="/resources/163bd8bfe7a83b6e74af7b8b6797be682998e945/xx.jpg" data-media-type="image/jpg" alt="" width="400"/></span>
+</figure></li>
+<li><em data-effect="italics">EBM</em> = 1.372</li>
+</ol>
+</li>
+<li>It will need to change the sample size. The firm needs to determine what the confidence level should be, then apply the error bound formula to determine the necessary sample size.</li>
+<li>The confidence level would increase as a result of a larger interval. Smaller sample sizes result in more variability. To capture the true population mean, we need to have a larger interval.</li>
+<li>According to the error bound formula, the firm needs to survey 206 people. Since we increase the confidence level, we need to increase either our error bound or the sample size.</li>
+</ol></div></div><div data-type="exercise" id="exer9"><div data-type="problem" id="id6216617">
+    <p id="para19">A sample of 16 small bags of the same brand of candies was selected. Assume that the population distribution of bag weights is normal. The weight of each bag was then recorded. The mean weight was two ounces with a standard deviation of 0.12 ounces. The population standard deviation is known to be 0.1 ounce.</p>
+
+        <ol id="list19" type="a"><li>
+        <ol id="list35" type="i">
+          <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> =________
+          </li>
+          <li><em data-effect="italics">&#963;</em> =________</li>
+          <li>s<sub>x</sub> =________</li>
+        </ol>
+        </li>
+
+
+          <li>In words, define the random variable <em data-effect="italics">X</em>.</li>
+          <li>In words, define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+            <mover accent="true">
+              <mi>X</mi>
+              <mo>&#175;</mo>
+            </mover>
+          </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+              <mi>X</mi>
+              <mo>&#175;</mo>
+            </mover></annotation-xml></semantics></math>.</li>
+          <li>Which distribution should you use for this problem? Explain your choice.</li>
+         <li>Construct a 90% confidence interval for the population mean weight of the candies.
+           <ol id="list19_5" type="i">
+             <li>State the confidence interval. </li>
+    <li>Sketch the graph.</li>
+    <li>Calculate the error bound.</li></ol>
+         </li>
+          <li>Construct a 98% confidence interval for the population mean weight of the candies.
+            <ol id="list20_5" type="i">
+              <li>State the confidence interval.</li>
+    <li>Sketch the graph.</li>
+    <li>Calculate the error bound.</li></ol></li>
+          <li>In complete sentences, explain why the confidence interval in part f is larger than the confidence interval in part e.</li>
+          <li>In complete sentences, give an interpretation of what the interval in part f means.</li>
+        </ol></div>
+
+    </div><div data-type="exercise" id="exerci"><div data-type="problem" id="id6354041">
+      <p id="para39">A camp director is interested in the mean number of letters each child sends during his or her camp session. The population standard deviation is known to be 2.5. A survey of 20 campers is taken. The mean from the sample is 7.9 with a sample standard deviation of 2.8.</p>
+
+    <ol id="list39" type="a">
+        <li>
+        <ol id="list39_5" type="i">
+          <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+            <mover accent="true">
+              <mi>x</mi>
+              <mo>&#175;</mo>
+            </mover>
+          </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+              <mi>x</mi>
+              <mo>&#175;</mo>
+            </mover></annotation-xml></semantics></math> =________</li>
+          <li><em data-effect="italics">&#963;</em> =________</li>
+          <li><em data-effect="italics">n</em> =________</li>
+        </ol>
+          </li>
+          <li>Define the random variables <em data-effect="italics">X</em> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+            <mover accent="true">
+              <mi>X</mi>
+              <mo>&#175;</mo>
+            </mover>
+          </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+              <mi>X</mi>
+              <mo>&#175;</mo>
+            </mover></annotation-xml></semantics></math> in words.</li>
+    <li>Which distribution should you use for this problem? Explain your choice.</li>
+    <li>Construct a 90% confidence interval for the population mean number of letters campers send home.
+      <ol id="list40_5" type="i">
+        <li>State the confidence interval. </li>
+        <li>Sketch the graph.</li>
+    <li>Calculate the error bound.</li>
+      </ol>
+    </li>
+    <li>What will happen to the error bound and confidence interval if 500 campers are surveyed? Why?</li>
+      </ol>
+    </div>
+
+
+      <div data-type="solution" id="id5099589">
+    <ol id="listlll_solution" type="a"><li>
+        <ol id="listaishdaskkdhghdkdlsslskd" type="i">
+    <li>7.9</li>
+    <li>2.5</li>
+    <li>20</li>
+    </ol>
+      </li>
+    <li> X is the number of letters a single camper will send home. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mover><mi>X</mi><mo>&#175;</mo></mover></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mover><mi>X</mi><mo>&#175;</mo></mover></mrow></annotation-xml></semantics></math> is the mean number of letters sent home from a sample of 20 campers.
+    </li>
+    <li><p id="eip-id1168835236326"><em data-effect="italics">N</em>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mn>7.9</mn><mo>(</mo><mfrac><mn>2.5</mn>
+<msqrt><mn>20</mn></msqrt></mfrac>
+<mo>)</mo></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mn>7.9</mn><mo>(</mo><mfrac><mn>2.5</mn>
+<msqrt><mn>20</mn></msqrt></mfrac>
+<mo>)</mo></mrow></annotation-xml></semantics></math></p>
+    </li>
+        <li><ol id="eip-id1172668181207" type="i"><li>CI: (6.98, 8.82)</li>
+<li><figure id="eip-id1169152005093"><span data-type="media" id="eip-id1169152053385" data-alt=""><img src="/resources/2681e4be5889e488eac5a5f97653d58051bfe766/CNX_Stats_C08_M01_item001.jpg" data-media-type="image/png" alt="" width="400"/></span>
+</figure></li>
+<li><em data-effect="italics">EBM</em>: 0.92</li></ol></li>
+<li>The error bound and confidence interval will decrease.</li></ol>
+      </div>
+    </div><div data-type="exercise" id="exercising"><div data-type="problem" id="id6303452"><p id="para62">What is meant by the term &#8220;90% confident&#8221; when constructing a confidence interval for a mean? </p>
+
+<ol id="list62" type="a"><li>If we took repeated samples, approximately 90% of the samples would produce the same confidence interval.</li>
+
+    <li>If we took repeated samples, approximately 90% of the confidence intervals calculated from those samples would contain the sample mean.</li>
+
+    <li>If we took repeated samples, approximately 90% of the confidence intervals calculated from those samples would contain the true value of the population mean.</li>
+
+    <li>If we took repeated samples, the sample mean would equal the population mean in approximately 90% of the samples.</li></ol>
+    </div>
+</div><div data-type="exercise" id="eip-217"><div data-type="problem" id="eip-629">
+      <p id="eip-315">The Federal Election Commission collects information about campaign contributions and disbursements for candidates and political committees each election cycle. During the 2012 campaign season, there were 1,619 candidates for the House of Representatives across the United States who received contributions from individuals. <a href="#M02_CH08-tbl003" class="autogenerated-content">[link]</a> shows the total receipts from individuals for a random selection of 40 House candidates rounded to the nearest $100. The standard deviation for this data to the nearest hundred is <em data-effect="italics">&#963;</em> = $909,200.</p>
+      <table id="M02_CH08-tbl003" summary="The total receipts from individuals for a random selection of 40 House candidates rounded to the nearest  00."><tbody>
+    <tr>
+    <td>$3,600</td>
+    <td>$1,243,900</td>
+    <td>$10,900</td>
+    <td>$385,200</td>
+    <td>$581,500</td>
+    </tr>
+    <tr>
+    <td>$7,400</td>
+    <td>$2,900</td>
+    <td>$400</td>
+    <td>$3,714,500</td>
+    <td>$632,500</td>
+    </tr>
+    <tr>
+    <td>$391,000</td>
+    <td>$467,400</td>
+    <td>$56,800</td>
+    <td>$5,800</td>
+    <td>$405,200</td>
+    </tr>
+    <tr>
+    <td>$733,200</td>
+    <td>$8,000</td>
+    <td>$468,700</td>
+    <td>$75,200</td>
+    <td>$41,000</td>
+    </tr>
+    <tr>
+    <td>$13,300</td>
+    <td>$9,500</td>
+    <td>$953,800</td>
+    <td>$1,113,500</td>
+    <td>$1,109,300</td>
+    </tr>
+    <tr>
+    <td>$353,900</td>
+    <td>$986,100</td>
+    <td>$88,600</td>
+    <td>$378,200</td>
+    <td>$13,200</td>
+    </tr>
+    <tr>
+    <td>$3,800</td>
+    <td>$745,100</td>
+    <td>$5,800</td>
+    <td>$3,072,100</td>
+    <td>$1,626,700</td>
+    </tr>
+    <tr>
+    <td>$512,900</td>
+    <td>$2,309,200</td>
+    <td>$6,600</td>
+    <td>$202,400</td>
+    <td>$15,800</td>
+    </tr>
+    </tbody></table><ol id="eip-idm150440080" type="a">
+    <li>Find the point estimate for the population mean.</li>
+    <li>Using 95% confidence, calculate the error bound.</li>
+    <li>Create a 95% confidence interval for the mean total individual contributions.</li>
+    <li>Interpret the confidence interval in the context of the problem.</li>
+    </ol>
+    </div>
+    <div data-type="solution" id="eip-480">
+      <ol id="fs-idm93426480" type="a">
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = $568,873</li>
+    <li><em data-effect="italics">CL</em> = 0.95 <em data-effect="italics">&#945;</em> = 1 &#8211; 0.95 = 0.05 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mfrac>
+         <mi>&#945;</mi>
+         <mn>2</mn>
+        </mfrac>
+
+       </mrow>
+      </msub>
+
+     </mrow></annotation-xml></semantics></math> = 1.96
+    <div data-type="newline"><br/></div>
+      <em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.025</mn>
+       </mrow>
+      </msub>
+      <mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>z</mi>
+       <mrow>
+        <mn>0.025</mn>
+       </mrow>
+      </msub>
+      <mfrac>
+       <mi>&#963;</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = 1.96 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mn>909200</mn>
+       </mrow>
+       <mrow>
+        <msqrt>
+         <mrow>
+          <mn>40</mn>
+         </mrow>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mrow>
+        <mn>909200</mn>
+       </mrow>
+       <mrow>
+        <msqrt>
+         <mrow>
+          <mn>40</mn>
+         </mrow>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math> = $281,764</li>
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> &#8722; <em data-effect="italics">EBM</em> = 568,873 &#8722; 281,764 = 287,109
+    <div data-type="newline"><br/></div><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> + <em data-effect="italics">EBM</em> = 568,873 + 281,764 = 850,637
+
+      <p id="fs-idp4716768">	Alternate solution:</p>
+      <div data-type="note" data-has-label="true" id="fs-idm110214288" class="statistics calculator" data-label="">
+      <ol id="eip-idm75466352" type="1">
+    <li>Press <code>STAT</code> and arrow over to <code>TESTS</code>.</li>
+    <li>Arrow down to <code>7:ZInterval</code>.</li>
+    <li>Press <code>ENTER</code>.</li>
+    <li>Arrow to Stats and press <code>ENTER</code>.</li>
+    <li>Arrow down and enter the following values:
+    <ul data-labeled-item="true" id="eip-idm85617648">
+    <li><em data-effect="italics">&#963;</em> : 909,200</li>
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math>: 568,873</li>
+    <li><em data-effect="italics">n</em>: 40</li>
+    <li><em data-effect="italics">CL</em>: 0.95</li>
+    </ul></li>
+    <li>Arrow down to Calculate and press <code>ENTER</code>.</li>
+    <li>The confidence interval is ($287,114, $850,632).</li>
+    <li>Notice the small difference between the two solutions&#8211;these differences are simply due to rounding error in the hand calculations.</li>
+    </ol></div>
+    </li>
+    <li>We estimate with 95% confidence that the mean amount of contributions received from all individuals by House candidates is between $287,109 and $850,637.</li>
+    </ol>
+
+    </div>
+    </div>
+
+
+      <div data-type="exercise" id="eip-806"><div data-type="problem" id="eip-870">
+      <p id="eip-503">The American Community Survey (ACS), part of the United States Census Bureau, conducts a yearly census similar to the one taken every ten years, but with a smaller percentage of participants. The most recent survey estimates with 90% confidence that the mean household income in the U.S. falls between $69,720 and $69,922. Find the point estimate for mean U.S. household income and the error bound for mean U.S. household income.</p>
+    </div>
+    </div><div data-type="exercise" id="eip-580">
+    <div data-type="problem" id="eip-321">
+    <p id="eip-360">The average height of young adult males has a normal distribution with standard deviation of 2.5 inches. You want to estimate the mean height of students at your college or university to within one inch with 93% confidence. How many male students must you measure?</p>
+    </div>
+    <div data-type="solution" id="eip-777">
+    <p id="eip-475">Use the formula for <em data-effect="italics">EBM</em>, solved for <em data-effect="italics">n</em>:
+<div data-type="newline"><br/></div><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mi>n</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>n</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+
+     </mrow></annotation-xml></semantics></math>
+    </p><p id="eip-idm89942784">From the statement of the problem, you know that <em data-effect="italics">&#963;</em> = 2.5, and you need <em data-effect="italics">EBM</em> = 1.</p>
+    <p id="eip-idp13947008"><em data-effect="italics">z</em> = <em data-effect="italics">z</em><sub>0.035</sub> = 1.812</p>
+    <p id="eip-idm56424256">(This is the value of <em data-effect="italics">z</em> for which the area under the density curve to the <strong><em data-effect="italics">right</em></strong> of <em data-effect="italics">z</em> is 0.035.)</p>
+    <p id="eip-idp85126192"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mi>n</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+      <mo>=</mo><mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mn>1.812</mn>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mrow>
+          <mn>2.5</mn>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msup>
+         <mn>1</mn>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+      <mo>&#160;</mo><mo>&#8776;</mo><mo>&#160;</mo><mn>20.52</mn>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mi>n</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+       <mrow>
+        <msup>
+         <mi>z</mi>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mi>&#963;</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <mi>E</mi><mi>B</mi><msup>
+         <mi>M</mi>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+      <mo>=</mo><mfrac>
+       <mrow>
+        <msup>
+         <mrow>
+          <mn>1.812</mn>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+        <msup>
+         <mrow>
+          <mn>2.5</mn>
+         </mrow>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+       <mrow>
+        <msup>
+         <mn>1</mn>
+         <mn>2</mn>
+        </msup>
+
+       </mrow>
+      </mfrac>
+      <mo>&#160;</mo><mo>&#8776;</mo><mo>&#160;</mo><mn>20.52</mn>
+     </mrow></annotation-xml></semantics></math></p>
+    <p id="eip-idm82999392">You need to measure at least 21 male students to achieve your goal.</p>
+    </div>
+    </div>
+
+    </section>
+    <div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+    <dl id="conflevel">
+    <dt>Confidence Level (CL)</dt>
+    <dd id="id17288738">the percent expression for the probability that the confidence interval contains the true population parameter; for example, if the CL = 90%, then in 90 out of 100 samples the interval estimate will enclose the true population parameter.</dd>
+    </dl>
+    <dl id="ebmbound">
+    <dt>Error Bound for a Population Mean (<em data-effect="italics">EBM</em>)</dt>
+    <dd id="id16568632">the margin of error; depends on the confidence level, sample size, and known or estimated population standard deviation.</dd>
+    </dl>
+    </div></body>
+
+</html>

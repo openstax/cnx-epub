@@ -1,0 +1,2169 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" class="appendix" cnxml-version="0.7" module-id="new">
+
+<title>Review Exercises (Ch 3-13)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47864/latest</md:content-url>
+  <md:content-id>m47864</md:content-id>
+  <md:title>Review Exercises (Ch 3-13)</md:title>
+  <md:version>1.16</md:version>
+  <md:created>2013/10/27 16:02:23 -0500</md:created>
+  <md:revised>2018/11/12 14:58:12 -0600</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content class="appendix">
+<para id="eip-840">These review exercises are designed to provide extra practice on concepts learned before a particular chapter. For example, the review exercises for Chapter 3, cover material learned in chapters 1 and 2.</para><section id="fs-idp100048656"><title>Chapter 3</title><para id="fs-idp53627728"><emphasis effect="italics">Use the following information to answer the next six exercises:</emphasis> In a survey of 100 stocks on NASDAQ, the average percent increase for the past year was 9% for NASDAQ stocks.</para>
+
+<para id="fs-idp110346240"><emphasis>1</emphasis>. The “average increase” for all NASDAQ stocks is the:<list id="fs-idp39287632" list-type="enumerated" number-style="lower-alpha">
+<item>population</item>
+<item>statistic</item>
+<item>parameter</item>
+<item>sample</item>
+<item>variable</item>
+</list><newline/></para><para id="fs-idp37934048"><emphasis>2.</emphasis> All of the NASDAQ stocks are the:
+<list id="fs-idp157273792" list-type="enumerated" number-style="lower-alpha">
+<item>population</item>
+<item>statistics</item>
+<item>parameter</item>
+<item>sample</item>
+<item>variable</item>
+</list><newline/></para>
+
+<para id="fs-idp153335120"><emphasis>3.</emphasis> Nine percent is the:
+<list id="fs-idp202946368" list-type="enumerated" number-style="lower-alpha">
+<item>population</item>
+<item>statistics</item>
+<item>parameter</item>
+<item>sample</item>
+<item>variable</item>
+</list><newline/></para>
+
+<para id="fs-idp171652640"><emphasis>4.</emphasis> The 100 NASDAQ stocks in the survey are the:
+<list id="fs-idp162032080" list-type="enumerated" number-style="lower-alpha">
+<item>population</item>
+<item>statistic</item>
+<item>parameter</item>
+<item>sample</item>
+<item>variable</item>
+</list><newline/></para>
+
+
+<para id="fs-idp32705312"><emphasis>5.</emphasis> The percent increase for one stock in the survey is the:
+<list id="fs-idp70461216" list-type="enumerated" number-style="lower-alpha">
+<item>population</item>
+<item>statistic</item>
+<item>parameter</item>
+<item>sample</item>
+<item>variable</item>
+</list><newline/></para>
+
+<para id="fs-idp65406928"><emphasis>6.</emphasis> Would the data collected by qualitative, quantitative discrete, or quantitative continuous?</para>
+
+
+<para id="fs-idp160280112"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> Thirty people spent two weeks around Mardi Gras in New Orleans. Their two-week weight gain is below. (Note: a loss is shown by a negative weight gain.)</para>
+<table id="fs-idp142908256" summary="..">
+<title/>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Weight Gain</entry>
+<entry>Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>–2</entry>
+<entry>3</entry>
+</row>
+<row>
+<entry>–1</entry>
+<entry>5</entry>
+</row>
+<row>
+<entry>0</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>1</entry>
+<entry>4</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>13</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>11</entry>
+<entry>1</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+
+<para id="fs-idp60293680"><emphasis>7.</emphasis> Calculate the following values:
+<list id="fs-idp138902416" list-type="enumerated" number-style="lower-alpha">
+<item>the average weight gain for the two weeks</item>
+<item>the standard deviation</item>
+<item>the first, second, and third quartiles</item>
+</list><newline/></para>
+
+<para id="fs-idp75675424"><emphasis>8.</emphasis> Construct a histogram and box plot of the data.</para></section><section id="fs-idp77189872"><title>Chapter 4</title><para id="fs-idp238638672"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> A recent poll concerning credit cards found that 35 percent of respondents use a credit card that gives them a mile of air travel for every dollar they charge. Thirty percent of the respondents charge more than $2,000 per month. Of those respondents who charge more than $2,000, 80 percent use a credit card that gives them a mile of air travel for every dollar they charge.</para>
+
+<para id="fs-idp93908384"><emphasis>9.</emphasis> What is the probability that a randomly selected respondent will spend more than $2,000 AND use a credit card that gives them a mile of air travel for every dollar they charge?<list id="fs-idp169759440" list-type="enumerated" number-style="lower-alpha">
+<item>(0.30)(0.35)</item>
+<item>(0.80)(0.35)</item>
+<item>(0.80)(0.30)</item>
+<item>(0.80)</item>
+</list><newline/></para>
+
+<para id="fs-idp130190176"><emphasis>10.</emphasis> Are using a credit card that gives a mile of air travel for each dollar spent AND charging more than $2,000 per month independent events?<list id="fs-idp235858192" list-type="enumerated" number-style="lower-alpha">
+<item>Yes</item>
+<item>No, and they are not mutually exclusive either.</item>
+<item>No, but they are mutually exclusive.</item>
+<item>Not enough information given to determine the answer</item>
+</list><newline/></para>
+
+
+<para id="fs-idp70956960"><emphasis>11.</emphasis> A sociologist wants to know the opinions of employed adult women about government funding for day care. She obtains a list of 520 members of a local business and professional women’s club and mails a questionnaire to 100 of these women selected at random. Sixty-eight questionnaires are returned. What is the population in this study?<list id="fs-idp121767872" list-type="enumerated" number-style="lower-alpha">
+<item>all employed adult women</item>
+<item>all the members of a local business and professional women’s club</item>
+<item>the 100 women who received the questionnaire</item>
+<item>all employed women with children</item>
+</list><newline/></para>
+
+
+<para id="fs-idp126256128"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> The next two questions refer to the following: An article from The San Jose Mercury News was concerned with the racial mix of the 1500 students at Prospect High School in Saratoga, CA. The table summarizes the results. (Male and female values are approximate.) Suppose one Prospect High School student is randomly selected.</para>
+<table id="fs-idp74177072" summary="..">
+<title/>
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<thead>
+<row>
+<entry>Gender/Ethnic group</entry>
+<entry>White</entry>
+<entry>Asian</entry>
+<entry>Hispanic</entry>
+<entry>Black</entry>
+<entry>American Indian</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Male</entry>
+<entry>400</entry>
+<entry>468</entry>
+<entry>115</entry>
+<entry>35</entry>
+<entry>16</entry>
+</row>
+<row>
+<entry>Female</entry>
+<entry>440</entry>
+<entry>132</entry>
+<entry>140</entry>
+<entry>40</entry>
+<entry>14</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idp74700992"><emphasis>12.</emphasis> Find the probability that a student is Asian or Male.</para>
+<para id="fs-idp158721920"><emphasis>13.</emphasis> Find the probability that a student is Black given that the student is female.</para>
+<para id="fs-idp91869312"><emphasis>14.</emphasis> A sample of pounds lost, in a certain month, by individual members of a weight reducing clinic produced the following statistics:
+<list id="fs-idp96386176" list-type="bulleted">
+<item>Mean = 5 lbs.</item>
+<item>Median = 4.5 lbs.</item>
+<item>Mode = 4 lbs.</item>
+<item>Standard deviation = 3.8 lbs.</item>
+<item>First quartile = 2 lbs.</item>
+<item>Third quartile = 8.5 lbs.</item>
+</list>
+<newline/>The correct statement is:
+<list id="fs-idp54937008" list-type="enumerated" number-style="lower-alpha">
+<item>One fourth of the members lost exactly two pounds.</item>
+<item>The middle fifty percent of the members lost from two to 8.5 lbs.</item>
+<item>Most people lost 3.5 to 4.5 lbs.</item>
+<item>All of the choices above are correct.</item>
+</list><newline/>
+</para><para id="fs-idp21349968"><emphasis>15.</emphasis> What does it mean when a data set has a standard deviation equal to zero?<list id="fs-idp48179696" list-type="enumerated" number-style="lower-alpha">
+<item>All values of the data appear with the same frequency.</item>
+<item>The mean of the data is also zero.</item>
+<item>All of the data have the same value.</item>
+<item>There are no data to begin with.</item>
+</list><newline/></para>
+
+<para id="fs-idp269158192"><emphasis>16.</emphasis> The statement that describe the illustration is:<figure id="fs-idp113086384"><media id="fs-idp84147296" alt="This is a boxplot. There is no left whisker. The boxplot consists of a box with dashed line at the left edge, and a right whisker.">
+<image mime-type="image/jpeg" src="CNX-Stats_Review_Exercises_fig001.jpg" width="380"/> 
+</media>
+</figure><list id="fs-idp186608544" list-type="enumerated" number-style="lower-alpha"><item>the mean is equal to the median.</item>
+<item>There is no first quartile.</item>
+<item>The lowest data value is the median.</item>
+<item>The median equals <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>Q</m:mi>
+<m:mn>1</m:mn>
+</m:msub>
+<m:mo>+</m:mo>
+<m:msub>
+<m:mi>Q</m:mi>
+<m:mn>3</m:mn>
+</m:msub>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>.</item>
+</list><newline/></para>
+<para id="fs-idp175561072"><emphasis>17.</emphasis> According to a recent article in the <emphasis effect="italics">San Jose Mercury News</emphasis> the average number of babies born with significant hearing loss (deafness) is approximately 2 per 1000 babies in a healthy baby nursery. The number climbs to an average of 30 per 1000 babies in an intensive care nursery. Suppose that 1,000 babies from healthy baby nurseries were randomly surveyed. Find the probability that exactly two babies were born deaf.</para>
+
+<para id="fs-idp75923168"><emphasis>18.</emphasis> A “friend” offers you the following “deal.” For a $10 fee, you may pick an envelope from a box containing 100 seemingly identical envelopes. However, each envelope contains a coupon for a free gift.
+<list id="fs-idp249637648" list-type="bulleted">
+<item>Ten of the coupons are for a free gift worth $6.</item>
+<item>Eighty of the coupons are for a free gift worth $8.</item>
+<item>Six of the coupons are for a free gift worth $12.</item>
+<item>Four of the coupons are for a free gift worth $40.</item>
+</list><newline/></para><para id="fs-idp190127760">Based upon the financial gain or loss over the long run, should you play the game?
+<list id="fs-idp213240576" list-type="enumerated" number-style="lower-alpha">
+<item>Yes, I expect to come out ahead in money.</item>
+<item>No, I expect to come out behind in money.</item>
+<item>It doesn’t matter. I expect to break even.</item>
+</list>
+<newline/></para><para id="fs-idp218434784"><emphasis effect="italics">Use the following information to answer the next four exercises:</emphasis> Recently, a nurse commented that when a patient calls the medical advice line claiming to have the flu, the chance that he/she truly has the flu (and not just a nasty cold) is only about 4%. Of the next 25 patients calling in claiming to have the flu, we are interested in how many actually have the flu.</para>
+
+<para id="fs-idp138728992"><emphasis>19.</emphasis> Define the random variable and list its possible values.</para>
+
+<para id="fs-idp48402544"><emphasis>20.</emphasis> State the distribution of <emphasis effect="italics">X</emphasis>.</para>
+
+<para id="fs-idm272960"><emphasis>21.</emphasis> Find the probability that at least four of the 25 patients actually have the flu.</para>
+
+<para id="fs-idp55326080"><emphasis>22.</emphasis> On average, for every 25 patients calling in, how many do you expect to have the flu?</para><para id="fs-idp21296320"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> Different types of writing can sometimes be distinguished by the number of letters in the words used. A student interested in this fact wants to study the number of letters of words used by Tom Clancy in his novels. She opens a Clancy novel at random and records the number of letters of the first 250 words on the page.</para>
+
+<para id="fs-idp35793696"><emphasis>23.</emphasis> What kind of data was collected?<list id="fs-idp169094832" list-type="enumerated" number-style="lower-alpha">
+<item>qualitative</item>
+<item>quantitative continuous</item>
+<item>quantitative discrete</item>
+</list><newline/></para>
+
+<para id="fs-idp159929040"><emphasis>24.</emphasis> What is the population under study?</para></section><section id="fs-idp36636832"><title>Chapter 5</title><para id="fs-idp56297184"><emphasis effect="italics">Use the following information to answer the next seven exercises:</emphasis> A recent study of mothers of junior high school children in Santa Clara County reported that 76% of the mothers are employed in paid positions. Of those mothers who are employed, 64% work full-time (over 35 hours per week), and 36% work part-time. However, out of all of the mothers in the population, 49% work full-time. The population under study is made up of mothers of junior high school children in Santa Clara County. Let E = employed and F = full-time employment.</para>
+
+<para id="eip-215"><emphasis>25.</emphasis> <list id="fs-idp142166544" list-type="enumerated" number-style="lower-alpha">
+<item>Find the percent of all mothers in the population that are NOT employed.</item>
+<item>Find the percent of mothers in the population that are employed part-time.</item>
+</list><newline/></para>
+
+<para id="fs-idp140758528"><emphasis>26.</emphasis> The “type of employment” is considered to be what type of data?</para>
+
+<para id="fs-idp239975296"><emphasis>27.</emphasis> Find the probability that a randomly selected mother works part-time given that she is employed.</para>
+
+<para id="fs-idp71006480"><emphasis>28.</emphasis> Find the probability that a randomly selected person from the population will be employed or work full-time.</para>
+
+<para id="fs-idp163545936"><emphasis>29.</emphasis> Being employed and working part-time:
+<list id="fs-idp125118240" list-type="enumerated" number-style="lower-alpha">
+<item>mutually exclusive events? Why or why not?</item>
+<item>independent events? Why or why not?</item>
+</list>
+<newline/></para><para id="fs-idp36297200"><emphasis effect="italics">Use the following additional information to answer the next two exercises:</emphasis> We randomly pick ten mothers from the above population. We are interested in the number of the mothers that are employed. Let <emphasis effect="italics">X</emphasis> = number of mothers that are employed.</para>
+
+<para id="fs-idp212627728"><emphasis>30.</emphasis> State the distribution for <emphasis effect="italics">X</emphasis>.</para>
+
+<para id="fs-idp174429456"><emphasis>31.</emphasis> Find the probability that at least six are employed.</para>
+
+<para id="fs-idp28921472"><emphasis>32.</emphasis> We expect the statistics discussion board to have, on average, 14 questions posted to it per week. We are interested in the number of questions posted to it per day.
+<list id="fs-idp54772288" list-type="enumerated" number-style="lower-alpha"><item>Define <emphasis effect="italics">X</emphasis>.</item>
+<item>What are the values that the random variable may take on?</item>
+<item>State the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>Find the probability that from ten to 14 (inclusive) questions are posted to the listserv on a randomly picked day.</item>
+</list><newline/></para>
+
+<para id="fs-idp266210960"><emphasis>33.</emphasis> A person invests $1,000 into  stock of a company that hopes to go public in one year. The probability that the person will lose all his money after one year (i.e. his stock will be worthless) is 35%. The probability that the person’s stock will still have a value of $1,000 after one year (i.e. no profit and no loss) is 60%. The probability that the person’s stock will increase in value by $10,000 after one year (i.e. will be worth $11,000) is 5%. Find the expected profit after one year.</para>
+
+<para id="fs-idp164018384"><emphasis>34.</emphasis> Rachel’s piano cost $3,000. The average cost for a piano is $4,000 with a standard deviation of $2,500. Becca’s guitar cost $550. The average cost for a guitar is $500 with a standard deviation of $200. Matt’s drums cost $600. The average cost for drums is $700 with a standard deviation of $100. Whose cost was lowest when compared to his or her own instrument?</para><figure id="fs-idp112081744"><media id="fs-idp29293968" alt="This is a boxplot over a number line  from 0 to 7. The left whisker ranges from minimum, 0, to lower quartile, 2. The box runs from lower quartile, 2, to upper quartile, 5. A dashed line marks the median at 4. The right whisker runs from 5 to maximum value 7.">
+<image mime-type="image/jpeg" src="CNX-Stats_Review_Exercises_fig002.jpg" width="380"/>
+</media>
+</figure><para id="fs-idp220667024"><emphasis>35.</emphasis> Explain why each statement is either true or false given the box plot in <link target-id="fs-idp112081744"/>.
+<list id="fs-idp158236640" list-type="enumerated" number-style="lower-alpha">
+<item>Twenty-five percent of the data re at most five.</item>
+<item>There is the same amount of data from 4–5 as there is from 5–7.</item>
+<item>There are no data values of three.</item>
+<item>Fifty percent of the data are four.</item>
+</list>
+<newline/></para><para id="fs-idp155254768"><emphasis effect="italics">Using the following information to answer the next two exercises:</emphasis> 64 faculty members were asked the number of cars they owned (including spouse and children’s cars). The results are given in the following graph:</para>
+<figure id="fs-idp177574896"><media id="fs-idp132718544" alt="This shows a relative frequency bar graph. The horizontal axis shows the number of cars using whole numbers from 0 to 6. The vertical axis shows relative frequency in units of 0.1 from 0.15 to 0.45. The graph shows the following proportions: 0.075 of responses are 1, 0.15 are 2, 0.45 are 3, 0.25 are 4, and 0.075 of responses are 6.">
+<image mime-type="image/jpeg" src="CNX_Stats_AppendixA_Figure_1pt3N.jpg"/>
+</media>
+</figure><para id="fs-idp50611808"><emphasis>36.</emphasis> Find the approximate number of responses that were three.</para>
+
+<para id="fs-idp146630896"><emphasis>37.</emphasis> Find the first, second and third quartiles. Use them to construct a box plot of the data.</para><para id="fs-idp25394960"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> <link target-id="fs-idp29366416" document=""/> shows data gathered from 15 girls on the Snow Leopard soccer team when they were asked how they liked to wear their hair. Supposed one girl from the team is randomly selected.</para><table id="fs-idp29366416" summary="..">
+<title/>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>Hair Style/Hair Color</entry>
+<entry>Blond</entry>
+<entry>Brown</entry>
+<entry>Black</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Ponytail</entry>
+<entry>3</entry>
+<entry>2</entry>
+<entry>5</entry>
+</row>
+<row>
+<entry>Plain</entry>
+<entry>2</entry>
+<entry>2</entry>
+<entry>1</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para id="fs-idp206504576"><emphasis>38.</emphasis> Find the probability that the girl has black hair GIVEN that she wears a ponytail.</para>
+
+<para id="fs-idp219918704"><emphasis>39.</emphasis> Find the probability that the girl wears her hair plain OR has brown hair.</para>
+
+<para id="fs-idp164312944"><emphasis>40.</emphasis> Find the probability that the girl has blond hair AND that she wears her hair plain.</para></section><section id="fs-idp146652912">
+<title>Chapter 6</title>
+<para id="fs-idp65092448"><emphasis effect="italics">Use the following information to answer the next two exercises: X</emphasis> ~ <emphasis effect="italics">U</emphasis>(3, 13)</para>
+
+<para id="fs-idp163085152"><emphasis>41.</emphasis> Explain which of the following are false and which are true.<list id="fs-idp152941840" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math>, 3 ≤ <emphasis effect="italics">x</emphasis> ≤ 13</item>
+<item>There is no mode</item>
+<item>The median is less than the mean.</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 10) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> ≤ 6)</item>
+</list><newline/></para>
+
+<para id="fs-idp72328976"><emphasis>42.</emphasis> Calculate:
+<list id="fs-idp180240480" list-type="enumerated" number-style="lower-alpha"><item>the mean.</item>
+<item>the median.</item>
+<item>the 65<sup>th</sup> percentile.</item>
+</list><newline/></para><figure id="fs-idp4743968"><media id="fs-idp213148192" alt="This is a boxplot over a number line  from 0 to 7. The left whisker ranges from minimum, 0, to lower quartile, 2. The box runs from lower quartile, 2, to upper quartile, 5. A dashed line marks the median at 4. The right whisker runs from 5 to maximum value 7.">
+<image mime-type="image/jpeg" src="CNX-Stats_Review_Exercises_fig004.jpg" width="380"/>
+</media>
+</figure><para id="fs-idp52676064"><emphasis>43.</emphasis> Which of the following is true for the box plot in <link target-id="fs-idp4743968"/>?<list id="fs-idp218921456" list-type="enumerated" number-style="lower-alpha">
+<item>Twenty-five percent of the data are at most five.</item>
+<item>There is about the same amount of data from 4–5 as there is from 5–7.</item>
+<item>There are no data values of three.</item>
+<item>Fifty percent of the data are four.</item>
+</list><newline/></para><para id="fs-idp130229696"><emphasis>44.</emphasis> If <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">G</emphasis>|<emphasis effect="italics">H</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">G</emphasis>), then which of the following is correct?<list id="fs-idp145930096" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">G</emphasis> and <emphasis effect="italics">H</emphasis> are mutually exclusive events.</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">G</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>)</item>
+<item>Knowing that <emphasis effect="italics">H</emphasis> has occurred will affect the chance that <emphasis effect="italics">G</emphasis> will happen.</item>
+<item><emphasis effect="italics">G</emphasis> and <emphasis effect="italics">H</emphasis> are independent events.</item>
+</list><newline/></para>
+
+<para id="fs-idp112970768"><emphasis>45.</emphasis> If <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>) = 0.3, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">K</emphasis>) = 0.63, and <emphasis effect="italics">J</emphasis> and <emphasis effect="italics">K</emphasis> are independent events, then explain which are correct and which are incorrect.<list id="fs-idp202947776" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis> AND <emphasis effect="italics">K</emphasis>) = 0</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis> OR <emphasis effect="italics">K</emphasis>) = 0.9</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis> OR <emphasis effect="italics">K</emphasis>) = 0.72</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>) ≠ <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>|<emphasis effect="italics">K</emphasis>)</item>
+</list><newline/></para>
+
+<para id="fs-idp37176640"><emphasis>46.</emphasis> On average, five students from each high school class get full scholarships to four-year colleges. Assume that most high school classes have about 500 students. <emphasis effect="italics">X</emphasis> = the number of students from a high school class that get full scholarships to four-year schools. Which of the following is the distribution of <emphasis effect="italics">X</emphasis>?<list id="fs-idp203212320" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">P</emphasis>(5)</item>
+<item><emphasis effect="italics">B</emphasis>(500, 5)</item>
+<item><emphasis effect="italics">Exp</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>5</m:mn>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+ <m:mrow>
+  <m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>5</m:mn><m:mo>,</m:mo><m:mfrac>
+     <m:mrow>
+      <m:mo stretchy="false">(</m:mo><m:mn>0.01</m:mn><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mn>0.99</m:mn><m:mo stretchy="false">)</m:mo>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>500</m:mn>
+     </m:mrow>
+    </m:mfrac>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>
+</item>
+</list><newline/></para></section>
+<section id="fs-idp95429824">
+<title>Chapter 7</title>
+<para id="fs-idp72222416"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> Richard’s Furniture Company delivers furniture from 10 A.M. to 2 P.M. continuously and uniformly. We are interested in how long (in hours) past the 10 A.M. start time that individuals wait for their delivery.</para>
+
+<para id="fs-idp148224560"><emphasis>47.</emphasis> <emphasis effect="italics">X</emphasis> ~ _________<list id="fs-idp98591536" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">U</emphasis>(0, 4)</item>
+<item><emphasis effect="italics">U</emphasis>(10, 20)</item>
+<item><emphasis effect="italics">Exp</emphasis>(2)</item>
+<item><emphasis effect="italics">N</emphasis>(2, 1)</item>
+</list><newline/></para>
+
+<para id="fs-idp170782864"><emphasis>48.</emphasis> The average wait time is:<list id="fs-idp152062080" list-type="enumerated" number-style="lower-alpha"><item>1 hour.</item>
+<item>2 hours.</item>
+<item>2.5 hours.</item>
+<item>4 hours.</item>
+</list><newline/></para>
+
+<para id="fs-idp28743056"><emphasis>49.</emphasis> Suppose that it is now past noon on a delivery day. The probability that a person must wait at least 1.5 more hours is:<list id="fs-idp164180432" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>8</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+</list><newline/></para>
+
+<para id="fs-idp120464128"><emphasis>50.</emphasis> Given: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>3</m:mn>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math><list id="fs-idp275532752" list-type="enumerated" number-style="lower-alpha"><item>Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 1).</item>
+<item>Calculate the minimum value for the upper quartile.</item>
+<item>Find <emphasis effect="italics">P</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mi>x</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>3</m:mn>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>
+</item>
+</list><newline/></para>
+
+<para id="fs-idp241976784"><emphasis>51.</emphasis> <list id="fs-idp18410592" list-type="bulleted" bullet-style="bullet"><item>40% of full-time students took 4 years to graduate</item>
+<item>30% of full-time students took 5 years to graduate</item>
+<item>20% of full-time students took 6 years to graduate</item>
+<item>10% of full-time students took 7 years to graduate</item>
+</list><newline/>The expected time for full-time students to graduate is:
+<list id="fs-idp185460416" list-type="enumerated" number-style="lower-alpha"><item>4 years</item>
+<item>4.5 years</item>
+<item>5 years</item>
+<item>5.5 years</item>
+</list><newline/></para>
+
+<para id="fs-idp109413952"><emphasis>52.</emphasis> Which of the following distributions is described by the following example?
+<newline/>Many people can run a short distance of under two miles, but as the distance increases, fewer people can run that far.<list id="fs-idp186307664" list-type="enumerated" number-style="lower-alpha">
+<item>binomial</item>
+<item>uniform</item>
+<item>exponential</item>
+<item>normal</item>
+</list><newline/></para>
+
+<para id="fs-idp125674496"><emphasis>53.</emphasis> The length of time to brush one’s teeth is generally thought to be exponentially distributed with a mean of <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+minutes. Find the probability that a randomly selected person brushes his or her teeth less than <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+minutes.<list id="fs-idp13227984" list-type="enumerated" number-style="lower-alpha">
+<item>0.5</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+<item>0.43</item>
+<item>0.63</item>
+</list><newline/></para>
+
+<para id="fs-idp201976720"><emphasis>54.</emphasis> Which distribution accurately describes the following situation?
+<newline/>The chance that a teenage boy regularly gives his mother a kiss goodnight is about 20%. Fourteen teenage boys are randomly surveyed. Let <emphasis effect="italics">X</emphasis> = the number of teenage boys that regularly give their mother a kiss goodnight.<list id="fs-idp98745840" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">B</emphasis>(14,0.20)</item>
+<item><emphasis effect="italics">P</emphasis>(2.8)</item>
+<item><emphasis effect="italics">N</emphasis>(2.8,2.24)</item>
+<item><emphasis effect="italics">Exp</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>0.20</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>
+</item>
+</list><newline/></para>
+
+<para id="fs-idp84199344"><emphasis>55.</emphasis> A 2008 report on technology use states that approximately 20% of U.S. households have never sent an e-mail. Suppose that we select a random sample of fourteen U.S. households. Let <emphasis effect="italics">X</emphasis> = the number of households in a 2008 sample of 14 households that have never sent an email<list id="fs-idp85926672" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">B</emphasis>(14,0.20)</item>
+<item><emphasis effect="italics">P</emphasis>(2.8)</item>
+<item><emphasis effect="italics">N</emphasis>(2.8,2.24)</item>
+<item><emphasis effect="italics">Exp</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>0.20</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>
+</item>
+</list><newline/></para></section>
+<section id="fs-idp190034912">
+
+<title>Chapter 8</title>
+<para id="fs-idp249213824"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> Suppose that a sample of 15 randomly chosen people were put on a special weight loss diet. The amount of weight lost, in pounds, follows an unknown distribution with mean equal to 12 pounds and standard deviation equal to three pounds. Assume that the distribution for the weight loss is normal.</para>
+
+<para id="fs-idp153370976"><emphasis>56.</emphasis> To find the probability that the mean amount of weight lost by 15 people is no more than 14 pounds, the random variable should be:<list id="fs-idm81402912" list-type="enumerated" number-style="lower-alpha">
+<item>number of people who lost weight on the special weight loss diet.</item>
+<item>the number of people who were on the diet.</item>
+<item>the mean amount of weight lost by 15 people on the special weight loss diet.</item>
+<item>the total amount of weight lost by 15 people on the special weight loss diet.</item>
+</list><newline/></para>
+
+<para id="fs-idp118856000"><emphasis>57.</emphasis> Find the probability asked for in <link target-id="fs-idp153370976">Question 56</link>.</para><para id="fs-idp242469120"><emphasis>58.</emphasis> Find the 90<sup>th</sup> percentile for the mean amount of weight lost by 15 people.</para><para id="fs-idp73025728"><emphasis effect="italics">Using the following information to answer the next three exercises:</emphasis> The time of occurrence of the first accident during rush-hour traffic at a major intersection is uniformly distributed between the three hour interval 4 p.m. to 7 p.m. Let <emphasis effect="italics">X</emphasis> = the amount of time (hours) it takes for the first accident to occur.</para>
+
+<para id="fs-idp145647312"><emphasis>59.</emphasis> What is the probability that the time of occurrence is within the first half-hour or the last hour of the period from 4 to 7 p.m.?<list id="fs-idp98266800" list-type="enumerated" number-style="lower-alpha">
+<item>cannot be determined from the information given</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>6</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>3</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+</list><newline/></para>
+
+<para id="fs-idp153514000"><emphasis>60.</emphasis> The 20<sup>th</sup> percentile occurs after how many hours?<list id="fs-idp39642992" list-type="enumerated" number-style="lower-alpha">
+<item>0.20</item>
+<item>0.60</item>
+<item>0.50</item>
+<item>1</item>
+</list><newline/></para>
+
+<para id="fs-idp212391840"><emphasis>61.</emphasis> Assume Ramon has kept track of the times for the first accidents to occur for 40 different days. Let <emphasis effect="italics">C</emphasis> = the total cumulative time. Then <emphasis effect="italics">C</emphasis> follows which distribution?<list id="fs-idp14988912" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">U</emphasis>(0,3)</item>
+<item><emphasis effect="italics">Exp</emphasis>(13)</item>
+<item><emphasis effect="italics">N</emphasis>(60, 5.477)</item>
+<item><emphasis effect="italics">N</emphasis>(1.5, 0.01875)</item>
+</list><newline/></para>
+
+<para id="fs-idp138746448"><emphasis>62.</emphasis> Using the information in <link target-id="fs-idp212391840">Question 61</link>, find the probability that the total time for all first accidents to occur is more than 43 hours.</para><para id="fs-idp48053568"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> The length of time a parent must wait for his children to clean their rooms is uniformly distributed in the time interval from one to 15 days.</para>
+
+<para id="fs-idm809984"><emphasis>63.</emphasis> How long must a parent expect to wait for his children to clean their rooms?<list id="fs-idp268291104" list-type="enumerated" number-style="lower-alpha">
+<item>eight days</item>
+<item>three days</item>
+<item>14 days</item>
+<item>six days</item>
+</list><newline/></para>
+
+<para id="fs-idm62936848"><emphasis>64.</emphasis> What is the probability that a parent will wait more than six days given that the parent has already waited more than three days?<list id="fs-idp241193344" list-type="enumerated" number-style="lower-alpha">
+<item>0.5174</item>
+<item>0.0174</item>
+<item>0.7500</item>
+<item>0.2143</item>
+</list><newline/></para><para id="fs-idp37957872"><emphasis effect="italics">Use the following information to answer the next five exercises:</emphasis> Twenty percent of the students at a local community college live in within five miles of the campus. Thirty percent of the students at the same community college receive some kind of financial aid. Of those who live within five miles of the campus, 75% receive some kind of financial aid.</para>
+
+<para id="fs-idp75808752"><emphasis>65.</emphasis> Find the probability that a randomly chosen student at the local community college does not live within five miles of the campus.<list id="fs-idp98077648" list-type="enumerated" number-style="lower-alpha">
+<item>80%</item>
+<item>20%</item>
+<item>30%</item>
+<item>cannot be determined</item>
+</list><newline/></para>
+
+<para id="fs-idp91768896"><emphasis>66.</emphasis> Find the probability that a randomly chosen student at the local community college lives within five miles of the campus or receives some kind of financial aid.<list id="fs-idp90901648" list-type="enumerated" number-style="lower-alpha">
+<item>50%</item>
+<item>35%</item>
+<item>27.5%</item>
+<item>75%</item>
+</list><newline/></para>
+
+<para id="fs-idp38146608"><emphasis>67.</emphasis> Are living in student housing within five miles of the campus and receiving some kind of financial aid mutually exclusive?<list id="fs-idp64960736" list-type="enumerated" number-style="lower-alpha">
+<item>yes</item>
+<item>no</item>
+<item>cannot be determined</item>
+</list><newline/></para>
+
+<para id="fs-idp29778672"><emphasis>68.</emphasis> The interest rate charged on the financial aid is _______ data.<list id="fs-idp40192224" list-type="enumerated" number-style="lower-alpha">
+<item>quantitative discrete</item>
+<item>quantitative continuous</item>
+<item>qualitative discrete</item>
+<item>qualitative</item>
+</list><newline/></para>
+
+<para id="fs-idm20723312"><emphasis>69.</emphasis> The following information is about the students who receive financial aid at the local community college.
+<list id="fs-idp171634272" list-type="bulleted">
+<item>1st quartile = $250</item>
+<item>2nd quartile = $700</item>
+<item>3rd quartile = $1200</item>
+</list>
+<newline/>These amounts are for the school year. If a sample of 200 students is taken, how many are expected to receive $250 or more?
+<list id="fs-idm3428544" list-type="enumerated" number-style="lower-alpha">
+<item>50</item>
+<item>250</item>
+<item>150</item>
+<item>cannot be determined</item>
+</list>
+<newline/></para><para id="fs-idp56840976"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis>) = 0.2, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>) = 0.3; <emphasis effect="italics">A</emphasis> and <emphasis effect="italics">B</emphasis> are independent events.</para>
+
+
+<para id="fs-idp30197136"><emphasis>70.</emphasis> <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis> AND <emphasis effect="italics">B</emphasis>) = ______<list id="fs-idp253111440" list-type="enumerated" number-style="lower-alpha">
+<item>0.5</item>
+<item>0.6</item>
+<item>0</item>
+<item>0.06</item>
+</list><newline/></para>
+
+<para id="fs-idp131552080"><emphasis>71.</emphasis> <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis> OR <emphasis effect="italics">B</emphasis>) = _______<list id="fs-idp53132384" list-type="enumerated" number-style="lower-alpha">
+<item>0.56</item>
+<item>0.5</item>
+<item>0.44</item>
+<item>1</item>
+</list><newline/></para>
+
+<para id="fs-idp162150816"><emphasis>72.</emphasis> If <emphasis effect="italics">H</emphasis> and <emphasis effect="italics">D</emphasis> are mutually exclusive events, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>) = 0.25, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">D</emphasis>) = 0.15, then <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>|<emphasis effect="italics">D</emphasis>).<list id="fs-idp118854128" list-type="enumerated" number-style="lower-alpha">
+<item>1</item>
+<item>0</item>
+<item>0.40</item>
+<item>0.0375</item>
+</list><newline/></para></section>
+<section id="fs-idp121744256">
+<title>Chapter 9</title>
+
+<para id="fs-idp77257520"><emphasis>73.</emphasis> Rebecca and Matt are 14 year old twins. Matt’s height is two standard deviations below the mean for 14 year old boys’ height. Rebecca’s height is 0.10 standard deviations above the mean for 14 year old girls’ height. Interpret this.<list id="fs-idp169761840" list-type="enumerated" number-style="lower-alpha"><item>Matt is 2.1 inches shorter than Rebecca.</item>
+<item>Rebecca is very tall compared to other 14 year old girls.</item>
+<item>Rebecca is taller than Matt.</item>
+<item>Matt is shorter than the average 14 year old boy.</item>
+</list><newline/></para>
+
+<para id="fs-idp5846736"><emphasis>74.</emphasis> Construct a histogram of the IPO data (see <link document="m47873"/>).</para><para id="fs-idp194530592"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> Ninety homeowners were asked the number of estimates they obtained before having their homes fumigated. Let <emphasis effect="italics">X</emphasis> = the number of estimates.</para>
+<table id="fs-idp187952032" summary="..">
+<title/>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>x</entry>
+<entry>Relative Frequency</entry>
+<entry>Cumulative Relative Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1</entry>
+<entry>0.3</entry>
+<entry/>
+</row>
+<row>
+<entry>2</entry>
+<entry>0.2</entry>
+<entry/>
+</row>
+<row>
+<entry>4</entry>
+<entry>0.4</entry>
+<entry/>
+</row>
+<row>
+<entry>5</entry>
+<entry>0.1</entry>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para id="fs-idp74838384"><emphasis>75.</emphasis> Complete the cumulative frequency column.</para>
+
+<para id="fs-idp84179104"><emphasis>76.</emphasis> Calculate the sample mean (a), the sample standard deviation (b) and the percent of the estimates that fall at or below four (c).</para>
+
+<para id="fs-idp72740512"><emphasis>77.</emphasis> Calculate the median, <emphasis effect="italics">M</emphasis>, the first quartile, <emphasis effect="italics">Q</emphasis><sub>1</sub>, the third quartile, <emphasis effect="italics">Q</emphasis><sub>3</sub>. Then construct a box plot of the data.</para>
+
+<para id="fs-idp222511392"><emphasis>78.</emphasis> The middle 50% of the data are between _____ and _____.</para><para id="fs-idp3595632"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> Seventy 5<sup>th</sup> and 6<sup>th</sup> graders were asked their favorite dinner.</para>
+<table id="fs-idp73514720" summary="..">
+<title/>
+<tgroup cols="5">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+<row>
+<entry/>
+<entry>Pizza</entry>
+<entry>Hamburgers</entry>
+<entry>Spaghetti</entry>
+<entry>Fried shrimp</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>5th grader</entry>
+<entry>15</entry>
+<entry>6</entry>
+<entry>9</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>6th grader</entry>
+<entry>15</entry>
+<entry>7</entry>
+<entry>10</entry>
+<entry>8</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para id="fs-idp219403440"><emphasis>79.</emphasis> Find the probability that one randomly chosen child is in the 6th grade and prefers fried shrimp.<list id="fs-idm46831088" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>32</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>70</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>8</m:mn>
+<m:mrow>
+<m:mn>32</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>8</m:mn>
+<m:mn>8</m:mn>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>8</m:mn>
+<m:mrow>
+<m:mn>70</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+</list><newline/></para>
+
+<para id="fs-idp208161984"><emphasis>80.</emphasis> Find the probability that a child does not prefer pizza.<list id="fs-idp150847920" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>30</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>70</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>30</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>40</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>40</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>70</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item>1</item>
+</list><newline/></para>
+
+<para id="fs-idp107119424"><emphasis>81.</emphasis> Find the probability a child is in the 5<sup>th</sup> grade given that the child prefers spaghetti.<list id="fs-idp509840" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>9</m:mn>
+<m:mrow>
+<m:mn>19</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>9</m:mn>
+<m:mrow>
+<m:mn>70</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>9</m:mn>
+<m:mrow>
+<m:mn>30</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>19</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>70</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>
+</item>
+</list><newline/></para>
+
+<para id="fs-idp29161520"><emphasis>82.</emphasis> A sample of convenience is a random sample.<list id="fs-idp144939664" list-type="enumerated" number-style="lower-alpha">
+<item>true</item>
+<item>false</item>
+</list><newline/></para>
+
+<para id="fs-idm127589376"><emphasis>83.</emphasis> A statistic is a number that is a property of the population.<list id="fs-idm52437728" list-type="enumerated" number-style="lower-alpha">
+<item>true</item>
+<item>false</item>
+</list><newline/></para>
+
+<para id="fs-idm33587568"><emphasis>84.</emphasis> You should always throw out any data that are outliers.<list id="fs-idm89065664" list-type="enumerated" number-style="lower-alpha">
+<item>true</item>
+<item>false</item>
+</list><newline/></para>
+
+<para id="fs-idm9899488"><emphasis>85.</emphasis> Lee bakes pies for a small restaurant in Felton, CA. She generally bakes 20 pies in a day, on average. Of interest is the number of pies she bakes each day.<list id="fs-idm28169376" list-type="enumerated" number-style="lower-alpha">
+<item>Define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>State the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>Find the probability that Lee bakes more than 25 pies in any given day.</item>
+</list><newline/></para>
+
+<para id="fs-idp7039328"><emphasis>86.</emphasis> Six different brands of Italian salad dressing were randomly selected at a supermarket. The grams of fat per serving are 7, 7, 9, 6, 8, 5. Assume that the underlying distribution is normal. Calculate a 95% confidence interval for the population mean grams of fat per serving of Italian salad dressing sold in supermarkets.</para>
+
+<para id="fs-idp84121392"><emphasis>87.</emphasis> Given: uniform, exponential, normal distributions. Match each to a statement below.<list id="fs-idm16052880" list-type="enumerated" number-style="lower-alpha">
+<item>mean = median ≠ mode</item>
+<item>mean &gt; median &gt; mode</item>
+<item>mean = median = mode</item>
+</list><newline/></para></section>
+<section id="fs-idm150557568">
+<title>Chapter 10</title>
+<para id="fs-idp130914496"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> In a survey at Kirkwood Ski Resort the following information was recorded:</para>
+<table id="fs-idp51990160" summary="..">
+<title/>
+<tgroup cols="5">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+<row>
+<entry/>
+<entry>0–10</entry>
+<entry>11–20</entry>
+<entry>21–40</entry>
+<entry>40+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Ski</entry>
+<entry>10</entry>
+<entry>12</entry>
+<entry>30</entry>
+<entry>8</entry>
+</row>
+<row>
+<entry>Snowboard</entry>
+<entry>6</entry>
+<entry>17</entry>
+<entry>12</entry>
+<entry>5</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idm6611728">Suppose that one person from <link target-id="fs-idp51990160" document=""/> was randomly selected.</para>
+
+<para id="fs-idm40842560"><emphasis>88.</emphasis> Find the probability that the person was a skier or was age 11–20.</para>
+
+<para id="fs-idm63348400"><emphasis>89.</emphasis> Find the probability that the person was a snowboarder given he or she was age 21–40.</para>
+
+<para id="fs-idp58074064"><emphasis>90.</emphasis> Explain which of the following are true and which are false.<list id="fs-idp2474064" list-type="enumerated" number-style="lower-alpha">
+<item>Sport and age are independent events.</item>
+<item>Ski and age 11–20 are mutually exclusive events.</item>
+<item><emphasis effect="italics">P</emphasis>(Ski AND age 21–40) &lt; <emphasis effect="italics">P</emphasis>(Ski|age 21–40)</item>
+<item><emphasis effect="italics">P</emphasis>(Snowboard OR age 0–10) &lt; <emphasis effect="italics">P</emphasis>(Snowboard|age 0–10)</item>
+</list><newline/></para>
+
+<para id="fs-idm61902160"><emphasis>91.</emphasis> The average length of time a person with a broken leg wears a cast is approximately six weeks. The standard deviation is about three weeks. Thirty people who had recently healed from broken legs were interviewed. State the distribution that most accurately reflects total time to heal for the thirty people.</para>
+
+<para id="fs-idp108035408"><emphasis>92.</emphasis> The distribution for <emphasis effect="italics">X</emphasis> is uniform. What can we say for certain about the distribution for <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math>
+when <emphasis effect="italics">n</emphasis> = 1?<list id="fs-idm42319360" list-type="enumerated" number-style="lower-alpha">
+<item>The distribution for <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math>
+is still uniform with the same mean and standard deviation as the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>The distribution for <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math> is normal with the different mean and a different standard deviation as the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>The distribution for <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math> is normal with the same mean but a larger standard deviation than the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>The distribution for <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math> is normal with the same mean but a smaller standard deviation than the distribution for <emphasis effect="italics">X</emphasis>.</item>
+</list><newline/></para>
+
+<para id="fs-idp102656384"><emphasis>93.</emphasis> The distribution for <emphasis effect="italics">X</emphasis> is uniform. What can we say for certain about the distribution for <m:math>
+<m:mrow>
+<m:mstyle displaystyle="true">
+<m:mo>∑</m:mo> <m:mi>X</m:mi>
+</m:mstyle>
+</m:mrow>
+</m:math>
+when <emphasis effect="italics">n</emphasis> = 50?<list id="fs-idp107093072" list-type="enumerated" number-style="lower-alpha">
+<item>distribution for <m:math>
+<m:mrow>
+<m:mstyle displaystyle="true">
+<m:mo>∑</m:mo> <m:mi>X</m:mi>
+</m:mstyle>
+</m:mrow>
+</m:math>
+is still uniform with the same mean and standard deviation as the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>The distribution for <m:math>
+<m:mrow>
+<m:mstyle displaystyle="true">
+<m:mo>∑</m:mo> <m:mi>X</m:mi>
+</m:mstyle>
+</m:mrow>
+</m:math>
+is normal with the same mean but a larger standard deviation as the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>The distribution for <m:math>
+<m:mrow>
+<m:mstyle displaystyle="true">
+<m:mo>∑</m:mo> <m:mi>X</m:mi>
+</m:mstyle>
+</m:mrow>
+</m:math>
+is normal with a larger mean and a larger standard deviation than the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>The distribution for <m:math>
+<m:mrow>
+<m:mstyle displaystyle="true">
+<m:mo>∑</m:mo> <m:mi>X</m:mi>
+</m:mstyle>
+</m:mrow>
+</m:math>
+is normal with the same mean but a smaller standard deviation than the distribution for <emphasis effect="italics">X</emphasis>.</item>
+</list><newline/></para><para id="fs-idp99042032"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> A group of students measured the lengths of all the carrots in a five-pound bag of baby carrots. They calculated the average length of baby carrots to be 2.0 inches with a standard deviation of 0.25 inches. Suppose we randomly survey 16 five-pound bags of baby carrots.</para>
+
+<para id="fs-idp118299392"><emphasis>94.</emphasis> State the approximate distribution for <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math>, the distribution for the average lengths of baby carrots in 16 five-pound bags. <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math> ~ ______</para>
+
+<para id="fs-idp30365456"><emphasis>95.</emphasis> Explain why we cannot find the probability that one individual randomly chosen carrot is greater than 2.25 inches.</para>
+
+<para id="fs-idp96808480"><emphasis>96.</emphasis> Find the probability that <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math> is between two and 2.25 inches.</para><para id="fs-idp100958896"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> At the beginning of the term, the amount of time a student waits in line at the campus store is normally distributed with a mean of five minutes and a standard deviation of two minutes.</para>
+
+<para id="fs-idp62358848"><emphasis>97.</emphasis> Find the 90<sup>th</sup> percentile of waiting time in minutes.</para>
+
+<para id="fs-idp24087904"><emphasis>98.</emphasis> Find the median waiting time for one student.</para>
+
+<para id="fs-idp71563408"><emphasis>99.</emphasis> Find the probability that the average waiting time for 40 students is at least 4.5 minutes.</para></section>
+
+<section id="eip-469"><title>Chapter 11</title><para id="fs-idp78761120"><emphasis effect="italics">Use the following information to answer the next four exercises:</emphasis> Suppose that the time that owners keep their cars (purchased new) is normally distributed with a mean of seven years and a standard deviation of two years. We are interested in how long an individual keeps his car (purchased new). Our population is people who buy their cars new.</para>
+
+<para id="fs-idp153630496"><emphasis>100.</emphasis> Sixty percent of individuals keep their cars <emphasis>at most</emphasis> how many years?</para>
+
+<para id="fs-idp96797680"><emphasis>101.</emphasis> Suppose that we randomly survey one person. Find the probability that person keeps his or her car <emphasis>less than</emphasis> 2.5 years.</para>
+
+<para id="fs-idm3982592"><emphasis>102.</emphasis> If we are to pick individuals ten at a time, find the distribution for the <emphasis>mean</emphasis> car length ownership.</para>
+
+<para id="fs-idp51271168"><emphasis>103.</emphasis> If we are to pick ten individuals, find the probability that the <emphasis>sum</emphasis> of their ownership time is more than 55 years.</para>
+
+<para id="fs-idp100698896"><emphasis>104.</emphasis> For which distribution is the median not equal to the mean?<list id="fs-idp125211088" list-type="enumerated" number-style="lower-alpha">
+<item>Uniform</item>
+<item>Exponential</item>
+<item>Normal</item>
+<item>Student <emphasis effect="italics">t</emphasis></item>
+</list><newline/></para>
+
+<para id="fs-idp154516672"><emphasis>105.</emphasis> Compare the standard normal distribution to the Student’s <emphasis effect="italics">t</emphasis>-distribution, centered at zero. Explain which of the following are true and which are false.<list id="fs-idp60902432" list-type="enumerated" number-style="lower-alpha">
+<item>As the number surveyed increases, the area to the left of –1 for the Student’s <emphasis effect="italics">t</emphasis>-distribution approaches the area for the standard normal distribution.</item>
+<item>As the degrees of freedom decrease, the graph of the Student’s <emphasis effect="italics">t</emphasis>-distribution looks more like the graph of the standard normal distribution.</item>
+<item>If the number surveyed is 15, the normal distribution should never be used.</item>
+</list><newline/></para><para id="fs-idp104789456"><emphasis effect="italics">Use the following information to answer the next five exercises:</emphasis> We are interested in the checking account balance of twenty-year-old college students. We randomly survey 16 twenty-year-old college students. We obtain a sample mean of $640 and a sample standard deviation of $150. Let <emphasis effect="italics">X</emphasis> = checking account balance of an individual twenty year old college student.</para>
+
+<para id="fs-idp44899072"><emphasis>106.</emphasis> Explain why we cannot determine the distribution of <emphasis effect="italics">X</emphasis>.</para>
+
+<para id="fs-idp5090400"><emphasis>107.</emphasis> If you were to create a confidence interval or perform a hypothesis test for the population mean checking account balance of twenty-year-old college students, what distribution would you use?</para>
+
+<para id="fs-idp82864672"><emphasis>108.</emphasis> Find the 95% confidence interval for the true mean checking account balance of a twenty-year-old college student.</para>
+
+<para id="fs-idp76429664"><emphasis>109.</emphasis> What type of data is the balance of the checking account considered to be?</para>
+
+<para id="fs-idp174460416"><emphasis>110.</emphasis> What type of data is the number of twenty-year-olds considered to be?</para>
+
+<para id="fs-idp125274864"><emphasis>111.</emphasis> On average, a busy emergency room gets a patient with a shotgun wound about once per week. We are interested in the number of patients with a shotgun wound the emergency room gets per 28 days.<list id="fs-idp6231536" list-type="enumerated" number-style="lower-alpha">
+<item>Define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>State the distribution for <emphasis effect="italics">X</emphasis>.</item>
+<item>Find the probability that the emergency room gets no patients with shotgun wounds in the next 28 days.</item>
+</list><newline/></para><para id="fs-idp125136256"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> The probability that a certain slot machine will pay back money when a quarter is inserted is 0.30. Assume that each play of the slot machine is independent from each other. A person puts in 15 quarters for 15 plays.</para>
+
+<para id="fs-idp122569280"><emphasis>112.</emphasis> Is the expected number of plays of the slot machine that will pay back money greater than, less than or the same as the median? Explain your answer.</para>
+
+<para id="fs-idp42323840"><emphasis>113.</emphasis> Is it likely that exactly eight of the 15 plays would pay back money? Justify your answer numerically.</para>
+
+<para id="fs-idp201160832"><emphasis>114.</emphasis> A game is played with the following rules:
+<list id="fs-idp201161088" list-type="bulleted">
+<item>it costs $10 to enter.</item>
+<item>a fair coin is tossed four times.</item>
+<item>if you do not get four heads or four tails, you lose your $10.</item>
+<item>if you get four heads or four tails, you get back your $10, plus $30 more.</item>
+</list>
+<newline/>Over the long run of playing this game, what are your expected earnings?</para>
+
+<para id="fs-idp2367328"><emphasis>115.</emphasis> <list id="fs-idp2367584" list-type="bulleted">
+<item>The mean grade on a math exam in Rachel’s class was 74, with a standard deviation of five. Rachel earned an 80.</item>
+<item>The mean grade on a math exam in Becca’s class was 47, with a standard deviation of two. Becca earned a 51.</item>
+<item>The mean grade on a math exam in Matt’s class was 70, with a standard deviation of eight. Matt earned an 83.</item>
+</list>
+<newline/>Find whose score was the best, compared to his or her own class. Justify your answer numerically.</para><para id="fs-idp26619264"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> A random sample of 70 compulsive gamblers were asked the number of days they go to casinos per week. The results are given in the following graph:</para>
+<figure id="fs-idp27199264"><media id="fs-idp27199520" alt="This shows a relative frequency histogram. The horizontal axis shows the number of days using whole numbers from 1 to 7. The vertical axis shows relative frequency in units of 0.1 from 0.1 to 0.3. The graph shows the following proportions: 0.2 of responses are 1, 0.2 are 2, 0.3 are 3, 0.2 are 5, and 0.1 of responses are 7.">
+<image mime-type="image/jpeg" src="CNX-Stats_Review_Exercises_fig005.jpg" width="380"/>
+</media>
+</figure><para id="fs-idp59467920"><emphasis>116.</emphasis> Find the number of responses that were five.</para>
+
+<para id="fs-idm42905008"><emphasis>117.</emphasis> Find the mean, standard deviation, the median, the first quartile, the third quartile and the <emphasis effect="italics">IQR</emphasis>.</para>
+
+<para id="fs-idp122398288"><emphasis>118.</emphasis> Based upon research at De Anza College, it is believed that about 19% of the student population speaks a language other than English at home. Suppose that a study was done this year to see if that percent has decreased. Ninety-eight students were randomly surveyed with the following results. Fourteen said that they speak a language other than English at home.<list id="fs-idp128485744" list-type="enumerated" number-style="lower-alpha">
+<item>State an appropriate null hypothesis.</item>
+<item>State an appropriate alternative hypothesis.</item>
+<item>Define the random variable, <emphasis effect="italics">P</emphasis>′.</item>
+<item>Calculate the test statistic.</item>
+<item>Calculate the <emphasis effect="italics">p</emphasis>-value.</item>
+<item>At the 5% level of decision, what is your decision about the null hypothesis?</item>
+<item>What is the Type I error?</item>
+<item>What is the Type II error?</item>
+</list><newline/></para>
+
+<para id="fs-idp21704912"><emphasis>119.</emphasis> Assume that you are an emergency paramedic called in to rescue victims of an accident. You need to help a patient who is bleeding profusely. The patient is also considered to be a high risk for contracting AIDS. Assume that the null hypothesis is that the patient does <emphasis>not</emphasis> have the HIV virus. What is a Type I error?</para>
+
+<para id="fs-idm20727296"><emphasis>120.</emphasis> It is often said that Californians are more casual than the rest of Americans. Suppose that a survey was done to see if the proportion of Californian professionals that wear jeans to work is greater than the proportion of non-Californian professionals. Fifty of each was surveyed with the following results. Fifteen Californians wear jeans to work and six non-Californians wear jeans to work.
+<newline/>Let <emphasis effect="italics">C</emphasis> = Californian professional; <emphasis effect="italics">NC</emphasis> = non-Californian professional<list id="fs-idp100723344" list-type="enumerated" number-style="lower-alpha">
+<item>State appropriate null and alternate hypotheses.</item>
+<item>Define the random variable.</item>
+<item>Calculate the test statistic and <emphasis effect="italics">p</emphasis>-value.</item>
+<item>At the 5% significance level, what is your decision?</item>
+<item>What is the Type I error?</item>
+<item>What is the Type II error?</item>
+</list><newline/></para><para id="fs-idp156366800"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> A group of Statistics students have developed a technique that they feel will lower their anxiety level on statistics exams. They measured their anxiety level at the start of the quarter and again at the end of the quarter. Recorded is the paired data in that order: (1000, 900); (1200, 1050); (600, 700); (1300, 1100); (1000, 900); (900, 900).</para>
+
+<para id="fs-idp23176368"><emphasis>121.</emphasis> This is a test of (pick the best answer):<list id="fs-idp23176752" list-type="enumerated" number-style="lower-alpha">
+<item>large samples, independent means</item>
+<item>small samples, independent means</item>
+<item>dependent means</item>
+</list><newline/></para>
+
+<para id="fs-idp121879152"><emphasis>122.</emphasis> State the distribution to use for the test.</para></section><section id="fs-idp126881392"><title>Chapter 12</title><para id="fs-idp140535216"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> A recent survey of U.S. teenage pregnancy was answered by 720 girls, age 12–19. Six percent of the girls surveyed said they have been pregnant. We are interested in the true proportion of U.S. girls, age 12–19, who have been pregnant.</para>
+
+<para id="fs-idp107100576"><emphasis>123.</emphasis> Find the 95% confidence interval for the true proportion of U.S. girls, age 12–19, who have been pregnant.</para>
+
+<para id="fs-idm16608224"><emphasis>124.</emphasis> The report also stated that the results of the survey are accurate to within ±3.7% at the 95% confidence level. Suppose that a new study is to be done. It is desired to be accurate to within 2% of the 95% confidence level. What is the minimum number that should be surveyed?</para>
+
+<para id="fs-idm6193616"><emphasis>125.</emphasis> Given: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>3</m:mn>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>. Sketch the graph that depicts: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 1).
+</para><para id="fs-idp110758256"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> The amount of money a customer spends in one trip to the supermarket is known to have an exponential distribution. Suppose the mean amount of money a customer spends in one trip to the supermarket is $72.</para>
+
+
+<para id="fs-idp77001744"><emphasis>126.</emphasis> Find the probability that one customer spends less than $72 in one trip to the supermarket?</para>
+
+<para id="fs-idp17180672"><emphasis>127.</emphasis> Suppose five customers pool their money. How much money altogether would you expect the five customers to spend in one trip to the supermarket (in dollars)?</para>
+
+<para id="fs-idp175508080"><emphasis>128.</emphasis> State the distribution to use if you want to find the probability that the <emphasis>mean</emphasis> amount spent by five customers in one trip to the supermarket is less than $60.</para></section><section id="fs-idp22947392"><title>Chapter 13</title><para id="fs-idp42664256"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> Suppose that the probability of a drought in any independent year is 20%. Out of those years in which a drought occurs, the probability of water rationing is 10%. However, in any year, the probability of water rationing is 5%.</para>
+
+<para id="fs-idp204611216"><emphasis>129.</emphasis> What is the probability of both a drought <emphasis>and</emphasis> water rationing occurring?</para>
+
+<para id="fs-idp103485776"><emphasis>130.</emphasis> Out of the years with water rationing, find the probability that there is a drought.</para><para id="fs-idp72963152"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis></para>
+<table id="fs-idp83656832" summary="..">
+<title/>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry/>
+<entry>Apple</entry>
+<entry>Pumpkin</entry>
+<entry>Pecan</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Female</entry>
+<entry>40</entry>
+<entry>10</entry>
+<entry>30</entry>
+</row>
+<row>
+<entry>Male</entry>
+<entry>20</entry>
+<entry>30</entry>
+<entry>10</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para id="fs-idp90394592"><emphasis>131.</emphasis> Suppose that one individual is randomly chosen. Find the probability that the person’s favorite pie is apple <emphasis>or</emphasis> the person is male.</para>
+
+<para id="fs-idp9942272"><emphasis>132.</emphasis> Suppose that one male is randomly chosen. Find the probability his favorite pie is pecan.</para>
+
+<para id="fs-idm64676624"><emphasis>133.</emphasis> Conduct a hypothesis test to determine if favorite pie type and gender are independent.</para><para id="fs-idp52892640"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> Let’s say that the probability that an adult watches the news at least once per week is 0.60.</para>
+
+<para id="fs-idp79358160"><emphasis>134.</emphasis> We randomly survey 14 people. On average, how many people do we expect to watch the news at least once per week?</para>
+
+<para id="fs-idp132786624"><emphasis>135.</emphasis> We randomly survey 14 people. Of interest is the number that watch the news at least once per week. State the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____</para>
+
+<para id="fs-idp9726480"><emphasis>136.</emphasis> The following histogram is most likely to be a result of sampling from which distribution?<figure id="fs-idp9726976"><media id="fs-idp30948224" alt="This graph is an unlabeled histogram. The distribution is roughly symmetric. There is a single peak in the center of the graph and heights of bars decrease from that point toward each end of the graph.">
+<image mime-type="image/jpeg" src="CNX-Stats_Review_Exercises_fig006.jpg" width="380"/>
+</media>
+</figure><list id="fs-idp143954640" list-type="enumerated" number-style="lower-alpha">
+<item>Chi-Square</item>
+<item>Geometric</item>
+<item>Uniform</item>
+<item>Binomial</item>
+</list><newline/></para>
+
+<para id="fs-idm73091984"><emphasis>137.</emphasis> The ages of De Anza evening students is known to be normally distributed with a population mean of 40 and a population standard deviation of six. A sample of six De Anza evening students reported their ages (in years) as: 28; 35; 47; 45; 30; 50. Find the probability that the mean of six ages of randomly chosen students is less than 35 years. Hint: Find the sample mean.</para>
+
+<para id="fs-idm21773664"><emphasis>138.</emphasis> A math exam was given to all the fifth grade children attending Country School. Two random samples of scores were taken. The null hypothesis is that the mean math scores for boys and girls in fifth grade are the same. Conduct a hypothesis test.</para><table id="fs-idp61162016" summary="..">
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry/>
+<entry><emphasis effect="italics">n</emphasis></entry>
+<entry><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>¯</m:mo>
+ </m:mover>
+</m:math></entry>
+<entry><emphasis effect="italics">s</emphasis><sup>2</sup></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Boys</entry>
+<entry>55</entry>
+<entry>82</entry>
+<entry>29</entry>
+</row>
+<row>
+<entry>Girls</entry>
+<entry>60</entry>
+<entry>86</entry>
+<entry>46</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para id="fs-idm9555216"><emphasis>139.</emphasis> In a survey of 80 males, 55 had played an organized sport growing up. Of the 70 females surveyed, 25 had played an organized sport growing up. We are interested in whether the proportion for males is higher than the proportion for females. Conduct a hypothesis test.</para>
+
+<para id="fs-idp93827664"><emphasis>140.</emphasis> Which of the following is preferable when designing a hypothesis test?<list id="fs-idp93828048" list-type="enumerated" number-style="lower-alpha"><item>Maximize <emphasis effect="italics">α</emphasis> and minimize <emphasis effect="italics">β</emphasis></item>
+<item>Minimize <emphasis effect="italics">α</emphasis> and maximize <emphasis effect="italics">β</emphasis></item>
+<item>Maximize <emphasis effect="italics">α</emphasis> and <emphasis effect="italics">β</emphasis></item>
+<item>Minimize <emphasis effect="italics">α</emphasis> and <emphasis effect="italics">β</emphasis></item>
+</list><newline/></para>
+
+<para id="fs-idp565104"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> 120 people were surveyed as to their favorite beverage (non-alcoholic). The results are below.</para>
+<table id="fs-idp53311952" summary="..">
+<title/>
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<thead>
+<row>
+<entry>Beverage/Age</entry>
+<entry>0–9</entry>
+<entry>10–19</entry>
+<entry>20–29</entry>
+<entry>30+</entry>
+<entry>Totals</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Milk</entry>
+<entry>14</entry>
+<entry>10</entry>
+<entry>6</entry>
+<entry>0</entry>
+<entry>30</entry>
+</row>
+<row>
+<entry>Soda</entry>
+<entry>3</entry>
+<entry>8</entry>
+<entry>26</entry>
+<entry>15</entry>
+<entry>52</entry>
+</row>
+<row>
+<entry>Juice</entry>
+<entry>7</entry>
+<entry>12</entry>
+<entry>12</entry>
+<entry>7</entry>
+<entry>38</entry>
+</row>
+<row>
+<entry>Totals</entry>
+<entry>24</entry>
+<entry>330</entry>
+<entry>44</entry>
+<entry>22</entry>
+<entry>120</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+
+<para id="fs-idp125942000"><emphasis>141.</emphasis> Are the events of milk and 30+:<list id="fs-idm50401008" list-type="enumerated" number-style="lower-alpha"><item>independent events? Justify your answer.</item>
+<item>mutually exclusive events? Justify your answer.</item>
+</list><newline/></para>
+
+<para id="fs-idp172771584"><emphasis>142.</emphasis> Suppose that one person is randomly chosen. Find the probability that person is 10–19 given that he or she prefers juice.</para>
+
+<para id="fs-idm18707152"><emphasis>143.</emphasis> Are “Preferred Beverage” and “Age” independent events? Conduct a hypothesis test.</para>
+
+<para id="fs-idp112214288"><emphasis>144.</emphasis> Given the following histogram, which distribution is the data most likely to come from?<figure id="fs-idp87022544"><media id="fs-idp87022800" alt="This graph is an unlabeled histogram. The heights of the bars do not vary much across the distribution.">
+<image mime-type="image/jpeg" src="CNX-Stats_Review_Exercises_fig007.jpg" width="380"/>
+</media>
+</figure><list id="fs-idp149166928" list-type="enumerated" number-style="lower-alpha">
+<item>uniform</item>
+<item>exponential</item>
+<item>normal</item>
+<item>chi-square</item>
+</list><newline/></para></section>
+
+
+<section id="eip-501"><title>Solutions</title>
+<section id="eip-927"><title>Chapter 3</title>
+
+<para id="fs-idm71784112"><emphasis>1.</emphasis> c. parameter</para>
+
+<para id="fs-idm88482160"><emphasis>2.</emphasis> a. population</para>
+
+<para id="fs-idp48657616"><emphasis>3.</emphasis> b. statistic</para>
+
+<para id="fs-idm209567936"><emphasis>4.</emphasis> d. sample</para>
+
+<para id="fs-idp65191760"><emphasis>5.</emphasis> e. variable</para>
+
+<para id="fs-idm116846432"><emphasis>6.</emphasis> quantitative continuous</para>
+<para id="fs-idp62160464"><emphasis>7.</emphasis> <list id="fs-idp99421312" list-type="enumerated" number-style="lower-alpha">
+<item>2.27</item>
+<item>3.04</item>
+<item>–1, 4, 4</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp156826976"><emphasis>8.</emphasis> Answers will vary.</para>
+</section><section id="eip-517"><title>Chapter 4</title>
+
+<para id="fs-idm33027680"><emphasis>9.</emphasis> c. (0.80)(0.30)</para>
+
+<para id="fs-idp16515120"><emphasis>10.</emphasis> b. No, and they are not mutually exclusive either.</para>
+
+<para id="fs-idp30209440"><emphasis>11.</emphasis> a. all employed adult women</para>
+
+<para id="fs-idm34736672"><emphasis>12.</emphasis> 0.5773</para>
+
+<para id="fs-idp114975536"><emphasis>13.</emphasis> 0.0522</para>
+
+<para id="fs-idm82080896"><emphasis>14.</emphasis> b. The middle fifty percent of the members lost from 2 to 8.5 lbs.</para>
+
+<para id="fs-idp115804016"><emphasis>15.</emphasis> c. All of the data have the same value.</para>
+
+<para id="fs-idm79239360"><emphasis>16.</emphasis> c. The lowest data value is the median.</para>
+
+<para id="fs-idp26397984"><emphasis>17.</emphasis> 0.279</para>
+
+<para id="fs-idp12199296"><emphasis>18.</emphasis> b. No, I expect to come out behind in money.</para>
+
+<para id="fs-idm8799248"><emphasis>19.</emphasis> <emphasis effect="italics">X</emphasis> = the number of patients calling in claiming to have the flu, who actually have the flu.
+<newline/><emphasis effect="italics">X</emphasis> = 0, 1, 2, …25</para>
+
+<para id="fs-idp28735824"><emphasis>20.</emphasis> <emphasis effect="italics">B</emphasis>(25, 0.04)</para>
+
+<para id="fs-idp65290416"><emphasis>21.</emphasis> 0.0165</para>
+
+<para id="fs-idm43984864"><emphasis>22.</emphasis> 1</para>
+
+<para id="fs-idm92822368"><emphasis>23.</emphasis> c. quantitative discrete</para>
+
+<para id="fs-idp69278352"><emphasis>24.</emphasis> all words used by Tom Clancy in his novels</para>
+</section>
+
+<section id="eip-282"><title>Chapter 5</title>
+
+<para id="fs-idm17807920"><emphasis>25. </emphasis>
+<list id="fs-idp118604432" list-type="enumerated" number-style="lower-alpha">
+<item>24%</item>
+<item>27%</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp41278048"><emphasis>26.</emphasis> qualitative</para>
+
+<para id="fs-idm16628704"><emphasis>27.</emphasis> 0.36</para>
+
+<para id="fs-idp47879328"><emphasis>28.</emphasis> 0.7636</para>
+
+<para id="fs-idp105523376"><emphasis>29. </emphasis>
+<list id="fs-idp169902016" list-type="enumerated" number-style="lower-alpha">
+<item>No</item>
+<item>No</item>
+</list>
+<newline/></para>
+
+<para id="fs-idm138396864"><emphasis>30.</emphasis> <emphasis effect="italics">B</emphasis>(10, 0.76)</para>
+
+<para id="fs-idm61090320"><emphasis>31.</emphasis> 0.9330</para>
+
+<para id="fs-idm54829104"><emphasis>32.</emphasis> 
+<list id="fs-idp94031824" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of questions posted to the statistics listserv per day.</item>
+<item><emphasis effect="italics">X</emphasis> = 0, 1, 2,…</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">P</emphasis>(2)</item>
+<item>0</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp30235584"><emphasis>33.</emphasis> $150</para>
+
+<para id="fs-idm29990960"><emphasis>34.</emphasis> Matt</para>
+
+<para id="fs-idp44008880"><emphasis>35.</emphasis> 
+<list id="fs-idp218820688" list-type="enumerated" number-style="lower-alpha">
+<item>false</item>
+<item>true</item>
+<item>false</item>
+<item>false</item>
+</list>
+<newline/></para>
+
+<para id="fs-idm46314192"><emphasis>36.</emphasis> 16</para>
+
+<para id="fs-idm47603312"><emphasis>37.</emphasis> first quartile: 2
+<newline/>second quartile: 2
+<newline/>third quartile: 3</para>
+
+<para id="fs-idm37018976"><emphasis>38.</emphasis> 0.5</para>
+
+<para id="fs-idm89161712"><emphasis>39.</emphasis> <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>7</m:mn>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idp46872272"><emphasis>40.</emphasis> <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>2</m:mn>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+</section><section id="eip-162"><title>Chapter 6</title>
+
+<para id="fs-idp49055712"><emphasis>41. </emphasis>
+<list id="fs-idp159586528" list-type="enumerated" number-style="lower-alpha">
+<item>true</item>
+<item>true</item>
+<item>False – the median and the mean are the same for this symmetric distribution.</item>
+<item>true</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp46454544"><emphasis>42. </emphasis>
+<list id="fs-idp155695136" list-type="enumerated" number-style="lower-alpha">
+<item>8</item>
+<item>8</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 0.65 = (<emphasis effect="italics">k</emphasis> – 3)<m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>. <emphasis effect="italics">k</emphasis> = 9.5</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp87262768"><emphasis>43. </emphasis>
+<list id="fs-idp3397680" list-type="enumerated" number-style="lower-alpha">
+<item>False – <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+of the data are at most five.</item>
+<item>True – each quartile has 25% of the data.</item>
+<item>False – that is unknown.</item>
+<item>False – 50% of the data are four or less.</item>
+</list>
+<newline/></para>
+
+<para id="fs-idm55754912"><emphasis>44.</emphasis> d. <emphasis effect="italics">G</emphasis> and <emphasis effect="italics">H</emphasis> are independent events.</para>
+
+<para id="fs-idp139620160"><emphasis>45.</emphasis> 
+<list id="fs-idp189351952" list-type="enumerated" number-style="lower-alpha">
+<item>False – <emphasis effect="italics">J</emphasis> and <emphasis effect="italics">K</emphasis> are independent so they are not mutually exclusive which would imply dependency (meaning <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis> AND <emphasis effect="italics">K</emphasis>) is not 0).</item>
+<item>False – see answer c.</item>
+<item>True – <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis> OR <emphasis effect="italics">K</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>) + <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">K</emphasis>) – <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis> AND <emphasis effect="italics">K</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>) + <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">K</emphasis>) – <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>)<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">K</emphasis>) = 0.3 + 0.6 – (0.3)(0.6) = 0.72. Note the <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis> AND <emphasis effect="italics">K</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>)<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">K</emphasis>) because <emphasis effect="italics">J</emphasis> and <emphasis effect="italics">K</emphasis> are independent. </item>
+<item>False – <emphasis effect="italics">J</emphasis> and <emphasis effect="italics">K</emphasis> are independent so <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">J</emphasis>|<emphasis effect="italics">K</emphasis>)</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp56045392"><emphasis>46.</emphasis> a. <emphasis effect="italics">P</emphasis>(5)</para>
+</section><section id="eip-434"><title>Chapter 7</title>
+
+<para id="fs-idp87524576"><emphasis>47.</emphasis> a. <emphasis effect="italics">U</emphasis>(0, 4)</para>
+
+<para id="fs-idm187785472"><emphasis>48.</emphasis> b. 2 hour</para>
+
+<para id="fs-idm6308768"><emphasis>49.</emphasis> a. <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idp72197632"><emphasis>50. </emphasis>
+<list id="fs-idp204794144" list-type="enumerated" number-style="lower-alpha">
+<item>0.7165</item>
+<item>4.16</item>
+<item>0</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp36953392"><emphasis>51.</emphasis> c. 5 years</para>
+
+<para id="fs-idp108254288"><emphasis>52.</emphasis> c. exponential</para>
+
+<para id="fs-idm90577072"><emphasis>53.</emphasis> 0.63</para>
+
+<para id="fs-idm60980528"><emphasis>54.</emphasis> <emphasis effect="italics">B</emphasis>(14, 0.20)</para>
+
+<para id="fs-idm70213360"><emphasis>55.</emphasis> <emphasis effect="italics">B</emphasis>(14, 0.20)</para>
+</section><section id="eip-864"><title>Chapter 8</title>
+
+<para id="fs-idp65355392"><emphasis>56.</emphasis> c. the mean amount of weight lost by 15 people on the special weight loss diet.</para>
+
+<para id="fs-idp68824784"><emphasis>57.</emphasis> 0.9951</para>
+
+<para id="fs-idm50762000"><emphasis>58.</emphasis> 12.99</para>
+
+<para id="fs-idp63338288"><emphasis>59.</emphasis> c. <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idm36006160"><emphasis>60.</emphasis> b. 0.60</para>
+
+<para id="fs-idm118040144"><emphasis>61.</emphasis> c. <emphasis effect="italics">N</emphasis>(60, 5.477)</para>
+
+<para id="fs-idp6955424"><emphasis>62.</emphasis> 0.9990</para>
+
+<para id="fs-idp37097632"><emphasis>63.</emphasis> a. eight days</para>
+
+<para id="fs-idm72918832"><emphasis>64.</emphasis> c. 0.7500</para>
+
+<para id="fs-idp29062992"><emphasis>65.</emphasis> a. 80%</para>
+
+<para id="fs-idm95278784"><emphasis>66.</emphasis> b. 35%</para>
+
+<para id="fs-idm18908384"><emphasis>67.</emphasis> b. no</para>
+
+<para id="fs-idm101073264"><emphasis>68.</emphasis> b. quantitative continuous</para>
+
+<para id="fs-idp89405456"><emphasis>69.</emphasis> c. 150</para>
+
+<para id="fs-idp3253168"><emphasis>70.</emphasis> d. 0.06</para>
+
+<para id="fs-idm119485312"><emphasis>71.</emphasis> c. 0.44</para>
+
+<para id="fs-idp53329904"><emphasis>72.</emphasis> b. 0</para>
+
+</section><section id="eip-761"><title>Chapter 9</title>
+
+<para id="fs-idm113302384"><emphasis>73.</emphasis> d. Matt is shorter than the average 14 year old boy.</para>
+
+<para id="fs-idp47035744"><emphasis>74.</emphasis> Answers will vary.</para>
+
+<para id="fs-idp8252352"><emphasis>75.</emphasis> 
+<table id="fs-idp72653008" summary="..">
+<tgroup cols="3"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry><emphasis effect="italics">x</emphasis></entry>
+<entry>Relative Frequency</entry>
+<entry>Cumulative Relative Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1</entry>
+<entry>0.3</entry>
+<entry>0.3</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>0.2</entry>
+<entry>0.2</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>0.4</entry>
+<entry>0.4</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>0.1</entry>
+<entry>0.1</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table>
+</para>
+
+<para id="fs-idp72985360"><emphasis>76.</emphasis> 
+<list id="fs-idp111581696" list-type="enumerated" number-style="lower-alpha">
+<item>2.8</item>
+<item>1.48</item>
+<item>90%</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp73565360"><emphasis>77.</emphasis> <emphasis effect="italics">M</emphasis> = 3; <emphasis effect="italics">Q</emphasis><sub>1</sub> = 1; <emphasis effect="italics">Q</emphasis><sub>3</sub> = 4</para>
+
+<para id="fs-idp63889616"><emphasis>78.</emphasis> 1 and 4</para>
+
+<para id="fs-idp44296336"><emphasis>79.</emphasis> d. <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>8</m:mn>
+<m:mrow>
+<m:mn>70</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idp17191568"><emphasis>80.</emphasis> c. <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>40</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>70</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idp22821888"><emphasis>81.</emphasis> a. <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>9</m:mn>
+<m:mrow>
+<m:mn>19</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idp66664256"><emphasis>82.</emphasis> b. false</para>
+
+<para id="fs-idm6698576"><emphasis>83.</emphasis> b. false</para>
+
+<para id="fs-idm106202608"><emphasis>84.</emphasis> b. false</para>
+
+<para id="fs-idm1689136"><emphasis>85.</emphasis> 
+<list id="fs-idm182320064" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of pies Lee bakes every day.</item>
+<item><emphasis effect="italics">P</emphasis>(20)</item>
+<item>0.1122</item>
+</list>
+<newline/></para>
+
+<para id="fs-idm48104464"><emphasis>86.</emphasis> CI: (5.25, 8.48)</para>
+
+<para id="fs-idm43275424"><emphasis>87.</emphasis> 
+<list id="fs-idm235891792" list-type="enumerated" number-style="lower-alpha">
+<item>uniform</item>
+<item>exponential</item>
+<item>normal</item>
+</list>
+<newline/></para></section><section id="eip-827"><title>Chapter 10</title>
+
+<para id="fs-idm112508704"><emphasis>88.</emphasis> <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>77</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>100</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idm32898416"><emphasis>89.</emphasis> <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>42</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idp83967744"><emphasis>90.</emphasis> 
+<list id="fs-idm110795936" list-type="enumerated" number-style="lower-alpha">
+<item>false</item>
+<item>false</item>
+<item>true</item>
+<item>false</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp82266656"><emphasis>91.</emphasis> <emphasis effect="italics">N</emphasis>(180, 16.43)</para>
+
+<para id="fs-idm99648496"><emphasis>92.</emphasis> a. The distribution for <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo stretchy="true">¯</m:mo>
+</m:mover>
+</m:mrow>
+</m:math> is still uniform with the same mean and standard deviation as the distribution for <emphasis effect="italics">X</emphasis>.</para>
+
+<para id="fs-idp48372720"><emphasis>93.</emphasis> c. The distribution for <m:math>
+<m:mrow>
+<m:mstyle displaystyle="true">
+<m:mo>∑</m:mo> <m:mi>X</m:mi>
+</m:mstyle>
+</m:mrow>
+</m:math> is normal with a larger mean and a larger standard deviation than the distribution for <emphasis effect="italics">X</emphasis>.</para>
+
+<para id="fs-idm35530176"><emphasis>94.</emphasis> <m:math>
+<m:mrow>
+<m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>2</m:mn><m:mo>,</m:mo><m:mo> </m:mo><m:mfrac>
+<m:mrow>
+<m:mn>0.25</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>16</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math></para>
+
+<para id="eip-851"><emphasis>95.</emphasis> Answers will vary.</para>
+<para id="fs-idp62780976"><emphasis>96.</emphasis> 0.5000</para>
+<para id="fs-idp57214720"><emphasis>97.</emphasis> 7.6</para>
+<para id="fs-idp58628864"><emphasis>98.</emphasis> 5</para>
+<para id="fs-idp61648400"><emphasis>99.</emphasis> 0.9431</para>
+</section>
+
+<section id="eip-736"><title>Chapter 11</title>
+
+<para id="fs-idm56672928"><emphasis>100.</emphasis> 7.5</para>
+
+<para id="fs-idm1013504"><emphasis>101.</emphasis> 0.0122</para>
+
+<para id="fs-idp44256704"><emphasis>102.</emphasis> <emphasis effect="italics">N</emphasis>(7, 0.63)</para>
+
+<para id="fs-idm125324304"><emphasis>103.</emphasis> 0.9911</para>
+
+<para id="fs-idp41680400"><emphasis>104.</emphasis> b. Exponential</para>
+
+<para id="fs-idm64634576"><emphasis>105.</emphasis> 
+<list id="fs-idp1233680" list-type="enumerated" number-style="lower-alpha">
+<item>true</item>
+<item>false</item>
+<item>false</item>
+</list>
+<newline/></para>
+
+<para id="fs-idp148415088"><emphasis>106.</emphasis> Answers will vary.</para>
+
+<para id="fs-idp41867808"><emphasis>107.</emphasis> Student’s <emphasis effect="italics">t</emphasis> with <emphasis effect="italics">df</emphasis> = 15</para>
+
+<para id="fs-idp48209328"><emphasis>108.</emphasis> (560.07, 719.93)</para>
+
+<para id="fs-idm105237696"><emphasis>109.</emphasis> quantitative continuous data</para>
+
+<para id="fs-idp34189568"><emphasis>110.</emphasis> quantitative discrete data</para>
+
+<para id="fs-idp33657680"><emphasis>111. </emphasis>
+<list id="fs-idm195705520" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of patients with a shotgun wound the emergency room gets per 28 days</item>
+<item><emphasis effect="italics">P</emphasis>(4)</item>
+<item>0.0183</item>
+</list>
+<newline/></para>
+
+<para id="fs-idm117227392"><emphasis>112.</emphasis> greater than</para>
+
+<para id="fs-idm68137088"><emphasis>113.</emphasis> No; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 8) = 0.0348</para>
+
+<para id="fs-idp56267056"><emphasis>114.</emphasis> You will lose $5.</para>
+
+<para id="fs-idm89065120"><emphasis>115.</emphasis> Becca</para>
+
+<para id="fs-idm92949472"><emphasis>116.</emphasis> 14</para>
+
+<para id="fs-idm6406032"><emphasis>117.</emphasis> Sample mean = 3.2
+<newline/>Sample standard deviation = 1.85
+<newline/>Median = 3
+<newline/><emphasis effect="italics">Q</emphasis><sub>1</sub> = 2
+<newline/><emphasis effect="italics">Q</emphasis><sub>3</sub> = 5
+<newline/><emphasis effect="italics">IQR</emphasis> = 3</para>
+
+<para id="fs-idm49639184"><emphasis>118.</emphasis> d. <emphasis effect="italics">z</emphasis> = –1.19
+<newline/>e. 0.1171
+<newline/>f. Do not reject the null hypothesis.</para>
+
+<para id="fs-idp86515664"><emphasis>119.</emphasis> We conclude that the patient does have the HIV virus when, in fact, the patient does not.</para>
+
+<para id="fs-idm64998416"><emphasis>120.</emphasis> c. <emphasis effect="italics">z</emphasis> = 2.21; <emphasis effect="italics">p</emphasis> = 0.0136
+<newline/>d. Reject the null hypothesis.
+<newline/>e. We conclude that the proportion of Californian professionals that wear jeans to work is greater than the proportion of non-Californian professionals when, in fact, it is not greater.
+<newline/>f. We cannot conclude that the proportion of Californian professionals that wear jeans to work is greater than the proportion of non-Californian professionals when, in fact, it is greater.</para>
+
+<para id="fs-idm108587360"><emphasis>121.</emphasis> c. dependent means</para>
+
+<para id="fs-idp49784464"><emphasis>122.</emphasis> <emphasis effect="italics">t</emphasis><sub>5</sub></para>
+</section><section id="eip-896"><title>Chapter 12</title>
+
+<para id="fs-idm111265424"><emphasis>123.</emphasis> (0.0424, 0.0770)</para>
+
+<para id="fs-idm97865296"><emphasis>124.</emphasis> 2,401</para>
+
+<para id="fs-idp23441024"><emphasis>125.</emphasis> Check student's solution.</para>
+
+<para id="fs-idp23095664"><emphasis>126.</emphasis> 0.6321</para>
+
+<para id="fs-idm130575888"><emphasis>127.</emphasis> $360</para>
+
+<para id="fs-idp75326336"><emphasis>128.</emphasis> <m:math>
+<m:mrow>
+<m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>72</m:mn><m:mo>,</m:mo><m:mo> </m:mo><m:mfrac>
+<m:mrow>
+<m:mn>72</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mn>5</m:mn>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math></para>
+</section><section id="eip-693"><title>Chapter 13</title>
+
+<para id="fs-idm30385632"><emphasis>129.</emphasis> 0.02</para>
+
+<para id="fs-idm18757072"><emphasis>130.</emphasis> 0.40</para>
+
+<para id="fs-idp53477040"><emphasis>131.</emphasis> <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>100</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>140</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math></para>
+<para id="fs-idm55123376"><emphasis>132.</emphasis> <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>60</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idm7529616"><emphasis>133.</emphasis> <emphasis effect="italics">p</emphasis>-value = 0; Reject the null hypothesis; conclude that they are dependent events</para>
+
+<para id="fs-idp74159184"><emphasis>134.</emphasis> 8.4</para>
+
+<para id="fs-idp50638832"><emphasis>135.</emphasis> <emphasis effect="italics">B</emphasis>(14, 0.60)</para>
+
+<para id="fs-idp29871424"><emphasis>136.</emphasis> d. Binomial</para>
+
+<para id="fs-idm4440752"><emphasis>137.</emphasis> 0.3669</para>
+
+<para id="fs-idp88993424"><emphasis>138.</emphasis> <emphasis effect="italics">p</emphasis>-value = 0.0006; reject the null hypothesis; conclude that the averages are not equal</para>
+
+<para id="fs-idp41158256"><emphasis>139.</emphasis> <emphasis effect="italics">p</emphasis>-value = 0; reject the null hypothesis; conclude that the proportion of males is higher</para>
+
+<para id="fs-idm91395440"><emphasis>140.</emphasis> Minimize <emphasis effect="italics">α</emphasis> and <emphasis effect="italics">β</emphasis></para>
+
+<para id="fs-idm7901296"><emphasis>141. </emphasis>
+<list id="fs-idm219983072" list-type="enumerated" number-style="lower-alpha">
+<item>No</item>
+<item>Yes, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">M</emphasis> AND 30+) = 0</item>
+</list>
+<newline/></para>
+
+<para id="fs-idm94712896"><emphasis>142. </emphasis><m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>38</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math></para>
+
+<para id="fs-idp57526960"><emphasis>143.</emphasis> No; <emphasis effect="italics">p</emphasis>-value = 0</para>
+
+<para id="fs-idm121939728"><emphasis>144.</emphasis> a. uniform</para>
+</section>
+
+</section><section id="fs-idp74334080" class="references"><title>References</title><para id="eip-idm59499712">Data from the <emphasis effect="italics">San Jose Mercury News</emphasis>.</para>
+<para id="eip-idm56401280">Baran, Daya. “20 Percent of Americans Have Never Used Email.” Webguild.org, 2010. Available online at: http://www.webguild.org/20080519/20-percent-of-americans-have-never-used-email (accessed October 17, 2013).</para>
+<para id="fs-idp4890128">Data from <emphasis effect="italics">Parade Magazine</emphasis>.</para></section></content>
+</document>

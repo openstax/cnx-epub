@@ -1,0 +1,102 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+  <title>Introduction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47121/latest</md:content-url>
+  <md:content-id>m47121</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2013/07/19 10:09:31 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>analysis of variance</md:keyword>
+    <md:keyword>ANOVA</md:keyword>
+    <md:keyword>balanced design</md:keyword>
+    <md:keyword>degrees of freedom</md:keyword>
+    <md:keyword>equal standard deviation</md:keyword>
+    <md:keyword>F distribution</md:keyword>
+    <md:keyword>F-distribution</md:keyword>
+    <md:keyword>F ratio</md:keyword>
+    <md:keyword>f-ratio</md:keyword>
+    <md:keyword>mean square</md:keyword>
+    <md:keyword>One-way ANOVA</md:keyword>
+    <md:keyword>sample mean</md:keyword>
+    <md:keyword>sample variance</md:keyword>
+    <md:keyword>sum of squares</md:keyword>
+    <md:keyword>test of two variances</md:keyword>
+    <md:keyword>variance</md:keyword>
+    <md:keyword>variance between samples</md:keyword>
+    <md:keyword>variance within samples</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<?cnx.eoc class="summary" title="Chapter Review"?>
+<?cnx.eoc class="formula-review" title="Formula Review"?>
+<?cnx.eoc class="practice" title="Practice"?>
+<?cnx.eoc class="free-response" title="Homework"?>
+<?cnx.eoc class="references" title="References"?>
+
+<figure id="fs-idm12990704" class="splash">
+<media id="fs-idp104097120" alt="This is a photo of magazine spines. The magazines cover various topics like plants, food, and architecture.">
+<image mime-type="image/jpg" src="CNX_Stats_C13_CO.jpg" width="380"/>
+</media>
+<caption>One-way ANOVA is used to measure information from several groups.</caption>
+</figure>
+
+<note id="fs-idp90615904" class="chapter-objectives">
+<label/>
+<title>Chapter Objectives</title>
+<para id="element-672"> By the end of this chapter, the student should be able to:</para>
+<list id="fs-idp124304720">
+<item>Interpret the <emphasis effect="italics">F</emphasis> probability distribution as the number of groups and the sample size change.</item>
+<item>Discuss two uses for the <emphasis effect="italics">F</emphasis> distribution: one-way ANOVA and the test of two variances.</item>
+<item>Conduct and interpret one-way ANOVA.</item>
+<item>Conduct and interpret hypothesis tests of two variances.</item>
+</list>
+</note>
+<para id="fs-idp61515728">Many statistical applications in psychology, social science, business administration, and the natural sciences involve several groups. For example, an environmentalist is interested in knowing if the average amount of pollution varies in several bodies of water. A sociologist is interested in knowing if the amount of income a person earns varies according to his or her upbringing. A consumer looking for a new car might compare the average gas mileage of several models.</para>
+<para id="fs-idp105761984">For hypothesis tests comparing averages between more than two groups, statisticians have developed a method called "Analysis of Variance" (abbreviated ANOVA). In this chapter, you will study the simplest form of ANOVA called single factor or one-way ANOVA. You will also study the <emphasis effect="italics">F</emphasis> distribution, used for one-way ANOVA, and the test of two variances. This is just a very brief overview of one-way ANOVA. You will study this topic in much greater detail in future statistics courses. One-Way ANOVA, as it is presented here, relies heavily on a calculator or computer.</para>
+
+</content>
+</document>

@@ -1,0 +1,295 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Lab 1: Chi-Square Goodness-of-Fit</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50279/latest</md:content-url>
+  <md:content-id>m50279</md:content-id>
+  <md:title>Lab 1: Chi-Square Goodness-of-Fit</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/09 10:31:25 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>population variance</md:keyword>
+    <md:keyword>test of a single variance</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1170646469482" class="statistics lab"><label/><title>Lab 1: Chi-Square Goodness-of-Fit</title>
+<para id="id5380446">Class Time: </para>
+  <para id="id5380454">Names:</para>
+   <list id="id5380464" list-type="bulleted"><title>Student Learning Outcome</title><item>The student will evaluate data collected to determine if they fit either the uniform or exponential distributions. </item>
+   </list><para id="element-875862734">
+    <title>Collect the Data</title>
+    Go to your local supermarket. Ask 30 people as they leave for the total amount on their grocery receipts. (Or, ask three cashiers for the last ten amounts. Be sure to include the express lane, if it is open.)</para>
+   <note id="eip-665"><label/><title>Note</title>You may need to combine two categories so that each cell has an expected value of at least five.</note><list id="list-87585" list-type="enumerated" mark-suffix=".">
+    <item>Record the values.
+     <table id="table023865" summary="Blank table with 30 empty cells.">
+      <tgroup cols="5">
+       <tbody>
+        <row>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+        </row>
+        <row>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+        </row>
+        <row>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+        </row>
+        <row>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+        </row>
+        <row>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+        </row>
+        <row>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+         <entry>__________</entry>
+        </row>
+       </tbody>
+      </tgroup>
+     </table>
+    </item>
+    <item>Construct a histogram of the data. Make five to six intervals. Sketch the graph using a ruler and pencil. Scale the axes. <figure id="id42008923"><media id="id42008927" alt="Blank graph with relative frequency on vertical"><image src="fig-ch11_15_01.png" mime-type="image/png" width="380"/></media></figure></item>
+    <item> Calculate the following: <list id="list3242" list-type="enumerated" number-style="lower-alpha">
+      <item><m:math>
+      <m:mrow>
+       <m:mover accent="true">
+        <m:mi>x</m:mi>
+        <m:mo>&#175;</m:mo>
+       </m:mover>
+       <m:mo>=</m:mo>
+      </m:mrow>
+     </m:math>________</item>
+     <item><emphasis effect="italics">s</emphasis> = ________</item>
+     <item><emphasis effect="italics">s</emphasis><sup>2</sup> = ________</item>
+    </list>
+    </item>
+   </list>
+   <para id="element-755">
+    <title>Uniform Distribution</title>
+    Test to see if grocery receipts follow the uniform distribution.</para>
+   <list id="list-897576324" mark-suffix="." list-type="enumerated"><item>Using your lowest and highest values, <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> (_______, _______)</item>
+    <item>Divide the distribution into fifths.</item>
+    <item>Calculate the following:
+     <list id="list45865" list-type="enumerated" number-style="lower-alpha"><item>lowest value = _________</item>
+      <item>20<sup>th</sup> percentile = _________</item>
+      <item>40<sup>th</sup> percentile = _________</item>
+      <item>60<sup>th</sup> percentile = _________</item>
+      <item>80<sup>th</sup> percentile = _________</item>
+      <item>highest value = _________</item>
+     </list></item>
+    <item>For each fifth, count the observed number of receipts and record it. Then determine the expected number of receipts and record that.
+     <table id="id58758asdfa533062" summary="The partially filled table presents each fifth in the first column, observed in the blank second column, and expected in the blank third column. There are 5 rows.">
+      <tgroup cols="3"><colspec colnum="1" colname="c1"/>
+       <colspec colnum="2" colname="c2"/>
+       <colspec colnum="3" colname="c3"/>
+       <thead>
+        <row>
+         <entry>Fifth </entry>
+         <entry>Observed</entry>
+         <entry>Expected</entry>
+        </row>
+       </thead>
+       <tbody>
+        <row>
+         <entry>1<sup>st</sup></entry>
+         <entry/>
+         <entry/>
+        </row>
+        <row>
+         <entry>2<sup>nd</sup></entry>
+         <entry/>
+         <entry/>
+        </row>
+        <row>
+         <entry>3<sup>rd</sup></entry>
+         <entry/>
+         <entry/>
+        </row>
+        <row>
+         <entry>4<sup>th</sup></entry>
+         <entry/>
+         <entry/>
+        </row>
+        <row>
+         <entry>5<sup>th</sup></entry>
+         <entry/>
+         <entry/>
+        </row>
+       </tbody>
+      </tgroup>
+     </table></item>
+    <item><emphasis effect="italics">H<sub>0</sub></emphasis>: ________</item>
+    <item><emphasis effect="italics">H<sub>a</sub></emphasis>: ________</item>
+    <item>What distribution should you use for a hypothesis test?</item>
+    <item>Why did you choose this distribution?</item>
+    <item>Calculate the test statistic.</item>
+    <item>Find the <emphasis effect="italics">p</emphasis>-value.</item>
+    <item>Sketch a graph of the situation. Label and scale the <emphasis effect="italics">x</emphasis>-axis. Shade the area corresponding to the <emphasis effect="italics">p</emphasis>-value. <figure id="id40469669"><media id="id40469674" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch11_15_02.png" mime-type="image/png" width="380"/></media></figure></item>
+    <item>State your decision.</item>
+    <item>State your conclusion in a complete sentence.</item>
+   </list><para id="element-875">
+    <title>Exponential Distribution</title>
+    Test to see if grocery receipts follow the exponential distribution with decay parameter <m:math>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>1</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:apply>
+       <m:conjugate/>
+       <m:ci>x</m:ci>
+      </m:apply>
+     </m:mrow>
+    </m:mfrac>
+   </m:math>.</para>
+   <list id="list-86872534" mark-suffix="." list-type="enumerated"><item>Using <m:math>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mover accent="true">
+        <m:mi>x</m:mi>
+        <m:mo>&#175;</m:mo>
+       </m:mover>
+      </m:mfrac>
+     </m:mrow>
+    </m:math> as the decay parameter, <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(_________).</item>
+    <item>Calculate the following:
+     <list id="list3248" list-type="enumerated" number-style="lower-alpha">
+      <item>lowest value = ________</item>
+      <item>first quartile = ________</item>
+      <item>37<sup>th</sup> percentile = ________</item>
+      <item>median = ________</item>
+      <item>63<sup>rd</sup> percentile = ________</item>
+      <item>3<sup>rd</sup> quartile = ________</item>
+      <item>highest value = ________</item>
+     </list>
+    </item>
+    <item>For each cell, count the observed number of receipts and record it. Then determine the expected number of receipts and record that.<table id="id5asd875fasssff533783" summary="The partially filled table presents the cell in the first column, observed in the blank second column, and the expected in the blank third column. There are 6 rows.">
+     <tgroup cols="3"><colspec colnum="1" colname="c1"/>
+      <colspec colnum="2" colname="c2"/>
+      <colspec colnum="3" colname="c3"/>
+      <thead>
+       <row>
+        <entry>Cell</entry>
+        <entry>Observed</entry>
+        <entry>Expected</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+        <entry>1<sup>st</sup></entry>
+        <entry/>
+        <entry/>
+       </row>
+       <row>
+        <entry>2<sup>nd</sup></entry>
+        <entry/>
+        <entry/>
+       </row>
+       <row>
+        <entry>3<sup>rd</sup></entry>
+        <entry/>
+        <entry/>
+       </row>
+       <row>
+        <entry>4<sup>th</sup></entry>
+        <entry/>
+        <entry/>
+       </row>
+       <row>
+        <entry>5<sup>th</sup></entry>
+        <entry/>
+        <entry/>
+       </row>
+       <row>
+        <entry>6<sup>th</sup></entry>
+        <entry/>
+        <entry/>
+       </row>
+      </tbody>
+     </tgroup>
+    </table>
+    </item>
+    <item><emphasis effect="italics">H<sub>0</sub></emphasis>: ________</item>
+    <item><emphasis effect="italics">H<sub>a</sub></emphasis>: ________</item>
+    <item>What distribution should you use for a hypothesis test? </item>
+    <item>Why did you choose this distribution? </item>
+    <item>Calculate the test statistic.</item>
+    <item>Find the <emphasis effect="italics">p</emphasis>-value.</item>
+    <item>Sketch a graph of the situation. Label and scale the <emphasis effect="italics">x</emphasis>-axis. Shade the area corresponding to the <emphasis effect="italics">p</emphasis>-value. <figure id="id42004364"><media id="id42004370" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch11_15_03.png" mime-type="image/png" width="380"/></media></figure></item>
+    <item>State your decision.</item>
+    <item>State your conclusion in a complete sentence.</item>
+   </list><list id="list-8658234" list-type="enumerated">
+    <title>Discussion Questions</title>
+    <item>Did your data fit either distribution? If so, which?</item>
+    <item>In general, do you think it&#8217;s likely that data could fit more than one distribution? In complete sentences, explain why or why not.</item>
+   </list>
+ </note></content>
+
+</document>

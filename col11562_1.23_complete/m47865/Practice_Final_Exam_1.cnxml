@@ -1,0 +1,1101 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="id11226048" module-id="" cnxml-version="0.7" class="practice">
+  <title>Practice Final Exam 1</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://staging2.cnx.org/content</md:repository>
+  <md:content-id>new</md:content-id>
+  <md:title>Practice Final Exam 1</md:title>
+  <md:version>**new**</md:version>
+  <md:created>2013/10/18 02:10:06.245 GMT-5</md:created>
+  <md:revised>2013/10/18 02:10:06.309 GMT-5</md:revised>
+  <md:actors>
+    <md:person userid="words_stats">
+      <md:firstname>Words</md:firstname>
+      <md:surname>Numbers</md:surname>
+      <md:fullname>Words Numbers</md:fullname>
+      <md:email>techsupport@cnx.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">words_stats</md:role>
+    <md:role type="maintainer">words_stats</md:role>
+    <md:role type="licensor">words_stats</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/" />
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+      
+      <para id="element-965"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> An experiment consists of tossing two, 12-sided dice (the numbers 1-12 are printed on the sides of each die).
+<list id="toplist" list-type="bulleted">
+  <item> Let Event A = both dice show an even number.</item>
+  <item> Let Event B = both dice show a number more than eight</item>
+</list>
+</para>
+<exercise id="element-438">
+<problem id="id5120657">
+  <para id="element-907">Events <emphasis effect="italics">A</emphasis> and <emphasis effect="italics">B</emphasis> are:</para>
+  <list id="id5218790" list-type="enumerated" number-style="lower-alpha">
+        <item>mutually exclusive.</item>
+        <item>independent.</item>
+        <item>mutually exclusive and independent.</item>
+        <item>neither mutually exclusive nor independent.</item>
+      </list>
+</problem>
+
+<solution id="id5115577">
+  <para id="element-42">b. independent</para></solution>
+</exercise>
+<exercise id="element-31"><problem id="id5115602">
+  <para id="element-613">Find <emphasis effect="italics">P</emphasis> (<emphasis effect="italics">A</emphasis>|<emphasis effect="italics">B</emphasis>).
+  </para><list id="id3671315" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mn>4</m:mn>
+  </m:mfrac>
+  </m:mrow>
+</m:math></item>
+ <item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>16</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>144</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  
+ </m:mrow>
+</m:math></item>
+ <item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>4</m:mn>
+   <m:mrow>
+    <m:mn>16</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  
+ </m:mrow>
+</m:math></item>
+ <item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mrow>
+    <m:mn>144</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  
+ </m:mrow>
+</m:math></item>
+ </list>
+</problem>
+
+<solution id="id5109265">
+  <para id="element-146">c. <m:math>
+ <m:mfrac>
+    <m:mn>4</m:mn>
+    <m:mn>16</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></para></solution>
+</exercise>
+<exercise id="element-646">
+<problem id="id5109302">
+  <para id="element-522">Which of the following are TRUE when we perform a hypothesis test on matched or paired samples?</para>
+<list id="id6318323" list-type="enumerated" number-style="lower-alpha">
+<item>Sample sizes are almost never small.</item>
+<item>Two measurements are drawn from the same pair of individuals or objects.</item>
+<item>Two sample means are compared to each other.</item>       
+<item>Answer choices b and c are both true.</item>
+</list>
+</problem>
+
+<solution id="id5109385">
+  <para id="element-501">b. Two measurements are drawn from the same pair of individuals or objects.</para></solution>
+</exercise>
+
+<para id="element-905"><newline/><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> One hundred eighteen students were asked what type of color their bedrooms were painted: light colors, dark colors, or vibrant colors. The results were tabulated according to gender.
+<table id="id7194282" summary="">
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="header_c2"/>
+          <colspec colnum="3" colname="c3"/>
+          <colspec colnum="4" colname="c4"/>
+          <thead>
+            <row>
+              <entry/>
+              <entry>Light colors</entry>
+              <entry>Dark colors</entry>
+              <entry>Vibrant colors</entry>
+            </row></thead><tbody>
+            <row>
+              <entry>Female</entry>
+              <entry>20</entry>
+              <entry>22</entry>
+              <entry>28</entry>
+            </row>
+            <row>
+              <entry>Male</entry>
+              <entry>10</entry>
+              <entry>30</entry>
+              <entry>8</entry>
+            </row>
+          </tbody>
+        
+
+</tgroup>
+</table></para><exercise id="element-234"><problem id="id5116255">
+  <para id="element-35">Find the probability that a randomly chosen student is male or has a bedroom painted with light colors.
+<list id="id9293163" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+ <m:mfrac>
+    <m:mn>10</m:mn>
+    <m:mn>118</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+<item><m:math>
+ <m:mfrac>
+    <m:mn>68</m:mn>
+    <m:mn>118</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+<item><m:math>
+ <m:mfrac>
+    <m:mn>48</m:mn>
+    <m:mn>118</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+<item><m:math>
+ <m:mfrac>
+    <m:mn>10</m:mn>
+    <m:mn>48</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+</list>
+</para>
+</problem>
+
+<solution id="id5116386">
+  <para id="element-719">b. <m:math>
+ <m:mfrac>
+    <m:mn>68</m:mn>
+    <m:mn>118</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></para></solution>
+</exercise>
+<exercise id="element-528">
+<problem id="id5139566">
+  <para id="element-326">Find the probability that a randomly chosen student is male given the student’s bedroom is painted with dark colors.</para>
+ <list id="id8128401" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+ <m:mfrac>
+    <m:mn>30</m:mn>
+    <m:mn>118</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+        <item><m:math>
+ <m:mfrac>
+    <m:mn>30</m:mn>
+    <m:mn>48</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+        <item><m:math>
+ <m:mfrac>
+    <m:mn>22</m:mn>
+    <m:mn>118</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+        <item><m:math>
+ <m:mfrac>
+    <m:mn>30</m:mn>
+    <m:mn>52</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+      </list>
+
+</problem>
+
+<solution id="id5139698">
+  <para id="element-275">d: <m:math>
+ <m:mfrac>
+    <m:mn>30</m:mn>
+    <m:mn>52</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></para>
+</solution>
+</exercise>
+<para id="element-359"><newline/><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> We are interested in the number of times a teenager must be reminded to do his or her chores each week. A survey of 40 mothers was conducted. <link target-id="id9905895"/> shows the results of the survey.</para><table id="id9905895" summary="The table displays the number of times teenagers must be reminded to do their chores each week and the respective probabilities.">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+              <entry><emphasis effect="italics">x</emphasis></entry>
+              <entry><emphasis effect="italics">P</emphasis> (<emphasis effect="italics">x</emphasis>)</entry>
+            </row>
+</thead>
+          <tbody>
+            
+            <row>
+              <entry>0</entry>
+              <entry><m:math>
+ <m:mfrac>
+    <m:mn>2</m:mn>
+    <m:mn>40</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></entry>
+            </row>
+            <row>
+              <entry>1</entry>
+              <entry><m:math>
+ <m:mfrac>
+    <m:mn>5</m:mn>
+    <m:mn>40</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry><m:math>
+ <m:mfrac>
+    <m:mn>14</m:mn>
+    <m:mn>40</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry><m:math>
+ <m:mfrac>
+    <m:mn>7</m:mn>
+    <m:mn>40</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry><m:math>
+ <m:mfrac>
+    <m:mn>4</m:mn>
+    <m:mn>40</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></entry>
+            </row>
+          </tbody>
+       
+</tgroup>
+</table>
+<exercise id="element-117"><problem id="id5131870">
+  <para id="element-278">Find the probability that a teenager is reminded two times.</para>
+<list id="element-29" list-type="enumerated" number-style="lower-alpha">
+<item>8</item>
+<item><m:math>
+ <m:mfrac>
+    <m:mn>8</m:mn>
+    <m:mn>40</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+<item><m:math>
+ <m:mfrac>
+    <m:mn>6</m:mn>
+    <m:mn>40</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></item>
+<item>2</item></list>
+</problem>
+
+<solution id="id5131972">
+  <para id="element-689">b. <m:math>
+ <m:mfrac>
+    <m:mn>8</m:mn>
+    <m:mn>40</m:mn>
+  </m:mfrac>
+  <m:mtext/>
+</m:math></para></solution>
+</exercise>
+
+<exercise id="element-209">
+<problem id="id5132010">
+  <para id="element-293">Find the expected number of times a teenager is reminded to do his or her chores.</para>
+<list id="id7219651" list-type="enumerated" number-style="lower-alpha">
+<item>15</item>
+<item>2.78</item>
+<item>1.0</item>
+<item>3.13</item>
+      </list>
+</problem>
+
+<solution id="id5132089">
+  <para id="element-387">b. 2.78</para></solution>
+</exercise>
+
+<para id="element-680"><newline/><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> On any given day, approximately 37.5% of the cars parked in the De Anza parking garage are parked crookedly. We randomly survey 22 cars. We are interested in the number of cars that are parked crookedly.</para><exercise id="element-432">
+<problem id="id5132138">
+  <para id="element-531">
+    For every 22 cars, how many would you expect to be parked crookedly, on average?
+  </para>
+<list id="id5368990" list-type="enumerated" number-style="lower-alpha">
+<item>8.25</item>
+        <item>11</item>
+        <item>18</item>
+        <item>7.5</item>
+     
+      </list>
+</problem>
+
+<solution id="id5132217">
+  <para id="element-216">a. 8.25</para></solution>
+</exercise><exercise id="element-743"><problem id="id5132241">
+  <para id="element-72">
+What is the probability that at least ten of the 22 cars are parked crookedly.
+  </para>
+<list id="id9884974" list-type="enumerated" number-style="lower-alpha">
+<item>0.1263</item>
+        <item>0.1607</item>
+        <item>0.2870</item>
+        <item>0.8393</item>
+</list>
+</problem>
+
+<solution id="id5132319">
+  <para id="element-61">c. 0.2870</para></solution>
+</exercise>
+
+
+
+<exercise id="element-800">
+<problem id="id5132344">
+  <para id="element-25">Using a sample of 15 Stanford-Binet IQ scores, we wish to conduct a hypothesis test. Our claim is that the mean IQ score on the Stanford-Binet IQ test is more than 100. It is known that the standard deviation of all Stanford-Binet IQ scores is 15 points. The correct distribution to use for the hypothesis test is:
+  </para><list id="id9882820" list-type="enumerated" number-style="lower-alpha"><item>Binomial</item>
+        <item>Student's <emphasis effect="italics">t</emphasis></item>
+        <item>Normal</item>
+        <item>Uniform</item>
+      </list></problem>
+
+<solution id="id5153535">
+  <para id="element-924">c. Normal</para></solution>
+</exercise>
+<para id="element-289"><newline/><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> De Anza College keeps statistics on the pass rate of students who enroll in math classes.  In a sample of 1,795 students enrolled in Math 1A (1st quarter calculus), 1,428 passed the course. In a sample of 856 students enrolled in Math 1B (2nd quarter calculus), 662 passed. In general, are the pass rates of Math 1A and Math 1B statistically the same? Let A = the subscript for Math 1A and B = the subscript for Math 1B. </para><exercise id="element-620"><problem id="id5153594">
+  <para id="element-739">
+  If you were to conduct an appropriate hypothesis test, the alternate hypothesis would be:
+</para>
+<list id="id8816942" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> = <emphasis effect="italics">p<sub>B</sub></emphasis> </item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> &gt; <emphasis effect="italics">p<sub>B</sub></emphasis> </item>
+<item><emphasis effect="italics">H<sub>o</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> = <emphasis effect="italics">p<sub>B</sub></emphasis> </item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> ≠ <emphasis effect="italics">p<sub>B</sub></emphasis> </item>
+ </list></problem>
+
+<solution id="id5153819">
+  <para id="element-699">d. <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> ≠ <emphasis effect="italics">p<sub>B</sub></emphasis> </para></solution>
+</exercise>
+
+<exercise id="element-132">
+<problem id="id5153881">
+  <para id="element-493">The Type I error is to:</para>
+<list id="id8828449" list-type="enumerated" number-style="lower-alpha">
+<item>conclude that the pass rate for Math 1A is the same as the pass rate for Math 1B when, in fact, the pass rates are different.</item>
+<item>conclude that the pass rate for Math 1A is different than the pass rate for Math 1B when, in fact, the pass rates are the same.</item>
+<item>conclude that the pass rate for Math 1A is greater than the pass rate for Math 1B when, in fact, the pass rate for Math 1A is less than the pass rate for Math 1B.</item>
+<item>conclude that the pass rate for Math 1A is the same as the pass rate for Math 1B when, in fact, they are the same.</item>
+</list>
+</problem>
+
+<solution id="id5153967">
+  <para id="element-134">b. conclude that the pass rate for Math 1A is different than the pass rate for Math 1B when, in fact, the pass rates are the same.</para></solution>
+</exercise>
+<exercise id="element-414">
+<problem id="id5153993">
+  <para id="element-210">
+    The correct decision is to:
+  </para>
+ <list id="element-766" list-type="enumerated" number-style="lower-alpha">
+<item>reject <emphasis effect="italics">H<sub>0</sub></emphasis></item>
+<item>not reject <emphasis effect="italics">H<sub>0</sub></emphasis></item>
+<item>There is not enough information given to conduct the hypothesis test</item>
+</list>
+</problem>
+
+<solution id="id5154083">
+  <para id="element-568">b. not reject <emphasis effect="italics">H<sub>0</sub></emphasis></para></solution>
+</exercise>
+
+<exercise id="element-420"><problem id="id5154336">
+<para id="element-77">Kia, Alejandra, and Iris are runners on the track teams at three different schools. Their running times, in minutes, and the statistics for the track teams at their respective schools, for a one mile run, are given in the table below:</para>
+
+<table id="id8133007" summary="">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <colspec colnum="3" colname="c3"/>
+          <colspec colnum="4" colname="c4"/>
+          <thead>
+            <row>
+              <entry/>
+              <entry>Running Time</entry>
+              <entry>School Average Running Time</entry>
+              <entry>School Standard Deviation</entry>
+            </row>
+           </thead>
+           <tbody>
+            <row>
+              <entry>Kia</entry>
+              <entry>4.9</entry>
+              <entry>5.2</entry>
+              <entry>0.15</entry>
+            </row>
+            <row>
+              <entry>Alejandra</entry>
+              <entry>4.2</entry>
+              <entry>4.6</entry>
+              <entry>0.25</entry>
+            </row>
+            <row>
+              <entry>Iris</entry>
+              <entry>4.5</entry>
+              <entry>4.9</entry>
+              <entry>0.12</entry>
+            </row>
+          </tbody>
+        
+
+</tgroup>
+</table>
+
+  <para id="element-325">Which student is the BEST when compared to the other runners at her school?
+  </para>
+<list id="id8194170" list-type="enumerated" number-style="lower-alpha">
+<item>Kia</item>
+        <item>Alejandra</item>
+        <item>Iris</item>
+        <item>Impossible to determine</item>
+      </list>
+
+</problem>
+
+<solution id="id5154414">
+  <para id="element-712">c. Iris</para></solution>
+</exercise><para id="element-865"><newline/><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> The following adult ski sweater prices are from the Gorsuch Ltd. Winter catalog:</para><para id="element-328">$212, $292, $278, $199, $280, $236</para>
+<para id="element-288"><newline/>Assume the underlying sweater price population is approximately normal. The null hypothesis is that the mean price of adult ski sweaters from Gorsuch Ltd. is at least $275.</para><exercise id="element-812"><problem id="id5154526">
+  <para id="element-676">The correct distribution to use for the hypothesis test is:</para>
+ <list id="id8012671" list-type="enumerated" number-style="lower-alpha">
+<item>Normal</item>
+<item>Binomial</item>
+<item>Student's <emphasis effect="italics">t</emphasis></item>
+<item>Exponential</item>
+</list>
+</problem>
+
+<solution id="id5154605">
+  <para id="element-658">c. Student's <emphasis effect="italics">t</emphasis></para></solution>
+</exercise><exercise id="element-986"><problem id="id5154630">
+  <para id="element-752">
+    The hypothesis test:
+  </para>
+  <list id="id8145201" list-type="enumerated" number-style="lower-alpha">
+<item>is two-tailed.</item>
+        <item>is left-tailed.</item>
+        <item>is right-tailed.</item>
+        <item>has no tails.</item>
+</list>
+</problem>
+
+<solution id="id5154709">
+  <para id="element-453">b. is left-tailed.</para></solution>
+</exercise><exercise id="element-380">
+<problem id="id5154734">
+  <para id="element-345">Sara, a statistics student, wanted to determine the mean number of books that college professors have in their office. She randomly selected two buildings on campus and asked each professor in the selected buildings how many books are in his or her office. Sara surveyed 25 professors. The type of sampling selected is</para>
+<list id="id8122312" list-type="enumerated" number-style="lower-alpha">
+<item>simple random sampling.</item>
+        <item>systematic sampling.</item>
+        <item>cluster sampling.</item>
+        <item>stratified sampling.</item>
+      </list>
+
+
+</problem>
+
+<solution id="id5154818">
+  <para id="element-701">c. cluster sampling</para></solution>
+</exercise><exercise id="element-330"><problem id="id5154842">
+  <para id="element-301">A clothing store would use which measure of the center of data when placing orders for the typical "middle" customer?</para>
+<list id="id6909128" list-type="enumerated" number-style="lower-alpha">
+<item>mean</item>
+<item>median</item>
+<item>mode</item>
+<item>IQR</item>
+</list>
+</problem>
+
+<solution id="id5154922">
+  <para id="element-636">b. median</para></solution>
+</exercise><exercise id="element-162"><problem id="id5154946">
+  <para id="element-968">In a hypothesis test, the <emphasis effect="italics">p</emphasis>-value is</para><list id="id9379715" list-type="enumerated" number-style="lower-alpha">
+<item>the probability that an outcome of the data will happen purely by chance when the null hypothesis is true.</item>
+        <item>called the preconceived alpha.</item>
+        <item>compared to beta to decide whether to reject or not reject the null hypothesis.</item>
+        <item>Answer choices A and B are both true.</item>
+</list>
+</problem>
+
+<solution id="id5155028">
+  <para id="element-482">a. the probability that an outcome of the data will happen purely by chance when the null hypothesis is true.</para></solution>
+</exercise><para id="element-382"><newline/><emphasis>Use the following information to answer the next three exercises:</emphasis></para><para id="element-724">A community college offers classes 6 days a week: Monday through Saturday. Maria conducted a study of the students in her classes to determine how many days per week the students who are in her classes come to campus for classes. In each of her 5 classes she randomly selected 10 students and asked them how many days they come to campus for classes. 
+
+Each of her classes are the same size.
+
+The results of her survey are summarized in the table below.
+<table id="id9956470" summary="">
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <colspec colnum="3" colname="c3"/>
+          <colspec colnum="4" colname="c4"/>
+<thead>
+  <row>
+              <entry>Number of Days on Campus</entry>
+              <entry>Frequency</entry>
+              <entry>Relative Frequency</entry>
+              <entry>Cumulative Relative Frequency</entry>
+            </row>
+</thead>          
+<tbody>
+          
+            <row>
+              <entry>1</entry>
+              <entry>2</entry>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>12</entry>
+              <entry>.24</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>10</entry>
+              <entry>.20</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry/>
+              <entry/>
+              <entry>.98</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>0</entry>
+              <entry/>
+              <entry/>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>1</entry>
+              <entry>.02</entry>
+              <entry>1.00</entry>
+            </row>
+          </tbody>
+        
+</tgroup>
+</table></para><exercise id="element-931"><problem id="id5155379">
+  <para id="element-150">
+ Combined with convenience sampling, what other sampling technique did Maria use?
+  </para>
+
+<list id="id8121459" list-type="enumerated" number-style="lower-alpha">
+        <item>simple random </item>
+        <item>systematic </item>
+        <item>cluster </item>
+        <item>stratified </item>
+      </list>
+
+
+</problem>
+
+<solution id="id5155460">
+  <para id="element-118">d. stratified</para></solution>
+</exercise><exercise id="element-989"><problem id="id5155484">
+  <para id="element-5">How many students come to campus for classes four days a week?</para><list id="id7476698" list-type="enumerated" number-style="lower-alpha">
+        <item>49</item>
+        <item>25</item>
+        <item>30</item>
+        <item>13</item>
+       
+      </list>
+</problem>
+
+<solution id="id5155563">
+  <para id="element-383">b. 25</para></solution>
+</exercise><exercise id="element-346"><problem id="id5155588">
+  <para id="element-140">What is the 60<sup>th</sup> percentile for the this data?
+  </para><list id="id8039976" list-type="enumerated" number-style="lower-alpha">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+      </list>
+</problem>
+
+<solution id="id5155668">
+  <para id="element-350">c. 4</para></solution>
+</exercise><para id="element-137"><newline/><emphasis>Use the following information to answer the next two exercises:</emphasis></para><para id="element-19">The following data are the results of a random survey of 110 Reservists called to active duty to increase security at California airports.
+<table id="id9181217" summary="">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <thead>
+            <row>
+              <entry>Number of Dependents</entry>
+              <entry>Frequency</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>0</entry>
+              <entry>11</entry>
+            </row>
+            <row>
+              <entry>1</entry>
+              <entry>27</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>33</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>20</entry>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>19</entry>
+            </row>
+          </tbody>
+        
+</tgroup>
+</table></para><exercise id="element-634"><problem id="id5155887">
+  <para id="element-248">Construct a 95% confidence interval for the true population mean number of dependents of Reservists called to active duty to increase security at California airports.
+<list id="id8136375" list-type="enumerated" number-style="lower-alpha">
+        <item>(1.85, 2.32)</item>
+        <item>(1.80, 2.36)</item>
+        <item>(1.97, 2.46)</item>
+        <item>(1.92, 2.50)</item>
+  
+      </list>
+  </para></problem>
+
+<solution id="id5155970">
+  <para id="element-547">a. (1.85, 2.32)</para></solution>
+</exercise><exercise id="element-66"><problem id="id5155995">
+  <para id="element-373">The 95% confidence interval above means:
+  </para><list id="id9524835" list-type="enumerated" number-style="lower-alpha"><item>Five percent of confidence intervals constructed this way will not contain the true population aveage number of dependents.</item>
+<item>We are 95% confident the true population mean number of dependents falls in the interval.</item>
+<item>Both of the above answer choices are correct.</item>
+<item>None of the above.</item>
+
+      </list></problem>
+
+<solution id="id5156079">
+  <para id="element-792">c. Both above are correct.</para></solution>
+</exercise><exercise id="element-744"><problem id="id5156104">
+  <para id="element-593"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(4, 10). Find the 30<sup>th</sup> percentile.
+  </para><list id="id8091779" list-type="enumerated" number-style="lower-alpha">
+        <item>0.3000</item>
+        <item>3</item>
+        <item>5.8</item>
+        <item>6.1</item>
+        
+      </list>
+</problem>
+
+<solution id="id5156212">
+  <para id="element-772">c. 5.8</para></solution>
+</exercise><exercise id="element-621"><problem id="id5156235">
+  <para id="element-287">If <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Ex</emphasis>p(0.8), then <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">μ</emphasis>) = 
+  </para><list id="id9432521" list-type="enumerated" number-style="lower-alpha">
+        <item>0.3679</item>
+        <item>0.4727</item>
+        <item>0.6321</item>
+        <item>cannot be determined</item>
+
+      </list>
+</problem>
+
+<solution id="id5156356">
+  <para id="element-338">c. 0.6321</para></solution>
+</exercise><exercise id="element-824"><problem id="id5156381">
+  <para id="element-770">
+   The lifetime of a computer circuit board is normally distributed with a mean of 2,500 hours and a standard deviation of 60 hours. What is the probability that a randomly chosen board will last at most 2,560 hours?
+  </para>
+ <list id="id8076571" list-type="enumerated" number-style="lower-alpha">
+        <item>0.8413</item>
+        <item>0.1587</item>
+        <item>0.3461</item>
+        <item>0.6539</item>
+        </list>
+</problem>
+
+<solution id="id5156463">
+  <para id="element-371">a. 0.8413</para></solution>
+</exercise><exercise id="element-537"><problem id="id5156487">
+  <para id="element-481">
+A survey of 123 reservists called to active duty as a result of the September 11, 2001, attacks was conducted to determine the proportion that were married. Eighty-six reported being married. Construct a 98% confidence interval for the true population proportion of reservists called to active duty that are married.
+  </para>
+  <list id="id8739438" list-type="enumerated" number-style="lower-alpha">
+        <item>(0.6030, 0.7954)</item>
+        <item>(0.6181, 0.7802)</item>
+        <item>(0.5927, 0.8057)</item>
+        <item>(0.6312, 0.7672)</item>
+      </list>
+</problem>
+
+<solution id="id5156573">
+  <para id="element-992">a. (0.6030, 0.7954)</para></solution>
+</exercise><exercise id="element-969">
+<problem id="id5156598">
+<para id="element-236">Winning times in 26 mile marathons run by world class runners average 145 minutes with a standard deviation of 14 minutes. A sample of the last ten marathon winning times is collected. Let <emphasis effect="italics">x</emphasis> = mean winning times for ten marathons. The distribution for <emphasis effect="italics">x</emphasis> is:</para><list id="id9528948" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+ <m:mrow>
+  <m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>145</m:mn><m:mtext>,</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>14</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>10</m:mn>
+       </m:mrow>
+      </m:msqrt>
+      
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+        <item><m:math>
+ <m:mrow>
+  <m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>145</m:mn><m:mtext>,</m:mtext><m:mn>14</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>
+</item>
+ <item><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>t</m:mi>
+   <m:mn>9</m:mn>
+  </m:msub>
+  
+ </m:mrow>
+</m:math>
+</item>
+<item><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>t</m:mi>
+   <m:mrow>
+    <m:mn>10</m:mn>
+   </m:mrow>
+  </m:msub>
+  
+ </m:mrow>
+</m:math></item>
+</list>
+</problem>
+
+<solution id="id5156782">
+<para id="element-360">a. <m:math>
+ <m:mi>N</m:mi>
+  <m:mfenced>
+    <m:mn>145</m:mn>
+    <m:mfrac>
+      <m:mn>14</m:mn>
+      <m:msqrt>
+        <m:mn>10</m:mn>
+      </m:msqrt>
+    </m:mfrac>
+  </m:mfenced>
+</m:math></para></solution>
+</exercise>
+<exercise id="element-8">
+<problem id="id5156830">
+  <para id="element-106">Suppose that Phi Beta Kappa honors the top one percent of college and university seniors. Assume that grade point means (GPA) at a certain college are normally distributed with a 2.5 mean and a standard deviation of 0.5. What would be the minimum GPA needed to become a member of Phi Beta Kappa at that college?
+  </para><list id="id8128823" list-type="enumerated" number-style="lower-alpha">
+        <item>3.99</item>
+        <item>1.34</item>
+        <item>3.00</item>
+        <item>3.66</item>
+      </list>
+</problem>
+
+<solution id="id5156914">
+  <para id="element-591">d. 3.66</para></solution>
+</exercise>
+
+<exercise id="fs-idm155354320">
+<problem id="fs-idm79577712">
+<para id="fs-idm128772240">The number of people living on American farms has declined steadily during the 20<sup>th</sup> century. Here are data on the farm population (in millions of persons) from 1935 to 1980.</para>
+<table id="fs-idm115840016" summary="">
+<tgroup cols="11"><colspec colnum="1" colname="header_c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Year</entry>
+<entry>1935</entry>
+<entry>1940</entry>
+<entry>1945</entry>
+<entry>1950</entry>
+<entry>1955</entry>
+<entry>1960</entry>
+<entry>1965</entry>
+<entry>1970</entry>
+<entry>1975</entry>
+<entry>1980</entry>
+</row>
+</thead>           
+<tbody>
+<row>
+<entry>Population</entry>
+<entry>32.1</entry>
+<entry>30.5</entry>
+<entry>24.4</entry>
+<entry>23.0</entry>
+<entry>19.1</entry>
+<entry>15.6</entry>
+<entry>12.4</entry>
+<entry>9.7</entry>
+<entry>8.9</entry>
+<entry>7.2</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idm127456112"><newline/>The linear regression equation is <emphasis effect="italics">ŷ</emphasis>
+ = 1166.93 – 0.5868<emphasis effect="italics">x</emphasis>
+<newline/>What was the expected farm population (in millions of persons) for 1980?</para><list id="fs-idm139287632" list-type="enumerated" number-style="lower-alpha">
+<item>7.2</item>
+<item>5.1</item>
+<item>6.0</item>
+<item>8.0</item>
+</list>
+</problem>
+<solution id="fs-idm594720">
+<para id="fs-idm1999744">b. 5.1</para>
+</solution>
+</exercise>
+
+<exercise id="element-269">
+<problem id="id5157275">
+  <para id="element-217">In linear regression, which is the best possible SSE?</para>
+<list id="id9952065" list-type="enumerated" number-style="lower-alpha">
+        <item>13.46</item>
+        <item>18.22</item>
+        <item>24.05</item>
+        <item>16.33</item>
+      </list>
+</problem>
+
+<solution id="id5157355">
+  <para id="element-551">a. 13.46</para></solution>
+</exercise><exercise id="element-943"><problem id="id5157379">
+  <para id="element-138">In regression analysis, if the correlation coefficient is close to one what can be said about the best fit line?</para>
+ <list id="id6648760" list-type="enumerated" number-style="lower-alpha">
+        <item>It is a horizontal line. Therefore, we can not use it.</item>
+        <item>There is a strong linear pattern. Therefore, it is most likely a good model to be used.</item>
+        <item>The coefficient correlation is close to the limit. Therefore, it is hard to make a decision.</item>
+        <item>We do not have the equation. Therefore, we cannot say anything about it.</item>
+      </list>
+</problem>
+<solution id="id5157465">
+<para id="element-877">b. There is a strong linear pattern. Therefore, it is most likely a good model to be used.</para></solution>
+</exercise>
+<para id="element-565"><newline/><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> A study of the career plans of young women and men sent questionnaires to all 722 members of the senior class in the College of Business Administration at the University of Illinois. One question asked which major within the business program the student had chosen. Here are the data from the students who responded.</para><table id="id9181210" summary="">
+<tgroup cols="3"><colspec colnum="1" colname="header_c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <thead>
+            <row>
+              <entry/>
+              <entry>Female</entry>
+              <entry>Male</entry>
+            </row>
+          </thead>           
+          <tbody>
+           <row>
+              <entry>Accounting</entry>
+              <entry>68</entry>
+              <entry>56</entry>
+  </row>
+            <row>
+    <entry>Administration</entry>
+    <entry>91</entry>
+    <entry>40</entry>
+  </row>
+  <row>
+    <entry>Economics</entry>
+    <entry>5</entry>
+    <entry>6</entry>
+  </row>
+  <row>
+    <entry>Finance</entry>
+    <entry>61</entry>
+    <entry>59</entry>
+  </row>
+</tbody>
+  </tgroup>
+<caption>Does the data suggest that there is a relationship between the gender of students and their choice of major?</caption>
+</table>
+
+<exercise id="element-192"><problem id="id5157709">
+  <para id="element-349">The distribution for the test is:</para>
+
+<list id="id9895880" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+  <m:msub>
+    <m:msup>
+      <m:mi>Chi</m:mi>
+      <m:mn>2</m:mn>
+    </m:msup>
+    <m:mn>8</m:mn>
+  </m:msub>
+</m:math>.</item>
+        <item><m:math>
+  <m:msub>
+    <m:msup>
+      <m:mi>Chi</m:mi>
+      <m:mn>2</m:mn>
+    </m:msup>
+    <m:mn>3</m:mn>
+  </m:msub>
+</m:math>.</item>
+        <item><m:math>
+ <m:msub>
+    <m:mi>t</m:mi>
+    <m:mn>721</m:mn>
+  </m:msub>
+</m:math>.</item>
+        <item><m:math>
+<m:mi>N</m:mi>
+  <m:mrow>
+    <m:mo>(</m:mo>
+    <m:mn>0</m:mn>
+    <m:mo>,</m:mo><m:mn>1</m:mn>
+    <m:mo>)</m:mo>
+  </m:mrow>
+</m:math>.</item>
+      </list></problem>
+
+<solution id="id5157857">
+  <para id="element-942">b. <m:math>
+  <m:msub>
+    <m:msup>
+      <m:mi>Chi</m:mi>
+      <m:mn>2</m:mn>
+    </m:msup>
+    <m:mn>3</m:mn>
+  </m:msub>
+</m:math>.</para></solution>
+</exercise><exercise id="element-220"><problem id="id5157900">
+  <para id="element-402">The expected number of female who choose finance is:</para>
+ <list id="id9311204" list-type="enumerated" number-style="lower-alpha">
+        <item>37</item>
+        <item>61</item>
+        <item>60</item>
+        <item>70</item>
+      </list>
+</problem>
+
+<solution id="id5157980">
+  <para id="element-844">d. 70</para></solution>
+</exercise><exercise id="element-975"><problem id="id5158004">
+  <para id="element-119">The <emphasis effect="italics">p</emphasis>-value is 0.0127 and the level of significance is 0.05.  The conclusion to the test is:
+</para><list id="id7683405" list-type="enumerated" number-style="lower-alpha">
+<item>There is insufficient evidence to conclude that the choice of major and the gender of the student are not independent of each other.</item>
+        <item>There is sufficient evidence to conclude that the choice of major and the gender of the student are not independent of each other.</item>
+        <item>There is sufficient evidence to conclude that students find economics very hard.</item>
+        <item>There is in sufficient evidence to conclude that more females prefer administration than males.</item>
+
+      </list></problem>
+
+<solution id="id5158088">
+  <para id="element-777">b. There is sufficient evidence to conclude that the choice of major and the gender of the student are not independent of each other.</para></solution>
+</exercise>
+<exercise id="element-707"><problem id="id5158115">
+  <para id="element-843">
+An agency reported that the work force nationwide is composed of 10% professional, 10% clerical, 30% skilled, 15% service, and 35% semiskilled laborers. A random sample of 100 San Jose residents indicated 15 professional, 15 clerical, 40 skilled, 10 service, and 20 semiskilled laborers. At <emphasis effect="italics">α</emphasis> = 0.10 does the work force in San Jose appear to be consistent with the agency report for the nation? Which kind of test is it?
+  </para>
+
+   <list id="id8874154" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+  <m:msup>
+    <m:mi>Chi</m:mi>
+    <m:mn>2</m:mn>
+  </m:msup>
+</m:math> goodness of fit</item>
+        <item><m:math>
+  <m:msup>
+    <m:mi>Chi</m:mi>
+    <m:mn>2</m:mn>
+  </m:msup>
+</m:math> test of independence</item>
+        <item>Independent groups proportions</item>
+        <item>Unable to determine</item>
+      </list>
+</problem>
+
+<solution id="id5158230">
+  <para id="element-818">a. <m:math>
+  <m:msup>
+    <m:mi>Chi</m:mi>
+    <m:mn>2</m:mn>
+  </m:msup>
+</m:math> goodness-of-fit</para></solution>
+</exercise>
+     
+  </content>
+</document>

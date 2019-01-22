@@ -1,0 +1,107 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+<title>Introduction</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47057/latest</md:content-url>
+  <md:content-id>m47057</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.7</md:version>
+  <md:created>2013/07/19 09:32:16 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>cohen&#8217;s d</md:keyword>
+    <md:keyword>degrees of freedom</md:keyword>
+    <md:keyword>independent groups</md:keyword>
+    <md:keyword>matched pairs</md:keyword>
+    <md:keyword>matched samples</md:keyword>
+    <md:keyword>normal distribution</md:keyword>
+    <md:keyword>paired samples</md:keyword>
+    <md:keyword>pooled proportion</md:keyword>
+    <md:keyword>random variable</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+    <md:keyword>standard error</md:keyword>
+    <md:keyword>test statistic</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<?cnx.eoc class="summary" title="Chapter Review"?>
+<?cnx.eoc class="formula-review" title="Formula Review"?>
+<?cnx.eoc class="practice" title="Practice"?>
+<?cnx.eoc class="bring-together-exercises" title="Bringing It Together : Practice"?>
+<?cnx.eoc class="free-response" title="Homework"?>
+<?cnx.eoc class="bring-together-homework" title="Bringing It Together : Homework"?>
+<?cnx.eoc class="references" title="References"?>
+  
+<figure id="fs-idp119584608" class="splash"><media id="fs-idm16785584" alt="This is a photo of a plate with a large pile of eggs in the foreground and six slices of toast in the background. There is a small dish of red jam sitting near the toast on the plate.">
+<image src="CNX_Stats_C10_CO.jpg" width="380" mime-type="image/jpeg"/></media>
+
+  <caption>If you want to test a claim that involves two groups (the types of breakfasts eaten east and west of the Mississippi River) you can use a slightly different technique when conducting a hypothesis test. (credit: Chloe Lim)</caption></figure><note id="fs-idm64219152" class="chapter-objectives">
+    <label/>
+    <title>Chapter Objectives</title>
+<para id="element-864">By the end of this chapter, the student should be able to:</para>
+<list id="list5267" list-type="bulleted">
+<item>Classify hypothesis tests by type.</item>
+<item>Conduct and interpret hypothesis tests for two population means, population standard deviations known.</item>
+<item>Conduct and interpret hypothesis tests for two population means, population standard deviations unknown.</item>
+<item>Conduct and interpret hypothesis tests for two population proportions.</item>
+<item>Conduct and interpret hypothesis tests for matched or paired samples.</item>
+</list>
+</note>
+
+<para id="delete_me">Studies often compare two groups. For example, researchers are interested in the effect aspirin has in preventing heart attacks. Over the last few years, newspapers and magazines have reported various aspirin studies involving two groups. Typically, one group is given aspirin and the other group is given a placebo. Then, the heart attack rate is studied over several years.</para>
+  <para id="element-240">There are other situations that deal with the comparison of two groups. For example, studies compare various diet and exercise programs. Politicians compare the proportion of individuals from different income brackets who might vote for them. Students are interested in whether SAT or GRE preparatory courses really help raise their scores.</para>
+<para id="element-412">You have learned to conduct hypothesis tests on single means and single proportions. You will expand upon that in this chapter. You will compare two means or two proportions to each other. The general procedure is still the same, just expanded.</para>
+<para id="element-967">To compare two means or two proportions, you work with two groups. The groups are classified either as <emphasis>independent</emphasis> or <term>matched pairs</term>. <term>Independent groups</term> consist of two samples that are independent, that is, sample values selected from one population are not related in any way to sample values selected from the other population. <emphasis>Matched pairs</emphasis> consist of two samples that are dependent. The parameter tested using matched pairs is the population mean. The parameters tested using independent groups are either population means or population proportions.</para>
+
+<note id="fs-idp1161216" class="finger">
+<label/>   
+<title>NOTE</title>
+  <para id="fs-idm27664608">This chapter relies on either a calculator or a computer to calculate the degrees of freedom, the test statistics, and <emphasis effect="italics">p</emphasis>-values. TI-83+ and TI-84 instructions are included as well as the test statistic formulas. When using a TI-83+ or TI-84 calculator, we do not need to separate two population means, independent groups, or population variances unknown into large and small sample sizes. However, most statistical computer software has the ability to differentiate these tests.</para></note>
+
+<para id="element-281"><newline/>This chapter deals with the following hypothesis tests:</para>
+<list id="element-545" list-type="bulleted"><title>Independent groups (samples are independent)</title><item>Test of two population means.</item>
+<item>Test of two population proportions.</item>
+</list><list id="element-786" list-type="bulleted"><title>Matched or paired samples (samples are dependent)</title><item>Test of the two population proportions by testing one population mean of differences.</item>
+</list></content>
+</document>

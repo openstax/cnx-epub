@@ -1,0 +1,312 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+<title>Introduction</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47008/latest</md:content-url>
+  <md:content-id>m47008</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.8</md:version>
+  <md:created>2013/07/19 08:54:52 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>binomial distribution</md:keyword>
+    <md:keyword>confidence interval</md:keyword>
+    <md:keyword>confidence level</md:keyword>
+    <md:keyword>degrees of freedom</md:keyword>
+    <md:keyword>EBM</md:keyword>
+    <md:keyword>empirical rule</md:keyword>
+    <md:keyword>error bound</md:keyword>
+    <md:keyword>error bound for a population mean</md:keyword>
+    <md:keyword>error bound for a population proportion</md:keyword>
+    <md:keyword>inferential statistics</md:keyword>
+    <md:keyword>inverse</md:keyword>
+    <md:keyword>margin of error</md:keyword>
+    <md:keyword>normal distribution</md:keyword>
+    <md:keyword>parameter</md:keyword>
+    <md:keyword>plus four</md:keyword>
+    <md:keyword>point estimate</md:keyword>
+    <md:keyword>sample mean</md:keyword>
+    <md:keyword>sample size</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+    <md:keyword>student&#8217;s t-distribution</md:keyword>
+    <md:keyword>z-score</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<?cnx.eoc class="summary" title="Chapter Review"?>
+<?cnx.eoc class="formula-review" title="Formula Review"?>
+<?cnx.eoc class="practice" title="Practice"?>
+<?cnx.eoc class="free-response" title="Homework"?>
+<?cnx.eoc class="references" title="References"?>
+
+<figure id="fs-idp38862000" class="splash"><media id="fs-idm31074784" alt="This is a photo of M&amp;Ms piled together. The M&amp;Ms are red, blue, green, yellow, orange and brown.">
+<image src="CNX_Stats_C08_CO.jpg" width="500" mime-type="image/jpeg"/></media>
+
+<caption>Have you ever wondered what the average number of M&amp;Ms in a bag at the grocery store is? You can use confidence intervals to answer this question. (credit: comedy_nose/flickr)</caption></figure><note id="fs-idp115342032" class="chapter-objectives"><label/><title>Chapter Objectives</title>
+<para id="element-281">By the end of this chapter, the student should be able to:</para>
+<list id="list12315"><item>Calculate and interpret confidence intervals for estimating a population mean and a population proportion.</item>
+<item>Interpret the Student's t probability distribution as the sample size changes.</item>
+<item>Discriminate between problems applying the normal and the Student's <emphasis effect="italics">t</emphasis> distributions.</item>
+<item>Calculate the sample size required to estimate a population mean and a population proportion given a desired confidence level and margin of error.</item>
+</list></note><para id="delete_me">Suppose you were trying to determine the mean rent of a two-bedroom apartment in your town. You might look in the classified section of the newspaper, write down several rents listed, and average them together. You would have obtained a point estimate of the true mean. If you are trying to determine the percentage of times you make a basket when shooting a basketball, you might count the number of shots you make and divide that by the number of shots you attempted. In this case, you would have obtained a point estimate for the true proportion.</para>
+<para id="element-550">We use sample data to make generalizations about an unknown population. This part of statistics is called <term>inferential statistics</term>.  <emphasis>The sample data help us to make an estimate of a population <term>parameter</term></emphasis>. We realize that the point estimate is most likely not the exact value of the population parameter, but close to it. After calculating point estimates, we construct interval estimates, called confidence intervals.</para>
+<para id="element-667">In this chapter, you will learn to construct and interpret confidence intervals. You will also learn a new distribution, the Student's-t, and how it is used with these intervals. Throughout the chapter, it is important to keep in mind that the confidence interval is a random variable. It is the population parameter that is fixed.</para>
+<para id="element-560">If you worked in the marketing department of an entertainment company, you might be interested in the mean number of songs a consumer downloads a month from iTunes. If so, you could conduct a survey and calculate the sample mean, <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math>, and the sample standard deviation, <emphasis effect="italics">s</emphasis>. You would use <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> to estimate the population mean and <emphasis effect="italics">s</emphasis> to estimate the population standard deviation. The sample mean, <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math>, is the <term>point estimate</term> for the population mean, <emphasis effect="italics">&#956;</emphasis>. The sample standard deviation, <emphasis effect="italics">s</emphasis>, is the point estimate for the population standard deviation, <emphasis effect="italics">&#963;</emphasis>.</para>
+<para id="eip-65">Each of <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> and <emphasis effect="italics">s</emphasis> is called a statistic.</para>
+
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-510">A <term>confidence interval</term> is another type of estimate but, instead of being just one number, it is an interval of numbers. It provides a range of reasonable values in which we expect the population parameter to fall. There is no guarantee that a given confidence interval does capture the parameter, but there is a predictable probability of success.</para><para id="element-53">Suppose, for the iTunes example, we do not know the population mean <emphasis effect="italics">&#956;</emphasis>, but we do know that the population standard deviation is <emphasis effect="italics">&#963;</emphasis> = 1 and our sample size is 100. Then, by the central limit theorem, the standard deviation for the sample mean is</para>
+<para id="element-624"><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mi>&#963;</m:mi>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:mn>100</m:mn>
+     </m:mrow>
+    </m:msqrt>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>0.1</m:mn>
+ </m:mrow>
+</m:math>.</para>
+<para id="element-730">The <term>empirical rule</term>, which applies to bell-shaped distributions, says that in approximately 95% of the samples, the sample mean, <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math>, will be within two standard deviations of the population mean <emphasis effect="italics">&#956;</emphasis>. For our iTunes example, two standard deviations is (2)(0.1) = 0.2. The sample mean <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> is likely to be within 0.2 units of <emphasis effect="italics">&#956;</emphasis>.</para><para id="element-457">Because <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> is within 0.2 units of <emphasis effect="italics">&#956;</emphasis>, which is unknown, then <emphasis effect="italics">&#956;</emphasis> is likely to be within 0.2 units
+of <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> in 95% of the samples. The population mean <emphasis effect="italics">&#956;</emphasis> is contained in an interval whose lower number is calculated by taking the sample mean and subtracting two standard deviations (2)(0.1) and whose upper number is calculated by taking the sample mean and adding two standard deviations. In other words, <emphasis effect="italics">&#956;</emphasis> is between <m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;0</m:mtext><m:mtext>.2</m:mtext>
+ </m:mrow>
+</m:math> and <m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mtext>&#160;</m:mtext><m:mo>+</m:mo><m:mtext>&#160;0</m:mtext><m:mtext>.2</m:mtext>
+ </m:mrow>
+</m:math> in 95% of all the samples.</para><para id="element-433">For the iTunes example, suppose that a sample produced a sample mean <m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mtext>&#160;</m:mtext><m:mo>=</m:mo><m:mtext>&#160;2</m:mtext>
+ </m:mrow>
+</m:math>. Then the unknown population mean <emphasis effect="italics">&#956;</emphasis> is between</para><para id="element-501"><m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mo>&#8722;</m:mo><m:mn>0.2</m:mn><m:mo>=</m:mo><m:mn>2</m:mn><m:mo>&#8722;</m:mo><m:mn>0.2</m:mn><m:mo>=</m:mo><m:mn>1.8</m:mn>
+ </m:mrow>
+</m:math> and <m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mo>+</m:mo><m:mn>0.2</m:mn><m:mo>=</m:mo><m:mn>2</m:mn><m:mo>+</m:mo><m:mn>0.2</m:mn><m:mo>=</m:mo><m:mn>2.2</m:mn>
+ </m:mrow>
+</m:math></para>
+<para id="element-567">We say that we are <emphasis>95% confident</emphasis> that the unknown population mean number of songs downloaded from iTunes per month is between 1.8 and 2.2. <emphasis>The 95% confidence interval is (1.8, 2.2).</emphasis></para>
+<para id="element-484">The 95% confidence interval implies two possibilities. Either the interval (1.8, 2.2) contains the true mean <emphasis effect="italics">&#956;</emphasis> or our sample produced an <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> that is not within 0.2 units of the true mean <emphasis effect="italics">&#956;</emphasis>. The second possibility happens for only 5% of all the samples (95&#8211;100%).</para>
+<para id="element-39">Remember that a confidence interval is created for an unknown population parameter like the population mean, <emphasis effect="italics">&#956;</emphasis>. Confidence intervals for some parameters have the form:</para>
+
+<para id="element-75"><emphasis>(point estimate &#8211; margin of error, point estimate + </emphasis> <term>margin of error</term><emphasis>)</emphasis></para><para id="element-485">The margin of error depends on the confidence level or percentage of confidence and the standard error of the mean.</para>
+<para id="eip-255">When you read newspapers and journals, some reports will use the phrase "margin of error." Other reports will not use that phrase, but include a confidence interval as the point estimate plus or minus the margin of error. These are two ways of expressing the same concept.</para>
+
+<note id="eip-882"><label/><title>Note</title>
+<para id="eip-idm127604736">Although the text only covers symmetrical confidence intervals, there are non-symmetrical confidence intervals (for example, a confidence interval for the standard deviation).</para></note><note id="fs-idp47490208" class="statistics collab">
+<label/>
+<title>Collaborative Exercise</title>
+<para id="element-906">Have your instructor record the number of meals each student in your class eats out in a week. Assume that the standard deviation is known to be three meals. Construct an approximate 95% confidence interval for the true mean number of meals students eat out each week.</para>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-997" list-type="enumerated"><item>Calculate the sample mean.</item>
+<item>Let <emphasis effect="italics">&#963;</emphasis> = 3 and <emphasis effect="italics">n</emphasis> = the number of students surveyed.</item>
+<item>Construct the interval <m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mrow>
+     <m:mrow>
+      <m:mover accent="true">
+       <m:mi>x</m:mi>
+       <m:mo>&#175;</m:mo>
+      </m:mover>
+      <m:mo>&#8722;</m:mo><m:mtext>2</m:mtext>
+     </m:mrow>
+    <m:mo>&#8901;</m:mo></m:mrow><m:mrow>
+     <m:mrow>
+      <m:mfrac>
+       <m:mtext>&#963;</m:mtext>
+       <m:mrow>
+        <m:msqrt>
+         <m:mtext>n</m:mtext>
+        </m:msqrt>
+        
+       </m:mrow>
+      </m:mfrac>
+      
+     </m:mrow>
+    </m:mrow><m:mtext>,&#160;</m:mtext><m:mover accent="true">
+     <m:mi>x</m:mi>
+     <m:mo>&#175;</m:mo>
+    </m:mover>
+    <m:mtext>&#160;+&#160;</m:mtext><m:mrow>
+     <m:mtext>2</m:mtext>
+    <m:mo>&#8901;</m:mo></m:mrow><m:mrow>
+     <m:mrow>
+      <m:mfrac>
+       <m:mtext>&#963;</m:mtext>
+       <m:mrow>
+        <m:msqrt>
+         <m:mtext>n</m:mtext>
+        </m:msqrt>
+        
+       </m:mrow>
+      </m:mfrac>
+      
+     </m:mrow>
+    </m:mrow>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>.</item>
+</list><para id="element-927">We say we are approximately 95% confident that the true mean number of meals that students eat out in a week is between __________ and ___________.</para>
+</note></content>
+
+
+
+<glossary>
+<definition id="coninter">
+<term>Confidence Interval (CI)</term>
+<meaning id="id20495395">an interval estimate for an unknown population parameter. This depends on: 
+<list id="confint1" list-type="bulleted">
+<item>the desired confidence level,</item>
+<item>information that is known about the  distribution (for example, known standard deviation),</item>
+<item>the sample and its size.</item>
+</list>
+</meaning>
+</definition>
+<definition id="infrstats">
+<term>Inferential Statistics</term>
+<meaning id="id20359958">also called statistical inference or inductive statistics; this facet of statistics deals with estimating a population parameter based on a sample statistic. For example, if four out of the 100 calculators sampled are defective we might infer that four percent of the production is defective.</meaning>
+</definition>
+<definition id="parameter">
+<term>Parameter</term>
+<meaning id="id18035004">a numerical characteristic of a population</meaning>
+</definition>
+<definition id="pointest">
+<term>Point Estimate</term>
+<meaning id="id20057179">a single number computed from a sample and used to estimate a population parameter</meaning>
+</definition>
+</glossary>
+</document>

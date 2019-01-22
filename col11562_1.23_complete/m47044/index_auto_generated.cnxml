@@ -1,0 +1,414 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+<title>Rare Events, the Sample, Decision and Conclusion</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47044/latest</md:content-url>
+  <md:content-id>m47044</md:content-id>
+  <md:title>Rare Events, the Sample, Decision and Conclusion</md:title>
+  <md:version>1.7</md:version>
+  <md:created>2013/07/19 04:18:50 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternative hypothesis</md:keyword>
+    <md:keyword>assumption</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>p-value</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="fs-idm39235328">Establishing the type of distribution, sample size, and known or unknown standard deviation can help you figure out how to go about a hypothesis test. However, there are several other factors you should consider when working out a hypothesis test.</para>
+<section id="fs-idm88599200">
+<title>Rare Events</title>
+<para id="fs-idp23331840">Suppose you make an assumption about a property of the population (this assumption is the <term>null hypothesis</term>). Then you gather sample data randomly. If the sample has properties that would be very <emphasis>unlikely</emphasis> to occur if the assumption is true, then you would conclude that your assumption about the population is probably incorrect. (Remember that your assumption is just an <term>assumption</term>&#8212;it is not a fact and it may or may not be true. But your sample data are real and the data are showing you a fact that seems to contradict your assumption.)</para><para id="element-969">For example, Didi and Ali are at a birthday party of a very wealthy friend. They hurry to be first in line to grab a prize from a tall basket that they cannot see inside because they will be blindfolded. There are 200 plastic bubbles in the basket and Didi and Ali have been told that there is only one with a $100 bill. Didi is the first person to reach into the basket and pull out a bubble. Her bubble contains a $100 bill. The probability of this happening is <m:math><m:mfrac><m:mn>1</m:mn><m:mn>200</m:mn></m:mfrac></m:math> = 0.005. Because this is so unlikely, Ali is hoping that what the two of them were told is wrong and there are more $100 bills in the basket. A "rare event" has occurred (Didi getting the $100 bill) so Ali doubts the assumption about only one $100 bill being in the basket.</para>
+</section>
+
+<section id="fs-idp139727497741440">
+<title>Using the Sample to Test the Null Hypothesis</title>
+
+
+<para id="fs-idp165373232">Use the sample data to calculate the actual probability of getting the test result, called the <term><emphasis effect="italics">p</emphasis>-value</term>. The <emphasis effect="italics">p</emphasis>-value is the <emphasis>probability that, if the null hypothesis is true, the results from another randomly selected sample will be as extreme or more extreme as the results obtained from the given sample.</emphasis></para>
+
+<para id="element-188">A large <emphasis effect="italics">p</emphasis>-value calculated from the data indicates that we should not reject the <term>null hypothesis</term>. The smaller the <emphasis effect="italics">p</emphasis>-value, the more unlikely the outcome, and the stronger the evidence is against the null hypothesis. We would reject the null hypothesis if the evidence is strongly against it.</para>
+
+<para id="fs-idm72636976"><emphasis>Draw a graph that shows the <emphasis effect="italics">p</emphasis>-value. The hypothesis test is easier to perform if you use a graph because you see the problem more clearly.</emphasis></para>
+<example id="element-804">
+<para id="element-842">Suppose a baker claims that his bread height is more than 15 cm, on average. Several of his customers do not believe him. To persuade his customers that he is right, the baker decides to do a hypothesis test. He bakes 10 loaves of bread. The mean height of the sample loaves is 17 cm. The baker knows from baking hundreds of loaves of bread that the <term>standard deviation</term> for the height is 0.5 cm. and the distribution of heights is normal. </para><para id="element-369">The null hypothesis could be <emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8804; 15 The alternate hypothesis is <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &gt; 15</para><para id="element-850">The words <emphasis>"is more than"</emphasis> translates as a "&gt;" so "<emphasis effect="italics">&#956;</emphasis> &gt; 15" goes into the alternate hypothesis. The null hypothesis must contradict the alternate hypothesis.</para><para id="element-863">Since <emphasis><emphasis effect="italics">&#963;</emphasis> is known</emphasis> (<emphasis effect="italics">&#963;</emphasis> = 0.5 cm.), the distribution for the population is known to be normal with mean <emphasis effect="italics">&#956;</emphasis> = 15 and standard deviation <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mi>&#963;</m:mi>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>0.5</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.16</m:mn>
+</m:mrow>
+</m:math>.</para><para id="element-910">Suppose the null hypothesis is true (the mean height of the loaves is no more than 15 cm). Then is the mean height (17 cm) calculated from the sample unexpectedly large? The hypothesis test works by asking the question how <emphasis>unlikely</emphasis> the sample mean would be if the null hypothesis were true. The graph shows how far out the sample mean is on the normal curve. The <emphasis effect="italics">p</emphasis>-value is the probability that, if we were to take other samples, any other sample mean would fall at least as far out as 17 cm.</para>
+
+<para id="element-537"><emphasis>The <emphasis effect="italics">p</emphasis>-value, then, is the probability that a sample mean is the same or greater than 17 cm. when the population mean is, in fact, 15 cm.</emphasis> We can calculate this probability using the normal distribution for means. </para><figure id="fs-idm112264608"><media id="id9446267" alt="Normal distribution curve on average bread heights with values 15, as the population mean, and 17, as the point to determine the p-value, on the x-axis."><image src="fig-ch09_07_01N.jpg" mime-type="image/jpg" width="380"/></media></figure><para id="fs-idp85594448"><emphasis effect="italics">p</emphasis>-value= <emphasis effect="italics">P</emphasis>(<m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> &gt; 17) which is approximately zero.</para><para id="element-710">A <emphasis effect="italics">p</emphasis>-value of approximately zero tells us that it is highly unlikely that a loaf of bread rises no more than 15 cm, on average. That is, almost 0% of all loaves of bread would be at least as high as 17 cm. <emphasis>purely by CHANCE</emphasis> had the population mean height really been 15 cm.  Because the outcome of 17 cm. is so <emphasis>unlikely (meaning it is happening NOT by chance alone)</emphasis>, we conclude that the evidence is strongly against the null hypothesis (the mean height is at most 15 cm.). There is sufficient evidence that the true mean height for the population of the baker's loaves of bread is greater than 15 cm.</para>
+</example>
+
+<note id="fs-idm19107408" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-440"><problem id="eip-747">
+<para id="eip-293">A normal distribution has a standard deviation of 1. We want to verify a claim that the mean is greater than 12. A sample of 36 is taken with a sample mean of 12.5.</para>
+<para id="eip-idp83058144"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8804; 12
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &gt; 12
+<newline/>The <emphasis effect="italics">p</emphasis>-value is 0.0013
+<newline/>Draw a graph that shows the <emphasis effect="italics">p</emphasis>-value.</para></problem>
+</exercise></note>
+
+</section>
+
+<section id="fs-idp139727505143696">
+<title>Decision and Conclusion</title>
+
+<para id="fs-idp169707568">A systematic way to make a decision of whether to reject or not reject the <term>null hypothesis</term>
+is to compare the <emphasis effect="italics">p</emphasis>-value and a <emphasis>preset or preconceived <term>&#945;</term> (also called a "significance level")</emphasis>. A preset <emphasis effect="italics">&#945;</emphasis> is the probability of a <term>Type I error</term> (rejecting the null hypothesis when the null hypothesis is true). It may or may not be given to you at the beginning of the problem.</para><para id="element-259">When you make a <emphasis>decision</emphasis> to reject or not reject <emphasis effect="italics">H<sub>0</sub></emphasis>, do as follows:
+<list id="list-1" list-type="bulleted"><item>If <emphasis effect="italics">&#945;</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value, reject <emphasis effect="italics">H<sub>0</sub></emphasis>. The results of the sample data are significant. There is sufficient evidence to conclude that <emphasis effect="italics">H<sub>0</sub></emphasis> is an incorrect belief and that the <emphasis>alternative hypothesis</emphasis>, <emphasis effect="italics">H<sub>a</sub></emphasis>, may be correct.</item>
+<item>If <emphasis effect="italics">&#945;</emphasis> &#8804; <emphasis effect="italics">p</emphasis>-value, do not reject <emphasis effect="italics">H<sub>0</sub></emphasis>. The results of the sample data are not significant.There is not sufficient evidence to conclude that the alternative hypothesis,<emphasis effect="italics">H<sub>a</sub></emphasis>, may be correct.</item>
+<item>When you "do not reject <emphasis effect="italics">H<sub>0</sub></emphasis>", it does not mean that you should believe that <emphasis effect="italics">H<sub>0</sub></emphasis> is true. It simply means that the sample data have <emphasis>failed</emphasis> to provide sufficient evidence to cast serious doubt about the truthfulness of <emphasis effect="italics">H<sub>o</sub></emphasis>.</item>
+</list></para>
+
+<para id="element-734"><emphasis>Conclusion:</emphasis> After you make your decision, write a thoughtful <emphasis>conclusion</emphasis> about the hypotheses in terms of the given problem.</para>
+<example id="eip-514">
+<para id="eip-701">When using the <emphasis effect="italics">p</emphasis>-value to evaluate a hypothesis test, it is sometimes useful to use the following memory device</para>
+<para id="eip-494">If the <emphasis effect="italics">p</emphasis>-value is low, the null must go.</para>
+<para id="eip-295">If the <emphasis effect="italics">p</emphasis>-value is high, the null must fly.</para>
+<para id="eip-244">This memory aid relates a <emphasis effect="italics">p</emphasis>-value less than the established alpha (the <emphasis effect="italics">p</emphasis> is low) as rejecting the null hypothesis and, likewise, relates a <emphasis effect="italics">p</emphasis>-value higher than the established alpha (the <emphasis effect="italics">p</emphasis> is high) as not rejecting the null hypothesis.</para><exercise id="eip-573"><problem id="eip-890">
+<para id="eip-idp111480688">Fill in the blanks.</para>
+<para id="eip-idp109073024">Reject the null hypothesis when ______________________________________.</para>
+<para id="eip-idp31062480">The results of the sample data _____________________________________.</para>
+<para id="eip-idp11219984">Do not reject the null when hypothesis when __________________________________________.</para>
+<para id="eip-idm8475328">The results of the sample data ____________________________________________.</para></problem>
+
+<solution id="eip-418">
+<para id="eip-idm15109872">Reject the null hypothesis when <emphasis>the <emphasis effect="italics">p</emphasis>-value is less than the established alpha value</emphasis>. The results of the sample data <emphasis>support the alternative hypothesis</emphasis>.</para>
+<para id="eip-idm116402928">Do not reject the null hypothesis when <emphasis>the <emphasis effect="italics">p</emphasis>-value is greater than the established alpha value</emphasis>. The results of the sample data <emphasis>do not support the alternative hypothesis</emphasis>.</para>
+</solution>
+</exercise></example>
+
+<note id="fs-idm142970080" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-437">
+<problem id="eip-594">
+<para id="eip-860">It&#8217;s a Boy Genetics Labs claim their procedures improve the chances of a boy being born. The results for a test of a single population proportion are as follows:</para>
+<para id="eip-idm34336112"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> = 0.50, <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &gt; 0.50</para><para id="eip-idp6354960"><emphasis effect="italics">&#945;</emphasis> = 0.01</para><para id="eip-idp119018688"><emphasis effect="italics">p</emphasis>-value = 0.025</para>
+<para id="eip-idm52481600">Interpret the results and state a conclusion in simple, non-technical terms.</para>
+</problem>
+</exercise>
+
+</note>
+</section>
+
+
+<section id="fs-idp139727500433008" class="summary">
+
+<title>Chapter Review</title>
+
+<para id="fs-idp139727500433648">When the probability of an event occurring is low, and it happens, it is called a rare event. Rare events are important to consider in hypothesis testing because they can inform your willingness not to reject or to reject a null hypothesis. To test a null hypothesis, find the <emphasis effect="italics">p</emphasis>-value for the sample data and graph the results. When deciding whether or not to reject the null the hypothesis, keep these two parameters in mind:
+<list id="fs-idp139727498090720" list-type="enumerated" number-style="arabic"><item><emphasis effect="italics">&#945;</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value, reject the null hypothesis</item>
+<item><emphasis effect="italics">&#945;</emphasis> &#8804; <emphasis effect="italics">p</emphasis>-value, do not reject the null hypothesis</item>
+</list></para></section>
+
+
+<section id="fs-idp139727500224832" class="practice">
+<exercise id="fs-idp139727497512736"><problem id="fs-idp139727497512992">
+<para id="fs-idp139727497513248">When do you reject the null hypothesis?</para>
+</problem></exercise><exercise id="fs-idp139727506576944">
+<problem id="fs-idp139727506577200">
+<para id="fs-idp139727497559584">The probability of winning the grand prize at a particular carnival game is 0.005. Is the outcome of winning very likely or very unlikely?</para>
+</problem>
+<solution id="fs-idp139727497560256">
+<para id="fs-idp139727497560512">The outcome of winning is very unlikely.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp139727500342720"><problem id="fs-idp139727500342976">
+<para id="fs-idp139727500343232">The probability of winning the grand prize at a particular carnival game is 0.005. Michele wins the grand prize. Is this considered a rare or common event? Why?</para>
+</problem></exercise><exercise id="fs-idp139727500456320">
+<problem id="fs-idp139727500456576">
+<para id="fs-idp139727500456832">It is believed that the mean height of high school students who play basketball on the school team is 73 inches with a standard deviation of 1.8 inches. A random sample of 40 players is chosen. The sample mean was 71 inches, and the sample standard deviation was 1.5 years. Do the data support the claim that the mean height is less than 73 inches? The <emphasis effect="italics">p</emphasis>-value is almost zero. State the null and alternative hypotheses and interpret the <emphasis effect="italics">p</emphasis>-value.</para>
+</problem>
+<solution id="fs-idp139727500328080">
+<para id="eip-idp77616272"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &gt; = 73
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &lt; 73
+<newline/>The <emphasis effect="italics">p</emphasis>-value is almost zero, which means there is sufficient data to conclude that the mean height of high school students who play basketball on the school team is less than 73 inches at the 5% level.  The data do support the claim.</para>
+</solution>
+</exercise>
+<exercise id="fs-idp139727497515136"><problem id="fs-idp139727497515392">
+<para id="fs-idp139727497515648">The mean age of graduate students at a University is at most 31 y ears with a standard deviation of two years. A random sample of 15 graduate students is taken. The sample mean is 32 years and the sample standard deviation is three years. Are the data significant at the 1% level? The <emphasis effect="italics">p</emphasis>-value is 0.0264. State the null and alternative hypotheses and interpret the <emphasis effect="italics">p</emphasis>-value.</para></problem></exercise><exercise id="fs-idp139727497492608"><problem id="fs-idp139727500337904">
+<para id="fs-idp139727500338160">Does the shaded region represent a low or a high <emphasis effect="italics">p</emphasis>-value compared to a level of significance of 1%?</para>
+<figure id="fs-idp44994304"><media id="fs-idp139727500338544" alt="" display="block">
+<image mime-type="image/jpeg" src="fig-ch09_07_01N.jpg" width="380"/>
+</media></figure></problem>
+<solution id="fs-idp139727500212304">
+<para id="fs-idp139727500212560">The shaded region shows a low <emphasis effect="italics">p</emphasis>-value.</para>
+</solution>
+</exercise>
+<exercise id="fs-idp139727500213504"><problem id="fs-idp139727500319104">
+<para id="fs-idp139727500319360">What should you do when <emphasis effect="italics">&#945;</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value?</para></problem></exercise><exercise id="fs-idp139727500288288">
+<problem id="fs-idp139727500288544">
+<para id="fs-idp139727506518704">What should you do if <emphasis effect="italics">&#945;</emphasis> = <emphasis effect="italics">p</emphasis>-value?</para></problem>
+<solution id="fs-idp139727506519216">
+<para id="fs-idp139727506519472">Do not reject <emphasis effect="italics">H<sub>0</sub></emphasis>.
+</para></solution>
+</exercise>
+
+<exercise id="fs-idp139727500315024"><problem id="fs-idp139727500315280">
+<para id="fs-idp139727500315536">If you do not reject the null hypothesis, then it must be true. Is this statement correct? State why or why not in complete sentences.</para>
+</problem></exercise><para id="eip-972"><emphasis effect="italics">Use the following information to answer the next seven exercises:</emphasis> Suppose that a recent article stated that the mean time spent in jail by a first-time convicted burglar is 2.5 years. A study was then done to see if the mean time has increased in the new century. A random sample of 26 first-time convicted burglars in a recent year was picked. The mean length of time in jail from the survey was three years with a standard deviation of 1.8 years. Suppose that it is somehow known that the population standard deviation is 1.5. Conduct a hypothesis test to determine if the mean length of jail time has increased. Assume the distribution of the jail times is approximately normal.</para><exercise id="eip-714">
+<problem id="fs-idm64220592">
+<para id="fs-idp26378528">Is this a test of means or proportions?</para>
+</problem>
+<solution id="fs-idm27491088">
+<para id="fs-idp37854496">means</para>
+</solution>
+</exercise>
+<!--moved from 9.3, 32-41-->
+  <exercise id="element-173"><problem id="id13277236">
+  <para id="element-732">What symbol represents the random variable for this test?</para>
+</problem></exercise><exercise id="element-126"><problem id="id9153115">
+  <para id="element-504">In words, define the random variable for this test.</para>
+</problem>
+
+<solution id="id9153134">
+  <para id="element-663">the mean time spent in jail for 26 first time convicted burglars</para>
+</solution>
+</exercise>
+  <exercise id="element-797"><problem id="id9153163">
+  <para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-922">Is &#963; known and, if so, what is it?</para></problem></exercise><exercise id="element-877">
+    <problem id="id9153210">
+    <para id="element-235235">Calculate the following:
+      <list id="list-8276387645" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+          <m:mover accent="true">
+            <m:mi>x</m:mi>
+            <m:mo>&#175;</m:mo>
+          </m:mover>
+
+        </m:math> _______</item>
+        <item><emphasis effect="italics">&#963;</emphasis> _______</item>
+        <item><emphasis effect="italics">s<sub>x</sub></emphasis> _______</item>
+        <item><emphasis effect="italics">n</emphasis> _______</item>
+      </list></para>
+</problem>
+
+<solution id="id13779592">
+  <list id="list-23512532" list-type="enumerated" number-style="lower-alpha">
+    <item>3</item>
+    <item>1.5</item>
+    <item>1.8</item>
+    <item>26</item>
+  </list>
+</solution>
+</exercise><exercise id="element-95"><problem id="id13779679">
+  <para id="element-88">Since both &#963; and <m:math>
+      <m:mrow>
+        <m:msub>
+          <m:mi>s</m:mi>
+          <m:mi>x</m:mi>
+        </m:msub>
+
+      </m:mrow>
+    </m:math> are given, which should be used? In one to two complete sentences, explain why.</para>
+</problem></exercise><exercise id="element-121">
+  <problem id="id13779798">
+  <para id="element-136">State the distribution to use for the hypothesis test.</para>
+</problem>
+
+<solution id="id13779818">
+  <para id="element-1000"><m:math>
+    <m:mrow>
+      <m:mover accent="true">
+        <m:mi>X</m:mi>
+        <m:mo>&#175;</m:mo>
+      </m:mover>
+      <m:mo>~</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+        <m:mrow>
+          <m:mn>2.5</m:mn><m:mo>,</m:mo><m:mfrac>
+            <m:mrow>
+              <m:mn>1.5</m:mn>
+            </m:mrow>
+            <m:mrow>
+              <m:msqrt>
+                <m:mrow>
+                  <m:mn>26</m:mn>
+                </m:mrow>
+              </m:msqrt>
+
+            </m:mrow>
+          </m:mfrac>
+
+        </m:mrow>
+        <m:mo>)</m:mo></m:mrow>
+    </m:mrow>
+  </m:math><newline/></para>
+</solution>
+</exercise>
+
+  <!--exercise 65-->
+<!--up her..double check-->
+
+<exercise id="fs-idm67684880"><problem id="fs-idp79923936">
+<para id="eip-idp59803264">A random survey of 75 death row inmates revealed that the mean length of time on death row is 17.4 years with a standard deviation of 6.3 years. Conduct a hypothesis test to determine if the population mean time on death row could likely be 15 years.</para>
+<list id="fs-idp120951904" list-type="enumerated" number-style="lower-alpha">
+<item>Is this a test of one mean or proportion?</item>
+<item>State the null and alternative hypotheses.
+    <newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: ____________________ <emphasis effect="italics">H<sub>a</sub></emphasis> :  ____________________</item>
+<item>Is this a right-tailed, left-tailed, or two-tailed test?</item>
+<item>What symbol represents the random variable for this test?</item>
+<item>In words, define the random variable for this test.</item>
+<item>Is the population standard deviation known and, if so, what is it? </item>
+<item>Calculate the following:
+<list id="fs-idp42891616" list-type="enumerated" number-style="lower-roman">
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> = _____________   </item>
+<item><emphasis effect="italics">s</emphasis> = ____________  </item>
+<item><emphasis effect="italics">n</emphasis> = ____________</item>
+</list>
+</item>
+<item>Which test should be used?</item>
+<item>State the distribution to use for the hypothesis test.</item>
+<item>Find the <emphasis effect="italics">p</emphasis>-value.</item>
+<item>At a pre-conceived <emphasis effect="italics">&#945;</emphasis> = 0.05, what is your:
+<list id="fs-idp14952416" list-type="enumerated" number-style="lower-roman">
+<item>Decision:</item>
+<item>Reason for the decision:</item>
+<item>Conclusion (write out in a complete sentence):</item>
+</list>
+</item>
+</list>
+</problem></exercise>
+</section>
+
+<section id="fs-idp78752032" class="free-response">
+<title>Homework</title>
+<exercise id="fs-idp20135424"><problem id="fs-idp185700128">
+<para id="eip-idm15690000">The National Institute of Mental Health published an article stating that in any one-year period, approximately 9.5 percent of American adults suffer from depression or a depressive illness. Suppose that in a survey of 100 people in a certain town, seven of them suffered from depression or a depressive illness. Conduct a hypothesis test to determine if the true proportion of people in that town suffering from depression or a depressive illness is lower than the percent in the general adult American population.</para>
+<list id="fs-idp190659504" list-type="enumerated" number-style="lower-alpha">
+<item>Is this a test of one mean or proportion? </item>
+<item>State the null and alternative hypotheses.
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: ____________________  <emphasis effect="italics">H<sub>a</sub></emphasis>:  ____________________</item>
+<item>Is this a right-tailed, left-tailed, or two-tailed test?</item>
+<item>What symbol represents the random variable for this test? </item>
+<item>In words, define the random variable for this test.</item>
+<item>Calculate the following:
+<list id="fs-idp150758080" list-type="enumerated" number-style="lower-roman">
+<item><emphasis effect="italics">x</emphasis> = ________________</item>
+<item><emphasis effect="italics">n</emphasis> = ________________</item>
+<item><m:math>
+ <m:msup>
+  <m:mi>p</m:mi>
+  <m:mo>&#8242;</m:mo>
+ </m:msup>
+
+</m:math> = _____________</item>
+</list>
+</item>
+<item>Calculate <emphasis effect="italics">&#963;<sub>x</sub></emphasis> =  __________. Show the formula set-up.</item>
+<item>State the distribution to use for the hypothesis test.</item>
+<item>Find the <emphasis effect="italics">p</emphasis>-value.</item>
+<item>At a pre-conceived <emphasis effect="italics">&#945;</emphasis> = 0.05, what is your:
+<list id="fs-idp70896592" list-type="enumerated" number-style="lower-roman">
+<item>Decision:</item>
+<item>Reason for the decision:</item>
+<item>Conclusion (write out in a complete sentence):</item>
+</list>
+</item>
+</list>
+</problem>
+</exercise></section>
+</content>
+
+<glossary>
+
+<definition id="fs-idm2388928">
+<term>Level of Significance of the Test </term>
+<meaning id="id18705874">
+probability of a Type I error (reject the null hypothesis when it is true).  Notation: &#945;. In hypothesis testing, the Level of Significance is called the preconceived &#945; or the preset &#945;.
+</meaning>
+</definition>
+
+<definition id="fs-idm119440">
+<term><emphasis effect="italics">p</emphasis>-value</term>
+<meaning id="id9446562">the probability that an event will happen purely by chance assuming the null hypothesis is true. The smaller the <emphasis effect="italics">p</emphasis>-value, the stronger the evidence is against the null hypothesis.</meaning>
+</definition>
+
+</glossary>
+</document>

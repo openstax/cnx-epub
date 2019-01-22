@@ -1,0 +1,477 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Continuous Probability Functions</title><meta name="created-time" content="2013/07/19 13:37:14 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="area, continuous probability function, probability"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Continuous Probability Functions</div>
+<p id="delete_me">We begin by defining a continuous probability density function. We use the function notation <em data-effect="italics">f</em>(<em data-effect="italics">x</em>). Intermediate algebra may have been your first formal introduction to functions. In the study of probability, the functions we study are special. We define the function <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) so that the area between it and the x-axis is equal to a probability. Since the maximum probability is one, the maximum area is also one. <strong>For continuous probability distributions, PROBABILITY = AREA.</strong></p><div data-type="example" id="element-652">
+<p id="element-630">Consider the function
+<em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mfrac><mn>1</mn><mn>20</mn></mfrac></mrow><annotation-xml encoding="MathML-Content"><mfrac><mn>1</mn><mn>20</mn></mfrac></annotation-xml></semantics></math> for 0 &#8804; <em data-effect="italics">x</em> &#8804; 20. <em data-effect="italics">x</em> = a real number. The graph of
+<em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mfrac><mn>1</mn><mn>20</mn></mfrac></mrow><annotation-xml encoding="MathML-Content"><mfrac><mn>1</mn><mn>20</mn></mfrac></annotation-xml></semantics></math> is a horizontal line. However, since 0 &#8804; <em data-effect="italics">x</em> &#8804; 20, <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) is restricted to the portion between <em data-effect="italics">x</em> = 0 and <em data-effect="italics">x</em> = 20, inclusive.</p><figure id="fs-idm76319168"><span data-type="media" id="id39758796" data-alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle.">
+<img src="/resources/ebea63cfcb3a3718345ffbd13d86ead10930a640/fig-ch05_02_01.jpg" data-media-type="image/jpg" alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle." width="380"/></span></figure>
+
+<p id="element-37"><em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mfrac><mn>1</mn><mn>20</mn></mfrac></mrow><annotation-xml encoding="MathML-Content"><mfrac><mn>1</mn><mn>20</mn></mfrac></annotation-xml></semantics></math> <strong>for</strong> 0 &#8804; <em data-effect="italics">x</em> &#8804; 20.</p><p id="element-951">The graph of <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mfrac><mn>1</mn><mn>20</mn></mfrac></mrow><annotation-xml encoding="MathML-Content"><mfrac><mn>1</mn><mn>20</mn></mfrac></annotation-xml></semantics></math> is a horizontal line segment when 0 &#8804; <em data-effect="italics">x</em> &#8804; 20.</p><p id="element-515">The area between <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mfrac><mn>1</mn><mn>20</mn></mfrac></mrow><annotation-xml encoding="MathML-Content"><mfrac><mn>1</mn><mn>20</mn></mfrac></annotation-xml></semantics></math> where 0 &#8804; <em data-effect="italics">x</em> &#8804; 20 and the <em data-effect="italics">x</em>-axis is the area of a rectangle with base = 20 and height = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mfrac><mn>1</mn><mn>20</mn></mfrac></mrow><annotation-xml encoding="MathML-Content"><mfrac><mn>1</mn><mn>20</mn></mfrac></annotation-xml></semantics></math>.</p><div data-type="equation" id="eip-771"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mtext>AREA</mtext><mo>=</mo><mn>20</mn><mrow><mo>(</mo>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mn>20</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+<mo>)</mo></mrow><mo>=</mo><mn>1</mn>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mtext>AREA</mtext><mo>=</mo><mn>20</mn><mrow><mo>(</mo>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mn>20</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+<mo>)</mo></mrow><mo>=</mo><mn>1</mn>
+</mrow></annotation-xml></semantics></math></div><p id="element-812"><strong>Suppose we want to find the area between <em data-effect="italics">f(</em><em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mfrac><mn>1</mn><mn>20</mn></mfrac></mrow><annotation-xml encoding="MathML-Content"><mfrac><mn>1</mn><mn>20</mn></mfrac></annotation-xml></semantics></math> and the <em data-effect="italics">x</em>-axis where 0 &lt; <em data-effect="italics">x</em> &lt; 2.</strong></p><figure id="fs-idp91224976"><span data-type="media" id="id40073479" data-alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. A region is shaded inside the rectangle from x = 0 to x = 2.">
+<img src="/resources/1d1f4961cb1bc4b443b460476a15885589f8d682/fig-ch05_02_02.jpg" data-media-type="image/jpg" alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. A region is shaded inside the rectangle from x = 0 to x = 2." width="380"/>
+</span></figure>
+
+
+<p id="element-441"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mtext>AREA&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mo stretchy="false">(</mo><mn>2</mn><mtext>&#160;</mtext><mo>&#8211;</mo><mtext>&#160;</mtext><mn>0</mn><mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mtext>&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mn>0.1</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mtext>AREA&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mo stretchy="false">(</mo><mn>2</mn><mtext>&#160;</mtext><mo>&#8211;</mo><mtext>&#160;</mtext><mn>0</mn><mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mtext>&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mn>0.1</mn>
+ </mrow></annotation-xml></semantics></math>
+</p><p id="eip-53"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><mn>2</mn><mtext> </mtext><mo>&#8211;</mo><mtext> </mtext><mn>0</mn><mo stretchy="false">)</mo><mtext> </mtext><mo>=</mo><mtext> </mtext><mn>2</mn><mtext> </mtext><mo>=</mo><mtext> base of a rectangle</mtext>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><mn>2</mn><mtext> </mtext><mo>&#8211;</mo><mtext> </mtext><mn>0</mn><mo stretchy="false">)</mo><mtext> </mtext><mo>=</mo><mtext> </mtext><mn>2</mn><mtext> </mtext><mo>=</mo><mtext> base of a rectangle</mtext>
+ </mrow></annotation-xml></semantics></math>
+</p><div data-type="note" data-has-label="true" id="eip-259" data-label="" data-element-type="Reminder"><div data-type="title">Reminder</div>
+<p id="eip-idp74119024">area of a rectangle = (base)(height).</p></div><p id="element-961">The area corresponds to a probability. The probability that <em data-effect="italics">x</em> is between zero and two is 0.1, which can be written mathematically as <em data-effect="italics">P</em>(0 &lt; <em data-effect="italics">x</em> &lt; 2) = <em data-effect="italics">P</em>(<em data-effect="italics">x</em> &lt; 2) = 0.1.</p><p id="eip-553"><strong>Suppose we want to find the area between <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mfrac><mn>1</mn><mn>20</mn></mfrac></mrow><annotation-xml encoding="MathML-Content"><mfrac><mn>1</mn><mn>20</mn></mfrac></annotation-xml></semantics></math> and the <em data-effect="italics">x</em>-axis where 4 &lt; <em data-effect="italics">x</em> &lt; 15.</strong></p><figure id="fs-idm39582736"><span data-type="media" id="id40137735" data-alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. A region is shaded inside the rectangle from x = 4 to x = 15.">
+<img src="/resources/1d2352e588fef03d22e8f05a39fddd8b1c04fbd6/fig-ch05_02_03.jpg" data-media-type="image/jpg" alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. A region is shaded inside the rectangle from x = 4 to x = 15." width="380"/></span></figure>
+
+<p id="fs-idm75475104"><math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+ <mrow>
+  <mtext>AREA&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mo stretchy="false">(</mo><mn>15</mn><mtext>&#160;</mtext><mo>&#8211;</mo><mtext>&#160;</mtext><mn>4</mn><mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mtext>&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mn>0.55</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mtext>AREA&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mo stretchy="false">(</mo><mn>15</mn><mtext>&#160;</mtext><mo>&#8211;</mo><mtext>&#160;</mtext><mn>4</mn><mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mtext>&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mn>0.55</mn>
+ </mrow></annotation-xml></semantics></math>
+</p><p id="element-376"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><mn>15</mn><mtext>&#160;</mtext><mo>&#8211;</mo><mtext>&#160;</mtext><mn>4</mn><mo stretchy="false">)</mo><mtext>&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mn>11</mn><mtext>&#160;</mtext><mo>=</mo><mtext>&#160;the&#160;base&#160;of&#160;a&#160;rectangle</mtext>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><mn>15</mn><mtext>&#160;</mtext><mo>&#8211;</mo><mtext>&#160;</mtext><mn>4</mn><mo stretchy="false">)</mo><mtext>&#160;</mtext><mo>=</mo><mtext>&#160;</mtext><mn>11</mn><mtext>&#160;</mtext><mo>=</mo><mtext>&#160;the&#160;base&#160;of&#160;a&#160;rectangle</mtext>
+ </mrow></annotation-xml></semantics></math>
+</p><p id="element-29">The area corresponds to the probability <em data-effect="italics">P</em>(4 &lt; <em data-effect="italics">x</em> &lt; 15) = 0.55.</p><p id="element-874">Suppose we want to find <em data-effect="italics">P</em>(<em data-effect="italics">x</em> = 15). On an x-y graph, <em data-effect="italics">x</em> = 15 is a vertical line. A vertical line has no width (or zero width). Therefore,  <em data-effect="italics">P</em>(<em data-effect="italics">x</em> = 15) = (base)(height) = (0)<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> = 0</p><figure id="fs-idm37512432"><span data-type="media" id="id40076640" data-alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. A vertical line extends from the horizontal axis to the graph at x = 15.">
+<img src="/resources/eda1afd7af8f75452c14b802784631a399a21622/fig-ch05_02_04.jpg" data-media-type="image/jpg" alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. A vertical line extends from the horizontal axis to the graph at x = 15." width="380"/></span></figure>
+
+<p id="element-71"><em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8804; <em data-effect="italics">x</em>), which can also be written as <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &lt; <em data-effect="italics">x</em>) for continuous distributions, is called the cumulative distribution function or CDF. Notice the "less than or equal to" symbol. We can also use the CDF to calculate <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &gt; <em data-effect="italics">x</em>). The CDF gives "area to the left" and <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &gt; <em data-effect="italics">x</em>) gives "area to the right." We calculate <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &gt; <em data-effect="italics">x</em>) for continuous distributions as follows: <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &gt; <em data-effect="italics">x</em>) = 1 &#8211; <em data-effect="italics">P</em> (<em data-effect="italics">X</em> &lt; <em data-effect="italics">x</em>).</p><figure id="fs-idp12815264"><span data-type="media" id="id39508301" data-alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. The area to the left of a value, x, is shaded.">
+<img src="/resources/d36b6a84219bcbe7b6c1a7c6ba215e20de027b6b/fig-ch05_02_05.jpg" data-media-type="image/jpg" alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. The area to the left of a value, x, is shaded." width="380"/></span></figure>
+
+<p id="element-473">Label the graph with
+<em data-effect="italics">f</em>(<em data-effect="italics">x</em>) and <em data-effect="italics">x</em>. Scale the <em data-effect="italics">x</em> and <em data-effect="italics">y</em> axes with the maximum <em data-effect="italics">x</em> and <em data-effect="italics">y</em> values. <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mn>20</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mn>20</mn>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>, 0 &#8804; <em data-effect="italics">x</em> &#8804; 20.</p><p id="fs-idp36326688">To calculate the probability that <em data-effect="italics">x</em> is between two values, look at the following graph. Shade the region between <em data-effect="italics">x</em> = 2.3 and <em data-effect="italics">x</em> = 12.7. Then calculate the shaded area of a rectangle.</p>
+<figure id="fs-idp96750640"><span data-type="media" id="id40140418" data-alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. A region is shaded inside the rectangle from x = 2.3 to x = 12.7"><img src="/resources/7be76a87af56ee0efaa1237660b3f1cf5b32b2a5/fig-ch05_02_06.jpg" data-media-type="image/jpg" alt="This shows the graph of the function f(x) = 1/20. A horiztonal line ranges from the point (0, 1/20) to the point (20, 1/20). A vertical line extends from the x-axis to the end of the line at point (20, 1/20) creating a rectangle. A region is shaded inside the rectangle from x = 2.3 to x = 12.7" width="380"/></span></figure>
+<p id="element-979"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>P</mi><mo stretchy="false">(</mo><mn>2.3</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>12.7</mn><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mtext>base</mtext><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>height</mtext><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mn>12.7</mn><mo>&#8722;</mo><mn>2.3</mn><mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>=</mo><mn>0.52</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>P</mi><mo stretchy="false">(</mo><mn>2.3</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>12.7</mn><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mtext>base</mtext><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>height</mtext><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mn>12.7</mn><mo>&#8722;</mo><mn>2.3</mn><mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>=</mo><mn>0.52</mn>
+ </mrow></annotation-xml></semantics></math></p></div>
+
+<div data-type="note" data-has-label="true" id="fs-idm47598048" class="statistics try" data-label=""><div data-type="title">Try It</div>
+
+<div data-type="exercise" id="fs-idm81426464">
+<div data-type="problem" id="fs-idm96151408">
+<p id="fs-idp147477712">Consider the function <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mtext>1</mtext>
+   <mn>8</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mtext>1</mtext>
+   <mn>8</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>
+ for 0 &#8804; <em data-effect="italics">x</em> &#8804; 8. Draw the graph of <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) and find <em data-effect="italics">P</em>(2.5 &lt; <em data-effect="italics">x</em> &lt; 7.5).</p></div>
+</div>
+</div>
+<section data-depth="1" id="fs-idp147304960" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="fs-idp147305600">The probability density function (pdf) is used to describe probabilities for continuous random variables. The area under the density curve between two points corresponds to the probability that the variable falls between those two values. In other words, the area under the density curve between points <em data-effect="italics">a</em> and <em data-effect="italics">b</em> is equal to <em data-effect="italics">P</em>(<em data-effect="italics">a</em> &lt; <em data-effect="italics">x</em> &lt; <em data-effect="italics">b</em>). The cumulative distribution function (cdf) gives the probability as an area. If <em data-effect="italics">X</em> is a continuous random variable, the probability density function (pdf), <em data-effect="italics">f</em>(<em data-effect="italics">x</em>), is used to draw the graph of the probability distribution. The total area under the graph of <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) is one. The area under the graph of <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) and between values <em data-effect="italics">a</em> and <em data-effect="italics">b</em> gives the probability <em data-effect="italics">P</em>(<em data-effect="italics">a</em> &lt; <em data-effect="italics">x</em> &lt; <em data-effect="italics">b</em>).</p><figure id="fs-idm60245824"><span data-type="media" id="fs-idp150656848" data-alt="The graph on the left shows a general density curve, y = f(x). The region under the curve and above the x-axis is shaded. The area of the shaded region is equal to 1. This shows that all possible outcomes are represented by the curve. The graph on the right shows the same density curve. Vertical lines x = a and x = b extend from the axis to the curve, and the area between the lines is shaded. The area of the shaded region represents the probabilit ythat a value x falls between a and b.">
+<img src="/resources/45235fbb0150597fb915992c8fc830ff961f8b31/CNX_Stats_C05_M02_001.jpg" data-media-type="image/jpg" alt="The graph on the left shows a general density curve, y = f(x). The region under the curve and above the x-axis is shaded. The area of the shaded region is equal to 1. This shows that all possible outcomes are represented by the curve. The graph on the right shows the same density curve. Vertical lines x = a and x = b extend from the axis to the curve, and the area between the lines is shaded. The area of the shaded region represents the probabilit ythat a value x falls between a and b." width="380"/></span></figure>
+
+<p id="fs-idp108663296">The cumulative distribution function (cdf) of <em data-effect="italics">X</em> is defined by <em data-effect="italics">P</em> (<em data-effect="italics">X</em> &#8804; <em data-effect="italics">x</em>). It is a function of <em data-effect="italics">x</em> that gives the probability that the random variable is less than or equal to <em data-effect="italics">x</em>.</p>
+</section>
+<section data-depth="1" id="fs-idp108664192" class="formula-review"><h3 data-type="title">Formula Review</h3>
+<p id="fs-idp125293440">Probability density function (pdf) <em data-effect="italics">f</em>(<em data-effect="italics">x</em>):</p><ul id="fs-idp125293824"><li><em data-effect="italics">f</em>(<em data-effect="italics">x</em>) &#8805; 0</li>
+<li>The total area under the curve <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) is one.</li>
+</ul><p id="fs-idp131806432">Cumulative distribution function (cdf): <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8804; <em data-effect="italics">x</em>)</p></section>
+
+<section data-depth="1" id="fs-idm30315072" class="practice">
+<div data-type="exercise" id="eip-idm97087120">
+<div data-type="problem" id="eip-idm97086864">
+<p id="eip-idm97086608">Which type of distribution does the graph illustrate?</p>
+<figure id="eip-idm123385824">
+<span data-type="media" id="eip-idm123385568" data-alt="The horizontal axis ranges from 0 to 10. The distribution is modeled by a rectangle extending from x = 3 to x =8.">
+<img src="/resources/350f83259587c77d797dbbc2b7f5abaf829125e9/CNX_Stats_C05_M01_item001.jpg" data-media-type="image/jpg" alt="The horizontal axis ranges from 0 to 10. The distribution is modeled by a rectangle extending from x = 3 to x =8." width="380"/>
+</span>
+</figure>
+</div>
+<div data-type="solution" id="eip-idm180418672">
+<p id="eip-idm180418416">Uniform Distribution</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-idm18256352">
+<div data-type="problem" id="eip-idm18256096">
+<p id="eip-idm199212800">Which type of distribution does the graph illustrate?</p>
+<figure id="eip-idm199212416"><span data-type="media" id="eip-idm199212160" data-alt="This graph slopes downward. It begins at a point on the y-axis and approaches the x-axis at the right edge of the graph.">
+<img src="/resources/15e252f03a0f0246b4016c3b8949997a5d8c61df/CNX_Stats_C05_M01_item002.jpg" data-media-type="image/jpg" alt="This graph slopes downward. It begins at a point on the y-axis and approaches the x-axis at the right edge of the graph." width="380"/>
+</span>
+</figure></div>
+</div>
+
+<div data-type="exercise" id="eip-idm137825120">
+<div data-type="problem" id="eip-idm143442320">
+<p id="eip-idm143442064">Which type of distribution does the graph illustrate?</p>
+<figure id="eip-idm143441680"><span data-type="media" id="eip-idp45343472" data-alt="This graph shows a bell-shaped graph. The symmetric graph reaches maximum height at x = 0 and slopes downward gradually to the x-axis on each side of the peak.">
+<img src="/resources/3a87c57534abc11b33f3c03183fe0ddd43ca3567/CNX_Stats_C05_M01_item003.jpg" data-media-type="image/jpg" alt="This graph shows a bell-shaped graph. The symmetric graph reaches maximum height at x = 0 and slopes downward gradually to the x-axis on each side of the peak." width="380"/>
+</span>
+</figure></div>
+<div data-type="solution" id="eip-idm191766752">
+<p id="eip-idm70312624">Normal Distribution</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-idm170433264">
+<div data-type="problem" id="eip-idm170433008">
+<p id="eip-idm170432752">What does the shaded area represent? <em data-effect="italics">P</em>(___&lt; <em data-effect="italics">x</em> &lt; ___)</p>
+<figure id="eip-idp7874608">
+<span data-type="media" id="eip-idm79769968" data-alt="This graph shows a uniform distribution. The horizontal axis ranges from 0 to 10. The distribution is modeled by a rectangle extending from x = 1 to x = 8. A region from x = 2 to x = 5 is shaded inside the rectangle.">
+<img src="/resources/93026093d81f31003c5798310e63d161d641e1c5/CNX_Stats_C05_M01_item004.jpg" data-media-type="image/jpg" alt="This graph shows a uniform distribution. The horizontal axis ranges from 0 to 10. The distribution is modeled by a rectangle extending from x = 1 to x = 8. A region from x = 2 to x = 5 is shaded inside the rectangle." width="380"/>
+</span>
+</figure>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-idm160222016">
+<div data-type="problem" id="eip-idm40131600">
+<p id="eip-idm40131344">What does the shaded area represent? <em data-effect="italics">P</em>(___&lt; <em data-effect="italics">x</em> &lt; ___)</p>
+<figure id="eip-idm126372688">
+<span data-type="media" id="eip-idm126372432" data-alt="This graph shows an exponential distribution. The graph slopes downward. It begins at a point on the y-axis and approaches the x-axis at the right edge of the graph. The region under the graph from x = 6 to x = 7 is shaded.">
+<img src="/resources/322d2829883dc7a3fea4e520981a4e5f71b32ed5/CNX_Stats_C05_M01_item005.jpg" data-media-type="image/jpg" alt="This graph shows an exponential distribution. The graph slopes downward. It begins at a point on the y-axis and approaches the x-axis at the right edge of the graph. The region under the graph from x = 6 to x = 7 is shaded." width="380"/>
+</span>
+</figure>
+</div>
+<div data-type="solution" id="eip-idm164759504">
+<p id="eip-idm59247088"><em data-effect="italics">P</em>(6 &lt; <em data-effect="italics">x</em> &lt; 7)</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm118866416">
+<div data-type="problem" id="fs-idm94113008">
+<p id="fs-idm186932672">For a continuous probablity distribution, 0 &#8804; <em data-effect="italics">x</em> &#8804; 15. What is <em data-effect="italics">P</em>(<em data-effect="italics">x</em> &gt; 15)?</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm154014752">
+<div data-type="problem" id="fs-idm158384896">
+<p id="fs-idm174567168">What is the area under <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) if the function is a continuous probability density function?</p></div>
+<div data-type="solution" id="fs-idm96621808">
+<p id="fs-idm101963728">one</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm159828512">
+<div data-type="problem" id="fs-idm28635392">
+<p id="fs-idm44266992">For a continuous probability distribution, 0 &#8804; <em data-effect="italics">x</em> &#8804; 10. What is <em data-effect="italics">P</em>(<em data-effect="italics">x</em> = 7)?</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm89415120">
+<div data-type="problem" id="fs-idm119661456">
+<p id="fs-idm114444880">A <strong>continuous</strong> probability function is restricted to the portion between <em data-effect="italics">x</em> = 0 and 7. What is <em data-effect="italics">P</em>(<em data-effect="italics">x</em> = 10)?</p></div>
+<div data-type="solution" id="fs-idm29287760">
+<p id="fs-idm160336672">zero</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm185391792">
+<div data-type="problem" id="fs-idm70578720">
+<p id="fs-idm83804704"><em data-effect="italics">f</em>(<em data-effect="italics">x</em>) for a continuous probability function is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mn>5</mn>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>1</mn>
+<mn>5</mn>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>, and the function is restricted to 0 &#8804; <em data-effect="italics">x</em> &#8804; 5. What is <em data-effect="italics">P</em>(<em data-effect="italics">x</em> &lt; 0)?</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm78277152">
+<div data-type="problem" id="fs-idm119655680">
+<p id="fs-idm107695264"><em data-effect="italics">f</em>(<em data-effect="italics">x</em>), a continuous probability function, is equal to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mn>12</mn>
+</mrow>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mn>12</mn>
+</mrow>
+</mfrac>
+</mrow></annotation-xml></semantics></math>, and the function is restricted to 0 &#8804; <em data-effect="italics">x</em> &#8804; 12. What is <em data-effect="italics">P</em> (0 &lt; <em data-effect="italics">x</em> &lt; 12)?</p></div>
+<div data-type="solution" id="fs-idm109882608">
+<p id="fs-idm185543600">one</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm31115936">
+<div data-type="problem" id="fs-idm126442096">
+<p id="fs-idm79659008">Find the probability that <em data-effect="italics">x</em> falls in the shaded area.</p><figure id="fs-idm29576816">
+<span data-type="media" id="fs-idm168532640" data-alt="">
+<img src="/resources/4d964812e68cb73b47406efc87b275e3496d9874/CNX_Stats_C05_M02_item001.jpg" data-media-type="image/jpg" alt="" width="380"/>
+</span>
+</figure>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm29257104">
+<div data-type="problem" id="fs-idm70564992">
+<p id="fs-idm5797792">Find the probability that <em data-effect="italics">x</em> falls in the shaded area.</p>
+<figure id="fs-idm120132416">
+<span data-type="media" id="fs-idm17039824" data-alt="">
+<img src="/resources/ec711ce0b8a5be2bd78e1fa1dfb3abb8c04a3f66/CNX_Stats_C05_M02_item002.jpg" data-media-type="image/jpg" alt="" width="380"/>
+</span>
+</figure>
+</div>
+<div data-type="solution" id="fs-idm192509264">
+<p id="fs-idm100002320">0.625</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm144329792">
+<div data-type="problem" id="fs-idm109804912">
+<p id="fs-idp1777728">Find the probability that <em data-effect="italics">x</em> falls in the shaded area.</p>
+<figure id="fs-idm167436128">
+<span data-type="media" id="fs-idm163441712" data-alt="">
+<img src="/resources/86362aff9a791a2b6a4dd98e983c956aca8304a4/CNX_Stats_C05_M02_item003.jpg" data-media-type="image/jpg" alt="" width="380"/>
+</span>
+</figure>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm170928704">
+<div data-type="problem" id="fs-idm76313888">
+<p id="fs-idm73539776"><em data-effect="italics">f</em>(<em data-effect="italics">x</em>), a continuous probability function, is equal to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mn>3</mn>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>1</mn>
+<mn>3</mn>
+</mfrac>
+</mrow></annotation-xml></semantics></math>  and the function is restricted to 1 &#8804; <em data-effect="italics">x</em> &#8804; 4. Describe <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>P</mi><mrow><mo>(</mo>
+<mrow>
+<mi>x</mi><mo>&gt;</mo><mfrac>
+<mn>3</mn>
+<mn>2</mn>
+</mfrac>
+</mrow>
+<mo>)</mo></mrow><mo>.</mo>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>P</mi><mrow><mo>(</mo>
+<mrow>
+<mi>x</mi><mo>&gt;</mo><mfrac>
+<mn>3</mn>
+<mn>2</mn>
+</mfrac>
+</mrow>
+<mo>)</mo></mrow><mo>.</mo>
+</mrow></annotation-xml></semantics></math></p></div>
+<div data-type="solution" id="fs-idm63500944">
+<p id="fs-idm21180864">The probability is equal to the area from <em data-effect="italics">x</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>3</mn>
+<mn>2</mn>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>3</mn>
+<mn>2</mn>
+</mfrac>
+</mrow></annotation-xml></semantics></math> to <em data-effect="italics">x</em> = 4 above the x-axis and up to <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mn>3</mn>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>1</mn>
+<mn>3</mn>
+</mfrac>
+</mrow></annotation-xml></semantics></math>.</p></div>
+</div>
+</section>
+
+<section data-depth="1" id="fs-idp5416000" class="free-response"><h3 data-type="title">Homework</h3>
+<p id="eip-idm57931200">
+<em data-effect="italics">For each probability and percentile problem, draw the picture.</em></p>
+<div data-type="exercise" id="eip-idp84147744">
+<div data-type="problem" id="eip-idp84148000">
+<p id="eip-idp36661712">Consider the following experiment. You are one of 100 people enlisted to take part in a study to determine the percent of nurses in America with an R.N. (registered nurse) degree. &#160;You ask nurses if they have an R.N. degree. &#160;The nurses answer &#8220;yes&#8221; or &#8220;no.&#8221; &#160;You then calculate the percentage of nurses with an R.N. degree. &#160;You give that percentage to your supervisor.</p>
+<ol id="eip-idp36662096" type="a">
+<li>What part of the experiment will yield discrete data?</li>
+<li>What part of the experiment will yield continuous data?</li>
+</ol>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-idm16922624"><div data-type="problem" id="eip-idm16922368">
+<p id="eip-idm16922112">When age is rounded to the nearest year, do the data stay continuous, or do they become discrete? &#160;Why?</p>
+</div>
+<div data-type="solution" id="eip-idm19380464">
+<p id="eip-idm47037520">Age is a measurement, regardless of the accuracy used.</p>
+</div></div>
+</section>
+</body>
+
+</html>

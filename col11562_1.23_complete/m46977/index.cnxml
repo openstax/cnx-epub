@@ -1,0 +1,183 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+  <title>Introduction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46977/latest</md:content-url>
+  <md:content-id>m46977</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.10</md:version>
+  <md:created>2013/07/19 08:39:35 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>68-95-99.7 rule</md:keyword>
+    <md:keyword>area to the left</md:keyword>
+    <md:keyword>area to the right</md:keyword>
+    <md:keyword>critical value</md:keyword>
+    <md:keyword>empirical rule</md:keyword>
+    <md:keyword>percentile</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+    <md:keyword>standard Normal Distribution</md:keyword>
+    <md:keyword>z-score</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <?cnx.eoc class="summary" title="Chapter Review"?>
+  <?cnx.eoc class="formula-review" title="Formula Review"?>
+  <?cnx.eoc class="practice" title="Practice"?>
+  <?cnx.eoc class="free-response" title="Homework"?>
+  <?cnx.eoc class="references" title="References"?>
+
+<figure id="fs-idp3364000" class="splash"><media id="fs-idp63701744" alt="This photo shows many different pairs of shoes in various colors. The shoes appear to be hanging from a wall by cords.">
+<image mime-type="image/jpg" src="CNX_Stats_C06_CON.jpg" width="500"/>
+</media>
+<caption>If you ask enough people about their shoe size, you will find that your graphed data is shaped like a bell curve and can be described as normally distributed. (credit: &#214;mer &#220;nl&#971;)</caption></figure><note id="fs-idp2636240" class="chapter-objectives"><label/><title>Chapter Objectives</title>
+<para id="element-864">By the end of this chapter, the student should be able to:</para>
+<list id="list4253">
+<item>Recognize the normal probability distribution and apply it appropriately.</item>
+<item>Recognize the standard normal probability distribution and apply it appropriately.</item>
+<item>Compare normal probabilities by converting to the standard normal distribution.</item>
+</list>
+</note><para id="intro001">The normal, a continuous distribution, is the most important of all the distributions. It is widely used and even more widely abused. Its graph is bell-shaped. You see the bell curve in almost all disciplines. Some of these include psychology, business, economics, the sciences, nursing, and, of course, mathematics. Some of your instructors may use the normal distribution to help determine your grade. Most IQ scores are normally distributed. Often real-estate prices fit a normal distribution. The normal distribution is extremely important, but it cannot be applied to everything in the real world.</para>
+<para id="element-299">In this chapter, you will study the normal distribution, the standard normal distribution, and applications associated with them.</para>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-915">The normal distribution has two parameters (two numerical descriptive measures): the mean (<emphasis effect="italics">&#956;</emphasis>) and the standard deviation (<emphasis effect="italics">&#963;</emphasis>). If <emphasis effect="italics">X</emphasis> is a quantity to be measured that has a normal distribution with mean (<emphasis effect="italics">&#956;</emphasis>) and standard deviation (<emphasis effect="italics">&#963;</emphasis>), we designate this by writing </para><figure xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm13606720"><media id="id42732641" alt="This diagram shows a bell-shaped curve with the lower case Greek letter mu at the center of the x axis. It has the label Normal: uppercase X is similar to N (&#956;, &#963;) ">
+<image src="fig-ch_06_01_01.jpg" mime-type="image/jpg" width="450"/></media></figure><para id="element-979">The probability density function is a rather complicated function. <emphasis>Do not memorize it</emphasis>. It is not necessary.</para>
+<para id="element-687"><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mi>&#963;</m:mi><m:mo>&#8901;</m:mo><m:msqrt>
+     <m:mrow>
+      <m:mn>2</m:mn><m:mo>&#8901;</m:mo><m:mi>&#960;</m:mi>
+     </m:mrow>
+    </m:msqrt>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>&#160;</m:mo><m:mo>&#8901;</m:mo><m:msup>
+   <m:mrow>
+    <m:mtext>&#160;e</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    <m:mo>&#8901;</m:mo><m:msup>
+     <m:mrow>
+      <m:mo stretchy="true">(</m:mo><m:mfrac>
+       <m:mrow>
+        <m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mi>&#956;</m:mi>
+       </m:mrow>
+       <m:mi>&#963;</m:mi>
+      </m:mfrac>
+      <m:mo stretchy="true">)</m:mo>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:msup>
+  
+ </m:mrow>
+</m:math></para><para id="element-750">The cumulative distribution function is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>). It is calculated either by a calculator or a computer, or it is looked up in a table. Technology has made the tables virtually obsolete. For that reason, as well as the fact that there are various table formats, we are not including table instructions.</para>
+
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-396">The curve is symmetric about a vertical line drawn through the mean, <emphasis effect="italics">&#956;</emphasis>. In theory, the mean is the same as the median, because the graph is symmetric about <emphasis effect="italics">&#956;</emphasis>. As the notation indicates, the normal distribution depends only on the mean and the standard deviation. Since the area under the curve must equal one, a change in the standard deviation, <emphasis effect="italics">&#963;</emphasis>, causes a change in the shape of the curve; the curve becomes fatter or skinnier depending on <emphasis effect="italics">&#963;</emphasis>. A change in <emphasis effect="italics">&#956;</emphasis> causes the graph to shift to the left or right. This means there are an infinite number of normal probability distributions. One of special interest is called the <emphasis>standard normal distribution</emphasis>.</para><note id="fs-idp30947824" class="statistics collab"><label/><title>Collaborative Classroom Activity</title>
+<para id="element-450">Your instructor will record the heights of both men and women in your class, separately. Draw histograms of your data. Then draw a smooth curve through each histogram. Is each curve somewhat bell-shaped? Do you think that if you had recorded 200 data values for men and 200 for women that the curves would look bell-shaped? Calculate the mean for each data set. Write the means on the <emphasis effect="italics">x</emphasis>-axis of the appropriate graph below the peak. Shade the approximate area that represents the probability that one randomly chosen male is taller than 72 inches. Shade the approximate area that represents the probability that one randomly chosen female is shorter than 60 inches. If the total area under each curve is one, does either probability appear to be more than 0.5?</para>
+</note>
+<section id="fs-idm30369536" class="formula-review"><title>Formula Review</title><para id="fs-idp6996576"><emphasis effect="italics">X</emphasis> &#8764; <emphasis effect="italics">N</emphasis>(<emphasis effect="italics">&#956;</emphasis>, <emphasis effect="italics">&#963;</emphasis>)</para><para id="fs-idp6873424">
+<list list-type="labeled-item" display="inline">
+<item><emphasis effect="italics">&#956;</emphasis> = the mean</item>
+<item><emphasis effect="italics">&#963;</emphasis> = the standard deviation</item>
+</list></para>
+</section></content>
+
+<glossary>
+<definition id="normdist">
+<term>Normal Distribution</term>
+<meaning id="id42733014">a continuous random variable (RV) with pdf <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mi>&#963;</m:mi><m:msqrt>
+     <m:mrow>
+      <m:mn>2</m:mn><m:mi>&#960;</m:mi>
+     </m:mrow>
+    </m:msqrt>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:msup>
+   <m:mrow>
+    <m:mtext>&#160;e</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mfrac>
+       <m:mrow>
+        <m:mo>&#8211;</m:mo><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mtext>&#160;</m:mtext><m:mo>&#8211;</m:mo><m:mtext>&#160;</m:mtext><m:mo>&#956;</m:mo><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mrow>
+        <m:mn>2</m:mn><m:msup>
+         <m:mi>&#963;</m:mi>
+         <m:mn>2</m:mn>
+        </m:msup>
+        
+       </m:mrow>
+      </m:mfrac>
+      
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:msup>
+  
+ </m:mrow>
+</m:math>, where <emphasis effect="italics">&#956;</emphasis>  is the mean of the distribution and <emphasis effect="italics">&#963;</emphasis> is the standard deviation; notation: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(<emphasis effect="italics">&#956;</emphasis>, <emphasis effect="italics">&#963;</emphasis>). If <emphasis effect="italics">&#956;</emphasis> = 0 and <emphasis effect="italics">&#963;</emphasis> = 1, the RV is called the <emphasis>standard normal distribution</emphasis>.</meaning>
+</definition>
+</glossary>
+</document>

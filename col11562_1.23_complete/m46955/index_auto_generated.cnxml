@@ -1,0 +1,181 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+  <title>Introduction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46955/latest</md:content-url>
+  <md:content-id>m46955</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.7</md:version>
+  <md:created>2013/07/19 08:29:27 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>average</md:keyword>
+    <md:keyword>Bernoulli trial</md:keyword>
+    <md:keyword>binomial distribution</md:keyword>
+    <md:keyword>binomial probability distribution</md:keyword>
+    <md:keyword>binomial probability distribution function</md:keyword>
+    <md:keyword>discrete random variable</md:keyword>
+    <md:keyword>expected value</md:keyword>
+    <md:keyword>expected value table</md:keyword>
+    <md:keyword>geometric distribution</md:keyword>
+    <md:keyword>geometric probability distribution</md:keyword>
+    <md:keyword>geometric probability distribution function</md:keyword>
+    <md:keyword>hypergeometric distribution</md:keyword>
+    <md:keyword>hypergeometric probability distribution</md:keyword>
+    <md:keyword>hypergeometric probability distribution function</md:keyword>
+    <md:keyword>law of large numbers</md:keyword>
+    <md:keyword>long-term average</md:keyword>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>Pearson</md:keyword>
+    <md:keyword>Poisson distribution</md:keyword>
+    <md:keyword>Poisson probability distribution</md:keyword>
+    <md:keyword>Poisson probability distribution function</md:keyword>
+    <md:keyword>probability distribution</md:keyword>
+    <md:keyword>probability distribution function</md:keyword>
+    <md:keyword>random variable</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+        <?cnx.eoc class="summary" title="Chapter Review"?>
+        <?cnx.eoc class="formula-review" title="Formula Review"?>
+        <?cnx.eoc class="practice" title="Practice"?>
+        <?cnx.eoc class="free-response" title="Homework"?>
+        <?cnx.eoc class="references" title="References"?>
+
+<figure id="fs-idp163541072" class="splash"><media id="fs-idp141532880" alt="This photo shows branch lightening coming from a dark cloud and hitting the ground.">
+<image mime-type="image/jpg" src="CNX_Stats_C04_CON.jpg" width="500"/>
+</media>
+<caption>You can use probability and discrete random variables to calculate the likelihood of lightning striking the ground five times during a half-hour thunderstorm. (Credit: Leszek Leszczynski)</caption></figure><note id="fs-idp120416736" class="chapter-objectives">
+<label/>
+<title>Chapter Objectives</title>
+<para id="element-959">By the end of this chapter, the student should be able to:</para>
+<list id="list14235"><item>Recognize and understand discrete probability distribution functions, in general.</item>
+<item>Calculate and interpret expected values.</item>
+<item>Recognize the binomial probability distribution and apply it appropriately.</item>
+<item>Recognize the Poisson probability distribution and apply it appropriately.</item>
+<item>Recognize the geometric probability distribution and apply it appropriately.</item>
+<item>Recognize the hypergeometric probability distribution and apply it appropriately.</item>
+<item>Classify discrete word problems by their distributions.</item>
+</list>
+</note>
+
+<para id="introch04">A student takes a ten-question, true-false quiz. Because the student had such a busy schedule, he or she could not study and guesses randomly at each answer. What is the probability of the student passing the test with at least a 70%?</para><para id="element-804">Small companies might be interested in the number of long-distance phone calls their employees make during the peak time of the day. Suppose the average is 20 calls. What is the probability that the employees make more than 20 long-distance phone calls during the peak time?</para>
+
+<para id="element-919">These two examples illustrate two different types of probability problems involving discrete random variables. Recall that discrete data are data that you can count. A <term>random variable</term> describes the outcomes of a statistical experiment in words. The values of a random variable can vary with each repetition of an experiment.</para>
+
+
+<section id="randvarnot">
+<title>Random Variable Notation</title>
+<para id="element-197">Upper case letters such as <emphasis effect="italics">X</emphasis> or <emphasis effect="italics">Y</emphasis> denote a random variable. Lower case letters like <emphasis effect="italics">x</emphasis> or <emphasis effect="italics">y</emphasis> denote the value of a random variable. If  <emphasis><emphasis effect="italics">X</emphasis> is a random variable, then <emphasis effect="italics">X</emphasis> is written in words, and <emphasis effect="italics">x</emphasis> is given as a number.</emphasis></para>
+
+<para id="element-109">For example, let <emphasis effect="italics">X</emphasis> = the number of heads you get when you toss three fair coins. The sample space for the toss of three fair coins is <emphasis effect="italics">TTT</emphasis>; <emphasis effect="italics">THH</emphasis>; <emphasis effect="italics">HTH</emphasis>; <emphasis effect="italics">HHT</emphasis>; <emphasis effect="italics">HTT</emphasis>; <emphasis effect="italics">THT</emphasis>; <emphasis effect="italics">TTH</emphasis>; <emphasis effect="italics">HHH</emphasis>. Then, <emphasis effect="italics">x</emphasis> = 0, 1, 2, 3. <emphasis effect="italics">X</emphasis> is in words and <emphasis effect="italics">x</emphasis> is a number. Notice that for this example, the <emphasis effect="italics">x</emphasis> values are countable outcomes. Because you can count the possible values that <emphasis effect="italics">X</emphasis> can take on and the outcomes are random (the <emphasis effect="italics">x</emphasis> values 0, 1, 2, 3), <emphasis effect="italics">X</emphasis> is a discrete random variable.</para></section>
+
+<note id="fs-idp37582368" class="statistics collab">
+<label/>
+<title>Collaborative Exercise</title>
+<para id="element-607">Toss a coin ten times and record the number of heads. After all members of the class have completed the experiment (tossed a coin ten times and counted the number of heads), fill in <link target-id="M01_Ch04_tbl001" document=""/>. Let <emphasis effect="italics">X</emphasis> = the number of heads in ten tosses of the coin.</para>
+
+<table id="M01_Ch04_tbl001" summary="Table showing x, frequency of x and relative frequency of x. x = the number of heads in 10 tosses of a fair coin.">
+<tgroup cols="3"><thead>
+  <row>
+    <entry><emphasis><emphasis effect="italics">x</emphasis></emphasis></entry>
+    <entry><emphasis>Frequency of <emphasis effect="italics">x</emphasis></emphasis></entry>
+    <entry><emphasis>Relative Frequency of <emphasis effect="italics">x</emphasis></emphasis></entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry/>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+    <entry/>
+  </row>
+</tbody>
+
+
+</tgroup>
+</table><list id="element-388" list-type="enumerated" number-style="lower-alpha"><item>Which value(s) of <emphasis effect="italics">x</emphasis> occurred most frequently?</item>
+<item>If you tossed the coin 1,000 times, what values could <emphasis effect="italics">x</emphasis> take on? Which value(s) of <emphasis effect="italics">x</emphasis> do you think would occur most frequently?</item>
+<item>What does the relative frequency column sum to?</item>
+</list></note>
+  </content>
+  
+
+<glossary>
+<definition id="randvar">
+<term>Random Variable (RV)</term>
+<meaning id="id1167466326893">a characteristic of interest in a population being studied; common notation for variables are upper case Latin letters <emphasis effect="italics">X</emphasis>, <emphasis effect="italics">Y</emphasis>, <emphasis effect="italics">Z</emphasis>,...; common notation for a specific value from the domain (set of all possible values of a variable) are lower case Latin letters <emphasis effect="italics">x, y,</emphasis> and <emphasis effect="italics">z</emphasis>. For example, if <emphasis effect="italics">X</emphasis> is the number of children in a family, then <emphasis effect="italics">x</emphasis> represents a specific integer 0, 1, 2, 3,.... Variables in statistics differ from variables in intermediate algebra in the two following ways. 
+<list id="arrvee" list-type="bulleted">
+<item>The domain of the random variable (RV) is not necessarily a numerical set; the domain may be expressed in words; for example, if <emphasis effect="italics">X</emphasis> = hair color then the domain is {black, blond, gray, green, orange}.</item>
+<item>We can tell what specific value <emphasis effect="italics">x</emphasis> the random variable <emphasis effect="italics">X</emphasis> takes only after performing the experiment.</item></list>
+    </meaning>
+  </definition>
+
+</glossary>
+</document>

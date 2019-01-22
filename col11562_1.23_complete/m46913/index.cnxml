@@ -1,0 +1,157 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+    <title>Introduction</title>
+    <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46913/latest</md:content-url>
+  <md:content-id>m46913</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.13</md:version>
+  <md:created>2013/07/19 00:36:30 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>average</md:keyword>
+    <md:keyword>bar graph</md:keyword>
+    <md:keyword>blinding</md:keyword>
+    <md:keyword>categorical variable</md:keyword>
+    <md:keyword>causality</md:keyword>
+    <md:keyword>cluster sample</md:keyword>
+    <md:keyword>cluster sampling</md:keyword>
+    <md:keyword>confounding data</md:keyword>
+    <md:keyword>continuous random variable</md:keyword>
+    <md:keyword>control group</md:keyword>
+    <md:keyword>convenience sample</md:keyword>
+    <md:keyword>convenience sampling</md:keyword>
+    <md:keyword>cumulative relative frequency</md:keyword>
+    <md:keyword>data</md:keyword>
+    <md:keyword>datum</md:keyword>
+    <md:keyword>discrete random variable</md:keyword>
+    <md:keyword>dot plot</md:keyword>
+    <md:keyword>double blind</md:keyword>
+    <md:keyword>double-blinding</md:keyword>
+    <md:keyword>ethics</md:keyword>
+    <md:keyword>experimental unit</md:keyword>
+    <md:keyword>experiment design</md:keyword>
+    <md:keyword>explanatory variable</md:keyword>
+    <md:keyword>fair coin</md:keyword>
+    <md:keyword>frequency</md:keyword>
+    <md:keyword>frequency tables</md:keyword>
+    <md:keyword>informed consent</md:keyword>
+    <md:keyword>institution review board</md:keyword>
+    <md:keyword>interval scale</md:keyword>
+    <md:keyword>Karl Pearson</md:keyword>
+    <md:keyword>key terms</md:keyword>
+    <md:keyword>levels of measurement</md:keyword>
+    <md:keyword>lurking variable</md:keyword>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>misleading data</md:keyword>
+    <md:keyword>nominal scale</md:keyword>
+    <md:keyword>nonsampling error</md:keyword>
+    <md:keyword>numerical variable</md:keyword>
+    <md:keyword>ordinal scale</md:keyword>
+    <md:keyword>parameter</md:keyword>
+    <md:keyword>Pareto chart</md:keyword>
+    <md:keyword>pie chart</md:keyword>
+    <md:keyword>placebo</md:keyword>
+    <md:keyword>population</md:keyword>
+    <md:keyword>probability</md:keyword>
+    <md:keyword>proportion</md:keyword>
+    <md:keyword>qualitative data</md:keyword>
+    <md:keyword>quantitative continuous data</md:keyword>
+    <md:keyword>quantitative date</md:keyword>
+    <md:keyword>quantitative discrete data</md:keyword>
+    <md:keyword>random assignment</md:keyword>
+    <md:keyword>random sampling</md:keyword>
+    <md:keyword>ratio scale</md:keyword>
+    <md:keyword>relative frequency</md:keyword>
+    <md:keyword>representative sample</md:keyword>
+    <md:keyword>response variable</md:keyword>
+    <md:keyword>rounding</md:keyword>
+    <md:keyword>rounding off</md:keyword>
+    <md:keyword>sample</md:keyword>
+    <md:keyword>sample size</md:keyword>
+    <md:keyword>sampling bias</md:keyword>
+    <md:keyword>sampling error</md:keyword>
+    <md:keyword>sampling without replacement</md:keyword>
+    <md:keyword>sampling with replacement</md:keyword>
+    <md:keyword>self-funded study</md:keyword>
+    <md:keyword>self-interested study</md:keyword>
+    <md:keyword>self-selected sample</md:keyword>
+    <md:keyword>simple random sample</md:keyword>
+    <md:keyword>simple random sampling</md:keyword>
+    <md:keyword>statistics</md:keyword>
+    <md:keyword>stats</md:keyword>
+    <md:keyword>stratified sample</md:keyword>
+    <md:keyword>stratified sampling</md:keyword>
+    <md:keyword>systematic sample</md:keyword>
+    <md:keyword>systematic sampling</md:keyword>
+    <md:keyword>treatments</md:keyword>
+    <md:keyword>undue influence</md:keyword>
+    <md:keyword>variable</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content><?cnx.eoc class="summary" title="Chapter Review"?>
+<?cnx.eoc class="formula-review" title="Formula Review"?>
+<?cnx.eoc class="practice" title="Practice"?>
+<?cnx.eoc class="bring-together-exercises" title="Bringing It Together : Practice"?>
+<?cnx.eoc class="free-response" title="Homework"?>
+<?cnx.eoc class="bring-together-homework" title="Bringing It Together : Homework"?>
+<?cnx.eoc class="references" title="References"?>
+
+
+<figure id="fig-ch01_00_01" class="splash"><media id="fs-id2354221" alt="This photo shows a large open news room with enough space to seat about 200 employees.">
+<image mime-type="image/jpg" src="CNX_Stats_C01_COs.jpg" width="600"/>
+</media>
+
+<caption>We encounter statistics in our daily lives more often than we probably realize and from many different sources, like the news. (credit: David Sim)</caption></figure><note id="fs-idp22683264" class="chapter-objectives"><label/><title>Chapter Objectives</title>
+<para id="fs-idm17092352">By the end of this chapter, the student should be able to:</para>
+<list id="objectives-list" list-type="bulleted">
+<item>Recognize and differentiate between key terms.</item>
+<item>Apply various types of sampling methods to data collection.</item>
+<item>Create and interpret frequency tables.</item>
+</list>
+</note>
+<para id="eip-296">You are probably asking yourself the question, "When and where will I use statistics?" If you read any newspaper, watch television, or use the Internet, you will see statistical information. There are statistics about crime, sports, education, politics, and real estate. Typically, when you read a newspaper article or watch a television news program, you are given sample information. With this information, you may make a decision about the correctness of a statement, claim, or "fact." Statistical methods can help you make the "best educated guess."
+</para><para id="eip-1000">Since you will undoubtedly be given statistical information at some point in your life, you need to know some techniques for analyzing the information thoughtfully. Think about buying a house or managing a budget. Think about your chosen profession.   The fields of economics, business, psychology, education, biology, law, computer science, police science, and early childhood development require at least one course in statistics.</para><para id="eip-829">Included in this chapter are the basic ideas and words of probability and statistics. You will soon understand that statistics and probability work together. You will also learn how data are gathered and what "good" data can be distinguished from "bad."</para>
+</content>
+</document>

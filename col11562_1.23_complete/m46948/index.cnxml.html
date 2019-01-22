@@ -1,0 +1,852 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Independent and Mutually Exclusive Events</title><meta name="created-time" content="2013/07/19 05:56:52 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="at least, at most, dependent, dependent event, independent, independent event, more than, mutually exclusive, without replacement, with replacement"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Independent and Mutually Exclusive Events</div>
+<p id="element-755">Independent and mutually exclusive do <strong>not</strong> mean the same thing.</p>
+
+<section data-depth="1" id="element-20"><h3 data-type="title">Independent Events</h3>
+<p id="element-990">Two events are independent if the following are true:</p>
+<ul id="element-344">
+<li><em data-effect="italics">P</em>(<em data-effect="italics">A</em>|<em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)</li>
+	<li><em data-effect="italics">P</em>(<em data-effect="italics">B</em>|<em data-effect="italics">A</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">B</em>)</li>
+	<li><em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>)</li>
+</ul>
+
+<p id="delete_me">Two events <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are <span data-type="term">independent</span> if the knowledge that one occurred does not affect the chance the other occurs. For example, the outcomes of two roles of a fair die are independent events. The outcome of the first roll does not change the probability for the outcome of the second roll. To show two events are independent, you must show <strong>only one</strong> of the above conditions. If two events are NOT independent, then we say that they are <strong>dependent</strong>.</p>
+
+<p id="element-405">Sampling may be done <strong>with</strong> <span data-type="term">replacement</span> or <strong>without replacement</strong>.</p>
+<ul id="fs-idm1341072"><li><strong>With replacement</strong>: If each member of a population is replaced after it is picked, then that member has the possibility of being chosen more than once. When sampling is done with replacement, then events are considered to be independent, meaning the result of the first pick will not change the probabilities for the second pick.</li>
+<li><strong>Without replacement</strong>: When sampling is done without replacement, each member of a population may be chosen only once. In this case, the probabilities for the second pick are affected by the result of the first pick. The events are considered to be dependent or not independent.</li>
+</ul>
+<p id="element-835">If it is not known whether <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are independent or dependent, <strong>assume they are dependent until you can show otherwise</strong>.</p>
+
+<div data-type="example" id="fs-idm1963392">
+<p id="fs-idm4177088">You have a fair, well-shuffled deck of 52 cards. It consists of four suits. The suits are clubs, diamonds, hearts and spades. There are 13 cards in each suit consisting of 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, <em data-effect="italics">J</em> (jack), <em data-effect="italics">Q</em> (queen), <em data-effect="italics">K</em> (king) of that suit.</p>
+<p id="fs-idm5494304">a. Sampling with replacement:
+<div data-type="newline" data-count="1"><br/></div>Suppose you pick three cards with replacement. The first card you pick out of the 52 cards is the <em data-effect="italics">Q</em> of spades. You put this card back, reshuffle the cards and pick a second card from the 52-card deck. It is the ten of clubs. You put this card back, reshuffle the cards and pick a third card from the 52-card deck. This time, the card is the <em data-effect="italics">Q</em> of spades again. Your picks are {<em data-effect="italics">Q</em> of spades, ten of clubs, <em data-effect="italics">Q</em> of spades}. You have picked the <em data-effect="italics">Q</em> of spades twice. You pick each card from the 52-card deck.</p>
+
+<p id="fs-idm176528">b. Sampling without replacement:
+<div data-type="newline" data-count="1"><br/></div>Suppose you pick three cards without replacement. The first card you pick out of the 52 cards is the <em data-effect="italics">K</em> of hearts. You put this card aside and pick the second card from the 51 cards remaining in the deck. It is the three of diamonds. You put this card aside and pick the third card from the remaining 50 cards in the deck. The third card is the <em data-effect="italics">J</em> of spades. Your picks are {<em data-effect="italics">K</em> of hearts, three of diamonds, <em data-effect="italics">J</em> of spades}. Because you have picked the cards without replacement, you cannot pick the same card twice.</p>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idm17445584" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm1262752">
+<div data-type="problem" id="fs-idm318128">
+<p id="fs-idp52703136">You have a fair, well-shuffled deck of 52 cards. It consists of four suits. The suits are clubs, diamonds, hearts and spades. There are 13 cards in each suit consisting of 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, <em data-effect="italics">J</em> (jack), <em data-effect="italics">Q</em> (queen), <em data-effect="italics">K</em> (king) of that suit. Three cards are picked at random.</p>
+<ol id="fs-idm4233984" type="a">
+<li>Suppose you know that the picked cards are <em data-effect="italics">Q</em> of spades, <em data-effect="italics">K</em> of hearts and <em data-effect="italics">Q</em> of spades. Can you decide if the sampling was with or without replacement?</li>
+<li>Suppose you know that the picked cards are <em data-effect="italics">Q</em> of spades, <em data-effect="italics">K</em> of hearts, and <em data-effect="italics">J</em> of spades. Can you decide if the sampling was with or without replacement?</li></ol>
+</div>
+</div>
+</div>
+
+<div data-type="example" id="fs-idm1468672">
+<div data-type="exercise" id="fs-idm203264">
+<div data-type="problem" id="fs-idm1147040">
+<p id="fs-idm4186336">You have a fair, well-shuffled deck of 52 cards. It consists of four suits. The suits are clubs, diamonds, hearts, and spades. There are 13 cards in each suit consisting of 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, <em data-effect="italics">J</em> (jack), <em data-effect="italics">Q</em> (queen), and <em data-effect="italics">K</em> (king) of that suit. <em data-effect="italics">S</em> = spades, <em data-effect="italics">H</em> = Hearts, <em data-effect="italics">D</em> = Diamonds, <em data-effect="italics">C</em> = Clubs.</p><ol id="fs-idm2936016" type="a"><li>Suppose you pick four cards, but do not put any cards back into the deck. Your cards are <em data-effect="italics">QS</em>, 1<em data-effect="italics">D</em>, 1<em data-effect="italics">C</em>, <em data-effect="italics">QD</em>.</li>
+<li>Suppose you pick four cards and put each card back before you pick the next card. Your cards are <em data-effect="italics">KH</em>, 7<em data-effect="italics">D</em>, 6<em data-effect="italics">D</em>, <em data-effect="italics">KH</em>.</li>
+</ol><p id="fs-idm61714144">Which of a. or b. did you sample with replacement and which did you sample without replacement?</p></div>
+<div data-type="solution" id="fs-idm4167824" data-label="">
+<p id="fs-idm4124432">a. Without replacement; b. With replacement</p></div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idm64621712" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm1421520">
+<div data-type="problem" id="fs-idm5372176">
+<p id="fs-idm328320">You have a fair, well-shuffled deck of 52 cards. It consists of four suits. The suits are clubs, diamonds, hearts, and spades. There are 13 cards in each suit consisting of 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, <em data-effect="italics">J</em> (jack), <em data-effect="italics">Q</em> (queen), and <em data-effect="italics">K</em> (king) of that suit. <em data-effect="italics">S</em> = spades, <em data-effect="italics">H</em> = Hearts, <em data-effect="italics">D</em> = Diamonds, <em data-effect="italics">C</em> = Clubs. Suppose that you sample four cards without replacement. Which of the following outcomes are possible? Answer the same question for sampling with replacement.</p><ol id="fs-idm5107680" type="a"><li><em data-effect="italics">QS</em>, 1<em data-effect="italics">D</em>, 1<em data-effect="italics">C</em>, <em data-effect="italics">QD</em></li>
+<li><em data-effect="italics">KH</em>, 7<em data-effect="italics">D</em>, 6<em data-effect="italics">D</em>, <em data-effect="italics">KH</em></li>
+<li><em data-effect="italics">QS</em>, 7<em data-effect="italics">D</em>, 6<em data-effect="italics">D</em>, <em data-effect="italics">KS</em></li>
+</ol></div>
+</div>
+</div>
+</section>
+
+<section data-depth="1" id="element-462"><h3 data-type="title">Mutually Exclusive Events</h3>
+<p id="element-548"><em data-effect="italics">A</em> and <em data-effect="italics">B</em> are <span data-type="term">mutually exclusive</span> events if they cannot occur at the same time. This means that <em data-effect="italics">A</em> and <em data-effect="italics">B</em> do not share any outcomes and <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = 0.</p><p id="element-810">For example, suppose the sample space <em data-effect="italics">S</em> = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Let <em data-effect="italics">A</em> = {1, 2, 3, 4, 5}, <em data-effect="italics">B</em> = {4, 5, 6, 7, 8}, and <em data-effect="italics">C</em> = {7, 9}. <em data-effect="italics">A</em> AND <em data-effect="italics">B</em> = {4, 5}. <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mfrac><mn>2</mn><mrow><mn>10</mn></mrow></mfrac></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mfrac><mn>2</mn><mrow><mn>10</mn></mrow></mfrac></mrow></annotation-xml></semantics></math> and is not equal to zero. Therefore, <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are not mutually exclusive. <em data-effect="italics">A</em> and <em data-effect="italics">C</em> do not have any numbers in common so <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">C</em>) = 0. Therefore, <em data-effect="italics">A</em> and <em data-effect="italics">C</em> are mutually exclusive.</p>
+<p id="element-529">If it is not known whether <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are mutually exclusive, <strong>assume they are not until you can show otherwise</strong>. The following examples illustrate these definitions and terms.</p>
+
+<div data-type="example" id="element-931">
+<p id="element-482">Flip two fair coins. (This is an experiment.)</p>
+<p id="element-956">The sample space is {<em data-effect="italics">HH</em>, <em data-effect="italics">HT</em>, <em data-effect="italics">TH</em>, <em data-effect="italics">TT</em>} where <em data-effect="italics">T</em> = tails and <em data-effect="italics">H</em> = heads. The outcomes are <em data-effect="italics">HH</em>, <em data-effect="italics">HT</em>, <em data-effect="italics">TH</em>, and <em data-effect="italics">TT</em>. The outcomes HT and TH are different. The <em data-effect="italics">HT</em> means that the first coin showed heads and the second coin showed tails. The <em data-effect="italics">TH</em> means that the first coin showed tails and the second coin showed heads.</p>
+
+<ul id="element-96"><li>Let <em data-effect="italics">A</em> = the event of getting <strong>at most one tail</strong>. (At most one tail means zero or one tail.) Then <em data-effect="italics">A</em> can be written as {<em data-effect="italics">HH</em>, <em data-effect="italics">HT</em>, <em data-effect="italics">TH</em>}. The outcome <em data-effect="italics">HH</em> shows zero tails. <em data-effect="italics">HT</em> and <em data-effect="italics">TH</em> each show one tail.</li>
+<li>Let <em data-effect="italics">B</em> = the event of getting all tails. <em data-effect="italics">B</em> can be written as {<em data-effect="italics">TT</em>}. <em data-effect="italics">B</em> is the <strong>complement</strong> of <em data-effect="italics">A</em>, so <em data-effect="italics">B</em> = <em data-effect="italics">A&#8242;</em>. Also, <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) + <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) + <em data-effect="italics">P</em>(<em data-effect="italics">A&#8242;</em>) = 1.</li>
+<li>The probabilities for <em data-effect="italics">A</em> and for <em data-effect="italics">B</em> are <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow></annotation-xml></semantics></math> and <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></annotation-xml></semantics></math>.</li>
+<li>Let <em data-effect="italics">C</em> = the event of getting all heads. <em data-effect="italics">C</em> = {<em data-effect="italics">HH</em>}. Since <em data-effect="italics">B</em> = {<em data-effect="italics">TT</em>}, <em data-effect="italics">P</em>(<em data-effect="italics">B</em> AND <em data-effect="italics">C</em>) = 0. <em data-effect="italics">B</em> and <em data-effect="italics">C</em> are mutually exclusive. (<em data-effect="italics">B</em> and <em data-effect="italics">C</em> have no members in common because you cannot have all tails and all heads at the same time.)</li>
+<li>Let <em data-effect="italics">D</em> = event of getting <strong>more than one</strong> tail. <em data-effect="italics">D</em> = {<em data-effect="italics">TT</em>}. <em data-effect="italics">P</em>(<em data-effect="italics">D</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math></li>
+<li>Let <em data-effect="italics">E</em> = event of getting a head on the first roll. (This implies you can get either a head or tail on the second roll.) <em data-effect="italics">E</em> = {<em data-effect="italics">HT</em>, <em data-effect="italics">HH</em>}. <em data-effect="italics">P</em>(<em data-effect="italics">E</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math></li>
+<li>Find the probability of getting <strong>at least one</strong> (one or two) tail in two flips. Let <em data-effect="italics">F</em> = event of getting at least one tail in two flips. <em data-effect="italics">F</em> = {<em data-effect="italics">HT</em>, <em data-effect="italics">TH</em>, <em data-effect="italics">TT</em>}. <em data-effect="italics">P</em>(<em data-effect="italics">F</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math></li></ul></div>
+<div data-type="note" data-has-label="true" id="fs-idp18707552" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idp250992">
+<div data-type="problem" id="fs-idm1214672">
+<p id="fs-idm5147344">Draw two cards from a standard 52-card deck with replacement. Find the probability of getting at least one black card.</p></div>
+</div>
+</div>
+<div data-type="example" id="fs-idm3420000">
+<div data-type="exercise" id="fs-idm4639088">
+<div data-type="problem" id="fs-idm173264">
+<p id="fs-idm1266432">Flip two fair coins. Find the probabilities of the events.</p>
+<ol id="fs-idm3669424" type="a">
+<li>Let <em data-effect="italics">F</em> = the event of getting at most one tail (zero or one tail).</li>
+<li>Let <em data-effect="italics">G</em> = the event of getting two faces that are the same.</li>
+<li>Let <em data-effect="italics">H</em> = the event of getting a head on the first flip followed by a head or tail on the second flip.</li>
+<li>Are <em data-effect="italics">F</em> and <em data-effect="italics">G</em> mutually exclusive?</li>
+<li>Let <em data-effect="italics">J</em> = the event of getting all tails. Are <em data-effect="italics">J</em> and <em data-effect="italics">H</em> mutually exclusive?</li>
+</ol></div>
+<div data-type="solution" id="fs-idp66096">
+<p id="fs-idm5054528">Look at the sample space in <a href="#element-931" class="autogenerated-content">[link]</a>.</p>
+<ol id="fs-idm4693632" type="a"><li>Zero (0) or one (1) tails occur when the outcomes <em data-effect="italics">HH</em>, <em data-effect="italics">TH</em>, <em data-effect="italics">HT</em> show up. <em data-effect="italics">P</em>(<em data-effect="italics">F</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math></li>
+<li>Two faces are the same if <em data-effect="italics">HH</em> or <em data-effect="italics">TT</em> show up. <em data-effect="italics">P</em>(<em data-effect="italics">G</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mfrac><mn>2</mn><mn>4</mn></mfrac></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mfrac><mn>2</mn><mn>4</mn></mfrac></mrow></annotation-xml></semantics></math></li>
+<li>A head on the first flip followed by a head or tail on the second flip occurs when <em data-effect="italics">HH</em> or <em data-effect="italics">HT</em> show up. <em data-effect="italics">P</em>(<em data-effect="italics">H</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mfrac><mn>2</mn><mn>4</mn></mfrac></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mfrac><mn>2</mn><mn>4</mn></mfrac></mrow></annotation-xml></semantics></math></li>
+<li><em data-effect="italics">F</em> and <em data-effect="italics">G</em> share <em data-effect="italics">HH</em> so <em data-effect="italics">P</em>(<em data-effect="italics">F</em> AND <em data-effect="italics">G</em>) is not equal to zero (0). <em data-effect="italics">F</em> and <em data-effect="italics">G</em> are not mutually exclusive.</li>
+<li>Getting all tails occurs when tails shows up on both coins (<em data-effect="italics">TT</em>). <em data-effect="italics">H</em>&#8217;s outcomes are <em data-effect="italics">HH</em> and <em data-effect="italics">HT</em>.</li>
+</ol><p id="fs-idm12598624"><em data-effect="italics">J</em> and <em data-effect="italics">H</em> have nothing in common so <em data-effect="italics">P</em>(<em data-effect="italics">J</em> AND <em data-effect="italics">H</em>) = 0. <em data-effect="italics">J</em> and <em data-effect="italics">H</em> are mutually exclusive.</p></div>
+</div></div>
+<div data-type="note" data-has-label="true" id="fs-idm101726688" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm3945968">
+<div data-type="problem" id="fs-idm4652384">
+<p id="fs-idm1471712">A box has two balls, one white and one red. We select one ball, put it back in the box, and select a second ball (sampling with replacement). Find the probability of the following events:</p><ol id="fs-idm2908208" type="a">
+<li>Let <em data-effect="italics">F</em> = the event of getting the white ball twice.</li>
+<li>Let <em data-effect="italics">G</em> = the event of getting two balls of different colors.</li>
+<li>Let <em data-effect="italics">H</em> = the event of getting white on the first pick.</li>
+<li>Are <em data-effect="italics">F</em> and <em data-effect="italics">G</em> mutually exclusive?</li>
+<li>Are <em data-effect="italics">G</em> and <em data-effect="italics">H</em> mutually exclusive?</li>
+</ol>
+</div>
+</div>
+</div>
+<div data-type="example" id="element-56"><p id="example-3-2-para">Roll one fair, six-sided die. The sample space is {1, 2, 3, 4, 5, 6}. Let event <em data-effect="italics">A</em> = a face is odd. Then <em data-effect="italics">A</em> = {1, 3, 5}. Let event <em data-effect="italics">B</em> = a face is even. Then <em data-effect="italics">B</em> = {2, 4, 6}.</p>
+<ul id="element-677"><li>Find the complement of <em data-effect="italics">A</em>, <em data-effect="italics">A&#8242;</em>. The complement of <em data-effect="italics">A</em>, <em data-effect="italics">A&#8242;</em>, is <em data-effect="italics">B</em> because <em data-effect="italics">A</em> and <em data-effect="italics">B</em> together make up the sample space. <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) + <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) + <em data-effect="italics">P</em>(<em data-effect="italics">A&#8242;</em>) = 1. Also, <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mfrac><mn>3</mn><mn>6</mn></mfrac></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mfrac><mn>3</mn><mn>6</mn></mfrac></mrow></annotation-xml></semantics></math> and <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mfrac><mn>3</mn><mn>6</mn></mfrac></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mfrac><mn>3</mn><mn>6</mn></mfrac></mrow></annotation-xml></semantics></math>.</li>
+<li>Let event <em data-effect="italics">C</em> = odd faces larger than two. Then <em data-effect="italics">C</em> = {3, 5}. Let event <em data-effect="italics">D</em> = all even faces smaller than five. Then <em data-effect="italics">D</em> = {2, 4}. <em data-effect="italics">P</em>(<em data-effect="italics">C</em> AND <em data-effect="italics">D</em>) = 0 because you cannot have an odd and even face at the same time. Therefore, <em data-effect="italics">C</em> and <em data-effect="italics">D</em> are mutually exclusive events.</li>
+<li>Let event <em data-effect="italics">E</em> = all faces less than five. <em data-effect="italics">E</em> = {1, 2, 3, 4}.</li></ul>
+<div data-type="exercise" id="element-12341"><div data-type="problem" id="id9852986">
+<p id="element-73455">Are <em data-effect="italics">C</em> and <em data-effect="italics">E</em> mutually exclusive events? (Answer yes or no.) Why or why not?</p>
+</div>
+<div data-type="solution" id="id10118020" data-label="">
+<p id="element-032545">No. <em data-effect="italics">C</em> = {3, 5} and <em data-effect="italics">E</em> = {1, 2, 3, 4}. <em data-effect="italics">P</em>(<em data-effect="italics">C</em> AND <em data-effect="italics">E</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mfrac><mn>1</mn><mn>6</mn></mfrac></mrow></mrow><annotation-xml encoding="MathML-Content"><mrow><mfrac><mn>1</mn><mn>6</mn></mfrac></mrow></annotation-xml></semantics></math>. To be mutually exclusive, <em data-effect="italics">P</em>(<em data-effect="italics">C</em> AND <em data-effect="italics">E</em>) must be zero.</p>
+</div>
+</div><ul id="fs-idm67063616"><li>Find <em data-effect="italics">P</em>(<em data-effect="italics">C</em>|<em data-effect="italics">A</em>). This is a conditional probability. Recall that the event <em data-effect="italics">C</em> is {3, 5} and event <em data-effect="italics">A</em> is {1, 3, 5}. To find <em data-effect="italics">P</em>(<em data-effect="italics">C</em>|<em data-effect="italics">A</em>), find the probability of <em data-effect="italics">C</em> using the sample space <em data-effect="italics">A</em>. You have reduced the sample space from the original sample space {1, 2, 3, 4, 5, 6} to {1, 3, 5}. So, <em data-effect="italics">P</em>(<em data-effect="italics">C</em>|<em data-effect="italics">A</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>3</mn>
+  </mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>3</mn>
+  </mfrac>
+</mrow></annotation-xml></semantics></math>.
+</li>
+</ul></div><div data-type="note" data-has-label="true" id="fs-idm51413200" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm3558336">
+<div data-type="problem" id="fs-idm4126272">
+<p id="fs-idm832352">Let event <em data-effect="italics">A</em> = learning Spanish. Let event <em data-effect="italics">B</em> = learning German. Then <em data-effect="italics">A</em> AND <em data-effect="italics">B</em> = learning Spanish and German. Suppose <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) = 0.4 and <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = 0.2. <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = 0.08. Are events <em data-effect="italics">A</em> and <em data-effect="italics">B</em> independent? Hint: You must show ONE of the following:</p><ul id="fs-idm143307488"><li><em data-effect="italics">P</em>(<em data-effect="italics">A</em>|<em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">B</em>|<em data-effect="italics">A</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">B</em>)</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>)</li></ul></div>
+<div data-type="solution" id="fs-idm4021072" data-label="">
+<p id="fs-idm882096"><em data-effect="italics">P</em>(<em data-effect="italics">A</em>|<em data-effect="italics">B</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mi>P</mi><mo stretchy="false">(</mo><mi>A</mi><mtext>&#160;AND&#160;</mtext><mi>B</mi><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo>
+   </mrow>
+  </mfrac>
+  <mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mn>0.</mn><mtext>08</mtext>
+   </mrow>
+   <mrow>
+    <mn>0.2</mn>
+   </mrow>
+  </mfrac>
+  <mtext>&#160;=&#160;0</mtext><mtext>.4&#160;=&#160;</mtext><mi>P</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mi>P</mi><mo stretchy="false">(</mo><mi>A</mi><mtext>&#160;AND&#160;</mtext><mi>B</mi><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo>
+   </mrow>
+  </mfrac>
+  <mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mn>0.</mn><mtext>08</mtext>
+   </mrow>
+   <mrow>
+    <mn>0.2</mn>
+   </mrow>
+  </mfrac>
+  <mtext>&#160;=&#160;0</mtext><mtext>.4&#160;=&#160;</mtext><mi>P</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math></p><p id="fs-idm682208">The events are independent because <em data-effect="italics">P</em>(<em data-effect="italics">A</em>|<em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>).</p>
+</div>
+</div>
+</div><div data-type="example" id="element-579">
+<p id="example-3-3-para">Let event <em data-effect="italics">G</em> = taking a math class. Let event <em data-effect="italics">H</em> = taking a science class. Then, <em data-effect="italics">G</em> AND <em data-effect="italics">H</em> = taking a math class and a science class. Suppose <em data-effect="italics">P</em>(<em data-effect="italics">G</em>) = 0.6, <em data-effect="italics">P</em>(<em data-effect="italics">H</em>) = 0.5, and <em data-effect="italics">P</em>(<em data-effect="italics">G</em> AND <em data-effect="italics">H</em>) = 0.3. Are <em data-effect="italics">G</em> and <em data-effect="italics">H</em> independent?</p><p id="element-456">If <em data-effect="italics">G</em> and <em data-effect="italics">H</em> are independent, then you must show <strong>ONE</strong> of the following:</p><ul id="element-358"><li><em data-effect="italics">P</em>(<em data-effect="italics">G</em>|<em data-effect="italics">H</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">G</em>)</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">H</em>|<em data-effect="italics">G</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">H</em>)</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">G</em> AND <em data-effect="italics">H</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">G</em>)<em data-effect="italics">P</em>(<em data-effect="italics">H</em>)</li></ul><div data-type="note" data-has-label="true" id="id9660801" data-label=""><div data-type="title">NOTE</div>
+<p id="eip-idp52179728"><strong>The choice you make depends on the information you have.</strong> You could choose any of the methods here because you have the necessary information.</p></div>
+
+<div data-type="exercise" id="element-3525"><div data-type="problem" id="id9660827">
+   <p id="element-52356">a. Show that <em data-effect="italics">P</em>(<em data-effect="italics">G</em>|<em data-effect="italics">H</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">G</em>).</p>
+  </div>
+<div data-type="solution" id="id9660856">
+ <p id="fs-idm4674864"><em data-effect="italics">P</em>(<em data-effect="italics">G</em>|<em data-effect="italics">H</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mi>P</mi><mtext>(</mtext><mi>G</mi><mtext>&#160;AND&#160;</mtext><mi>H</mi><mtext>)</mtext>
+   </mrow>
+   <mrow>
+    <mi>P</mi><mtext>(</mtext><mi>H</mi><mtext>)</mtext>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mi>P</mi><mtext>(</mtext><mi>G</mi><mtext>&#160;AND&#160;</mtext><mi>H</mi><mtext>)</mtext>
+   </mrow>
+   <mrow>
+    <mi>P</mi><mtext>(</mtext><mi>H</mi><mtext>)</mtext>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mtext>0</mtext><mtext>.3</mtext>
+   </mrow>
+   <mrow>
+    <mtext>0</mtext><mtext>.5</mtext>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mtext>0</mtext><mtext>.3</mtext>
+   </mrow>
+   <mrow>
+    <mtext>0</mtext><mtext>.5</mtext>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> = 0.6 = <em data-effect="italics">P</em>(<em data-effect="italics">G</em>)</p>
+</div>
+</div>
+
+<div data-type="exercise" id="element-32525"><div data-type="problem" id="id9660930">
+   <p id="element-52456">b. Show <em data-effect="italics">P</em>(<em data-effect="italics">G</em> AND <em data-effect="italics">H</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">G</em>)<em data-effect="italics">P</em>(<em data-effect="italics">H</em>).</p></div>
+<div data-type="solution" id="id9660965">
+ <p id="element-3462"><em data-effect="italics">P</em>(<em data-effect="italics">G</em>)<em data-effect="italics">P</em>(<em data-effect="italics">H</em>) = (0.6)(0.5) = 0.3 = <em data-effect="italics">P</em>(<em data-effect="italics">G</em> AND <em data-effect="italics">H</em>)</p>
+</div>
+</div>
+<p id="element-798">Since <em data-effect="italics">G</em> and <em data-effect="italics">H</em> are independent, knowing that a person is taking a science class does not change the chance that he or she is taking a math class. If the two events had not been independent (that is, they are dependent) then knowing that a person is taking a science class would change the chance he or she is taking math. For practice, show that <em data-effect="italics">P</em>(<em data-effect="italics">H</em>|<em data-effect="italics">G</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">H</em>) to show that <em data-effect="italics">G</em> and <em data-effect="italics">H</em> are independent events.</p></div>
+<div data-type="note" data-has-label="true" id="fs-idm13687712" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm4055200"><div data-type="problem" id="fs-idm3236672">
+<p id="fs-idm3236416">In a bag, there are six red marbles and four green marbles. The red marbles are marked with the numbers 1, 2, 3, 4, 5, and 6. The green marbles are marked with the numbers 1, 2, 3, and 4.</p>
+<ul id="fs-idm5437072"><li><em data-effect="italics">R</em> = a red marble</li>
+<li><em data-effect="italics">G</em> = a  green marble</li>
+<li><em data-effect="italics">O</em> = an odd-numbered marble</li>
+<li>The sample space is <em data-effect="italics">S</em> = {<em data-effect="italics">R</em>1, <em data-effect="italics">R</em>2, <em data-effect="italics">R</em>3, <em data-effect="italics">R</em>4, <em data-effect="italics">R</em>5, <em data-effect="italics">R</em>6, <em data-effect="italics">G</em>1, <em data-effect="italics">G</em>2, <em data-effect="italics">G</em>3, <em data-effect="italics">G</em>4}.</li></ul>
+<p id="eip-idp4935776"><em data-effect="italics">S</em> has ten outcomes. What is <em data-effect="italics">P</em>(<em data-effect="italics">G</em> AND <em data-effect="italics">O</em>)?</p>
+</div>
+</div></div>
+<div data-type="example" id="fs-idm793920">
+<div data-type="exercise" id="fs-idm3514480"><div data-type="problem" id="fs-idm1757104">
+<p id="fs-idm1756848">Let event <em data-effect="italics">C</em> = taking an English class. Let event <em data-effect="italics">D</em> = taking a speech class.</p><p id="fs-idm293392">Suppose <em data-effect="italics">P</em>(<em data-effect="italics">C</em>) = 0.75, <em data-effect="italics">P</em>(<em data-effect="italics">D</em>) = 0.3, <em data-effect="italics">P</em>(<em data-effect="italics">C</em>|<em data-effect="italics">D</em>) = 0.75 and <em data-effect="italics">P</em>(<em data-effect="italics">C</em> AND <em data-effect="italics">D</em>) = 0.225.</p><p id="fs-idm4675792">Justify your answers to the following questions numerically.</p><ol id="fs-idm5240736" type="a">
+<li>Are <em data-effect="italics">C</em> and <em data-effect="italics">D</em> independent?</li>
+<li>Are <em data-effect="italics">C</em> and <em data-effect="italics">D</em> mutually exclusive?</li>
+<li>What is <em data-effect="italics">P</em>(<em data-effect="italics">D</em>|<em data-effect="italics">C</em>)?</li>
+</ol>
+</div>
+<div data-type="solution" id="fs-idm4625248" data-label="">
+<ol id="fs-idm316704" type="a">
+<li>Yes, because <em data-effect="italics">P</em>(<em data-effect="italics">C</em>|<em data-effect="italics">D</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">C</em>).</li>
+<li>No, because <em data-effect="italics">P</em>(<em data-effect="italics">C</em> AND <em data-effect="italics">D</em>) is not equal to zero.</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">D</em>|<em data-effect="italics">C</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mi>P</mi><mtext>(</mtext><mi>C</mi><mtext>&#160;AND&#160;</mtext><mi>D</mi><mtext>)</mtext>
+   </mrow>
+   <mrow>
+    <mi>P</mi><mtext>(</mtext><mi>C</mi><mtext>)</mtext>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mi>P</mi><mtext>(</mtext><mi>C</mi><mtext>&#160;AND&#160;</mtext><mi>D</mi><mtext>)</mtext>
+   </mrow>
+   <mrow>
+    <mi>P</mi><mtext>(</mtext><mi>C</mi><mtext>)</mtext>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow>
+  <mfrac>
+   <mrow>
+    <mtext>0</mtext><mtext>.225</mtext>
+   </mrow>
+   <mrow>
+    <mn>0.75</mn>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mtext>0</mtext><mtext>.225</mtext>
+   </mrow>
+   <mrow>
+    <mn>0.75</mn>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> = 0.3</li></ol></div>
+</div></div>
+<div data-type="note" data-has-label="true" id="fs-idp11259824" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm3333552"><div data-type="problem" id="fs-idm4100544">
+<p id="fs-idm4100288">A student goes to the library. Let events <em data-effect="italics">B</em> = the student checks out a book and <em data-effect="italics">D</em> = the student checks out a DVD. Suppose that <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = 0.40, <em data-effect="italics">P</em>(<em data-effect="italics">D</em>) = 0.30 and <em data-effect="italics">P</em>(<em data-effect="italics">B</em> AND <em data-effect="italics">D</em>) = 0.20.</p><ol id="fs-idm4647408" type="a">
+<li>Find <em data-effect="italics">P</em>(<em data-effect="italics">B</em>|<em data-effect="italics">D</em>).</li>
+<li>Find <em data-effect="italics">P</em>(<em data-effect="italics">D</em>|<em data-effect="italics">B</em>).</li>
+<li>Are <em data-effect="italics">B</em> and <em data-effect="italics">D</em> independent?</li>
+<li>Are <em data-effect="italics">B</em> and <em data-effect="italics">D</em> mutually exclusive?</li>
+</ol>
+</div>
+</div></div><div data-type="example" id="element-184">
+<p id="example-3-4-para">In a box there are three red cards and five blue cards. The red cards are marked with the numbers 1, 2, and 3, and the blue cards are marked with the numbers 1, 2, 3, 4, and 5. The cards are well-shuffled. You reach into the box (you cannot see into it) and draw one card.</p><p id="fs-idm1909360">Let <em data-effect="italics">R</em> = red card is drawn, <em data-effect="italics">B</em> = blue card is drawn, <em data-effect="italics">E</em> = even-numbered card is drawn.</p><p id="element-541">The sample space <em data-effect="italics">S</em> = <em data-effect="italics">R</em>1, <em data-effect="italics">R</em>2, <em data-effect="italics">R</em>3, <em data-effect="italics">B</em>1, <em data-effect="italics">B</em>2, <em data-effect="italics">B</em>3, <em data-effect="italics">B</em>4, <em data-effect="italics">B</em>5. <em data-effect="italics">S</em> has eight outcomes.</p><ul id="element-131"><li><em data-effect="italics">P</em>(<em data-effect="italics">R</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>5</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>5</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. <em data-effect="italics">P</em>(<em data-effect="italics">R</em> AND <em data-effect="italics">B</em>) = 0. (You cannot draw one card that is both red and blue.)</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">E</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. (There are three even-numbered cards, <em data-effect="italics">R</em>2, <em data-effect="italics">B</em>2, and <em data-effect="italics">B</em>4.)</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">E</em>|<em data-effect="italics">B</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>5</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>5</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. (There are five blue cards: <em data-effect="italics">B</em>1, <em data-effect="italics">B</em>2, <em data-effect="italics">B</em>3, <em data-effect="italics">B</em>4, and <em data-effect="italics">B</em>5. Out of the blue cards, there are two even cards; <em data-effect="italics">B</em>2 and <em data-effect="italics">B</em>4.)</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">B</em>|<em data-effect="italics">E</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>3</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>3</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. (There are three even-numbered cards: <em data-effect="italics">R</em>2, <em data-effect="italics">B</em>2, and <em data-effect="italics">B</em>4. Out of the even-numbered cards, to are blue; <em data-effect="italics">B</em>2 and <em data-effect="italics">B</em>4.)</li>
+<li>The events <em data-effect="italics">R</em> and <em data-effect="italics">B</em> are mutually exclusive because <em data-effect="italics">P</em>(<em data-effect="italics">R</em> AND <em data-effect="italics">B</em>) = 0.</li>
+<li>Let <em data-effect="italics">G</em> = card with a number greater than 3. <em data-effect="italics">G</em> = {<em data-effect="italics">B</em>4, <em data-effect="italics">B</em>5}. <em data-effect="italics">P</em>(<em data-effect="italics">G</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. Let <em data-effect="italics">H</em> = blue card numbered between one and four, inclusive. <em data-effect="italics">H</em> = {<em data-effect="italics">B</em>1, <em data-effect="italics">B</em>2, <em data-effect="italics">B</em>3, <em data-effect="italics">B</em>4}. <em data-effect="italics">P</em>(<em data-effect="italics">G</em>|<em data-effect="italics">H</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. (The only card in <em data-effect="italics">H</em> that has a number greater than three is <em data-effect="italics">B</em>4.) Since <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>2</mn>
+   <mn>8</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>4</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>, <em data-effect="italics">P</em>(<em data-effect="italics">G</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">G</em>|<em data-effect="italics">H</em>), which means that <em data-effect="italics">G</em> and <em data-effect="italics">H</em> are independent.</li></ul></div>
+<div data-type="note" data-has-label="true" id="fs-idm85337200" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm4149344"><div data-type="problem" id="fs-idm5137744">
+<p id="fs-idm3390208">In a basketball arena,</p>
+<ul id="fs-idm626832">
+<li>70% of the fans are rooting for the home team.</li>
+<li>25% of the fans are wearing blue.</li>
+<li>20% of the fans are wearing blue and are rooting for the away team.</li>
+<li>Of the fans rooting for the away team, 67% are wearing blue.</li>
+</ul>
+<p id="fs-idm2657904">Let <em data-effect="italics">A</em> be the event that a fan is rooting for the away team.
+<div data-type="newline"><br/></div>Let <em data-effect="italics">B</em> be the event that a fan is wearing blue.
+<div data-type="newline"><br/></div>Are the events of rooting for the away team and wearing blue independent? Are they mutually exclusive?</p>
+</div>
+</div>
+</div>
+<div data-type="example" id="eip-31">
+<p id="eip-311">In a particular college class, 60% of the students are female. Fifty percent of all students in the class have long hair. Forty-five percent of the students are female and have long hair. Of the female students, 75% have long hair. Let <em data-effect="italics">F</em> be the event that a student is female. Let <em data-effect="italics">L</em> be the event that a student has long hair. One student is picked randomly. Are the events of being female and having long hair independent?</p><ul id="eip-637"><li>The following probabilities are given in this example:</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">F</em>) = 0.60; <em data-effect="italics">P</em>(<em data-effect="italics">L</em>) = 0.50</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">F</em> AND <em data-effect="italics">L</em>) = 0.45</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">L</em>|<em data-effect="italics">F</em>) = 0.75</li></ul><div data-type="note" data-has-label="true" id="eip-843" data-label=""><div data-type="title">NOTE</div>
+<p id="eip-idm110347232"><strong>The choice you make depends on the information you have.</strong> You could use the first or last condition on the list for this example. You do not know <em data-effect="italics">P</em>(<em data-effect="italics">F</em>|<em data-effect="italics">L</em>) yet, so you cannot use the second condition.</p></div>
+<p id="eip-166"><span data-type="title">Solution 1</span>Check whether <em data-effect="italics">P</em>(<em data-effect="italics">F</em> AND <em data-effect="italics">L</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">F</em>)<em data-effect="italics">P</em>(<em data-effect="italics">L</em>). We are given that <em data-effect="italics">P</em>(<em data-effect="italics">F</em> AND <em data-effect="italics">L</em>) = 0.45, but <em data-effect="italics">P</em>(<em data-effect="italics">F</em>)<em data-effect="italics">P</em>(<em data-effect="italics">L</em>) = (0.60)(0.50) = 0.30. The events of being female and having long hair are not independent because <em data-effect="italics">P</em>(<em data-effect="italics">F</em> AND <em data-effect="italics">L</em>) does not equal <em data-effect="italics">P</em>(<em data-effect="italics">F</em>)<em data-effect="italics">P</em>(<em data-effect="italics">L</em>).</p><p id="eip-669"><span data-type="title">Solution 2</span>Check whether <em data-effect="italics">P</em>(<em data-effect="italics">L</em>|<em data-effect="italics">F</em>) equals <em data-effect="italics">P</em>(<em data-effect="italics">L</em>). We are given that <em data-effect="italics">P</em>(<em data-effect="italics">L</em>|<em data-effect="italics">F</em>) = 0.75, but <em data-effect="italics">P</em>(<em data-effect="italics">L</em>) = 0.50; they are not equal. The events of being female and having long hair are not independent.</p><p id="eip-103"><span data-type="title">Interpretation of Results</span>The events of being female and having long hair are not independent; knowing that a student is female changes the probability that a student has long hair.</p></div>
+<div data-type="note" data-has-label="true" id="fs-idp15300304" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm4091904">
+<div data-type="problem" id="fs-idm4091648">
+<p id="fs-idm2370976">Mark is deciding which route to take to work. His choices are <em data-effect="italics">I</em> = the Interstate and <em data-effect="italics">F</em> = Fifth Street.</p><ul id="fs-idm5051536"><li><em data-effect="italics">P</em>(<em data-effect="italics">I</em>) = 0.44 and <em data-effect="italics">P</em>(<em data-effect="italics">F</em>) = 0.56</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">I</em> AND <em data-effect="italics">F</em>) = 0 because Mark will take only one route to work.</li>
+</ul><p id="fs-idm1878352">What is the probability of <em data-effect="italics">P</em>(<em data-effect="italics">I</em> OR <em data-effect="italics">F</em>)?</p></div>
+</div>
+</div>
+<div data-type="example" id="fs-idm4667408"><div data-type="exercise" id="fs-idm4667152">
+<div data-type="problem" id="fs-idm336096">
+<ol id="fs-idm335840" type="a"><li>Toss one fair coin (the coin has two sides, <em data-effect="italics">H</em> and <em data-effect="italics">T</em>). The outcomes are ________. Count the outcomes. There are ____ outcomes.</li>
+<li>Toss one fair, six-sided die (the die has 1, 2, 3, 4, 5 or 6 dots on a side). The outcomes are ________________. Count the outcomes. There are ___ outcomes.</li>
+<li>Multiply the two numbers of outcomes. The answer is _______.</li>
+<li>If you flip one fair coin and follow it with the toss of one fair, six-sided die, the answer in part c. is the number of outcomes (size of the sample space). What are the outcomes? (Hint: Two of the outcomes are <em data-effect="italics">H</em>1 and <em data-effect="italics">T</em>6.)</li>
+<li>Event <em data-effect="italics">A</em> = heads (<em data-effect="italics">H</em>) on the coin followed by an even number (2, 4, 6) on the die.
+<div data-type="newline"><br/></div><em data-effect="italics">A</em> = {_________________}. Find <em data-effect="italics">P</em>(<em data-effect="italics">A</em>).</li>
+<li>Event <em data-effect="italics">B</em> = heads on the coin followed by a three on the die. <em data-effect="italics">B</em> = {________}. Find <em data-effect="italics">P</em>(<em data-effect="italics">B</em>).</li>
+<li>Are <em data-effect="italics">A</em> and <em data-effect="italics">B</em> mutually exclusive? (Hint: What is <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>)? If <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = 0, then <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are mutually exclusive.)</li>
+<li>Are <em data-effect="italics">A</em> and <em data-effect="italics">B</em> independent? (Hint: Is <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>)? If <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>), then <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are independent. If not, then they are dependent).</li></ol></div>
+<div data-type="solution" id="fs-idm3508544" data-label="">
+<ol id="fs-idm15568720" type="a"><li><em data-effect="italics">H</em> and <em data-effect="italics">T</em>; 2</li>
+<li>1, 2, 3, 4, 5, 6; 6</li>
+<li>2(6) = 12</li>
+<li><em data-effect="italics">T</em>1, <em data-effect="italics">T</em>2, <em data-effect="italics">T</em>3, <em data-effect="italics">T</em>4, <em data-effect="italics">T</em>5, <em data-effect="italics">T</em>6, <em data-effect="italics">H</em>1, <em data-effect="italics">H</em>2, <em data-effect="italics">H</em>3, <em data-effect="italics">H</em>4, <em data-effect="italics">H</em>5, <em data-effect="italics">H</em>6</li>
+<li><em data-effect="italics">A</em> = {<em data-effect="italics">H</em>2, <em data-effect="italics">H</em>4, <em data-effect="italics">H</em>6}; <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow>
+  <mfrac>
+   <mtext>3</mtext>
+   <mrow>
+    <mn>12</mn>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mtext>3</mtext>
+   <mrow>
+    <mn>12</mn>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math></li>
+<li><em data-effect="italics">B</em> = {<em data-effect="italics">H</em>3}; <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mtext>1</mtext>
+   <mrow>
+    <mn>12</mn>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mtext>1</mtext>
+   <mrow>
+    <mn>12</mn>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math></li>
+<li>Yes, because <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = 0</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = 0.<em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mtext>3</mtext>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mtext>3</mtext>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mtext>1</mtext>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mtext>1</mtext>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math>. <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) does not equal <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>), so <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are dependent.</li>
+</ol></div>
+</div></div>
+<div data-type="note" data-has-label="true" id="fs-idp34076080" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm5094416">
+<div data-type="problem" id="fs-idm340208">
+<p id="fs-idm339952">A box has two balls, one white and one red. We select one ball, put it back in the box, and select a second ball (sampling with replacement). Let <em data-effect="italics">T</em> be the event of getting the white ball twice, <em data-effect="italics">F</em> the event of picking the white ball first, <em data-effect="italics">S</em> the event of picking the white ball in the second drawing.</p>
+<ol id="fs-idm5499808" type="a"><li>Compute <em data-effect="italics">P</em>(<em data-effect="italics">T</em>).</li>
+<li>Compute <em data-effect="italics">P</em>(<em data-effect="italics">T</em>|<em data-effect="italics">F</em>).</li>
+<li>Are <em data-effect="italics">T</em> and <em data-effect="italics">F</em> independent?.</li>
+<li>Are <em data-effect="italics">F</em> and <em data-effect="italics">S</em> mutually exclusive?</li>
+<li>Are <em data-effect="italics">F</em> and <em data-effect="italics">S</em> independent?</li></ol></div>
+</div></div>
+</section>
+
+<section data-depth="1" id="fs-idm73253936" class="references"><h3 data-type="title">References</h3>
+<p id="fs-idm119965792">Lopez, Shane, Preety Sidhu. &#8220;U.S. Teachers Love Their Lives, but Struggle in the Workplace.&#8221; Gallup Wellbeing, 2013. http://www.gallup.com/poll/161516/teachers-love-lives-struggle-workplace.aspx (accessed May 2, 2013).</p>
+<p id="fs-idp18246464">Data from Gallup. Available online at www.gallup.com/ (accessed May 2, 2013).</p>
+</section>
+
+<section data-depth="1" id="fs-idm1912144" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="fs-idm750784">Two events <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are independent if the knowledge that one occurred does not affect the chance the other occurs. If two events are not independent, then we say that they are dependent.</p>
+
+<p id="fs-idm3534560">In sampling with replacement, each member of a population is replaced after it is picked, so that member has the possibility of being chosen more than once, and the events are considered to be independent. In sampling without replacement, each member of a population may be chosen only once, and the events are considered not to be independent. When events do not share outcomes, they are mutually exclusive of each other.</p></section>
+
+<section data-depth="1" id="fs-idm4116704" class="formula-review"><h3 data-type="title">Formula Review</h3>
+<p id="fs-idm3335456">If <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are independent, <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>), <em data-effect="italics">P</em>(<em data-effect="italics">A</em>|<em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) and <em data-effect="italics">P</em>(<em data-effect="italics">B</em>|<em data-effect="italics">A</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">B</em>).</p>
+<p id="fs-idm2879760">If <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are mutually exclusive, <em data-effect="italics">P</em>(<em data-effect="italics">A</em> OR <em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>) + <em data-effect="italics">P</em>(<em data-effect="italics">B</em>) and <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = 0.</p>
+</section>
+
+<section data-depth="1" id="fs-idp62639840" class="practice">
+<div data-type="exercise" id="element-863">
+<div data-type="problem" id="id43759125">
+  <p id="element-743"><em data-effect="italics">E</em> and <em data-effect="italics">F</em> are mutually exclusive events. <em data-effect="italics">P</em>(<em data-effect="italics">E</em>) =  0.4; <em data-effect="italics">P</em>(<em data-effect="italics">F</em>) = 0.5. Find <em data-effect="italics">P</em>(<em data-effect="italics">E</em>&#8739;<em data-effect="italics">F</em>).</p></div>
+</div>
+
+<div data-type="exercise" id="element-867">
+<div data-type="problem" id="id43759323">
+<p id="element-18"><em data-effect="italics">J</em> and <em data-effect="italics">K</em> are independent events. <em data-effect="italics">P</em>(<em data-effect="italics">J</em>|<em data-effect="italics">K</em>) = 0.3. Find <em data-effect="italics">P</em>(<em data-effect="italics">J</em>).</p>
+</div>
+<div data-type="solution" id="fs-idm2098384" data-label="">
+<p id="fs-idp3820560"><em data-effect="italics">P</em>(<em data-effect="italics">J</em>) = 0.3</p>
+</div>
+</div>
+
+<div data-type="exercise" id="element-588">
+<div data-type="problem" id="id43759426">
+<p id="element-226"><em data-effect="italics">U</em> and <em data-effect="italics">V</em> are mutually exclusive events. <em data-effect="italics">P</em>(<em data-effect="italics">U</em>) = 0.26; <em data-effect="italics">P</em>(<em data-effect="italics">V</em>) = 0.37. Find:</p>
+<ol id="element-896" type="a">
+<li><em data-effect="italics">P</em>(<em data-effect="italics">U</em> AND <em data-effect="italics">V</em>) =</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">U</em>|<em data-effect="italics">V</em>) =</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">U</em> OR <em data-effect="italics">V</em>) =</li>
+</ol>
+</div>
+</div>
+
+<div data-type="exercise" id="element-930">
+<div data-type="problem" id="id43759701">
+<p id="element-445"><em data-effect="italics">Q</em> and <em data-effect="italics">R</em> are independent events. <em data-effect="italics">P</em>(<em data-effect="italics">Q</em>) = 0.4 and <em data-effect="italics">P</em>(<em data-effect="italics">Q</em>&#160;AND&#160;<em data-effect="italics">R</em>) = 0.1. Find <em data-effect="italics">P</em>(<em data-effect="italics">R</em>).</p></div>
+<div data-type="solution" id="fs-idp48870976" data-label="">
+<p id="fs-idp48871360"><em data-effect="italics">P</em>(<em data-effect="italics">Q</em> AND <em data-effect="italics">R</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">Q</em>)<em data-effect="italics">P</em>(<em data-effect="italics">R</em>)</p><p id="fs-idp19254592">0.1 = (0.4)<em data-effect="italics">P</em>(<em data-effect="italics">R</em>)</p><p id="fs-idp19254976"><em data-effect="italics">P</em>(<em data-effect="italics">R</em>) = 0.25</p>
+</div>
+</div>
+</section>
+
+<section data-depth="1" id="fs-idm88736" class="free-response"><h3 data-type="title">Homework</h3><p id="eip-idp126196880"><em data-effect="italics">Use the following information to answer the next 12 exercises.</em> The graph shown is based on more than 170,000 interviews done by Gallup that took place from January through December 2012. The sample consists of employed Americans 18 years of age or older. The Emotional Health Index Scores are the sample space. We randomly sample one Emotional Health Index Score.</p>
+<figure id="eip-id1171405227589"><span data-type="media" id="eip-id1171388484061" data-alt="emotional health index score">
+       <img src="/resources/df27e2fb29b6b9742307985cfb25d261ad330672/CNX_Stats_C03_RWP_001.jpg" data-media-type="image/jpeg" alt="emotional health index score" width="500"/>
+     </span>
+   </figure><div data-type="exercise" id="eip-807"><div data-type="problem" id="eip-85">
+  <p id="eip-26">Find the probability that an Emotional Health Index Score is 82.7.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-790">
+<div data-type="problem" id="eip-102">
+  <p id="eip-329">Find the probability that an Emotional Health Index Score is 81.0.</p>
+</div>
+<div data-type="solution" id="eip-841">
+  <p id="eip-869">0</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-538">
+<div data-type="problem" id="eip-976">
+  <p id="eip-640">Find the probability that an Emotional Health Index Score is more than 81?</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-42">
+<div data-type="problem" id="eip-714">
+<p id="eip-674">Find the probability that an Emotional Health Index Score is between 80.5 and 82?</p>
+</div>
+<div data-type="solution" id="eip-118">
+  <p id="eip-636">0.3571</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-44"><div data-type="problem" id="eip-761">
+  <p id="eip-515">If we know an Emotional Health Index Score is 81.5 or more, what is the probability that it is 82.7?</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-347"><div data-type="problem" id="eip-479">
+  <p id="eip-134">What is the probability that an Emotional Health Index Score is 80.7 or 82.7?</p>
+</div>
+<div data-type="solution" id="eip-923" data-label="">
+  <p id="eip-927">0.2142</p></div>
+</div>
+<div data-type="exercise" id="eip-197"><div data-type="problem" id="eip-299">
+  <p id="eip-147">What is the probability that an Emotional Health Index Score is less than 80.2 given that it is already less than 81.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-545"><div data-type="problem" id="eip-62">
+  <p id="eip-901">What occupation has the highest emotional index score?</p>
+</div>
+<div data-type="solution" id="eip-427" data-label="">
+  <p id="eip-420">Physician (83.7)</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-904"><div data-type="problem" id="eip-638">
+  <p id="eip-215">What occupation has the lowest emotional index score?</p>
+</div>
+</div><div data-type="exercise" id="eip-386"><div data-type="problem" id="eip-143">
+  <p id="eip-533">What is the range of the data?</p>
+</div>
+<div data-type="solution" id="eip-718" data-label="">
+  <p id="eip-37">83.7 &#8722; 79.6 = 4.1</p></div>
+</div>
+<div data-type="exercise" id="eip-221"><div data-type="problem" id="eip-432">
+  <p id="eip-929">Compute the average EHIS.</p></div>
+</div><div data-type="exercise" id="eip-743"><div data-type="problem" id="eip-520">
+  <p id="eip-314">If all occupations are equally likely for a certain individual, what is the probability that he or she will have an occupation with lower than average EHIS?</p></div>
+<div data-type="solution" id="eip-983" data-label="">
+  <p id="eip-466"><em data-effect="italics">P</em>(Occupation &lt; 81.3) = 0.5</p>
+</div>
+</div>
+
+
+
+</section><section data-depth="1" id="fs-idm4259888" class="bring-together-homework"><h3 data-type="title">Bringing It Together</h3>
+<div data-type="exercise" id="element-738"><div data-type="problem" id="id43569944">
+<p id="element-699">A previous year, the weights of the members of the <strong>San Francisco 49ers</strong> and the <strong>Dallas Cowboys</strong> were published in the <cite><span data-type="cite-title">San Jose Mercury News</span></cite>. The factual data are compiled into <a href="#ch03_M03-tbl001" class="autogenerated-content">[link]</a>.
+    </p><table id="ch03_M03-tbl001" summary="This table presents weight in pounds by shirt number. The first column lists the shirt number, the second column lists weight &#8804; 210, the third column lists 211-250, fourth column lists 251-290, and the fifth column lists 291 &#8804;. The first row lists shirt numbers 1-33, second row lists 34-66, and the third row lists 66-99."><thead>
+    <tr>
+      <th>Shirt#</th>
+      <th>&#8804; 210</th>
+      <th>211&#8211;250</th>
+      <th>251&#8211;290</th>
+      <th>290&#8804;</th>
+    </tr>
+  </thead><tbody>
+    <tr>
+      <td>1&#8211;33</td>
+      <td>21</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>34&#8211;66</td>
+      <td>6</td>
+      <td>18</td>
+      <td>7</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>66&#8211;99</td>
+      <td>6</td>
+      <td>12</td>
+      <td>22</td>
+      <td>5</td>
+    </tr>
+  </tbody></table>
+<p id="element-460">For the following, suppose that you randomly select one player from the 49ers or Cowboys.</p>
+<p id="eip-idm15421280">If having a shirt number from one to 33 and weighing at most 210 pounds were independent events, then what should be true about <em data-effect="italics">P</em>(Shirt# 1&#8211;33|&#8804; 210 pounds)?</p></div>
+</div>
+
+<div data-type="exercise" id="element-750"><div data-type="problem" id="id43570745">
+  <p id="element-88">The probability that a male develops some form of cancer in his lifetime is 0.4567. The probability that a male has at least one false positive test result (meaning the test comes back for cancer when the man does not have it) is 0.51. Some of the following questions do not have enough information for you to answer them. Write &#8220;not enough information&#8221; for those answers. Let <em data-effect="italics">C</em> = a man develops cancer in his lifetime and <em data-effect="italics">P</em> = man has at least one false positive.
+</p><ol id="element-196" type="a"><li><em data-effect="italics">P</em>(<em data-effect="italics">C</em>) = ______</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">P</em>|<em data-effect="italics">C</em>) = ______</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">P</em>|<em data-effect="italics">C'</em>) = ______</li>
+<li>If a test comes up positive, based upon numerical values, can you assume that man has cancer? Justify numerically and explain why or why not.</li>
+</ol></div>
+<div data-type="solution" id="fs-idm6556256" data-label="">
+<ol id="fs-idm62553312" type="a">
+<li><em data-effect="italics">P</em>(<em data-effect="italics">C</em>) = 0.4567</li>
+<li>not enough information</li>
+<li>not enough information</li>
+<li>No, because over half (0.51) of men have at least one false positive text</li>
+</ol>
+</div>
+</div>
+<div data-type="exercise" id="eip-959"><div data-type="problem" id="eip-582">
+  <p id="eip-801">Given events <em data-effect="italics">G</em> and <em data-effect="italics">H</em>: <em data-effect="italics">P</em>(<em data-effect="italics">G</em>) = 0.43; <em data-effect="italics">P</em>(<em data-effect="italics">H</em>) = 0.26; <em data-effect="italics">P</em>(<em data-effect="italics">H</em> AND <em data-effect="italics">G</em>) = 0.14</p><ol id="eip-id8377009" type="a"><li>Find <em data-effect="italics">P</em>(<em data-effect="italics">H</em> OR <em data-effect="italics">G</em>).</li>
+<li>Find the probability of the complement of event (<em data-effect="italics">H</em> AND <em data-effect="italics">G</em>).</li>
+<li>Find the probability of the complement of event (<em data-effect="italics">H</em> OR <em data-effect="italics">G</em>).</li></ol></div>
+</div><div data-type="exercise" id="eip-278">
+<div data-type="problem" id="eip-id1164335822550">
+  <p id="element-642">Given events <em data-effect="italics">J</em> and <em data-effect="italics">K</em>: <em data-effect="italics">P</em>(<em data-effect="italics">J</em>) = 0.18; <em data-effect="italics">P</em>(<em data-effect="italics">K</em>) = 0.37; <em data-effect="italics">P</em>(<em data-effect="italics">J</em> OR <em data-effect="italics">K</em>) = 0.45</p>
+<ol id="eip-id1164314961072" type="a"><li>Find <em data-effect="italics">P</em>(<em data-effect="italics">J</em> AND <em data-effect="italics">K</em>).</li>
+<li>Find the probability of the complement of event (<em data-effect="italics">J</em> AND <em data-effect="italics">K</em>).</li>
+<li>Find the probability of the complement of event (<em data-effect="italics">J</em> OR <em data-effect="italics">K</em>).</li>
+</ol></div>
+<div data-type="solution" id="eip-id1164325147049" data-label="">
+  <ol id="eip-id1164335526487" type="a">
+<li><em data-effect="italics">P</em>(<em data-effect="italics">J</em> OR <em data-effect="italics">K</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">J</em>) + <em data-effect="italics">P</em>(<em data-effect="italics">K</em>) &#8722; <em data-effect="italics">P</em>(<em data-effect="italics">J</em> AND <em data-effect="italics">K</em>); 0.45 = 0.18 + 0.37 - <em data-effect="italics">P</em>(<em data-effect="italics">J</em> AND <em data-effect="italics">K</em>); solve to find <em data-effect="italics">P</em>(<em data-effect="italics">J</em> AND <em data-effect="italics">K</em>) = 0.10</li>
+<li><em data-effect="italics">P</em>(NOT (<em data-effect="italics">J</em> AND <em data-effect="italics">K</em>)) = 1 - <em data-effect="italics">P</em>(<em data-effect="italics">J</em> AND <em data-effect="italics">K</em>) = 1 - 0.10 = 0.90</li>
+<li><em data-effect="italics">P</em>(NOT (<em data-effect="italics">J</em> OR <em data-effect="italics">K</em>)) = 1 - <em data-effect="italics">P</em>(<em data-effect="italics">J</em> OR <em data-effect="italics">K</em>) = 1 - 0.45 = 0.55</li>
+</ol></div>
+</div>
+</section>
+<div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+<dl id="fs-idm19024">
+<dt>Dependent Events</dt> <dd id="fs-idm18384">If two events are NOT independent, then we say that they are dependent.</dd>
+</dl>
+<dl id="fs-idm5236464">
+<dt>Sampling with Replacement</dt>
+<dd id="fs-idm5235824">If each member of a population is replaced after it is picked, then that member has the possibility of being chosen more than once.</dd>
+</dl>
+<dl id="fs-idm5235168">
+<dt>Sampling without Replacement</dt>
+<dd id="fs-idm5234528">When sampling is done without replacement, each member of a population may be chosen only once.</dd>
+</dl>
+<dl id="fs-idm5117088">
+<dt>The Conditional Probability of One Event Given Another Event</dt>
+<dd id="fs-idm5116448"><em data-effect="italics">P</em>(<em data-effect="italics">A</em>|<em data-effect="italics">B</em>) is the probability that event <em data-effect="italics">A</em> will occur given that the event <em data-effect="italics">B</em> has already occurred.</dd>
+</dl>
+<dl id="fs-idm5233904">
+<dt>The OR of Two Events</dt>
+<dd id="fs-idm5117712">An outcome is in the event <em data-effect="italics">A</em> OR <em data-effect="italics">B</em> if the outcome is in <em data-effect="italics">A</em>, is in <em data-effect="italics">B</em>, or is in both <em data-effect="italics">A</em> and <em data-effect="italics">B</em>.</dd>
+</dl>
+</div></body>
+
+</html>

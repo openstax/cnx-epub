@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" class="appendix" cnxml-version="0.7" module-id="new">
+
+<title>Group and Partner Projects</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>https://legacy.cnx.org/content</md:repository>
+  <md:content-url>https://legacy.cnx.org/content/m47874/latest/</md:content-url>
+  <md:content-id>m47874</md:content-id>
+  <md:title>Group and Partner Projects</md:title>
+  <md:version>1.9</md:version>
+  <md:created>2013/10/28 17:35:07 -0500</md:created>
+  <md:revised>2018/11/12 15:28:53.136 US/Central</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content class="appendix">
+<section id="fs-id1168805567129">
+    <title>Univariate Data</title><section id="element-141"><title>Student Learning Objectives</title>
+<list id="element-815" list-type="bulleted">
+<item>The student will design and carry out a survey.</item>
+<item>The student will analyze and graphically display the results of the survey.</item></list>
+
+</section>
+
+<section id="element-782"><title>Instructions</title><para id="eip-434">As you complete each task below, check it off.  Answer all questions in your summary.
+<newline/>____ Decide what data you are going to study.
+<note id="eip-idm151881920"><label>Examples</label>
+<para id="eip-idm149175552">Here are two examples, but you may <emphasis>NOT</emphasis> use them: number of M&amp;M's per bag, number of pencils students have in their backpacks.</para></note><newline/>____ Are your data discrete or continuous?  How do you know?
+<newline/>____ Decide how you are going to collect the data (for instance, buy 30 bags of M&amp;M's; collect data from the World Wide Web).
+<newline/>____ Describe your sampling technique in detail.  Use cluster, stratified, systematic, or simple random (using a random number generator) sampling.  Do not use convenience sampling. Which method did you use? Why did you pick that method?
+<newline/>____ Conduct your survey.  <emphasis>Your data size must be at least 30.</emphasis>
+<newline/>____ Summarize your data in a chart with columns showing <emphasis>data value, frequency, relative frequency and cumulative relative frequency.</emphasis>
+<newline/>Answer the following (rounded to two decimal places):
+<list id="eip-idm192589760" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> = _____</item>
+<item><emphasis effect="italics">s</emphasis> = _____</item>
+<item>First quartile = _____</item>
+<item>Median = _____</item>
+<item>70<sup>th</sup> percentile = _____</item>
+</list>
+____ What value is two standard deviations above the mean?</para><para id="eip-778">____ What value is 1.5 standard deviations below the mean?
+<newline/>____ Construct a histogram displaying your data.
+<newline/>____ In complete sentences, describe the shape of your graph.
+<newline/>____ Do you notice any potential outliers?  If so, what values are they?  Show your work in how you used the potential outlier formula to determine whether or not the values might be outliers.
+<newline/>____ Construct a box plot displaying your data.
+<newline/>____ Does the middle 50% of the data appear to be concentrated together or spread apart?  Explain how you determined this.
+<newline/>____ Looking at both the histogram and the box plot, discuss the distribution of your data.</para></section><section id="element-175"><title>Assignment Checklist</title>
+<para id="element-810">You need to turn in the following typed and stapled packet, with pages in the following order:</para>
+<list id="element-276" list-type="labeled-item" mark-suffix="">
+<item><label>____</label><emphasis>Cover sheet</emphasis>: name, class time, and name of your study</item>
+<item><label>____</label><emphasis>Summary page</emphasis>: This should contain paragraphs written with complete sentences. It should include answers to all the questions above.  It should also include statements describing the population under study, the sample, a parameter or parameters being studied, and the statistic or statistics produced.</item>
+<item><label>____</label><emphasis>URL</emphasis> for data, if your data are from the World Wide Web</item>
+<item><label>____</label><emphasis>Chart of data, frequency, relative frequency, and cumulative relative frequency</emphasis></item>
+<item><label>____</label><emphasis>Page(s) of graphs:</emphasis> histogram and box plot</item>
+</list>   
+</section></section><section id="eip-143"><title>Continuous Distributions and Central Limit Theorem </title><section id="element-958">
+<title>Student Learning Objectives</title>
+<list id="element-721" list-type="bulleted">
+<item>The student will collect a sample of continuous data.</item>
+<item>The student will attempt to fit the data sample to various distribution models.</item>
+<item>The student will validate the central limit theorem.</item>
+</list></section>
+
+<section id="element-463"><title>Instructions</title>
+<para id="element-419">As you complete each task below, check it off.  Answer all questions in your summary.</para></section>
+
+<section id="element-727"><title>Part I: Sampling</title><para id="eip-705">____ Decide what <emphasis>continuous</emphasis> data you are going to study. (Here are two examples, but you may NOT use them: the amount of money a student spent on college supplies this term, or the length of time distance telephone call lasts.)
+<newline/>____ Describe your sampling technique in detail.  Use cluster, stratified, systematic, or simple random (using a random number generator) sampling.  Do not use convenience sampling. What method did you use? Why did you pick that method?
+<newline/>____ Conduct your survey. Gather <emphasis>at least 150 pieces of continuous, quantitative data</emphasis>.
+<newline/>____ Define (in words) the random variable for your data. <emphasis effect="italics">X</emphasis> = _______
+<newline/>____ Create two lists of your data: (1) unordered data, (2) in order of smallest to largest.
+<newline/>____ Find the sample mean and the sample standard deviation (rounded to two decimal places).
+<list id="list-168" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> = ______</item>
+<item><emphasis effect="italics">s</emphasis> = ______</item>
+</list>
+____ Construct a histogram of your data containing five to ten intervals of equal width. The histogram should be
+a representative display of your data. Label and scale it.</para></section><section id="element-747"><title>Part II: Possible Distributions</title><para id="eip-156">____ Suppose that <emphasis effect="italics">X</emphasis> followed the following theoretical distributions. Set up each distribution using the appropriate information from your data.
+<newline/>____ Uniform: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis> ____________ Use the lowest and highest values as <emphasis effect="italics">a</emphasis> and <emphasis effect="italics">b</emphasis>.
+<newline/>____ Normal: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis> ____________ Use <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> to estimate for <emphasis effect="italics">μ</emphasis> and <emphasis effect="italics">s</emphasis> to estimate for <emphasis effect="italics">σ</emphasis>.
+<newline/>____ <emphasis>Must</emphasis> your data fit one of the above distributions? Explain why or why not.
+<newline/>____ <emphasis>Could</emphasis> the data fit two or three of the previous distributions (at the same time)? Explain.
+<newline/>____ Calculate the value <emphasis effect="italics">k</emphasis>(an <emphasis effect="italics">X</emphasis> value) that is 1.75 standard deviations above the sample mean. <emphasis effect="italics">k</emphasis> = _________ (rounded to two decimal places) Note: <emphasis effect="italics">k</emphasis> = <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> + (1.75)<emphasis effect="italics">s</emphasis>
+<newline/>____ Determine the relative frequencies (<emphasis effect="italics">RF</emphasis>) rounded to four decimal places. 
+</para><note id="eip-354"><label/><title>Note</title>
+<para id="eip-idm12100736"><m:math>
+<m:mrow>
+<m:mi>R</m:mi><m:mi>F</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mtext>frequency</m:mtext>
+</m:mrow>
+<m:mrow>
+<m:mtext>total number surveyed</m:mtext>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para></note><list id="eip-965" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">RF</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = ______</item>
+<item><emphasis effect="italics">RF</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">k</emphasis>) = ______</item>
+<item><emphasis effect="italics">RF</emphasis>(<emphasis effect="italics">X</emphasis> = <emphasis effect="italics">k</emphasis>) = ______</item></list><note id="id16765214"><label/><title>Note</title>
+<para id="fs-idp165084800">You should have one page for the uniform distribution, one page for the exponential distribution, and one page for the normal distribution.</para></note>
+<para id="eip-917">____ State the distribution: <emphasis effect="italics">X</emphasis> ~ _________
+<newline/>____ Draw a graph for each of the three theoretical distributions.  Label the axes and mark them appropriately.
+<newline/>____ Find the following theoretical probabilities (rounded to four decimal places). 
+<list id="eip-idm28652656" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">k</emphasis>)  = ______</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">k</emphasis>) = ______</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = <emphasis effect="italics">k</emphasis>) = ______</item>
+</list>
+____ Compare the relative frequencies to the corresponding probabilities.  Are the values close?
+<newline/>____ Does it appear that the data fit the distribution well?  Justify your answer by comparing the probabilities to the relative frequencies, and the histograms to the theoretical graphs.</para></section><section id="element-442"><title>Part III: CLT Experiments</title><para id="eip-159">______ From your original data (before ordering), use a random number generator to pick 40 samples of size five.  For each sample, calculate the average.
+<newline/>______ On a separate page, attached to the summary, include the 40 samples of size five, along with the 40 sample averages.
+<newline/>______ List the 40 averages in order from smallest to largest.
+<newline/>______ Define the random variable, <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math>, in words. <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> = _______________
+<newline/>______ State the approximate theoretical distribution of <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math>. <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> ~ ______________
+<newline/>______ Base this on the mean and standard deviation from your original data.
+<newline/>______ Construct a histogram displaying your data. Use five to six intervals of equal width.  Label and scale it.
+<newline/>Calculate the value <m:math>
+<m:mover accent="true">
+<m:mi>k</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> (an <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> value) that is 1.75 standard deviations above the sample mean. <m:math>
+<m:mover accent="true">
+<m:mi>k</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> = _____ (rounded to two decimal places)
+<newline/>Determine the relative frequencies (<emphasis effect="italics">RF</emphasis>) rounded to four decimal places.
+<list id="eip-idp20014992" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">RF</emphasis>(<m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> &lt; <m:math>
+<m:mover accent="true">
+<m:mi>k</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math>) = _______</item>
+<item><emphasis effect="italics">RF</emphasis>(<m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> &gt; <m:math>
+<m:mover accent="true">
+<m:mi>k</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math>) = _______</item>
+<item><emphasis effect="italics">RF</emphasis>(<m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> = <m:math>
+<m:mover accent="true">
+<m:mi>k</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math>) = _______</item></list>
+Find the following theoretical probabilities (rounded to four decimal places).
+<list id="list-12-2" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">P</emphasis>(<m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> &lt; <m:math>
+<m:mover accent="true">
+<m:mi>k</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math>) = _______</item>
+<item><emphasis effect="italics">P</emphasis>(<m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> &gt; <m:math>
+<m:mover accent="true">
+<m:mi>k</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math>) = _______</item>
+<item><emphasis effect="italics">P</emphasis>(<m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> = <m:math>
+<m:mover accent="true">
+<m:mi>k</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math>) = _______</item>
+</list>
+______ Draw the graph of the theoretical distribution of <m:math><m:mi>X</m:mi></m:math>.
+<newline/>______ Compare the relative frequencies to the probabilities. Are the values close?
+<newline/>______ Does it appear that the data of averages fit the distribution of <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> well? Justify your answer by comparing the probabilities to the relative frequencies, and the histogram to the theoretical graph.
+<newline/>In three to five complete sentences for each, answer the following questions. Give thoughtful explanations.
+<newline/>______ In summary, do your original data seem to fit the uniform, exponential, or normal distributions? Answer why or why not for each distribution. If the data do not fit any of those distributions, explain why.
+<newline/>______ What happened to the shape and distribution when you averaged your data? <emphasis>In theory,</emphasis> what should have happened? In theory, would “it” always happen? Why or why not?
+<newline/>______ Were the relative frequencies compared to the theoretical probabilities closer when
+comparing the <m:math><m:mi>X</m:mi></m:math> or <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> distributions? Explain your answer.</para></section><section id="element-413">
+<title>Assignment Checklist</title>
+<para id="element-394">You need to turn in the following typed and stapled packet, with pages in the following order:
+<newline/>____ <emphasis>Cover sheet</emphasis>:  name, class time, and name of your study
+<newline/>____ <emphasis>Summary pages</emphasis>: These should contain several paragraphs written with complete sentences that describe the experiment, including what you studied and your sampling technique, as well as answers to all of the questions previously asked questions
+<newline/>____ <emphasis>URL</emphasis> for data, if your data are from the World Wide Web
+<newline/>____ <emphasis>Pages, one for each theoretical distribution</emphasis>, with the distribution stated, the graph, and the probability questions answered
+<newline/>____ <emphasis>Pages of the data requested</emphasis>
+<newline/>____ <emphasis>All graphs required</emphasis></para></section></section><section id="eip-496"><title>Hypothesis Testing-Article</title><section id="element-517">
+<title>Student Learning Objectives</title>
+<list id="element-599" list-type="bulleted">
+<item>The student will identify a hypothesis testing problem in print.</item>
+<item>The student will conduct a survey to verify or dispute the results of the hypothesis test.</item>
+<item>The student will summarize the article, analysis, and conclusions in a report.</item></list></section>
+
+<section id="element-708"><title>Instructions</title>
+<para id="element-262">As you complete each task, check it off.  Answer all questions in your summary.
+<newline/>____<emphasis>Find an article</emphasis> in a newspaper, magazine, or on the internet which makes a claim about <emphasis>ONE</emphasis> population mean or <emphasis>ONE</emphasis> population proportion.  The claim may be based upon a survey that the article was reporting on.  Decide whether this claim is the null or alternate hypothesis.
+<newline/>____<emphasis>Copy or print out the article</emphasis> and include a copy in your project, along with the source.
+<newline/>____<emphasis>State how you will collect your data.</emphasis> (Convenience sampling is not acceptable.)
+<newline/>____<emphasis>Conduct your survey.  You must have more than 50 responses in your sample.</emphasis>  When you hand in your final project, attach the tally sheet or the packet of questionnaires that you used to collect data.  Your data must be real. 
+<newline/>____<emphasis>State the statistics</emphasis> that are a result of your data collection: sample size, sample mean, and sample standard deviation, OR sample size and number of successes.
+<newline/>____<emphasis>Make two copies of the appropriate solution sheet.</emphasis>
+<newline/>____<emphasis>Record the hypothesis test</emphasis> on the solution sheet, based on your experiment.  <emphasis>Do a DRAFT solution</emphasis> first on one of the solution sheets and check it over carefully.  Have a classmate check your solution to see if it is done correctly.  Make your decision using a 5% level of significance.  Include the 95% confidence interval on the solution sheet.
+<newline/>____<emphasis>Create a graph that illustrates your data.</emphasis> This may be a pie or bar graph or may be a histogram or box plot, depending on the nature of your data.  Produce a graph that makes sense for your data and gives useful visual information about your data.  You may need to look at several types of graphs before you decide which is the most appropriate for the type of data in your project. 
+<newline/>____<emphasis>Write your summary</emphasis> (in complete sentences and paragraphs, with proper grammar and correct spelling) that describes the project.  The summary <emphasis>MUST</emphasis> include:
+<list id="eip-idm60281968" list-type="enumerated" number-style="lower-alpha">
+<item>Brief discussion of the article, including the source</item>
+<item>Statement of the claim made in the article (one of the hypotheses).</item>
+<item>Detailed description of how, where, and when you collected the data, including the sampling technique; did you use cluster, stratified, systematic, or simple random sampling (using a random number generator)? As previously mentioned, convenience sampling is not acceptable.</item>
+<item>Conclusion about the article claim in light of your hypothesis test; this is the conclusion of your hypothesis test, stated in words, in the context of the situation in your project in sentence form, as if you were writing this conclusion for a non-statistician.</item>
+<item>Sentence interpreting your confidence interval in the context of the situation in your project</item>
+</list></para></section>
+
+<section id="element-253">
+<title>Assignment Checklist</title>
+<para id="element-22">Turn in the following typed (12 point) and stapled packet for your final project:
+<newline/>____<emphasis>Cover sheet</emphasis> containing your name(s), class time, and the name of your study
+<newline/>____<emphasis>Summary</emphasis>, which includes all items listed on summary checklist
+<newline/>____<emphasis>Solution sheet</emphasis> neatly and completely filled out.  The solution sheet does not need to be typed.
+<newline/>____<emphasis>Graphic representation of your data</emphasis>, created following the guidelines previously discussed; include only graphs which are appropriate and useful.
+<newline/>____<emphasis>Raw data collected AND a table summarizing the sample data</emphasis> (<emphasis effect="italics">n</emphasis>, <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+</m:math> and <emphasis effect="italics">s</emphasis>; or <emphasis effect="italics">x</emphasis>, <emphasis effect="italics">n</emphasis>, and <emphasis effect="italics">p</emphasis>’, as appropriate for your hypotheses); the raw data does not need to be typed, but the summary does. Hand in the data as you collected it. (Either attach your tally sheet or an envelope containing your questionnaires.)</para></section></section><section id="eip-625"><title>Bivariate Data, Linear Regression, and Univariate Data</title><section id="element-564"><title>Student Learning Objectives</title><list id="list-564" list-type="bulleted"><item>The students will collect a bivariate data sample through the use of appropriate sampling techniques.</item>
+<item>The student will attempt to fit the data to a linear model.</item>
+<item>The student will determine the appropriateness of linear fit of the model.</item>
+<item>The student will analyze and graph univariate data.</item>
+</list></section><section id="element-765"><title>Instructions</title><list id="list-765" list-type="enumerated" number-style="arabic"><item>As you complete each task below, check it off.  Answer all questions in your introduction or summary. </item>
+<item>Check your course calendar for intermediate and final due dates.</item>
+<item>Graphs may be constructed by hand or by computer, unless your instructor informs you otherwise.  All graphs must be neat and accurate.</item>
+<item>All other responses must be done on the computer.  </item>
+<item>Neatness and quality of explanations are used to determine your final grade.</item>
+</list></section><section id="element-108"><title>Part I: Bivariate Data</title><para id="eip-idm74600944"><title>Introduction</title>____State the bivariate data your group is going to study. 
+<note id="eip-idp126031264" type="Examples"><label>Examples</label>
+<para id="eip-idp41011600">Here are two examples, but you may <emphasis>NOT</emphasis> use them:  height vs. weight and age vs. running distance.</para></note><newline/>____Describe your sampling technique in detail. Use cluster, stratified, systematic, or simple random sampling (using a random number generator) sampling.  Convenience sampling is <emphasis>NOT</emphasis> acceptable.
+<newline/>____Conduct your survey.  Your number of pairs must be at least 30.
+<newline/>____Print out a copy of your data.
+</para><para id="eip-idp338032">
+<title>Analysis</title>
+____On a separate sheet of paper construct a scatter plot of the data.  Label and scale both axes.
+<newline/>____State the least squares line and the correlation coefficient.
+<newline/>____On your scatter plot, in a different color, construct the least squares line.
+<newline/>____Is the correlation coefficient significant?  Explain and show how you determined this.
+<newline/>____Interpret the slope of the linear regression line in the context of the data in your project.  Relate the explanation to your data, and quantify what the slope tells you.
+<newline/>____Does the regression line seem to fit the data? Why or why not? If the data does not seem to be linear, explain if any other model seems to fit the data better.
+<newline/>____Are there any outliers?  If so, what are they?  Show your work in how you used the potential outlier formula in the Linear Regression and Correlation chapter (since you have bivariate data) to determine whether or not any pairs might be outliers.
+</para></section><section id="element-645"><title>Part II: Univariate Data</title>
+<para id="element-325">In this section, you will use the data for <emphasis>ONE</emphasis> variable only.  Pick the variable that is more interesting to analyze.  For example:  if your independent variable is sequential data such as year with 30 years and one piece of data per year, your <emphasis effect="italics">x</emphasis>-values might be 1971, 1972, 1973, 1974, …, 2000. This would not be interesting to analyze. In that case, choose to use the dependent variable to analyze for this part of the project.
+<newline/>_____Summarize your data in a chart with columns showing data value, frequency, relative frequency, and cumulative relative frequency.
+<newline/>_____Answer the following question, rounded to two decimal places:
+<list id="eip-idp79349232" list-type="enumerated" number-style="lower-alpha">
+<item>Sample mean = ______</item>
+<item>Sample standard deviation = ______</item>
+<item>First quartile = ______</item>
+<item>Third quartile = ______</item>
+<item>Median = ______</item>
+<item>70th percentile = ______</item>
+<item>Value that is 2 standard deviations above the mean = ______</item>
+<item>Value that is 1.5 standard deviations below the mean = ______</item>
+</list>
+_____Construct a histogram displaying your data. Group your data into six to ten intervals of equal width. Pick regularly spaced intervals that make sense in relation to your data. For example, do  NOT group data by age as 20-26,27-33,34-40,41-47,48-54,55-61 . . . Instead, maybe use age groups 19.5-24.5, 24.5-29.5,  . . .  or 19.5-29.5, 29.5-39.5, 39.5-49.5, . . .
+<newline/>_____In complete sentences, describe the shape of your histogram.
+<newline/>_____Are there any potential outliers? Which values are they? Show your work and calculations as to how you used the potential outlier formula in <link document="m46925">Descriptive Statistics</link> (since you are now using univariate data) to determine which values might be outliers. 
+<newline/>_____Construct a box plot of your data. 
+<newline/>_____Does the middle 50% of your data appear to be concentrated together or spread out? Explain how you determined this. 
+<newline/>_____Looking at both the histogram AND the box plot, discuss the distribution of your data.     For example: how does the spread of the middle 50% of your data compare to the spread of the rest of the data represented in the box plot; how does this correspond to your description of the shape of the histogram; how does the graphical display show any outliers you may have found; does the histogram show any gaps in the data that are not visible in the box plot; are there any interesting features of your data that you should point out.</para></section>
+
+<section id="element-460"><title>Due Dates</title>
+<para id="eip-750"><list id="eip-idm37795808" list-type="bulleted"><item>Part I, Intro:  __________   (keep a copy for your records)</item>
+<item>Part I, Analysis:  __________    (keep a copy for your records)</item>
+<item><para id="eip-idp72137232">Entire Project, typed and stapled:  __________</para>
+<para id="eip-idp63390944">____ Cover sheet:  names, class time, and name of your study</para>
+<para id="eip-idp75829792">____ Part I:  label the sections “Intro” and “Analysis.”</para>
+<para id="eip-idp27788944">____ Part II:</para>
+<para id="eip-idm94529296">____ Summary page containing several paragraphs written in complete sentences describing the experiment, including what you studied and how you collected your data. The summary page should also include answers to ALL the questions asked above.</para>
+<para id="eip-idp59858688">____ All graphs requested in the project</para>
+<para id="eip-idm78775584">____ All calculations requested to support questions in data</para>
+<para id="eip-idp46295168">____ Description: what you learned by doing this project, what challenges you had, how you overcame the challenges</para></item>
+</list></para><note id="id41138276"><label/><title>Note</title>
+<para id="eip-idp153219504">Include answers to ALL questions asked, even if not explicitly repeated in the items above.</para></note></section></section>
+  </content>
+</document>

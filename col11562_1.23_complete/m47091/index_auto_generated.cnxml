@@ -1,0 +1,514 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Test for Homogeneity</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47091/latest</md:content-url>
+  <md:content-id>m47091</md:content-id>
+  <md:title>Test for Homogeneity</md:title>
+  <md:version>1.9</md:version>
+  <md:created>2013/07/19 04:50:03 -0500</md:created>
+  <md:revised>2018/09/12 15:51:53 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>degrees of freedom</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>test for homogeneity</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <para id="delete_me">The goodness–of–fit test can be used to decide whether a population fits a given distribution, but it will not suffice to decide whether two populations follow the same unknown distribution. A different test, called the <term>test for homogeneity</term>, can be used to draw a conclusion about whether two populations have the same distribution. To calculate the test statistic for a test for homogeneity, follow the same procedure as with the test of independence.</para><note id="eip-195"><label/><title>Note</title>
+<para id="eip-idp34705152">The expected value for each cell needs to be at least five in order for you to use this test.</para></note><para id="eip-705"><title>Hypotheses</title><newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: The distributions of the two populations are the same.<newline/>
+    <newline/><emphasis effect="italics">H<sub>a</sub></emphasis>:  The distributions of the two populations are not the same.</para><para id="eip-703"> <title>Test Statistic</title>Use a <m:math> <m:msup> <m:mi>χ</m:mi> <m:mn>2</m:mn> </m:msup></m:math>  test statistic.  It is computed in the same way as the test for independence.  </para>
+<para id="eip-577"> <title>Degrees of Freedom (<emphasis effect="italics">df</emphasis>)</title><emphasis effect="italics">df</emphasis> = number of columns - 1</para>
+<para id="eip-572"> <title>Requirements</title>All values in the table must be greater than or equal to five. </para>
+<para id="eip-66"> <title>Common Uses</title>Comparing two populations. For example:  men vs. women, before vs. after, east vs. west. The variable is categorical with more than two possible response values. </para>
+<example id="eip-101"><exercise id="eip-790">
+<problem id="eip-886">
+<para id="eip-520">Do male and female college students have the same distribution of living arrangements?  Use a level of significance of 0.05. Suppose that 250 randomly selected male college students and 300 randomly selected female college students were asked about their living arrangements: dormitory, apartment, with parents, other. The results are shown in <link target-id="eip-924"/>. Do male and female college students have the same distribution of living arrangements?</para>
+<table id="eip-924" summary="The table contains the distribution of living conditions for college males and college females. First row: Males 72 Dorm; 84 Apt.; 49 Parents; 45 Other; Second row: Females, 91 Dorm; 86 Apt.; 88 Parents; 35 Other;">
+<title>Distribution of Living Arragements for College Males and College Females</title>
+<tgroup cols="5"><tbody>
+  <row>
+    <entry/>
+    <entry><emphasis>Dormitory</emphasis></entry>
+    <entry><emphasis>Apartment</emphasis></entry>
+    <entry><emphasis>With Parents</emphasis></entry>
+    <entry><emphasis>Other</emphasis></entry>
+  </row>
+  <row>
+    <entry><emphasis>Males</emphasis></entry>
+    <entry>72</entry>
+    <entry>84</entry>
+    <entry>49</entry>
+    <entry>45</entry>
+  </row>
+  <row>
+    <entry><emphasis>Females</emphasis></entry>
+    <entry>91</entry>
+    <entry>86</entry>
+    <entry>88</entry>
+    <entry>35</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="eip-996">
+  <para id="eip-724"><emphasis effect="italics">H<sub>0</sub></emphasis>: The distribution of living arrangements for male college students is the same as the distribution of living arrangements for female college students.<newline/>
+    <newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: The distribution of living arrangements for male college students is not the same as the distribution of living arrangements for female college students.<newline/><newline/>
+    <emphasis>Degrees of Freedom (<emphasis effect="italics">df</emphasis>):</emphasis><newline/> <emphasis effect="italics">df</emphasis> = number of columns – 1 = 4 – 1 = 3 <newline/><newline/>  <emphasis>Distribution for the test:</emphasis><m:math><m:msubsup><m:mi>χ</m:mi><m:mn>3</m:mn> <m:mn>2</m:mn></m:msubsup></m:math><newline/><newline/>
+    <emphasis>Calculate the test statistic:</emphasis> <emphasis effect="italics">χ</emphasis><sup>2</sup> = 10.1287 (calculator or computer)  <newline/><newline/> <emphasis>Probability statement:</emphasis> <emphasis effect="italics">p</emphasis>-value = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">χ</emphasis><sup>2</sup> &gt;10.1287) = 0.0175</para><note xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm46378784" class="statistics calculator"><label/>
+<para id="eip-idm368940736">Press the <code>MATRX</code> key and arrow over to <code>EDIT</code>. Press <code>1:[A]</code>. Press <code>2 ENTER 4 ENTER</code>. Enter the table values by row. Press <code>ENTER</code> after each. Press <code>2nd QUIT</code>. Press <code>STAT</code> and arrow over to <code>TESTS</code>. Arrow down to <code>C:χ2-TEST</code>. Press <code>ENTER</code>. You should see <code>Observed:[A] and Expected:[B]</code>. Arrow down to <code>Calculate</code>. Press <code>ENTER</code>. The test statistic is 10.1287 and the <emphasis effect="italics">p</emphasis>-value = 0.0175. Do the procedure a second time but arrow down to <code>Draw</code> instead of <code>calculate</code>.</para></note><para id="fs-idm273008"><newline/><emphasis>Compare <emphasis effect="italics">α</emphasis> and the <emphasis effect="italics">p</emphasis>-value:</emphasis> Since no <emphasis effect="italics">α</emphasis> is given, assume <emphasis effect="italics">α</emphasis> = 0.05. <emphasis effect="italics">p</emphasis>-value = 0.0175. <emphasis effect="italics">α</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value.  <newline/><newline/> <emphasis>Make a decision:</emphasis> Since <emphasis effect="italics">α</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value, reject <emphasis effect="italics">H<sub>0</sub></emphasis>. This means that the distributions are not the same. <newline/><newline/> <emphasis>Conclusion:</emphasis> At a 5% level of significance, from the data, there is sufficient evidence to conclude that the distributions of living arrangements for male and female college students are not the same.<newline/><newline/> Notice that the conclusion is only that the distributions are not the same. We cannot use the test for homogeneity to draw any conclusions about how they differ.
+</para></solution>
+</exercise></example><note id="fs-idp99198384" class="statistics try"><label/><title>Try It</title>
+    <exercise id="eip-976">
+      <problem id="eip-39">
+        <para id="eip-658">Do families and singles have the same distribution of cars? Use a level of significance of 0.05. Suppose that 100 randomly selected families and 200 randomly selected singles were asked what type of car they drove: sport, sedan, hatchback, truck, van/SUV. The results are shown in <link target-id="eip-idm93309648"/>. Do families and singles have the same distribution of cars? Test at a level of significance of 0.05.</para><table id="eip-idm93309648" summary="">
+<tgroup cols="6">
+<thead>
+  <row>
+    <entry/>
+    <entry>Sport</entry>
+    <entry>Sedan</entry>
+    <entry>Hatchback</entry>
+    <entry>Truck</entry>
+    <entry>Van/SUV</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>Family</entry>
+    <entry>5</entry>
+    <entry>15</entry>
+    <entry>35</entry>
+    <entry>17</entry>
+    <entry>28</entry>
+  </row>
+  <row>
+    <entry>Single</entry>
+    <entry>45</entry>
+    <entry>65</entry>
+    <entry>37</entry>
+    <entry>46</entry>
+    <entry>7</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+</note><example id="eip-151"><exercise id="eip-692"><problem id="eip-44">
+<para id="eip-558">Both before and after a recent earthquake, surveys were conducted asking voters which of the three candidates they planned on voting for in the upcoming city council election. Has there been a change since the earthquake? Use a level of significance of 0.05. <link target-id="eip-422"/> shows the results of the survey. Has there been a change in the distribution of voter preferences since the earthquake?</para>
+<table id="eip-422" summary="The table contains the number of votes 3 candidates (Perez, Chung, Stevens) could receive before and after an earthquake from a survey. First row: 167; 128; 135; Second row: 214; 197; 225;">
+<tgroup cols="4"><tbody>
+  <row>
+    <entry/>
+    <entry><emphasis>Perez</emphasis></entry>
+    <entry><emphasis>Chung</emphasis></entry>
+    <entry><emphasis>Stevens</emphasis></entry>
+  </row>
+  <row>
+    <entry><emphasis>Before</emphasis></entry>
+    <entry>167</entry>
+    <entry>128</entry>
+    <entry>135</entry>
+  </row>
+  <row>
+    <entry><emphasis>After</emphasis></entry>
+    <entry>214</entry>
+    <entry>197</entry>
+    <entry>225</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="eip-156">
+  <para id="eip-969"><emphasis effect="italics">H<sub>0</sub></emphasis>: The distribution of voter preferences was the same before and after the earthquake.  <newline/><newline/> <emphasis effect="italics">H<sub>a</sub></emphasis>: The distribution of voter preferences was not the same before and after the earthquake. <newline/><newline/> <emphasis>Degrees of Freedom (<emphasis effect="italics">df</emphasis>):</emphasis><newline/> <emphasis effect="italics">df</emphasis> = number of columns – 1 = 3 – 1 = 2 <newline/><newline/>  <emphasis>Distribution for the test:</emphasis>  <m:math> <m:msubsup> <m:mi>χ</m:mi> <m:mn>2</m:mn> <m:mn>2</m:mn> </m:msubsup> </m:math>
+<newline count="2"/><emphasis>Calculate the test statistic</emphasis>: <emphasis effect="italics">χ<sup>2</sup></emphasis> = 3.2603 (calculator or computer)
+<newline count="2"/><emphasis>Probability statement:</emphasis> <emphasis effect="italics">p</emphasis>-value=<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">χ<sup>2</sup></emphasis> &gt; 3.2603) = 0.1959</para><note id="fs-idp99944704" class="statistics calculator"><label/>
+<para id="fs-idm65647616">Press the <code>MATRX</code> key and arrow over to <code>EDIT</code>. Press <code>1:[A]</code>. Press <code>2 ENTER 3 ENTER</code>. Enter the table values by row. Press <code>ENTER</code> after each. Press <code>2nd QUIT</code>. Press <code>STAT</code> and arrow over to <code>TESTS</code>. Arrow down to <code>C:χ2-TEST</code>. Press <code>ENTER</code>. You should see <code>Observed:[A] and Expected:[B]</code>. Arrow down to <code>Calculate</code>. Press <code>ENTER</code>. The test statistic is 3.2603 and the <emphasis effect="italics">p</emphasis>-value = 0.1959. Do the procedure a second time but arrow down to <code>Draw</code> instead of <code>calculate</code>.</para>
+</note><para id="fs-idm10889120"><emphasis>Compare <emphasis effect="italics">α</emphasis> and the <emphasis effect="italics">p</emphasis>-value:</emphasis> <emphasis effect="italics">α</emphasis> = 0.05 and the  <emphasis effect="italics">p</emphasis>-value = 0.1959. <emphasis effect="italics">α</emphasis> &lt; <emphasis effect="italics">p</emphasis>-value.</para><para id="fs-idp90106784"><emphasis>Make a decision:</emphasis> Since <emphasis effect="italics">α</emphasis> &lt; <emphasis effect="italics">p</emphasis>-value, do not reject <emphasis effect="italics">H<sub>o</sub></emphasis>.</para><para id="fs-idm18971600"><emphasis>Conclusion:</emphasis> At a 5% level of significance, from the data, there is insufficient evidence to  conclude that the distribution of voter preferences was not the same before and after the earthquake.</para>
+</solution>
+</exercise>
+</example><note id="fs-idm61233888" class="statistics try finger"><label/><title>Try It</title>
+    <exercise id="eip-680">
+    <problem id="eip-625">
+      <para id="eip-895">Ivy League schools receive many applications, but only some can be accepted. At the schools listed in <link target-id="fs-idm19368736"/>, two types of applications are accepted: regular and early decision.</para>
+<table id="fs-idm19368736" summary="..">
+<tgroup cols="7">
+<thead>
+  <row>
+    <entry>Application Type Accepted</entry>
+    <entry>Brown</entry>
+    <entry>Columbia</entry>
+    <entry>Cornell</entry>
+    <entry>Dartmouth</entry>
+    <entry>Penn</entry>
+    <entry>Yale</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>Regular</entry>
+    <entry>2,115</entry>
+    <entry>1,792</entry>
+    <entry>5,306</entry>
+    <entry>1,734</entry>
+    <entry>2,685</entry>
+    <entry>1,245</entry>
+  </row>
+  <row>
+    <entry>Early Decision</entry>
+    <entry>577</entry>
+    <entry>627</entry>
+    <entry>1,228</entry>
+    <entry>444</entry>
+    <entry>1,195</entry>
+    <entry>761</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+  <para id="eip-896">We want to know if the number of regular applications accepted follows the same distribution as the number of early applications accepted. State the null and alternative hypotheses, the degrees of freedom and the test statistic, sketch the graph of the <emphasis effect="italics">p</emphasis>-value, and draw a conclusion about the test of homogeneity.</para></problem>
+</exercise></note><section id="fs-idm80427920" class="references">
+<title>References</title>
+<para id="fs-idm30810032">Data from the Insurance Institute for Highway Safety, 2013. Available online at www.iihs.org/iihs/ratings (accessed May 24, 2013).</para>
+<para id="fs-idp85001856">“Energy use (kg of oil equivalent per capita).” The World Bank, 2013. Available online at http://data.worldbank.org/indicator/EG.USE.PCAP.KG.OE/countries (accessed May 24, 2013).</para>
+<para id="fs-idm32198992">“Parent and Family Involvement Survey of 2007 National Household Education Survey Program (NHES),” U.S. Department of Education, National Center for Education Statistics. Available online at http://nces.ed.gov/pubsearch/pubsinfo.asp?pubid=2009030 (accessed May 24, 2013).</para><para id="fs-idp116876544">“Parent and Family Involvement Survey of 2007 National Household Education Survey Program (NHES),” U.S. Department of Education, National Center for Education Statistics. Available online at http://nces.ed.gov/pubs2009/2009030_sup.pdf (accessed May 24, 2013).</para></section>
+<section id="fs-idp53742432" class="summary">
+<title>Chapter Review</title>
+<para id="eip-56">To assess whether two data sets are derived from the same distribution—which need not be known, you can apply the test for homogeneity that uses the chi-square distribution. The null hypothesis for this test states that the populations of the two data sets come from the same distribution. The test compares the observed values against the expected values if the two populations followed the same distribution. The test is right-tailed. Each observation or cell category must have an expected value of at least five.</para></section>
+<section id="fs-idp64112192" class="formula-review">
+<title>Formula Review</title>
+<para id="eip-963"><m:math>
+    <m:mrow>
+      <m:munder>
+        <m:mstyle mathsize="140%" displaystyle="true"><m:mo>∑</m:mo></m:mstyle>
+        <m:mrow>
+          <m:mi>i</m:mi><m:mo>⋅</m:mo><m:mi>j</m:mi>
+        </m:mrow>
+      </m:munder>
+      <m:mfrac>
+        <m:mrow>
+          <m:msup>
+            <m:mrow>
+              <m:mo stretchy="false">(</m:mo><m:mi>O</m:mi><m:mo>−</m:mo><m:mi>E</m:mi><m:mo stretchy="false">)</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+        </m:mrow>
+        <m:mi>E</m:mi>
+      </m:mfrac>
+    </m:mrow>
+  </m:math> Homogeneity test statistic where:	<emphasis effect="italics">O</emphasis> = observed values <newline/>  <emphasis effect="italics">E</emphasis> = expected values <newline/><emphasis effect="italics">i</emphasis> = number of rows in data contingency table <newline/><emphasis effect="italics">j</emphasis> = number of columns in data contingency table</para>
+  <para id="eip-243"><emphasis effect="italics">df</emphasis> = (<emphasis effect="italics">i</emphasis> −1)(<emphasis effect="italics">j</emphasis> −1)  Degrees of freedom</para></section>
+<section id="fs-idm167041200" class="practice">
+  <exercise id="eip-134">
+    <problem id="eip-212">
+  <para id="eip-973">A math teacher wants to see if two of her classes have the same distribution of test scores. What test should she use?</para></problem>
+<solution id="eip-268">
+  <para id="eip-586">test for homogeneity</para></solution>
+</exercise><exercise id="eip-861"><problem id="eip-442">
+  <para id="eip-950">What are the null and alternative hypotheses for <link target-id="eip-134"/>?</para></problem>
+</exercise><exercise id="eip-854"><problem id="eip-804">
+  <para id="eip-222">A market researcher wants to see if two different stores have the same distribution of sales throughout the year. What type of test should he use? </para></problem>
+<solution id="eip-309">
+  <para id="eip-172">test for homogeneity</para></solution>
+</exercise><exercise id="eip-670"><problem id="eip-345">
+  <para id="eip-828">A meteorologist wants to know if East and West Australia have the same distribution of storms. What type of test should she use?</para></problem>
+</exercise><exercise id="eip-168"><problem id="eip-343">
+  <para id="eip-188">What condition must be met to use the test for homogeneity?   </para>
+</problem>
+<solution id="eip-701">
+  <para id="eip-458">All values in the table must be greater than or equal to five.</para>
+</solution>
+</exercise>
+  <para id="eip-idp68604192"><emphasis effect="italics">Use the following information to answer the next five exercises:</emphasis> Do private practice doctors and hospital doctors have the same distribution of working hours? Suppose that a sample of 100 private practice doctors and 150 hospital doctors are selected at random and asked about the number of hours a week they work. The results are shown in <link target-id="eip-idm14786672"/>.</para><table id="eip-idm14786672" summary="..">
+<tgroup cols="5"><thead>
+<row><entry/><entry>20–30</entry>	<entry>30–40</entry>	<entry>40–50</entry>	<entry>50–60</entry></row>
+</thead>
+<tbody>
+<row><entry>Private Practice</entry>	<entry>16</entry>	<entry>40</entry>	<entry>38</entry>	<entry>6</entry></row>
+<row><entry>Hospital</entry>	<entry>8</entry>	<entry>44</entry>	<entry>59</entry>	<entry>39</entry></row>
+</tbody>
+</tgroup>
+</table>
+<exercise id="eip-347"><problem id="eip-187">
+  <para id="eip-535">State the null and alternative hypotheses.</para>
+</problem>
+</exercise><exercise id="eip-735"><problem id="eip-460">
+  <para id="eip-206"><emphasis effect="italics">df</emphasis> = _______</para></problem>
+<solution id="eip-288">
+  <para id="eip-611">3</para></solution>
+</exercise>
+  <exercise id="eip-906"><problem id="eip-547">
+  <para id="eip-945">What is the test statistic?</para></problem>
+</exercise><exercise id="eip-696"><problem id="eip-214">
+  <para id="eip-978">What is the <emphasis effect="italics">p</emphasis>-value?</para></problem>
+<solution id="eip-237">
+  <para id="eip-608">0.00005</para></solution>
+</exercise><exercise id="eip-393"><problem id="eip-557">
+  <para id="eip-467">What can you conclude at the 5% significance level?</para></problem>
+</exercise></section>
+<section id="eip-659" class="free-response">
+<title>Homework</title>
+  <para id="fs-idm2453104"><emphasis effect="italics">For each word problem, use a solution sheet to solve the hypothesis test problem. Go to <link document="m47882"/> for the chi-square solution sheet. Round expected frequency to two decimal places.</emphasis></para><exercise id="eip-533"><problem id="eip-715">
+    <para id="eip-637">A psychologist is interested in testing whether there is a difference in the distribution of personality types for business majors and social science majors. The results of the study are shown in <link target-id="eip-280"/>. Conduct a test of homogeneity. Test at a 5% level of significance.</para>
+<table id="eip-280" summary="The table presents personality types along the top from columns 2-6 and major (business and social science) in the first column. There are 3 rows."> <tgroup cols="6"><tbody> <row><entry/> <entry><emphasis>Open</emphasis></entry> <entry><emphasis>Conscientious</emphasis></entry> <entry><emphasis>Extrovert</emphasis></entry> <entry><emphasis>Agreeable</emphasis></entry> <entry><emphasis>Neurotic</emphasis></entry> </row> <row> <entry><emphasis>Business</emphasis></entry> <entry>41</entry> <entry>52</entry> <entry>46</entry> <entry>61</entry> <entry>58</entry> </row> <row> <entry><emphasis>Social Science</emphasis></entry> <entry>72</entry> <entry>75</entry> <entry>63</entry> <entry>80</entry> <entry>65</entry> </row> </tbody> </tgroup> </table>
+</problem>
+<solution id="eip-667">
+  <list id="fs-idp8692528" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>:  The distribution for personality types is the same for both majors</item>
+    <item><emphasis effect="italics">H<sub>a</sub></emphasis>: The distribution for personality types is not the same for both majors</item>
+    <item><emphasis effect="italics">df</emphasis> = 4</item>
+    <item>chi-square with <emphasis effect="italics">df</emphasis> = 4</item>
+    <item>test statistic = 3.01</item>
+    <item><emphasis effect="italics">p</emphasis>-value = 0.5568</item>
+    <item>Check student’s solution.</item>
+    <item>
+      <list id="fs-idp114714608" list-type="enumerated" number-style="lower-roman">
+        <item>Alpha: 0.05</item>
+        <item>Decision: Do not reject the null hypothesis.</item>
+        <item>Reason for decision:   <emphasis effect="italics">p</emphasis>-value &gt; alpha</item>
+        <item>Conclusion:  There is insufficient evidence to conclude that the distribution of personality types is different for business and social science majors.</item>
+      </list>
+    </item>
+  </list></solution>
+</exercise><exercise id="eip-302"><problem id="eip-252">
+  <para id="eip-617">Do men and women select different breakfasts? The breakfasts ordered by randomly selected men and women at a popular breakfast place is shown in <link target-id="eip-id1167950422174"/>. Conduct a test for homogeneity at a 5% level of significance. 
+  <table id="eip-id1167950422174" summary="The table presents personality types along the top from columns 2-6 and major (business and social science) in the first column. There are 3 rows."><tgroup cols="5"> <tbody> <row> <entry/> <entry><emphasis>French Toast</emphasis></entry> <entry><emphasis>Pancakes</emphasis></entry> <entry><emphasis>Waffles</emphasis></entry> <entry><emphasis>Omelettes</emphasis></entry> </row> <row> <entry><emphasis>Men</emphasis></entry> <entry>47</entry> <entry>35</entry> <entry>28</entry> <entry>53</entry> </row> <row> <entry><emphasis>Women</emphasis></entry> <entry>65</entry> <entry>59</entry> <entry>55</entry> <entry>60</entry> </row> </tbody> </tgroup> </table> </para></problem>
+</exercise><exercise id="eip-561">
+  <problem id="eip-737">
+<para id="eip-224">A fisherman is interested in whether the distribution of fish caught in Green Valley Lake is the same as the distribution of fish caught in Echo Lake. Of the 191 randomly selected fish caught in Green Valley Lake, 105 were rainbow trout, 27 were other trout, 35 were bass, and 24 were catfish. Of the 293 randomly selected fish caught in Echo Lake, 115 were rainbow trout, 58 were other trout, 67 were bass, and 53 were catfish. Perform a test for homogeneity at a 5% level of significance.</para></problem>
+  <solution id="fs-idm17119520">
+    <list id="fs-idp103994384" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: The distribution for fish caught is the same in Green Valley Lake and in Echo Lake.  </item>
+      <item><emphasis effect="italics">H<sub>a</sub></emphasis>: The distribution for fish caught is not the same in Green Valley Lake and in Echo Lake.  </item>
+      <item>3</item>
+      <item>chi-square with <emphasis effect="italics">df</emphasis> = 3</item>
+      <item>11.75</item>
+      <item><emphasis effect="italics">p</emphasis>-value = 0.0083</item>
+      <item>Check student’s solution.</item>
+      <item>
+        <list id="fs-idp3384256" list-type="enumerated" number-style="lower-roman">
+          <item>Alpha: 0.05</item>
+          <item>Decision: Reject the null hypothesis.</item>
+          <item>Reason for decision: <emphasis effect="italics">p</emphasis>-value &lt; alpha</item>
+          <item>Conclusion: There is evidence to conclude that the distribution of fish caught is different in Green Valley Lake and in Echo Lake</item>
+        </list>
+      </item>
+    </list></solution>
+</exercise>
+<exercise id="eip-495"><problem id="eip-784">
+      <para id="eip-70">In 2007, the United States had 1.5 million homeschooled students, according to the U.S. National Center for Education Statistics. In <link target-id="eip-idm1189216"/> you can see that parents decide to homeschool their children for different reasons, and some reasons are ranked by parents as more important than others. According to the survey results shown in the table, is the distribution of applicable reasons the same as the distribution of the most important reason? Provide your assessment at the 5% significance level. Did you expect the result you obtained?</para>
+      <table id="eip-idm1189216" summary="">
+        <tgroup cols="4">
+    <colspec colnum="1" colname="c1" colwidth="180"/>
+    <colspec colnum="2" colname="c2" colwidth="180"/>
+    <colspec colnum="3" colname="c3" colwidth="180"/>
+    <colspec colnum="4" colname="c4" colwidth="70"/>
+          <thead>
+            <row>
+              <entry>Reasons for Homeschooling</entry>
+              <entry>Applicable Reason (in thousands of respondents)</entry>
+              <entry>Most Important Reason (in thousands of respondents)</entry>
+              <entry>Row Total</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Concern about the environment of other schools</entry> <entry>1,321</entry> <entry>309</entry> <entry>1,630</entry>
+            </row>
+            <row>
+              <entry>Dissatisfaction with academic instruction at other schools</entry> <entry>1,096</entry> <entry>258</entry> <entry>1,354</entry>
+            </row>
+            <row>
+              <entry>To provide religious or moral instruction</entry> <entry>1,257</entry> <entry>540</entry> <entry>1,797</entry>
+            </row>
+            <row>
+              <entry>Child has special needs, other than physical or mental</entry> <entry>315</entry> <entry>55</entry> <entry>370</entry>
+            </row>
+            <row>
+              <entry>Nontraditional approach to child’s education</entry> <entry>984</entry> <entry>99</entry> <entry>1,083</entry>
+            </row>
+            <row>
+              <entry>Other reasons (e.g., finances, travel, family time, etc.)</entry> <entry>485</entry> <entry>216</entry> <entry>701</entry>
+            </row>
+            <row>
+              <entry>Column Total</entry> <entry>5,458</entry> <entry>1,477</entry> <entry>6,935</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </problem>
+    </exercise><exercise id="eip-316"><problem id="eip-962">
+      <para id="eip-421">When looking at energy consumption, we are often interested in detecting trends over time and how they correlate among different countries. The information in <link target-id="eip-idp102538544"/> shows the average energy use (in units of kg of oil equivalent per capita) in the USA and the joint European Union countries (EU) for the six-year period 2005 to 2010. Do the energy use values in these two areas come from the same distribution? Perform the analysis at the 5% significance level.</para><table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idp102538544" summary="--">
+<tgroup cols="4"><thead>
+<row>
+<entry>Year</entry>
+<entry>European Union</entry>
+<entry>United States</entry>
+<entry>Row Total</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>2010</entry>
+<entry>3,413</entry>
+<entry>7,164</entry>
+<entry>10,557</entry>
+</row>
+<row>
+<entry>2009</entry>
+<entry>3,302</entry>
+<entry>7,057</entry>
+<entry>10,359</entry>
+</row>
+<row>
+<entry>2008</entry>
+<entry>3,505</entry>
+<entry>7,488</entry>
+<entry>10,993</entry>
+</row>
+<row>
+<entry>2007</entry>
+<entry>3,537</entry>
+<entry>7,758</entry>
+<entry>11,295</entry>
+</row>
+<row>
+<entry>2006</entry>
+<entry>3,595</entry>
+<entry>7,697</entry>
+<entry>11,292</entry>
+</row>
+<row>
+<entry>2005</entry>
+<entry>3,613</entry>
+<entry>7,847</entry>
+<entry>11,460</entry>
+</row>
+<row>
+<entry>Column Total</entry>
+<entry>20,965</entry>
+<entry>45,011</entry>
+<entry>65,976</entry>
+</row>
+</tbody>
+</tgroup>
+</table></problem>
+      <solution id="fs-idm43380128">
+        <list id="fs-idm34614464" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: The distribution of average energy use in the USA is the same as in Europe between 2005 and 2010.</item>
+          <item><emphasis effect="italics">H<sub>a</sub></emphasis>: The distribution of average energy use in the USA is not the same as in Europe between 2005 and 2010.</item>
+          <item><emphasis effect="italics">df</emphasis> = 4</item>
+          <item>chi-square with <emphasis effect="italics">df</emphasis> = 4</item>
+          <item>test statistic = 2.7434</item>
+          <item><emphasis effect="italics">p</emphasis>-value = 0.7395</item>
+          <item>Check student’s solution.</item>
+          <item>
+            <list id="fs-idp64830064" list-type="enumerated" number-style="lower-roman">
+              <item>Alpha: 0.05</item>
+              <item>Decision: Do not reject the null hypothesis.</item>
+              <item>Reason for decision: <emphasis effect="italics">p</emphasis>-value &gt; alpha</item>
+              <item>Conclusion: At the 5% significance level, there is insufficient evidence to conclude that the average energy use values in the US and EU are not derived from different distributions for the period from 2005 to 2010.</item>
+            </list>
+          </item>
+        </list></solution>
+    </exercise><exercise id="eip-653"><problem id="eip-200">
+        <para id="eip-454">The Insurance Institute for Highway Safety collects safety information about all types of cars every year, and publishes a report of Top Safety Picks among all cars, makes, and models. <link target-id="eip-idp53245072"/> presents the number of Top Safety Picks in six car categories for the two years 2009 and 2013. Analyze the table data to conclude whether the distribution of cars that earned the Top Safety Picks safety award has remained the same between 2009 and 2013. Derive your results at the 5% significance level.</para>
+        <table id="eip-idp53245072" summary="">
+          <tgroup cols="">
+            <thead>
+              <row>
+                <entry>Year \ Car Type</entry>
+                <entry>Small</entry>
+                <entry>Mid-Size</entry>
+                <entry>Large</entry>
+                <entry>Small SUV</entry>
+                <entry>Mid-Size SUV</entry>
+                <entry>Large SUV</entry>
+                <entry>Row Total</entry>
+              </row>
+            </thead>
+
+            <tbody>
+              <row>
+                <entry>2009</entry>
+                <entry>12</entry>
+                <entry>22</entry>
+                <entry>10</entry>
+                <entry>10</entry>
+                <entry>27</entry>
+                <entry>6</entry>
+                <entry>87</entry>
+              </row>
+                <row>
+                  <entry>2013</entry>
+                  <entry>31</entry>
+                  <entry>30</entry>
+                  <entry>19</entry>
+                  <entry>11</entry>
+                  <entry>29</entry>
+                  <entry>4</entry>
+                  <entry>124</entry>
+                </row>
+                <row>
+                <entry><emphasis>Column Total</emphasis></entry>
+                <entry>43</entry>
+                <entry>52</entry>
+                <entry>29</entry>
+                <entry>21</entry>
+                <entry>56</entry>
+                <entry>10</entry>
+                <entry>211</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </problem>
+      </exercise></section>
+</content>
+</document>

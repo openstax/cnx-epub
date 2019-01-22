@@ -1,0 +1,1007 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Geometric Distribution</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46953/latest</md:content-url>
+  <md:content-id>m46953</md:content-id>
+  <md:title>Geometric Distribution</md:title>
+  <md:version>1.10</md:version>
+  <md:created>2013/07/19 03:29:29 -0500</md:created>
+  <md:revised>2018/09/06 15:47:36 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>geometric distribution</md:keyword>
+    <md:keyword>geometric probability distribution</md:keyword>
+    <md:keyword>geometric probability distribution function</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="element-456">There are three main characteristics of a geometric experiment.</para>
+
+<list id="geometricexperiment" list-type="enumerated"><item>There are one or more Bernoulli trials with all failures except the last one, which is a success. In other words, you keep repeating what you are doing until the first success. Then you stop. For example, you throw a dart at a bullseye until you hit the bullseye. The first time you hit the bullseye is a "success" so you stop throwing the dart. It might take six tries until you hit the bullseye. You can think of the trials as failure, failure, failure, failure, failure, success, STOP.</item>
+<item>In theory, the number of trials could go on forever. There must be at least one trial.</item>
+<item>The probability, <emphasis effect="italics">p</emphasis>, of a success and the probability, <emphasis effect="italics">q</emphasis>, of a failure is the same for each trial. <emphasis effect="italics">p</emphasis> + <emphasis effect="italics">q</emphasis> = 1 and <emphasis effect="italics">q</emphasis> = 1 &#8722; <emphasis effect="italics">p</emphasis>. For example, the probability of rolling a three when you throw one fair die is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>6</m:mn>
+  </m:mfrac>
+ </m:mrow>
+</m:math>. This is true no matter how many times you roll the die. Suppose you want to know the probability of getting the first three on the fifth roll. On rolls one through four, you do not get a face with a three. The probability for each of the rolls is <emphasis effect="italics">q</emphasis>&#160;= <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mtext>5</m:mtext>
+   <m:mtext>6</m:mtext>
+  </m:mfrac>
+ </m:mrow>
+</m:math>, the probability of a failure. The probability of getting a three on the fifth roll is <m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>5</m:mn>
+     <m:mn>6</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>5</m:mn>
+     <m:mn>6</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>5</m:mn>
+     <m:mn>6</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>5</m:mn>
+     <m:mn>6</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>6</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = 0.0804</item>
+</list><para id="fs-idp8041968"><emphasis effect="italics">X</emphasis> = the number of independent trials until the first success.</para>
+
+<example id="element-328">
+<para id="element-341">You play a game of chance that you can either win or lose (there are no other possibilities) <emphasis>until</emphasis> you lose. Your probability of losing is <emphasis effect="italics">p</emphasis> = 0.57. What is the
+probability that it takes five games until you lose? Let <emphasis effect="italics">X</emphasis> = the number of games you play until you lose (includes the losing game). Then <emphasis effect="italics">X</emphasis> takes on the values 1, 2, 3, ... (could go on indefinitely). The probability question is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 5).</para></example>
+
+<note id="fs-idm23905008" class="statistics try"><label/><title>Try It</title>
+
+<exercise id="fs-idm107886512">
+<problem id="fs-idm74999200">
+<para id="fs-idm66653104">You throw darts at a board until you hit the center area. Your probability of hitting the center area is <emphasis effect="italics">p</emphasis> = 0.17. You want to find the probability that it takes eight throws until you hit the center. What values does <emphasis effect="italics">X</emphasis> take on?</para></problem>
+</exercise>
+</note><example id="element-15">
+<para id="element-320">A safety engineer feels that 35% of all industrial accidents in her plant are caused by failure of employees to follow instructions. She decides to look at the accident reports (selected randomly and replaced in the pile after reading) <emphasis>until</emphasis> she finds one that shows an accident caused by failure of employees to follow instructions. On average, how many reports would the safety engineer <emphasis>expect</emphasis> to look at until she finds a report showing an accident caused by employee failure to follow instructions? What is the probability that the safety engineer will have to examine at least three reports until she finds a report showing an accident caused by employee failure to follow instructions?</para><para id="element-112">Let <emphasis effect="italics">X</emphasis> = the number of accidents the safety engineer must examine <emphasis>until</emphasis> she finds a report showing an accident caused by employee failure to follow instructions. <emphasis effect="italics">X</emphasis> takes on the values 1, 2, 3, .... The first question asks you to find the <emphasis>expected value</emphasis> or the mean. The second question asks you to find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8805; 3). ("At least" translates to a "greater than or equal to" symbol).</para></example>
+
+
+<note id="fs-idm100368272" class="statistics try"><label/><title>Try It</title>
+
+
+<exercise id="fs-idm110743488"><problem id="fs-idm112214080">
+<para id="fs-idm122054272">An instructor feels that 15% of students get below a C on their final exam. She decides to look at final exams (selected randomly and replaced in the pile after reading) until she finds one that shows a grade below a C. We want to know the probability that the instructor will have to examine at least ten exams until she finds one with a grade below a C. What is the probability question stated mathematically?</para></problem>
+</exercise></note><example id="element-616">
+<para id="element-741">Suppose that you are looking for a student at your college who lives within five miles of you. You know that 55% of the 25,000 students do live within five miles of you. You randomly contact students from the college <emphasis>until</emphasis> one says he or she lives within five miles of you. What is the probability that you need to contact four people?</para><para id="element-724">This is a geometric problem because you may have a number of failures before you have the one success you desire. Also, the probability of a success stays the same each time you ask a student if he or she lives within five miles of you. There is no definite number of trials (number of times you ask a student).<newline count="2"/></para><exercise id="element-823">
+<problem id="id27319141">
+  <para id="element-4422">a. Let <emphasis effect="italics">X</emphasis> = the number of ____________ you must ask ____________ one says yes.</para></problem>
+<solution id="id27319163">
+  <para id="element-153">a. Let <emphasis effect="italics">X</emphasis> = the number of <emphasis>students</emphasis> you must ask <emphasis>until</emphasis> one says yes.<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="element-766"><problem id="id27319211">
+<para id="element-789">b. What values does <emphasis effect="italics">X</emphasis> take on?</para>
+</problem>
+<solution id="id27319232">
+<para id="element-140">b. 1, 2, 3, &#8230;, (total number of students)<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="element-208"><problem id="id27319259">
+  <para id="element-884">c. What are <emphasis effect="italics">p</emphasis> and <emphasis effect="italics">q</emphasis>?</para></problem>
+
+<solution id="id27319284">
+  <para id="fs-idm85251472">c. <emphasis effect="italics">p</emphasis> = 0.55; <emphasis effect="italics">q</emphasis> = 0.45<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="element-413"><problem id="id27319331">
+  <para id="element-458">d. The probability question is <emphasis effect="italics">P</emphasis>(_______).</para></problem>
+<solution id="id27319348">
+  <para id="element-996">d. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 4)</para></solution>
+</exercise></example>
+
+
+<note id="fs-idm34549952" class="statistics try"><label/><title>Try It</title>
+<exercise id="fs-idm110058608">
+<problem id="fs-idp36058000">
+<para id="fs-idm107872832">You need to find a store that carries a special printer ink. You know that of the stores that carry printer ink, 10% of them carry the special ink. You randomly call each store until one has the ink you need. What are <emphasis effect="italics">p</emphasis> and <emphasis effect="italics">q</emphasis>?</para>
+</problem>
+</exercise></note><section id="element-125">
+<title>Notation for the Geometric: G = Geometric Probability Distribution Function</title>
+<para id="element-156"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(<emphasis effect="italics">p</emphasis>)</para><para id="element-953">Read this as "<emphasis effect="italics">X</emphasis> is a random variable with a <term>geometric distribution</term>." The parameter is <emphasis effect="italics">p</emphasis>; <emphasis effect="italics">p</emphasis> = the probability of a success for each trial.</para></section>
+<example id="element-340">
+<para id="element-38">Assume that the probability of a defective computer component is 0.02. Components are randomly selected. Find the probability that the first defect is caused by the seventh component tested. How many components do you expect to test until one is found to be defective?</para><para id="element-20">Let <emphasis effect="italics">X</emphasis> = the number of computer components tested until the first defect is found.</para>
+<para id="element-857"><emphasis effect="italics">X</emphasis> takes on the values 1, 2, 3, ... where <emphasis effect="italics">p</emphasis> = 0.02. <emphasis effect="italics">X</emphasis> ~ G(0.02)</para>
+
+<para id="element-826">Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 7). <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 7) = 0.0177.</para>
+
+<note id="fs-idm55152368" class="statistics calculator"><label/>
+<para id="fs-idm122297328">To find the probability that <emphasis effect="italics">x</emphasis> = 7,</para>
+<list id="eip-179" list-type="bulleted"><item>Enter 2<sup>nd</sup>, DISTR</item>
+<item>Scroll down and select geometpdf(</item>
+<item>Press ENTER</item>
+<item>Enter 0.02, 7); press ENTER to see the result: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 7) = 0.0177</item>
+</list></note><para id="fs-idm136610832">To find the probability that <emphasis effect="italics">x</emphasis> &#8804; 7, follow the same instructions EXCEPT select E:geometcdf(as the distribution function.</para>
+
+<para id="element-833">The probability that the seventh component is the first defect is 0.0177.</para>
+<para id="element-223">The graph of <emphasis effect="italics">X</emphasis> ~ G(0.02) is:</para>
+
+<figure id="fs-idp26519760"><media id="id26371923" display="block" alt="This graph shows a geometric probability distribution. It consists of bars that peak at the left and slope downwards with each successive bar to the right. The values on the x-axis count the number of computer components tested until the defect is found. The y-axis is scaled from 0 to 0.02 in increments of 0.005.">
+<image src="fig-ch04_06_01N.jpg" mime-type="image/jpg" width="420"/></media></figure><para id="fs-idm44019328">The <emphasis effect="italics">y</emphasis>-axis contains the probability of <emphasis effect="italics">x</emphasis>, where <emphasis effect="italics">X</emphasis> = the number of computer components tested.</para>
+
+<para id="element-785">The number of components that you would expect to test until you find the first defective one is the mean, <m:math>
+ <m:mrow>
+  <m:mi>&#956;</m:mi><m:mtext>&#160;=&#160;50</m:mtext>
+ </m:mrow>
+</m:math>.</para>
+
+<para id="element-261">The formula for the mean is <emphasis effect="italics">&#956;</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mi>p</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>0.02</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 50</para>
+
+<para id="element-782">The formula for the variance is <emphasis effect="italics">&#963;</emphasis><sup>2</sup> = <m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mi>p</m:mi>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mi>p</m:mi>
+    </m:mfrac>
+    <m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:mn>0.02</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:mn>0.02</m:mn>
+     </m:mrow>
+    </m:mfrac>
+    <m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = 2,450</para><para id="element-443">The standard deviation is <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mi>p</m:mi>
+      </m:mfrac>
+
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mi>p</m:mi>
+      </m:mfrac>
+      <m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mrow>
+        <m:mn>0.</m:mn><m:mtext>02</m:mtext>
+       </m:mrow>
+      </m:mfrac>
+
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mrow>
+        <m:mn>0.</m:mn><m:mtext>02</m:mtext>
+       </m:mrow>
+      </m:mfrac>
+      <m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = 49.5</para></example>
+
+<note id="fs-idm16727632" class="statistics try finger"><label/><title>Try It</title>
+<exercise id="fs-idm153734704"><problem id="fs-idm2610224">
+<para id="fs-idm122642640">The probability of a defective steel rod is 0.01. Steel rods are selected at random. Find the probability that the first defect occurs on the ninth steel rod. Use the TI-83+ or TI-84 calculator to find the answer.</para>
+</problem>
+</exercise></note><example id="fs-idm65101072">
+<exercise id="fs-idm83790480">
+<problem id="fs-idm65243344">
+<para id="fs-idm113071296">The lifetime risk of developing pancreatic cancer is about one in 78 (1.28%). Let <emphasis effect="italics">X</emphasis> = the number of people you ask until one says he or she has pancreatic cancer. Then <emphasis effect="italics">X</emphasis> is a discrete random variable with a geometric distribution: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:mn>78</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> or <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(0.0128).</para><list id="fs-idm128110288" list-type="enumerated" number-style="lower-alpha"><item>What is the probability of that you ask ten people before one says he or she has pancreatic cancer?</item>
+<item>What is the probability that you must ask 20 people?</item>
+<item>Find the (i) mean and (ii) standard deviation of <emphasis effect="italics">X</emphasis>.</item>
+</list></problem>
+
+<solution id="fs-idp19888080">
+<list id="fs-idm133938784" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 10) = geometpdf(0.0128, 10) = 0.0114</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 20) = geometpdf(0.0128, 20) = 0.01</item>
+<item>
+<list id="eip-idm162329472" list-type="enumerated" number-style="lower-roman"><item>Mean = <emphasis effect="italics">&#956;</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mi>p</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>0.0128</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 78</item>
+<item>Standard Deviation = <emphasis effect="italics">&#963;</emphasis>&#160;=&#160;<m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mi>p</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mi>p</m:mi>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mn>0.0128</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mrow>
+        <m:mn>0.0128</m:mn>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> &#8776; 77.6234</item>
+</list></item>
+</list></solution>
+</exercise>
+</example>
+
+
+<note id="fs-idm45764336" class="statistics try"><label/><title>Try It</title>
+<exercise id="eip-271"><problem id="fs-idm130962416">
+
+<para id="fs-idm153911248">The literacy rate for a nation measures the proportion of people age 15 and over who can read and write. The literacy rate for women in Afghanistan is 12%. Let <emphasis effect="italics">X</emphasis> = the number of Afghani women you ask until one says that she is literate.</para>
+
+
+<list id="fs-idm111769216" list-type="enumerated" number-style="lower-alpha">
+<item>What is the probability distribution of <emphasis effect="italics">X</emphasis>?</item>
+<item>What is the probability that you ask five women before one says she is literate?</item>
+<item>What is the probability that you must ask ten women?</item>
+<item>Find the (i) mean and (ii) standard deviation of <emphasis effect="italics">X</emphasis>.</item>
+</list></problem>
+</exercise></note><section id="fs-idp2191840" class="references"><title>References</title><para id="fs-idm46068128">&#8220;Millennials: A Portrait of Generation Next,&#8221; PewResearchCenter. Available online at http://www.pewsocialtrends.org/files/2010/10/millennials-confident-connected-open-to-change.pdf (accessed May 15, 2013).</para>
+<para id="fs-idm5218624">&#8220;Millennials: Confident. Connected. Open to Change.&#8221; Executive Summary by PewResearch Social &amp; Demographic Trends, 2013. Available online at  http://www.pewsocialtrends.org/2010/02/24/millennials-confident-connected-open-to-change/ (accessed May 15, 2013).</para>
+<para id="fs-idm40376512">&#8220;Prevalence of HIV, total (% of populations ages 15-49),&#8221; The World Bank, 2013. Available online at http://data.worldbank.org/indicator/SH.DYN.AIDS.ZS?order=wbapi_data_value_2011+wbapi_data_value+wbapi_data_value-last&amp;sort=desc (accessed May 15, 2013).</para>
+<para id="eip-idp23364672">Pryor, John H., Linda DeAngelo, Laura Palucki Blake, Sylvia Hurtado, Serge Tran. <emphasis effect="italics">The American Freshman: National Norms Fall 2011.</emphasis> Los Angeles: Cooperative Institutional Research Program at the Higher Education Research Institute at UCLA, 2011. Also available online at http://heri.ucla.edu/PDFs/pubs/TFS/Norms/Monographs/TheAmericanFreshman2011.pdf (accessed May 15, 2013).</para><para id="fs-idm55727728">&#8220;Summary of the National Risk and Vulnerability Assessment 2007/8: A profile of Afghanistan,&#8221; The European Union and ICON-Institute. Available online at http://ec.europa.eu/europeaid/where/asia/documents/afgh_brochure_summary_en.pdf (accessed May 15, 2013).</para>
+<para id="eip-idm91058144">&#8220;The World FactBook,&#8221; Central Intelligence Agency. Available online at https://www.cia.gov/library/publications/the-world-factbook/geos/af.html (accessed May 15, 2013).</para>
+<para id="fs-idp46849200">&#8220;UNICEF reports on Female Literacy Centers in Afghanistan established to teach women and girls basic resading [sic] and writing skills,&#8221; UNICEF Television. Video available online at http://www.unicefusa.org/assets/video/afghan-female-literacy-centers.html (accessed May 15, 2013).</para>
+</section><section id="fs-idm56939568" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm65648304">There are three characteristics of a geometric experiment:</para><list id="fs-idm122082272" list-type="enumerated"><item>There are one or more Bernoulli trials with all failures except the last one, which is a success.</item>
+<item>In theory, the number of trials could go on forever. There must be at least one trial.</item>
+<item>The probability, <emphasis effect="italics">p</emphasis>, of a success and the probability, <emphasis effect="italics">q</emphasis>, of a failure are the same for each trial.</item>
+</list><para id="fs-idm7912656">In a geometric experiment, define the discrete random variable <emphasis effect="italics">X</emphasis> as the number of independent trials until the first success. We say that X has a geometric distribution and write <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(<emphasis effect="italics">p</emphasis>) where <emphasis effect="italics">p</emphasis> is the probability of success in a single trial.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm148033936">The mean of the geometric distribution <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(<emphasis effect="italics">p</emphasis>) is <emphasis effect="italics">&#956;</emphasis> = <m:math><m:mfrac><m:mn>1</m:mn><m:mi>p</m:mi></m:mfrac></m:math> and the standard deviation is <m:math>
+ <m:mrow>
+<m:mi>&#963;</m:mi>
+  <m:msqrt>
+   <m:mrow>
+
+    <m:mfrac>
+     <m:mrow><m:mo>(</m:mo>
+      <m:mtext>1</m:mtext><m:mo>&#8722;</m:mo><m:mi>p</m:mi><m:mo>)</m:mo>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mi>p</m:mi>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mi>p</m:mi>
+    </m:mfrac>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mi>p</m:mi>
+      </m:mfrac>
+      <m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>.</para></section>
+
+<section id="fs-idm130503328" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idm60068096"><emphasis effect="italics">X</emphasis> ~ G(<emphasis effect="italics">p</emphasis>) means that the discrete random variable <emphasis effect="italics">X</emphasis> has a geometric probability distribution with probability of success in a single trial <emphasis effect="italics">p</emphasis>.</para><para id="fs-idm109639600"><emphasis effect="italics">X</emphasis> = the number of independent trials until the first success</para><para id="fs-idm108518832"><emphasis effect="italics">X</emphasis> takes on the values <emphasis effect="italics">x</emphasis> = 1, 2, 3, ...</para>
+<para id="fs-idm78000128"><emphasis effect="italics">p</emphasis> = the probability of a success for any trial</para>
+<para id="fs-idm186439648"><emphasis effect="italics">q</emphasis> = the probability of a failure for any trial <emphasis effect="italics">p</emphasis> + <emphasis effect="italics">q</emphasis> = 1 <newline/><emphasis effect="italics">q</emphasis> = 1 &#8211; <emphasis effect="italics">p</emphasis></para><para id="fs-idp5555584">The mean is <emphasis effect="italics">&#956;</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mi>p</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>.</para>
+<para id="fs-idm128106384">The standard deviation is <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>1</m:mn><m:mtext>&#160;</m:mtext><m:mo>&#8211;</m:mo><m:mtext>&#160;</m:mtext><m:mi>p</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mi>p</m:mi>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>
+ = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mi>p</m:mi>
+    </m:mfrac>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mi>p</m:mi>
+      </m:mfrac>
+      <m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>
+.</para></section>
+
+
+
+
+<section id="fs-idm146411072" class="practice">
+<para id="element-668"><emphasis effect="italics">Use the following information to answer the next six exercises:</emphasis> The Higher Education Research Institute at UCLA collected data from 203,967 incoming first-time, full-time freshmen from 270 four-year colleges and universities in the U.S. 71.3% of those students replied that, yes, they believe that same-sex couples should have the right to legal marital status. Suppose that you randomly select freshman from the study until you find one who replies &#8220;yes.&#8221; You are interested in the number of freshmen you must ask.</para><exercise id="exerciseone">
+<problem id="id26789513">
+<para id="prob_1">In words, define the random variable <emphasis effect="italics">X</emphasis>.</para></problem>
+<solution id="fs-idm9960432">
+<para id="fs-idp19160256"><emphasis effect="italics">X</emphasis> = the number of freshmen selected from the study until one replied "yes" that same-sex couples should have the right to legal marital status.</para></solution>
+</exercise>
+
+
+<exercise id="exercisetwo"><problem id="id26749070">
+<para id="prob_2"><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</para>
+</problem>
+
+<!-- <solution id="id26594865">
+<para id="element-88723458234"><emphasis effect="italics">G</emphasis>(0.713)</para></solution> --></exercise><exercise id="exercisethree">
+<problem id="id26750261">
+<para id="prob_3">What values does the random variable <emphasis effect="italics">X</emphasis> take on?</para></problem>
+<solution id="id26604547">
+<para id="element-88758234234">1,2,&#8230;</para>
+</solution>
+</exercise>
+
+<exercise id="exercisefour"><problem id="id26576458">
+<para id="prob_4">Construct the probability distribution function (PDF).  Stop at <emphasis effect="italics">x</emphasis> = 6.</para>
+
+<table id="element-222" summary="The table will list the number of freshmen asked if they plan to work full time while in college and respective probabilities.">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+  <row>
+    <entry><emphasis effect="italics">x</emphasis></entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+  </row>
+</thead>
+<tbody>
+
+  <row>
+    <entry>1</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>2</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>3</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>4</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>5</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>6</entry>
+    <entry/>
+  </row>
+</tbody>
+</tgroup>
+</table></problem>
+
+<!-- <solution id="fs-idp46519888">
+<table id="fs-idm3793312" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+  <row>
+    <entry><emphasis effect="italics">x</emphasis></entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>1</entry>
+    <entry>0.7130</entry>
+  </row>
+  <row>
+    <entry>2</entry>
+    <entry>0.2046</entry>
+  </row>
+  <row>
+    <entry>3</entry>
+    <entry>0.0587</entry>
+  </row>
+  <row>
+    <entry>4</entry>
+    <entry>0.0169</entry>
+  </row>
+  <row>
+    <entry>5</entry>
+    <entry>0.0048</entry>
+  </row>
+  <row>
+    <entry>6</entry>
+    <entry>0.0014</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</solution> -->
+</exercise><exercise id="exercisefive">
+<problem id="id26788653">
+<para id="prob_5">On average (<emphasis effect="italics">&#956;</emphasis>), how many freshmen would you expect to have to ask until you found one who replies "yes?"</para></problem>
+<solution id="id25897948">
+<para id="element-88758232434">1.4</para></solution>
+</exercise>
+
+
+<exercise id="exercisesix"><problem id="id26586606">
+<para id="prob_6">What is the probability that you will need to ask fewer than three freshmen?</para>
+</problem>
+
+<!-- <solution id="id26615988">
+<para id="element-88765358234234">0.9176</para></solution> -->
+</exercise></section>
+
+<section id="fs-idm13601184" class="free-response">
+<title>HOMEWORK</title>
+
+<exercise id="element-589"><problem id="id10157340">
+  <para id="element-573">A consumer looking to buy a used red Miata car will call dealerships until she finds a dealership that carries the car. She estimates the probability that any independent dealership will have the car will be 28%. We are interested in the number of dealerships she must call.</para>
+<list id="element-657" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>On average, how many dealerships would we expect her to have to call until she finds one that has the car?</item>
+<item>Find the probability that she must call at most four dealerships.</item>
+<item>Find the probability that she must call three or four dealerships.</item></list></problem>
+
+<!-- <solution id="id18672601">
+  <list id="element-621" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the number of dealers she calls until she finds one with a used red Miata.</item>
+<item>1, 2, 3,...</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(0.28)</item>
+<item>3.57</item>
+<item>0.7313</item>
+<item>0.2497</item></list></solution> --></exercise><exercise id="element-888"><problem id="id18972697">
+  <para id="element-593">Suppose that the probability that an adult in America will watch the Super Bowl is 40%. Each person is considered independent. We are interested in the number of adults in America we must survey until we find one who will watch the Super Bowl.</para>
+
+<list id="element-552" list-type="enumerated" number-style="lower-alpha"><item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>How many adults in America do you expect to survey until you find one who will watch the Super Bowl?</item>
+<item>Find the probability that you must ask seven people.</item>
+<item>Find the probability that you must ask three or four people.</item></list></problem>
+<solution id="fs-idm19603744">
+<list id="fs-idm45770752" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the number of adults in America who are surveyed until one says he or she will watch the Super Bowl.</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(0.40)</item>
+<item>2.5</item>
+<item>0.0187</item>
+<item>0.2304</item>
+</list></solution>
+</exercise>
+
+<exercise id="element-815"><problem id="id12943484">
+  <para id="fs-idm8041872">It has been estimated that only about 30% of California residents have adequate earthquake supplies. Suppose we are interested in the number of California residents we must survey until we find a resident who does <emphasis>not</emphasis> have adequate earthquake supplies.
+  </para>
+<list id="element-414" list-type="enumerated" number-style="lower-alpha"><item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>What is the probability that we must survey just one or two residents until we find a California resident who does not have adequate earthquake supplies?</item>
+<item>What is the probability that we must survey at least three California residents until we find a California resident who does not have adequate earthquake supplies?</item>
+<item>How many California residents do you expect to need to survey until you find a California resident who <emphasis>does not</emphasis> have adequate earthquake supplies?</item>
+<item>How many California residents do you expect to need to survey until you find a California resident who <emphasis>does</emphasis> have adequate earthquake supplies?</item></list>
+</problem>
+</exercise>
+
+
+<exercise id="eip-20"><problem id="eip-idm58825312">
+<para id="eip-864">In one of its Spring catalogs, L.L. Bean&#174; advertised footwear on 29 of its 192 catalog pages. Suppose we randomly survey 20 pages. We are interested in the number of pages that advertise footwear. Each page may be picked more than once.</para>
+<list id="eip-idp54208176" list-type="enumerated" number-style="lower-alpha">
+<item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>List the values that <emphasis effect="italics">X</emphasis> may take on.</item>
+<item>Give the distribution of <emphasis effect="italics">X</emphasis>. <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>How many pages do you expect to advertise footwear on them?</item>
+<item>Is it probable that all twenty will advertise footwear on them? Why or why not?</item>
+<item>What is the probability that fewer than ten will advertise footwear on them?</item>
+<item>Reminder: A page may be picked more than once. We are interested in the number of pages that we must randomly survey until we find one that has footwear advertised on it. Define the random variable <emphasis effect="italics">X</emphasis> and give its distribution.</item>
+<item>What is the probability that you only need to survey at most three pages in order to find one that advertises footwear on it?</item>
+<item>How many pages do you expect to need to survey in order to find one that advertises footwear?</item>
+</list>
+</problem>
+<solution id="eip-213"><para id="eip-id1170896063804"><newline/>
+    <list id="eip-idp55757552" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the number of pages that advertise footwear</item>
+<item><emphasis effect="italics">X</emphasis> takes on the values 0, 1, 2, ..., 20</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">B</emphasis>(20, <m:math><m:mrow><m:mfrac><m:mn>29</m:mn><m:mn>192</m:mn></m:mfrac></m:mrow></m:math>)</item>
+
+        <item>3.02</item>
+        <item>No</item>
+        <item>0.9997</item>
+<item><emphasis effect="italics">X</emphasis> = the number of pages we must survey until we find one that advertises footwear.  <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(<m:math><m:mrow><m:mfrac><m:mn>29</m:mn><m:mn>192</m:mn></m:mfrac></m:mrow></m:math>)</item>
+     <item>0.3881</item>
+        <item>6.6207 pages</item>
+</list></para></solution>
+</exercise><exercise id="eip-161"><problem id="eip-id1169694244259">
+  <para id="eip-id1169669735226">Suppose that you are performing the probability experiment of rolling one fair six-sided die. Let <emphasis effect="italics">F</emphasis> be the event of rolling a four or a five. You are interested in how many times you need to roll the die in order to obtain the first four or five as the outcome.</para>
+<list id="eip-id1169680850542" list-type="bulleted"><item><emphasis effect="italics">p</emphasis> = probability of success (event <emphasis effect="italics">F</emphasis> occurs)</item>
+<item><emphasis effect="italics">q</emphasis> = probability of failure (event <emphasis effect="italics">F</emphasis> does not occur)</item>
+</list>
+<list id="element-28" list-type="enumerated" number-style="lower-alpha">
+<item>Write the description of the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>What are the values that <emphasis effect="italics">X</emphasis> can take on?</item>
+<item>Find the values of <emphasis effect="italics">p</emphasis> and <emphasis effect="italics">q</emphasis>.</item>
+<item>Find the probability that the first occurrence of event <emphasis effect="italics">F</emphasis> (rolling a four or five) is on the second trial.</item>
+</list>
+</problem>
+<!-- <solution id="eip-id1169696227831">
+<list id="fs-idm139880640" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the number of times you need to roll the die in order to get the face four or five.</item>
+<item><emphasis effect="italics">X</emphasis> can take on the values 1, 2, 3, and so on.</item>
+<item><emphasis effect="italics">p</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mn>6</m:mn>
+  </m:mfrac>
+ </m:mrow>
+</m:math> and <emphasis effect="italics">q</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>4</m:mn>
+   <m:mn>6</m:mn>
+  </m:mfrac>
+ </m:mrow>
+</m:math></item>
+<item>0.2222</item></list></solution> -->
+</exercise><exercise id="fs-idp102337072">
+<problem id="fs-idp1607728">
+<para id="fs-idp18025264">Ellen has music practice three days a week. She practices for all of the three days 85% of the time, two days 8% of the time, one day 4% of the time, and no days 3% of the time. One week is selected at random. What values does <emphasis effect="italics">X</emphasis> take on?</para></problem>
+<solution id="fs-idp101197760">
+<para id="fs-idp44898224">0, 1, 2, and 3</para>
+</solution>
+</exercise>
+
+
+
+<exercise id="fs-idm51281904"><problem id="fs-idm122477648">
+<para id="fs-idm73224944">The World Bank records the prevalence of HIV in countries around the world. According to their data, &#8220;Prevalence of HIV refers to the percentage of people ages 15 to 49 who are infected with HIV.&#8221;<footnote id="fs-idm108474144">&#8221;Prevalence of HIV, total (% of populations ages 15-49),&#8221; The World Bank, 2013. Available online at http://data.worldbank.org/indicator/SH.DYN.AIDS.ZS?order=wbapi_data_value_2011+wbapi_data_value+wbapi_data_value-last&amp;sort=desc (accessed May 15, 2013).</footnote> In South Africa, the prevalence of HIV is 17.3%. Let <emphasis effect="italics">X</emphasis> = the number of people you test until you find a person infected with HIV.</para>
+
+<list id="fs-idm123061824" list-type="enumerated" number-style="lower-alpha"><item>Sketch a graph of the distribution of the discrete random variable <emphasis effect="italics">X</emphasis>.</item>
+<item>What is the probability that you must test 30 people to find one with HIV?</item>
+<item>What is the probability that you must ask ten people?</item>
+<item>Find the (i) mean and (ii) standard deviation of the distribution of <emphasis effect="italics">X</emphasis>.</item>
+</list></problem>
+
+<!-- <solution id="fs-idm80914272">
+<list id="fs-idm152030224" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(0.173)
+<figure id="fs-idm31509056"><media id="fs-idm111066384" alt="This graph shows a geometric probability distribution. It consists of bars that peak at the left and slope downwards with each successive bar to the right. The values on the x-axis count the number of indivuduals tested before an infected person is found. The y-axis is scaled from 0 to 0.2 in increments of 0.02." display="block">
+<image src="CNX_Stats_C04_M06_001anno.jpg" mime-type="image/jpg" width="420"/>
+</media></figure></item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 30) = geometpdf(0.173, 30) = 0.0007</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 10) = geometpdf(0.173, 10) = 0.0313</item>
+<item>
+<list id="fs-idm6942352" list-type="enumerated" number-style="lower-roman"><item>Mean = <emphasis effect="italics">&#956;</emphasis> =  <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mi>p</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>0.173</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> &#8776; 5.7804</item>
+<item>Standard Deviation = <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mi>p</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mi>p</m:mi>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mtext>0</m:mtext><m:mtext>.173</m:mtext>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mrow>
+        <m:mn>0.173</m:mn>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = 5.2566</item>
+</list></item>
+</list></solution> -->
+</exercise><exercise id="fs-idm43916688">
+<problem id="fs-idm111519696">
+<para id="fs-idm133743056">According to a recent Pew Research poll, 75% of millenials (people born between 1981 and 1995) have a profile on a social networking site. Let <emphasis effect="italics">X</emphasis> = the number of millenials you ask until you find a person without a profile on a social networking site.</para>
+<list id="fs-idm123638336" list-type="enumerated" number-style="lower-alpha"><item>Describe the distribution of <emphasis effect="italics">X</emphasis>.</item>
+<item>Find the (i) mean and (ii) standard deviation of <emphasis effect="italics">X</emphasis>.</item>
+<item>What is the probability that you must ask ten people to find one person without a social networking site?</item>
+<item>What is the probability that you must ask 20 people to find one person without a social networking site?</item>
+<item>What is the probability that you must ask <emphasis effect="italics">at most</emphasis> five people?</item>
+</list></problem>
+<solution id="fs-idm146222544">
+<list id="fs-idm128890816" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(0.25)</item>
+<item>
+<list id="fs-idm102260160" list-type="enumerated" number-style="lower-roman"><item>Mean = <emphasis effect="italics">&#956;</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mi>p</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>0.25</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> = 4</item>
+<item>Standard Deviation = &#963; = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mi>p</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mi>p</m:mi>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mtext>0</m:mtext><m:mtext>.25</m:mtext>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mrow>
+        <m:mn>0.25</m:mn>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> &#8776; 3.4641</item></list></item>
+	<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 10) = geometpdf(0.25, 10) = 0.0188</item>
+	<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 20) = geometpdf(0.25, 20) = 0.0011</item>
+  <item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 5) = geometcdf(0.25, 5) = 0.7627</item>
+</list></solution>
+</exercise>
+</section></content>
+
+<glossary>
+<definition id="geodist">
+    <term>Geometric Distribution</term>
+    <meaning id="id14905098">a discrete random variable (RV) that arises from the Bernoulli trials; the trials are repeated until the first success. The geometric variable <emphasis effect="italics">X</emphasis> is defined as the number of trials until the first success. Notation: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">G</emphasis>(<emphasis effect="italics">p</emphasis>). The mean is <emphasis effect="italics">&#956;</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mi>p</m:mi>
+  </m:mfrac>
+ </m:mrow>
+</m:math> and the standard deviation is <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mi>p</m:mi>
+    </m:mfrac>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mi>p</m:mi>
+      </m:mfrac>
+      <m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>. The probability of exactly <emphasis effect="italics">x</emphasis> failures before the first success is given by the formula: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = <emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">p</emphasis>(1 &#8211; <emphasis effect="italics">p</emphasis>)<sup><emphasis effect="italics">x</emphasis> &#8211; 1</sup>.</meaning>
+  </definition>
+
+<definition id="fs-idm64151840">
+<term>Geometric Experiment</term>
+<meaning id="fs-idm13336304">a statistical experiment with the following properties:
+<list id="fs-idm65008928" list-type="enumerated">
+<item>There are one or more Bernoulli trials with all failures except the last one, which is a success.</item>
+<item>In theory, the number of trials could go on forever. There must be at least one trial.</item>
+<item>The probability, <emphasis effect="italics">p</emphasis>, of a success and the probability, <emphasis effect="italics">q</emphasis>, of a failure do not change from trial to trial.</item>
+</list>
+</meaning>
+</definition>
+</glossary>
+</document>

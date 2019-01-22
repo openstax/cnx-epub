@@ -1,0 +1,323 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Skewness and the Mean, Median, and Mode</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46931/latest</md:content-url>
+  <md:content-id>m46931</md:content-id>
+  <md:title>Skewness and the Mean, Median, and Mode</md:title>
+  <md:version>1.6</md:version>
+  <md:created>2013/07/19 00:50:01 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>median</md:keyword>
+    <md:keyword>midpoint</md:keyword>
+    <md:keyword>mode</md:keyword>
+    <md:keyword>skewed</md:keyword>
+    <md:keyword>skewed left</md:keyword>
+    <md:keyword>skewed right</md:keyword>
+    <md:keyword>symmetrical</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="element-97">Consider the following data set.
+<newline/>4; 5; 6; 6; 6; 7; 7; 7; 7; 7; 7; 8; 8; 8; 9; 10</para><para id="element-35965">This data set can be represented by following histogram. Each interval has width one, and each value is located in the middle of an interval.</para>
+<figure id="M06_Ch02_fig001"><media id="id16811614" alt="This histogram matches the supplied data. It consists of 7 adjacent bars with the x-axis split into intervals of 1 from 4 to 10. The heighs of the bars peak in the middle and taper symmetrically to the right and left." display="block"><image src="fig-ch02_08_01.jpg" mime-type="image/jpg" width="350"/></media>
+</figure><para id="element-247">The histogram displays a <emphasis>symmetrical</emphasis> distribution of data. A distribution is symmetrical if a vertical line can be drawn at some point in the histogram such that the shape to the left and the right of the vertical line are mirror images of each other. The mean, the median, and the mode are each seven for these data. <emphasis>In a perfectly symmetrical distribution, the mean and the median are the same.</emphasis> This example has one mode (unimodal), and the mode is the same as the mean and median.  In a symmetrical distribution that has two modes (bimodal), the two modes would be different from the mean and median.</para>
+<para id="element-687">The histogram for the data: <list list-type="labeled-item" display="inline" id="set-00016s">
+<item>4</item><item>5</item><item>6</item><item>6</item><item>6</item><item>7</item><item>7</item><item>7</item><item>7</item><item>8</item></list> is not symmetrical. The right-hand side seems "chopped off" compared to the left side. A distribution of this type is called <emphasis>skewed to the left</emphasis> because it is pulled out to the left.</para><figure id="M06_Ch02_fig002"><media id="id17014514" alt="This histogram matches the supplied data. It consists of 5 adjacent bars with the x-axis split into intervals of 1 from 4 to 8. The peak is to the right, and the heights of the bars taper down to the left." display="block"><image src="fig-ch02_08_02.jpg" mime-type="image/jpg" width="350"/></media>
+</figure><para id="element-431">The mean is 6.3, the median is 6.5, and the mode is seven.  <emphasis>Notice that the mean is less than the median, and they are both less than the mode.</emphasis> The mean and the median both reflect the skewing, but the mean reflects it more so.</para><para id="element-391">The histogram for the data:
+<list list-type="labeled-item" display="inline" id="set-00017">
+<item>6</item><item>7</item><item>7</item><item>7</item><item>7</item><item>8</item><item>8</item><item>8</item><item>9</item><item>10</item></list>, is also not symmetrical. It is <emphasis>skewed to the right</emphasis>.</para>
+
+<figure id="M06_Ch02_fig003"><media id="id17014699" alt="This histogram matches the supplied data. It consists of 5 adjacent bars with the x-axis split into intervals of 1 from 6 to 10. The peak is to the left, and the heights of the bars taper down to the right." display="block"><image src="fig-ch02_08_03.jpg" mime-type="image/jpg" width="350"/></media>
+</figure><para id="element-434">The mean is 7.7, the median is 7.5, and the mode is seven. Of the three statistics, <emphasis>the mean is the largest, while the mode is the smallest</emphasis>. Again, the mean reflects the skewing the most.</para>
+
+<para id="element-524">To summarize, generally if the distribution of data is skewed to the left, the mean is less than the median, which is often less than the mode. If the distribution of data is skewed to the right, the mode is often less than the median, which is less than the mean.</para>
+
+<para id="element-652">Skewness and symmetry become important when we discuss probability distributions in later chapters. </para>
+
+<example id="fs-idp17640608"><exercise id="eip-idp68426064">
+<problem id="eip-idm58649808">
+    <para id="fs-idm39854688">Statistics are used to compare and sometimes identify authors. The following lists shows a simple random sample that compares the letter counts for three authors.</para>
+    <para id="fs-idm80542976">Terry: 7; 9; 3; 3; 3; 4; 1; 3; 2; 2</para>
+    <para id="fs-idm41545440">Davis: 3; 3; 3; 4; 1; 4; 3; 2; 3; 1</para>
+    <para id="fs-idp1740640">Maris: 2; 3; 4; 4; 4; 6; 6; 6; 8; 3</para>
+    <list id="fs-idm63711472" list-type="enumerated" number-style="lower-alpha"><item>Make a dot plot for the three authors and compare the shapes.</item>
+        <item>Calculate the mean for each.</item>
+        <item>Calculate the median for each.</item>
+        <item>Describe any pattern you notice between the shape and the measures of center.</item>
+    </list>
+</problem>
+<solution id="eip-idm44069408">
+    <list id="eip-idm54630576" list-type="enumerated" number-style="lower-alpha">
+        <item>
+<figure id="fs-idm17492640"><media id="fs-idm78584944" alt="This dot plot matches the supplied data for Terry. The plot uses a number line from 1 to 10. It shows one  x over 1, two x's over 2, four x's over 3, one  x over 4, one x over 7, and one x over 9. There are no x's over the numbers 5, 6, 8, and 10.">
+    <image mime-type="image/png" src="CNX_Stats_C02_M08_030.jpg" width="450"/>
+</media>
+    <caption>Terry&#8217;s distribution has a right (positive) skew.</caption></figure>
+
+<figure id="fs-idm19521120"><media id="fs-idm131679008" alt="This dot plot matches the supplied data for Davi. The plot uses a number line from 1 to 10. It shows two  x's over 1, one x over 2, five x's over 3, and two x's over 4. There are no x's over the numbers 5, 6, 7, 8, 9, and 10.">
+        <image mime-type="image/png" src="CNX_Stats_C02_M08_031.jpg" width="450"/>
+    </media>
+        <caption>Davis&#8217; distribution has a left (negative) skew</caption></figure><figure id="fs-idm18855792"><media id="fs-idm56353744" alt="This dot plot matches the supplied data for Mari. The plot uses a number line from 1 to 10. It shows one x over 2, two x's over 3, three x's over 4, three x's over 6, and one  x over 8. There are no x's over the numbers 1, 5, 7, 9, and 10.">
+            <image mime-type="image/png" src="CNX_Stats_C02_M08_032.jpg" width="450"/>
+        </media>
+            <caption>Maris&#8217; distribution is symmetrically shaped.</caption></figure>
+    </item>
+        <item>Terry&#8217;s mean is 3.7, Davis&#8217; mean is 2.7, Maris&#8217; mean is 4.6.</item>
+        <item>Terry&#8217;s median is three, Davis&#8217; median is three. Maris&#8217; median is four.</item>
+        <item>It appears that the median is always closest to the high point (the mode), while the mean tends to be farther out on the tail. In a symmetrical distribution, the mean and the median are both centrally located close to the high point of the distribution.</item>
+    </list>
+</solution>
+
+</exercise></example><note id="fs-idm10131056" class="statistics try"><label/><title>Try It</title>
+<exercise id="fs-idm4859600"><problem id="fs-idm31997616">
+<para id="fs-idm76707328">Discuss the mean, median, and mode for each of the following problems. Is there a pattern between the shape and measure of the center?</para>
+<para id="eip-idp44372864">a. <figure id="fs-idp12578240"><media id="fs-idp12578368" alt="This dot plot matches the supplied data. The plot uses a number line from 0 to 14. It shows two  x's over 0, four x's over 1, three x's over 2, one x over 3, two x's over the number 4, 5, 6, and 9, and 1 x each over 10 and 14. There are no x's over the numbers 7, 8, 11, 12, and 13.">
+<image mime-type="image/png" src="CNX_Stats_C02_M08_033.png" width="400"/>
+</media></figure>
+</para>
+<para id="eip-idp140444967539280">b.
+<table id="eip-idp39390048" summary="The ages former U.S. presidents died">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry namest="c1" nameend="c2">The Ages Former U.S Presidents Died</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>4</entry>
+<entry>6 9</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>3 6 7 7 7 8</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>0 0 3 3 4 4 5 6 7 7 7 8</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>0 1 1 2 3 4 7 8 8 9</entry>
+</row>
+<row>
+<entry>8</entry>
+<entry>0 1 3 5 8</entry>
+</row>
+<row>
+<entry>9</entry>
+<entry>0 0 3 3</entry>
+</row>
+  <row>
+    <entry namest="c1" nameend="c2">Key: 8|0 means 80.</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</para>
+<para id="eip-idm119989936">c.
+<figure id="fs-idp18736080"><media id="fs-idp18736208" alt="This is a histogram titled Hours Spent Playing Video Games on Weekends. The x-axis shows the number  of hours spent playing video games with bars showing values at intervals of 5. The y-axis shows the number of students. The first bar for 0 - 4.99 hours has a height of 2. The second bar from 5 - 9.99 has a height of 3. The third bar from 10 - 14.99 has a height of 4. The fourth bar from 15 - 19.99 has a height of 7. The fifth bar from 20 - 24.99 has a height of 9.">
+<image mime-type="image/png" src="CNX_Stats_C02_M08_034.png" width="400"/>
+</media></figure></para></problem>
+</exercise></note><section id="fs-idm5546880" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm70567904">Looking at the distribution of data can reveal a lot about the relationship between the mean, the median, and the mode. There are <emphasis effect="underline">three types of distributions. A <emphasis effect="bold">right (or positive) skewed</emphasis> </emphasis>distribution has a shape like <link target-id="M06_Ch02_fig002"/>. A <emphasis effect="bold">left (or negative) skewed</emphasis> distribution has a shape like <link target-id="M06_Ch02_fig003"/>. A <emphasis effect="bold">symmetrical</emphasis> distrubtion looks like <link target-id="M06_Ch02_fig001"/>.</para></section>
+
+<section id="fs-idp2369408" class="practice">
+<para id="eip-45"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> State whether the data are symmetrical, skewed to the left, or skewed to the right.</para><exercise id="fs-idm89697712">
+<problem id="fs-idm18359408">
+<para id="fs-idm47149136">
+<list list-type="labeled-item" display="inline"><item>1</item><item>1</item><item>1</item><item>2</item><item>2</item><item>2</item><item>2</item><item>3</item><item>3</item><item>3</item><item>3</item><item>3</item><item>3</item><item>3</item><item>3</item><item>4</item><item>4</item><item>4</item><item>5</item><item>5</item></list></para>
+</problem>
+<solution id="fs-idm39691376">
+<para id="fs-idp6587296">The data are symmetrical. The median is 3 and the mean is 2.85. They are close, and the mode lies close to the middle of the data, so the data are symmetrical.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm125692000">
+<problem id="fs-idm70278192"><para id="fs-idm75453168">
+<list display="inline" list-type="labeled-item"><item>16</item><item>17</item><item>19</item><item>22</item><item>22</item><item>22</item><item>22</item><item>22</item><item>23</item></list></para></problem>
+</exercise>
+
+<exercise id="fs-idm65822528">
+<problem id="fs-idm112226560"><para id="fs-idm14558304"><list list-type="labeled-item" display="inline"><item>87</item><item>87</item><item>87</item><item>87</item><item>87</item><item>88</item><item>89</item><item>89</item><item>90</item><item>91</item></list></para></problem>
+<solution id="fs-idm22884848">
+<para id="fs-idm22884720">The data are skewed right. The median is 87.5 and the mean is 88.2. Even though they are close, the mode lies to the left of the middle of the data, and there are many more instances of 87 than any other number, so the data are skewed right.</para></solution>
+</exercise>
+
+<exercise id="fs-idm8768736">
+<problem id="fs-idm98233488"><para id="fs-idm53300704">When the data are skewed left, what is the typical relationship between the mean and median?</para></problem>
+</exercise>
+
+<exercise id="fs-idm8813456">
+<problem id="fs-idm42223856"><para id="fs-idm42223728">When the data are symmetrical, what is the typical relationship between the mean and median?</para></problem>
+<solution id="fs-idm52740320"><para id="fs-idm99900912">When the data are symmetrical, the mean and median are close or the same.</para></solution>
+</exercise>
+
+<exercise id="fs-idm89404448">
+<problem id="fs-idm52575536"><para id="fs-idm52575408">What word describes a distribution that has two modes?</para></problem>
+</exercise>
+
+<exercise id="fs-idp18513440">
+<problem id="fs-idm38702384">
+<para id="fs-idm34119056">Describe the shape of this distribution.</para>
+<figure id="fs-idm14476592"><media id="fs-idm61579104" alt="This is a historgram which consists of 5 adjacent bars with the x-axis split into intervals of 1 from 3 to 7. The bar heights peak at the first bar and taper lower to the right."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_007.jpg" width="380"/></media></figure></problem>
+<solution id="fs-idp2236688">
+<para id="fs-idm40053200">The distribution is skewed right because it looks pulled out to the right.</para>
+</solution>
+</exercise>
+
+
+<exercise id="fs-idp1656096">
+<problem id="fs-idm52428016">
+<para id="fs-idm79965872">Describe the relationship between the mode and the median of this distribution.</para><figure id="fs-idm155444400"><media id="fs-idm155444272" alt="This is a histogram which consists of 5 adjacent bars with the x-axis split into intervals of 1 from 3 to 7. The bar heights peak at the first bar and taper lower to the right. The bar ehighs from left to right are: 8, 4, 2, 2, 1."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_007.jpg" width="380"/></media></figure></problem>
+</exercise>
+
+<exercise id="fs-idm17924688">
+<problem id="fs-idm83887312">
+<para id="fs-idm94221840">Describe the relationship between the mean and the median of this distribution.</para><figure id="fs-idm57592704"><media id="fs-idm107167152" alt="This is a histogram which  consists of 5 adjacent bars with the x-axis split into intervals of 1 from 3 to 7. The bar heights peak at the first bar and taper lower to the right. The bar heights from left to right are: 8, 4, 2, 2, 1."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_007.jpg" width="380"/></media></figure></problem>
+<solution id="fs-idp21487456">
+<para id="fs-idm77372464">The mean is 4.1 and is slightly greater than the median, which is four.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm17745152">
+<problem id="fs-idm77742544">
+<para id="fs-idm16253520">Describe the shape of this distribution.</para>
+<figure id="fs-idp20306352"><media id="fs-idp20306480" alt="This is a histogram which consists of 5 adjacent bars with the x-axis split into intervals of 1 from 3 to 7. The bar heights peak in the middle and taper down to the right and left."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_010.jpg" width="380"/></media></figure></problem>
+</exercise>
+
+<exercise id="fs-idp21637424">
+<problem id="fs-idm36198464">
+<para id="fs-idm56134784">Describe the relationship between the mode and the median of this distribution.</para><figure id="fs-idm16308016"><media id="fs-idm20125072" alt="This is a histogram which consists of 5 adjacent bars with the x-axis split intervals of 1 from 3 to 7. The bar heights peak in the middle and taper down to the right and left."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_010.jpg" width="380"/></media></figure></problem>
+<solution id="fs-idp18637696">
+<para id="fs-idm157182480">The mode and the median are the same. In this case, they are both five.</para></solution>
+</exercise>
+
+<exercise id="fs-idm42189536">
+<problem id="fs-idm1742112">
+<para id="fs-idm2423344">Are the mean and the median the exact same in this distribution? Why or why not?</para><figure id="fs-idm34380208"><media id="fs-idm44543696" alt="This is a histogram which consists of 5 adjacent bars with the x-axis split into intervals of 1 from 3 to 7. The bar heights from left to right are: 2, 4, 8, 5, 2."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_010.jpg" width="380"/></media></figure></problem>
+</exercise>
+
+<exercise id="fs-idm44509184">
+<problem id="fs-idm57744704">
+<para id="fs-idm13088944">Describe the shape of this distribution.</para>
+<figure id="fs-idp2366192"><media id="fs-idm41242224" alt="This is a histogram which consists of 5 adjacent bars over an x-axis split into intervals of 1 from 3 to 7. The bar heights from left to right are: 1, 1, 2, 4, 7."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_013.jpg" width="380"/></media></figure></problem>
+<solution id="fs-idm34197072">
+<para id="fs-idm64532304">The distribution is skewed left because it looks pulled out to the left.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm24266752"><problem id="fs-idm39469840">
+<para id="fs-idm31823936">Describe the relationship between the mode and the median of this distribution.</para>
+<figure id="fs-idp1844976"><media id="fs-idp1845104" alt="This is a histogram which consists of 5 adjacent bars over an x-axis split into intervals of 1 from 3 to 7. The bar heights from left to right are: 1, 1, 2, 4, 7."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_013.jpg" width="380"/></media></figure></problem>
+</exercise>
+
+<exercise id="fs-idm56587152">
+<problem id="fs-idm80448512">
+<para id="fs-idm6830688">Describe the relationship between the mean and the median of this distribution.</para>
+<figure id="fs-idm85728080"><media id="fs-idm80631312" alt="This is a histogram which consists of 5 adjacent bars over an x-axis split into intervals of 1 from 3 to 7. The bar heights from left to right are: 1, 1, 2, 4, 7."><image mime-type="image/jpg" src="CNX_Stats_C02_M08_013.jpg" width="380"/></media></figure></problem>
+<solution id="fs-idm40221120">
+<para id="fs-idm48927584">The mean and the median are both six.</para></solution>
+</exercise>
+
+<exercise id="fs-idm53345552">
+<problem id="fs-idm50126800">
+<para id="fs-idm41982048">The mean and median for the data are the same.</para>
+<para id="fs-idm89655728"><list list-type="labeled-item" display="inline"><item>3</item><item>4</item><item>5</item><item>5</item><item>6</item><item>6</item><item>6</item><item>6</item><item>7</item><item>7</item><item>7</item><item>7</item><item>7</item><item>7</item><item>7</item></list></para>
+<para id="fs-idm81347168">Is the data perfectly symmetrical? Why or why not?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm106262320">
+<problem id="fs-idp4116944">
+<para id="fs-idp12626464">Which is the greatest, the mean, the mode, or the median of the data set?</para>
+<para id="fs-idm22688432"><list list-type="labeled-item" display="inline">
+<item>11</item><item>11</item><item>12</item><item>12</item><item>12</item><item>12</item><item>13</item><item>15</item><item>17</item><item>22</item><item>22</item><item>22</item></list></para>
+</problem>
+<solution id="fs-idm67998720">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm56243664">The mode is 12, the median is 12.5, and the mean is 15.1. The mean is the largest.</para></solution>
+</exercise>
+
+<exercise id="fs-idm77708816">
+<problem id="fs-idm18613792">
+<para id="fs-idm81638640">Which is the least, the mean, the mode, and the median of the data set?</para>
+<para id="fs-idm78212064"><list list-type="labeled-item" display="inline"><item>56</item><item>56</item><item>56</item><item>58</item><item>59</item><item>60</item><item>62</item><item>64</item><item>64</item><item>65</item><item>67</item></list></para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm1767264">
+<problem id="fs-idm7229600">
+<para id="fs-idm79130096">Of the three measures, which tends to reflect skewing the most, the mean, the mode, or the median? Why?</para>
+</problem>
+<solution id="fs-idm75354176">
+<para id="fs-idm76907792">The mean tends to reflect skewing the most because it is affected the most by outliers.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp5807168">
+<problem id="fs-idm13048928">
+<para id="fs-idm70492944">In a perfectly symmetrical distribution, when would the mode be different from the mean and median?</para>
+</problem>
+</exercise>
+</section>
+
+<section id="fs-idm100553376" class="free-response"><title>Homework</title>
+<exercise id="element-564">
+<problem id="id7358516">
+<para id="element-702">The median age of the U.S. population in 1980 was 30.0 years. In 1991, the median age was 33.1 years.</para>
+<list id="id12488392" list-type="enumerated" number-style="lower-alpha"><item>What does it mean for the median age to rise?</item>
+<item>Give two reasons why the median age could rise.</item>
+<item>For the median age to rise, is the actual number of children less in 1991 than it was in 1980? Why or why not?</item>
+</list></problem>
+</exercise>
+</section>
+</content>
+</document>

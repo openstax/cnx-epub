@@ -1,0 +1,2277 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Test of Two Variances</title><meta name="created-time" content="2013/07/19 10:09:57 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="F distribution, test of two variances"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Test of Two Variances</div>
+<p id="delete_me">Another of the uses of the <em data-effect="italics">F</em> distribution is testing two variances. It is often desirable to compare two variances rather than two averages. For instance, college administrators would like two college professors grading exams to have the same variation in their grading. In order for a lid to fit a container, the variation in the lid and the container should be the same. A supermarket might be interested in the variability of check-out times for two checkers.</p><p id="element-114">In order to perform a <em data-effect="italics">F</em> test of two variances, it is important that the following are true:
+</p><ol id="list1">
+<li>The populations from which the two samples are drawn are normally distributed.</li>
+<li>The two populations are independent of each other.</li>
+</ol>
+
+<p id="eip-227">Unlike most other tests in this book, the <em data-effect="italics">F</em> test for equality of two variances is very sensitive to deviations from normality. If the two distributions are not normal, the test can give higher <em data-effect="italics">p</em>-values than it should, or lower ones, in ways that are unpredictable. Many texts suggest that students not use this test at all, but in the interest of completeness we include it here.</p><p id="element-503">Suppose we sample randomly from two independent normal populations. Let <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> be the population variances and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> be the sample variances. Let the
+sample sizes be <em data-effect="italics">n</em><sub>1</sub> and <em data-effect="italics">n</em><sub>2</sub>. Since we are interested in comparing the two sample variances, we use the <em data-effect="italics">F</em> ratio:</p>
+<p id="element-321">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></p>
+
+<p id="element-648"><em data-effect="italics">F</em> has the distribution <em data-effect="italics">F</em> ~ <em data-effect="italics">F</em>(<em data-effect="italics">n</em><sub>1</sub> &#8211; 1, <em data-effect="italics">n</em><sub>2</sub> &#8211; 1)</p>
+
+
+<p id="element-266">where <em data-effect="italics">n</em><sub>1</sub> &#8211; 1 are the degrees of freedom for the numerator and <em data-effect="italics">n</em><sub>2</sub> &#8211; 1 are the degrees of freedom for the denominator.</p>
+
+<p id="eip-373">If the null hypothesis is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>=</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>=</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math>, then the <em data-effect="italics">F</em> Ratio becomes <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>.</p>
+
+<div data-type="note" data-has-label="true" id="eip-545" data-label=""><div data-type="title">Note</div>
+<p id="fs-idp20528432">The <em data-effect="italics">F</em> ratio could also be <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>.
+
+ It depends on <em data-effect="italics">H<sub>a</sub></em> and on which sample variance is larger.</p></div>
+
+<p id="eip-666">If the two populations have equal variances, then <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> are close in value and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> is close to one. But if the two population variances are very different, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> tend to be very different, too. Choosing <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> as the larger sample variance causes the ratio <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> to be greater than one. If <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>s</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> are far apart, then <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> is a large number.</p>
+
+<p id="eip-657">Therefore, if <em data-effect="italics">F</em> is close to one, the evidence favors the null hypothesis (the two population variances are equal). But if <em data-effect="italics">F</em> is much larger than one, then the evidence is against the null hypothesis. <strong>A test of two variances may be left, right, or two-tailed.</strong></p>
+
+<div data-type="example" id="element-315">
+<div data-type="exercise" id="element-888">
+<div data-type="problem" id="id17653959">
+<p id="element-33">Two college instructors are interested in whether or not there is any variation in the way they grade math exams. They each grade the same set of 30 exams. The first instructor's grades have a variance of 52.3. The second instructor's grades have a variance of 89.9. Test the claim that the first instructor's variance is smaller. (In most colleges, it is desirable for the variances of exam grades to be nearly the same among instructors.) The level of significance is 10%.</p>
+</div>
+
+<div data-type="solution" id="id17653979">
+<p id="element-497">Let 1 and 2 be the subscripts that indicate the first and second instructor, respectively.</p>
+<p id="element-6"><em data-effect="italics">n</em><sub>1</sub> = <em data-effect="italics">n</em><sub>2</sub> = 30.</p>
+
+<p id="element-310"><em data-effect="italics">H<sub>0</sub></em>: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>=</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>=</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> and <em data-effect="italics">H<sub>a</sub></em>: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mtext>&#160;&lt;&#160;</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mtext>&#160;&lt;&#160;</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math></p>
+
+<p id="element-147"><strong>Calculate the test statistic:</strong> By the null hypothesis <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mtext>(</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mtext>1</mtext>
+   <mtext>2</mtext>
+  </msubsup>
+  <mtext>&#160;=&#160;</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mtext>2</mtext>
+   <mtext>2</mtext>
+  </msubsup>
+  <mtext>)</mtext>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mtext>(</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mtext>1</mtext>
+   <mtext>2</mtext>
+  </msubsup>
+  <mtext>&#160;=&#160;</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mtext>2</mtext>
+   <mtext>2</mtext>
+  </msubsup>
+  <mtext>)</mtext>
+ </mrow></annotation-xml></semantics></math>, the <em data-effect="italics">F</em> statistic is:</p>
+
+<p id="element-932"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <mn>52.3</mn>
+   </mrow>
+   <mrow>
+    <mn>89.9</mn>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>0.5818</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>F</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>1</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+   <mrow>
+    <mrow><mo>[</mo> <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>s</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>&#963;</mi>
+          <mn>2</mn>
+         </msub>
+         <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+       </msup>
+
+      </mrow>
+     </mfrac>
+
+    </mrow> <mo>]</mo></mrow>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>1</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><msub>
+       <mi>s</mi>
+       <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <mn>52.3</mn>
+   </mrow>
+   <mrow>
+    <mn>89.9</mn>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>0.5818</mn>
+ </mrow></annotation-xml></semantics></math></p>
+
+<p id="element-569"><strong>Distribution for the test:</strong> <em data-effect="italics">F</em><sub>29,29</sub> where <em data-effect="italics">n</em><sub>1</sub> &#8211; 1 = 29 and <em data-effect="italics">n</em><sub>2</sub> &#8211; 1 = 29.</p><p id="element-184"><strong>Graph: This test is left tailed.</strong></p>
+
+<p id="element-975">Draw the graph labeling and shading appropriately.</p>
+
+<figure id="anova_twotests"><span data-type="media" id="id18591379" data-alt="This graph shows a nonsymmetrical F distribution curve. The curve is slightly skewed to the right, but is approximately normal. The value 0.5818 is marked on the vertical axis to the right of the curve's peak. A vertical upward line extends from 0.5818 to the curve and the area to the left of this line is shaded to represent the p-value.">
+<img src="/resources/e6005e24bc6a5d76208d0c1339136914c3c28dac/fig-ch13_05_01N.jpg" data-media-type="image/png" alt="This graph shows a nonsymmetrical F distribution curve. The curve is slightly skewed to the right, but is approximately normal. The value 0.5818 is marked on the vertical axis to the right of the curve's peak. A vertical upward line extends from 0.5818 to the curve and the area to the left of this line is shaded to represent the p-value." width="380"/>
+</span></figure><p id="element-561"><strong>Probability statement:</strong> <em data-effect="italics">p</em>-value = <em data-effect="italics">P</em>(<em data-effect="italics">F</em> &lt; 0.5818) = 0.0753</p>
+
+<p id="element-186"><strong>Compare <em data-effect="italics">&#945;</em> and the <em data-effect="italics">p</em>-value:</strong> <em data-effect="italics">&#945;</em> = 0.10 <em data-effect="italics">&#945;</em> &gt; <em data-effect="italics">p</em>-value.</p>
+
+<p id="element-153"><strong>Make a decision:</strong> Since <em data-effect="italics">&#945;</em> &gt; <em data-effect="italics">p</em>-value, reject <em data-effect="italics">H<sub>0</sub></em>.</p>
+
+<p id="element-760"><strong>Conclusion:</strong> With a 10% level of significance, from the data, there is sufficient evidence to conclude that the variance in grades for the first instructor is smaller.</p>
+
+<div data-type="note" data-has-label="true" id="fs-idm25711872" class="statistics calculator" data-label="">
+<p id="element-44">Press <code>STAT</code> and arrow over to <code>TESTS</code>. Arrow down to <code>D:2-SampFTest</code>. Press <code>ENTER</code>. Arrow to <code>Stats</code> and press <code>ENTER</code>. For <code>Sx1</code>, <code>n1</code>, <code>Sx2</code>, and <code>n2</code>, enter <code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msqrt><mo>(</mo><mn>52.3</mn><mo>)</mo></msqrt></mrow><annotation-xml encoding="MathML-Content"><msqrt><mo>(</mo><mn>52.3</mn><mo>)</mo></msqrt></annotation-xml></semantics></math></code>, <code>30</code>, <code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msqrt><mo>(</mo><mn>89.9</mn><mo>)</mo></msqrt></mrow><annotation-xml encoding="MathML-Content"><msqrt><mo>(</mo><mn>89.9</mn><mo>)</mo></msqrt></annotation-xml></semantics></math></code>, and <code>30</code>. Press <code>ENTER</code> after each. Arrow to <code>&#963;1:</code> and <code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mrow><mo>&lt;</mo></mrow></mrow><annotation-xml encoding="MathML-Content"><reln><lt/></reln></annotation-xml></semantics></math>&#963;2</code>. Press <code>ENTER</code>. Arrow down to <code>Calculate</code> and press <code>ENTER</code>. <em data-effect="italics">F</em> = 0.5818 and <em data-effect="italics">p</em>-value = 0.0753. Do the procedure again and try <code>Draw</code> instead of <code>Calculate</code>.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idm172461040" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idp56175568">
+<div data-type="problem" id="fs-idm162549056">
+<p id="fs-idm215565200">The New York Choral Society divides male singers up into four categories from highest voices to lowest: Tenor1, Tenor2, Bass1, Bass2. In the table are heights of the men in the Tenor1 and Bass2 groups. One suspects that taller men will have lower voices, and that the variance of height may go up with the lower voices as well. Do we have good evidence that the variance of the heights of singers in each of these two groups (Tenor1 and Bass2) are different?</p>
+
+
+<table id="fs-idm140456080" summary=""><thead>
+<tr>
+<th>Tenor1</th>
+<th>Bass2</th>
+<th>Tenor 1</th>
+<th>Bass 2</th>
+<th>Tenor 1</th>
+<th>Bass 2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>69</td>
+<td>72</td>
+<td>67</td>
+<td>72</td>
+<td>68</td>
+<td>67</td>
+</tr>
+<tr>
+<td>72</td>
+<td>75</td>
+<td>70</td>
+<td>74</td>
+<td>67</td>
+<td>70</td>
+</tr>
+<tr>
+<td>71</td>
+<td>67</td>
+<td>65</td>
+<td>70</td>
+<td>64</td>
+<td>70</td>
+</tr>
+<tr>
+<td>66</td>
+<td>75</td>
+<td>72</td>
+<td>66</td>
+<td/>
+<td>69</td>
+</tr>
+<tr>
+<td>76</td>
+<td>74</td>
+<td>70</td>
+<td>68</td>
+<td/>
+<td>72</td>
+</tr>
+<tr>
+<td>74</td>
+<td>72</td>
+<td>68</td>
+<td>75</td>
+<td/>
+<td>71</td>
+</tr>
+<tr>
+<td>71</td>
+<td>72</td>
+<td>64</td>
+<td>68</td>
+<td/>
+<td>74</td>
+</tr>
+<tr>
+<td>66</td>
+<td>74</td>
+<td>73</td>
+<td>70</td>
+<td/>
+<td>75</td>
+</tr>
+<tr>
+<td>68</td>
+<td>72</td>
+<td>66</td>
+<td>72</td>
+<td/>
+<td/>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+
+<section data-depth="1" id="eip-873" class="references"><h3 data-type="title">References</h3><p id="eip-45">&#8220;MLB Vs. Division Standings &#8211; 2012.&#8221; Available online at http://espn.go.com/mlb/standings/_/year/2012/type/vs-division/order/true.</p></section><section data-depth="1" id="fs-idm88248672" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="eip-30">The <em data-effect="italics">F</em> test for the equality of two variances rests heavily on the assumption of normal distributions. The test is unreliable if this assumption is not met. If both distributions are normal, then the ratio of the two sample variances is distributed as an <em data-effect="italics">F</em> statistic, with numerator and denominator degrees of freedom that are one less than the samples sizes of the corresponding two groups. A <strong>test of two variances</strong> hypothesis test determines if two variances are the same. The distribution for the hypothesis test is the <em data-effect="italics">F</em> distribution with two different degrees of freedom.</p><div data-type="list" id="list2"><div data-type="title">Assumptions:</div><ol><li>The populations from which the two samples are drawn are normally distributed.</li>
+<li>The two populations are independent of each other.</li>
+</ol></div></section>
+
+<section data-depth="1" id="fs-idm61020880" class="formula-review"><h3 data-type="title">Formula Review</h3>
+<p id="eip-114"><em data-effect="italics">F</em> has the distribution <em data-effect="italics">F</em> ~ <em data-effect="italics">F</em>(<em data-effect="italics">n</em><sub>1</sub> &#8211; 1, <em data-effect="italics">n</em><sub>2</sub> &#8211; 1)</p>
+
+<p id="eip-idm173003200"><em data-effect="italics">F</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msubsup>
+       <mi>s</mi>
+       <mn>1</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+     <mrow>
+      <msubsup>
+       <mi>&#963;</mi>
+       <mn>1</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msubsup>
+       <mi>s</mi>
+       <mn>2</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+     <mrow>
+      <msubsup>
+       <mi>&#963;</mi>
+       <mn>2</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msubsup>
+       <mi>s</mi>
+       <mn>1</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+     <mrow>
+      <msubsup>
+       <mi>&#963;</mi>
+       <mn>1</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msubsup>
+       <mi>s</mi>
+       <mn>2</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+     <mrow>
+      <msubsup>
+       <mi>&#963;</mi>
+       <mn>2</mn>
+       <mn>2</mn>
+      </msubsup>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></p>
+
+<p id="eip-idm106017696">If <em data-effect="italics">&#963;</em><sub>1</sub> = <em data-effect="italics">&#963;</em><sub>2</sub>, then <em data-effect="italics">F</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mn>1</mn>
+    </msub>
+    <msup>
+     <mrow/>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mn>2</mn>
+    </msub>
+    <msup>
+     <mrow/>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mn>1</mn>
+    </msub>
+    <msup>
+     <mrow/>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mn>2</mn>
+    </msub>
+    <msup>
+     <mrow/>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></p>
+</section>
+
+<section data-depth="1" id="fs-idp71959552" class="practice">
+<p id="eip-137"><em data-effect="italics">Use the following information to answer the next two exercises.</em> There are two assumptions that must be true in order to perform an <em data-effect="italics">F</em> test of two variances.</p>
+
+<div data-type="exercise" id="eip-801">
+<div data-type="problem" id="eip-944">
+  <p id="eip-974">Name one assumption that must be true.</p>
+</div>
+
+<div data-type="solution" id="eip-413">
+  <p id="eip-526">The populations from which the two samples are drawn are normally distributed.</p></div>
+</div>
+
+<div data-type="exercise" id="eip-417"><div data-type="problem" id="eip-547">
+  <p id="eip-519">What is the other assumption that must be true?</p>
+</div></div><p id="eip-491"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next five exercises.</em> Two coworkers commute from the same building. They are interested in whether or not there is any variation in the time it takes them to drive to work. They each record their times for 20 commutes. The first worker&#8217;s times have a variance of 12.1. The second worker&#8217;s times have a variance of 16.9. The first worker thinks that he is more consistent with his commute times. Test the claim at the 10% level. Assume that commute times are normally distributed.</p><div data-type="exercise" id="eip-119">
+<div data-type="problem" id="eip-296">
+  <p id="eip-677">State the null and alternative hypotheses.</p>
+</div>
+
+<div data-type="solution" id="eip-740">
+<p id="eip-911"><em data-effect="italics">H<sub>0</sub></em>: &#963;<sub>1</sub> = &#963;<sub>2</sub></p><p id="eip-idm47075536"><em data-effect="italics">H<sub>a</sub></em>: &#963;<sub>1</sub> &lt; &#963;<sub>2</sub></p><p id="eip-idm47075280">or</p>
+<p id="eip-idm43789232"><em data-effect="italics">H<sub>0</sub></em>: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mtext>1</mtext>
+   <mtext>2</mtext>
+  </msubsup>
+  <mtext>&#160;=&#160;</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mtext>2</mtext>
+   <mtext>2</mtext>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mtext>1</mtext>
+   <mtext>2</mtext>
+  </msubsup>
+  <mtext>&#160;=&#160;</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mtext>2</mtext>
+   <mtext>2</mtext>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math></p>
+
+<p id="eip-idm43788976"><em data-effect="italics">H<sub>a</sub></em>: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>&lt;</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>&lt;</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math></p></div>
+</div>
+
+<div data-type="exercise" id="eip-113"><div data-type="problem" id="eip-406">
+  <p id="eip-863">What is <em data-effect="italics">s</em><sub>1</sub> in this problem?</p>
+</div></div><div data-type="exercise" id="eip-941">
+<div data-type="problem" id="eip-178">
+  <p id="eip-936">What is <em data-effect="italics">s</em><sub>2</sub> in this problem?</p>
+</div>
+
+<div data-type="solution" id="eip-483">
+  <p id="eip-316">
+4.11
+  </p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-646"><div data-type="problem" id="eip-616">
+  <p id="eip-82">What is <em data-effect="italics">n</em>?</p>
+</div></div><div data-type="exercise" id="eip-416">
+<div data-type="problem" id="eip-856">
+  <p id="eip-91">What is the <em data-effect="italics">F</em> statistic?</p></div>
+
+<div data-type="solution" id="eip-444">
+  <p id="eip-848">0.7159</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-249"><div data-type="problem" id="eip-144">
+  <p id="eip-895">What is the <em data-effect="italics">p</em>-value?</p>
+</div></div><div data-type="exercise" id="eip-464">
+<div data-type="problem" id="eip-398">
+  <p id="eip-93">Is the claim accurate?</p>
+</div>
+
+<div data-type="solution" id="eip-19">
+  <p id="eip-345">No, at the 10% level of significance, we do not reject the null hypothesis and state that the data do not show that the variation in drive times for the first worker is less than the variation in drive times for the second worker.</p>
+</div>
+</div>
+
+<p id="eip-896"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next four exercises.</em> Two students are interested in whether or not there is variation in their test scores for math class. There are 15 total math tests they have taken so far. The first student&#8217;s grades have a standard deviation of 38.1. The second student&#8217;s grades have a standard deviation of 22.5. The second student thinks his scores are more consistent.</p><div data-type="exercise" id="eip-292"><div data-type="problem" id="eip-514">
+  <p id="eip-548">State the null and alternative hypotheses.</p>
+</div></div><div data-type="exercise" id="eip-932">
+<div data-type="problem" id="eip-69">
+  <p id="eip-293">What is the <em data-effect="italics">F</em> Statistic?</p>
+</div>
+
+<div data-type="solution" id="eip-421">
+  <p id="eip-845">2.8674</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-694"><div data-type="problem" id="eip-125">
+  <p id="eip-890">What is the <em data-effect="italics">p</em>-value?</p>
+</div></div><div data-type="exercise" id="eip-792">
+<div data-type="problem" id="eip-386">
+  <p id="eip-39">At the 5% significance level, do we reject the null hypothesis?</p>
+</div>
+
+<div data-type="solution" id="eip-84">
+  <p id="eip-395">Reject the null hypothesis. There is enough evidence to say that the variance of the grades for the first student is higher than the variance in the grades for the second student.</p>
+</div>
+</div>
+
+<p id="eip-225"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next three exercises.</em> Two cyclists are comparing the variances of their overall paces going uphill. Each cyclist records his or her speeds going up 35 hills. The first cyclist has a variance of 23.8 and the second cyclist has a variance of 32.1. The cyclists want to see if their variances are the same or different. Assume that commute times are normally distributed.</p><div data-type="exercise" id="eip-827"><div data-type="problem" id="eip-966">
+  <p id="eip-290">State the null and alternative hypotheses.</p>
+</div></div><div data-type="exercise" id="eip-366">
+<div data-type="problem" id="eip-939">
+  <p id="eip-201">What is the <em data-effect="italics">F</em> Statistic?</p>
+</div>
+
+<div data-type="solution" id="eip-554">
+  <p id="eip-89">0.7414</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-146"><div data-type="problem" id="eip-602">
+  <p id="eip-777">At the 5% significance level, what can we say about the cyclists&#8217; variances?</p>
+</div></div></section><section data-depth="1" id="fs-idp94808464" class="free-response"><h3 data-type="title">Homework</h3>
+
+<div data-type="exercise" id="element-721"><div data-type="problem" id="id19296259">
+<p id="fs-idm168568224">Three students, Linda, Tuan, and Javier, are given five laboratory rats each for a nutritional experiment. Each rat&#8217;s weight is recorded in grams. Linda feeds her rats Formula A, Tuan feeds his rats Formula B, and Javier feeds his rats Formula C. At the end of a specified time period, each rat is weighed again and the net gain in grams is recorded.</p>
+
+<table id="fs-idm113127328" summary=""><thead>
+<tr>
+<th>Linda's rats</th>
+<th>Tuan's rats</th>
+<th>Javier's rats</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>43.5</td>
+<td>47.0</td>
+<td>51.2</td>
+</tr>
+<tr>
+<td>39.4</td>
+<td>40.5</td>
+<td>40.9</td>
+</tr>
+<tr>
+<td>41.3</td>
+<td>38.9</td>
+<td>37.9</td>
+</tr>
+<tr>
+<td>46.0</td>
+<td>46.3</td>
+<td>45.0</td>
+</tr>
+<tr>
+<td>38.2</td>
+<td>44.2</td>
+<td>48.6</td>
+</tr>
+</tbody></table>
+
+<p id="element-363">Determine whether or not the variance in weight gain is statistically the same among Javier&#8217;s and Linda&#8217;s rats. Test at a significance level of 10%.</p>
+</div>
+
+<div data-type="solution" id="id19296291">
+<ol id="eip-idm237758528" type="a"><li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>H</mi>
+   <mn>0</mn>
+  </msub>
+  <mtext>:&#160;</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>=</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>H</mi>
+   <mn>0</mn>
+  </msub>
+  <mtext>:&#160;</mtext><msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>=</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math>
+</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>H</mi>
+   <mi>a</mi>
+  </msub>
+  <mtext>:</mtext><mo>&#160;</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>&#8800;</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>H</mi>
+   <mi>a</mi>
+  </msub>
+  <mtext>:</mtext><mo>&#160;</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+  <mo>&#8800;</mo><msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math>
+</li>
+<li><em data-effect="italics">df</em>(<em data-effect="italics">num</em>) = 4; <em data-effect="italics">df</em>(<em data-effect="italics">denom</em>) = 4</li>
+<li><em data-effect="italics">F</em><sub>4, 4</sub></li>
+<li>3.00</li>
+<li class="finger">2(0.1563) = 0.3126. Using the TI-83+/84+ function 2-SampFtest, you get the test statistic as 2.9986 and <em data-effect="italics">p</em>-value directly as 0.3127. If you input the lists in a different order, you get a test statistic of 0.3335 but the <em data-effect="italics">p</em>-value is the same because this is a two-tailed test.</li>
+<li>Check student't solution.</li>
+<li>Decision: Do not reject the null hypothesis; Conclusion: There is insufficient evidence to conclude that the variances are different.</li>
+</ol></div>
+</div>
+
+
+<div data-type="exercise" id="element-958"><div data-type="problem" id="id19296523">
+<p id="fs-idm161766800">A grassroots group opposed to a proposed increase in the gas tax claimed that the increase would hurt working-class people the most, since they commute the farthest to work. Suppose that the group randomly surveyed 24 individuals and asked them their daily one-way commuting mileage. The results are as follows.</p>
+    <table id="fs-idm45305648" summary=""><thead>
+<tr>
+<th>working-class</th>
+<th>professional (middle incomes)</th>
+<th>professional (wealthy)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>17.8</td>
+<td>16.5</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>26.7</td>
+<td>17.4</td>
+<td>6.3</td>
+</tr>
+<tr>
+<td>49.4</td>
+<td>22.0</td>
+<td>4.6</td>
+</tr>
+<tr>
+<td>9.4</td>
+<td>7.4</td>
+<td>12.6</td>
+</tr>
+<tr>
+<td>65.4</td>
+<td>9.4</td>
+<td>11.0</td>
+</tr>
+<tr>
+<td>47.1</td>
+<td>2.1</td>
+<td>28.6</td>
+</tr>
+<tr>
+<td>19.5</td>
+<td>6.4</td>
+<td>15.4</td>
+</tr>
+<tr>
+<td>51.2</td>
+<td>13.9</td>
+<td>9.3</td>
+</tr>
+</tbody></table>
+<p id="element-421">Determine whether or not the variance in mileage driven is statistically the same among the working class and professional (middle income) groups. Use a 5% significance level.</p>
+</div></div><div data-type="exercise" id="element-54"><div data-type="problem" id="id19317123">
+  <p id="element-346">Which two magazine types do you think have the same variance in length?</p>
+</div></div><div data-type="exercise" id="element-577"><div data-type="problem" id="id19317152">
+  <p id="element-937">Which two magazine types do you think have different variances in length?</p>
+</div>
+<div data-type="solution" id="eip-idm4495216">
+<p id="eip-idp136685504">The answers may vary. Sample answer: Home decorating magazines and news magazines have different variances.</p>
+</div>
+</div><div data-type="exercise" id="eip-743"><div data-type="problem" id="eip-76">
+  <p id="eip-744">Is the variance for the amount of money, in dollars, that shoppers spend on Saturdays at the mall the same as the variance for the amount of money that shoppers spend on Sundays at the mall? Suppose that the <a href="#eip-id1164421796243" class="autogenerated-content">[link]</a> shows the results of a study.
+
+</p><table id="eip-id1164421796243" summary="The Table contains the amount of money shoppers spend on Saturday (first column) and Sunday (second column)."><thead>
+          <tr>
+            <th>Saturday</th>
+            <th>Sunday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+          </tr>
+          </thead><tbody>
+          <tr>
+            <td data-align="center">75</td>
+            <td data-align="center">44</td>
+            <td data-align="center">62</td>
+            <td data-align="center">137</td>
+          </tr>
+          <tr>
+            <td data-align="center">18</td>
+            <td data-align="center">58</td>
+            <td data-align="center">0</td>
+            <td data-align="center">82</td>
+          </tr>
+          <tr>
+            <td data-align="center">150</td>
+            <td data-align="center">61</td>
+            <td data-align="center">124</td>
+            <td data-align="center">39</td>
+          </tr>
+          <tr>
+            <td data-align="center">94</td>
+            <td data-align="center">19</td>
+            <td data-align="center">50</td>
+            <td data-align="center">127</td>
+          </tr>
+          <tr>
+            <td data-align="center">62</td>
+            <td data-align="center">99</td>
+            <td data-align="center">31</td>
+            <td data-align="center">141</td>
+          </tr>
+          <tr>
+            <td data-align="center">73</td>
+            <td data-align="center">60</td>
+            <td data-align="center">118</td>
+            <td data-align="center">73</td>
+          </tr>
+          <tr>
+            <td data-align="center"/>
+            <td data-align="center">89</td>
+            <td data-align="center"/>
+            <td data-align="center"/>
+          </tr>
+        </tbody></table>
+</div>
+
+</div><div data-type="exercise" id="eip-578"><div data-type="problem" id="eip-310">
+  <p id="eip-31">Are the variances for incomes on the East Coast and the West Coast the same? Suppose that <a href="#eip-id1170625876754" class="autogenerated-content">[link]</a> shows the results of a study. Income is shown in thousands of dollars. Assume that both distributions are normal. Use a level of significance of 0.05.</p><table id="eip-id1170625876754" summary="The Table contains the amount of money shoppers spend on Saturday (first column) and Sunday (second column)."><thead>
+          <tr>
+            <th>East</th>
+            <th>West</th>
+
+          </tr>
+          </thead><tbody>
+          <tr>
+            <td data-align="center">38</td>
+            <td data-align="center">71</td>
+
+          </tr>
+          <tr>
+            <td data-align="center">47</td>
+            <td data-align="center">126</td>
+
+          </tr>
+          <tr>
+            <td data-align="center">30</td>
+            <td data-align="center">42</td>
+
+          </tr>
+          <tr>
+            <td data-align="center">82</td>
+            <td data-align="center">51</td>
+
+          </tr>
+          <tr>
+            <td data-align="center">75</td>
+            <td data-align="center">44</td>
+
+          </tr>
+          <tr>
+            <td data-align="center">52</td>
+            <td data-align="center">90</td>
+
+          </tr>
+          <tr>
+            <td data-align="center">115</td>
+            <td data-align="center">88</td>
+
+          </tr>
+          <tr>
+            <td data-align="center">67</td>
+            <td data-align="center"/>
+
+          </tr>
+        </tbody></table>
+</div>
+
+<div data-type="solution" id="eip-idm135090720">
+<ol id="eip-idm135090464" type="a">
+<li><em data-effect="italics">H<sub>0</sub></em>: = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>2</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math>
+</li>
+<li><em data-effect="italics">H<sub>a</sub></em>: <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math> &#8800; <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+ <mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msubsup>
+   <mi>&#963;</mi>
+   <mn>1</mn>
+   <mn>2</mn>
+  </msubsup>
+
+ </mrow></annotation-xml></semantics></math>
+
+</li>
+<li><em data-effect="italics">df</em>(<em data-effect="italics">n</em>) = 7, <em data-effect="italics">df</em>(<em data-effect="italics">d</em>) = 6</li>
+<li><em data-effect="italics">F</em><sub>7,6</sub></li>
+<li>0.8117</li>
+<li>0.7825</li>
+<li>Check student&#8217;s solution.</li>
+<li>
+<ol id="eip-idm187473360" type="i">
+<li>Alpha: 0.05</li>
+<li>Decision: Do not reject the null hypothesis.</li>
+<li>Reason for decision: <em data-effect="italics">p</em>-value &gt; alpha</li>
+<li>Conclusion: There is not sufficient evidence to conclude that the variances are different.</li>
+</ol>
+</li>
+</ol>
+</div>
+
+</div><div data-type="exercise" id="eip-965"><div data-type="problem" id="eip-171">
+<p id="eip-idp43890896">Thirty men in college were taught a method of finger tapping. They were randomly assigned to three groups of ten, with each receiving one of three doses of caffeine: 0 mg, 100 mg, 200 mg. This is approximately the amount in no, one, or two cups of coffee. Two hours after ingesting the caffeine, the men had the rate of finger tapping per minute recorded. The experiment was double blind, so neither the recorders nor the students knew which group they were in. Does caffeine affect the rate of tapping, and if so how?</p>
+
+<p id="eip-idm15379360">Here are the data:  </p>
+
+<table id="eip-108" summary=".."><thead>
+<tr>
+<th>0 mg</th>
+<th>100 mg</th>
+<th>200 mg</th>
+<th>0 mg</th>
+<th>100 mg</th>
+<th>200 mg</th>
+</tr></thead><tbody>
+<tr>
+<td>242</td>
+<td>248</td>
+<td>246</td>
+<td>245</td>
+<td>246</td>
+<td>248</td>
+</tr>
+<tr>
+<td>244</td>
+<td>245</td>
+<td>250</td>
+<td>248</td>
+<td>247</td>
+<td>252</td>
+</tr>
+<tr>
+<td>247</td>
+<td>248</td>
+<td>248</td>
+<td>248</td>
+<td>250</td>
+<td>250</td>
+</tr>
+<tr>
+<td>242</td>
+<td>247</td>
+<td>246</td>
+<td>244</td>
+<td>246</td>
+<td>248</td>
+</tr>
+<tr>
+<td>246</td>
+<td>243</td>
+<td>245</td>
+<td>242</td>
+<td>244</td>
+<td>250</td>
+</tr>
+</tbody></table>
+</div></div><div data-type="exercise" id="eip-262"><div data-type="problem" id="eip-594">
+  <p id="eip-688">King Manuel I, Komnenus ruled the Byzantine Empire from Constantinople (Istanbul) during the years 1145 to 1180 A.D. The empire was very powerful during his reign, but declined significantly afterwards. Coins minted during his era were found in Cyprus, an island in the eastern Mediterranean Sea. Nine coins were from his first coinage, seven from the second, four from the third, and seven from a fourth. These spanned most of his reign. We have data on the silver content of the coins:</p>
+
+<table id="eip-idp58672320" summary=".."><thead>
+<tr><th>First Coinage</th> <th>Second Coinage</th> <th>Third Coinage</th> <th>Fourth Coinage</th></tr>
+</thead><tbody>
+
+<tr>
+<td>5.9</td>
+<td>6.9</td>
+<td>4.9</td>
+<td>5.3</td>
+</tr>
+<tr>
+<td>6.8</td>
+<td>9.0</td>
+<td>5.5</td>
+<td>5.6</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td>6.6</td>
+<td>4.6</td>
+<td>5.5</td>
+</tr>
+<tr>
+<td>7.0</td>
+<td>8.1</td>
+<td>4.5</td>
+<td>5.1</td>
+</tr>
+<tr>
+<td>6.6</td>
+<td>9.3</td>
+<td/>
+<td>6.2</td>
+</tr>
+<tr>
+<td>7.7</td>
+<td>9.2</td>
+<td/>
+<td>5.8</td>
+</tr>
+<tr>
+<td>7.2</td>
+<td>8.6</td>
+<td/>
+<td>5.8</td>
+</tr>
+<tr>
+<td>6.9</td>
+<td/>
+<td/>
+<td/>
+</tr>
+<tr>
+<td>6.2</td>
+<td/>
+<td/>
+<td/>
+</tr>
+</tbody></table>
+
+<p id="eip-idp85002752">Did the silver content of the coins change over the course of Manuel&#8217;s reign?</p>
+
+<p id="eip-idm32834512">Here are the means and variances of each coinage.  The data are unbalanced.</p>
+
+<table id="eip-idm32834000" summary=".."><thead>
+<tr>
+<th/>
+<th>First</th>
+<th>Second</th>
+<th>Third</th>
+<th>Fourth</th>
+</tr>
+</thead><tbody>
+
+<tr>
+<td>Mean</td>
+<td>6.7444</td>
+<td>8.2429</td>
+<td>4.875</td>
+<td>5.6143</td>
+</tr>
+<tr>
+<td>Variance</td>
+<td>0.2953</td>
+<td>1.2095</td>
+<td>0.2025</td>
+<td>0.1314</td>
+</tr>
+</tbody></table>
+</div>
+
+<div data-type="solution" id="eip-17">
+  <p id="eip-392">Here is a strip chart of the silver content of the coins:</p>
+
+<figure id="fs-idp18676192"><span data-type="media" id="eip-idp12341776" data-alt="This graph is a scatterplot which represents the data provided. The horizontal axis is labeled 'Silver content coins' and extends from 5 - 9. The vertical axis is labeled 'Coinage.' The vertical axis is labeled with the categories First, Second, Third, and Fourth.">
+<img src="/resources/b343d126f061bae92ee654ceac29954932d5c71b/CNX_Stats_C13_M05_005anno.jpg" data-media-type="image/jpeg" alt="This graph is a scatterplot which represents the data provided. The horizontal axis is labeled 'Silver content coins' and extends from 5 - 9. The vertical axis is labeled 'Coinage.' The vertical axis is labeled with the categories First, Second, Third, and Fourth." width="380"/></span></figure><p id="eip-idp35466944">While there are differences in spread, it is not unreasonable to use ANOVA techniques. Here is the completed ANOVA table:</p>
+
+<table id="eip-idm71284208" summary=".."><thead>
+  <tr>
+    <th>Source of Variation</th>
+    <th>Sum of Squares (<em data-effect="italics">SS</em>)</th>
+    <th>Degrees of Freedom (<em data-effect="italics">df</em>)</th>
+    <th>Mean Square (<em data-effect="italics">MS</em>)</th>
+    <th><em data-effect="italics">F</em></th>
+  </tr>
+</thead><tbody>
+  <tr>
+    <td>Factor (Between)</td>
+    <td>37.748</td>
+    <td>4 &#8211; 1 = 3</td>
+    <td>12.5825</td>
+    <td>26.272</td>
+  </tr>
+  <tr>
+    <td>Error (Within)</td>
+    <td>11.015</td>
+    <td>27 &#8211; 4 = 23</td>
+    <td>0.4789</td>
+    <td/>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>48.763</td>
+    <td>27 &#8211; 1 = 26</td>
+    <td/>
+    <td/>
+  </tr>
+</tbody></table>
+
+<p id="fs-idm113961200">
+<em data-effect="italics">P</em>(<em data-effect="italics">F</em> &gt; 26.272) = 0;</p>
+<p id="eip-idm119286624">Reject the null hypothesis for any alpha. There is sufficient evidence to conclude that the mean silver content among the four coinages are different. From the strip chart, it appears that the first and second coinages had higher silver contents than the third and fourth.</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-273"><div data-type="problem" id="eip-idm101855984">
+  <p id="eip-605">The American League and the National League of Major League Baseball are each divided into three divisions: East, Central, and West. Many years, fans talk about some divisions being stronger (having better teams) than other divisions. This may have consequences for the postseason. For instance, in 2012 Tampa Bay won 90 games and did not play in the postseason, while Detroit won only 88 and did play in the postseason. This may have been an oddity, but is there good evidence that in the 2012 season, the American League divisions were significantly different in overall records? Use the following data to test whether the mean number of wins per team in the three American League divisions were the same or not. Note that the data are not balanced, as two divisions had five teams, while one had only four.</p>
+<table id="eip-idp9336320" summary=".."><thead>
+<tr>
+<th>Division</th>
+<th>Team</th>
+<th>Wins</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>East</td>
+<td>NY Yankees</td>
+<td>95</td>
+</tr>
+<tr>
+<td>East</td>
+<td>Baltimore</td>
+<td>93</td>
+</tr>
+<tr>
+<td>East</td>
+<td>Tampa Bay</td>
+<td>90</td>
+</tr>
+<tr>
+<td>East</td>
+<td>Toronto</td>
+<td>73</td>
+</tr>
+<tr>
+<td>East</td>
+<td>Boston</td>
+<td>69</td>
+</tr>
+</tbody></table>
+
+<table id="fs-idm136862816" summary=""><thead>
+<tr>
+<th>Division</th>
+<th>Team</th>
+<th>Wins</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Central</td>
+<td>Detroit</td>
+<td>88</td>
+</tr>
+<tr>
+<td>Central</td>
+<td>Chicago Sox</td>
+<td>85</td>
+</tr>
+<tr>
+<td>Central</td>
+<td>Kansas City</td>
+<td>72</td>
+</tr>
+<tr>
+<td>Central</td>
+<td>Cleveland</td>
+<td>68</td>
+</tr>
+<tr>
+<td>Central</td>
+<td>Minnesota</td>
+<td>66</td>
+</tr>
+</tbody></table>
+
+
+<table id="fs-idm188424528" summary=""><thead>
+<tr>
+<th>Division</th>
+<th>Team</th>
+<th>Wins</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>West</td>
+<td>Oakland</td>
+<td>94</td>
+</tr>
+<tr>
+<td>West</td>
+<td>Texas</td>
+<td>93</td>
+</tr>
+<tr>
+<td>West</td>
+<td>LA Angels</td>
+<td>89</td>
+</tr>
+<tr>
+<td>West</td>
+<td>Seattle</td>
+<td>75</td>
+</tr>
+</tbody></table>
+
+
+</div>
+
+<div data-type="solution" id="eip-204">
+  <p id="eip-427">Here is a stripchart of the number of wins for the 14 teams in the AL for the 2012 season.
+  </p>
+
+<figure id="fs-idm154004704"><span data-type="media" id="eip-idm94490816" data-alt="This graph is a scatterplot which represents the data provided. The horizontal axis is labeled 'Number of wins in 2012 Major League Baseball Season' and extends from 65 - 95. The vertical axis is labeled 'American league division.' The vertical axis is labeled with the categories Central, East, West.">
+<img src="/resources/0261cd5adca9d19972dca09b206109af980362d0/CNX_Stats_C13_M05_007anno.jpg" data-media-type="image/jpeg" alt="This graph is a scatterplot which represents the data provided. The horizontal axis is labeled 'Number of wins in 2012 Major League Baseball Season' and extends from 65 - 95. The vertical axis is labeled 'American league division.' The vertical axis is labeled with the categories Central, East, West." width="380"/></span>
+</figure><p id="eip-idm94489920">While the spread seems similar, there may be some question about the normality of the data, given the wide gaps in the middle near the 0.500 mark of 82 games (teams play 162 games each season in MLB). However, one-way ANOVA is robust.</p>
+
+<p id="eip-idm141008496">Here is the ANOVA table for the data:</p>
+
+<table id="eip-32" summary=".."><thead>
+  <tr>
+    <th>Source of Variation</th>
+    <th>Sum of Squares (<em data-effect="italics">SS</em>)</th>
+    <th>Degrees of Freedom (<em data-effect="italics">df</em>)</th>
+    <th>Mean Square (<em data-effect="italics">MS</em>)</th>
+    <th><em data-effect="italics">F</em></th>
+  </tr>
+</thead><tbody>
+  <tr>
+    <td>Factor (Between)</td>
+    <td>344.16</td>
+    <td>3 &#8211; 1 = 2</td>
+    <td>172.08</td>
+    <td/>
+  </tr>
+  <tr>
+    <td>Error (Within)</td>
+    <td>1,219.55</td>
+    <td>14 &#8211; 3 = 11</td>
+    <td>110.87</td>
+    <td>1.5521</td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>1,563.71</td>
+    <td>14 &#8211; 1 = 13</td>
+    <td/>
+    <td/>
+  </tr>
+
+</tbody></table><p id="fs-idm57974800"><em data-effect="italics">P</em>(<em data-effect="italics">F</em> &gt; 1.5521) = 0.2548
+<div data-type="newline"><br/></div>Since the <em data-effect="italics">p</em>-value is so large, there is not good evidence against the null hypothesis of equal means. We decline to reject the null hypothesis. Thus, for 2012, there is not any have any good evidence of a significant difference in mean number of wins between the divisions of the American League.</p></div>
+</div></section>
+</body>
+
+</html>

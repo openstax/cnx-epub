@@ -1,0 +1,279 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Probability Topics</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50256/latest</md:content-url>
+  <md:content-id>m50256</md:content-id>
+  <md:title>Probability Topics</md:title>
+  <md:version>1.3</md:version>
+  <md:created>2014/05/08 16:41:38 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">cnxstats OpenStaxCollege</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>sample space</md:keyword>
+    <md:keyword>tree diagram</md:keyword>
+    <md:keyword>Venn Diagram</md:keyword>
+    <md:keyword>without replacement</md:keyword>
+    <md:keyword>with replacement</md:keyword>
+  </md:keywordlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1172778073391" class="statistics lab"><label/><title>Probability Topics</title>
+<para id="element-281">Class time:</para>
+<para id="element-279">Names:</para>
+<para id="fs-idp7760432"><title>Student Learning Outcomes</title></para>
+<list id="element-180" list-type="bulleted"><item>The student will use theoretical and empirical methods to estimate probabilities.</item>
+<item>The student will appraise the differences between the two estimates.</item>
+<item>The student will demonstrate an understanding of long-term relative frequencies.</item></list>
+<para id="element-410">
+<title>Do the Experiment</title>
+Count out 40 mixed-color M&amp;Ms&#174; which is approximately one small bag&#8217;s worth. Record the number of each color in <link target-id="M05_ch03-tbl009"/>. Use the information from this table to complete <link target-id="M05_ch03-tbl010"/>. Next, put the M&amp;Ms in a cup. The experiment is to pick two M&amp;Ms, one at a time. Do <emphasis>not</emphasis> look at them as you pick them. The first time through, replace the first M&amp;M before picking the second one. Record the results in the &#8220;With Replacement&#8221; column of <link target-id="M05_ch03-tbl011"/>. Do this 24 times. The second time through, after picking the first M&amp;M, do <emphasis>not</emphasis> replace it before picking the second one. Then, pick the second one. Record the results in the &#8220;Without Replacement&#8221; column section of <link target-id="M05_ch03-tbl012"/>. After you record the pick, put <emphasis>both</emphasis> M&amp;Ms back. Do this a total of 24 times, also. Use the data from <link target-id="M05_ch03-tbl012"/> to calculate the empirical probability questions. Leave your answers in unreduced fractional form. Do <emphasis>not</emphasis> multiply out any fractions.
+</para>
+<table id="M05_ch03-tbl009" summary="Partially filled theoretical data table. The first column lists the color (6 rows) and the blank second column lists the quantity values.">
+<title>Population</title>
+<tgroup cols="2"><thead>
+  <row>
+    <entry>Color</entry>
+    <entry>Quantity</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>Yellow (<emphasis effect="italics">Y</emphasis>)</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>Green (<emphasis effect="italics">G</emphasis>)</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>Blue (<emphasis effect="italics">BL</emphasis>)</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>Brown (<emphasis effect="italics">B</emphasis>)</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>Orange (<emphasis effect="italics">O</emphasis>)</entry>
+    <entry/>
+  </row>
+  <row>
+    <entry>Red (<emphasis effect="italics">R</emphasis>)</entry>
+    <entry/>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<table id="M05_ch03-tbl010" summary="">
+<title>Theoretical Probabilities</title>
+<tgroup cols="3"><thead>
+  <row>
+    <entry/>
+    <entry>With Replacement</entry>
+    <entry>Without Replacement</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(2 reds)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">R</emphasis><sub>1</sub><emphasis effect="italics">B</emphasis><sub>2</sub> OR <emphasis effect="italics">B</emphasis><sub>1</sub><emphasis effect="italics">R</emphasis><sub>2</sub>)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">R</emphasis><sub>1</sub> AND <emphasis effect="italics">G</emphasis><sub>2</sub>)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">G</emphasis><sub>2</sub>|<emphasis effect="italics">R</emphasis><sub>1</sub>)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(no yellows)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(doubles)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(no doubles)</entry>
+    <entry/>
+    <entry/>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<note id="fs-idp15354112"><label/><title>Note</title>
+<para id="fs-idp27436528"><emphasis effect="italics">G</emphasis><sub>2</sub> = green on second pick; <emphasis effect="italics">R</emphasis><sub>1</sub> = red on first pick; <emphasis effect="italics">B</emphasis><sub>1</sub> = brown on first pick; <emphasis effect="italics">B</emphasis><sub>2</sub> = brown on second pick; doubles = both picks are the same colour.</para></note><table id="M05_ch03-tbl011" summary="Blank empirical results table with the first column designated for with replacement and the second column listed for without replacement. 24 empty cells.">
+<title>Empirical Results</title>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+  <row>
+    <entry>With Replacement</entry>
+    <entry>Without Replacement</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>( __ , __ ) ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+  <row>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+    <entry>( __ , __ )   ( __ , __ )</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<table id="M05_ch03-tbl012" summary="">
+<title>Empirical Probabilities</title>
+<tgroup cols="3"><thead>
+  <row>
+    <entry/>
+    <entry>With Replacement</entry>
+    <entry>Without Replacement</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(2 reds)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">R</emphasis><sub>1</sub><emphasis effect="italics">B</emphasis><sub>2</sub> OR <emphasis effect="italics">B</emphasis><sub>1</sub><emphasis effect="italics">R</emphasis><sub>2</sub>)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">R</emphasis><sub>1</sub> AND <emphasis effect="italics">G</emphasis><sub>2</sub>)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">G</emphasis><sub>2</sub>|<emphasis effect="italics">R</emphasis><sub>1</sub>)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(no yellows)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(doubles)</entry>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry><emphasis effect="italics">P</emphasis>(no doubles)</entry>
+    <entry/>
+    <entry/>
+  </row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idp8995504">
+<title>Discussion Questions</title></para>
+<list id="element-148" list-type="enumerated"><item>Why are the &#8220;With Replacement&#8221; and &#8220;Without Replacement&#8221; probabilities different?</item>
+<item>Convert <emphasis effect="italics">P</emphasis>(no yellows) to decimal format for both Theoretical &#8220;With Replacement&#8221; and for Empirical &#8220;With Replacement&#8221;.  Round to four decimal places.
+<list id="sublist1" list-type="enumerated" number-style="lower-alpha"><item>Theoretical &#8220;With Replacement&#8221;: <emphasis effect="italics">P</emphasis>(no yellows) = _______</item>
+<item>Empirical &#8220;With Replacement&#8221;: <emphasis effect="italics">P</emphasis>(no yellows) = _______</item>
+<item>Are the decimal values &#8220;close&#8221;? Did you expect them to be closer together or farther apart? Why?</item></list></item>
+<item>If you increased the number of times you picked two M&amp;Ms to 240 times, why would empirical probability values change?</item>
+<item>Would this change (see part 3) cause the empirical probabilities and theoretical probabilities to be closer together or farther apart?  How do you know? </item>
+<item>Explain the differences in what <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">G</emphasis><sub>1</sub> AND <emphasis effect="italics">R</emphasis><sub>2</sub>) and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">R</emphasis><sub>1</sub>|<emphasis effect="italics">G</emphasis><sub>2</sub>) represent. Hint: Think about the sample space for each probability.</item> 
+</list></note></content>
+
+</document>

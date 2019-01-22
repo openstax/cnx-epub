@@ -1,0 +1,280 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Data Collection Experiment</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50252/latest</md:content-url>
+  <md:content-id>m50252</md:content-id>
+  <md:title>Data Collection Experiment</md:title>
+  <md:version>1.5</md:version>
+  <md:created>2014/05/08 15:48:47 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>blinding</md:keyword>
+    <md:keyword>control group</md:keyword>
+    <md:keyword>double blind</md:keyword>
+    <md:keyword>double-blinding</md:keyword>
+    <md:keyword>ethics</md:keyword>
+    <md:keyword>experimental unit</md:keyword>
+    <md:keyword>experiment design</md:keyword>
+    <md:keyword>explanatory variable</md:keyword>
+    <md:keyword>informed consent</md:keyword>
+    <md:keyword>institution review board</md:keyword>
+    <md:keyword>lurking variable</md:keyword>
+    <md:keyword>placebo</md:keyword>
+    <md:keyword>random assignment</md:keyword>
+    <md:keyword>response variable</md:keyword>
+    <md:keyword>treatments</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content><note id="fs-id1170942442486" class="statistics lab"><label/><title>Data Collection Experiment</title>
+
+<para id="id11029318">Class Time:</para>
+<para id="element-194">Names:</para>
+<list id="element-293" list-type="bulleted"><title>Student Learning Outcomes</title><item>The student will demonstrate the systematic sampling technique.</item>
+<item>The student will construct relative frequency tables.</item>
+<item>The student will interpret results and their differences from different data groupings.</item></list><para id="element-972"><title>Movie Survey</title>Ask five classmates from a different class how many movies they saw at the theater last month. Do not include rented movies.
+</para><list id="list-92836987265" list-type="enumerated"><item>Record the data.</item>
+<item>In class, randomly pick one person. On the class list, mark that person&#8217;s name. Move down four names on the class list. Mark that person&#8217;s name. Continue doing this until you have marked 12 names. You may need to go back to the start of the list. For each marked name record the five data values. You now have a total of 60 data values.</item>
+<item>For each name marked, record the data.
+<table id="table-234986" summary="empty 5x12 table for recording data">
+<tgroup cols="12"><tbody>
+<row>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+  <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+  </row>
+<row>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+  <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+  </row>
+<row>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+  <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+  </row>
+<row>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+  <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+  </row>
+<row>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+<entry>___</entry>
+  <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+    <entry>___</entry>
+  </row>
+</tbody>
+
+
+</tgroup>
+</table></item>
+</list>
+
+<para id="element-6"><title>Order the Data</title>Complete the two relative frequency tables below using your class data.</para><table id="id9610791234" summary="This table provides a blank template for recording the results of the previously conducted survey. The first column contains the exact number of movies watched, the second column contains the frequency, the third column contains the relative frequency, and the fourth column contains the cumulative relative frequency. Only the first column is completed."><title>Frequency of Number of Movies Viewed</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>Number of Movies</entry>
+<entry>Frequency</entry>
+<entry>Relative Frequency</entry>
+<entry>Cumulative Relative Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis effect="normal">0</emphasis></entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>1</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>2</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>3</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>4</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>5</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>6</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>7+</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table id="id10778923248" summary="Similar to the previous table, this is a blank template for recording the results of the previously conducted survey. The first column presents a range of number of movies watched, the second column contains the frequency, the third column contains the relative frequency, and the fourth column contains the cumulative relative frequency. Only the first column is completed."><title>Frequency of Number of Movies Viewed</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>Number of Movies</entry>
+<entry>Frequency</entry>
+<entry>Relative Frequency</entry>
+<entry>Cumulative Relative Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0&#8211;1</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>2&#8211;3</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>4&#8211;5</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>6&#8211;7+</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+<list id="list-2349875" list-type="enumerated">
+<item>Using the tables, find the percent of data that is at most two. Which table did you use and why?</item>
+<item>Using the tables, find the percent of data that is at most three. Which table did you use and why?</item>
+<item>Using the tables, find the percent of data that is more than two. Which table did you use and why?</item>
+<item>Using the tables, find the percent of data that is more than three. Which table did you use and why?</item>
+</list>
+
+<list id="list-23497695" list-type="enumerated"><title>Discussion Questions</title><item>Is one of the tables &#8220;more correct&#8221; than the other? Why or why not?</item>
+<item>In general, how could you group the data differently? Are there any advantages to either way of grouping the data?</item>
+<item>Why did you switch between tables, if you did, when answering the question above?</item>
+</list></note></content>
+
+</document>

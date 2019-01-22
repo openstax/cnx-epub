@@ -1,0 +1,229 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" class="preface" cnxml-version="0.7" module-id="new">
+
+<title>Preface</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47830/latest</md:content-url>
+  <md:content-id>m47830</md:content-id>
+  <md:title>Preface</md:title>
+  <md:version>1.16</md:version>
+  <md:created>2013/10/22 16:00:37 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>bar graph</md:keyword>
+    <md:keyword>binomial distribution</md:keyword>
+    <md:keyword>box plot</md:keyword>
+    <md:keyword>central limit theorem</md:keyword>
+    <md:keyword>chi-square distribution</md:keyword>
+    <md:keyword>confidence interval</md:keyword>
+    <md:keyword>contingency table</md:keyword>
+    <md:keyword>continuous random variable</md:keyword>
+    <md:keyword>correlation coefficient</md:keyword>
+    <md:keyword>data</md:keyword>
+    <md:keyword>data collection</md:keyword>
+    <md:keyword>discrete random variable</md:keyword>
+    <md:keyword>ethics</md:keyword>
+    <md:keyword>expected value</md:keyword>
+    <md:keyword>experiment</md:keyword>
+    <md:keyword>exponential distribution</md:keyword>
+    <md:keyword>F distribution</md:keyword>
+    <md:keyword>frequency</md:keyword>
+    <md:keyword>frequency polygon</md:keyword>
+    <md:keyword>frequency tables</md:keyword>
+    <md:keyword>geometric distribution</md:keyword>
+    <md:keyword>goodness-of-fit test</md:keyword>
+    <md:keyword>histogram</md:keyword>
+    <md:keyword>hypergeometric distribution</md:keyword>
+    <md:keyword>hypothesis test</md:keyword>
+    <md:keyword>independent event</md:keyword>
+    <md:keyword>linear regression</md:keyword>
+    <md:keyword>line graph</md:keyword>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>mean value</md:keyword>
+    <md:keyword>median</md:keyword>
+    <md:keyword>mode</md:keyword>
+    <md:keyword>mutually exclusive event</md:keyword>
+    <md:keyword>normal distribution</md:keyword>
+    <md:keyword>one-way ANOVA</md:keyword>
+    <md:keyword>outlier, correlation</md:keyword>
+    <md:keyword>Poisson distribution</md:keyword>
+    <md:keyword>probability</md:keyword>
+    <md:keyword>probability distribution function</md:keyword>
+    <md:keyword>random variable</md:keyword>
+    <md:keyword>sample</md:keyword>
+    <md:keyword>sampling</md:keyword>
+    <md:keyword>scatter plot</md:keyword>
+    <md:keyword>statistics</md:keyword>
+    <md:keyword>stem-and-leaf graph</md:keyword>
+    <md:keyword>stemplot</md:keyword>
+    <md:keyword>test for homogeneity</md:keyword>
+    <md:keyword>test of independence</md:keyword>
+    <md:keyword>test of single variance</md:keyword>
+    <md:keyword>test of two variances</md:keyword>
+    <md:keyword>time series graph</md:keyword>
+    <md:keyword>tree diagram</md:keyword>
+    <md:keyword>uniform distribution</md:keyword>
+    <md:keyword>Venn diagram</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract>Introductory Statistics is intended for the one-semester introduction to statistics course for students who are not mathematics or engineering majors. It focuses on the interpretation of statistical results, especially in real world settings, and assumes that students have an understanding of intermediate algebra. In addition to end of section practice and homework sets, examples of each topic are explained step-by-step throughout the text and followed by a Try It problem that is designed as extra practice for students. This book also includes collaborative exercises and statistics labs designed to give students the opportunity to work together and explore key concepts. To support today’s student in understanding technology, this book features TI 83, 83+, 84, or 84+ calculator instructions at strategic points throughout. While the book has been built so that each chapter builds on the previous, it can be rearranged to accommodate any instructor’s particular needs.</md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-109">Welcome to <emphasis effect="italics">Introductory Statistics</emphasis>, an OpenStax resource. This textbook was written to increase student access to high-quality learning materials, maintaining highest standards of academic rigor at little to no cost. </para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-970">The foundation of this textbook is <emphasis effect="italics">Collaborative Statistics</emphasis>, by Barbara Illowsky and Susan Dean. Additional topics, examples, and innovations in terminology and practical applications have been added, all with a goal of increasing relevance and accessibility for students.</para><section xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-10"><title>About OpenStax</title><para id="eip-479">OpenStax is a nonprofit based at Rice University, and it&#8217;s our mission to improve student access to education. Our first openly licensed college textbook was published in 2012, and our library has since scaled to over 25 books for college and AP<sup>&#174;</sup> courses used by hundreds of thousands of students. OpenStax Tutor, our low-cost personalized learning tool, is being used in college courses throughout the country. Through our partnerships with philanthropic foundations and our alliance with other educational resource organizations, OpenStax is breaking down the most common barriers to learning and empowering students and instructors to succeed.</para></section><section xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-242"><title>About OpenStax's resources</title><section id="eip-id1172001427154"><title>Customization</title>
+<para id="eip-id1172021069880"><emphasis effect="italics">Introductory Statistics</emphasis> is licensed under a Creative Commons Attribution 4.0 International (CC BY) license, which means that you can distribute, remix, and build upon the content, as long as you provide attribution to OpenStax and its content contributors.
+</para><para id="eip-925">Because our books are openly licensed, you are free to use the entire book or pick and choose the sections that are most relevant to the needs of your course. Feel free to remix the content by assigning your students certain chapters and sections in your syllabus, in the order that you prefer. You can even provide a direct link in your syllabus to the sections in the web view of your book.</para><para id="eip-507">Instructors also have the option of creating a customized version of their OpenStax book. The custom version can be made available to students in low-cost print or digital form through their campus bookstore. Visit your book page on OpenStax.org for more information.</para></section><section id="eip-621"><title>Errata</title><para id="eip-555">All OpenStax textbooks undergo a rigorous review process. However, like any professional-grade textbook, errors sometimes occur. Since our books are web based, we can make updates periodically when deemed pedagogically necessary. If you have a correction to suggest, submit it through the link on your book page on OpenStax.org. Subject matter experts review all errata suggestions. OpenStax is committed to remaining transparent about all updates, so you will also find a list of past errata changes on your book page on OpenStax.org.</para></section><section id="eip-107"><title>Format</title><para id="eip-911">You can access this textbook for free in web view or PDF through OpenStax.org, and in low-cost print and iBooks editions.</para></section></section>
+
+ <section id="fs-idm526890688">
+        <title xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute">About <emphasis effect="italics">Introductory Statistics</emphasis></title><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm498143472"><emphasis effect="italics">Introductory Statistics</emphasis> follows scope and sequence requirements of a one-semester introduction to statistics course and is geared toward students majoring in fields other than math or engineering. The text assumes some knowledge of intermediate algebra and focuses on statistics application over theory. <emphasis effect="italics">Introductory Statistics</emphasis> includes innovative practical applications that make the text relevant and accessible, as well as collaborative exercises, technology integration problems, and statistics labs.</para><section xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-663"><title>Coverage and scope</title><para id="eip-890">Chapter 1 Sampling and Data<newline/>
+Chapter 2 Descriptive Statistics<newline/>
+Chapter 3 Probability Topics<newline/>
+Chapter 4 Discrete Random Variables<newline/>
+Chapter 5 Continuous Random Variables<newline/>
+Chapter 6 The Normal Distribution<newline/>
+Chapter 7 The Central Limit Theorem<newline/>
+Chapter 8 Confidence Intervals<newline/>
+Chapter 9 Hypothesis Testing with One Sample<newline/>
+Chapter 10 Hypothesis Testing with Two Samples<newline/>
+Chapter 11 The Chi-Square Distribution<newline/>
+Chapter 12 Linear Regression and Correlation<newline/>
+Chapter 13 F Distribution and One-Way ANOVA<newline/>
+
+</para></section><section xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-876"><title>Alternate sequencing</title><para id="eip-992">
+<emphasis effect="italics">Introductory Statistics</emphasis> was conceived and written to fit a particular topical sequence, but it can be used flexibly to accommodate other course structures.  One such potential structure, which fits reasonably well with the textbook content, is provided below.  Please consider, however, that the chapters were not written to be completely independent, and that the proposed alternate sequence should be carefully considered for student preparation and textual consistency.  
+</para><para id="eip-23">Chapter 1 Sampling and Data<newline/>
+Chapter 2 Descriptive Statistics<newline/>
+Chapter 12 Linear Regression and Correlation<newline/>
+Chapter 3 Probability Topics<newline/>
+Chapter 4 Discrete Random Variables<newline/>
+Chapter 5 Continuous Random Variables<newline/>
+Chapter 6 The Normal Distribution<newline/>
+Chapter 7 The Central Limit Theorem<newline/>
+Chapter 8 Confidence Intervals<newline/>
+Chapter 9 Hypothesis Testing with One Sample<newline/>
+Chapter 10 Hypothesis Testing with Two Samples<newline/>
+Chapter 11 The Chi-Square Distribution<newline/>
+Chapter 13 F Distribution and One-Way ANOVA
+</para></section><section xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-930"><title>Pedagogical foundation and features</title><para id="eip-257">
+<list id="eip-303"><item><emphasis>Examples</emphasis> are placed strategically throughout the text to show students the step-by-step process of interpreting and solving statistical problems.  To keep the text relevant for students, the examples are drawn from a broad spectrum of practical topics, including examples about college life and learning, health and medicine, retail and business, and sports and entertainment. </item>
+<item><emphasis>Try It</emphasis> practice problems immediately follow many examples and give students the opportunity to practice as they read the text. <emphasis>They are usually based on practical and familiar topics, like the Examples themselves</emphasis>.</item>
+<item><emphasis>Collaborative Exercises</emphasis> provide an in-class scenario for students to work together to explore presented concepts.</item>
+<item><emphasis>Using the TI-83, 83+, 84, 84+ Calculator</emphasis> shows students step-by-step instructions to input problems into their calculator. </item>
+<item><emphasis>The Technology Icon</emphasis> indicates where the use of a TI calculator or computer software is recommended.</item>
+<item><emphasis>Practice, Homework, and Bringing It Together</emphasis> problems give the students problems at various degrees of difficulty while also including real-world scenarios to engage students.</item></list></para></section><section xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-600"><title>Statistics labs</title><para id="eip-48">
+These innovative activities were developed by Barbara Illowsky and Susan Dean in order to offer students the experience of designing, implementing, and interpreting statistical analyses.  They are drawn from actual experiments and data-gathering processes and offer a unique hands-on and collaborative experience.  The labs provide a foundation for further learning and classroom interaction that will produce a meaningful application of statistics.  
+</para>
+<para id="eip-id1166298040766">Statistics Labs appear at the end of each chapter and begin with student learning outcomes, general estimates for time on task, and any global implementation notes.  Students are then provided with step-by-step guidance, including sample data tables and calculation prompts.  The detailed assistance will help the students successfully apply the concepts in the text and lay the groundwork for future collaborative or individual work.  </para></section>
+
+</section>
+
+<section xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-382"><title>Additional resources</title><section id="eip-id8911316"><title>Student and instructor resources</title><para id="eip-id1168173254982">We&#8217;ve compiled additional resources for both students and instructors, including Getting Started Guides, an instructor solution manual, and PowerPoint slides. Instructor resources require a verified instructor account, which you can apply for when you log in or create your account on OpenStax.org. Take advantage of these resources to supplement your OpenStax book.
+</para></section><section id="eip-365"><title>Community Hubs</title><para id="eip-703">
+OpenStax partners with the Institute for the Study of Knowledge Management in Education (ISKME) to offer Community Hubs on OER Commons &#8211; a platform for instructors to share community-created resources that support OpenStax books, free of charge. Through our Community Hubs, instructors can upload their own materials or download resources to use in their own courses, including additional ancillaries, teaching material, multimedia, and relevant course content. We encourage instructors to join the hubs for the subjects most relevant to your teaching and research as an opportunity both to enrich your courses and to engage with other faculty. &#160;
+</para>
+<para id="eip-idm1010049728">To reach the Community Hubs, visit <link url="&#8232;www.oercommons.org/hubs/OpenStax">www.oercommons.org/hubs/OpenStax</link>.</para></section><section id="eip-833"><title>Partner resources</title><para id="eip-837">OpenStax Partners are our allies in the mission to make high-quality learning materials affordable and accessible to students and instructors everywhere. Their tools integrate seamlessly with our OpenStax titles at a low cost. To access the partner resources for your text, visit your book page on OpenStax.org.
+</para></section></section><section xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-441"><title>About the authors</title><section id="eip-id1165226216199" class="sr-contrib-auth"><title>Senior contributing authors</title><para id="eip-157"><emphasis>Barbara Illowsky, De Anza College</emphasis><newline/>
+<emphasis>Susan Dean, De Anza College</emphasis></para></section><section id="eip-id1165231659584" class="contrib-auth"><title>Contributing authors</title><para id="eip-14">Birgit Aquilonius, West Valley College<newline/>
+Charles Ashbacher, Upper Iowa University, Cedar Rapids<newline/>
+Abraham Biggs, Broward Community College<newline/>
+Daniel Birmajer, Nazareth College<newline/>
+Roberta Bloom, De Anza College<newline/>
+Bryan Blount, Kentucky Wesleyan College<newline/>
+Ernest Bonat, Portland Community College<newline/>
+Sarah Boslaugh, Kennesaw State University<newline/>
+David Bosworth, Hutchinson Community College<newline/>
+Sheri Boyd, Rollins College<newline/>
+George Bratton, University of Central Arkansas<newline/>
+Jing Chang, College of Saint Mary <newline/>
+Laurel Chiappetta, University of Pittsburgh<newline/>
+Lenore Desilets, De Anza College<newline/>
+Matthew Einsohn, Prescott College<newline/>
+Ann Flanigan, Kapiolani Community College<newline/>
+David French, Tidewater Community College<newline/>
+Mo Geraghty, De Anza College<newline/>
+Larry Green, Lake Tahoe Community College<newline/>
+Michael Greenwich, College of Southern Nevada<newline/>
+Inna Grushko, De Anza College<newline/>
+Valier Hauber, De Anza College<newline/>
+Janice Hector, De Anza College<newline/>
+Jim Helmreich, Marist College<newline/>
+Robert Henderson, Stephen F. Austin State University<newline/>
+Mel Jacobsen, Snow College<newline/>
+Mary Jo Kane, De Anza College<newline/>
+Lynette Kenyon, Collin County Community College<newline/>
+Charles Klein, De Anza College<newline/>
+Alexander Kolovos<newline/>
+Sheldon Lee, Viterbo University<newline/>
+Sara Lenhart, Christopher Newport University<newline/>
+Wendy Lightheart, Lane Community College<newline/>
+Vladimir Logvenenko, De Anza College<newline/>
+Jim Lucas, De Anza College<newline/>
+Lisa Markus, De Anza College<newline/>
+Miriam Masullo, SUNY Purchase<newline/>
+Diane Mathios, De Anza College<newline/>
+Robert McDevitt, Germanna Community College<newline/>
+Mark Mills, Central College<newline/>
+Cindy Moss, Skyline College<newline/>
+Nydia Nelson, St. Petersburg College<newline/>
+Benjamin Ngwudike, Jackson State University<newline/>
+Jonathan Oaks, Macomb Community College<newline/>
+Carol Olmstead, De Anza College<newline/>
+Adam Pennell, Greensboro College<newline/>
+Kathy Plum, De Anza College<newline/>
+Lisa Rosenberg, Elon University<newline/>
+Sudipta Roy, Kankakee Community College<newline/>
+Javier Rueda, De Anza College<newline/>
+Yvonne Sandoval, Pima Community College<newline/>
+Rupinder Sekhon, De Anza College<newline/>
+Travis Short, St. Petersburg College<newline/>
+Frank Snow, De Anza College<newline/>
+Abdulhamid Sukar, Cameron University<newline/>
+Jeffery Taub, Maine Maritime Academy<newline/>
+Mary Teegarden, San Diego Mesa College<newline/>
+John Thomas, College of Lake County<newline/>
+Philip J. Verrecchia, York College of Pennsylvania<newline/>
+Dennis Walsh, Middle Tennessee State University<newline/>
+Cheryl Wartman, University of Prince Edward Island<newline/>
+Carol Weideman, St. Petersburg College<newline/>
+Andrew Wiesner, Pennsylvania State University</para></section></section></content>
+
+</document>

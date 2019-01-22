@@ -1,0 +1,102 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+  <title>Introduction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46938/latest</md:content-url>
+  <md:content-id>m46938</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.9</md:version>
+  <md:created>2013/07/19 10:56:53 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+       <?cnx.eoc class="summary" title="Chapter Review"?>
+<?cnx.eoc class="formula-review" title="Formula Review"?>
+<?cnx.eoc class="practice" title="Practice"?>
+<?cnx.eoc class="bring-together-exercises" title="Bringing It Together : Practice"?>
+<?cnx.eoc class="free-response" title="Homework"?>
+<?cnx.eoc class="bring-together-homework" title="Bringing It Together : Homework"?>
+<?cnx.eoc class="references" title="References"?>
+
+<figure id="fs-idm115405360" class="splash">
+<media id="fs-idm115166448" alt="This is a photo taken of the night sky. A meteor and its tail are shown entering the earth's atmosphere.">
+<image mime-type="image/jpg" src="CNX_Stats_C03_CO.jpg" width="500"/>
+</media>
+<caption>Meteor showers are rare, but the probability of them occurring can be calculated. (credit: Navicore/flickr)</caption>
+</figure>
+<note id="fs-idm7161872" class="chapter-objectives">
+<label/>
+<title>Chapter Objectives</title>
+<para id="fs-idm75575520">By the end of this chapter, the student should be able to:</para>
+<list id="list1523423">
+<item>Understand and use the terminology of probability.</item>
+<item>Determine whether two events are mutually exclusive and whether two events are independent.</item>
+<item>Calculate probabilities using the Addition Rules and Multiplication
+Rules.</item>
+<item>Construct and interpret Contingency Tables.</item>
+<item>Construct and interpret Venn Diagrams.</item>
+<item>Construct and interpret Tree Diagrams.</item>
+</list>
+</note>
+<para id="intro01">It is often necessary to "guess" about the outcome of an event in order to make a decision. Politicians study polls to guess their likelihood of winning an election. Teachers choose a particular course of study based on what they think students can comprehend. Doctors choose the treatments needed for various diseases based on their assessment of likely results. You may have visited a casino where people play games chosen because of the belief that the likelihood of winning is good. You may have chosen your course of study based on the probable availability of jobs.</para>
+<para id="element-209">You have, more than likely, used probability. In fact, you probably have an intuitive sense of probability. Probability deals with the chance of an event occurring. Whenever you weigh the odds of whether or not to do your homework or to study for an exam, you are using probability. In this chapter, you will learn how to solve probability problems using a systematic approach. </para>
+<note id="fs-idm8566848" class="statistics collab">
+<label/>
+<title>Collaborative Exercise</title>
+<para id="element-663">Your instructor will survey your class. Count the number of students in the class today.</para>
+<list id="element-577" list-type="bulleted">
+<item>Raise your hand if you have any change in your pocket or purse. Record the number of raised hands.</item>
+<item>Raise your hand if you rode a bus within the past month. Record the number of raised hands.</item>
+<item>Raise your hand if you answered "yes" to BOTH of the first two questions. Record the number of raised hands.</item>
+</list>
+<para id="element-352">Use the class data as estimates of the following probabilities. <emphasis effect="italics">P</emphasis>(change) means the probability that a randomly chosen person in your class has change in his/her pocket or purse. <emphasis effect="italics">P</emphasis>(bus) means the probability that a randomly chosen person in your class rode a bus within the last month and so on. Discuss your answers.</para>
+<list id="element-204" list-type="bulleted"><item>Find <emphasis effect="italics">P</emphasis>(change).</item>
+<item>Find <emphasis effect="italics">P</emphasis>(bus).</item>
+<item>Find <emphasis effect="italics">P</emphasis>(change AND bus). Find the probability that a randomly chosen student in your class has change in his/her pocket or purse and rode a bus within the last month.</item>
+<item>Find <emphasis effect="italics">P</emphasis>(change|bus). Find the probability that a randomly chosen student has change given that he or she rode a bus within the last month. Count all the students that rode a bus. From the group of students who rode a bus, count those who have change. The probability is equal to those who have change and rode a bus divided by those who rode a bus.</item>
+</list>
+</note>
+</content> 
+</document>

@@ -1,0 +1,347 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Outcomes and the Type I and Type II Errors</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47029/latest</md:content-url>
+  <md:content-id>m47029</md:content-id>
+  <md:title>Outcomes and the Type I and Type II Errors</md:title>
+  <md:version>1.5</md:version>
+  <md:created>2013/07/19 14:19:43 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternative hypothesis</md:keyword>
+    <md:keyword>level of significance of the test</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>type 1 error</md:keyword>
+    <md:keyword>type 2 error</md:keyword>
+    <md:keyword>type I Error</md:keyword>
+    <md:keyword>type II error</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="delete_me">When you perform a hypothesis test, there are four possible outcomes depending on the actual truth (or falseness) of the null hypothesis <emphasis effect="italics">H<sub>0</sub></emphasis> and the decision to reject or not. The outcomes are summarized in the following table:</para>
+
+  <table id="element-689" summary="">
+<tgroup cols="3"><thead>
+<row>
+    <entry>ACTION</entry>
+
+    <entry><emphasis effect="italics">H<sub>0</sub></emphasis> IS ACTUALLY</entry>
+    <entry>...</entry>
+
+  </row>
+</thead>
+
+<tbody>
+
+  <row>
+    <entry/>
+    <entry>True</entry>
+    <entry>False</entry>
+  </row>
+
+
+
+  <row>
+    <entry><emphasis>Do not reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis></entry>
+    <entry>Correct Outcome</entry>
+    <entry>Type II error</entry>
+  </row>
+  <row>
+    <entry><emphasis>Reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis></entry>
+    <entry>Type I Error</entry>
+    <entry>Correct Outcome</entry>
+  </row>
+</tbody>
+
+</tgroup>
+  </table>
+  <para id="element-915">The four possible outcomes in the table are:
+    <list id="list-1" list-type="enumerated"><item>The decision is <emphasis>not to reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis> when <emphasis><emphasis effect="italics">H<sub>0</sub></emphasis> is true (correct decision).</emphasis></item>
+
+      <item>The decision is to <emphasis>reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis> when <emphasis><emphasis effect="italics">H<sub>0</sub></emphasis> is true</emphasis> (incorrect decision known as a<term>Type I error</term>).</item>
+
+      <item>The decision is <emphasis>not to reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis> when, in fact, <emphasis><emphasis effect="italics">H<sub>0</sub></emphasis> is false</emphasis> (incorrect decision known as a <term>Type II error</term>).</item>
+
+      <item>The decision is to <emphasis>reject <emphasis effect="italics">H<sub>0</sub></emphasis></emphasis> when <emphasis><emphasis effect="italics">H<sub>0</sub></emphasis> is false</emphasis> (<emphasis>correct decision</emphasis> whose probability is called the <emphasis>Power of the Test</emphasis>).</item>
+    </list></para><para id="element-247">Each of the errors occurs with a particular probability. The Greek letters <emphasis effect="italics">&#945;</emphasis> and <emphasis effect="italics">&#946;</emphasis> represent the probabilities.</para><para id="element-95"><emphasis effect="italics">&#945;</emphasis> = probability of a Type I error = <emphasis><emphasis effect="italics">P</emphasis>(Type I error)</emphasis> = probability of rejecting the null hypothesis when the null hypothesis is true.</para><para id="element-634"><emphasis effect="italics">&#946;</emphasis> = probability of a Type II error = <emphasis><emphasis effect="italics">P</emphasis>(Type II error)</emphasis> = probability of not rejecting the null hypothesis when the null hypothesis is false.</para><para id="fs-idp40594672"><emphasis effect="italics">&#945;</emphasis> and <emphasis effect="italics">&#946;</emphasis> should be as small as possible because they are probabilities of errors. They are rarely zero.</para><para id="element-225">The Power of the Test is 1 &#8211; <emphasis effect="italics">&#946;</emphasis>. Ideally, we want a high power that is as close to one as possible. Increasing the sample size can increase the Power of the Test.</para><para id="element-400">The following are examples of Type I and Type II errors.</para>
+
+  <example id="element-484">
+    <para id="element-742">Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: Frank's rock climbing equipment is safe.</para>
+    <para id="element-905"><emphasis>Type I error</emphasis>: Frank thinks that his rock climbing equipment may not be safe when, in fact, it really is safe. <emphasis>Type II error</emphasis>: Frank thinks that his rock climbing equipment may be safe when, in fact, it is not safe.</para><para id="element-821"><emphasis><emphasis effect="italics">&#945;</emphasis> = probability</emphasis> that Frank thinks his rock climbing equipment may not be safe when, in fact, it really is safe. <emphasis><emphasis effect="italics">&#946;</emphasis> = probability</emphasis> that Frank thinks his rock climbing equipment may be safe when, in fact, it is not safe.</para><para id="element-239">Notice that, in this case, the error with the greater consequence is the Type II error. (If Frank thinks his rock climbing equipment is safe, he will go ahead and use it.)</para>
+  </example>
+
+
+  <note id="fs-idm72148080" class="statistics try">
+    <label/>
+     <title>Try It</title>
+    <exercise id="eip-808">
+    <problem id="eip-569">
+  <para id="eip-681">Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: the blood cultures contain no traces of pathogen <emphasis effect="italics">X</emphasis>. State the Type I and Type II errors.</para>
+</problem>
+  </exercise>
+
+  </note>
+
+  <example id="element-449"><para id="element-496">Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: The victim of an automobile accident is alive when he arrives at the emergency room of a hospital.</para>
+
+    <para id="element-157"><emphasis>Type I error</emphasis>: The emergency crew thinks that the victim is dead when, in fact, the victim is alive. <emphasis>Type II error</emphasis>: The emergency crew does not know if the victim is alive when, in fact, the victim is dead.</para><para id="element-558"><emphasis><emphasis effect="italics">&#945;</emphasis> = probability</emphasis> that the emergency crew thinks the victim is dead when, in fact, he is really alive = <emphasis effect="italics">P</emphasis>(Type I error).
+<emphasis><emphasis effect="italics">&#946;</emphasis> = probability</emphasis> that the emergency crew does not know if the victim is alive when, in fact, the victim is dead = <emphasis effect="italics">P</emphasis>(Type II error).</para><para id="element-266">The error with the greater consequence is the Type I error. (If the emergency crew thinks the victim is dead, they will not treat him.)</para>
+  </example>
+
+ <note id="fs-idp97501776" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-200"><problem id="eip-582">
+  <para id="eip-110">Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: a patient is not sick. Which type of error has the greater consequence, Type I or Type II?</para></problem>
+  </exercise>
+
+ </note>
+
+<example id="eip-550"><para id="eip-646">It&#8217;s a Boy Genetic Labs claim to be able to increase the likelihood that a pregnancy will result in a boy being born. Statisticians want to test the claim. Suppose that the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: It&#8217;s a Boy Genetic Labs has no effect on gender outcome.</para><para id="eip-idp12866608"><emphasis>Type I error</emphasis>: This results when a true null hypothesis is rejected. In the context of this scenario, we would state that we believe that It&#8217;s a Boy Genetic Labs influences the gender outcome, when in fact it has no effect. The probability of this error occurring is denoted by the Greek letter alpha, <emphasis effect="italics">&#945;</emphasis>.</para><para id="eip-idp92458272"><emphasis>Type II error</emphasis>: This results when we fail to reject a false null hypothesis. In context, we would state that It&#8217;s a Boy Genetic Labs does not influence the gender outcome of a pregnancy when, in fact, it does. The probability of this error occurring is denoted by the Greek letter beta, <emphasis effect="italics">&#946;</emphasis>.</para><para id="eip-idp109344384">The error of greater consequence would be the Type I error since couples would use the It&#8217;s a Boy Genetic Labs product in hopes of increasing the chances of having a boy.</para>
+</example>
+
+  <note id="fs-idp114758848" class="statistics try"><label/><title>Try It</title>
+<exercise id="eip-idp106437392">
+<problem id="eip-idm60347984">
+<para id="eip-326">&#8220;Red tide&#8221; is a bloom of poison-producing algae&#8211;a few different species of a class of plankton called dinoflagellates. When the weather and water conditions cause these blooms, shellfish such as clams living in the area develop dangerous levels of a paralysis-inducing toxin. In Massachusetts, the Division of Marine Fisheries (DMF) monitors levels of the toxin in shellfish by regular sampling of shellfish along the coastline. If the mean level of toxin in clams exceeds 800 &#956;g (micrograms) of toxin per kg of clam meat in any area, clam harvesting is banned there until the bloom is over and levels of toxin in clams subside. Describe both a Type I and a Type II error in this context, and state which error has the greater consequence.</para></problem>
+
+</exercise></note><example id="eip-168"><para id="eip-90">A certain experimental drug claims a cure rate of at least 75% for males with prostate cancer. Describe both the Type I and Type II errors in context. Which error is the more serious?</para><para id="eip-141"><emphasis>Type I</emphasis>: A cancer patient believes the cure rate for the drug is less than 75% when it actually is at least 75%.</para><para id="eip-695"><emphasis>Type II</emphasis>: A cancer patient believes the experimental drug has at least a 75% cure rate when it has a cure rate that is less than 75%.</para><para id="eip-806">In this scenario, the Type II error contains the more severe consequence. If a patient believes the drug works at least 75% of the time, this most likely will influence the patient&#8217;s (and doctor&#8217;s) choice about whether to use the drug as a treatment option.</para></example>
+
+  <note id="fs-idm49523424" class="statistics try">
+    <label/>
+    <title>Try It</title>
+    <para id="eip-198">Determine both Type I and Type II errors for the following scenario:</para>
+<para id="eip-idp26159712">Assume a null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, that states the percentage of adults with jobs is at least 88%.</para>
+
+    <exercise id="eip-856">
+      <problem id="eip-339">
+        <para id="eip-idm76027600">Identify the Type I and Type II errors from these four statements.
+          <list id="eip-idm170151664" list-type="enumerated" number-style="lower-alpha">
+  <item>Not to reject the null hypothesis that the percentage of adults who have jobs is at least 88% when that percentage is actually less than 88%</item>
+<item>Not to reject the null hypothesis that the percentage of adults who have jobs is at least 88% when the percentage is actually at least 88%.</item>
+<item>Reject the null hypothesis that the percentage of adults who have jobs is at least 88% when the percentage is actually at least 88%.</item>
+<item>Reject the null hypothesis that the percentage of adults who have jobs is at least 88% when that percentage is actually less than 88%.
+</item>
+</list>
+</para>
+</problem>
+    </exercise>
+
+  </note>
+
+  <section id="eip-566" class="summary">
+    <title>Chapter Review</title>
+
+    <para id="eip-483">In every hypothesis test, the outcomes are dependent on a correct interpretation of the data. Incorrect calculations or misunderstood summary statistics can yield errors that affect the results. A <emphasis>Type I</emphasis> error occurs when a true null hypothesis is rejected. A <emphasis>Type II error</emphasis> occurs when a false null hypothesis is not rejected.</para>
+    <para id="eip-idm63626992">The probabilities of these errors are denoted by the Greek letters <emphasis effect="italics">&#945;</emphasis> and <emphasis effect="italics">&#946;</emphasis>, for a Type I and a Type II error respectively. The power of the test, 1 &#8211; <emphasis effect="italics">&#946;</emphasis>, quantifies the likelihood that a test will yield the correct result of a true alternative hypothesis being accepted. A high power is desirable.</para></section>
+
+<section id="fs-idp7813920" class="formula-review">
+<title>Formula Review</title>
+
+  <para id="element-965"><emphasis effect="italics">&#945;</emphasis> = probability of a Type I error = <emphasis effect="italics">P</emphasis>(Type I error) = probability of rejecting the null hypothesis when the null hypothesis is true.</para><para id="element-704"><emphasis effect="italics">&#946;</emphasis> = probability of a Type II error = <emphasis effect="italics">P</emphasis>(Type II error) = probability of not rejecting the null hypothesis when the null hypothesis is false.</para></section>
+
+<section id="eip-832" class="practice">
+<exercise id="eip-308">
+  <problem id="eip-347">
+  <para id="eip-500">
+The mean price of mid-sized cars in a region is $32,000. A test is conducted to see if the claim is true. State the Type I and Type II errors in complete sentences.
+  </para>
+</problem>
+
+<solution id="eip-867">
+  <para id="eip-211">Type I: The mean price of mid-sized cars is $32,000, but we conclude that it is not $32,000.</para>
+<para id="eip-idp25290720">Type II: The mean price of mid-sized cars is not $32,000, but we conclude that it is $32,000.</para>
+</solution>
+</exercise>
+  <exercise id="eip-611"><problem id="eip-552">
+  <para id="eip-384">A sleeping bag is tested to withstand temperatures of &#8211;15 &#176;F. You think the bag cannot stand temperatures that low. State the Type I and Type II errors in complete sentences.</para></problem></exercise><exercise id="eip-655"><problem id="eip-848">
+  <para id="eip-13">For <link target-id="eip-611">Exercise 9.12</link>, what are <emphasis effect="italics">&#945;</emphasis> and <emphasis effect="italics">&#946;</emphasis> in words?
+  </para></problem>
+
+<solution id="eip-515">
+  <para id="eip-989"><emphasis effect="italics">&#945;</emphasis> = the probability that you think the bag cannot withstand -15 degrees F, when in fact it can
+  </para><para id="eip-idp30620656"><emphasis effect="italics">&#946;</emphasis> = the probability that you think the bag can withstand -15 degrees F, when in fact it cannot</para></solution>
+</exercise>
+
+  <exercise id="eip-106"><problem id="eip-423">
+  <para id="eip-659">In words, describe 1 &#8211; <emphasis effect="italics">&#946;</emphasis> For <link target-id="eip-611">Exercise 9.12</link>.
+  </para></problem></exercise><exercise id="eip-861"><problem id="eip-338">
+  <para id="eip-46">A group of doctors is deciding whether or not to perform an operation. Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: the surgical procedure will go well. State the Type I and Type II errors in complete sentences.</para>
+</problem>
+
+<solution id="eip-89">
+  <para id="eip-371">
+Type I: The procedure will go well, but the doctors think it will not.
+  </para>
+<para id="eip-idp34803264">Type II: The procedure will not go well, but the doctors think it will.</para>
+</solution>
+</exercise><exercise id="eip-496"><problem id="eip-954">
+  <para id="eip-585">A group of doctors is deciding whether or not to perform an operation. Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: the surgical procedure will go well. Which is the error with the greater consequence?</para>
+</problem></exercise><exercise id="eip-404">
+    <problem id="eip-877">
+  <para id="eip-555">The power of a test is 0.981. What is the probability of a Type II error?</para>
+</problem>
+
+<solution id="eip-740">
+  <para id="eip-598">0.019</para>
+</solution>
+</exercise><exercise id="eip-331"><problem id="eip-538">
+  <para id="eip-610">A group of divers is exploring an old sunken ship. Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: the sunken ship does not contain buried treasure. State the Type I and Type II errors in complete sentences.</para>
+</problem></exercise><exercise id="eip-967"><problem id="eip-943">
+  <para id="eip-304">A microbiologist is testing a water sample for E-coli. Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: the sample does not contain E-coli. The probability that the sample does not contain E-coli, but the microbiologist thinks it does is 0.012. The probability that the sample does contain E-coli, but the microbiologist thinks it does not is 0.002. What is the power of this test?</para>
+</problem>
+
+<solution id="eip-525">
+  <para id="eip-61">0.998</para>
+</solution>
+  </exercise>
+
+  <exercise id="eip-424"><problem id="eip-826">
+  <para id="eip-258">A microbiologist is testing a water sample for E-coli. Suppose the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, is: the sample contains E-coli. Which is the error with the greater consequence?</para>
+</problem></exercise></section>
+
+
+<section id="fs-idp36704512" class="free-response">
+<title>Homework</title>
+<exercise id="element-612">
+  <problem id="id8384344">
+  <para id="element-281">State the Type I and Type II errors in complete sentences given the following statements.</para>
+    <list id="fs-idm56908224" list-type="enumerated" number-style="lower-alpha">
+      <item>The mean number of years Americans work before retiring is 34.</item>
+      <item>At most 60% of Americans vote in presidential elections.</item>
+      <item>The mean starting salary for San Jose State University graduates is at least $100,000 per year.</item>
+      <item>Twenty-nine percent of high school seniors get drunk each month.</item>
+      <item>Fewer than 5% of adults ride the bus to work in Los Angeles.</item>
+      <item>The mean number of cars a person owns in his or her lifetime is not more than ten.</item>
+      <item>About half of Americans prefer to live away from cities, given the choice.</item>
+      <item>Europeans have a mean paid vacation each year of six weeks.</item>
+      <item>The chance of developing breast cancer is under 11% for women.</item>
+      <item>Private universities mean tuition cost is more than $20,000 per year.</item>
+    </list>
+
+</problem>
+
+<solution id="eip-idm137925328">
+  <list id="fs-idm18858336" list-type="enumerated" number-style="lower-alpha">
+    <item>Type I error: We conclude that the mean is not 34 years, when it really is 34 years. Type II error: We conclude that the mean is 34 years, when in fact it really is not 34 years.</item>
+      <item>Type I error: We conclude that more than 60% of Americans vote in presidential elections, when the actual percentage is at most 60%.Type II error: We conclude that at most 60% of Americans vote in presidential elections when, in fact, more than 60% do.</item>
+      <item>Type I error: We conclude that the mean starting salary is less than $100,000, when it really is at least $100,000. Type II error: We conclude that the mean starting salary is at least $100,000 when, in fact, it is less than $100,000.</item>
+      <item>Type I error: We conclude that the proportion of high school seniors who get drunk each month is not 29%, when it really is 29%. Type II error: We conclude that the proportion of high school seniors who get drunk each month is 29% when, in fact, it is not 29%.</item>
+      <item>Type I error: We conclude that fewer than 5% of adults ride the bus to work in Los Angeles, when the percentage that do is really 5% or more. Type II error: We conclude that 5% or more adults ride the bus to work in Los Angeles when, in fact, fewer that 5% do. </item>
+      <item>Type I error: We conclude that the mean number of cars a person owns in his or her lifetime is more than 10, when in reality it is not more than 10. Type II error: We conclude that the mean number of cars a person owns in his or her lifetime is not more than 10 when, in fact, it is more than 10.</item>
+      <item>Type I error: We conclude that the proportion of Americans who prefer to live away from cities is not about half, though the actual proportion is about half. Type II error: We conclude that the proportion of Americans who prefer to live away from cities is half when, in fact, it is not half.</item>
+      <item>Type I error: We conclude that the duration of paid vacations each year for Europeans is not six weeks, when in fact it is six weeks. Type II error: We conclude that the duration of paid vacations each year for Europeans is six weeks when, in fact, it is not.</item>
+      <item>Type I error: We conclude that the proportion is less than 11%, when it is really at least 11%. Type II error: We conclude that the proportion of women who develop breast cancer is at least 11%, when in fact it is less than 11%.</item>
+      <item>Type I error: We conclude that the average tuition cost at private universities is more than $20,000, though in reality it is at most $20,000. Type II error: We conclude that the average tuition cost at private universities is at most $20,000 when, in fact, it is more than $20,000.</item>
+  </list>
+</solution>
+</exercise>
+
+  <exercise id="element-231"><problem id="id8395653">
+  <para id="element-818">For statements a-j in <link target-id="element-612">Exercise 9.109</link>, answer the following in complete sentences.</para><list id="element-295" list-type="enumerated" number-style="lower-alpha">
+    <item>State a consequence of committing a Type I error.</item>
+    <item>State a consequence of committing a Type II error.</item>
+  </list>
+</problem></exercise><exercise id="exer10">
+<problem id="id9404374">
+<para id="id8618928">When a new drug is created, the pharmaceutical company must subject it to testing before receiving the necessary permission from the Food and Drug Administration (FDA) to market the drug. Suppose the null hypothesis is &#8220;the drug is unsafe.&#8221; What is the Type II Error?</para>
+  <list id="id5046364" list-type="enumerated" number-style="lower-alpha">
+    <item>To conclude the drug is safe when in, fact, it is unsafe.</item>
+    <item>Not to conclude the drug is safe when, in fact, it is safe.</item>
+    <item>To conclude the drug is safe when, in fact, it is safe.</item>
+    <item>Not to conclude the drug is unsafe when, in fact, it is unsafe.</item>
+  </list>
+</problem>
+<solution id="id9404499">
+<para id="paragraphs">b</para></solution>
+</exercise>
+
+<exercise id="exer15"><problem id="id8184871"><para id="id8435364">A statistics instructor believes that fewer than 20% of Evergreen Valley College (EVC) students attended the opening midnight showing of the latest Harry Potter movie. She surveys 84 of her students and finds that 11 of them attended the midnight showing. The Type I error is to conclude that the percent of EVC students who attended is ________.</para>
+  <list id="id7995329" list-type="enumerated" number-style="lower-alpha">
+    <item>at least 20%, when in fact, it is less than 20%.</item>
+    <item>20%, when in fact, it is 20%.</item>
+    <item>less than 20%, when in fact, it is at least 20%.</item>
+    <item>less than 20%, when in fact, it is less than 20%.</item>
+  </list>
+  </problem></exercise><exercise id="exer17"><problem id="id8185396">
+<para id="eip-idm45808736">It is believed that Lake Tahoe Community College (LTCC) Intermediate Algebra students get less than seven hours of sleep per night, on average. A survey of 22 LTCC Intermediate Algebra students generated a mean of 7.24 hours with a standard deviation of 1.93 hours. At a level of significance of 5%, do LTCC Intermediate Algebra students get less than seven hours of sleep per night, on average?</para>
+<para id="id4936080">The Type II error is not to reject that the mean number of hours of sleep LTCC students get per night is at least seven when, in fact, the mean number of hours</para>
+  <list id="id8434145" list-type="enumerated" number-style="lower-alpha">
+    <item>is more than seven hours.</item>
+    <item>is at most seven hours.</item>
+    <item>is at least seven hours.</item>
+    <item>is less than seven hours.</item>
+  </list>
+
+</problem>
+
+<solution id="id8185494"><para id="parrrra">d</para></solution>
+</exercise><exercise id="exer20"><problem id="id8186343"><para id="id9140322">Previously, an organization reported that teenagers spent 4.5 hours per week, on average, on the phone. The organization thinks that, currently, the mean is higher. Fifteen randomly chosen teenagers were asked how many hours per week they spend on the phone. The sample mean was 4.75 hours with a sample standard deviation of 2.0. Conduct a hypothesis test, the Type I error is:</para><list id="id9140329" list-type="enumerated" number-style="lower-alpha"><item>to conclude that the current mean hours per week is higher than 4.5, when in fact, it is higher</item>
+    <item>to conclude that the current mean hours per week is higher than 4.5, when in fact, it is the same</item>
+    <item>to conclude that the mean hours per week currently is 4.5, when in fact, it is higher</item>
+    <item>to conclude that the mean hours per week currently is no higher than 4.5, when in fact, it is not higher</item></list></problem></exercise></section>
+
+</content>
+<glossary>
+<definition id="type1err">
+    <term>Type 1 Error</term>
+    <meaning id="id2292288">The decision is to reject the null hypothesis when, in fact, the null hypothesis is true.
+    </meaning>
+  </definition>
+
+
+<definition id="type2err">
+    <term>Type 2 Error</term>
+    <meaning id="id1169217218486">The decision is not to reject the null hypothesis when, in fact, the null hypothesis is false.
+    </meaning>
+</definition>
+
+
+</glossary>
+</document>

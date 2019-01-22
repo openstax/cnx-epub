@@ -1,0 +1,179 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Descriptive Statistics</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50253/latest</md:content-url>
+  <md:content-id>m50253</md:content-id>
+  <md:title>Descriptive Statistics</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/08 11:32:21 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>deviation</md:keyword>
+    <md:keyword>population</md:keyword>
+    <md:keyword>sample</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+    <md:keyword>variance</md:keyword>
+  </md:keywordlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1169266836319" class="statistics lab"><label/><title>Descriptive Statistics</title>
+<para id="element-674">Class Time: </para>
+<para id="element-635">Names: </para>
+<list id="element-397s" list-type="bulleted">
+<title>Student Learning Outcomes</title>
+<item>The student will construct a histogram and a box plot.</item>
+<item>The student will calculate univariate statistics.</item>
+<item>The student will examine the graphs to interpret what the data implies.</item></list>
+
+<para id="element-324">
+<title>Collect the Data</title>
+Record the number of pairs of shoes you own.</para>
+
+<list id="listhioaasdfadsf" list-type="enumerated"><item>Randomly survey 30 classmates about the number of pairs of shoes they own. Record their values.
+<table id="element-30" summary="This is a blank table with 30 cells for recording values.">
+
+<title>Survey Results</title>
+<tgroup cols="5"><tbody>
+<row>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+</row>
+<row>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+</row>
+<row>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+</row>
+<row>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+</row>
+<row>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+</row>
+<row>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+<entry>_____</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table>
+</item>
+
+<item>Construct a histogram. Make five to six intervals. Sketch the graph using a ruler and pencil and scale the axes.
+
+<figure id="element-2356"><media id="id7552200" alt="A blank graph template for use with this problem."><image src="fig-ch02_14_01.png" mime-type="image/png" width="380"/></media>
+</figure></item>
+<item>Calculate the following values. 
+<list id="eip-idp140444857889360" list-type="enumerated" number-style="lower-alpha">
+<item>
+<m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> = _____</item>
+<item>
+<emphasis effect="italics">s</emphasis> = _____</item></list>
+
+</item>
+
+<item>Are the data discrete or continuous? How do you know?</item>
+
+<item>In complete sentences, describe the shape of the histogram.</item>
+
+<item>Are there any potential outliers? List the value(s) that could be outliers. Use a formula to check the end values to determine if they are potential outliers.
+</item>
+
+</list><list id="list6798" list-type="enumerated"><title>Analyze the Data</title><item>Determine the following values.
+<list id="eip-idp41229376" list-type="enumerated" number-style="lower-alpha">
+<item>Min = _____</item>
+<item><emphasis effect="italics">M</emphasis> = _____</item>
+<item>Max = _____</item>
+<item><emphasis effect="italics">Q</emphasis><sub>1</sub> = _____</item>
+<item><emphasis effect="italics">Q</emphasis><sub>3</sub> = _____</item>
+<item><emphasis effect="italics">IQR</emphasis> = _____</item>
+</list>
+</item>
+
+<item>Construct a box plot of data</item>
+
+<item>What does the shape of the box plot imply about the concentration of data? Use complete sentences.</item>
+
+<item>Using the box plot, how can you determine if there are potential outliers?</item>
+
+<item>How does the standard deviation help you to determine concentration of the data and whether or not there are potential outliers?</item>
+
+<item>What does the <emphasis effect="italics">IQR</emphasis> represent in this problem?</item>
+
+<item>Show your work to find the value that is 1.5 standard deviations:
+<list id="nestlist2" list-type="enumerated" number-style="lower-alpha">
+<item>above the mean.</item>
+<item>below the mean.</item>
+</list></item>
+</list></note></content>
+
+</document>

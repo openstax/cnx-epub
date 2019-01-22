@@ -1,0 +1,133 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Lab 2: Chi-Square Test of Independence</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50280/latest</md:content-url>
+  <md:content-id>m50280</md:content-id>
+  <md:title>Lab 2: Chi-Square Test of Independence</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/09 10:36:04 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>population variance</md:keyword>
+    <md:keyword>test of a single variance</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1170238033322" class="statistics lab"><label/><title>Lab 2: Chi-Square Test of Independence</title>
+    <para id="id8363924">Class Time: </para>
+  <para id="id7668722">Names:</para>
+  <list id="id3831121" list-type="bulleted">
+       <title>Student Learning Outcome</title>
+    <item>The student will evaluate if there is a significant relationship between favorite type of snack and gender. </item>
+   </list>
+  <list id="list-8652384" list-type="enumerated">
+   <title>Collect the Data</title>
+   <item>Using your class as a sample, complete the following chart. Ask each other what your favorite snack is, then total the results.
+    <note id="eip-998"><label/><title>Note</title>You may need to combine two food categories so that each cell has an expected value of at least five.</note><table id="id89871qw3984l8" summary="This table presents the favorite type of snack in columns 2-5 and the total in the sixth column. The first row is male, the second row is female, and the third row is total.">
+     <title>Favorite type of snack</title>
+     <tgroup cols="6"><colspec colnum="1" colname="c1"/>
+      <colspec colnum="2" colname="c2"/>
+      <colspec colnum="3" colname="c3"/>
+      <colspec colnum="4" colname="c4"/>
+      <colspec colnum="5" colname="c5"/>
+      <colspec colnum="6" colname="c6"/>
+      <thead>
+       <row>
+        <entry/>
+        <entry>sweets (candy &amp; baked goods)</entry>
+        <entry>ice cream</entry>
+        <entry>chips &amp; pretzels</entry>
+        <entry>fruits &amp; vegetables</entry>
+        <entry>Total</entry>
+       </row>
+      </thead>
+      <tbody>
+       <row>
+        <entry>male</entry>
+        <entry/>
+        <entry/>
+        <entry/>
+        <entry/>
+        <entry/>
+       </row>
+       <row>
+        <entry>female</entry>
+        <entry/>
+        <entry/>
+        <entry/>
+        <entry/>
+        <entry/>
+       </row>
+       <row>
+        <entry>Total</entry>
+        <entry/>
+        <entry/>
+        <entry/>
+        <entry/>
+        <entry/>
+       </row>
+      </tbody>
+     </tgroup>
+    </table></item>
+   <item>Looking at <link target-id="id89871qw3984l8"/>, does it appear to you that there is a dependence between gender and favorite type of snack food? Why or why not?</item>
+  </list>
+     <para id="element-52">
+     <title>Hypothesis Test</title>
+   Conduct a hypothesis test to determine if the factors are independent:</para>
+   <list id="list-76474" list-type="enumerated"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: ________</item>
+    <item><emphasis effect="italics">H<sub>a</sub></emphasis>: ________</item>
+    <item>What distribution should you use for a hypothesis test?</item>
+    <item>Why did you choose this distribution?</item>
+    <item>Calculate the test statistic.</item>
+    <item>Find the <emphasis effect="italics">p</emphasis>-value.</item>
+    <item>Sketch a graph of the situation. Label and scale the <emphasis effect="italics">x</emphasis>-axis. Shade the area corresponding to the <emphasis effect="italics">p</emphasis>-value. <figure id="id3390530"><media id="id3497794" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch11_16_01.png" mime-type="image/png" width="380"/></media></figure></item>
+    <item>State your decision.</item>
+    <item>State your conclusion in a complete sentence.</item>
+   </list><list id="list-87578324" list-type="enumerated"><title>Discussion Questions</title><item> Is the conclusion of your study the same as or different from your answer to answer to question two under <link target-id="list-8652384">Collect the Data</link>?</item>
+    <item> Why do you think that occurred?</item>
+     </list></note></content>
+
+</document>

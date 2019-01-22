@@ -1,0 +1,1507 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Comparing Two Independent Population Proportions</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47060/latest</md:content-url>
+  <md:content-id>m47060</md:content-id>
+  <md:title>Comparing Two Independent Population Proportions</md:title>
+  <md:version>1.9</md:version>
+  <md:created>2013/07/19 09:33:14 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>pooled proportion</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <para id="fs-idp16810352">When conducting a hypothesis test that compares two independent population proportions, the following characteristics should be present:</para>
+    <list id="element-381" list-type="enumerated">
+<item>The two independent samples are simple random samples that are independent.</item>
+<item> The number of successes is at least five, and the number of failures is at least five, for each of the samples.</item>
+<item>Growing literature states that the population must be at least ten or 20 times the size of the sample. This keeps each population from being over-sampled and causing incorrect results.</item>
+</list>
+
+<para id="delete_me">Comparing two proportions, like comparing two means, is common. If two estimated proportions are different, it may be due to a difference in the populations or it may be due to chance. A hypothesis test can help determine if a difference in the estimated proportions reflects a difference in the population proportions.</para>
+  <para id="fs-idm58849136">The difference of two proportions follows an approximate normal distribution. Generally, the null hypothesis states that the two proportions are the same. That is, <emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> = <emphasis effect="italics">p<sub>B</sub></emphasis>. To conduct the test, we use a pooled proportion, <emphasis effect="italics">p<sub>c</sub></emphasis>. </para>
+
+<equation id="element-845">
+  <title>The pooled proportion is calculated as follows:</title><m:math>
+    <m:mrow>
+      <m:msub>
+        <m:mi>p</m:mi>
+        <m:mi>c</m:mi>
+      </m:msub>
+      <m:mo>=</m:mo><m:mfrac>
+        <m:mrow>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>A</m:mi>
+          </m:msub>
+          <m:mo>+</m:mo><m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>B</m:mi>
+          </m:msub>
+
+        </m:mrow>
+        <m:mrow>
+          <m:msub>
+            <m:mi>n</m:mi>
+            <m:mi>A</m:mi>
+          </m:msub>
+          <m:mo>+</m:mo><m:msub>
+            <m:mi>n</m:mi>
+            <m:mi>B</m:mi>
+          </m:msub>
+
+        </m:mrow>
+      </m:mfrac>
+
+    </m:mrow>
+  </m:math>
+
+</equation>
+<equation id="element-630">
+<title>The distribution for the differences is:</title>
+<m:math>
+ <m:mrow>
+  <m:msub>
+   <m:msup>
+    <m:mi>P</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mi>A</m:mi>
+  </m:msub>
+  <m:mo>&#8722;</m:mo><m:msub>
+   <m:msup>
+    <m:mi>P</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mi>B</m:mi>
+  </m:msub>
+  <m:mo>~</m:mo><m:mi>N</m:mi><m:mo stretchy="false">[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:msqrt>
+   <m:mrow>
+    <m:msub>
+     <m:mi>p</m:mi>
+     <m:mi>c</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msub>
+     <m:mi>p</m:mi>
+     <m:mi>c</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:msub>
+       <m:mi>n</m:mi>
+       <m:mi>A</m:mi>
+      </m:msub>
+
+     </m:mrow>
+    </m:mfrac>
+    <m:mo>+</m:mo><m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:msub>
+       <m:mi>n</m:mi>
+       <m:mi>B</m:mi>
+      </m:msub>
+
+     </m:mrow>
+    </m:mfrac>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:msqrt>
+  <m:mo stretchy="false">]</m:mo>
+ </m:mrow>
+</m:math></equation>
+
+  <equation id="element-225">
+<title>The test statistic (<emphasis effect="italics">z</emphasis>-score) is:</title>
+<m:math>
+ <m:mrow>
+  <m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:msub>
+     <m:msup>
+      <m:mi>p</m:mi>
+      <m:mo>&#8242;</m:mo>
+     </m:msup>
+
+     <m:mi>A</m:mi>
+    </m:msub>
+    <m:mo>&#8722;</m:mo><m:msub>
+     <m:msup>
+      <m:mi>p</m:mi>
+      <m:mo>&#8242;</m:mo>
+     </m:msup>
+
+     <m:mi>B</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo><m:mo>&#8722;</m:mo><m:mo stretchy="false">(</m:mo><m:msub>
+     <m:mi>p</m:mi>
+     <m:mi>A</m:mi>
+    </m:msub>
+    <m:mo>&#8722;</m:mo><m:msub>
+     <m:mi>p</m:mi>
+     <m:mi>B</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:msub>
+       <m:mi>p</m:mi>
+       <m:mi>c</m:mi>
+      </m:msub>
+      <m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msub>
+       <m:mi>p</m:mi>
+       <m:mi>c</m:mi>
+      </m:msub>
+      <m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mrow>
+        <m:msub>
+         <m:mi>n</m:mi>
+         <m:mi>A</m:mi>
+        </m:msub>
+
+       </m:mrow>
+      </m:mfrac>
+      <m:mo>+</m:mo><m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mrow>
+        <m:msub>
+         <m:mi>n</m:mi>
+         <m:mi>B</m:mi>
+        </m:msub>
+
+       </m:mrow>
+      </m:mfrac>
+      <m:mo stretchy="false">)</m:mo>
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</equation>
+
+  <example id="element-944">
+<exercise id="fs-idm214596080">
+<problem id="fs-idm72417744">
+<para id="element-410">Two types of medication for hives are being tested to determine if there is a <emphasis>difference in the proportions of adult patient reactions. Twenty</emphasis> out of a random <emphasis>sample of 200</emphasis> adults given medication A still had hives 30 minutes after taking the medication. <emphasis>Twelve</emphasis> out of another <emphasis>random sample of 200 adults</emphasis> given medication B still had hives 30 minutes after taking the medication. Test at a 1% level of significance.</para>
+</problem>
+
+<solution id="fs-idm163830832">
+<para id="element-567">The problem asks for a difference in proportions, making it a test of two proportions.</para>
+<para id="element-857">Let <emphasis effect="italics">A</emphasis> and <emphasis effect="italics">B</emphasis> be the subscripts for medication A and medication B, respectively. Then <emphasis effect="italics">p<sub>A</sub></emphasis> and <emphasis effect="italics">p<sub>B</sub></emphasis> are the desired population proportions.</para>
+<para id="element-5">
+<title>Random Variable:</title>
+<emphasis effect="italics">P&#8242;<sub>A</sub></emphasis> &#8211; <emphasis effect="italics">P&#8242;<sub>B</sub></emphasis> = difference in the proportions of adult patients who did not react after 30 minutes to medication A and to medication B.</para>
+<para id="element-791"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> = <emphasis effect="italics">p<sub>B</sub></emphasis></para>
+<para id="fs-idm35710192"><emphasis effect="italics">p<sub>A</sub></emphasis> &#8211; <emphasis effect="italics">p<sub>B</sub></emphasis> = 0</para>
+<para id="element-516"><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> &#8800; <emphasis effect="italics">p<sub>B</sub></emphasis></para>
+<para id="fs-idp82118096"><emphasis effect="italics">p<sub>A</sub></emphasis> &#8211; <emphasis effect="italics">p<sub>B</sub></emphasis> &#8800; 0</para>
+<para id="element-799">The words <emphasis>"is a difference"</emphasis> tell you the test is two-tailed.</para>
+<para id="element-610"><emphasis>Distribution for the test:</emphasis> Since this is a test of two binomial population proportions, the distribution is normal:</para>
+<para id="element-42"><m:math>
+<m:mrow>
+<m:msub>
+<m:mi>p</m:mi>
+<m:mi>c</m:mi>
+</m:msub>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>x</m:mi>
+<m:mi>A</m:mi>
+</m:msub>
+<m:mo>+</m:mo><m:msub>
+<m:mi>x</m:mi>
+<m:mi>B</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msub>
+<m:mi>n</m:mi>
+<m:mi>A</m:mi>
+</m:msub>
+<m:mo>+</m:mo><m:msub>
+<m:mi>n</m:mi>
+<m:mi>B</m:mi>
+</m:msub>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>20</m:mn><m:mo>+</m:mo><m:mn>12</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>200</m:mn><m:mo>+</m:mo><m:mn>200</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.08</m:mn><m:mtext>&#8195;</m:mtext><m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:msub>
+<m:mi>p</m:mi>
+<m:mi>c</m:mi>
+</m:msub>
+<m:mo>=</m:mo><m:mn>0.92</m:mn>
+</m:mrow>
+</m:math>
+</para>
+<para id="element-3"><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:msup>
+    <m:mi>P</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mi>A</m:mi>
+  </m:msub>
+  <m:mo>&#8211;</m:mo><m:msub>
+   <m:msup>
+    <m:mi>P</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mi>B</m:mi>
+  </m:msub>
+  <m:mo>~</m:mo><m:mi>N</m:mi><m:mrow><m:mo>[</m:mo> <m:mrow>
+   <m:mn>0</m:mn><m:mo>,</m:mo><m:msqrt>
+    <m:mrow>
+     <m:mo stretchy="false">(</m:mo><m:mn>0.08</m:mn><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mn>0.92</m:mn><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mfrac>
+      <m:mn>1</m:mn>
+      <m:mrow>
+       <m:mn>200</m:mn>
+      </m:mrow>
+     </m:mfrac>
+     <m:mo>+</m:mo><m:mfrac>
+      <m:mn>1</m:mn>
+      <m:mrow>
+       <m:mn>200</m:mn>
+      </m:mrow>
+     </m:mfrac>
+     <m:mo stretchy="false">)</m:mo>
+    </m:mrow>
+   </m:msqrt>
+
+  </m:mrow> <m:mo>]</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para>
+
+<para id="element-838"><emphasis effect="italics">P&#8242;<sub>A</sub></emphasis> &#8211; <emphasis effect="italics">P&#8242;<sub>B</sub></emphasis> follows an approximate normal distribution.</para>
+<para id="element-961"><emphasis>Calculate the <emphasis effect="italics">p</emphasis>-value using the normal distribution:</emphasis> <emphasis effect="italics">p</emphasis>-value = 0.1404.</para><para id="element-270">Estimated proportion for group A: <m:math>
+<m:mrow>
+<m:msub>
+<m:msup>
+<m:mi>p</m:mi>
+<m:mo>&#8242;</m:mo>
+</m:msup>
+
+<m:mi>A</m:mi>
+</m:msub>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>x</m:mi>
+<m:mi>A</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msub>
+<m:mi>n</m:mi>
+<m:mi>A</m:mi>
+</m:msub>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>20</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>200</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.1</m:mn>
+</m:mrow>
+</m:math></para>
+<para id="fs-idm78563552">Estimated proportion for group B: <m:math>
+<m:mrow>
+<m:msub>
+<m:msup>
+<m:mi>p</m:mi>
+<m:mo>&#8242;</m:mo>
+</m:msup>
+
+<m:mi>B</m:mi>
+</m:msub>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>x</m:mi>
+<m:mi>B</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msub>
+<m:mi>n</m:mi>
+<m:mi>B</m:mi>
+</m:msub>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>200</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.06</m:mn>
+</m:mrow>
+</m:math></para>
+<para id="element-478"><title>Graph:</title><figure id="hyptest22_cmp_3_1"><media id="id3811123" alt="Normal distribution curve of the difference in the percentages of adult patients who don't react to medication A and B after 30 minutes. The mean is equal to zero, and the values -0.04, 0, and 0.04 are labeled on the horizontal axis. Two vertical lines extend from -0.04 and 0.04 to the curve. The region to the left of -0.04 and the region to the right of 0.04 are each shaded to represent 1/2(p-value) = 0.0702."><image src="fig-ch10_04_01.jpg" mime-type="image/jpg" width="380"/></media></figure></para><para id="element-172"> <emphasis effect="italics">P&#8242;<sub>A</sub></emphasis>  &#8211; <emphasis effect="italics">P&#8242;<sub>B</sub></emphasis> = 0.1 &#8211; 0.06 = 0.04.</para>
+<para id="element-846">Half the <emphasis effect="italics">p</emphasis>-value is below &#8211;0.04, and half is above 0.04.</para>
+<para id="element-748">Compare <emphasis effect="italics">&#945;</emphasis> and the <emphasis effect="italics">p</emphasis>-value: <emphasis effect="italics">&#945;</emphasis> = 0.01 and the <emphasis effect="italics">p</emphasis>-value = 0.1404. <emphasis effect="italics">&#945;</emphasis> &lt; <emphasis effect="italics">p</emphasis>-value.</para><para id="element-439">Make a decision: Since <emphasis effect="italics">&#945;</emphasis> &lt; <emphasis effect="italics">p</emphasis>-value, do not reject <emphasis effect="italics">H<sub>0</sub></emphasis>.</para>
+<para id="element-632"><emphasis>Conclusion:</emphasis> At a 1% level of significance, from the sample data, there is not sufficient evidence to conclude that there is a difference in the proportions of adult patients who did not react after 30 minutes to medication <emphasis effect="italics">A</emphasis> and medication <emphasis effect="italics">B</emphasis>.</para><note id="fs-idm4331904" class="statistics calculator">
+<label/>
+<para id="fs-idm55744576">Press <code>STAT</code>. Arrow over to <code>TESTS</code> and press
+<code>6:2-PropZTest</code>. Arrow down and enter <code>20</code> for x1, <code>200</code> for n1, <code>12</code> for x2,
+and <code>200</code> for n2. Arrow down to <code>p1</code>: and arrow to <code>not equal p2</code>. Press <code>ENTER</code>. Arrow down to <code>Calculate</code> and press <code>ENTER</code>. The <emphasis effect="italics">p</emphasis>-value is <emphasis effect="italics">p</emphasis> = 0.1404 and the test statistic is 1.47. Do the procedure again, but instead of <code>Calculate</code> do <code>Draw</code>.</para></note>
+</solution>
+</exercise>
+</example>
+
+
+<note id="fs-idp38726464" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm6482160"><problem id="fs-idm135837088"><para id="fs-idm99465232">Two types of valves are being tested to determine if there is a difference in pressure tolerances. Fifteen out of a random sample of 100 of Valve <emphasis effect="italics">A</emphasis> cracked under 4,500 psi. Six out of a random sample of 100 of Valve <emphasis effect="italics">B</emphasis> cracked under 4,500 psi. Test at a 5% level of significance.</para></problem>
+</exercise></note>
+
+  <example id="fs-idp34418816">
+<exercise id="fs-idm5388112">
+<problem id="fs-idm139653568">
+<para id="fs-idm29484272">A research study was conducted about gender differences in &#8220;sexting.&#8221; The researcher believed that the proportion of girls involved in &#8220;sexting&#8221; is less than the proportion of boys involved. The data collected in the spring of 2010 among a random sample of middle and high school students in a large school district in the southern United States is summarized in <link target-id="fs-idm29483888"/>. Is the proportion of girls sending sexts less than the proportion of boys &#8220;sexting?&#8221; Test at a 1% level of significance.</para><table id="fs-idm29483888" summary="">
+<tgroup cols="3">
+<colspec colnum="1" colname="col1"/>
+<colspec colnum="2" colname="col2"/>
+<colspec colnum="3" colname="col3"/>
+<thead><row><entry/><entry>Males</entry><entry>Females</entry></row></thead>
+<tbody>
+<row><entry>Sent &#8220;sexts&#8221;</entry>	  <entry>183</entry>	    <entry>156</entry></row>
+<row><entry>Total number surveyed</entry>	<entry>2231</entry>	  <entry>2169</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="fs-idm119696944">
+<para id="fs-idm140706224">This is a test of two population proportions.  Let M and F be the subscripts for males and females. Then <emphasis effect="italics">p<sub>M</sub></emphasis> and <emphasis effect="italics">p<sub>F</sub></emphasis> are the desired population proportions.</para>
+
+<para id="fs-idp37876608">
+<title>Random variable:</title>
+  <emphasis effect="italics">p&#8242;<sub>F</sub></emphasis> &#8722; <emphasis effect="italics">p&#8242;<sub>M</sub></emphasis> = difference in the proportions of males and females who sent &#8220;sexts.&#8221;</para>
+
+<para id="fs-idp63610272"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>F</sub></emphasis> = <emphasis effect="italics">p<sub>M</sub></emphasis>&#8195;<emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>F</sub></emphasis> &#8211; <emphasis effect="italics">p<sub>M</sub></emphasis>  = 0</para>
+
+<para id="fs-idp67543312"><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>F</sub></emphasis> &lt; <emphasis effect="italics">p<sub>M</sub></emphasis>&#8195;<emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>F</sub></emphasis> &#8211; <emphasis effect="italics">p<sub>M</sub></emphasis> &lt; 0</para>
+
+<para id="fs-idp120133328">The words <emphasis>"less than"</emphasis> tell you the test is left-tailed.</para>
+
+<para id="fs-idp27327440"><emphasis>Distribution for the test:</emphasis> Since this is a test of two population proportions, the distribution is normal:</para>
+
+    <para id="fs-idm83512624"><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>p</m:mi>
+   <m:mi>c</m:mi>
+  </m:msub>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:msub>
+     <m:mi>x</m:mi>
+     <m:mi>F</m:mi>
+    </m:msub>
+    <m:mo>+</m:mo><m:msub>
+     <m:mi>x</m:mi>
+     <m:mi>M</m:mi>
+    </m:msub>
+
+   </m:mrow>
+   <m:mrow>
+    <m:msub>
+     <m:mi>n</m:mi>
+     <m:mi>F</m:mi>
+    </m:msub>
+    <m:mo>+</m:mo><m:msub>
+     <m:mi>n</m:mi>
+     <m:mi>M</m:mi>
+    </m:msub>
+
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>156</m:mn><m:mo>+</m:mo><m:mn>183</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>2169</m:mn><m:mo>+</m:mo><m:mn>2231</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>0</m:mtext><m:mtext>.077</m:mtext>
+ </m:mrow>
+</m:math>
+
+<newline/><m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msub>
+   <m:mi>p</m:mi>
+   <m:mi>c</m:mi>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>0.923</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>Therefore,
+      <newline/>
+<m:math>
+ <m:mrow>
+  <m:msub>
+   <m:msup>
+    <m:mi>p</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mi>F</m:mi>
+  </m:msub>
+  <m:mo>&#8211;</m:mo><m:msub>
+   <m:msup>
+    <m:mi>p</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mi>M</m:mi>
+  </m:msub>
+  <m:mo>&#8764;</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0</m:mn><m:mo>,</m:mo><m:msqrt>
+     <m:mrow>
+      <m:mo stretchy="false">(</m:mo><m:mn>0.077</m:mn><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mn>0.923</m:mn><m:mo stretchy="false">)</m:mo><m:mrow><m:mo>(</m:mo>
+       <m:mrow>
+        <m:mfrac>
+         <m:mn>1</m:mn>
+         <m:mrow>
+          <m:mn>2169</m:mn>
+         </m:mrow>
+        </m:mfrac>
+        <m:mo>+</m:mo><m:mfrac>
+         <m:mn>1</m:mn>
+         <m:mrow>
+          <m:mn>2231</m:mn>
+         </m:mrow>
+        </m:mfrac>
+
+       </m:mrow>
+      <m:mo>)</m:mo></m:mrow>
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>
+
+      <newline/><emphasis effect="italics">p&#8242;<sub>F</sub></emphasis> &#8211; <emphasis effect="italics">p&#8242;<sub>M</sub></emphasis> follows an approximate normal distribution.</para><para id="fs-idm37724704"><emphasis>Calculate the <emphasis effect="italics">p</emphasis>-value using the normal distribution:</emphasis>
+<newline/><emphasis effect="italics">p</emphasis>-value = 0.1045
+<newline/>Estimated proportion for females: 0.0719
+<newline/>Estimated proportion for males: 0.082</para><para id="fs-idm93495920"><title>Graph:</title><figure id="fs-idp39056128"><media id="fs-idp49042304" alt="This is a normal distribution curve with mean equal to zero. A vertical line near the tail of the curve to the left of zero extends from the axis to the curve. The region under the curve to the left of the line is shaded representing p-value = 0.1045." display="block">
+<image mime-type="image/jpg" width="380" src="CNX_Stats_C10_M04_001N.jpg"/>
+</media></figure></para>
+    <para id="fs-idm29799616"><emphasis>Decision:</emphasis> Since <emphasis effect="italics">&#945;</emphasis> &lt; <emphasis effect="italics">p</emphasis>-value, Do not reject <emphasis effect="italics">H<sub>0</sub></emphasis></para>
+
+<para id="fs-idp51077664"><emphasis>Conclusion:</emphasis> At the 1% level of significance, from the sample data, there is not sufficient evidence to conclude that the proportion of girls sending &#8220;sexts&#8221; is less than the proportion of boys sending &#8220;sexts.&#8221;
+</para>
+
+<note id="fs-idm151141472" class="statistics calculator">
+<label/>
+<para id="fs-idm112689104">Press STAT. Arrow over to TESTS and press 6:2-PropZTest. Arrow down and enter 156 for x1, 2169 for n1, 183 for x2, and 2231 for n2. Arrow down to p1: and arrow to less than p2. Press <code>ENTER</code>. Arrow down to Calculate and press ENTER. The <emphasis effect="italics">p</emphasis>-value is <emphasis effect="italics">P</emphasis> = 0.1045 and the test statistic is <emphasis effect="italics">z</emphasis> = -1.256.</para>
+</note>
+</solution>
+</exercise>
+</example>
+
+<example id="fs-idp9035712">
+<exercise id="fs-idm70907200">
+<problem id="fs-idm90651728"><para id="fs-idp52326208">Researchers conducted a study of smartphone use among adults. A cell phone company claimed that iPhone smartphones are more popular with whites (non-Hispanic) than with African Americans. The results of the survey indicate that of the 232 African American cell phone owners randomly sampled, 5% have an iPhone. Of the 1,343 white cell phone owners randomly sampled, 10% own an iPhone. Test at the 5% level of significance. Is the proportion of white iPhone owners greater than the proportion of African American iPhone owners?</para></problem>
+
+<solution id="fs-idm244330848">
+<para id="fs-idp4139616">This is a test of two population proportions. Let W and A be the subscripts for the whites and African Americans. Then <emphasis effect="italics">p<sub>W</sub></emphasis> and <emphasis effect="italics">p<sub>A</sub></emphasis> are the desired population proportions.</para>
+
+<para id="fs-idp85441184"><title>Random variable:</title><emphasis effect="italics">p&#8242;<sub>W</sub></emphasis> &#8211; <emphasis effect="italics">p&#8242;<sub>A</sub></emphasis> = difference in the proportions of Android and iPhone users.</para><para id="fs-idp129126752"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>W</sub></emphasis> = <emphasis effect="italics">p<sub>A</sub></emphasis>&#8195;<emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>W</sub></emphasis> &#8211; <emphasis effect="italics">p<sub>A</sub></emphasis> = 0</para><para id="fs-idm200846096"><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>W</sub></emphasis> &gt; <emphasis effect="italics">p<sub>A</sub></emphasis>&#8195;<emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>W</sub></emphasis> &#8211; <emphasis effect="italics">p<sub>A</sub></emphasis> &gt; 0</para><para id="fs-idm11108992">The words "more popular" indicate that the test is right-tailed.</para>
+  <para id="fs-idp137504160">Distribution for the test: The distribution is approximately normal:</para>
+  <para id="fs-idm35602240"><m:math>
+    <m:mrow>
+      <m:msub>
+        <m:mi>p</m:mi>
+        <m:mi>c</m:mi>
+      </m:msub>
+      <m:mo>=</m:mo><m:mfrac>
+        <m:mrow>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>W</m:mi>
+          </m:msub>
+          <m:mo>+</m:mo><m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>A</m:mi>
+          </m:msub>
+
+        </m:mrow>
+        <m:mrow>
+          <m:msub>
+            <m:mi>n</m:mi>
+            <m:mi>W</m:mi>
+          </m:msub>
+          <m:mo>+</m:mo><m:msub>
+            <m:mi>n</m:mi>
+            <m:mi>A</m:mi>
+          </m:msub>
+
+        </m:mrow>
+      </m:mfrac>
+      <m:mo>=</m:mo><m:mfrac>
+        <m:mrow>
+          <m:mn>134</m:mn><m:mo>+</m:mo><m:mn>12</m:mn>
+        </m:mrow>
+        <m:mrow>
+          <m:mn>1343</m:mn><m:mo>+</m:mo><m:mn>232</m:mn>
+        </m:mrow>
+      </m:mfrac>
+      <m:mo>=</m:mo><m:mtext>&#160;</m:mtext><m:mn>0.0927</m:mn>
+    </m:mrow>
+  </m:math></para><para id="fs-idp116231296"><m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msub>
+   <m:mi>p</m:mi>
+   <m:mi>c</m:mi>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>0.9073</m:mn>
+ </m:mrow>
+</m:math></para><para id="fs-idp68984592">Therefore,</para>
+  <para id="fs-idp87185952"><m:math>
+    <m:mrow>
+      <m:msub>
+        <m:msup>
+          <m:mi>p</m:mi>
+          <m:mo>&#8242;</m:mo>
+        </m:msup>
+
+        <m:mi>W</m:mi>
+      </m:msub>
+      <m:mo>&#8211;</m:mo><m:msub>
+        <m:msup>
+          <m:mi>p</m:mi>
+          <m:mo>&#8242;</m:mo>
+        </m:msup>
+
+        <m:mi>A</m:mi>
+      </m:msub>
+      <m:mo>&#8765;</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+        <m:mrow>
+          <m:mn>0</m:mn><m:mo>,</m:mo><m:msqrt>
+            <m:mrow>
+              <m:mrow><m:mo>(</m:mo>
+                <m:mrow>
+                  <m:mn>0.0927</m:mn>
+                </m:mrow>
+                <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+                  <m:mrow>
+                    <m:mn>0.9073</m:mn>
+                  </m:mrow>
+                  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+                    <m:mrow>
+                      <m:mfrac>
+                        <m:mn>1</m:mn>
+                        <m:mrow>
+                          <m:mn>1343</m:mn>
+                        </m:mrow>
+                      </m:mfrac>
+                      <m:mo>+</m:mo><m:mfrac>
+                        <m:mn>1</m:mn>
+                        <m:mrow>
+                          <m:mn>232</m:mn>
+                        </m:mrow>
+                      </m:mfrac>
+
+                    </m:mrow>
+                    <m:mo>)</m:mo></m:mrow>
+            </m:mrow>
+          </m:msqrt>
+
+        </m:mrow>
+        <m:mo>)</m:mo></m:mrow>
+    </m:mrow>
+  </m:math></para><para id="fs-idp16865808"><m:math>
+    <m:mrow>
+      <m:msub>
+        <m:msup>
+          <m:mi>p</m:mi>
+          <m:mo>&#8242;</m:mo>
+        </m:msup>
+
+        <m:mi>W</m:mi>
+      </m:msub>
+      <m:mo>&#8211;</m:mo><m:msub>
+        <m:msup>
+          <m:mi>p</m:mi>
+          <m:mo>&#8242;</m:mo>
+        </m:msup>
+
+        <m:mi>A</m:mi>
+      </m:msub>
+
+    </m:mrow>
+  </m:math> follows an approximate normal distribution.</para>
+
+<para id="fs-idp153346256"><title>Calculate the <emphasis effect="italics">p</emphasis>-value using the normal distribution:</title><newline/><emphasis effect="italics">p</emphasis>-value = 0.0077<newline/>
+    Estimated proportion for group A: 0.10<newline/>
+    Estimated proportion for group B: 0.05</para><!-- LALALA &#9834;&#9835;&#9834;&#9835; CONTINUE INSERTING NEW EXAMPLE 3 HERE -->
+  <para id="fs-idp26516352"><emphasis>Graph:</emphasis></para>
+  <figure id="id12575638"><media id="id12575642" alt="This is a normal distribution curve with mean equal to zero. A vertical line near the tail of the curve to the right of zero extends from the axis to the curve. The region under the curve to the right of the line is shaded representing p-value = 0.00004."><image src="CNX_Stats_C10_M04_007anno2.jpg" mime-type="image/jpg" width="380"/></media></figure><para id="fs-idm17894912"><emphasis>Decision:</emphasis> Since <emphasis effect="italics">&#945;</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value, reject the <emphasis effect="italics">H<sub>0</sub></emphasis>.</para>
+  <para id="fs-idp74257664"><emphasis>Conclusion:</emphasis> At the 5% level of significance, from the sample data, there is sufficient evidence to conclude that a larger proportion of white cell phone owners use iPhones than African Americans.</para>
+  <note id="fs-idp15799920" class="statistics calculator">
+<label/>
+    <para id="fs-idm46927376">TI-83+ and TI-84: Press STAT. Arrow over to TESTS and press 6:2-PropZTest. Arrow down and enter 135 for x1, 1343 for n1, 12 for x2, and 232 for n2. Arrow down to p1: and arrow to greater than p2. Press ENTER. Arrow down to Calculate and press ENTER. The P-value is P = 0.0092 and the test statistic is Z = 2.33.</para>
+  </note>
+</solution></exercise>
+</example>
+
+  <note id="fs-idp142829376" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<para id="fs-idp32122976">A concerned group of citizens wanted to know if the proportion of forcible rapes in Texas was different in 2011 than in 2010.  Their research showed that of the 113,231 violent crimes in Texas in 2010, 7,622 of them were forcible rapes.  In 2011, 7,439 of the 104,873 violent crimes were in the forcible rape category.  Test at a 5% significance level. Answer the following questions:<newline/></para>
+
+<exercise id="fs-idm127205008">
+<problem id="fs-idm286855008"><para id="fs-idm65044288">a. Is this a test of two means or two proportions?</para></problem>
+</exercise>
+
+<exercise id="fs-idm45452624">
+<problem id="fs-idm212581120"><para id="fs-idm11093104">b. Which distribution do you use to perform the test?</para></problem>
+</exercise>
+
+<exercise id="fs-idm13955600">
+<problem id="fs-idm176424272"><para id="fs-idp13677968">c. What is the random variable?</para></problem>
+</exercise>
+
+<exercise id="fs-idm6924128">
+<problem id="fs-idm152098288"><para id="fs-idp5734352">d. What are the null and alternative hypothesis? Write the null and alternative hypothesis in symbols.</para></problem>
+</exercise>
+
+<exercise id="fs-idm131708672">
+<problem id="fs-idm129757040"><para id="fs-idm32329328">e. Is this test right-, left-, or two-tailed?</para></problem>
+</exercise>
+
+<exercise id="fs-idm51666240">
+<problem id="fs-idm109483616"><para id="fs-idm36523264">f. What is the <emphasis effect="italics">p</emphasis>-value?</para></problem>
+</exercise>
+
+<exercise id="fs-idm58266784">
+<problem id="fs-idm17415680"><para id="fs-idm11091776">g. Do you reject or not reject the null hypothesis?</para></problem>
+</exercise>
+
+<exercise id="fs-idm46567952">
+<problem id="fs-idm149856720"><para id="fs-idm37627040">h. At the ___ level of significance, from the sample data, there ______ (is/is not) sufficient evidence to conclude that ____________.</para></problem>
+</exercise>
+  </note>
+<section id="eip-290" class="references">
+<title>References</title>
+<para id="fs-idp111696960">Data from <emphasis effect="italics">Educational Resources</emphasis>, December catalog.</para><para id="fs-idp8154992">Data from Hilton Hotels. Available online at http://www.hilton.com  (accessed June 17, 2013).</para>
+<para id="fs-idm87912912">Data from Hyatt Hotels. Available online at http://hyatt.com (accessed June 17, 2013).</para>
+<para id="fs-idm35651936">Data from Statistics, United States Department of Health and Human Services.</para>
+<para id="fs-idm37685328">Data from Whitney Exhibit on loan to San Jose Museum of Art.</para>
+<para id="fs-idm33903216">Data from the American Cancer Society. Available online at http://www.cancer.org/index (accessed June 17, 2013).</para>
+<para id="fs-idp189890192">Data from the Chancellor&#8217;s Office, California Community Colleges, November 1994.</para>
+<para id="fs-idp23470640">&#8220;State of the States.&#8221; Gallup, 2013. Available online at http://www.gallup.com/poll/125066/State-States.aspx?ref=interactive (accessed June 17, 2013).</para>
+<para id="fs-idm99404960">&#8220;West Nile Virus.&#8221; Centers for Disease Control and Prevention. Available online at http://www.cdc.gov/ncidod/dvbid/westnile/index.htm (accessed June 17, 2013).</para>
+</section>
+
+<section id="fs-idm55267024" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idp68961936">Test of two population proportions from independent samples.
+<list id="fs-idp68962192" list-type="bulleted">
+  <item>Random variable: <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent="true">
+    <m:mi>p</m:mi>
+    <m:mo>^</m:mo>
+   </m:mover>
+
+   <m:mi>A</m:mi>
+  </m:msub>
+  <m:mo>&#8211;</m:mo><m:msub>
+   <m:mover accent="true">
+    <m:mi>p</m:mi>
+    <m:mo>^</m:mo>
+   </m:mover>
+
+   <m:mi>B</m:mi>
+  </m:msub>
+  <m:mo>=</m:mo>
+ </m:mrow>
+</m:math> difference between the two estimated proportions</item>
+<item>Distribution: normal distribution</item>
+</list>
+</para>
+</section>
+
+<section id="fs-idp63662736" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idm84295280">Pooled Proportion: <emphasis effect="italics">p<sub>c</sub></emphasis> = <m:math>
+    <m:mrow>
+      <m:mfrac>
+        <m:mrow>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>F</m:mi>
+          </m:msub>
+          <m:mtext>&#160;</m:mtext><m:mo>+</m:mo><m:mtext>&#160;</m:mtext><m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>M</m:mi>
+          </m:msub>
+
+        </m:mrow>
+        <m:mrow>
+          <m:msub>
+            <m:mi>n</m:mi>
+            <m:mi>F</m:mi>
+          </m:msub>
+          <m:mtext>&#160;</m:mtext><m:mo>+</m:mo><m:mtext>&#160;</m:mtext><m:msub>
+            <m:mi>n</m:mi>
+            <m:mi>M</m:mi>
+          </m:msub>
+
+        </m:mrow>
+      </m:mfrac>
+
+    </m:mrow>
+  </m:math></para>
+
+<para id="fs-idm34404208">Distribution for the differences:
+<newline/><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:msup>
+    <m:mi>p</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mi>A</m:mi>
+  </m:msub>
+  <m:mo>&#8722;</m:mo><m:msub>
+   <m:msup>
+    <m:mi>p</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mi>B</m:mi>
+  </m:msub>
+  <m:mo>&#8764;</m:mo><m:mi>N</m:mi><m:mrow><m:mo>[</m:mo> <m:mrow>
+   <m:mn>0</m:mn><m:mo>,</m:mo><m:msqrt>
+    <m:mrow>
+     <m:msub>
+      <m:mi>p</m:mi>
+      <m:mi>c</m:mi>
+     </m:msub>
+     <m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msub>
+      <m:mi>p</m:mi>
+      <m:mi>c</m:mi>
+     </m:msub>
+     <m:mo stretchy="false">)</m:mo><m:mrow><m:mo>(</m:mo>
+      <m:mrow>
+       <m:mfrac>
+        <m:mn>1</m:mn>
+        <m:mrow>
+         <m:msub>
+          <m:mi>n</m:mi>
+          <m:mi>A</m:mi>
+         </m:msub>
+
+        </m:mrow>
+       </m:mfrac>
+       <m:mo>+</m:mo><m:mfrac>
+        <m:mn>1</m:mn>
+        <m:mrow>
+         <m:msub>
+          <m:mi>n</m:mi>
+          <m:mi>B</m:mi>
+         </m:msub>
+
+        </m:mrow>
+       </m:mfrac>
+
+      </m:mrow>
+     <m:mo>)</m:mo></m:mrow>
+    </m:mrow>
+   </m:msqrt>
+
+  </m:mrow> <m:mo>]</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para>
+
+<para id="fs-idm64589136">where the null hypothesis is <emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> = <emphasis effect="italics">p<sub>B</sub></emphasis>&#8195;or&#8195;<emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> &#8211; <emphasis effect="italics">p<sub>B</sub></emphasis> = 0.</para><para id="fs-idp35988640">Test Statistic (<emphasis effect="italics">z</emphasis>-score): <m:math>
+ <m:mrow>
+  <m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:msup>
+     <m:mi>p</m:mi>
+     <m:mo>&#8242;</m:mo>
+    </m:msup>
+    <m:msub>
+     <m:mrow/>
+     <m:mi>A</m:mi>
+    </m:msub>
+    <m:mo>&#8722;</m:mo><m:msup>
+     <m:mi>p</m:mi>
+     <m:mo>&#8242;</m:mo>
+    </m:msup>
+    <m:msub>
+     <m:mrow/>
+     <m:mi>B</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:msub>
+       <m:mi>p</m:mi>
+       <m:mi>c</m:mi>
+      </m:msub>
+      <m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msub>
+       <m:mi>p</m:mi>
+       <m:mi>c</m:mi>
+      </m:msub>
+      <m:mo stretchy="false">)</m:mo><m:mrow><m:mo>(</m:mo>
+       <m:mrow>
+        <m:mfrac>
+         <m:mn>1</m:mn>
+         <m:mrow>
+          <m:msub>
+           <m:mi>n</m:mi>
+           <m:mi>A</m:mi>
+          </m:msub>
+
+         </m:mrow>
+        </m:mfrac>
+        <m:mo>+</m:mo><m:mfrac>
+         <m:mn>1</m:mn>
+         <m:mrow>
+          <m:msub>
+           <m:mi>n</m:mi>
+           <m:mi>B</m:mi>
+          </m:msub>
+
+         </m:mrow>
+        </m:mfrac>
+
+       </m:mrow>
+      <m:mo>)</m:mo></m:mrow>
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></para>
+
+<para id="fs-idp60078944">where the null hypothesis is <emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> = <emphasis effect="italics">p<sub>B</sub></emphasis>&#8195;or&#8195;<emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> &#8722; <emphasis effect="italics">p<sub>B</sub></emphasis> = 0.</para>
+
+<para id="fs-idm12253536">where</para>
+
+  <para id="fs-idm12253152"><emphasis effect="italics">p&#8242;<sub>A</sub></emphasis>
+ and <emphasis effect="italics">p&#8242;<sub>B</sub></emphasis>
+ are the sample proportions, <emphasis effect="italics">p<sub>A</sub></emphasis> and <emphasis effect="italics">p<sub>B</sub></emphasis> are the population proportions,</para><para id="fs-idp68599952"><emphasis effect="italics">P<sub>c</sub></emphasis> is the pooled proportion, and <emphasis><emphasis effect="italics">n<sub>A</sub></emphasis></emphasis> and <emphasis><emphasis effect="italics">n<sub>B</sub></emphasis></emphasis> are the sample sizes.</para>
+</section>
+
+<section id="fs-idp47236640" class="practice">
+<para id="eip-283"><emphasis effect="italics">Use the following information for the next five exercises.</emphasis> Two types of phone operating system are being tested to determine if there is a difference in the proportions of system failures (crashes). Fifteen out of a random sample of 150 phones with OS<sub>1</sub> had system failures within the first eight hours of operation. Nine out of another random sample of 150 phones with OS<sub>2</sub> had system failures within the first eight hours of operation. OS<sub>2</sub> is believed to be more stable (have fewer crashes) than OS<sub>1</sub>.</para><exercise id="eip-920"><problem id="eip-850">
+  <para id="eip-955">Is this a test of means or proportions?</para>
+</problem>
+</exercise><exercise id="eip-964"><problem id="eip-432">
+  <para id="eip-678">
+    What is the random variable?
+  </para>
+</problem>
+
+<solution id="eip-976">
+  <para id="eip-688"><emphasis effect="italics">P</emphasis>&#8242;<sub>OS1</sub> &#8211; <emphasis effect="italics">P</emphasis>&#8242;<sub>OS2</sub> = difference in the proportions of phones that had system failures within the first eight hours of operation with OS<sub>1</sub> and OS<sub>2</sub>.
+  </para></solution>
+</exercise>
+
+<exercise id="eip-11"><problem id="eip-701">
+  <para id="eip-32">
+    State the null and alternative hypotheses.
+  </para>
+</problem>
+</exercise>
+
+<exercise id="eip-56"><problem id="eip-645">
+  <para id="eip-49">
+    What is the <emphasis effect="italics">p</emphasis>-value?
+  </para>
+</problem>
+
+<solution id="eip-599">
+  <para id="eip-9">0.1018
+  </para></solution>
+</exercise>
+
+<exercise id="eip-714"><problem id="eip-716">
+  <para id="eip-836">
+    What can you conclude about the two operating systems?
+  </para>
+</problem>
+</exercise>
+
+<para id="eip-531"><newline/><emphasis effect="italics">Use the following information to answer the next twelve exercises.</emphasis> In the recent Census, three percent of the U.S. population reported being of two or more races. However, the percent varies tremendously from state to state. Suppose that two random surveys are conducted. In the first random survey, out of 1,000 North Dakotans, only nine people reported being of two or more races. In the second random survey, out of 500 Nevadans, 17 people reported being of two or more races. Conduct a hypothesis test to determine if the population percents are the same for the two states or if the percent for Nevada is statistically higher than for North Dakota.
+</para>
+
+<exercise id="element-385"><problem id="id11329019">
+  <para id="element-249">Is this a test of means or proportions?</para></problem>
+<solution id="id20348129">
+  <para id="element-583">proportions</para>
+</solution>
+</exercise>
+
+<exercise id="element-818"><problem id="id20756414">
+  <para id="element-591">State the null and alternative hypotheses.</para>
+  <list id="list-978623794" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: _________</item>
+    <item><emphasis effect="italics">H<sub>a</sub></emphasis>: _________</item>
+  </list></problem>
+</exercise>
+
+
+  <exercise id="element-22">
+    <problem id="id22206121">
+  <para id="element-103">Is this a right-tailed, left-tailed, or two-tailed test?  How do you know?</para>
+
+</problem>
+
+<solution id="id18377639">
+  <para id="element-313">right-tailed</para>
+</solution>
+</exercise>
+
+<exercise id="element-708"><problem id="id22505556">
+  <para id="element-44">What is the random variable of interest for this test? </para>
+</problem>
+</exercise>
+
+
+<exercise id="element-386"><problem id="id18170891">
+  <para id="element-101">In words, define the random variable for this test.</para>
+</problem>
+<solution id="eip-idm88064848">
+<para id="eip-idm88064592">The random variable is the difference in proportions (percents) of the populations that are of two or more races in Nevada and North Dakota.</para></solution>
+</exercise><exercise id="element-7"><problem id="id16485244">
+  <para id="element-189">Which distribution (normal or Student's <emphasis effect="italics">t</emphasis>) would you use for this hypothesis test?</para></problem>
+</exercise>
+
+<exercise id="element-464"><problem id="id13843081">
+  <para id="element-847">Explain why you chose the distribution you did for the <link target-id="element-7">Exercise 10.56</link>.</para></problem>
+<solution id="eip-idp31729824"><para id="eip-idm107273104">Our sample sizes are much greater than five each, so we use the normal for two proportions distribution for this hypothesis test.</para></solution>
+</exercise><exercise id="element-345"><problem id="id17798140">
+  <para id="fs-idm20738192">Calculate the test statistic.</para>
+</problem>
+</exercise>
+
+  <exercise id="element-814">
+  <problem id="id20752849">
+  <para id="element-359">Sketch a graph of the situation. Mark the hypothesized difference and the sample difference. Shade the area corresponding to the <emphasis effect="italics">p</emphasis>-value.
+    <figure id="id12575638a"><media id="id12575642a" alt="This is a horizontal axis with arrows at each end. The axis is labeled p'N - p'ND"><image src="fig-ch10_07_01.jpg" mime-type="image/jpg" width="380"/></media></figure></para>
+  </problem>
+  <solution id="fs-idm55153680"><para id="fs-idm55153552">Check student&#8217;s solution.</para></solution>
+</exercise>
+
+  <exercise id="element-287">
+    <problem id="id17163768">
+  <para id="element-604">Find the <emphasis effect="italics">p</emphasis>-value.</para>
+</problem>
+  </exercise>
+
+
+  <exercise id="element-723">
+    <problem id="id11271894">
+  <para id="fs-idm34769936">
+   At a pre-conceived <emphasis effect="italics">&#945;</emphasis> = 0.05, what is your:
+    <list id="list-2353627788" list-type="enumerated" number-style="lower-alpha">
+      <item>Decision:</item>
+      <item>Reason for the decision:</item>
+      <item>Conclusion (write out in a complete sentence):</item>
+    </list>
+</para>
+</problem>
+
+<solution id="id18024766">
+  <list id="fs-idp68589888" list-type="enumerated" number-style="lower-alpha">
+    <item>Reject the null hypothesis.</item>
+      <item><emphasis effect="italics">p</emphasis>-value &lt; alpha</item>
+      <item>At the 5% significance level, there is sufficient evidence to conclude that the proportion (percent) of the population that is of two or more races in Nevada is statistically higher than that in North Dakota.</item>
+  </list>
+</solution>
+</exercise>
+
+<exercise id="exerciselkj"><problem id="id17796096">
+<para id="prob_1">
+Does it appear that the proportion of Nevadans who are two or more races is higher than the proportion of North Dakotans? Why or why not?
+</para>
+</problem>
+</exercise>
+</section>
+
+
+<section id="fs-idp49279360" class="free-response">
+<title>Homework</title>
+<para id="fs-idm14172688"><emphasis effect="italics">DIRECTIONS: For each of the word problems, use a solution sheet to do the hypothesis test.  The solution sheet is found in <link document="m47882"/>. Please feel free to make copies of the solution sheets. For the online version of the book, it is suggested that you copy the .doc or the .pdf files.</emphasis></para><note id="id17215905">
+<label/>
+<title>Note</title>
+<para id="fs-idm44775184">If you are using a Student's <emphasis effect="italics">t</emphasis>-distribution for one of the following homework problems, including for paired data, you may assume that the underlying population is normally distributed. (In general, you must first prove that assumption, however.)</para></note>
+
+<exercise id="exer15">
+<problem id="id9504371"><para id="id11960146">A recent drug survey showed an increase in the use of drugs and alcohol among local high school seniors as compared to the national percent. Suppose that a survey of 100 local seniors and 100 national seniors is conducted to see if the proportion of drug and alcohol use is higher locally than nationally. Locally, 65 seniors reported using drugs or alcohol within the past month, while 60 national seniors reported using them.</para></problem>
+</exercise>
+
+<exercise id="exer18">
+  <problem id="id4902537">
+    <para id="id12924042">We are interested in whether the proportions of female suicide victims for ages 15 to 24 are the same for the whites and the blacks races in the United States. We randomly pick one year, 1992, to compare the races. The number of suicides estimated in the United States in 1992 for white females is 4,930. Five hundred eighty were aged 15 to 24. The estimate for black females is 330. Forty were aged 15 to 24. We will let female suicide victims be our population.</para>
+  </problem>
+  <solution id="fs-idm32452768">
+    <list id="fs-idm32452512" list-type="enumerated" number-style="lower-alpha">
+      <item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">P<sub>W</sub></emphasis> = <emphasis effect="italics">P<sub>B</sub></emphasis></item>
+      <item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">P<sub>W</sub></emphasis> &#8800; <emphasis effect="italics">P<sub>B</sub></emphasis></item>
+        <item>The random variable is the difference in the proportions of white and black suicide victims, aged 15 to 24.</item>
+        <item>normal for two proportions</item>
+        <item>test statistic: &#8211;0.1944</item>
+        <item><emphasis effect="italics">p</emphasis>-value: 0.8458 </item>
+        <item>Check student&#8217;s solution.</item>
+        <item>
+        <list id="fs-idp6439728" list-type="enumerated" number-style="lower-roman">
+          <item>Alpha: 0.05</item>
+          <item>Decision: Reject the null hypothesis.</item>
+          <item>Reason for decision: <emphasis effect="italics">p</emphasis>-value &gt; alpha</item>
+          <item>Conclusion: At the 5% significance level, there is insufficient evidence to conclude that the proportions of white and black female suicide victims, aged 15 to 24, are different. </item>
+        </list>
+      </item>
+    </list>
+  </solution>
+</exercise>
+
+
+<exercise id="exer20"><problem id="id3785760"><para id="id12924247">Elizabeth Mjelde, an art history professor, was interested in whether the value from the Golden Ratio formula, <m:math>
+      <m:mrow>
+        <m:mrow><m:mo>(</m:mo>
+          <m:mrow>
+            <m:mfrac>
+              <m:mrow>
+                <m:mtext>larger&#160;+&#160;smaller&#160;dimension</m:mtext>
+              </m:mrow>
+              <m:mrow>
+                <m:mtext>larger&#160;dimension</m:mtext>
+              </m:mrow>
+            </m:mfrac>
+
+          </m:mrow>
+          <m:mo>)</m:mo></m:mrow>
+      </m:mrow>
+  </m:math> was the same in the Whitney Exhibit for works from 1900 to 1919 as for works from 1920 to 1942. Thirty-seven early works were sampled, averaging 1.74 with a standard deviation of 0.11. Sixty-five of the later works were sampled, averaging 1.746 with a standard deviation of 0.1064. Do you think that there is a significant difference in the Golden Ratio calculation?</para></problem>
+</exercise>
+
+<exercise id="exer24">
+  <problem id="id19336074"><para id="id12116088">A recent year was randomly picked from 1985 to the present. In that year, there were 2,051 Hispanic students at Cabrillo College out of a total of 12,328 students. At Lake Tahoe College, there were 321 Hispanic students out of a total of 2,441 students. In general, do you think that the percent of Hispanic students at the two colleges is basically the same or different? </para>
+  </problem>
+  <solution id="fs-idm6549984">
+    <para id="fs-idm23261552">Subscripts: 1 = Cabrillo College, 2 = Lake Tahoe College</para>
+    <list id="fs-idp93991872" list-type="enumerated" number-style="lower-alpha">
+      <item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> = <emphasis effect="italics">p<sub>2</sub></emphasis></item>
+        <item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> &#8800; <emphasis effect="italics">p<sub>2</sub></emphasis></item>
+        <item>The random variable is the difference between the proportions of Hispanic students at Cabrillo College and Lake Tahoe College.</item>
+        <item>normal for two proportions</item>
+        <item>test statistic: 4.29</item>
+        <item><emphasis effect="italics">p</emphasis>-value: 0.00002</item>
+        <item>Check student&#8217;s solution.</item>
+        <item>
+        <list id="fs-idm32250112" list-type="enumerated" number-style="lower-roman">
+          <item>Alpha: 0.05</item>
+          <item>Decision: Reject the null hypothesis.</item>
+          <item>Reason for decision: <emphasis effect="italics">p</emphasis>-value &lt; alpha</item>
+          <item>Conclusion: There is sufficient evidence to conclude that the proportions of Hispanic students at Cabrillo College and Lake Tahoe College are different.</item>
+        </list>
+      </item>
+    </list>
+
+  </solution>
+</exercise>
+
+
+  <para id="element-265"><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> Neuroinvasive West Nile virus is a severe disease that affects a person&#8217;s nervous system . It is spread by the Culex species of mosquito. In the United States in 2010 there were 629 reported  cases of neuroinvasive West Nile virus out of a total of 1,021 reported cases and there were 486 neuroinvasive reported cases out of a total of 712 cases reported in 2011.  Is the 2011 proportion of neuroinvasive West Nile virus cases more than the 2010 proportion of neuroinvasive West Nile virus cases? Using a 1% level of significance, conduct an appropriate hypothesis test.
+
+<list id="list2342352">
+  <item>&#8220;2011&#8221; subscript: 2011 group.</item>
+  <item>&#8220;2010&#8221; subscript: 2010 group</item>
+      </list>
+  </para><exercise id="element-950">
+  <problem id="id4870569">
+  <para id="element-229">This is:</para>
+  <list id="element-923" list-type="enumerated" number-style="lower-alpha">
+    <item>a test of two proportions</item>
+    <item>a test of two independent means</item>
+    <item>a test of a single mean</item>
+    <item>a test of matched pairs.</item>
+  </list>
+</problem>
+</exercise>
+
+
+
+      <exercise id="element-552"><problem id="id12760036">
+  <para id="element-51">An appropriate null hypothesis is:</para>
+        <list id="element-565" list-type="enumerated" number-style="lower-alpha">
+          <item><emphasis effect="italics">p<sub>2011</sub></emphasis> &#8804; <emphasis effect="italics">p<sub>2010</sub></emphasis></item>
+          <item><emphasis effect="italics">p<sub>2011</sub></emphasis> &#8805; <emphasis effect="italics">p<sub>2010</sub></emphasis></item>
+          <item><emphasis effect="italics">&#956;<sub>2011</sub></emphasis> &#8804; <emphasis effect="italics">&#956;<sub>2010</sub></emphasis></item>
+          <item><emphasis effect="italics">p<sub>2011</sub></emphasis> &gt; <emphasis effect="italics">p<sub>2010</sub></emphasis></item>
+        </list>
+      </problem>
+
+<solution id="id9070418">
+  <para id="element-9">a</para>
+</solution>
+</exercise>
+
+      <exercise id="element-92"><problem id="id12134941">
+  <para id="element-793">The <emphasis effect="italics">p</emphasis>-value is 0.0022. At a 1% level of significance, the appropriate conclusion is </para>
+        <list id="element-105" list-type="enumerated" number-style="lower-alpha"><item>There is sufficient evidence to conclude that the proportion of people in the United States in 2011 who contracted neuroinvasive West Nile disease is less than the proportion of people in the United States in 2010 who contracted neuroinvasive West Nile disease.</item>
+          <item>There is insufficient evidence to conclude that the proportion of people in the United States in 2011 who contracted neuroinvasive West Nile disease is more than the proportion of people in the United States in 2010 who contracted neuroinvasive West Nile disease.</item>
+          <item>There is insufficient evidence to conclude that the proportion of people in the United States in 2011 who contracted neuroinvasive West Nile disease is less than the proportion of people in the United States in 2010 who contracted neuroinvasive West Nile disease.</item>
+          <item>There is sufficient evidence to conclude that the proportion of people in the United States in 2011 who contracted neuroinvasive West Nile disease is more than the proportion of people in the United States in 2010 who contracted neuroinvasive West Nile disease.</item>
+        </list></problem>
+</exercise>
+
+      <exercise id="fs-idp30249712"><problem id="fs-idp30249968">
+        <para id="fs-idm5258112">Researchers conducted a study to find out if there is a difference in the use of eReaders by different age groups.  Randomly selected participants were divided into two age groups.  In the 16- to 29-year-old group, 7% of the 628 surveyed use eReaders, while 11% of the 2,309 participants 30 years old and older use eReaders.</para>
+      </problem>
+      <solution id="fs-idm101357040">
+        <para id="fs-idm101356784">Test: two independent sample proportions.</para>
+        <para id="fs-idm101356400">Random variable: <emphasis effect="italics">p</emphasis>&#8242;<sub>1</sub> - <emphasis effect="italics">p</emphasis>&#8242;<sub>2</sub></para><para id="fs-idm29110192">Distribution:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> = <emphasis effect="italics">p<sub>2</sub></emphasis>
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> &#8800; <emphasis effect="italics">p<sub>2</sub></emphasis></para>
+
+        <para id="fs-idp1703488">The proportion of eReader users is different for the 16- to 29-year-old users from that of the 30 and older users.</para>
+        <para id="fs-idp1703872">Graph: two-tailed</para>
+<figure id="fs-idm17839568"><media id="fs-idp73177440" alt="This is a normal distribution curve with mean equal to zero. Both the right and left tails of the curve are shaded. Each tail represents 1/2(p-value) = 0.0017." display="block">
+<image mime-type="image/jpg" width="380" src="CNX_Stats_C10_M04_004annoN.jpg"/>
+          </media></figure><para id="fs-idp1704256"><emphasis effect="italics">p</emphasis>-value : 0.0033
+
+        </para><para id="fs-idm37090640">Decision: Reject the null hypothesis.</para>
+
+        <para id="fs-idm37090256">Conclusion: At the 5% level of significance, from the sample data, there is sufficient evidence to conclude that the proportion of eReader users 16 to 29 years old is different from the proportion of eReader users 30 and older.</para>
+      </solution>
+    </exercise>
+
+<exercise id="fs-idm48453008">
+      <problem id="fs-idm48452752">
+        <para id="fs-idm48452496">Adults aged 18 years old and older were randomly selected for a survey on obesity. Adults are considered obese if their body mass index (BMI) is at least 30. The researchers wanted to determine if the proportion of women who are obese in the south is less than the proportion of southern men who are obese. The results are shown in <link target-id="fs-idp62517488"/>. Test at the 1% level of significance.</para>
+        <table id="fs-idp62517488" summary="">
+          <tgroup cols="3">
+            <colspec colnum="1" colname="col1"/>
+            <colspec colnum="2" colname="col2"/>
+            <colspec colnum="3" colname="col3"/>
+            <thead><row><entry>	</entry><entry>Number who are obese</entry>	<entry>Sample size</entry></row></thead>
+            <tbody>
+              <row><entry>Men</entry>	     <entry>42,769</entry>	     <entry>155,525</entry></row>
+              <row><entry>Women</entry>	     <entry>67,169</entry>	     <entry>248,775</entry></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </problem>
+    </exercise>
+
+    <exercise id="fs-idm16853120"><problem id="fs-idm16852864">
+        <para id="fs-idm16852608">Two computer users were discussing tablet computers. A higher proportion of people ages 16 to 29 use tablets than the proportion of people age 30 and older. <link target-id="fs-idp42650880"/> details the number of tablet owners for each age group. Test at the 1% level of significance.</para>
+        <table id="fs-idp42650880" summary="">
+          <tgroup cols="3">
+            <colspec colnum="1" colname="col1"/>
+            <colspec colnum="2" colname="col2"/>
+            <colspec colnum="3" colname="col3"/>
+            <thead><row><entry>	</entry><entry>16&#8211;29 year olds</entry>	<entry>30 years old and older</entry></row></thead>
+            <tbody>
+              <row><entry>Own a Tablet</entry><entry>69</entry><entry>231</entry></row>
+              <row><entry>Sample Size</entry><entry>628</entry><entry>2,309</entry></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </problem>
+      <solution id="fs-idp35035792">
+        <para id="fs-idp35036048">Test: two independent sample proportions</para>
+        <para id="fs-idp35036432">Random variable: <emphasis effect="italics">p&#8242;<sub>1</sub></emphasis> &#8722; <emphasis effect="italics">p&#8242;<sub>2</sub></emphasis></para>
+        <para id="fs-idm9404992">Distribution:</para>
+        <para id="fs-idp46050528"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> = <emphasis effect="italics">p<sub>2</sub></emphasis><newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> &gt; <emphasis effect="italics">p<sub>2</sub></emphasis></para>
+        <para id="fs-idm39674464">A higher proportion of tablet owners are aged 16 to 29 years old than are 30 years old and older.</para>
+        <para id="fs-idm39673968">Graph: right-tailed</para>
+        <para id="fs-idm39673584"><figure id="fs-idp128478512"><media id="fs-idp24706912" alt="This is a normal distribution curve with mean equal to zero. A vertical line near the tail of the curve to the right of zero extends from the axis to the curve. The region under the curve to the right of the line is shaded representing p-value = 0.2354." display="block">
+            <image mime-type="image/jpg" src="CNX_Stats_C10_M04_006annoN.jpg" width="380"/>
+          </media></figure><emphasis effect="italics">p</emphasis>-value: 0.2354</para>
+<para id="fs-idm11093536">Decision: Do not reject the <emphasis effect="italics">H<sub>0</sub></emphasis>.</para>
+        <para id="fs-idp19014416">Conclusion: At the 1% level of significance, from the sample data, there is not sufficient evidence to conclude that a higher proportion of tablet owners are aged 16 to 29 years old than are 30 years old and older.</para>
+      </solution>
+    </exercise>
+
+<exercise id="fs-idp44091424">
+      <problem id="fs-idp44091680">
+        <para id="fs-idp44091936">A group of friends debated whether more men use smartphones than women.  They consulted a research study of smartphone use among adults. The results of the survey indicate that of the 973 men randomly sampled, 379 use smartphones.  For women, 404 of the 1,304 who were randomly sampled use smartphones. Test at the 5% level of significance.</para>
+      </problem>
+    </exercise>
+
+  <exercise id="fs-idm174644848">
+    <problem id="fs-idm174644592">
+      <para id="fs-idm174644336">While her husband spent 2&#189; hours picking out new speakers, a statistician decided to determine whether the percent of men who enjoy shopping for electronic equipment is higher than the percent of women who enjoy shopping for electronic equipment. The population was Saturday afternoon shoppers. Out of 67 men, 24 said they enjoyed the activity. Eight of the 24 women surveyed claimed to enjoy the activity. Interpret the results of the survey.</para>
+    </problem>
+    <solution id="fs-idm111468704">
+      <para id="fs-idp35259328">Subscripts: 1: men; 2: women</para>
+      <list id="fs-idp66491504" list-type="enumerated" number-style="lower-alpha">
+        <item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> &#8804; <emphasis effect="italics">p<sub>2</sub></emphasis></item>
+        <item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> &gt; <emphasis effect="italics">p<sub>2</sub></emphasis></item>
+        <item><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:msup>
+    <m:mi>P</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mn>1</m:mn>
+  </m:msub>
+  <m:mo>&#8722;</m:mo><m:msub>
+   <m:msup>
+    <m:mi>P</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mn>2</m:mn>
+  </m:msub>
+
+ </m:mrow>
+</m:math> is the difference between the proportions of men and women who enjoy shopping for electronic equipment.</item>
+        <item>normal for two proportions</item>
+        <item>test statistic: 0.22</item>
+        <item><emphasis effect="italics">p</emphasis>-value: 0.4133</item>
+        <item>Check student&#8217;s solution.</item>
+        <item>
+          <list id="fs-idp134826688" list-type="enumerated" number-style="lower-roman">
+            <item>Alpha: 0.05</item>
+            <item>Decision: Do not reject the null hypothesis.</item>
+            <item>Reason for Decision: <emphasis effect="italics">p</emphasis>-value &gt; alpha</item>
+            <item>Conclusion: At the 5% significance level, there is insufficient evidence to conclude that the proportion of men who enjoy shopping for electronic equipment is more than the proportion of women.</item>
+          </list>
+        </item>
+      </list>
+
+    </solution>
+  </exercise>
+
+  <exercise id="fs-idm111076192">
+    <problem id="fs-idm111075936">
+      <para id="fs-idm11241056">We are interested in whether children&#8217;s educational computer software costs less, on average, than children&#8217;s entertainment software. Thirty-six educational software titles were randomly picked from a catalog. The mean cost was $31.14 with a standard deviation of $4.69. Thirty-five entertainment software titles were randomly picked from the same catalog. The mean cost was $33.86 with a standard deviation of $10.87. Decide whether children&#8217;s educational software costs less, on average, than children&#8217;s entertainment software.</para>
+    </problem>
+  </exercise>
+
+  <exercise id="fs-idm98770112">
+    <problem id="fs-idm10004272">
+      <para id="fs-idm10004016">Joan Nguyen recently claimed that the proportion of college-age males with at least one pierced ear is as high as the proportion of college-age females. She conducted a survey in her classes. Out of 107 males, 20 had at least one pierced ear. Out of 92 females, 47 had at least one pierced ear. Do you believe that the proportion of males has reached the proportion of females?</para>
+    </problem>
+    <solution id="fs-idm75362416">
+      <list id="fs-idm11471360" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> = <emphasis effect="italics">p<sub>2</sub></emphasis></item>
+        <item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>1</sub></emphasis> &#8800; <emphasis effect="italics">p<sub>2</sub></emphasis></item>
+        <item><m:math display="">
+ <m:mrow>
+  <m:msub>
+   <m:msup>
+    <m:mi>P</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mn>1</m:mn>
+  </m:msub>
+  <m:mo>&#8722;</m:mo><m:msub>
+   <m:msup>
+    <m:mi>P</m:mi>
+    <m:mo>&#8242;</m:mo>
+   </m:msup>
+
+   <m:mn>2</m:mn>
+  </m:msub>
+
+ </m:mrow>
+</m:math> is the difference between the proportions of men and women that have at least one pierced ear.</item>
+        <item>normal for two proportions</item>
+        <item>test statistic: &#8211;4.82</item>
+        <item><emphasis effect="italics">p</emphasis>-value: zero</item>
+        <item>Check student&#8217;s solution.</item>
+        <item>
+          <list id="fs-idp115516720" list-type="enumerated" number-style="lower-roman"><item>Alpha: 0.05</item>
+            <item>Decision: Reject the null hypothesis.</item>
+            <item>Reason for Decision: <emphasis effect="italics">p</emphasis>-value &lt; alpha</item>
+            <item>Conclusion: At the 5% significance level, there is sufficient evidence to conclude that the proportions of males and females with at least one pierced ear is different.</item>
+          </list></item>
+      </list></solution>
+  </exercise>
+
+  <exercise id="fs-idm103490000">
+    <problem id="fs-idm103489744">
+      <para id="fs-idm103489488">Use the data sets found in <link document="m47873"/> to answer this exercise. Is the proportion of race laps Terri completes slower than 130 seconds less than the proportion of practice laps she completes slower than 135 seconds?</para></problem>
+  </exercise>
+
+  <exercise id="fs-idm104246192"><problem id="fs-idp505328">
+      <para id="fs-idp505584">"To Breakfast or Not to Breakfast?" by Richard Ayore</para>
+      <para id="fs-idm40087536">In the American society, birthdays are one of those days that everyone looks forward to. People of different ages and peer groups gather to mark the 18th, 20th, &#8230;, birthdays. During this time, one looks back to see what he or she has achieved for the past year and also focuses ahead for more to come.</para>
+      <para id="fs-idm40087280">If, by any chance, I am invited to one of these parties, my experience is always different. Instead of dancing around with my friends while the music is booming, I get carried away by memories of my family back home in Kenya. I remember the good times I had with my brothers and sister while we did our daily routine.</para>
+      <para id="fs-idm50247136">Every morning, I remember we went to the shamba (garden) to weed our crops. I remember one day arguing with my brother as to why he always remained behind just to join us an hour later. In his defense, he said that he preferred waiting for breakfast before he came to weed. He said, &#8220;This is why I always work more hours than you guys!&#8221;</para>
+      <para id="fs-idm40086896">And so, to prove him wrong or right, we decided to give it a try. One day we went to work as usual without breakfast, and recorded the time we could work before getting tired and stopping. On the next day, we all ate breakfast before going to work. We recorded how long we worked again before getting tired and stopping. Of interest was our mean increase in work time. Though not sure, my brother insisted that it was more than two hours. Using the data in <link target-id="fs-idm167762016"/>, solve our problem.</para>
+      <table id="fs-idm167762016" summary="The table presents the work hours with breakfast in the first column and the work hours without breakfast in the second column.">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Work hours with breakfast</entry>
+<entry>Work hours without breakfast</entry>
+</row>
+</thead>
+<tbody>
+
+            <row>
+              <entry>8</entry>
+              <entry>6</entry>
+            </row>
+            <row>
+              <entry>7</entry>
+              <entry>5</entry>
+            </row>
+            <row>
+              <entry>9</entry>
+              <entry>5</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>4</entry>
+            </row>
+            <row>
+              <entry>9</entry>
+              <entry>7</entry>
+            </row>
+            <row>
+              <entry>8</entry>
+              <entry>7</entry>
+            </row>
+            <row>
+              <entry>10</entry>
+              <entry>7</entry>
+            </row>
+            <row>
+              <entry>7</entry>
+              <entry>5</entry>
+            </row>
+            <row>
+              <entry>6</entry>
+              <entry>6</entry>
+            </row>
+            <row>
+              <entry>9</entry>
+              <entry>5</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </problem>
+<solution id="eip-idp83945904">
+<list id="eip-idp83946160" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#181;<sub>d</sub></emphasis> = 0</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#181;<sub>d</sub></emphasis> &gt; 0</item>
+<item>The random variable <emphasis effect="italics">X<sub>d</sub></emphasis> is the mean difference in work times on days when eating breakfast and on days when not eating breakfast.</item>
+<item><emphasis effect="italics">t</emphasis><sub>9</sub></item>
+<item>test statistic: 4.8963</item>
+<item><emphasis effect="italics">p</emphasis>-value: 0.0004</item>
+<item>Check student&#8217;s solution.</item>
+<item>
+<list id="eip-idp81211424" list-type="enumerated" number-style="lower-roman">
+<item>Alpha: 0.05</item>
+<item>Decision: Reject the null hypothesis.</item>
+<item>Reason for Decision: <emphasis effect="italics">p</emphasis>-value &lt; alpha</item>
+<item>Conclusion: At the 5% level of significance, there is sufficient evidence to conclude that the mean difference in work times on days when eating breakfast and on days when not eating breakfast has increased.</item>
+</list>
+</item>
+</list></solution>
+  </exercise></section>
+
+</content>
+
+<glossary>
+
+<definition id="fs-idm110633744">
+<term>Pooled Proportion</term>
+<meaning id="fs-idm110633104">estimate of the common value of <emphasis effect="italics">p<sub>1</sub></emphasis> and <emphasis effect="italics">p<sub>2</sub></emphasis>.</meaning>
+</definition>
+</glossary>
+</document>

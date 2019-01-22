@@ -1,0 +1,1840 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Outliers</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47107/latest</md:content-url>
+  <md:content-id>m47107</md:content-id>
+  <md:title>Outliers</md:title>
+  <md:version>1.12</md:version>
+  <md:created>2013/07/19 00:02:53 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>influential points</md:keyword>
+    <md:keyword>outlier</md:keyword>
+    <md:keyword>potential outlier</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="delete_me">In some data sets, there are values <emphasis>(observed data points)</emphasis> called <term>outliers</term>. <emphasis>Outliers are observed data points that are far from the least squares line.</emphasis> They have large "errors", where the "error" or residual is the vertical distance from the line to the point. </para>
+<para id="eip-502">Outliers need to be examined closely. Sometimes, for some reason or another, they should not be included in the analysis of the data. It is possible that an outlier is a result of erroneous data. Other times, an outlier may
+hold valuable information about the population under study and should remain included in the data. The key is to examine carefully what causes a data point to be an outlier.</para>
+<para id="eip-224">Besides outliers, a sample may contain one or a few points that are called <term>influential points</term>. Influential points are observed data points that are far from the other observed data points in the horizontal direction. These points may have a big effect on the slope of the regression line. To begin to identify an influential point, you can remove it from the data set and see if the slope of the regression line is changed significantly.</para>
+<para id="eip-755">Computers and many calculators can be used to identify outliers from the data. Computer output for regression analysis will often identify both outliers and influential points so that you can examine them.</para>
+
+
+<section id="fs-idm49430544">
+<title>Identifying Outliers</title>
+<para id="eip-511">We could guess at outliers by looking at a graph of the scatterplot and best fit-line. However, we would like some guideline as to how far away a point needs to be in order to be considered an outlier. <emphasis> As a rough rule of thumb, we can flag any point that is located further than two standard deviations above or below the best-fit line as an outlier</emphasis>. The standard deviation used is the standard deviation of the residuals or errors.</para>
+
+<para id="eip-526" class="finger">We can do this visually in the scatter plot by drawing an extra pair of lines that are two standard deviations above and below the best-fit line. Any data points that are outside this extra pair of lines are flagged as potential outliers. Or we can do this numerically by calculating each residual and comparing it to twice the standard deviation. On the TI-83, 83+, or 84+, the graphical approach is easier. The graphical procedure is shown first, followed by the numerical calculations. You would generally need to use only one of these methods.</para><example id="eip-837"><exercise id="element-12987">
+<problem id="id1170949520848">
+<para id="element-631">In the <link document="m47117" target-id="element-22">third exam/final exam example</link>, you can determine if there is an outlier or not. If there is an outlier, as an exercise, delete it and fit the remaining data to a new line. For this example, the new line ought to fit the remaining data better. This means the <emphasis>SSE</emphasis> should be smaller and the correlation coefficient ought to be closer to 1 or &#8211;1.</para></problem>
+
+<solution id="id1170917505276">
+<para id="element-435" class="finger">
+<title>Graphical Identification of Outliers</title>With the TI-83, 83+, 84+ graphing calculators, it is easy to  identify the outliers graphically and visually.  If we were to measure the vertical distance from any data point to the corresponding point on the line of best fit and that distance were equal to 2<emphasis effect="italics">s</emphasis> or more, then we would consider the data point to be "too far" from the line of best fit. We need to find and graph the lines that are two standard deviations below and above the regression line.  Any points that are outside these two lines are outliers. We will call these lines Y2 and Y3:</para>
+
+<para id="element-20965">As we did with the equation of the regression line and the correlation coefficient, we will use technology to calculate this standard deviation for us.  Using the <emphasis>LinRegTTest</emphasis> with this data, scroll down through the output screens to find <emphasis><emphasis effect="italics">s</emphasis> = 16.412</emphasis>.</para>
+
+<para id="element-208">Line Y2 = &#8211;173.5 + 4.83<emphasis effect="italics">x</emphasis> &#8211;2(16.4) and line Y3 = &#8211;173.5 + 4.83<emphasis effect="italics">x</emphasis> + 2(16.4)<newline/><newline/>where <emphasis effect="italics">&#375;</emphasis> = &#8211;173.5 + 4.83<emphasis effect="italics">x</emphasis> is the line of best fit. Y2 and Y3 have the same slope as the line of best fit.</para>
+
+<para id="element-129853">Graph the scatterplot with the best fit line in equation Y1, then enter the two extra lines as Y2 and Y3 in the "Y="equation editor and press ZOOM 9. You will find that the only data point that is not between lines Y2 and Y3 is the point <emphasis effect="italics">x</emphasis> = 65, <emphasis effect="italics">y</emphasis> = 175. On the calculator screen it is just barely outside these lines. The outlier is the student who had a grade of 65 on the third exam and 175 on the final exam; this point is further than two standard deviations away from the best-fit line.</para>
+
+
+<para id="element-664">Sometimes a point is so close to the lines used to flag outliers on the graph that it is difficult to tell if the point is between or outside the lines.  On a computer, enlarging the graph may help;  on a small calculator screen, zooming in may make the graph clearer.  Note that when the graph does not give a clear enough picture, you can use the numerical comparisons to identify outliers. </para>
+
+<figure id="eip-idp140675136"><media id="id1170917557779" alt="The scatter plot of exam scores with a line of best fit.Two yellow dashed lines run parallel to the line of best fit. The dashed lines run above and below the best fit line at equal distances. One data point falls outside the boundary created by the dashed lines&#8212;it is an outlier."><image src="fig-ch12_09_01.jpg" mime-type="image/jpeg" width="380"/></media></figure></solution>
+</exercise>
+</example><note id="fs-idp112103840" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-365">
+<problem id="eip-801">
+  <para id="eip-145">Identify the potential outlier in the scatter plot. The standard deviation of the residuals or errors is approximately 8.6.</para>
+<figure id="fs-idp117757200"><media id="eip-idp189014800" alt="" display="block">
+  <image mime-type="image/png" src="CNX_Stats_C012_M09_item001.png" width="380"/>
+</media>
+</figure></problem>
+</exercise>
+
+</note>
+</section>
+
+<section id="eip-212">
+<title>Numerical Identification of Outliers</title>
+<para id="element-1763">In <link target-id="element-4662" document=""/>, the first two columns are the third-exam and final-exam data. The third column shows the predicted <emphasis effect="italics">&#375;</emphasis> values calculated from the line of best fit: <emphasis effect="italics">&#375;</emphasis> = &#8211;173.5 + 4.83<emphasis effect="italics">x</emphasis>. The residuals, or errors, have been calculated in the fourth column of the table: observed <emphasis effect="italics">y</emphasis> value&#8722;predicted y value = <emphasis effect="italics">y</emphasis> &#8722; <emphasis effect="italics">&#375;</emphasis>.</para><para id="element-973"><emphasis effect="italics">s</emphasis> is the standard deviation of all the <emphasis effect="italics">y</emphasis> &#8722; <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">&#949;</emphasis> values where <emphasis effect="italics">n</emphasis> = the total number of data points. If each residual is calculated and squared, and the results are added, we get the SSE. The standard deviation of the residuals is calculated from the SSE as:</para>
+<para id="element-797"><m:math>
+ <m:mrow>
+  <m:mi>s</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>S</m:mi><m:mi>S</m:mi><m:mi>E</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>2</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math></para>
+
+<note id="fs-idm68726848">
+<label/>
+<title>Note</title>
+<para id="fs-idp95645280">We divide by (<emphasis effect="italics">n</emphasis> &#8211; 2) because the regression model involves two estimates.</para></note>
+
+<para id="element-42" class="finger">Rather than calculate the value of <emphasis effect="italics">s</emphasis> ourselves, we can find <emphasis effect="italics">s</emphasis> using the computer or calculator. For this example, the calculator function LinRegTTest found <emphasis effect="italics">s</emphasis> = 16.4 as the standard deviation of the residuals <list id="set-list2" list-type="labeled-item" display="inline"><item>35</item>
+<item>&#8211;17</item>
+<item>16</item>
+<item>&#8211;6</item>
+<item>&#8211;19</item>
+<item>9</item>
+<item>3</item>
+<item>&#8211;1</item>
+<item>&#8211;10</item>
+<item>&#8211;9</item>
+<item>&#8211;1</item>
+</list>.</para>
+
+<table id="element-4662" summary="The table contains 4 columns and 11 rows of calculation. The first two columns contain the x and y data values. The third column contains the values predicted by the regression line. The fourth column contains the errors or residuals, calculated as the observed y value minus the predicted value.">
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+ <colspec colnum="2" colname="c2"/>
+ <colspec colnum="3" colname="c3"/>
+ <colspec colnum="4" colname="c4"/>
+<thead>
+  <row>
+    <entry><emphasis effect="italics">x</emphasis></entry>
+    <entry><emphasis effect="italics">y</emphasis></entry>
+    <entry><emphasis effect="italics">&#375;</emphasis></entry>
+    <entry><emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis></entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>65</entry>
+    <entry>175</entry>
+    <entry>140</entry>
+<entry>175 &#8211; 140 = 35</entry>
+  </row>
+  <row>
+    <entry>67</entry>
+    <entry>133</entry>
+    <entry>150</entry>
+    <entry>133 &#8211; 150= &#8211;17</entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>185</entry>
+    <entry>169</entry>
+    <entry>185 &#8211; 169 = 16</entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>163</entry>
+    <entry>169</entry>
+
+    <entry>163 &#8211; 169 = &#8211;6</entry>
+  </row>
+  <row>
+    <entry>66</entry>
+    <entry>126</entry>
+    <entry>145</entry>
+    <entry>126 &#8211; 145 = &#8211;19</entry>
+  </row>
+  <row>
+    <entry>75</entry>
+    <entry>198</entry>
+    <entry>189</entry>
+
+
+    <entry>198 &#8211; 189 = 9</entry>
+  </row>
+  <row>
+    <entry>67</entry>
+    <entry>153</entry>
+    <entry>150</entry>
+
+    <entry>153 &#8211; 150 = 3</entry>
+  </row>
+  <row>
+    <entry>70</entry>
+    <entry>163</entry>
+    <entry>164</entry>
+    <entry>163 &#8211; 164 = &#8211;1</entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>159</entry>
+    <entry>169</entry>
+    <entry>159 &#8211; 169 = &#8211;10</entry>
+  </row>
+  <row>
+    <entry>69</entry>
+    <entry>151</entry>
+    <entry>160</entry>
+    <entry>151 &#8211; 160 = &#8211;9</entry>
+  </row>
+  <row>
+    <entry>69</entry>
+    <entry>159</entry>
+    <entry>160</entry>
+    <entry>159 &#8211; 160 = &#8211;1</entry>
+  </row>
+</tbody>
+
+
+
+
+
+</tgroup>
+</table><para id="element-508">We are looking for all data points for which the residual is greater than 2<emphasis effect="italics">s</emphasis> = 2(16.4) = 32.8 or less than &#8211;32.8. Compare these values to the residuals in column four of the table. The only such data point is the student who had a grade of 65 on the third exam and 175 on the final exam; the residual for this student is 35.</para>
+</section>
+
+<section id="fs-idm166882672">
+<title>How does the outlier affect the best fit line?</title>
+<para id="element-8021">Numerically and graphically, we have identified the point (65, 175) as an outlier. We should re-examine the data for this point to see if there are any problems with the data. If there is an error, we should fix the error if possible, or delete the data. If the data is correct, we would leave it in the data set. For this problem, we will suppose that we examined the data and found that this outlier data was an error. Therefore we will continue on and delete the outlier, so that we can explore how it affects the results, as a learning experience.</para>
+
+<para id="element-6691" class="finger"><title>Compute a new best-fit line and correlation coefficient using the ten remaining points:</title>
+On the TI-83, TI-83+, TI-84+ calculators, delete the outlier from L1 and L2. Using the LinRegTTest, the new line of best fit and the correlation coefficient are:</para>
+<para id="element-669"><emphasis effect="italics">&#375;</emphasis> = &#8211;355.19 + 7.39<emphasis effect="italics">x</emphasis> and <emphasis effect="italics">r</emphasis> = 0.9121</para><para id="element-101">The new line with <emphasis effect="italics">r</emphasis> = 0.9121 is a stronger correlation than the original (<emphasis effect="italics">r</emphasis> = 0.6631) because <emphasis effect="italics">r</emphasis> = 0.9121 is closer to one. This means that the new line is a better fit to the ten remaining data values. The line can better predict the final exam score given the third exam score.</para>
+</section>
+
+
+<section id="fs-idm24143888">
+<title>Numerical Identification of Outliers: Calculating <emphasis effect="italics">s</emphasis> and Finding Outliers Manually</title>
+<para id="eip-819">If you do not have the function LinRegTTest, then you can calculate the outlier in the first example by doing the following.
+<newline/><newline/>
+First, <emphasis>square each |<emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis>|</emphasis></para><para id="eip-152">The squares are <list id="list1" list-type="labeled-item" display="inline">
+<item>35<sup>2</sup></item>
+<item>17<sup>2</sup></item>
+<item>16<sup>2</sup></item>
+<item>6<sup>2</sup></item>
+<item>19<sup>2</sup></item>
+<item>9<sup>2</sup></item>
+<item>3<sup>2</sup></item>
+<item>1<sup>2</sup></item>
+<item>10<sup>2</sup></item>
+<item>9<sup>2</sup></item>
+<item>1<sup>2</sup></item>
+</list>
+</para>
+<para id="eip-912"><emphasis>Then, add (sum) all the |<emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis>| squared terms</emphasis> using the formula</para>
+
+<para id="eip-187"><m:math>
+ <m:mrow>
+  <m:mover>
+   <m:mrow>
+    <m:munder>
+     <m:mi>&#931;</m:mi>
+     <m:mrow>
+      <m:mi>i</m:mi><m:mo>&#160;</m:mo><m:mo>=</m:mo><m:mo>&#160;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    </m:munder>
+
+   </m:mrow>
+   <m:mrow>
+    <m:mn>11</m:mn>
+   </m:mrow>
+  </m:mover>
+  <m:msup>
+   <m:mrow>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mo>|</m:mo><m:msub>
+       <m:mi>y</m:mi>
+       <m:mi>i</m:mi>
+      </m:msub>
+      <m:mo>&#8722;</m:mo><m:msub>
+       <m:mover accent="true">
+        <m:mi>y</m:mi>
+        <m:mo>^</m:mo>
+       </m:mover>
+
+       <m:mi>i</m:mi>
+      </m:msub>
+      <m:mo>|</m:mo>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+   <m:mn>2</m:mn>
+  </m:msup>
+  <m:mo>=</m:mo><m:mover>
+   <m:mrow>
+    <m:munder>
+     <m:mi>&#931;</m:mi>
+     <m:mrow>
+      <m:mi>i</m:mi><m:mo>&#160;</m:mo><m:mo>=</m:mo><m:mo>&#160;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    </m:munder>
+
+   </m:mrow>
+   <m:mrow>
+    <m:mn>11</m:mn>
+   </m:mrow>
+  </m:mover>
+  <m:msub>
+   <m:mi>&#949;</m:mi>
+   <m:mi>i</m:mi>
+  </m:msub>
+  <m:msup>
+   <m:mrow/>
+   <m:mn>2</m:mn>
+  </m:msup>
+
+ </m:mrow>
+</m:math> (Recall that <emphasis effect="italics">y</emphasis><sub>i</sub> &#8211; <emphasis effect="italics">&#375;</emphasis><sub>i</sub> = <emphasis effect="italics">&#949;</emphasis><sub>i</sub>.)</para><para id="eip-977">= 35<sup>2</sup> + 17<sup>2</sup> + 16<sup>2</sup> + 6<sup>2</sup> + 19<sup>2</sup> + 9<sup>2</sup> + 3<sup>2</sup> + 1<sup>2</sup> + 10<sup>2</sup> + 9<sup>2</sup> + 1<sup>2</sup></para><para id="eip-684"> = 2440 =  <emphasis>SSE</emphasis>. The result, <emphasis>SSE</emphasis> is the Sum of Squared Errors.</para>
+
+<para id="eip-961"><emphasis>Next, calculate <emphasis effect="italics">s</emphasis>, the standard deviation of all the <emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">&#949;</emphasis> values where <emphasis effect="italics">n</emphasis> = the total number of data points.</emphasis></para>
+
+<para id="eip-454">The calculation is <m:math><m:mi>s</m:mi><m:mo>=</m:mo>
+<m:msqrt>
+<m:mfrac>
+<m:mrow><m:mtext>SSE</m:mtext></m:mrow>
+<m:mrow><m:mi>n</m:mi><m:mo>&#8211;</m:mo><m:mn>2</m:mn></m:mrow>
+</m:mfrac>
+</m:msqrt>
+
+</m:math>.</para>
+
+<para id="eip-284">For the third exam/final exam problem, <m:math><m:mi>s</m:mi><m:mo>=</m:mo>
+<m:msqrt>
+<m:mfrac>
+<m:mrow><m:mn>2440</m:mn></m:mrow>
+<m:mrow><m:mn>11</m:mn><m:mo>&#8211;</m:mo><m:mn>2</m:mn></m:mrow>
+</m:mfrac>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>16.47</m:mn>
+</m:math>.</para>
+
+<para id="eip-799">Next, multiply <emphasis effect="italics">s</emphasis> by 2:
+<newline/>(2)(16.47) = 32.94
+<newline/>32.94 is 2 standard deviations away from the mean of the <emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis> values.</para><para id="eip-28">If we were to measure the vertical distance from any data point to the corresponding point on the line of best fit and that distance is at least 2<emphasis effect="italics">s</emphasis>, then we would consider the data point to be "too far" from the line of best fit. We call that point a <term>potential outlier</term>.</para><para id="eip-130">For the example, if any of the |<emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis>| values are <emphasis>at least</emphasis> 32.94, the corresponding (<emphasis effect="italics">x</emphasis>, <emphasis effect="italics">y</emphasis>) data point is a potential outlier.</para><para id="eip-696">For the third exam/final exam problem, all the |<emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis>|'s are less than 31.29 except for the first one which is 35.</para><para id="eip-994">35 &gt; 31.29 That is, |<emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis>| &#8805; (2)(s)</para><para id="eip-980">The point which corresponds to |<emphasis effect="italics">y</emphasis> &#8211; <emphasis effect="italics">&#375;</emphasis>| = 35 is (65, 175). <emphasis>Therefore, the data point (65,175) is a potential outlier.</emphasis> For this example, we will delete it. (Remember, we do not always delete an outlier.)
+
+<note id="fs-idp12863088"><label/><title>Note</title>
+<para id="fs-idp101044864">When outliers are deleted, the researcher should either record that data was deleted, and why, or the researcher should provide results both with and without the deleted data. If data is erroneous and the correct values are known (e.g., student one actually scored a 70 instead of a 65), then this correction can be made to the data.</para></note><newline/><newline/>The next step is to compute a new best-fit line using the ten remaining
+points. The new line of best fit and the correlation coefficient are:</para><para id="eip-451"><emphasis effect="italics">&#375;</emphasis> = &#8211;355.19 + 7.39<emphasis effect="italics">x</emphasis> and <emphasis effect="italics">r</emphasis> = 0.9121</para>
+
+
+<example id="element-824">
+<exercise id="element-12623">
+<problem id="id1171155161094">
+<para id="element-802">Using this new line of best fit (based on the remaining ten data points  in the <link target-id="element-22" document="m47117">third exam/final exam example</link>), what would a student who receives a 73 on the third exam expect to receive on the final exam? Is this the same as the prediction made using the original line?</para></problem>
+<solution id="id1171158788502">
+ <para id="element-12623s">Using the new line of best fit, <emphasis effect="italics">&#375;</emphasis> = &#8211;355.19 + 7.39(73) = 184.28. A student who scored 73 points on the third exam would expect to earn 184 points on the final exam.
+<newline/><newline/>
+The original line predicted <emphasis effect="italics">&#375;</emphasis> = &#8211;173.51 + 4.83(73) = 179.08 so the prediction using the new line with the outlier eliminated differs from the original prediction.
+ </para></solution>
+</exercise>
+</example>
+
+<note id="fs-idp77690080" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-846"><problem id="eip-372">
+  <para id="eip-353">The data points for the graph from the <link target-id="element-22" document="m47117">third exam/final exam example</link> are as follows: (1, 5), (2, 7), (2, 6), (3, 9), (4, 12), (4, 13), (5, 18), (6, 19), (7, 12), and (7, 21). Remove the outlier and recalculate the line of best fit. Find the value of <emphasis effect="italics">&#375;</emphasis> when <emphasis effect="italics">x</emphasis> = 10.</para></problem>
+</exercise>
+</note>
+
+<example id="element-986">
+<para id="element-719">The Consumer Price Index (CPI) measures the average change over time in the prices paid by urban consumers for consumer goods and services. The CPI affects nearly all Americans because of the many ways it is used. One of its biggest uses is as a measure of inflation. By providing information about price changes in the Nation's economy to government, business, and labor, the CPI helps them to make economic decisions. The President, Congress, and the Federal Reserve Board use the CPI's trends to formulate monetary and fiscal policies.  In the following table, <emphasis effect="italics">x</emphasis> is the year and <emphasis effect="italics">y</emphasis> is the CPI.</para>
+
+<table id="element-127" summary=".."><title>Data</title>
+<tgroup cols="4">
+<thead>
+  <row>
+    <entry align="center"><emphasis effect="italics">x</emphasis></entry>
+    <entry align="center"><emphasis effect="italics">y</emphasis></entry>
+    <entry align="center"><emphasis effect="italics">x</emphasis></entry>
+    <entry align="center"><emphasis effect="italics">y</emphasis></entry>
+  </row>
+</thead>
+<tbody>
+<row>
+<entry>1915 </entry>
+<entry>10.1 </entry>
+<entry>1969</entry>
+<entry>36.7</entry>
+</row>
+<row>
+<entry>1926</entry>
+<entry>17.7</entry>
+<entry>1975</entry>
+<entry>49.3</entry>
+</row>
+<row>
+<entry>1935</entry>
+<entry>13.7</entry>
+<entry>1979</entry>
+<entry>72.6</entry>
+</row>
+<row>
+<entry>1940</entry>
+<entry>14.7</entry>
+<entry>1980</entry>
+<entry>82.4</entry>
+</row>
+<row>
+<entry>1947</entry>
+<entry>24.1</entry>
+<entry>1986</entry>
+<entry>109.6</entry>
+</row>
+<row>
+<entry>1952</entry>
+<entry>26.5</entry>
+<entry>1991</entry>
+<entry>130.7</entry>
+</row>
+<row>
+<entry>1964</entry>
+<entry>31.0</entry>
+<entry>1999</entry>
+<entry>166.6</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<exercise id="element-603"><problem id="id1171166081082">
+    <list id="list3" list-type="enumerated" number-style="lower-alpha">
+<item>Draw a scatterplot of the data.</item>
+<item>Calculate the least squares line. Write the equation in the form <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis>.</item>
+<item>Draw the line on the scatterplot.</item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>What is the average CPI for the year 1990?</item>
+</list></problem>
+
+<solution id="id1171157206888">
+  <list id="element-298" list-type="enumerated" number-style="lower-alpha"><item>See <link target-id="eip-idp35936320"/>.</item>
+<item><emphasis effect="italics">&#375;</emphasis> = &#8211;3204 + 1.662<emphasis effect="italics">x</emphasis> is the equation of the line of best fit.</item>
+<item><emphasis effect="italics">r</emphasis> = 0.8694</item>
+<item>The number of data points is <emphasis effect="italics">n</emphasis> = 14. Use the 95% Critical Values of the Sample Correlation Coefficient table at the end of Chapter 12. <emphasis effect="italics">n</emphasis> &#8211; 2 = 12. The corresponding critical value is 0.532. Since 0.8694 &gt; 0.532, <emphasis effect="italics">r</emphasis> is significant.
+<newline/><emphasis effect="italics">&#375;</emphasis> = &#8211;3204 + 1.662(1990) = 103.4 CPI</item>
+<item>Using the calculator LinRegTTest, we find that <emphasis effect="italics">s</emphasis> = 25.4 ; graphing the lines Y2 = &#8211;3204 + 1.662X &#8211; 2(25.4) and Y3 = &#8211;3204 + 1.662X + 2(25.4) shows that no data values are outside those lines, identifying no outliers. (Note that the year 1999 was very close to the upper line, but still inside it.)</item>
+</list><figure id="eip-idp35936320">
+<media id="id1171151867848" alt="Scatter plot and line of best fit of the consumer price index data, on the y-axis, and year data, on the x-axis.">
+<image src="fig-ch12_09_02.jpg" mime-type="image/jpeg" width="380"/>
+</media>
+</figure>
+</solution>
+</exercise><note id="eip-413"><label/><title>Note</title><para id="fs-idp122850352">In the example, notice the pattern of the points compared to the line.  Although the correlation coefficient is significant, the pattern in the scatterplot indicates that a curve would be a more appropriate model to use than a line.  In this example, a statistician should prefer to use other methods to fit a curve to this data, rather than model the data with the line we found. In addition to doing the calculations, it is always important to look at the scatterplot when deciding whether a linear model is appropriate.</para></note>
+
+<para id="eip-983">If you are interested in seeing more years of data, visit the Bureau of Labor Statistics CPI website ftp://ftp.bls.gov/pub/special.requests/cpi/cpiai.txt; our data is taken from the column entitled "Annual Avg." (third column from the right). For example you could add more current years of data. Try adding the more recent years: 2004: CPI = 188.9; 2008: CPI = 215.3; 2011: CPI = 224.9. See how it affects the model. (Check: <emphasis effect="italics">&#375;</emphasis> = &#8211;4436 + 2.295<emphasis effect="italics">x</emphasis>; <emphasis effect="italics">r</emphasis> = 0.9018. Is <emphasis effect="italics">r</emphasis> significant? Is the fit better with the addition of the new points?)</para></example>
+
+<note id="fs-idm58078240" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-298"><problem id="eip-109">
+  <para id="eip-987">The following table shows economic development measured in per capita income PCINC.</para>
+<table id="eip-idm147482064" summary="..">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+<row>
+<entry>Year</entry>
+<entry>PCINC</entry>
+<entry>Year</entry>
+<entry>PCINC</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1870</entry>
+<entry>340</entry>
+<entry>1920</entry>
+<entry>1050</entry>
+</row>
+<row>
+<entry>1880</entry>
+<entry>499</entry>
+<entry>1930</entry>
+<entry>1170</entry>
+</row>
+<row>
+<entry>1890</entry>
+<entry>592</entry>
+<entry>1940</entry>
+<entry>1364</entry>
+</row>
+<row>
+<entry>1900</entry>
+<entry>757</entry>
+<entry>1950</entry>
+<entry>1836</entry>
+</row>
+<row>
+<entry>1910</entry>
+<entry>927</entry>
+<entry>1960</entry>
+<entry>2132</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<list id="eip-idm165132224" list-type="enumerated" number-style="lower-alpha">
+<item>What are the independent and dependent variables?</item>
+<item>Draw a scatter plot.</item>
+<item>Use regression to find the line of best fit and the correlation coefficient.</item>
+<item>Interpret the significance of the correlation coefficient.</item>
+<item>Is there a linear relationship between the variables?</item>
+<item>Find the coefficient of determination and interpret it.</item>
+<item>What is the slope of the regression equation? What does it mean?</item>
+<item>Use the line of best fit to estimate PCINC for 1900, for 2000.</item>
+<item>Determine if there are any outliers.</item>
+</list>
+</problem>
+</exercise></note>
+</section>
+
+
+<section id="eip-518">
+<title>95% Critical Values of the Sample Correlation Coefficient Table</title>
+
+<table id="eip-idm31993488" summary="This table presents the 95% Critical Values of the Sample Correlation Coefficient with Degrees of Freedom in the first column and Critical Values in the second column.">
+<tgroup cols="2"><thead>
+  <row>
+    <entry>Degrees of Freedom: <emphasis effect="italics">n</emphasis> &#8211; 2</entry>
+    <entry>Critical Values: (+ and &#8211;)</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry align="center">1</entry>
+    <entry align="center">0.997</entry>
+  </row>
+  <row>
+    <entry align="center">2</entry>
+    <entry align="center">0.950</entry>
+  </row>
+  <row>
+    <entry align="center">3</entry>
+    <entry align="center">0.878</entry>
+  </row>
+  <row>
+    <entry align="center">4</entry>
+    <entry align="center">0.811</entry>
+  </row>
+  <row>
+    <entry align="center">5</entry>
+    <entry align="center">0.754</entry>
+  </row>
+  <row>
+    <entry align="center">6</entry>
+    <entry align="center">0.707</entry>
+  </row>
+  <row>
+    <entry align="center">7</entry>
+    <entry align="center">0.666</entry>
+  </row>
+  <row>
+    <entry align="center">8</entry>
+    <entry align="center">0.632</entry>
+  </row>
+  <row>
+    <entry align="center">9</entry>
+    <entry align="center">0.602</entry>
+  </row>
+  <row>
+    <entry align="center">10</entry>
+    <entry align="center">0.576</entry>
+  </row>
+  <row>
+    <entry align="center">11</entry>
+    <entry align="center">0.555</entry>
+  </row>
+  <row>
+    <entry align="center">12</entry>
+    <entry align="center">0.532</entry>
+  </row>
+  <row>
+    <entry align="center">13</entry>
+    <entry align="center">0.514</entry>
+  </row>
+  <row>
+    <entry align="center">14</entry>
+    <entry align="center">0.497</entry>
+  </row>
+  <row>
+    <entry align="center">15</entry>
+    <entry align="center">0.482</entry>
+  </row>
+  <row>
+    <entry align="center">16</entry>
+    <entry align="center">0.468</entry>
+  </row>
+  <row>
+    <entry align="center">17</entry>
+    <entry align="center">0.456</entry>
+  </row>
+  <row>
+    <entry align="center">18</entry>
+    <entry align="center">0.444</entry>
+  </row>
+  <row>
+    <entry align="center">19</entry>
+    <entry align="center">0.433</entry>
+  </row>
+  <row>
+    <entry align="center">20</entry>
+    <entry align="center">0.423</entry>
+  </row>
+  <row>
+    <entry align="center">21</entry>
+    <entry align="center">0.413</entry>
+  </row>
+  <row>
+    <entry align="center">22</entry>
+    <entry align="center">0.404</entry>
+  </row>
+  <row>
+    <entry align="center">23</entry>
+    <entry align="center">0.396</entry>
+  </row>
+  <row>
+    <entry align="center">24</entry>
+    <entry align="center">0.388</entry>
+  </row>
+  <row>
+    <entry align="center">25</entry>
+    <entry align="center">0.381</entry>
+  </row>
+  <row>
+    <entry align="center">26</entry>
+    <entry align="center">0.374</entry>
+  </row>
+  <row>
+    <entry align="center">27</entry>
+    <entry align="center">0.367</entry>
+  </row>
+  <row>
+    <entry align="center">28</entry>
+    <entry align="center">0.361</entry>
+  </row>
+  <row>
+    <entry align="center">29</entry>
+    <entry align="center">0.355</entry>
+  </row>
+  <row>
+    <entry align="center">30</entry>
+    <entry align="center">0.349</entry>
+  </row>
+  <row>
+    <entry align="center">40</entry>
+    <entry align="center">0.304</entry>
+  </row>
+  <row>
+    <entry align="center">50</entry>
+    <entry align="center">0.273</entry>
+  </row>
+  <row>
+    <entry align="center">60</entry>
+    <entry align="center">0.250</entry>
+  </row>
+  <row>
+    <entry align="center">70</entry>
+    <entry align="center">0.232</entry>
+  </row>
+  <row>
+    <entry align="center">80</entry>
+    <entry align="center">0.217</entry>
+  </row>
+  <row>
+    <entry align="center">90</entry>
+    <entry align="center">0.205</entry>
+  </row>
+  <row>
+    <entry align="center">100</entry>
+    <entry align="center">0.195</entry>
+  </row>
+</tbody>
+
+
+
+
+</tgroup>
+</table></section>
+
+<section id="eip-604" class="references"><title>References</title><para id="eip-idp16678448">Data from the House Ways and Means Committee, the Health and Human Services Department.</para>
+<para id="eip-idm84869712">Data from Microsoft Bookshelf.</para>
+<para id="eip-idm84869328">Data from the United States Department of Labor, the Bureau of Labor Statistics.</para>
+<para id="eip-idm84868944">Data from the Physician&#8217;s Handbook, 1990.</para>
+<para id="eip-idm84868560">Data from the United States Department of Labor, the Bureau of Labor Statistics.</para></section><section id="eip-380" class="summary"><title>Chapter Review</title><para id="eip-idm88717792">
+To determine if a point is an outlier, do one of the following:
+        <list id="eip-idp16278896" list-type="enumerated" number-style="arabic"><item class="finger">Input the following equations into the TI 83, 83+,84, 84+:
+        <para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idp42255472"><m:math>
+         <m:mrow>
+          <m:mtable columnalign="left">
+           <m:mtr columnalign="left">
+            <m:mtd columnalign="left">
+             <m:mrow>
+              <m:msub>
+               <m:mi>y</m:mi>
+               <m:mn>1</m:mn>
+              </m:msub>
+              <m:mo>=</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>x</m:mi>
+             </m:mrow>
+            </m:mtd>
+           </m:mtr>
+           <m:mtr columnalign="left">
+            <m:mtd columnalign="left">
+             <m:mrow>
+              <m:msub>
+               <m:mi>y</m:mi>
+               <m:mn>2</m:mn>
+              </m:msub>
+              <m:mo>=</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>x</m:mi><m:mo>+</m:mo><m:mn>2</m:mn><m:mi>s</m:mi>
+             </m:mrow>
+            </m:mtd>
+           </m:mtr>
+           <m:mtr columnalign="left">
+            <m:mtd columnalign="left">
+             <m:mrow>
+              <m:msub>
+               <m:mi>y</m:mi>
+               <m:mn>3</m:mn>
+              </m:msub>
+              <m:mo>=</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mn>2</m:mn><m:mi>s</m:mi>
+             </m:mrow>
+            </m:mtd>
+           </m:mtr>
+
+          </m:mtable>
+         </m:mrow>
+        </m:math> where s is the standard deviation of the residuals</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idp16274560">If any point is above y<sub>2</sub> or below y<sub>3</sub> then the point is considered to be an outlier.</para></item>
+
+        <item>Use the residuals and compare their absolute values to 2<emphasis effect="italics">s</emphasis> where <emphasis effect="italics">s</emphasis> is the standard deviation of the residuals. If the absolute value of any residual is greater than or equal to 2<emphasis effect="italics">s</emphasis>, then the corresponding point is an outlier.</item>
+
+        <item>Note: The calculator function LinRegTTest (STATS TESTS LinRegTTest) calculates <emphasis effect="italics">s</emphasis>.</item>
+        </list></para></section><section id="eip-319" class="practice">
+<para id="eip-idm76852864"><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> The scatter plot shows the relationship between hours spent studying and exam scores. The line shown is the calculated line of best fit. The correlation coefficient is 0.69.</para><figure id="fs-idp84808448"><media id="eip-idm82947312" alt="" display="block">
+<image mime-type="image/jpeg" src="CNX_Stats_C012_M09_item001.jpg" width="350"/>
+</media></figure><exercise id="eip-984"><problem id="eip-idm7789920">
+<para id="eip-idp21732640">Do there appear to be any outliers?</para>
+</problem>
+<solution id="eip-idm463264">
+<para id="eip-idm463008">Yes, there appears to be an outlier at (6, 58).</para>
+</solution></exercise>
+
+<exercise id="eip-237"><problem id="eip-idp58206944">
+<para id="eip-idm30953376">A point is removed, and the line of best fit is recalculated. The new correlation coefficient is 0.98. Does the point appear to have been an outlier? Why?</para></problem></exercise><exercise id="eip-430">
+<problem id="eip-idp57176576">
+<para id="eip-idm34700448">What effect did the potential outlier have on the line of best fit?</para>
+</problem>
+<solution id="eip-idp31085872">
+<para id="eip-idm21136688">The potential outlier flattened the slope of the line of best fit because it was below the data set. It made the line of best fit less accurate is a predictor for the data.</para>
+</solution></exercise>
+
+<exercise id="eip-955"><problem id="eip-idm16518592">
+<para id="eip-idp37000592">Are you more or less confident in the predictive ability of the new line of best fit?</para>
+</problem></exercise><exercise id="eip-930">
+<problem id="eip-idm31002864">
+<para id="eip-idm31002608">The Sum of Squared Errors for a data set of 18 numbers is 49. What is the standard deviation?</para>
+</problem>
+<solution id="eip-idm29951616">
+<para id="eip-idm29951360"><emphasis effect="italics">s</emphasis> = 1.75</para>
+</solution></exercise>
+
+<exercise id="eip-7"><problem id="eip-idp54697072">
+<para id="eip-idp57078080">The Standard Deviation for the Sum of Squared Errors for a data set is 9.8. What is the cutoff for the vertical distance that a point can be from the line of best fit to be considered an outlier?</para>
+</problem></exercise></section>
+
+
+<section id="fs-idm86899200" class="free-response">
+<title>Homework</title>
+
+<exercise id="element-957"><problem id="id44886916">
+  <para id="element-678">The height (sidewalk to roof) of notable tall buildings in America is compared to the number of stories of the building (beginning at street level).</para>
+<table id="id1aa0827143" summary="This table presents building heights (in feet) in the first column and building stories in the second column.">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Height (in feet)</entry>
+            <entry>Stories</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry align="center">1,050</entry>
+            <entry align="center">57</entry>
+          </row>
+          <row>
+            <entry align="center">428</entry>
+            <entry align="center">28</entry>
+          </row>
+          <row>
+            <entry align="center">362</entry>
+            <entry align="center">26</entry>
+          </row>
+          <row>
+            <entry align="center">529</entry>
+            <entry align="center">40</entry>
+          </row>
+          <row>
+            <entry align="center">790</entry>
+            <entry align="center">60</entry>
+          </row>
+          <row>
+            <entry align="center">401</entry>
+            <entry align="center">22</entry>
+          </row>
+          <row>
+            <entry align="center">380</entry>
+            <entry align="center">38</entry>
+          </row>
+          <row>
+            <entry align="center">1,454</entry>
+            <entry align="center">110</entry>
+          </row>
+          <row>
+            <entry align="center">1,127</entry>
+            <entry align="center">100</entry>
+          </row>
+          <row>
+            <entry align="center">700</entry>
+            <entry align="center">46</entry>
+          </row>
+        </tbody>
+</tgroup>
+</table>
+<list id="element-78" list-type="enumerated" number-style="lower-alpha"><item>Using &#8220;stories&#8221; as the independent variable and &#8220;height&#8221; as the dependent variable, make a scatter plot of the data.</item>
+<item>Does it appear from inspection that there is a relationship between the variables?</item>
+<item>Calculate the least squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Find the estimated heights for 32 stories and for 94 stories.</item>
+<item>Based on the data in <link target-id="id1aa0827143"/>, is there a linear relationship between the number of stories in tall buildings and the height of the buildings?</item>
+<item>Are there any outliers in the data? If so, which point(s)?</item>
+<item>What is the estimated height of a building with six stories? Does the least squares line give an accurate estimate of height? Explain why or why not.</item>
+<item>Based on the least squares line, adding an extra story is predicted to add about how many feet to a building?</item>
+<item>What is the slope of the least squares (best-fit) line?  Interpret the slope.</item>
+</list></problem></exercise><exercise id="fs-idp218993792">
+<problem id="fs-idp218994048">
+<para id="fs-idm23685776">Ornithologists, scientists who study birds, tag sparrow hawks in 13 different colonies to study their population. They gather data for the percent of new sparrow hawks in each colony and the percent of those that have returned from migration.</para>
+<para id="fs-idp121962096"><emphasis>Percent return:</emphasis>74; 66; 81; 52; 73; 62; 52; 45; 62; 46; 60; 46; 38
+<newline/><emphasis>Percent new:</emphasis>5; 6; 8; 11; 12; 15; 16; 17; 18; 18; 19; 20; 20</para>
+
+<list id="fs-idm19617248" list-type="enumerated" number-style="lower-alpha">
+<item>Enter the data into your calculator and make a scatter plot.</item>
+<item>Use your calculator&#8217;s regression function to find the equation of the least-squares regression line. Add this to your scatter plot from  part a.</item>
+<item>Explain in words what the slope and y-intercept of the regression line tell us.</item>
+<item>How well does the regression line fit the data? Explain your response.</item>
+<item>Which point has the largest residual? Explain what the residual means in context. Is this point an outlier? An influential point? Explain.</item>
+<item>An ecologist wants to predict how many birds will join another colony of sparrow hawks to which 70% of the adults from the previous year have returned. What is the prediction?</item>
+</list>
+</problem>
+<solution id="fs-idm56676800">
+<para id="fs-idp172680496">a. and b. Check student&#8217;s solution.</para>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp172680880">c. The slope of the regression line is -0.3031 with a y-intercept of 31.93. In context, the y-intercept indicates that when there are no returning sparrow hawks, there will be almost 32% new sparrow hawks, which doesn&#8217;t make sense since if there are no returning birds, then the new percentage would have to be 100% (this is an example of why we do not extrapolate). The slope tells us that for each percentage increase in returning birds, the percentage of new birds in the colony decreases by 30.3%. </para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp36047136">d. If we examine r2, we see that only 57.52% of the variation in the percent of new birds is explained by the model and the correlation coefficient, r = &#8211;.7584 only indicates a somewhat strong correlation between returning and new percentages. </para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp137409168">e. The ordered pair (66, 6) generates the largest residual of 6.0. This means that when the observed return percentage is 66%, our observed new percentage, 6%, is almost 6% less than the predicted new value of 11.98%. If we remove this data pair, we see only an adjusted slope of -.2789 and an adjusted intercept of 30.9816. In other words, even though this data generates the largest residual, it is not an outlier, nor is the data pair an influential point.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp89140080">f. If there are 70% returning birds, we would expect to see y = &#8211;.2789(70) + 30.9816 = 0.114 or 11.4% new birds in the colony.</para></solution>
+</exercise>
+
+
+<exercise id="fs-idp82285104"><problem id="fs-idp127976160">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp127976416">The following table shows data on average per capita coffee consumption and heart disease rate in a random sample of 10 countries.</para><table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp129320512" summary="..">
+<tgroup cols="11"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<colspec colnum="7" colname="c7"/>
+<colspec colnum="8" colname="c8"/>
+<colspec colnum="9" colname="c9"/>
+<colspec colnum="10" colname="c10"/>
+<colspec colnum="11" colname="c11"/>
+<tbody>
+<row>
+<entry><emphasis>Yearly coffee consumption in liters</emphasis></entry>
+<entry>2.5</entry>
+<entry>3.9</entry>
+<entry>2.9</entry>
+<entry>2.4</entry>
+<entry>2.9</entry>
+<entry>0.8</entry>
+<entry>9.1</entry>
+<entry>2.7</entry>
+<entry>0.8</entry>
+<entry>0.7</entry>
+</row>
+
+<row>
+<entry><emphasis>Death from heart diseases</emphasis></entry>
+<entry>221</entry>
+<entry>167</entry>
+<entry>131</entry>
+<entry>191</entry>
+<entry>220</entry>
+<entry>297</entry>
+<entry>71</entry>
+<entry>172</entry>
+<entry>211</entry>
+<entry>300</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm26943456" list-type="enumerated" number-style="lower-alpha"><item>Enter the data into your calculator and make a scatter plot.</item>
+<item>Use your calculator&#8217;s regression function to find the equation of the least-squares regression line. Add this to your scatter plot from part a.</item>
+<item>Explain in words what the slope and y-intercept of the regression line tell us.</item>
+<item>How well does the regression line fit the data? Explain your response.</item>
+<item>Which point has the largest residual? Explain what the residual means in context. Is this point an outlier? An influential point? Explain.</item>
+<item>Do the data provide convincing evidence that there is a linear relationship between the amount of coffee consumed and the heart disease death rate? Carry out an appropriate test at a significance level of 0.05 to help answer this question.</item>
+</list></problem></exercise><exercise id="fs-idp2751904"><problem id="fs-idp2752160">
+<para id="fs-idp140738592">The following table consists of one student athlete&#8217;s time (in minutes) to swim 2000 yards and the student&#8217;s heart rate (beats per minute) after swimming on a random sample of 10 days:</para>
+<table id="fs-idp167616288" summary="..">
+<title/>
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Swim Time</entry>
+<entry>Heart Rate</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>34.12</entry>
+<entry>144</entry>
+</row>
+<row>
+<entry>35.72</entry>
+<entry>152</entry>
+</row>
+<row>
+<entry>34.72</entry>
+<entry>124</entry>
+</row>
+<row>
+<entry>34.05</entry>
+<entry>140</entry>
+</row>
+<row>
+<entry>34.13</entry>
+<entry>152</entry>
+</row>
+<row>
+<entry>35.73</entry>
+<entry>146</entry>
+</row>
+<row>
+<entry>36.17</entry>
+<entry>128</entry>
+</row>
+<row>
+<entry>35.57</entry>
+<entry>136</entry>
+</row>
+<row>
+<entry>35.37</entry>
+<entry>144</entry>
+</row>
+<row>
+<entry>35.57</entry>
+<entry>148</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<list id="fs-idp36234688" list-type="enumerated" number-style="lower-alpha">
+<item>Enter the data into your calculator and make a scatter plot.</item>
+<item>Use your calculator&#8217;s regression function to find the equation of the least-squares regression line. Add this to your scatter plot from part a.</item>
+<item>Explain in words what the slope and y-intercept of the regression line tell us.</item>
+<item>How well does the regression line fit the data? Explain your response.</item>
+<item>Which point has the largest residual? Explain what the residual means in context. Is this point an outlier? An influential point? Explain.</item>
+</list>
+</problem>
+<solution id="fs-idm82387040">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idm38243616" list-type="enumerated" number-style="lower-alpha"><item>Check student&#8217;s solution.</item>
+<item>Check student&#8217;s solution.</item>
+<item>We have a slope of &#8211;1.4946 with a <emphasis effect="italics">y</emphasis>-intercept of 193.88. The slope, in context, indicates that for each additional minute added to the swim time, the heart rate will decrease by 1.5 beats per minute. If the student is not swimming at all, the <emphasis effect="italics">y</emphasis>-intercept indicates that his heart rate will be 193.88 beats per minute. While the slope has meaning (the longer it takes to swim 2,000 meters, the less effort the heart puts out), the <emphasis effect="italics">y</emphasis>-intercept does not make sense. If the athlete is not swimming (resting), then his heart rate should be very low.</item>
+<item>Since only 1.5% of the heart rate variation is explained by this regression equation, we must conclude that this association is not explained with a linear relationship.</item>
+<item>The point (34.72, 124) generates the largest residual of &#8211;11.82. This means that our observed heart rate is almost 12 beats less than our predicted rate of 136 beats per minute. When this point is removed, the slope becomes &#8211;2.953 with the y-intercept changing to 247.1616. While the linear association is still very weak, we see that the removed data pair can be considered an influential point in the sense that the <emphasis effect="italics">y</emphasis>-intercept becomes more meaningful.</item>
+</list></solution></exercise><exercise id="fs-idp111074400"><problem id="fs-idp111074656">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm34344064">A researcher is investigating whether population impacts homicide rate. He uses demographic data from Detroit, MI to compare homicide rates and the number of the population that are white males.</para><table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp10781040" summary="..">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Population Size</entry>
+<entry>Homicide rate per 100,000 people</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>558,724</entry>
+<entry>8.6</entry>
+</row>
+<row>
+<entry>538,584</entry>
+<entry>8.9</entry>
+</row>
+<row>
+<entry>519,171</entry>
+<entry>8.52</entry>
+</row>
+<row>
+<entry>500,457</entry>
+<entry>8.89</entry>
+</row>
+<row>
+<entry>482,418</entry>
+<entry>13.07</entry>
+</row>
+<row>
+<entry>465,029</entry>
+<entry>14.57</entry>
+</row>
+<row>
+<entry>448,267</entry>
+<entry>21.36</entry>
+</row>
+<row>
+<entry>432,109</entry>
+<entry>28.03</entry>
+</row>
+<row>
+<entry>416,533</entry>
+<entry>31.49</entry>
+</row>
+<row>
+<entry>401,518</entry>
+<entry>37.39</entry>
+</row>
+<row>
+<entry>387,046</entry>
+<entry>46.26</entry>
+</row>
+<row>
+<entry>373,095</entry>
+<entry>47.24</entry>
+</row>
+<row>
+<entry>359,647</entry>
+<entry>52.33</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm58592672" list-type="enumerated" number-style="lower-alpha"><item>Use your calculator to construct a scatter plot of the data. What should the independent variable be? Why?</item>
+<item>Use your calculator&#8217;s regression function to find the equation of the least-squares regression line. Add this to your scatter plot.</item>
+<item>Discuss what the following mean in context.
+<list id="fs-idm37609808" list-type="enumerated" number-style="lower-roman">
+<item>The slope of the regression equation</item>
+<item>The y-intercept of the regression equation</item>
+<item>The correlation r</item>
+<item>The coefficient of determination r2.</item>
+</list>
+</item>
+<item>Do the data provide convincing evidence that there is a linear relationship between population size and homicide rate? Carry out an appropriate test at a significance level of 0.05 to help answer this question.</item>
+</list></problem></exercise><exercise id="fs-idm81379472"><problem id="fs-idm81379216">
+<table id="fs-idm81378960" summary="..">
+<title/>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>School</entry>
+<entry>Mid-Career Salary (in thousands)</entry>
+<entry>Yearly Tuition</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Princeton</entry>
+<entry>137</entry>
+<entry>28,540</entry>
+</row>
+<row>
+<entry>Harvey Mudd</entry>
+<entry>135</entry>
+<entry>40,133</entry>
+</row>
+<row>
+<entry>CalTech</entry>
+<entry>127</entry>
+<entry>39,900</entry>
+</row>
+<row>
+<entry>US Naval Academy</entry>
+<entry>122</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>West Point</entry>
+<entry>120</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>MIT</entry>
+<entry>118</entry>
+<entry>42,050</entry>
+</row>
+<row>
+<entry>Lehigh University</entry>
+<entry>118</entry>
+<entry>43,220</entry>
+</row>
+<row>
+<entry>NYU-Poly</entry>
+<entry>117</entry>
+<entry>39,565</entry>
+</row>
+<row>
+<entry>Babson College</entry>
+<entry>117</entry>
+<entry>40,400</entry>
+</row>
+<row>
+<entry>Stanford</entry>
+<entry>114</entry>
+<entry>54,506</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idp139742416">Using the data to determine the linear-regression line equation with the outliers removed. Is there a linear correlation for the data set with outliers removed? Justify your answer.</para>
+</problem>
+<solution id="fs-idm6636208">
+<para id="fs-idp167245664">If we remove the two service academies (the tuition is $0.00), we construct a new regression equation of <emphasis effect="italics">y</emphasis> = &#8211;0.0009x + 160 with a correlation coefficient of 0.71397 and a coefficient of determination of 0.50976. This allows us to say there is a fairly strong linear association between tuition costs and salaries if the service academies are removed from the data set.</para></solution>
+</exercise><section id="fs-idm85401472" class="bring-together-homework">
+<title>Bring It Together</title>
+<exercise id="element-793"><problem id="id44885338">
+  <para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-815">The average number of people in a family that attended college for various years is given in <link target-id="id1034sdfa0215"/>.</para><table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="id1034sdfa0215" summary="--">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Year</entry>
+            <entry>Number of Family Members Attending College</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry>1969</entry>
+            <entry align="center">4.0</entry>
+          </row>
+          <row>
+            <entry>1973</entry>
+            <entry align="center">3.6</entry>
+          </row>
+          <row>
+            <entry>1975</entry>
+            <entry align="center">3.2</entry>
+          </row>
+          <row>
+            <entry>1979</entry>
+            <entry align="center">3.0</entry>
+          </row>
+          <row>
+            <entry>1983</entry>
+            <entry align="center">3.0</entry>
+          </row>
+          <row>
+            <entry>1988</entry>
+            <entry align="center">3.0</entry>
+          </row>
+          <row>
+            <entry>1991</entry>
+            <entry align="center">2.9</entry>
+          </row>
+        </tbody>
+
+
+
+
+
+</tgroup>
+</table><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-905" list-type="enumerated" number-style="lower-alpha"><item>Using &#8220;year&#8221; as the independent variable and &#8220;Number of Family Members Attending College&#8221; as the dependent variable, draw a scatter plot of the data.</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Pick two years between 1969 and 1991 and find the estimated number of family members attending college. </item>
+<item>Based on the data in <link target-id="id1034sdfa0215" document=""/>, is there a linear relationship between the year and the average number of family members attending college?</item>
+<item>Using the least-squares line, estimate the number of family members attending college for 1960 and 1995. Does the least-squares line give an accurate estimate for those years? Explain why or why not.</item>
+<item>Are there any outliers in the data?</item>
+<item>What is the estimated average number of family members attending college for 1986? Does the least squares line give an accurate estimate for that year? Explain why or why not.</item>
+<item>What is the slope of the least squares (best-fit) line?  Interpret the slope.</item>
+</list></problem></exercise><exercise id="element-402">
+<problem id="id44890157">
+  <para id="element-674">The percent of female wage and salary workers who are paid hourly rates is given in <link target-id="id8522228278"/> for the years 1979 to 1992.</para><table id="id8522228278" summary="This table presents the year in the first column and percent of workers paid hourly rates in the second column.">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Year</entry>
+            <entry>Percent of workers paid hourly rates</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry align="center">1979</entry>
+            <entry align="center">61.2</entry>
+          </row>
+          <row>
+            <entry align="center">1980</entry>
+            <entry align="center">60.7</entry>
+          </row>
+          <row>
+            <entry align="center">1981</entry>
+            <entry align="center">61.3</entry>
+          </row>
+          <row>
+            <entry align="center">1982</entry>
+            <entry align="center">61.3</entry>
+          </row>
+          <row>
+            <entry align="center">1983</entry>
+            <entry align="center">61.8</entry>
+          </row>
+          <row>
+            <entry align="center">1984</entry>
+            <entry align="center">61.7</entry>
+          </row>
+          <row>
+            <entry align="center">1985</entry>
+            <entry align="center">61.8</entry>
+          </row>
+          <row>
+            <entry align="center">1986</entry>
+            <entry align="center">62.0</entry>
+          </row>
+          <row>
+            <entry align="center">1987</entry>
+            <entry align="center">62.7</entry>
+          </row>
+          <row>
+            <entry align="center">1990</entry>
+            <entry align="center">62.8</entry>
+          </row>
+          <row>
+            <entry align="center">1992</entry>
+            <entry align="center">62.9</entry>
+          </row>
+        </tbody>
+
+
+</tgroup>
+</table>
+<list id="fs-idm78997760" list-type="enumerated" number-style="lower-alpha"><item>Using &#8220;year&#8221; as the independent variable and &#8220;percent&#8221; as the dependent variable, draw a scatter plot of the data. </item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Find the estimated percents for 1991 and 1988.</item>
+<item>Based on the data, is there a linear relationship between the year and the percent of female wage and salary earners who are paid hourly rates?</item>
+<item>Are there any outliers in the data?</item>
+<item>What is the estimated percent for the year 2050? Does the least-squares line give an accurate estimate for that year? Explain why or why not.</item>
+<item>What is the slope of the least-squares (best-fit) line? Interpret the slope.</item>
+</list></problem>
+<solution id="fs-idp11469024">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-571" list-type="enumerated" number-style="lower-alpha"><item>Check student's solution.</item>
+<item>yes</item>
+<item><emphasis effect="italics">&#375;</emphasis> = &#8722;266.8863+0.1656x</item>
+<item>0.9448; Yes</item>
+<item>62.8233; 62.3265</item>
+<item>yes</item>
+<item>no; (1987, 62.7)</item>
+<item>72.5937; no</item>
+<item>slope = 0.1656.<newline/>As the year increases by one, the percent of workers paid hourly rates tends to increase by 0.1656.</item>
+</list></solution>
+</exercise>
+
+<para id="id9018511"><newline/><emphasis effect="italics">Use the following information to answer the next two exercises.</emphasis> The cost of a leading liquid laundry detergent in different sizes is given in <link target-id="id10105430" document=""/>.</para><table id="id10105430" summary="This table presents the size of laundry detergent in ounces in the first column and cost in the second column. The third column is left blank for you to calculate the cost per ounce.">
+
+<tgroup cols="3"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <colspec colnum="3" colname="c3"/>
+        <thead>
+          <row>
+            <entry>Size (ounces)</entry>
+            <entry>Cost ($)</entry>
+            <entry>Cost per ounce</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry align="center">16</entry>
+            <entry align="center">3.99</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry align="center">32</entry>
+            <entry align="center">4.99</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry align="center">64</entry>
+            <entry align="center">5.99</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry align="center">200</entry>
+            <entry align="center">10.99</entry>
+            <entry/>
+          </row>
+        </tbody>
+
+</tgroup>
+</table>
+
+<exercise id="element-454"><problem id="id44893851">
+  <list id="element-775" list-type="enumerated" number-style="lower-alpha">
+<item>Using &#8220;size&#8221; as the independent variable and &#8220;cost&#8221; as the dependent variable, draw a scatter plot.</item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>If the laundry detergent were sold in a 40-ounce size, find the estimated cost.</item>
+<item>If the laundry detergent were sold in a 90-ounce size, find the estimated cost.</item>
+<item>Does it appear that a line is the best way to fit the data? Why or why not?</item>
+<item>Are there any outliers in the given data?</item>
+<item>Is the least-squares line valid for predicting what a 300-ounce size of the laundry detergent would you cost? Why or why not?</item>
+<item>What is the slope of the least-squares (best-fit) line? Interpret the slope.</item>
+</list>
+</problem></exercise><exercise id="element-952"><problem id="id44894852">
+  <list id="element-636" list-type="enumerated" number-style="lower-alpha">
+<item>Complete <link target-id="id10105430" document=""/> for the cost per ounce of the different sizes.</item>
+<item>Using &#8220;size&#8221; as the independent variable and &#8220;cost per ounce&#8221; as the dependent variable, draw a scatter plot of the data.</item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>If the laundry detergent were sold in a 40-ounce size, find the estimated cost per ounce.</item>
+<item>If the laundry detergent were sold in a 90-ounce size, find the estimated cost per ounce.</item>
+
+<item>Does it appear that a line is the best way to fit the data? Why or why not?</item>
+<item>Are there any outliers in the the data?</item>
+<item>Is the least-squares line valid for predicting what a 300-ounce size of the laundry detergent would cost per ounce? Why or why not?</item>
+<item>What is the slope of the least-squares (best-fit) line? Interpret the slope.</item>
+</list>
+</problem>
+<solution id="eip-idm171665760">
+<list id="eip-idm171665504" list-type="enumerated" number-style="lower-alpha"><item>
+<table id="eip-idm171664512" summary="..">
+<title/>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>Size (ounces)</entry>
+<entry>Cost ($)</entry>
+<entry>cents/oz</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>16</entry>
+<entry>3.99</entry>
+<entry>24.94</entry>
+</row>
+<row>
+<entry>32</entry>
+<entry>4.99</entry>
+<entry>15.59</entry>
+</row>
+<row>
+<entry>64</entry>
+<entry>5.99</entry>
+<entry>9.36</entry>
+</row>
+<row>
+<entry>200</entry>
+<entry>10.99</entry>
+<entry>5.50</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+<item>Check student&#8217;s solution. </item>
+<item>There is a linear relationship for the sizes 16 through 64, but that linear trend does not continue to the 200-oz size.</item>
+<item><emphasis effect="italics">&#375;</emphasis> =  20.2368 &#8211; 0.0819x</item>
+<item><emphasis effect="italics">r</emphasis> = &#8211;0.8086</item>
+<item>40-oz: 16.96 cents/oz</item>
+<item>90-oz: 12.87 cents/oz</item>
+<item>The relationship is not linear; the least squares line is not appropriate.</item>
+<item>no outliers</item>
+<item>No, you would be extrapolating. The 300-oz size is outside the range of <emphasis effect="italics">x</emphasis>.</item>
+<item>slope = &#8211;0.08194; for each additional ounce in size, the cost per ounce decreases by 0.082 cents.</item></list></solution>
+</exercise><exercise id="element-574"><problem id="id44895425">
+  <para id="element-35">According to a flyer by a Prudential Insurance Company representative, the costs of approximate probate fees and taxes for selected net taxable estates are as follows:</para>
+
+<table id="id1kkk0457049" summary="This table presents the net taxable estate in the first column and the approximate probate fees and taxes in the second column.">
+
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Net Taxable Estate ($)</entry>
+            <entry>Approximate Probate Fees and Taxes ($)</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry align="center">600,000</entry>
+            <entry align="center">30,000</entry>
+          </row>
+          <row>
+            <entry align="center">750,000</entry>
+            <entry align="center">92,500</entry>
+          </row>
+          <row>
+            <entry align="center">1,000,000</entry>
+            <entry align="center">203,000</entry>
+          </row>
+          <row>
+            <entry align="center">1,500,000</entry>
+            <entry align="center">438,000</entry>
+          </row>
+          <row>
+            <entry align="center">2,000,000</entry>
+            <entry align="center">688,000</entry>
+          </row>
+          <row>
+            <entry align="center">2,500,000</entry>
+            <entry align="center">1,037,000</entry>
+          </row>
+          <row>
+            <entry align="center">3,000,000</entry>
+            <entry align="center">1,350,000</entry>
+          </row>
+        </tbody>
+
+
+</tgroup>
+</table>
+
+<list id="fs-idm56414288" list-type="enumerated" number-style="lower-alpha"><item>Decide which variable should be the independent variable and which should be the dependent variable.</item>
+<item>Draw a scatter plot of the data.</item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis>.</item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Find the estimated total cost for a next taxable estate of $1,000,000. Find the cost for $2,500,000.</item>
+<item>Does it appear that a line is the best way to fit the data? Why or why not?</item>
+<item>Are there any outliers in the data?</item>
+<item>Based on these results, what would be the probate fees and taxes for an estate that does not have any assets?</item>
+<item>What is the slope of the least-squares (best-fit) line? Interpret the slope.</item>
+</list></problem></exercise><exercise id="element-911">
+<problem id="id44844693">
+<para id="element-224">The following are advertised sale prices of color televisions at Anderson&#8217;s.</para>
+
+<table id="id90742asdgfa85" summary="This table presents the size of color televisions in inches in the first column and the sale price in the second column.">
+
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Size (inches)</entry>
+            <entry>Sale Price ($)</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry align="center">9</entry>
+            <entry align="center">147</entry>
+          </row>
+          <row>
+            <entry align="center">20</entry>
+            <entry align="center">197</entry>
+          </row>
+          <row>
+            <entry align="center">27</entry>
+            <entry align="center">297</entry>
+          </row>
+          <row>
+            <entry align="center">31</entry>
+            <entry align="center">447</entry>
+          </row>
+          <row>
+            <entry align="center">35</entry>
+            <entry align="center">1177</entry>
+          </row>
+          <row>
+            <entry align="center">40</entry>
+            <entry align="center">2177</entry>
+          </row>
+          <row>
+            <entry align="center">60</entry>
+            <entry align="center">2497</entry>
+          </row>
+        </tbody>
+
+
+</tgroup>
+</table>
+
+<list id="fs-idp143667904" list-type="enumerated" number-style="lower-alpha"><item>Decide which variable should be the independent variable and which should be the dependent variable.</item>
+<item>Draw a scatter plot of the data.</item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Find the estimated sale price for a 32 inch television. Find the cost for a 50 inch television.</item>
+<item>Does it appear that a line is the best way to fit the data? Why or why not?</item>
+<item>Are there any outliers in the data?</item>
+<item>What is the slope of the least-squares (best-fit) line? Interpret the slope.</item>
+</list></problem>
+<solution id="fs-idm8083616">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm47882016" list-type="enumerated" number-style="lower-alpha"><item>Size is <emphasis effect="italics">x</emphasis>, the independent variable, price is <emphasis effect="italics">y</emphasis>, the dependent variable.</item>
+<item>Check student&#8217;s solution.</item>
+<item>The relationship does not appear to be linear.</item>
+<item><emphasis effect="italics">&#375;</emphasis> = &#8211;745.252 + 54.75569<emphasis effect="italics">x</emphasis></item>
+<item><emphasis effect="italics">r</emphasis> = 0.8944, yes it is significant</item>
+<item>32-inch: $1006.93, 50-inch: $1992.53</item>
+<item>No, the relationship does not appear to be linear. However, <emphasis effect="italics">r</emphasis> is significant.</item>
+<item>no, the 60-inch TV</item>
+<item>For each additional inch, the price increases by $54.76</item>
+</list></solution>
+</exercise>
+
+<exercise id="element-188"><problem id="id44845835">
+  <para id="element-654"><link target-id="id797832aawwee6" document=""/> shows the average heights for American boy s in 1990.</para><table id="id797832aawwee6" summary="This table presents the boys' ages in years in the first column and average heights in centimeters in the second column.">
+
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Age (years)</entry>
+            <entry>Height (cm)</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry align="center">birth</entry>
+            <entry align="center">50.8</entry>
+          </row>
+          <row>
+            <entry align="center">2</entry>
+            <entry align="center">83.8</entry>
+          </row>
+          <row>
+            <entry align="center">3</entry>
+            <entry align="center">91.4</entry>
+          </row>
+          <row>
+            <entry align="center">5</entry>
+            <entry align="center">106.6</entry>
+          </row>
+          <row>
+            <entry align="center">7</entry>
+            <entry align="center">119.3</entry>
+          </row>
+          <row>
+            <entry align="center">10</entry>
+            <entry align="center">137.1</entry>
+          </row>
+          <row>
+            <entry align="center">14</entry>
+            <entry align="center">157.5</entry>
+          </row>
+        </tbody>
+
+
+
+</tgroup>
+</table>
+
+<list id="fs-idm47970272" list-type="enumerated" number-style="lower-alpha"><item>Decide which variable should be the independent variable and which should be the dependent variable.</item>
+<item>Draw a scatter plot of the data.</item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Find the estimated average height for a one-year-old. Find the estimated average height for an eleven-year-old.</item>
+<item>Does it appear that a line is the best way to fit the data? Why or why not?</item>
+<item>Are there any outliers in the data?</item>
+<item>Use the least squares line to estimate the average height for a sixty-two-year-old man. Do you think that your answer is reasonable? Why or why not?</item>
+<item>What is the slope of the least-squares (best-fit) line? Interpret the slope.</item>
+</list></problem>
+</exercise><exercise id="element-133">
+<problem id="id44851052">
+<table id="fs-idp62448384" summary="..">
+<title/>
+<tgroup cols="5">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+<row>
+<entry>State</entry>
+<entry># letters in name</entry>
+<entry>Year entered the Union</entry>
+<entry>Ranks for entering the Union</entry>
+<entry>Area (square miles)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Alabama</entry>
+<entry>7</entry>
+<entry>1819</entry>
+<entry>22</entry>
+<entry>52,423</entry>
+</row>
+<row>
+<entry>Colorado</entry>
+<entry>8</entry>
+<entry>1876</entry>
+<entry>38</entry>
+<entry>104,100</entry>
+</row>
+<row>
+<entry>Hawaii</entry>
+<entry>6</entry>
+<entry>1959</entry>
+<entry>50</entry>
+<entry>10,932</entry>
+</row>
+<row>
+<entry>Iowa</entry>
+<entry>4</entry>
+<entry>1846</entry>
+<entry>29</entry>
+<entry>56,276</entry>
+</row>
+<row>
+<entry>Maryland</entry>
+<entry>8</entry>
+<entry>1788</entry>
+<entry>7</entry>
+<entry>12,407</entry>
+</row>
+<row>
+<entry>Missouri</entry>
+<entry>8</entry>
+<entry>1821</entry>
+<entry>24</entry>
+<entry>69,709</entry>
+</row>
+<row>
+<entry>New Jersey</entry>
+<entry>9</entry>
+<entry>1787</entry>
+<entry>3</entry>
+<entry>8,722</entry>
+</row>
+<row>
+<entry>Ohio</entry>
+<entry>4</entry>
+<entry>1803</entry>
+<entry>17</entry>
+<entry>44,828</entry>
+</row>
+<row>
+<entry>South Carolina</entry>
+<entry>13</entry>
+<entry>1788</entry>
+<entry>8</entry>
+<entry>32,008</entry>
+</row>
+<row>
+<entry>Utah</entry>
+<entry>4</entry>
+<entry>1896</entry>
+<entry>45</entry>
+<entry>84,904</entry>
+</row>
+<row>
+<entry>Wisconsin</entry>
+<entry>9</entry>
+<entry>1848</entry>
+<entry>30</entry>
+<entry>65,499</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+  <para id="element-564">We are interested in whether there is a relationship between the ranking of a state and the area of the state.</para>
+<list id="fs-idm58683136" list-type="enumerated" number-style="lower-alpha">
+<item>What are the independent and dependent variables?</item>
+<item>What do you think the scatter plot will look like? Make a scatter plot of the data.</item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. What does it imply about the significance of the relationship?</item>
+<item>Find the estimated areas for Alabama and for Colorado. Are they close to the actual areas?</item>
+<item>Use the two points in part f to plot the least-squares line on your graph from part b.</item>
+<item>Does it appear that a line is the best way to fit the data? Why or why not?</item>
+<item>Are there any outliers?</item>
+<item>Use the least squares line to estimate the area of a new state that enters the Union. Can the least-squares line be used to predict it? Why or why not?</item>
+<item>Delete &#8220;Hawaii&#8221; and substitute &#8220;Alaska&#8221; for it. Alaska is the forty-ninth, state with an area of 656,424 square miles.</item>
+<item>Calculate the new least-squares line.</item>
+<item>Find the estimated area for Alabama. Is it closer to the actual area with this new least-squares line or with the previous one that included Hawaii? Why do you think that&#8217;s the case?</item>
+<item>Do you think that, in general, newer states are larger than the original states?</item>
+</list>
+</problem>
+<solution id="fs-idp131481968">
+<list id="fs-idp131482224" list-type="enumerated" number-style="lower-alpha"><item>Let rank be the independent variable and area be the dependent variable.</item>
+<item>Check student&#8217;s solution.</item>
+<item>There appears to be a linear relationship, with one outlier.</item>
+<item><emphasis effect="italics">&#375;</emphasis> (area) = 24177.06 + 1010.478<emphasis effect="italics">x</emphasis></item>
+<item><emphasis effect="italics">r</emphasis> = 0.50047, <emphasis effect="italics">r</emphasis> is not significant so there is no relationship between the variables.</item>
+<item>Alabama: 46407.576  Colorado: 62575.224</item>
+<item>Alabama estimate is closer than Colorado estimate.</item>
+<item>If the outlier is removed, there is a linear relationship. </item>
+<item>There is one outlier (Hawaii).</item>
+<item>rank 51: 75711.4; no</item>
+<item><table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp169197456" summary="..">
+<tgroup cols="5"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+<row>
+<entry>Alabama</entry>
+<entry>7</entry>
+<entry>1819</entry>
+<entry>22</entry>
+<entry>52,423</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Colorado</entry>
+<entry>8</entry>
+<entry>1876</entry>
+<entry>38</entry>
+<entry>104,100</entry>
+</row>
+<row>
+<entry>Hawaii</entry>
+<entry>6</entry>
+<entry>1959</entry>
+<entry>50</entry>
+<entry>10,932</entry>
+</row>
+<row>
+<entry>Iowa</entry>
+<entry>4</entry>
+<entry>1846</entry>
+<entry>29</entry>
+<entry>56,276</entry>
+</row>
+<row>
+<entry>Maryland</entry>
+<entry>8</entry>
+<entry>1788</entry>
+<entry>7</entry>
+<entry>12,407</entry>
+</row>
+<row>
+<entry>Missouri</entry>
+<entry>8</entry>
+<entry>1821</entry>
+<entry>24</entry>
+<entry>69,709</entry>
+</row>
+<row>
+<entry>New Jersey</entry>
+<entry>9</entry>
+<entry>1787</entry>
+<entry>3</entry>
+<entry>8,722</entry>
+</row>
+<row>
+<entry>Ohio</entry>
+<entry>4</entry>
+<entry>1803</entry>
+<entry>17</entry>
+<entry>44,828</entry>
+</row>
+<row>
+<entry>South Carolina</entry>
+<entry>13</entry>
+<entry>1788</entry>
+<entry>8</entry>
+<entry>32,008</entry>
+</row>
+<row>
+<entry>Utah</entry>
+<entry>4</entry>
+<entry>1896</entry>
+<entry>45</entry>
+<entry>84,904</entry>
+</row>
+<row>
+<entry>Wisconsin</entry>
+<entry>9</entry>
+<entry>1848</entry>
+<entry>30</entry>
+<entry>65,499</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table></item>
+<item><emphasis effect="italics">&#375;</emphasis> = &#8211;87065.3 + 7828.532x</item>
+<item>Alabama: 85,162.404; the prior estimate was closer. Alaska is an outlier.</item>
+<item>yes, with the exception of Hawaii</item>
+
+</list></solution>
+</exercise>
+
+
+
+</section>
+</section>
+  </content>
+  <glossary>
+<definition id="outlier">
+    <term>Outlier</term>
+    <meaning id="id1171166689919">an observation that does not fit the rest of the data</meaning>
+  </definition>
+</glossary>
+</document>

@@ -1,0 +1,1071 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+<title>Using the Normal Distribution</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46973/latest</md:content-url>
+  <md:content-id>m46973</md:content-id>
+  <md:title>Using the Normal Distribution</md:title>
+  <md:version>1.15</md:version>
+  <md:created>2013/07/19 08:39:51 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>area to the left</md:keyword>
+    <md:keyword>area to the right</md:keyword>
+    <md:keyword>critical value</md:keyword>
+    <md:keyword>percentile</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="fs-idm68176912" class="finger">The shaded area in the following graph indicates the area to the left of <emphasis effect="italics">x</emphasis>. This area is represented by the probability <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>). Normal tables, computers, and calculators provide or calculate the probability <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>).</para><figure xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm109348848"><media id="fs-idm158141984" alt="This diagram shows a bell-shaped curve with uppercase X at the extreme right end of the X axis. The X axis also contains a lowercase x about one-quarter of the way across the X axis from the right. The area under the bell curve to the right of the lowercase x is shaded. The label states: shaded area represents probability P(X &lt; x).">
+<image mime-type="image/jpg" src="fig-ch_06_04_01.jpg" width="420"/>
+</media>
+</figure><para id="fs-idm95835008">The area to the right is then <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis>) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>). Remember, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) = <term>Area to the left</term> of the vertical line through <emphasis effect="italics">x</emphasis>. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) = <term>Area to the right</term> of the vertical line through <emphasis effect="italics">x</emphasis>. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) is the same as <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; <emphasis effect="italics">x</emphasis>) and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis>) is the same as <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8805; <emphasis effect="italics">x</emphasis>) for continuous distributions.</para>
+
+<section id="fs-idm123993536" class="finger">
+<title>Calculations of Probabilities</title>
+<para id="delete_me" class="finger">Probabilities are calculated using technology. There are instructions given as necessary for the TI-83+ and TI-84 calculators.</para>
+
+<note id="id1168986691838"><label/><title>NOTE</title>
+<para id="eip-idp12614192">To calculate the probability, use the probability tables provided in <link document="m47875"/>  without the use of technology. The tables include instructions for how to use them.</para></note><example id="element-375">
+<para id="element-437">If the area to the left is 0.0228, then the area to the right is 1 &#8211; 0.0228 = 0.9772.</para></example>
+
+<note id="fs-idm96786656" class="statistics try"><label/>
+<title>Try It</title>
+<exercise id="fs-idm159222080">
+<problem id="fs-idm32590832">
+<para id="fs-idm114482720">If the area to the left of <emphasis effect="italics">x</emphasis> is 0.012, then what is the area to the right?</para>
+</problem>
+</exercise>
+</note>
+
+<example id="element-961"><para id="element-231">The final exam scores in a statistics class were normally distributed with a mean of 63 and a standard deviation of five.<newline count="2"/></para><exercise id="element-857">
+<problem id="id1168986723014">
+<para id="element-415">a. Find the probability that a randomly selected student scored more than 65 on the exam.</para>
+</problem>
+
+<solution id="id1168986723026">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-83">a. Let <emphasis effect="italics">X</emphasis> = a score on the final exam. <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(63, 5), where <emphasis effect="italics">&#956;</emphasis> = 63 and <emphasis effect="italics">&#963;</emphasis> = 5.</para><para id="element-449">Draw a graph.</para>
+
+<para id="element-389">Then, find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 65).</para>
+
+<para id="element-294"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 65) = 0.3446</para>
+
+<figure xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm5159232"><media id="id1168988266495" alt="TThis diagram shows a bell-shaped curve with 63 located at the center of the X axis and 65 located a short distance to the right of 63. The area under the bell curve to the right of 65 is shaded. The label states: shaded area represents probability uppercase P(X &gt; 65) = 0.3446">
+<image src="fig-ch_06_05_01.jpg" mime-type="image/png" width="380"/>
+</media>
+</figure><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-45">The probability that any student selected at random scores more than 65 is 0.3446.
+</para><note id="fs-idm55987936" class="statistics calculator">
+<label/>
+<para id="element-736">Go into <code>2nd DISTR</code>.
+<newline/>After pressing <code>2nd DISTR</code>, press <code>2:normalcdf</code>.</para><para id="element-56">The syntax for the instructions are as follows:</para>
+<para id="element-657">normalcdf(lower value, upper value, mean, standard deviation)
+For this problem: normalcdf(65,1E99,63,5) = 0.3446. You get 1E99 (= 10<sup>99</sup>) by pressing <code>1</code>, the <code>EE</code> key (a 2nd key) and then <code>99</code>. Or, you can enter <code>10^99</code> instead. The number 10<sup>99</sup> is way out in the right tail of the normal curve. We are calculating the area between 65 and 10<sup>99</sup>. In some instances, the lower number of the area might be &#8211;1E99 (= &#8211;10<sup>99</sup>). The number &#8211;10<sup>99</sup> is way out in the left tail of the normal curve.</para></note>
+
+<note id="id1168986705026"><label/>
+<title>Historical Note</title>
+<para id="fs-idm194168736">The TI probability program calculates a <emphasis effect="italics">z</emphasis>-score and then the probability from the <emphasis effect="italics">z</emphasis>-score. Before technology, the <emphasis effect="italics">z</emphasis>-score was looked up in a standard normal probability table (because the math involved is too cumbersome) to find the probability. In this example, a standard normal table with area to the left of the <emphasis effect="italics">z</emphasis>-score was used. You calculate the <emphasis effect="italics">z</emphasis>-score and look up the area to the left. The probability is the area to the right.</para></note>
+
+
+<para id="element-772"><emphasis effect="italics">z</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>65</m:mn><m:mtext>&#160;&#8211;&#160;63</m:mtext>
+</m:mrow>
+<m:mn>5</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math> = 0.4</para>
+
+<para id="fs-idm33523184">Area to the left is 0.6554.</para>
+<para id="fs-idm125027840"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 65) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">z</emphasis> &gt; 0.4) = 1 &#8211; 0.6554 = 0.3446</para></solution>
+</exercise>
+
+<note id="fs-idm98690992" class="statistics calculator"><label/>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm197852304">Find the percentile for a student scoring 65:</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm20771216">*Press <code>2nd Distr</code>
+<newline/>*Press <code>2:normalcdf</code>(
+<newline/>*Enter lower bound, upper bound, mean, standard deviation followed by )
+<newline/>*Press <code>ENTER</code>.
+<newline/>For this Example, the steps are
+<newline/><code>2nd Distr</code>
+<newline/><code>2:normalcdf</code>(65,1,2nd EE,99,63,5) <code>ENTER</code>
+<newline/>The probability that a selected student scored more than 65 is 0.3446.</para></note><exercise id="element-243">
+<problem id="id1168986705169">
+<para id="element-950">b. Find the probability that a randomly selected student scored less than 85.</para>
+</problem>
+
+<solution id="id1168986705184">
+<para id="element-181">b. Draw a graph.</para>
+<para id="element-497">Then find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 85), and shade the graph.</para><para id="element-274">Using a computer or calculator, find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 85) = 1.</para>
+<para id="element-909">normalcdf(0,85,63,5) = 1 (rounds to one)</para>
+<para id="element-440">The probability that one student scores less than 85 is approximately one (or 100%).<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="element-585"><problem id="id1168986688411">
+<para id="element-922">c. Find the 90<sup>th</sup> percentile (that is, find the score <emphasis effect="italics">k</emphasis> that has 90% of the scores below <emphasis effect="italics">k</emphasis> and 10% of the scores above <emphasis effect="italics">k</emphasis>).</para></problem>
+
+<solution id="id1168986688427">
+<para id="element-815">c. Find the 90<sup>th</sup> percentile. For each problem or part of a problem, draw a new graph. Draw the <emphasis effect="italics">x</emphasis>-axis. Shade the area that corresponds to the 90<sup>th</sup> percentile.</para>
+
+<para id="element-582"><emphasis>Let <emphasis effect="italics">k</emphasis> = the 90<sup>th</sup> percentile.</emphasis> The variable <emphasis effect="italics">k</emphasis> is located on the <emphasis effect="italics">x</emphasis>-axis. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) is the area to the left of <emphasis effect="italics">k</emphasis>. The 90<sup>th</sup> percentile <emphasis effect="italics">k</emphasis> separates the exam scores into those that are the same or lower than <emphasis effect="italics">k</emphasis> and those that are the same or higher. Ninety percent of the test scores are the same or lower than <emphasis effect="italics">k</emphasis>, and ten percent are the same or higher. The variable <emphasis effect="italics">k</emphasis> is often called a <term>critical value</term>.</para><para id="element-58"><emphasis effect="italics">k</emphasis> = 69.4</para>
+
+<figure id="fs-idm38798848"><media id="id1168986688569" alt="This is a normal distribution curve. The peak of the curve coincides with the point 63 on the horizontal axis. A point, k, is labeled to the right of 63. A vertical line extends from k to the curve. The area under the curve to the left of k is shaded. This represents the probability that x is less than k: P(x &lt; k) = 0.90">
+<image mime-type="jpg/png" src="fig-ch06_05_02.jpg" width="450"/>
+</media>
+</figure>
+
+<para id="element-488">The 90<sup>th</sup> percentile is 69.4. This means that 90% of the test scores fall at or below 69.4 and 10% fall at or above. To get this answer on the calculator, follow this step:</para></solution>
+</exercise>
+
+<note id="fs-idm89013760" class="statistics calculator">
+<label/>
+<para id="fs-idm78070144"><code>invNorm</code> in <code>2nd DISTR</code>. invNorm(area to the left, mean, standard deviation)
+<newline/>For this problem, invNorm(0.90,63,5) = 69.4</para></note>
+
+<exercise id="element-322">
+<problem id="id1168986735971">
+<para id="element-748">d. Find the 70<sup>th</sup> percentile (that is, find the score <emphasis effect="italics">k</emphasis> such that 70% of scores are below <emphasis effect="italics">k</emphasis> and 30% of the scores are above <emphasis effect="italics">k</emphasis>).</para></problem>
+
+<solution id="id1168986735987">
+<para id="element-743">d. Find the 70<sup>th</sup> percentile.</para>
+<para id="element-339">Draw a new graph and label it appropriately. <emphasis effect="italics">k</emphasis> = 65.6</para><para id="element-886">The 70<sup>th</sup> percentile is 65.6. This means that 70% of the test scores fall at or below 65.5 and 30% fall at or above.</para>
+<para id="element-71">invNorm(0.70,63,5) = 65.6</para></solution>
+</exercise>
+</example><note id="fs-idm83435856" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm160100784">
+<problem id="fs-idm31461824">
+<para id="fs-idm14759824">The golf scores for a school team were normally distributed with a mean of 68 and a standard deviation of three.</para>
+<para id="fs-idm103631648">Find the probability that a randomly selected golfer scored less than 65.</para>
+</problem>
+</exercise>
+</note>
+
+<example id="element-32">
+<para id="element-190">A personal computer is used for office work at home, research, communication, personal finances, education, entertainment, social networking, and a myriad of other things. Suppose that the average number of hours a household personal computer is used for entertainment is two hours per day. Assume the times for entertainment are normally distributed and the standard deviation for the times is half an hour.<newline count="2"/></para><exercise id="element-496">
+<problem id="id1168986736072">
+<para id="element-723">a. Find the probability that a household personal computer is used for entertainment between 1.8 and 2.75 hours per day.</para></problem>
+<solution id="id1168986736088">
+<para id="element-150">a. Let <emphasis effect="italics">X</emphasis> = the amount of time (in hours) a household personal computer is used for entertainment. <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(2, 0.5) where <emphasis effect="italics">&#956;</emphasis> = 2 and <emphasis effect="italics">&#963;</emphasis> = 0.5.</para>
+<para id="element-923">Find <emphasis effect="italics">P</emphasis>(1.8 &lt; <emphasis effect="italics">x</emphasis> &lt; 2.75).</para>
+<para id="element-618">The probability for which you are looking is the area <emphasis>between</emphasis> <emphasis effect="italics">x</emphasis> = 1.8 and <emphasis effect="italics">x</emphasis> = 2.75. <emphasis effect="italics">P</emphasis>(1.8 &lt; <emphasis effect="italics">x</emphasis> &lt; 2.75) = 0.5886</para>
+
+<figure id="fs-idm13004032"><media id="id1168986736293" alt="This is a normal distribution curve. The peak of the curve coincides with the point 2 on the horizontal axis. The values 1.8 and 2.75 are also labeled on the x-axis. Vertical lines extend from 1.8 and 2.75 to the curve. The area between the lines is shaded.">
+<image src="fig-ch06_05_03.jpg" mime-type="image/png" width="450"/>
+</media>
+</figure>
+
+<para id="element-424">normalcdf(1.8,2.75,2,0.5) = 0.5886</para>
+<para id="element-292">The probability that a household personal computer is used between 1.8 and 2.75 hours per day for entertainment is 0.5886.<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="element-423">
+<problem id="id1168986736344">
+<para id="element-72">b. Find the maximum number of hours per day that the bottom quartile of households uses a personal computer for entertainment.</para></problem>
+
+<solution id="id1168986736360">
+<para id="element-958">b. To find the maximum number of hours per day that the bottom quartile of households uses a personal computer for entertainment, <emphasis>find the 25<sup>th</sup> percentile,</emphasis> <emphasis effect="italics">k</emphasis>, where <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 0.25.</para>
+
+<figure id="fs-idm66393568"><media id="id1168986736428" alt="This is a normal distribution curve. The area under the left tail of the curve is shaded. The shaded area shows that the probability that x is less than k is 0.25. It follows that k = 1.67.">
+<image src="fig-ch06_05_04N.jpg" mime-type="image/jpg" width="420"/>
+</media></figure><para id="element-660">invNorm(0.25,2,0.5) = 1.66</para>
+<para id="element-344">The maximum number of hours per day that the bottom quartile of households uses a personal computer for entertainment is 1.66 hours.</para></solution>
+</exercise>
+
+
+</example>
+
+<note id="fs-idm101393328" class="statistics try"><label/>
+<title>Try It</title>
+<exercise id="fs-idm193708112"><problem id="fs-idm168992208">
+<para id="fs-idm120157248">The golf scores for a school team were normally distributed with a mean of 68 and a standard deviation of three. Find the probability that a golfer scored between 66 and 70.</para></problem>
+</exercise></note>
+
+<example id="eip-562">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idm115363904">In the United States the ages 13 to 55+ of smartphone users approximately follow a normal distribution with approximate mean and standard deviation of 36.9 years and 13.9 years, respectively.<newline count="2"/></para><exercise id="eip-idm99631296">
+<problem id="eip-idm93440352">
+<para id="fs-idm218603968">a. Determine the probability that a random smartphone user in the age range 13 to 55+ is between 23 and 64.7 years old.</para></problem>
+<solution id="eip-idm151027840">
+<para id="eip-idm169219344">a. normalcdf(23,64.7,36.9,13.9) = 0.8186<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="eip-idm35763936">
+<problem id="eip-idm100019648">
+<para id="fs-idm1234448">b. Determine the probability that a randomly selected smartphone user in the age range 13 to 55+ is at most 50.8 years old.</para></problem>
+<solution id="eip-idm92673856">
+<para id="eip-idm21130928">b. normalcdf(&#8211;10<sup>99</sup>,50.8,36.9,13.9) = 0.8413<newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="eip-idm12998192">
+<problem id="eip-idm107995648">
+<para id="fs-idm159232112">c. Find the 80<sup>th</sup> percentile of this distribution, and interpret it in a complete sentence.</para></problem>
+<solution id="eip-idm20250224">
+<para id="fs-idm194380112">c.
+<list id="fs-idm90633168" list-type="labeled-item"><item>invNorm(0.80,36.9,13.9) = 48.6</item>
+<item>The 80<sup>th</sup> percentile is 48.6 years.</item>
+<item>80% of the smartphone users in the age range 13 &#8211; 55+ are 48.6 years old or less.</item>
+</list></para></solution>
+</exercise>
+</example>
+
+<note id="fs-idm126739248" class="statistics try"><label/><title>Try It</title>
+
+<para id="eip-idm1584896">Use the information in <link target-id="eip-562" document=""/> to answer the following questions.</para>
+<exercise id="eip-idm1584512">
+<problem id="eip-idm103606800">
+<list id="eip-idm103606544" list-type="enumerated" number-style="lower-alpha"><item>Find the 30<sup>th</sup> percentile, and interpret it in a complete sentence.</item>
+<item>What is the probability that the age of a randomly selected smartphone user in the range 13 to 55+ is less than 27 years old.</item>
+</list></problem>
+</exercise>
+</note>
+
+<example id="fs-idm50441184">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm59646256">In the United States the ages 13 to 55+ of smartphone users approximately follow a normal distribution with approximate mean and standard deviation of 36.9 years and 13.9 years respectively. Using this information, answer the following questions (round answers to one decimal place).<newline count="2"/></para><exercise id="fs-idm100093408">
+<problem id="fs-idm43971024">
+<para id="fs-idm56871120">a. Calculate the interquartile range (<emphasis effect="italics">IQR</emphasis>).</para>
+</problem>
+<solution id="fs-idm66621456">
+<para id="fs-idm197260048">a. <list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm183339056" list-type="labeled-item"><item><emphasis effect="italics">IQR</emphasis> = <emphasis effect="italics">Q</emphasis><sub>3</sub> &#8211; <emphasis effect="italics">Q</emphasis><sub>1</sub></item>
+<item>Calculate <emphasis effect="italics">Q</emphasis><sub>3</sub> = 75<sup>th</sup> percentile and <emphasis effect="italics">Q</emphasis><sub>1</sub> = 25<sup>th</sup> percentile.</item>
+<item>invNorm(0.75,36.9,13.9) = <emphasis effect="italics">Q</emphasis><sub>3</sub> = 46.2754</item>
+<item>invNorm(0.25,36.9,13.9) = <emphasis effect="italics">Q</emphasis><sub>1</sub> = 27.5246</item>
+<item><emphasis effect="italics">IQR</emphasis> = <emphasis effect="italics">Q</emphasis><sub>3</sub> &#8211; <emphasis effect="italics">Q</emphasis><sub>1</sub> = 18.8</item>
+</list><newline count="2"/></para></solution>
+</exercise><exercise id="eip-133"><problem id="eip-940">
+  <para id="eip-270">b. Forty percent of the ages that range from 13 to 55+ are at least what age?</para>
+</problem>
+<solution id="eip-304">
+<para id="fs-idm196458064">b. <list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm125660800" list-type="labeled-item"><item>Find <emphasis effect="italics">k</emphasis> where <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8805; <emphasis effect="italics">k</emphasis>) = 0.40 ("At least" translates to "greater than or equal to.")</item>
+<item>0.40 = the area to the right.</item>
+<item>Area to the left = 1 &#8211; 0.40 = 0.60.</item>
+<item>The area to the left of <emphasis effect="italics">k</emphasis> = 0.60.</item>
+<item>invNorm(0.60,36.9,13.9) = 40.4215.</item>
+<item><emphasis effect="italics">k</emphasis> = 40.4.</item>
+<item>Forty percent of the ages that range from 13 to 55+ are at least 40.4 years.</item>
+</list></para>
+</solution>
+</exercise>
+</example>
+
+<note id="fs-idm81547104" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm64657232">
+<problem id="fs-idm78477504">
+<para id="fs-idm49674336">Two thousand students took an exam. The scores on the exam have an approximate normal distribution with a mean <emphasis effect="italics">&#956;</emphasis> = 81 points and standard deviation <emphasis effect="italics">&#963;</emphasis> = 15 points.</para>
+<list id="fs-idm139136192" list-type="enumerated" number-style="lower-alpha">
+<item>Calculate the first- and third-quartile scores for this exam.</item>
+<item>The middle 50% of the exam scores are between what two values?</item>
+</list>
+</problem>
+</exercise>
+</note>
+
+
+<example id="eip-662">
+<para id="eip-496">A citrus farmer who grows mandarin oranges finds that the diameters of mandarin oranges harvested on his farm follow a normal distribution with a mean diameter of 5.85 cm and a standard deviation of 0.24 cm.<newline count="2"/></para><exercise id="eip-704"><problem id="eip-586">
+<para id="eip-idm49628176">a. Find the probability that a randomly selected mandarin orange from this farm has a diameter larger than 6.0 cm. Sketch the graph.</para>
+</problem>
+
+<solution id="eip-744">
+<para id="eip-809">a. normalcdf(6,10^99,5.85,0.24) = 0.2660
+</para><figure id="eip-idp150275440">
+<media id="eip-idp150275696" alt="This is a normal distribution curve. The peak of the curve coincides with the point 2 on the horizontal axis. The values 1.8 and 2.75 are also labeled on the x-axis. Vertical lines extend from 1.8 and 2.75 to the curve. The area between the lines is shaded.">
+<image mime-type="jpg/png" src="CNX_Stats_C06_M03_003a.jpg" width="420"/>
+</media>
+
+</figure>
+</solution>
+</exercise>
+
+<exercise id="eip-922">
+<problem id="eip-869">
+<para id="eip-975">b. The middle 20% of mandarin oranges from this farm have diameters between ______ and ______.</para>
+</problem>
+
+<solution id="eip-999">
+<para id="fs-idm172823344">b. <list id="fs-idm131986640" list-type="labeled-item"><item>1 &#8211; 0.20 = 0.80</item>
+<item>The tails of the graph of the normal distribution each have an area of 0.40.</item>
+<item>Find <emphasis effect="italics">k1</emphasis>, the 40<sup>th</sup> percentile, and <emphasis effect="italics">k2</emphasis>, the 60<sup>th</sup> percentile (0.40 + 0.20 = 0.60).</item>
+<item><emphasis effect="italics">k1</emphasis> = invNorm(0.40,5.85,0.24) = 5.79 cm</item>
+<item><emphasis effect="italics">k2</emphasis> = invNorm(0.60,5.85,0.24) = 5.91 cm</item></list><newline count="2"/></para></solution>
+</exercise>
+
+<exercise id="eip-607">
+<problem id="eip-91">
+<para id="eip-733">c.	Find the 90<sup>th</sup> percentile for the diameters of mandarin oranges, and interpret it in a complete sentence.</para></problem>
+
+<solution id="eip-0">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-451">c. 6.16: Ninety percent of the diameter of the mandarin oranges is at most 6.16 cm.</para></solution>
+</exercise>
+</example>
+
+<note id="fs-idm127937776" class="statistics try"><label/><title>Try It</title>
+<exercise id="eip-786">
+<problem id="eip-686">
+<para id="eip-973">Using the information from <link target-id="eip-662" document=""/>, answer the following:</para>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idm69666000" list-type="enumerated" number-style="lower-alpha"><item>The middle 40% of mandarin oranges from this farm are between ______ and ______.</item>
+<item>Find the 16<sup>th</sup> percentile and interpret it in a complete sentence.</item>
+</list></problem>
+</exercise></note></section>
+
+<section id="fs-idm101453488" class="references"><title>References</title><para id="fs-idm202298288">&#8220;Naegele&#8217;s rule.&#8221; Wikipedia. Available online at http://en.wikipedia.org/wiki/Naegele's_rule (accessed May 14, 2013).</para>
+<para id="fs-idm133443328">&#8220;403: NUMMI.&#8221; Chicago Public Media &amp; Ira Glass, 2013. Available online at http://www.thisamericanlife.org/radio-archives/episode/403/nummi (accessed May 14, 2013).</para>
+<para id="fs-idm77712176">&#8220;Scratch-Off Lottery Ticket Playing Tips.&#8221; WinAtTheLottery.com, 2013. Available online at http://www.winatthelottery.com/public/department40.cfm (accessed May 14, 2013).</para>
+<para id="fs-idm127381280">&#8220;Smart Phone Users, By The Numbers.&#8221; Visual.ly, 2013. Available online at http://visual.ly/smart-phone-users-numbers (accessed May 14, 2013).</para>
+<para id="fs-idm165219840">&#8220;Facebook Statistics.&#8221; Statistics Brain. Available online at http://www.statisticbrain.com/facebook-statistics/(accessed May 14, 2013).</para>
+</section><section id="eip-424" class="summary">
+<title>Chapter Review</title>
+<para id="eip-960">The normal distribution, which is continuous, is the most important of all the probability distributions. Its graph is bell-shaped. This bell-shaped curve is used in almost all disciplines. Since it is a continuous distribution, the total area under the curve is one.  The parameters of the normal are the mean <emphasis effect="italics">&#181;</emphasis> and the standard deviation <emphasis effect="italics">&#963;</emphasis>. A special normal distribution, called the standard normal distribution is the distribution of <emphasis effect="italics">z</emphasis>-scores. Its mean is zero, and its standard deviation is one.</para></section>
+
+<section id="eip-108" class="formula-review">
+<title>Formula Review</title>
+<para id="eip-790">Normal Distribution: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(<emphasis effect="italics">&#181;</emphasis>, <emphasis effect="italics">&#963;</emphasis>) where <emphasis effect="italics">&#181;</emphasis> is the mean and <emphasis effect="italics">&#963;</emphasis> is the standard deviation.</para>
+
+<para id="eip-idm32653056">Standard Normal Distribution: <emphasis effect="italics">Z</emphasis> ~ <emphasis effect="italics">N</emphasis>(0, 1).</para>
+
+
+<para id="eip-30">Calculator function for probability: normalcdf (lower <emphasis effect="italics">x</emphasis> value of the area, upper <emphasis effect="italics">x</emphasis> value of the area, mean, standard deviation)</para>
+
+<para id="fs-idm55516128">Calculator function for the <emphasis effect="italics">k</emphasis><sup>th</sup> percentile: <emphasis effect="italics">k</emphasis> =  invNorm (area to the left of <emphasis effect="italics">k</emphasis>, mean, standard deviation)</para>
+</section>
+
+<section id="eip-527" class="practice">
+<exercise id="fs-idp83652864">
+<problem id="fs-idp3823216">
+<para id="fs-idp81012528">How would you represent the area to the left of one in a probability statement?</para>
+<figure id="eip-idp74682384">
+<media id="fs-idp31643648" alt="">
+<image mime-type="image/jpg" print-width="3in" src="CNX_Stats_C06_M04_item001.jpg"/>
+</media>
+</figure>
+</problem>
+<solution id="fs-idp124208464">
+<para id="fs-idp142221328">
+<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 1)</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm18365728"><problem id="fs-idp30641696">
+<para id="fs-idp68913872">What is the area to the right of one?</para>
+<figure id="eip-idm26567824">
+<media id="fs-idp76787840" alt="" display="block">
+<image mime-type="image/jpg" print-width="3in" src="CNX_Stats_C06_M04_item001.jpg"/>
+</media></figure>
+</problem>
+<!-- <solution id="fs-idp151140256">
+<para id="fs-idp77511872">1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 1) or <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 1)</para>
+</solution> -->
+</exercise><exercise id="fs-idp76730048">
+<problem id="fs-idp98636864">
+<para id="fs-idm16173600">Is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 1) equal to <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8804; 1)? Why?</para>
+</problem>
+<solution id="fs-idp26550912">
+<para id="fs-idp101468880">Yes, because they are the same in a continuous distribution: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 1) = 0</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp16475344"><problem id="fs-idm13017216">
+<para id="fs-idp83647168">How would you represent the area to the left of three in a probability statement?</para>
+<figure id="eip-idm45345808"><media id="fs-idp128136336" alt="">
+<image mime-type="image/jpg" print-width="3in" src="CNX_Stats_C06_M04_item002.jpg"/>
+</media></figure>
+</problem>
+
+<!-- <solution id="fs-idp146985792">
+<para id="fs-idp60178064"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 3)</para>
+</solution> -->
+</exercise><exercise id="fs-idp103778720">
+<problem id="fs-idp147171280">
+<para id="fs-idp41528880">What is the area to the right of three?</para>
+<figure id="eip-idp19359872"><media id="fs-idp2060576" alt="">
+<image mime-type="image/jpg" print-width="3in" src="CNX_Stats_C06_M04_item002.jpg"/>
+</media></figure>
+</problem>
+<solution id="fs-idp5045104">
+<para id="fs-idp110734480">1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 3) or <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 3)</para></solution>
+</exercise><exercise id="fs-idp880816"><problem id="fs-idp154035488">
+<para id="fs-idm221600">If the area to the left of <emphasis effect="italics">x</emphasis> in a normal distribution is 0.123, what is the area to the right of <emphasis effect="italics">x</emphasis>?</para></problem>
+
+<!-- <solution id="fs-idm19166096">
+<para id="fs-idp102316448">1 &#8211; 0.123 = 0.877</para></solution> -->
+</exercise><exercise id="fs-idm33682096">
+<problem id="fs-idp53588304">
+<para id="fs-idp142371360">If the area to the right of <emphasis effect="italics">x</emphasis> in a normal distribution is 0.543, what is the area to the left of <emphasis effect="italics">x</emphasis>?</para></problem>
+<solution id="fs-idp148923888">
+<para id="fs-idp70427440">1 &#8211; 0.543 = 0.457</para></solution>
+</exercise>
+
+<para id="eip-410"><emphasis effect="italics">Use the following information to answer the next four exercises:</emphasis></para>
+
+<para id="eip-926"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(54, 8)</para>
+
+<exercise id="fs-idp83610000"><problem id="fs-idp149250384">
+<para id="fs-idp151137280">Find the probability that <emphasis effect="italics">x</emphasis> &gt; 56.</para></problem>
+
+<!-- <solution id="fs-idp74510448">
+<para id="fs-idp25510144">0.4013</para>
+</solution> -->
+</exercise><exercise id="fs-idp105059184">
+<problem id="fs-idm2106864">
+<para id="fs-idp88634736">Find the probability that <emphasis effect="italics">x</emphasis> &lt; 30.</para></problem>
+<solution id="fs-idp52756064">
+<para id="fs-idp81762128">0.0013</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp153118944"><problem id="fs-idp69518640">
+<para id="fs-idm17533616">Find the 80<sup>th</sup> percentile.</para>
+</problem>
+
+<!-- <solution id="fs-idp144265408">
+<para id="fs-idp42005696">60.73</para>
+</solution> -->
+</exercise><exercise id="fs-idp49095264">
+<problem id="fs-idp140530032">
+<para id="fs-idp130860384">Find the 60<sup>th</sup> percentile.</para></problem>
+<solution id="fs-idp150532688">
+<para id="fs-idp96792864">56.03</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp65259648"><problem id="fs-idp122477920">
+<para id="fs-idp107088272"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(6, 2)</para><para id="fs-idp45580384">Find the probability that <emphasis effect="italics">x</emphasis> is between three and nine.</para></problem>
+
+<!-- <solution id="fs-idp53207040">
+<para id="fs-idp127782224">0.8664</para>
+</solution> -->
+</exercise><exercise id="fs-idp152542352">
+<problem id="fs-idp77204752">
+<para id="fs-idp25172544"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(&#8211;3, 4)</para><para id="fs-idp101237440">Find the probability that <emphasis effect="italics">x</emphasis> is between one and four.</para></problem>
+<solution id="fs-idm11629600">
+<para id="fs-idp146932464">0.1186</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp153143568"><problem id="fs-idp121093952">
+<para id="fs-idp152391232"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(4, 5)</para><para id="fs-idm90444112">Find the maximum of <emphasis effect="italics">x</emphasis> in the bottom quartile.</para></problem>
+
+<!-- <solution id="fs-idp30677232">
+<para id="fs-idp151050720">0.6276</para>
+</solution> -->
+</exercise><exercise id="element-942"><problem id="id44370927">
+<para id="element-390"><emphasis effect="italics">Use the following information to answer the next three exercise:</emphasis> The life of Sunshine CD players is normally distributed with a mean of 4.1 years and a standard deviation of 1.3 years. A CD player is guaranteed for three years. We are interested in the length of time a CD player lasts. Find the probability that a CD player will break down during the guarantee period.</para>
+<list id="element-652" list-type="enumerated" number-style="lower-alpha">
+<item>Sketch the situation. Label and scale the axes. Shade the region corresponding to the probability.
+<figure id="fig1">
+<media id="id43849343" alt="Empty normal distribution curve."><image src="fig-ch06_07_01.jpg" mime-type="image/jpg" print-width="3in"/></media>
+</figure>
+</item>
+
+<item><emphasis effect="italics">P</emphasis>(0 &lt; <emphasis effect="italics">x</emphasis> &lt; ____________) = ___________ (Use zero for the minimum value of <emphasis effect="italics">x</emphasis>.)</item></list></problem>
+
+<solution id="id44028319">
+<list id="element-226" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Check student&#8217;s solution.</item>
+<item>3, 0.1979</item></list></solution>
+</exercise><exercise id="element-893"><problem id="id44542589">
+<para id="element-441">Find the probability that a CD player will last between 2.8 and six years.
+</para><list id="element-654" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Sketch the situation. Label and scale the axes. Shade the region corresponding to the probability.
+<figure id="fig-231"><media id="id44444856" alt="Empty normal distribution curve."><image src="fig-ch06_07_02.jpg" mime-type="image/jpg" print-width="3in"/></media></figure></item>
+<item><emphasis effect="italics">P</emphasis>(__________ &lt; <emphasis effect="italics">x</emphasis> &lt; __________) = __________</item></list></problem>
+
+<!-- <solution id="id44443502">
+<list id="element-671" mark-suffix="." list-type="enumerated" number-style="lower-alpha">
+<item>Check student&#8217;s solution</item>
+<item>2.8, 6, 0.7694</item>
+</list></solution> -->
+</exercise><exercise id="element-889"><problem id="id44024075">
+<para id="element-528">Find the 70<sup>th</sup> percentile of the distribution for the time a CD player lasts.
+</para><list id="element-664" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Sketch the situation. Label and scale the axes. Shade the region corresponding to the lower 70%.
+<figure id="fig-241552"><media id="id44403356" alt="Empty normal distribution curve."><image src="fig-ch06_07_03.jpg" mime-type="image/jpg" print-width="3in"/></media></figure></item>
+
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = __________ Therefore, <emphasis effect="italics">k</emphasis> = _________</item></list></problem>
+
+<solution id="id44002181">
+<list id="element-494" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Check student&#8217;s solution.</item>
+<item>0.70, 4.78 years</item></list></solution>
+</exercise></section>
+
+<section id="eip-866" class="free-response"><title>Homework</title><para id="eip-idp18302448"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> The patient recovery time from a particular surgical procedure is normally distributed with a mean of 5.3 days and a standard deviation of 2.1 days.</para>
+
+<exercise id="eip-181"><problem id="id3435957">
+<para id="element-6">What is the probability of spending more than two days in recovery?</para>
+<list id="yep" list-type="enumerated" number-style="lower-alpha"><item>0.0580</item>
+<item>0.8447</item>
+<item>0.0553</item>
+<item>0.9420</item>
+</list></problem>
+
+<!-- <solution id="id12741946">
+<para id="element-646">d</para>
+</solution> --></exercise><exercise id="eip-318"><problem id="id17871945">
+<para id="element-160">The 90<sup>th</sup> percentile for recovery times is?</para>
+<list id="yop" list-type="enumerated" number-style="lower-alpha"><item>8.89</item>
+<item>7.07</item>
+<item>7.99</item>
+<item>4.32</item>
+</list></problem>
+<solution id="id10286094">
+<para id="element-553">c</para>
+</solution></exercise>
+<para id="eip-164"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> The length of time it takes to find a parking space at 9 A.M. follows a normal distribution with a mean of five minutes and a standard deviation of two minutes.</para>
+<exercise id="eip-486"><problem id="id20620841">
+<para id="element-349">Based upon the given information and numerically justified, would you be surprised if it took less than one minute to find a parking space?</para>
+<list id="yap" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Yes</item>
+<item>No</item>
+<item>Unable to determine</item>
+</list></problem>
+
+<!-- <solution id="id15290500">
+<para id="element-245">a</para>
+</solution> --></exercise><exercise id="eip-231"><problem id="id4498978">
+<para id="element-560">Find the probability that it takes at least eight minutes to find a parking space.</para>
+<list id="element-298s" list-type="enumerated" number-style="lower-alpha"><item>0.0001</item>
+<item>0.9270</item>
+<item>0.1862</item>
+<item>0.0668</item>
+</list></problem>
+<solution id="id9734192">
+<para id="element-481">d</para>
+</solution></exercise><exercise id="eip-295"><problem id="id25388640">
+<para id="element-930">Seventy percent of the time, it takes more than how many minutes to find a parking space?</para>
+<list id="element-143" list-type="enumerated" number-style="lower-alpha"><item>1.24</item>
+<item>2.41</item>
+<item>3.95</item>
+<item>6.05</item>
+</list></problem>
+
+<!-- <solution id="id16763246">
+<para id="element-722">c</para>
+</solution> --></exercise><exercise id="eip-581"><problem id="id20593649">
+<para id="element-232">According to a study done by De Anza students, the height for Asian adult males is normally distributed with an average of 66 inches and a standard deviation of 2.5 inches.  Suppose one Asian adult male is randomly chosen.  Let <emphasis effect="italics">X</emphasis> = height of the individual.</para>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-602" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that the person is between 65 and 69 inches.  Include a sketch of the graph, and write a probability statement.</item>
+<item>Would you expect to meet many Asian adult males over 72 inches? Explain why or why not,
+and justify your answer numerically.</item>
+</list></problem>
+<solution id="fs-idp83361824">
+<list id="element-18" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(66, 2.5)</item>
+<item>0.5404</item>
+<item>No, the probability that an Asian male is over 72 inches tall is 0.0082</item>
+</list></solution></exercise><exercise id="eip-563"><problem id="id21466710">
+<para id="element-861">IQ is normally distributed with a mean of 100 and a standard deviation of 15.  Suppose one individual is randomly chosen.  Let <emphasis effect="italics">X</emphasis> =  IQ of an individual.</para>
+<list id="element-932" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that the person has an IQ greater than 120. Include a sketch of the graph, and write a probability statement.</item>
+<item>MENSA is an organization whose members have the top 2% of all IQs. Find the minimum IQ needed to qualify for the MENSA organization. Sketch the graph, and write the probability statement.</item>
+<item>The middle 50% of IQs fall between what two values? Sketch the graph and write the probability statement.</item>
+</list></problem>
+
+<!-- <solution id="eip-idp25493760">
+<list id="element-932s" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">N</emphasis>(100, 15)</item>
+<item>The probability that a person has an IQ greater than 120 is 0.0918.</item>
+<item>A person has to have an IQ over 130 to qualify for MENSA.</item>
+<item>The middle 50% of IQ scores falls between 89.95 and 110.05.</item>
+</list></solution> --></exercise><exercise id="eip-516"><problem id="id25415343">
+<para id="element-811">The percent of fat calories that a person in America consumes each day is normally distributed with a mean of about 36 and a standard deviation of 10.  Suppose that one individual is randomly chosen. Let <emphasis effect="italics">X</emphasis> = percent of fat calories.</para>
+<list id="element-993" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that the percent of fat calories a person consumes is more than 40. Graph the situation. Shade in the area to be determined.</item>
+<item>Find the maximum number for the lower quarter of percent of fat calories. Sketch the graph and write the probability statement.</item>
+</list></problem>
+<solution id="eip-idp2232784">
+<list id="element-993s" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(36, 10)</item>
+<item>The probability that a person consumes more than 40% of their calories as fat is 0.3446.</item>
+<item>Approximately 25% of people consume less than 29.26% of their calories as fat.</item>
+</list></solution></exercise><exercise id="eip-967"><problem id="id18000241">
+<para id="element-313">Suppose that the distance of fly balls hit to the outfield (in baseball) is normally distributed with a mean of 250 feet and a standard deviation of 50 feet.</para>
+<list id="element-107" list-type="enumerated" number-style="lower-alpha"><item>If <emphasis effect="italics">X</emphasis> = distance in feet for a fly ball, then <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>If one fly ball is randomly chosen from this distribution, what is the probability that this ball traveled fewer than 220 feet? Sketch the graph. Scale the horizontal axis <emphasis effect="italics">X</emphasis>. Shade the region corresponding to the probability. Find the probability.</item>
+<item>Find the 80<sup>th</sup> percentile of the distribution of fly balls.  Sketch the graph, and write the probability statement.</item>
+</list></problem>
+
+<!-- <solution id="eip-idp105794048">
+<list id="element-107s" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(250, 50)</item>
+<item>The probability that a fly ball travels less than 220 feet is 0.2743.</item>
+<item>Eighty percent of the fly balls will travel less than 292 feet.</item>
+</list></solution> --></exercise><exercise id="eip-930"><problem id="id16003321">
+<para id="element-842">In China, four-year-olds average three hours a day unsupervised.  Most of the unsupervised children live in rural areas, considered safe.  Suppose that the standard deviation is 1.5 hours and the amount of time spent alone is normally distributed.  We randomly select one Chinese four-year-old living in a rural area. We are interested in the amount of time the child spends alone per day.</para><list id="element-265" list-type="enumerated" number-style="lower-alpha"><item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that the child spends less than one hour per day unsupervised. Sketch the graph, and write the probability statement.</item>
+<item>What percent of the children spend over ten hours per day unsupervised?</item>
+<item>Seventy percent of the children spend at least how long per day unsupervised?</item>
+</list></problem>
+<solution id="fs-idp38795616">
+<list id="element-760" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = number of hours that a Chinese four-year-old in a rural area is unsupervised during the day.</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(3, 1.5)</item>
+<item>The probability that the child spends less than one hour a day unsupervised is 0.0918.</item>
+<item>The probability that a child spends over ten hours a day unsupervised is less than 0.0001.</item>
+<item>2.21 hours</item>
+</list></solution></exercise><exercise id="eip-698"><problem id="id19993022">
+<para id="element-366">In the 1992 presidential election, Alaska&#8217;s 40 election districts averaged 1,956.8 votes per district for President Clinton.  The standard deviation was  572.3.  (There are only 40 election districts in Alaska.)  The distribution of the votes per district for President Clinton was bell-shaped.  Let <emphasis effect="italics">X</emphasis> = number of votes for President Clinton for an election district. </para>
+<list id="element-780" list-type="enumerated" number-style="lower-alpha"><item>State the approximate distribution of <emphasis effect="italics">X</emphasis>.</item>
+<item>Is 1,956.8 a population mean or a sample mean? How do you know?</item>
+<item>Find the probability that a randomly selected district had fewer than 1,600 votes for President Clinton. Sketch the graph and write the probability statement.</item>
+<item>Find the probability that a randomly selected district had between 1,800 and 2,000 votes for President Clinton.</item>
+<item>Find the third quartile for votes for President Clinton.</item>
+</list></problem>
+
+<!-- <solution id="eip-idp28319056">
+<list id="element-780s" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(1956.8, 572.3)</item>
+<item>This is a population mean, because all election districts are included.</item>
+<item>The probability that a district had less than 1,600 votes for President Clinton is 0.2676.</item>
+<item>0.3798</item>
+<item>Seventy-five percent of the districts had fewer than 2,340 votes for President Clinton.</item>
+</list></solution> --></exercise><exercise id="eip-838"><problem id="id18019640">
+<para id="element-883">Suppose that the duration of a particular type of criminal trial is known to be normally distributed with a mean of 21 days and a standard deviation of  seven days.</para>
+<list id="element-720" list-type="enumerated" number-style="lower-alpha"><item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>If one of the trials is randomly chosen, find the probability that it lasted at least 24 days. Sketch the graph and write the probability statement.</item>
+<item>Sixty percent of all trials of this type are completed within how many days?</item>
+</list></problem>
+<solution id="id20218475">
+<list id="element-705" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the distribution of the number of days a particular type of criminal trial will take</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(21, 7)</item>
+<item>The probability that a randomly selected trial will last more than 24 days is 0.3336.</item>
+<item>22.77</item>
+</list></solution></exercise>
+
+<exercise id="eip-335"><problem id="id24511113">
+<para id="element-695">Terri Vogel, an amateur motorcycle racer, averages 129.71 seconds per 2.5 mile lap (in a seven-lap race) with a standard deviation of 2.28 seconds. The distribution of her race times is normally distributed.  We are interested in one of her randomly selected laps. </para>
+<list id="element-598" list-type="enumerated" number-style="lower-alpha"><item>In words, define the random variable <emphasis effect="italics">X</emphasis>.</item>
+<item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the percent of her laps that are completed in less than 130 seconds.</item>
+<item>The fastest 3% of her laps are under _____.</item>
+<item>The middle 80% of her laps are from _______ seconds to _______ seconds.</item>
+</list></problem>
+
+<!-- <solution id="eip-idp63928720">
+<list id="element-598s" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the distribution of race times that Terry Vogel produces</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(129.71, 2.28)</item>
+<item>Terri completes 55.17% of her laps in less than 130 seconds.</item>
+<item>Terri completes 55.17% of her laps in less than 130 seconds.</item>
+<item>124.4 and 135.02</item>
+</list></solution> --></exercise><exercise id="eip-923"><problem id="id3458007">
+<para id="element-20">Thuy Dau, Ngoc Bui, Sam Su, and Lan Voung conducted a survey as to how long customers at Lucky claimed to wait in the checkout line until their turn. Let <emphasis effect="italics">X</emphasis> = time in line. <link target-id="element-694" document=""/> displays the ordered real data (in minutes):
+
+<table id="element-694" summary="This table presents raw data in 50 cells.">
+<tgroup cols="5"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<tbody>
+<row>
+<entry>0.50</entry>
+<entry>4.25</entry>
+<entry>5</entry>
+<entry>6</entry>
+<entry>7.25</entry>
+</row>
+<row>
+<entry>1.75</entry>
+<entry>4.25</entry>
+<entry>5.25</entry>
+<entry>6</entry>
+<entry>7.25</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>4.25</entry>
+<entry>5.25</entry>
+<entry>6.25</entry>
+<entry>7.25</entry>
+</row>
+<row>
+<entry>2.25</entry>
+<entry>4.25</entry>
+<entry>5.5</entry>
+<entry>6.25</entry>
+<entry>7.75</entry>
+</row>
+<row>
+<entry>2.25</entry>
+<entry>4.5</entry>
+<entry>5.5</entry>
+<entry>6.5</entry>
+<entry>8</entry>
+</row>
+<row>
+<entry>2.5</entry>
+<entry>4.75</entry>
+<entry>5.5</entry>
+<entry>6.5</entry>
+<entry>8.25</entry>
+</row>
+<row>
+<entry>2.75</entry>
+<entry>4.75</entry>
+<entry>5.75</entry>
+<entry>6.5</entry>
+<entry>9.5</entry>
+</row>
+<row>
+<entry>3.25</entry>
+<entry>4.75</entry>
+<entry>5.75</entry>
+<entry>6.75</entry>
+<entry>9.5</entry>
+</row>
+<row>
+<entry>3.75</entry>
+<entry>5</entry>
+<entry>6</entry>
+<entry>6.75</entry>
+<entry>9.75</entry>
+</row>
+<row>
+<entry>3.75</entry>
+<entry>5</entry>
+<entry>6</entry>
+<entry>6.75</entry>
+<entry>10.75</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<list id="element-403" list-type="enumerated" number-style="lower-alpha">
+<item>Calculate the sample mean and the sample standard deviation.</item>
+<item>Construct a histogram.</item>
+<item>Draw a smooth curve through the midpoints of the tops of the bars.</item>
+<item>In words, describe the shape of your histogram and smooth curve.</item>
+<item>Let the sample mean approximate <emphasis effect="italics">&#956;</emphasis> and the sample standard deviation approximate <emphasis effect="italics">&#963;</emphasis>. The distribution of <emphasis effect="italics">X</emphasis> can then be approximated by <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>Use the distribution in part e to calculate the probability that a person will wait fewer than 6.1 minutes.</item>
+<item>Determine the cumulative relative frequency for waiting less than 6.1 minutes.</item>
+<item>Why aren&#8217;t the answers to part f and part g exactly the same?</item>
+<item>Why are the answers to part f and part g as close as they are?</item>
+<item>If only ten customers has been surveyed rather than 50, do you think the answers to part f and part g would have been closer together or farther apart? Explain your conclusion.</item>
+</list>
+</para>
+</problem>
+<solution id="id23136376">
+<list id="element-545" list-type="enumerated" number-style="lower-alpha"><item>mean = 5.51, <emphasis effect="italics">s</emphasis> = 2.15</item>
+<item>Check student's solution.</item>
+<item>Check student's solution.</item>
+<item>Check student's solution.</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(5.51, 2.15)</item>
+<item>0.6029</item>
+<item>The cumulative frequency for less than 6.1 minutes is 0.64.</item>
+<item>The answers to part f and part g are not exactly the same, because the normal distribution is only an approximation to the real one.</item>
+<item>The answers to part f and part g are close, because a normal distribution is an excellent approximation when the sample size is greater than 30.</item>
+<item>The approximation would have been less accurate, because the smaller sample size means that the data does not fit normal curve as well.</item>
+</list></solution></exercise><exercise id="eip-24"><problem id="id14371352">
+<para id="element-897">Suppose that Ricardo and Anita attend different colleges.  Ricardo&#8217;s GPA is the same as the average GPA at his school.  Anita&#8217;s GPA is 0.70 standard deviations above her school average. In complete sentences, explain why each of the following statements may be false.</para>
+<list id="element-264" list-type="enumerated" number-style="lower-alpha">
+<item>Ricardo&#8217;s actual GPA is lower than Anita&#8217;s actual GPA.</item>
+<item>Ricardo is not passing because his <emphasis effect="italics">z</emphasis>-score is zero.</item>
+<item>Anita is in the 70<sup>th</sup> percentile of students at her college.</item>
+</list></problem>
+
+<!-- <solution id="eip-idp7493680">
+<list id="element-264s" list-type="enumerated" number-style="lower-alpha"><item>If the average GPA is less at Anita&#8217;s school than it is at Ricardo&#8217;s, then Ricardo&#8217;s actual score could be higher.</item>
+<item>Passing can be defined differently at different schools. Also, since Ricardo&#8217;s <emphasis effect="italics">z</emphasis>-score is 0, his GPA is actually
+the average for his school, which is typically a passing GPA.</item>
+<item>Anita&#8217;s percentile is higher than the 70<sup>th</sup> percentile.</item>
+</list></solution> --></exercise><exercise id="eip-67"><problem id="id20765694">
+<para id="element-557"><link target-id="element-666" document=""/> shows a sample of the maximum capacity (maximum number of spectators) of sports stadiums.  The table does not include horse-racing or motor-racing stadiums.
+<table id="element-666" summary="The table is a sample of the capacity of 60 sports stadiums ordered by the maximum number of spectators. Horse racing and motor racing stadiums are not included.">
+<tgroup cols="6"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<tbody>
+<row>
+<entry>40,000</entry>
+<entry>40,000</entry>
+<entry>45,050</entry>
+<entry>45,500</entry>
+<entry>46,249</entry>
+<entry>48,134</entry>
+</row>
+<row>
+<entry>49,133</entry>
+<entry>50,071</entry>
+<entry>50,096</entry>
+<entry>50,466</entry>
+<entry>50,832</entry>
+<entry>51,100</entry>
+</row>
+<row>
+<entry>51,500</entry>
+<entry>51,900</entry>
+<entry>52,000</entry>
+<entry>52,132</entry>
+<entry>52,200</entry>
+<entry>52,530</entry>
+</row>
+<row>
+<entry>52,692</entry>
+<entry>53,864</entry>
+<entry>54,000</entry>
+<entry>55,000</entry>
+<entry>55,000</entry>
+<entry>55,000</entry>
+</row>
+<row>
+<entry>55,000</entry>
+<entry>55,000</entry>
+<entry>55,000</entry>
+<entry>55,082</entry>
+<entry>57,000</entry>
+<entry>58,008</entry>
+</row>
+<row>
+<entry>59,680</entry>
+<entry>60,000</entry>
+<entry>60,000</entry>
+<entry>60,492</entry>
+<entry>60,580</entry>
+<entry>62,380</entry>
+</row>
+<row>
+<entry>62,872</entry>
+<entry>64,035</entry>
+<entry>65,000</entry>
+<entry>65,050</entry>
+<entry>65,647</entry>
+<entry>66,000</entry>
+</row>
+<row>
+<entry>66,161</entry>
+<entry>67,428</entry>
+<entry>68,349</entry>
+<entry>68,976</entry>
+<entry>69,372</entry>
+<entry>70,107</entry>
+</row>
+<row>
+<entry>70,585</entry>
+<entry>71,594</entry>
+<entry>72,000</entry>
+<entry>72,922</entry>
+<entry>73,379</entry>
+<entry>74,500</entry>
+</row>
+<row>
+<entry>75,025</entry>
+<entry>76,212</entry>
+<entry>78,000</entry>
+<entry>80,000</entry>
+<entry>80,000</entry>
+<entry>82,300</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<list id="element-422" list-type="enumerated" number-style="lower-alpha">
+<item>Calculate the sample mean and the sample standard deviation for the maximum capacity of sports stadiums (the data).</item>
+<item>Construct a histogram.</item>
+<item>Draw a smooth curve through the midpoints of the tops of the bars of the histogram.</item>
+<item>In words, describe the shape of your histogram and smooth curve.</item>
+<item>Let the sample mean approximate <emphasis effect="italics">&#956;</emphasis> and the sample standard deviation approximate <emphasis effect="italics">&#963;</emphasis>. The distribution of <emphasis effect="italics">X</emphasis> can then be approximated by <emphasis effect="italics">X</emphasis> ~ _____(_____,_____).</item>
+<item>Use the distribution in part e to calculate the probability that the maximum capacity of sports stadiums is less than 67,000 spectators.</item>
+<item>Determine the cumulative relative frequency that the maximum capacity of sports stadiums is less than 67,000 spectators. Hint: Order the data and count the sports stadiums that have a maximum capacity less than 67,000. Divide by the total number of sports stadiums in the sample.</item>
+<item>Why aren&#8217;t the answers to part f and part g exactly the same?</item>
+</list>
+</para>
+</problem>
+<solution id="id15324926">
+<list id="element-768" list-type="enumerated"><item>mean = 60,136<newline/>
+<emphasis effect="italics">s</emphasis> = 10,468</item>
+<item>Answers will vary.</item>
+<item>Answers will vary.</item>
+<item>Answers will vary.</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(60136, 10468)</item>
+<item>0.7440</item>
+<item>The cumulative relative frequency is 43/60 = 0.717.</item>
+<item>The answers for part f and part g are not the same, because the normal distribution is only an
+approximation.</item>
+</list></solution></exercise>
+
+<exercise id="eip-406"><problem id="eip-308">
+<para id="eip-309">An expert witness for a paternity lawsuit testifies that the length of a pregnancy is normally distributed with a mean of 280 days and a standard deviation of 13 days. An alleged father was out of the country from 240 to 306 days before the birth of the child, so the pregnancy would have been less than 240 days or more than 306 days long if he was the father.  The birth was uncomplicated, and the child needed no medical intervention.  What is the probability that he was NOT the father?  What is the probability that he could be the father?  Calculate the <emphasis effect="italics">z</emphasis>-scores first, and then use those to calculate the probability.</para></problem>
+
+<!-- <solution id="eip-102">
+<list id="fs-idp65442944" list-type="labeled-item"><item>For <emphasis effect="italics">x</emphasis> = 240, <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>X</m:mi><m:mo>&#8722;</m:mo><m:mi>&#956;</m:mi>
+   </m:mrow>
+   <m:mi>&#963;</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>240</m:mn><m:mo>&#8722;</m:mo><m:mn>280</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>13</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mo>&#8722;</m:mo><m:mn>3.0769</m:mn><m:mo>&#160;</m:mo>
+ </m:mrow>
+</m:math></item>
+<item>For <emphasis effect="italics">x</emphasis> = 306, <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>306</m:mn><m:mo>&#8722;</m:mo><m:mn>280</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>13</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>2</m:mn>
+ </m:mrow>
+</m:math></item>
+<item><emphasis effect="italics">P</emphasis>(240 &lt; <emphasis effect="italics">x</emphasis> &lt; 306) = <emphasis effect="italics">P</emphasis>(&#8211;3.0769 &lt; <emphasis effect="italics">z</emphasis> &lt; 2) = normalcdf(&#8211;3.0769,2,0,1) = 0.9762.</item>
+</list><para id="fs-idm15286272">According to the scenario given, this means that there is a 97.62% chance that he is not the father.</para>
+<para id="fs-idp166170256">To answer the second part of the question, there is a 1 &#8211; 0.9762 = 0.0238 = 2.38% chance that he is the father.</para></solution> --></exercise><exercise id="eip-889"><problem id="eip-708">
+<para id="eip-536">A NUMMI assembly line, which has been operating since 1984, has built an average of 6,000 cars and trucks a week. Generally, 10% of the cars were defective coming off the assembly line. Suppose we draw a random sample of <emphasis effect="italics">n</emphasis> = 100 cars. Let <emphasis effect="italics">X</emphasis> represent the number of defective cars in the sample. What can we say about <emphasis effect="italics">X</emphasis> in regard to  the 68-95-99.7 empirical rule (one standard deviation, two standard deviations  and three standard deviations from the mean are being referred to)?  Assume a normal distribution for the defective cars in the sample.</para>
+</problem>
+<solution id="eip-906">
+<list id="eip-idp126470336" list-type="labeled-item"><item><emphasis effect="italics">n</emphasis> = 100; <emphasis effect="italics">p</emphasis> = 0.1;  <emphasis effect="italics">q</emphasis> = 0.9</item>
+<item><emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">np</emphasis> = (100)(0.10) = 10</item>
+<item><emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mi>n</m:mi><m:mi>p</m:mi><m:mi>q</m:mi>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mtext>(100)(0</m:mtext><m:mtext>.1)(0</m:mtext><m:mtext>.9)</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = 3</item>
+</list><list id="eip-idm100993808" list-type="enumerated" number-style="lower-roman"><item><emphasis effect="italics">z</emphasis> = &#177;1:   <emphasis effect="italics">x<sub>1</sub></emphasis> = <emphasis effect="italics">&#181;</emphasis> + <emphasis effect="italics">z&#963;</emphasis> = 10 + 1(3) = 13  and  <emphasis effect="italics">x</emphasis>2 = <emphasis effect="italics">&#181;</emphasis> &#8211; <emphasis effect="italics">z&#963;</emphasis> = 10 &#8211; 1(3) = 7.  68% of the defective cars will fall between seven and 13.</item>
+<item><emphasis effect="italics">z</emphasis> = &#177;2:   <emphasis effect="italics">x<sub>1</sub></emphasis> = <emphasis effect="italics">&#181;</emphasis> + <emphasis effect="italics">z&#963;</emphasis> = 10 + 2(3) = 16 and <emphasis effect="italics">x</emphasis>2 = <emphasis effect="italics">&#181;</emphasis> &#8211; <emphasis effect="italics">z&#963;</emphasis> = 10 &#8211; 2(3) = 4. 95 % of the defective cars will fall between four and 16</item>
+<item><emphasis effect="italics">z</emphasis> = &#177;3:   <emphasis effect="italics">x<sub>1</sub></emphasis> = <emphasis effect="italics">&#181;</emphasis> + <emphasis effect="italics">z&#963;</emphasis> = 10 + 3(3) = 19 and  <emphasis effect="italics">x</emphasis>2 = <emphasis effect="italics">&#181;</emphasis> &#8211; <emphasis effect="italics">z&#963;</emphasis> = 10 &#8211; 3(3) = 1.  99.7% of the defective cars will fall between one and 19.</item></list></solution>
+</exercise>
+
+<exercise id="eip-35"><problem id="eip-299">
+<para id="eip-947">We flip a coin 100 times (<emphasis effect="italics">n</emphasis> = 100) and note that it only comes up heads 20% (<emphasis effect="italics">p</emphasis> = 0.20) of the time. The mean and standard deviation for the number of times the coin lands on heads is <emphasis effect="italics">&#181;</emphasis> = 20 and <emphasis effect="italics">&#963;</emphasis> = 4 (verify the mean and standard deviation). Solve the following:</para>
+
+<list id="eip-idp64792544" list-type="enumerated" number-style="lower-alpha">
+<item>There is about a 68% chance that the number of heads will be somewhere between ___ and ___.</item>
+<item>There is about a ____chance that the number of heads will be somewhere between 12 and 28. </item>
+<item>There is about a ____ chance that the number of heads will be somewhere between eight and 32.</item>
+</list>
+</problem>
+
+<!-- <solution id="eip-171">
+<list id="eip-idp58643840" list-type="enumerated" number-style="lower-alpha"><item>There is about a 68% chance that the number of heads will be somewhere between 16 and 24. <emphasis effect="italics">z</emphasis> = &#177;1: <emphasis effect="italics">x1</emphasis> = <emphasis effect="italics">&#181;</emphasis> + <emphasis effect="italics">z&#963;</emphasis> = 20 + 1(4) = 24 and <emphasis effect="italics">x2</emphasis> = <emphasis effect="italics">&#181;</emphasis>-<emphasis effect="italics">z&#963;</emphasis> = 20 &#8211; 1(4) = 16.</item>
+<item>There is about a 95% chance that the number of heads will be somewhere between 12 and 28. For this problem: normalcdf(12,28,20,4) = 0.9545 = 95.45%</item>
+<item>There is about a 99.73% chance that the number of heads will be somewhere between eight and 32. For this problem: normalcdf(8,32,20,4) = 0.9973 = 99.73%.</item>
+</list></solution> --></exercise><exercise id="eip-868"><problem id="eip-322">
+<para id="eip-842">A $1 scratch off lotto ticket will be a winner one out of five times. Out of a shipment of <emphasis effect="italics">n</emphasis> = 190 lotto tickets, find the probability for the lotto tickets that there are</para>
+<list id="eip-idp139727617865536" list-type="enumerated" number-style="lower-alpha">
+<item>somewhere between 34 and 54 prizes.</item>
+<item>somewhere between 54 and 64 prizes.</item>
+<item>more than 64 prizes.</item>
+</list>
+</problem>
+<solution id="eip-916">
+<list id="xeip" list-type="labeled-item"><item><emphasis effect="italics">n</emphasis> = 190; <emphasis effect="italics">p</emphasis> = <m:math display="">
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>5</m:mn>
+  </m:mfrac>
+ </m:mrow>
+</m:math>
+ = 0.2; <emphasis effect="italics">q</emphasis> = 0.8</item>
+<item><emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">np</emphasis> = (190)(0.2) = 38</item>
+<item><emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mi>n</m:mi><m:mi>p</m:mi><m:mi>q</m:mi>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mtext>(190)(0</m:mtext><m:mtext>.2)(0</m:mtext><m:mtext>.8)</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = 5.5136</item>
+</list><list id="eip-idp139727617865536s" list-type="enumerated" number-style="lower-alpha"><item>For this problem: <emphasis effect="italics">P</emphasis>(34 &lt; <emphasis effect="italics">x</emphasis> &lt; 54) = normalcdf(34,54,48,5.5136) = 0.7641</item>
+<item>For this problem: <emphasis effect="italics">P</emphasis>(54 &lt; <emphasis effect="italics">x</emphasis> &lt; 64) = normalcdf(54,64,48,5.5136) = 0.0018</item>
+<item>For this problem: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 64) = normalcdf(64,10<sup>99</sup>,48,5.5136) = 0.0000012 (approximately 0)</item>
+</list></solution></exercise>
+
+<exercise id="eip-291"><problem id="eip-455">
+<para id="eip-630">Facebook provides a variety of statistics on its Web site that detail the growth and popularity of the site.</para>
+<para id="eip-idp26662736">On average,  28 percent of 18 to 34 year olds check their Facebook profiles before getting out of bed in the morning.  Suppose this percentage follows a normal distribution with a standard deviation of five percent.</para>
+<list id="eip-idp160307472" list-type="enumerated" number-style="lower-alpha"><item>Find the probability that the percent of 18 to 34-year-olds who check Facebook before getting out of bed in the morning is at least 30.</item>
+<item>Find the 95<sup>th</sup> percentile,  and express it in a sentence.</item>
+</list></problem>
+
+<!-- <solution id="eip-11">
+<para id="eip-360"><emphasis effect="italics">X</emphasis> = the percent of 18 to 34-year-olds who check Facebook before getting out of bed in the morning.</para>
+<para id="eip-idp16494464"><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(28, 5)</para>
+<list id="eip-idp160307472s" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &#8805; 30) = 0.3446; normalcdf(30,1EE99,28,5) = 0.3446</item>
+<item>
+<para id="eip-idm3944144">invNorm(0.95,0.28,0.05) = 0.3622.</para><para id="eip-idm3943760">95% of the percent of 18 to 34 year olds who check Facebook before getting out of bed in the morning is at most 36.22%.</para></item>
+<item><para id="eip-idm7864096"><emphasis effect="italics">P</emphasis>(25 &lt; <emphasis effect="italics">x</emphasis> &lt; 55).</para>
+<para id="eip-idm16259024"><emphasis effect="italics">P</emphasis>(25 &lt; <emphasis effect="italics">x</emphasis> &lt; 55) = normalcdf(25,55,28,5) = 0.7257(0.7257)(400) = 290.28</para></item>
+</list></solution> -->
+</exercise></section></content>
+</document>

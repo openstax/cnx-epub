@@ -1,0 +1,552 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Test of a Single Variance</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47085/latest</md:content-url>
+  <md:content-id>m47085</md:content-id>
+  <md:title>Test of a Single Variance</md:title>
+  <md:version>1.8</md:version>
+  <md:created>2013/07/19 09:50:36 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>population variance</md:keyword>
+    <md:keyword>test of a single variance</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="element-194">A <term>test of a single variance</term> assumes that the underlying distribution is <emphasis>normal</emphasis>. The null and alternative hypotheses are stated in terms of the <term>population variance</term> (or population standard deviation). The test statistic is:</para><equation id="element-740"><m:math>
+<m:mfrac>
+<m:mrow>
+<m:mo>(</m:mo>
+<m:mi>n</m:mi>
+<m:mo>-</m:mo>
+<m:mn>1</m:mn>
+<m:mo>)</m:mo>
+<m:msup>
+<m:mi>s</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+</m:mrow>
+<m:mrow>
+<m:msup>
+<m:mi>&#963;</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+</m:mrow>
+</m:mfrac>
+</m:math>
+</equation>
+<para id="element-706">where:</para>
+<list id="element-706l" list-type="bulleted">
+ <item> <emphasis effect="italics">n</emphasis> = the total number of data </item>
+ <item id="element-646"><emphasis effect="italics">s</emphasis><sup>2</sup> = sample variance </item>
+ <item id="element-502"><emphasis effect="italics">&#963;</emphasis><sup>2</sup> = population variance</item>
+</list>
+ <para id="element-416">You may think of <emphasis effect="italics">s</emphasis> as the random variable in this test. The number of degrees of freedom is <emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> - 1. <emphasis>A test of a single variance may be right-tailed, left-tailed, or two-tailed.</emphasis> <link target-id="element-174"/> will show you how to set up the null and alternative hypotheses. The null and alternative hypotheses contain statements about the population variance.</para><example id="element-174">
+  <exercise id="element-514">
+   <problem id="id1168324983513">
+<para id="element-687">Math instructors are not only interested in how their students do on exams, on average, but how the exam scores vary. To many instructors, the variance (or standard deviation) may be more important than the average.</para>
+  <para id="element-485">Suppose a math instructor believes that the standard deviation for his final exam is five points. One of his
+best students thinks otherwise. The student claims that the standard deviation is more than five points. If the student were to conduct a hypothesis test, what would the null and alternative hypotheses be?</para></problem>
+<solution id="id1168323245019">
+  <para id="element-219">Even though we are given the population standard deviation, we can set up the test using the population variance as follows.</para>
+<list id="element-660" list-type="bulleted"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis><sup>2</sup> = 5<sup>2</sup>
+ </item>
+ <item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis><sup>2</sup> &gt; 5<sup>2</sup></item>
+ </list></solution>
+</exercise>
+ </example>
+ <note id="fs-idp75827040" class="statistics try"><label/><title>Try It</title>
+    <exercise id="eip-420">
+   <problem id="eip-641">
+  <para id="eip-133">A SCUBA instructor wants to record the collective depths each of his students dives during their checkout. He is interested in how the depths vary, even though everyone should have been at the same depth. He believes the standard deviation is three feet. His assistant thinks the standard deviation is less than three feet. If the instructor were to conduct a test, what would the null and alternative hypotheses be?</para>
+</problem>
+  </exercise>
+ </note><example id="element-28"><exercise id="element-853"><problem id="id2871589"><para id="element-271">With individual lines at its various windows, a post office finds that the standard deviation for normally distributed waiting times for customers on Friday afternoon is 7.2 minutes. The post office experiments with a single, main waiting line and finds that for a random sample of 25 customers, the waiting times for customers have a standard deviation of 3.5 minutes.
+</para><para id="element-677">With a significance level of 5%, test the claim that <emphasis>a single line causes lower variation
+among waiting times (shorter waiting times) for customers</emphasis>.
+  </para>
+</problem>
+<solution id="id1168321500398">
+  <para id="element-628">Since the claim is that a single line causes less variation, this is a test of a single variance.
+The parameter is the population variance, <emphasis effect="italics">&#963;</emphasis><sup>2</sup>, or the population standard deviation, <emphasis effect="italics">&#963;</emphasis>.
+  </para><para id="element-16"><emphasis>Random Variable:</emphasis> The sample standard deviation, <emphasis effect="italics">s</emphasis>, is the random variable.
+Let <emphasis effect="italics">s</emphasis> = standard deviation for the waiting times.</para><list id="element-227"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis><sup>2</sup> = 7.2<sup>2</sup></item>
+ <item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis><sup>2</sup> &lt; 7.2<sup>2</sup></item>
+</list><para id="element-789">The word <emphasis>"less"</emphasis> tells you this is a left-tailed test.</para><para id="element-760"><emphasis>Distribution for the test:</emphasis> <m:math><m:msubsup><m:mi>&#967;</m:mi><m:mn>24</m:mn><m:mn>2</m:mn></m:msubsup></m:math>, where:
+<list id="element-12421" list-type="bulleted"><item><emphasis effect="italics">n</emphasis> = the number of customers sampled</item>
+ <item><emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> &#8211; 1 = 25 &#8211; 1 = 24</item>
+</list></para><para id="element-85"><emphasis>Calculate the test statistic:</emphasis>
+</para><para id="element-10"><m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mi>&#967;</m:mi>
+   <m:mn>2</m:mn>
+  </m:msup>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mi>n</m:mi><m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;</m:mtext><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:msup>
+     <m:mi>s</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mi>&#963;</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mn>25</m:mn><m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;</m:mtext><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:msup>
+     <m:mrow>
+      <m:mo stretchy="false">(</m:mo><m:mn>3.5</m:mn><m:mo stretchy="false">)</m:mo>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>7.2</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>5.67</m:mn>
+ </m:mrow>
+</m:math></para><para id="element-801">where <emphasis effect="italics">n</emphasis> = 25, <emphasis effect="italics">s</emphasis> = 3.5, and <emphasis effect="italics">&#963;</emphasis> = 7.2.</para>
+ <para id="element-607"><emphasis>Graph:</emphasis></para>
+ <figure id="fs-idp135015696"><media id="id1168325355960" alt="This is a nonsymmetrical chi-square curve with values of 0 and 5.67 labeled on the horizontal axis. The point 5.67 lies to the left of the peak of the curve. A vertical upward line extends from 5.67 to the curve and the region to the left of this line is shaded. The shaded area is equal to the p-value." display="block"><image src="figure-ch11_08_01.jpg" mime-type="image/jpg" width="380"/></media></figure><para id="element-970"><emphasis>Probability statement:</emphasis> <emphasis effect="italics">p</emphasis>-value = <emphasis effect="italics">P</emphasis> ( <emphasis effect="italics">&#967;</emphasis><sup>2</sup> &lt; 5.67) = 0.000042</para>
+ <para id="element-684"><emphasis>Compare <emphasis effect="italics">&#945;</emphasis> and the <emphasis effect="italics">p</emphasis>-value:</emphasis><newline/>
+<list list-type="labeled-item" display="inline">
+<item><emphasis effect="italics">&#945;</emphasis> = 0.05</item>
+<item><emphasis effect="italics">p</emphasis>-value = 0.000042</item>
+<item><emphasis effect="italics">&#945;</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value</item>
+</list></para><para id="element-726"><emphasis>Make a decision:</emphasis> Since <emphasis effect="italics">&#945;</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value, reject <emphasis effect="italics">H<sub>0</sub></emphasis>. This means that you reject <emphasis effect="italics">&#963;</emphasis><sup>2</sup> = 7.2<sup>2</sup>. In other words, you do not think the variation in waiting times is 7.2 minutes; you think the variation in waiting times is less.</para><para id="element-952"><emphasis>Conclusion:</emphasis> At a 5% level of significance, from the data, there is sufficient evidence to
+conclude that a single line causes a lower variation among the waiting times <emphasis>or</emphasis> with a single
+line, the customer waiting times vary less than 7.2 minutes.</para>
+ <note id="fs-idm81061344" class="statistics calculator"><label/>
+ <para id="element-528">In <code>2nd DISTR</code>, use <code>7:&#967;2cdf</code>. The syntax is
+<code>(lower, upper, df)</code> for the parameter list.
+  For <link target-id="element-28"/>, <code>&#967;2cdf(-1E99,5.67,24)</code>. The <emphasis effect="italics">p</emphasis>-value = 0.000042.</para></note></solution>
+ </exercise>
+ </example>
+ <note id="fs-idp108749600" class="statistics try"><label/><title>Try It</title>
+    <exercise id="eip-209">
+   <problem id="eip-849">
+  <para id="eip-37">The FCC conducts broadband speed tests to measure how much data per second passes between a consumer&#8217;s computer and the internet. As of August of 2012, the standard deviation of Internet speeds across Internet Service Providers (ISPs) was 12.2 percent. Suppose a sample of 15 ISPs is taken, and the standard deviation is 13.2. An analyst claims that the standard deviation of speeds is more than what was reported. State the null and alternative hypotheses, compute the degrees of freedom, the test statistic, sketch the graph of the <emphasis effect="italics">p</emphasis>-value, and draw a conclusion. Test at the 1% significance level.</para></problem>
+  </exercise>
+</note><section id="fs-idp59526304" class="references">
+<title>References</title>
+<para id="fs-idm19397584">&#8220;AppleInsider Price Guides.&#8221; Apple Insider, 2013. Available online at http://appleinsider.com/mac_price_guide (accessed May 14, 2013).</para>
+<para id="fs-idm155607568">Data from the World Bank, June 5, 2012.</para>
+</section>
+<section id="fs-idm93039536" class="summary">
+<title>Chapter Review</title>
+<para id="eip-212">To test variability, use the chi-square test of a single variance. The test may be left-, right-, or two-tailed, and its hypotheses are always expressed in terms of the variance (or standard deviation).</para></section>
+<section id="fs-idm8553712" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idm93679184"><m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mi>&#967;</m:mi>
+   <m:mn>2</m:mn>
+  </m:msup>
+  <m:mo>=</m:mo>
+ </m:mrow>
+</m:math>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:mo>&#8901;</m:mo><m:msup>
+     <m:mi>s</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mi>&#963;</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> Test of a single variance statistic where:<newline/>
+   <emphasis effect="italics">n</emphasis>: sample size<newline/>
+   <emphasis effect="italics">s</emphasis>: sample standard deviation<newline/>
+   <emphasis effect="italics">&#963;</emphasis>: population standard deviation</para><para id="eip-902"><emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> &#8211; 1 Degrees of freedom</para><list id="eip-29" list-type="bulleted"><title>Test of a Single Variance</title><item>Use the test to determine variation.</item>
+<item>The degrees of freedom is the number of samples &#8211; 1.</item>
+<item>The test statistic is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mi>n</m:mi><m:mo>&#8211;</m:mo><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:mo>&#8901;</m:mo><m:msup>
+     <m:mi>s</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mi>&#963;</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math>, where <emphasis effect="italics">n</emphasis> = the total number of data, <emphasis effect="italics">s</emphasis><sup>2</sup> = sample variance, and <emphasis effect="italics">&#963;</emphasis><sup>2</sup> = population variance.
+</item>
+<item>The test may be left-, right-, or two-tailed.</item>
+</list></section>
+ <section id="fs-idm13240448" class="practice">
+<para id="eip-idp102579024"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> An archer&#8217;s standard deviation for his hits is six (data is measured in distance from the center of the target). An observer claims the standard deviation is less.</para><exercise id="eip-432">
+   <problem id="eip-192">
+  <para id="eip-947">What type of test should be used?</para>
+   </problem>
+<solution id="eip-26">
+  <para id="eip-707">a test of a single variance</para></solution>
+  </exercise>
+  <exercise id="eip-95"><problem id="eip-423">
+  <para id="eip-817">State the null and alternative hypotheses.</para>
+</problem>
+  </exercise><exercise id="eip-356">
+   <problem id="eip-2">
+  <para id="eip-330">Is this a right-tailed, left-tailed, or two-tailed test?</para></problem>
+<solution id="eip-563">
+  <para id="eip-783">a left-tailed test</para>
+</solution>
+  </exercise>
+ <para id="fs-idm31815696"><newline/><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> The standard deviation of heights for students in a school is 0.81. A random sample of 50 students is taken, and the standard deviation of heights of the sample is 0.96. A researcher in charge of the study believes the standard deviation of heights for the school is greater than 0.81.</para><exercise id="eip-412"><problem id="eip-222">
+  <para id="eip-979">What type of test should be used?
+  </para>
+   </problem>
+  </exercise><exercise id="eip-631">
+   <problem id="eip-721">
+  <para id="eip-582">State the null and alternative hypotheses.
+  </para>
+</problem>
+<solution id="eip-401">
+ <para id="eip-306"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis><sup>2</sup> = 0.81<sup>2</sup>;</para><para id="eip-idm138366848"><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis><sup>2</sup> &gt; 0.81<sup>2</sup> </para></solution>
+  </exercise>
+  <exercise id="eip-179"><problem id="eip-132">
+    <para id="eip-957"><emphasis effect="italics">df</emphasis> = ________</para></problem>
+  </exercise><para id="eip-717"><newline/><emphasis effect="italics">Use the following information to answer the next four exercises:</emphasis> The average waiting time in a doctor&#8217;s office varies. The standard deviation of waiting times in a doctor&#8217;s office is 3.4 minutes. A random sample of 30 patients in the doctor&#8217;s office has a standard deviation of waiting times of 4.1 minutes. One doctor believes the variance of waiting times is greater than originally thought.</para><exercise id="eip-608">
+   <problem id="eip-638">
+  <para id="eip-974">What type of test should be used?</para>
+   </problem>
+<solution id="eip-505">
+  <para id="eip-586">a test of a single variance</para>
+</solution>
+  </exercise>
+  <exercise id="eip-224"><problem id="eip-544">
+  <para id="eip-542">What is the test statistic?</para>
+   </problem>
+  </exercise><exercise id="eip-462">
+   <problem id="eip-303">
+  <para id="eip-279">What is the <emphasis effect="italics">p</emphasis>-value?</para>
+   </problem>
+<solution id="eip-447">
+  <para id="eip-789">0.0542</para>
+</solution>
+  </exercise>
+  <exercise id="eip-761"><problem id="eip-84">
+  <para id="eip-814">What can you conclude at the 5% significance level?</para></problem>
+</exercise></section>
+<section id="fs-idm85852512" class="free-response">
+<title>Homework</title>
+ <para id="element-993"><emphasis effect="italics">Use the following information to answer the next twelve exercises:</emphasis> Suppose an airline claims that its flights are consistently on time with an average delay of at most 15 minutes. It claims that the average delay is so consistent that the variance is no more than 150 minutes. Doubting the consistency part of the claim, a disgruntled traveler calculates the delays for his next 25 flights. The average delay for those 25 flights is 22 minutes with a standard deviation of 15 minutes.
+</para><exercise id="element-377"><problem id="id47989189">
+  <para id="element-321">Is the traveler disputing the claim about the average or about the variance?</para>
+ </problem>
+</exercise><exercise id="fs-idm21799472">
+  <problem id="fs-idm24338816">
+   <para id="fs-idp8330400">A sample standard deviation of 15 minutes is the same as a sample variance of __________ minutes.</para>
+  </problem>
+  <solution id="fs-idm2415952"><para id="fs-idm2415824">225</para></solution>
+ </exercise>
+ <exercise id="fs-idm20076720"><problem id="fs-idp108732800">
+  <para id="fs-idm135928048">Is this a right-tailed, left-tailed, or two-tailed test?</para>
+  </problem>
+ </exercise><exercise id="fs-idm22555680">
+  <problem id="fs-idm53291472">
+   <para id="fs-idp8181296"><emphasis effect="italics">H<sub>0</sub></emphasis>: __________</para></problem>
+  <solution id="fs-idm63616976">
+   <para id="fs-idp33949200"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis><sup>2</sup> &#8804; 150</para></solution>
+ </exercise>
+ <exercise id="fs-idm2265776"><problem id="fs-idp79398304">
+   <para id="fs-idp135560176"><emphasis effect="italics">df</emphasis> = ________</para></problem>
+ </exercise><exercise id="fs-idm22718256">
+  <problem id="fs-idm20943008">
+   <para id="fs-idm46019072">chi-square test statistic = ________</para>
+  </problem>
+  <solution id="fs-idm37008704">
+   <para id="fs-idp75361952">36</para>
+  </solution>
+ </exercise>
+ <exercise id="fs-idm70553440"><problem id="fs-idp47518368">
+   <para id="fs-idp34036528"><emphasis effect="italics">p</emphasis>-value = ________</para>
+  </problem>
+ </exercise><exercise id="fs-idp82699488">
+  <problem id="fs-idm73044992">
+   <para id="fs-idm74715968">Graph the situation. Label and scale the horizontal axis. Mark the mean and test statistic. Shade the <emphasis effect="italics">p</emphasis>-value.</para>
+  </problem>
+  <solution id="fs-idp93898016">
+   <para id="fs-idp3655968">Check student&#8217;s solution.</para>
+  </solution>
+ </exercise>
+ <exercise id="fs-idm73610688"><problem id="fs-idm57687392">
+   <para id="fs-idm24034400">Let <emphasis effect="italics">&#945;</emphasis> = 0.05<newline/>
+    Decision: ________<newline/>
+    Conclusion (write out in a complete sentence.): ________</para></problem>
+ </exercise><exercise id="eip-572"><problem id="eip-idp77356624">
+<para id="eip-idp77356880">How did you know to test the variance instead of the mean?</para>
+</problem>
+<solution id="eip-idm54177872">
+<para id="eip-idm54177616">The claim is that the variance is no more than 150 minutes.</para>
+</solution>
+</exercise><exercise id="eip-978"><problem id="eip-idp189612400">
+<para id="eip-idp79174704">If an additional test were done on the claim of the average delay, which distribution would you use?</para>
+</problem>
+</exercise><exercise id="eip-512"><problem id="eip-idm34189536">
+<para id="eip-idp107850688">If an additional test were done on the claim of the average delay, but 45 flights were surveyed, which distribution would you use?</para>
+</problem>
+<solution id="eip-idm10455136">
+<para id="eip-idm10454880">a Student's <emphasis effect="italics">t</emphasis>- or normal distribution</para></solution>
+</exercise><para id="eip-457"><emphasis effect="italics">For each word problem, use a solution sheet to solve the hypothesis test problem. Go to <link document="m47882"/> for the chi-square solution sheet. Round expected frequency to two decimal places.</emphasis></para><exercise id="fs-idp51794048"><problem id="fs-idp51794176">
+  <para id="fs-idm36035424">A plant manager is concerned her equipment may need recalibrating. It seems that the actual weight of the 15 oz. cereal boxes it fills has been fluctuating. The standard deviation should be at most 0.5 oz. In order to determine if the machine needs to be recalibrated, 84 randomly selected boxes of cereal from the next day&#8217;s production were weighed. The standard deviation of the 84 boxes was 0.54. Does the machine need to be recalibrated?
+  </para>
+ </problem>
+ </exercise><exercise id="element-377ab">
+  <problem id="id21087432">
+  <para id="element-475">
+   Consumers may be interested in whether the cost of a particular calculator varies from store to store. Based on surveying 43 stores, which yielded a sample mean of $84 and a sample standard deviation of $12, test the claim that the standard deviation is greater than $15.
+  </para>
+ </problem>
+  <solution id="fs-idp8292400">
+   <list id="fs-idm38743456" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis> = 15</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis> &gt; 15</item>
+<item><emphasis effect="italics">df</emphasis> = 42</item>
+<item>chi-square with <emphasis effect="italics">df</emphasis> = 42</item>
+<item>test statistic = 26.88</item>
+<item><emphasis effect="italics">p</emphasis>-value = 0.9663</item>
+<item>Check student&#8217;s solution.</item>
+<item>
+     <list id="fs-idp14221792" list-type="enumerated" number-style="lower-roman">
+      <item>Alpha = 0.05</item>
+      <item>Decision: Do not reject null hypothesis.</item>
+      <item>Reason for decision: <emphasis effect="italics">p</emphasis>-value &gt; alpha</item>
+      <item>Conclusion: There is insufficient evidence to conclude that the standard deviation is greater than 15.</item>
+     </list>
+    </item>   </list></solution>
+ </exercise>
+ <exercise id="fs-idm4701360"><problem id="id21087466">
+  <para id="element-427">
+   Isabella, an accomplished <emphasis>Bay to Breakers</emphasis> runner, claims that the standard deviation for her time to run the 7.5 mile race is at most three minutes. To test her claim, Rupinder looks up five of her race times. They are 55 minutes, 61 minutes, 58 minutes, 63 minutes, and 57 minutes.
+  </para>
+ </problem>
+ </exercise><exercise id="element-691"><problem id="id21087604">
+  <para id="element-776">Airline companies are interested in the consistency of the number of babies on each flight, so that they have adequate safety equipment. They are also interested in the variation of the number of babies. Suppose that an airline executive believes the average number of babies on flights is six with a variance of nine at most. The airline conducts a survey. The results of the 18 flights surveyed give a sample average of 6.4 with a sample standard deviation of 3.9. Conduct a hypothesis test of the airline executive&#8217;s belief.
+  </para></problem>
+  <solution id="fs-idp2191872">
+   <list id="fs-idm74960368" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis> &#8804; 3</item>
+    <item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis> &gt; 3</item>
+    <item><emphasis effect="italics">df</emphasis> = 17</item>
+    <item>chi-square distribution with <emphasis effect="italics">df</emphasis> = 17</item>
+    <item>test statistic = 28.73</item>
+    <item><emphasis effect="italics">p</emphasis>-value = 0.0371</item>
+    <item>Check student&#8217;s solution.</item>
+    <item>
+     <list id="fs-idp134836976" list-type="enumerated" number-style="lower-roman">
+      <item>Alpha: 0.05</item>
+      <item>Decision: Reject the null hypothesis.</item>
+      <item>Reason for decision: <emphasis effect="italics">p</emphasis>-value &lt; alpha</item>
+      <item>Conclusion: There is sufficient evidence to conclude that the standard deviation is greater than three.</item>
+     </list>
+    </item>
+   </list></solution>
+ </exercise>
+ <exercise id="element-559"><problem id="id21087650">
+  <para id="element-641">The number of births per woman in China is 1.6 down from 5.91 in 1966. This fertility rate has been attributed to the law passed in 1979 restricting births to one per woman. Suppose that a group of students studied whether or not the standard deviation of births per woman was greater than 0.75. They asked 50 women across China the number of births they had had. The results are shown in <link target-id="id6106431"/>. Does the students&#8217; survey indicate that the standard deviation is greater than 0.75?
+  </para><table id="id6106431" summary="The table has the number of births in the first column and the frequency in the second column. There are 4 rows.">
+   <tgroup cols="2"><colspec colnum="1" colname="c1"/>
+    <colspec colnum="2" colname="c2"/>
+    <thead>
+     <row>
+      <entry># of births</entry>
+      <entry>Frequency</entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry>0</entry>
+      <entry>5</entry>
+     </row>
+     <row>
+      <entry>1</entry>
+      <entry>30</entry>
+     </row>
+     <row>
+      <entry>2</entry>
+      <entry>10</entry>
+     </row>
+     <row>
+      <entry>3</entry>
+      <entry>5</entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </table>
+ </problem>
+ </exercise><exercise id="element-503"><problem id="id21087968">
+  <para id="element-381">According to an avid aquarist, the average number of fish in a 20-gallon tank is 10, with a standard deviation of two. His friend, also an aquarist, does not believe that the standard deviation is two. She counts the number of fish in 15 other 20-gallon tanks. Based on the results that follow, do you think that the standard deviation is different from two? Data: 11; 10; 9; 10; 10; 11; 11; 10; 12; 9; 7; 9; 11; 10; 11
+  </para></problem>
+  <solution id="fs-idm41336224">
+   <list id="fs-idp70912512" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis> = 2</item>
+    <item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#963;</emphasis> &#8800; 2</item>
+    <item><emphasis effect="italics">df</emphasis> = 14</item>
+    <item>chi-square distiribution with <emphasis effect="italics">df</emphasis> = 14</item>
+    <item>chi-square test statistic = 5.2094</item>
+    <item><emphasis effect="italics">p</emphasis>-value = 0.0346</item>
+    <item>Check student&#8217;s solution.</item>
+    <item>
+     <list id="fs-idp46969120" list-type="enumerated" number-style="lower-roman"><item>Alpha = 0.05</item>
+      <item>Decision: Reject the null hypothesis</item>
+      <item>Reason for decision: <emphasis effect="italics">p</emphasis>-value &lt; alpha</item>
+      <item>Conclusion: There is sufficient evidence to conclude that the standard deviation is different than 2.</item>
+     </list></item>
+   </list></solution>
+ </exercise>
+ <exercise id="element-399"><problem id="id21088008">
+  <para id="fs-idp7606224">The manager of "Frenchies" is concerned that patrons are not consistently receiving the same amount of French fries with each order. The chef claims that the standard deviation for a ten-ounce order of fries is at most 1.5 oz., but the manager thinks that it may be higher. He randomly weighs 49 orders of fries, which yields a mean of 11 oz. and a standard deviation of two oz.
+  </para></problem>
+ </exercise><exercise id="eip-340">
+  <problem id="eip-90">
+   <para id="eip-895">You want to buy a specific computer. A sales representative of the manufacturer claims that retail stores sell this computer at an average price of $1,249 with a very narrow standard deviation of $25. You find a website that has a price comparison for the same computer at a series of stores as follows: $1,299; $1,229.99; $1,193.08; $1,279; $1,224.95; $1,229.99; $1,269.95; $1,249. Can you argue that pricing has a larger standard deviation than claimed by the manufacturer? Use the 5% significance level. As a potential buyer, what would be the practical conclusion from your analysis?</para>
+  </problem>
+   <solution id="fs-idp46489456">
+    <para id="fs-idp77058224">The sample standard deviation is $34.29.</para>
+    <para id="fs-idp77058608"><emphasis effect="italics">H<sub>0</sub></emphasis> : <emphasis effect="italics">&#963;</emphasis><sup>2</sup> = 25<sup>2</sup><newline/>
+     <emphasis effect="italics">H<sub>a</sub></emphasis> : <emphasis effect="italics">&#963;</emphasis><sup>2</sup> &gt; 25<sup>2</sup></para><para id="fs-idp53015088"><newline/><emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> &#8211; 1 = 7.</para><para id="fs-idp75015024"><newline/>test statistic: <m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mi>x</m:mi>
+   <m:mn>2</m:mn>
+  </m:msup>
+  <m:mo>=</m:mo><m:mo>&#160;</m:mo><m:msubsup>
+   <m:mi>x</m:mi>
+   <m:mn>7</m:mn>
+   <m:mn>2</m:mn>
+  </m:msubsup>
+  <m:mo>=</m:mo><m:mo>&#160;</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mi>n</m:mi><m:mo>&#8211;</m:mo><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:msup>
+     <m:mi>s</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>25</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mo>&#160;</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mn>8</m:mn><m:mo>&#8211;</m:mo><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:msup>
+     <m:mrow>
+      <m:mo stretchy="false">(</m:mo><m:mn>34.29</m:mn><m:mo stretchy="false">)</m:mo>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>25</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>13.169</m:mn>
+ </m:mrow>
+</m:math>;</para><para id="fs-idp111810080"><newline/><emphasis effect="italics">p</emphasis>-value: <m:math>
+     <m:mrow>
+      <m:mi>P</m:mi><m:mrow><m:mo>(</m:mo>
+       <m:mrow>
+        <m:msubsup>
+         <m:mi>x</m:mi>
+         <m:mn>7</m:mn>
+         <m:mn>2</m:mn>
+        </m:msubsup>
+        <m:mo>&gt;</m:mo><m:mn>13.169</m:mn>
+       </m:mrow>
+       <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:mi>P</m:mi><m:mrow><m:mo>(</m:mo>
+        <m:mrow>
+         <m:msubsup>
+          <m:mi>x</m:mi>
+          <m:mn>7</m:mn>
+          <m:mn>2</m:mn>
+         </m:msubsup>
+         <m:mo>&#160;</m:mo><m:mo>&#8804;</m:mo><m:mn>13.169</m:mn>
+        </m:mrow>
+        <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0.0681</m:mn>
+     </m:mrow>
+    </m:math> </para><para id="fs-idp75024832"><newline/>Alpha: 0.05</para><para id="fs-idp120246432"><newline/>Decision: Do not reject the null hypothesis.</para><para id="fs-idp83140624"><newline/>Reason for decision: <emphasis effect="italics">p</emphasis>-value &gt; alpha</para><para id="fs-idp62506704"><newline/>Conclusion: At the 5% level, there is insufficient evidence to conclude that the variance is more than 625.</para></solution>
+  </exercise>
+  <exercise id="eip-idp39276048"><problem id="eip-idp39276176">
+   <para id="eip-574">A company packages apples by weight. One of the weight grades is Class A apples. Class A apples have a mean weight of 150 g, and there is a maximum allowed weight tolerance of 5% above or below the mean for apples in the same consumer package. A batch of apples is selected to be included in a Class A apple package. Given the following apple weights of the batch, does the fruit comply with the Class A grade weight tolerance requirements. Conduct an appropriate hypothesis test.</para><para id="eip-idp93825408">(a) at the 5% significance level</para>
+   <para id="eip-idp25991408">(b) at the 1% significance level</para>
+   <para id="eip-idm53488240">Weights in selected apple batch (in grams): 158; 167; 149; 169; 164; 139; 154; 150; 157; 171; 152; 161; 141; 166; 172;</para>
+  </problem>
+  </exercise></section>
+</content>
+</document>

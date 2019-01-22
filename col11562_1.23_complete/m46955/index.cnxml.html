@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Introduction</title><meta name="created-time" content="2013/07/19 08:29:27 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/3.0/"/><meta name="keywords" content="average, Bernoulli trial, binomial distribution, binomial probability distribution, binomial probability distribution function, discrete random variable, expected value, expected value table, geometric distribution, geometric probability distribution, geometric probability distribution function, hypergeometric distribution, hypergeometric probability distribution, hypergeometric probability distribution function, law of large numbers, long-term average, mean, Pearson, Poisson distribution, Poisson probability distribution, Poisson probability distribution function, probability distribution, probability distribution function, random variable"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" class="introduction" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Introduction</div><cnx-pi data-type="cnx.flag.introduction">
+        class="introduction"
+      </cnx-pi>
+        <cnx-pi data-type="cnx.eoc">class="summary" title="Chapter Review"</cnx-pi>
+        <cnx-pi data-type="cnx.eoc">class="formula-review" title="Formula Review"</cnx-pi>
+        <cnx-pi data-type="cnx.eoc">class="practice" title="Practice"</cnx-pi>
+        <cnx-pi data-type="cnx.eoc">class="free-response" title="Homework"</cnx-pi>
+        <cnx-pi data-type="cnx.eoc">class="references" title="References"</cnx-pi>
+
+<figure id="fs-idp163541072" class="splash"><figcaption>You can use probability and discrete random variables to calculate the likelihood of lightning striking the ground five times during a half-hour thunderstorm. (Credit: Leszek Leszczynski)</figcaption><span data-type="media" id="fs-idp141532880" data-alt="This photo shows branch lightening coming from a dark cloud and hitting the ground.">
+<img src="/resources/5b468b630d9a40f347e207af54fb5ef63fe4a222/CNX_Stats_C04_CON.jpg" data-media-type="image/jpg" alt="This photo shows branch lightening coming from a dark cloud and hitting the ground." width="500"/>
+</span>
+</figure><div data-type="note" data-has-label="true" id="fs-idp120416736" class="chapter-objectives" data-label=""><div data-type="title">Chapter Objectives</div>
+<p id="element-959">By the end of this chapter, the student should be able to:</p>
+<ul id="list14235"><li>Recognize and understand discrete probability distribution functions, in general.</li>
+<li>Calculate and interpret expected values.</li>
+<li>Recognize the binomial probability distribution and apply it appropriately.</li>
+<li>Recognize the Poisson probability distribution and apply it appropriately.</li>
+<li>Recognize the geometric probability distribution and apply it appropriately.</li>
+<li>Recognize the hypergeometric probability distribution and apply it appropriately.</li>
+<li>Classify discrete word problems by their distributions.</li>
+</ul>
+</div>
+
+<p id="introch04">A student takes a ten-question, true-false quiz. Because the student had such a busy schedule, he or she could not study and guesses randomly at each answer. What is the probability of the student passing the test with at least a 70%?</p><p id="element-804">Small companies might be interested in the number of long-distance phone calls their employees make during the peak time of the day. Suppose the average is 20 calls. What is the probability that the employees make more than 20 long-distance phone calls during the peak time?</p>
+
+<p id="element-919">These two examples illustrate two different types of probability problems involving discrete random variables. Recall that discrete data are data that you can count. A <span data-type="term">random variable</span> describes the outcomes of a statistical experiment in words. The values of a random variable can vary with each repetition of an experiment.</p>
+
+
+<section data-depth="1" id="randvarnot"><h3 data-type="title">Random Variable Notation</h3>
+<p id="element-197">Upper case letters such as <em data-effect="italics">X</em> or <em data-effect="italics">Y</em> denote a random variable. Lower case letters like <em data-effect="italics">x</em> or <em data-effect="italics">y</em> denote the value of a random variable. If  <strong><em data-effect="italics">X</em> is a random variable, then <em data-effect="italics">X</em> is written in words, and <em data-effect="italics">x</em> is given as a number.</strong></p>
+
+<p id="element-109">For example, let <em data-effect="italics">X</em> = the number of heads you get when you toss three fair coins. The sample space for the toss of three fair coins is <em data-effect="italics">TTT</em>; <em data-effect="italics">THH</em>; <em data-effect="italics">HTH</em>; <em data-effect="italics">HHT</em>; <em data-effect="italics">HTT</em>; <em data-effect="italics">THT</em>; <em data-effect="italics">TTH</em>; <em data-effect="italics">HHH</em>. Then, <em data-effect="italics">x</em> = 0, 1, 2, 3. <em data-effect="italics">X</em> is in words and <em data-effect="italics">x</em> is a number. Notice that for this example, the <em data-effect="italics">x</em> values are countable outcomes. Because you can count the possible values that <em data-effect="italics">X</em> can take on and the outcomes are random (the <em data-effect="italics">x</em> values 0, 1, 2, 3), <em data-effect="italics">X</em> is a discrete random variable.</p></section>
+
+<div data-type="note" data-has-label="true" id="fs-idp37582368" class="statistics collab" data-label=""><div data-type="title">Collaborative Exercise</div>
+<p id="element-607">Toss a coin ten times and record the number of heads. After all members of the class have completed the experiment (tossed a coin ten times and counted the number of heads), fill in <a href="#M01_Ch04_tbl001" class="autogenerated-content">[link]</a>. Let <em data-effect="italics">X</em> = the number of heads in ten tosses of the coin.</p>
+
+<table id="M01_Ch04_tbl001" summary="Table showing x, frequency of x and relative frequency of x. x = the number of heads in 10 tosses of a fair coin."><thead>
+  <tr>
+    <th><strong><em data-effect="italics">x</em></strong></th>
+    <th><strong>Frequency of <em data-effect="italics">x</em></strong></th>
+    <th><strong>Relative Frequency of <em data-effect="italics">x</em></strong></th>
+  </tr>
+</thead><tbody>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+  </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+  </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+  </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+  </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+  </tr>
+  <tr>
+    <td/>
+    <td/>
+    <td/>
+  </tr>
+</tbody></table><ol id="element-388" type="a"><li>Which value(s) of <em data-effect="italics">x</em> occurred most frequently?</li>
+<li>If you tossed the coin 1,000 times, what values could <em data-effect="italics">x</em> take on? Which value(s) of <em data-effect="italics">x</em> do you think would occur most frequently?</li>
+<li>What does the relative frequency column sum to?</li>
+</ol></div>
+  <div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+<dl id="randvar">
+<dt>Random Variable (RV)</dt>
+<dd id="id1167466326893">a characteristic of interest in a population being studied; common notation for variables are upper case Latin letters <em data-effect="italics">X</em>, <em data-effect="italics">Y</em>, <em data-effect="italics">Z</em>,...; common notation for a specific value from the domain (set of all possible values of a variable) are lower case Latin letters <em data-effect="italics">x, y,</em> and <em data-effect="italics">z</em>. For example, if <em data-effect="italics">X</em> is the number of children in a family, then <em data-effect="italics">x</em> represents a specific integer 0, 1, 2, 3,.... Variables in statistics differ from variables in intermediate algebra in the two following ways. 
+<ul id="arrvee">
+<li>The domain of the random variable (RV) is not necessarily a numerical set; the domain may be expressed in words; for example, if <em data-effect="italics">X</em> = hair color then the domain is {black, blond, gray, green, orange}.</li>
+<li>We can tell what specific value <em data-effect="italics">x</em> the random variable <em data-effect="italics">X</em> takes only after performing the experiment.</li></ul>
+    </dd>
+  </dl>
+
+</div></body>
+
+</html>

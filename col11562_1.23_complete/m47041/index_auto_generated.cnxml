@@ -1,0 +1,132 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+  <title>Introduction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47041/latest</md:content-url>
+  <md:content-id>m47041</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.8</md:version>
+  <md:created>2013/07/19 09:18:18 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternative hypothesis</md:keyword>
+    <md:keyword>assumption</md:keyword>
+    <md:keyword>binomial distribution</md:keyword>
+    <md:keyword>central limit theorem</md:keyword>
+    <md:keyword>confidence interval</md:keyword>
+    <md:keyword>hypothesis</md:keyword>
+    <md:keyword>hypothesis testing</md:keyword>
+    <md:keyword>level of significance of the test</md:keyword>
+    <md:keyword>normal distribution</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>p-value</md:keyword>
+    <md:keyword>random variable</md:keyword>
+    <md:keyword>simple random sample</md:keyword>
+    <md:keyword>single population mean</md:keyword>
+    <md:keyword>single population proportion</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+    <md:keyword>student’s t-distribution</md:keyword>
+    <md:keyword>type 1 error</md:keyword>
+    <md:keyword>type 2 error</md:keyword>
+    <md:keyword>type I Error</md:keyword>
+    <md:keyword>type II error</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <?cnx.eoc class="summary" title="Chapter Review"?>
+  <?cnx.eoc class="formula-review" title="Formula Review"?>
+  <?cnx.eoc class="practice" title="Practice"?>
+  <?cnx.eoc class="free-response" title="Homework"?>
+  <?cnx.eoc class="references" title="References"?>
+  <figure id="fs-idm165993648" class="splash"><media id="fs-idm52702960" alt="This is a picture of a Dalmation dog covered in black spots. He is wearing a red color, appears to be in a nature setting, and there is a spout of water from a water fountain in the foreground.">
+<image src="CNX_Stats_C09_CO.jpg" width="380" mime-type="image/jpeg"/>
+</media>
+  <caption>You can use a hypothesis test to decide if a dog breeder&#8217;s claim that every Dalmatian has 35 spots is statistically sound. (Credit: Robert Neff)</caption></figure><note id="fs-idp21504400" class="chapter-objectives">
+  <label/>
+<title>Chapter Objectives</title>
+  <para id="element-667">By the end of this chapter, the student should be able to:</para>
+<list id="list67">
+  <item>Differentiate between Type I and Type II Errors</item>
+<item>Describe hypothesis testing in general and in practice</item>
+<item>Conduct and interpret hypothesis tests for a single population mean, population standard deviation known.</item>
+<item>Conduct and interpret hypothesis tests for a single population mean, population standard deviation unknown.</item>
+<item>Conduct and interpret hypothesis tests for a single population proportion.</item></list>
+  </note>
+
+<para id="delete_me">One job of a statistician is to make statistical inferences about populations based on samples taken from the population. <term>Confidence intervals</term> are one way to estimate a population parameter. Another way to make a statistical inference is to make a decision about a parameter. For instance, a car dealer advertises that its new small truck gets 35 miles per gallon, on average. A tutoring service claims that its method of tutoring helps 90% of its students get an A or a B. A company says that women managers in their company earn an average of $60,000 per year.</para>
+    <para id="element-818">A statistician will make a decision about these claims. This process is called "<term>hypothesis testing</term>." A hypothesis test involves collecting data from a sample and evaluating the data. Then, the statistician makes a decision as to whether or not there is sufficient evidence, based upon analyses of the data, to reject the null hypothesis.</para><para id="element-224">In this chapter, you will conduct hypothesis tests on single means and single proportions.
+    You will also learn about the errors associated with these tests. </para>
+  <para id="element-616">Hypothesis testing consists of two contradictory hypotheses or statements, a decision based on the data, and a conclusion. To perform a hypothesis test, a statistician will:
+<list id="list-1" list-type="enumerated"><item>Set up two contradictory hypotheses.</item>
+<item>Collect sample data (in homework problems, the data or summary statistics will be given to you).</item>
+<item>Determine the correct distribution to perform the hypothesis test.</item>
+<item>Analyze sample data by performing the calculations that ultimately will allow you to reject or decline to reject the null hypothesis.</item>
+<item>Make a decision and write a meaningful conclusion.</item>
+</list>
+</para>
+  <!-- LINK -->
+    <note id="id23787041"><label/><title>Note</title>
+<para id="eip-idm82174448">To do the hypothesis test homework problems for this chapter and later chapters, make copies of the appropriate special solution sheets. See <link document="m47882">Appendix E</link>.</para></note></content>
+ <glossary>
+  <definition id="coninter">
+    <term>Confidence Interval (CI)</term>
+    <meaning id="id20495395">an interval estimate for an unknown population parameter. This depends on: 
+<list id="confint1" list-type="bulleted">
+  <item>The desired confidence level.</item>
+  <item>Information that is known about the  distribution (for example, known standard deviation).</item>
+  <item>The sample and its size.</item>
+</list>
+    </meaning>
+  </definition>
+ <definition id="hypotest">
+    <term>Hypothesis Testing</term>
+    <meaning id="id23787132">Based on sample evidence, a procedure for determining whether the hypothesis stated is a reasonable statement and should not be rejected, or is unreasonable and should be rejected.
+    </meaning>
+  </definition>
+</glossary>  
+</document>

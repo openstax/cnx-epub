@@ -1,0 +1,1141 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Measures of the Center of the Data</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46928/latest</md:content-url>
+  <md:content-id>m46928</md:content-id>
+  <md:title>Measures of the Center of the Data</md:title>
+  <md:version>1.12</md:version>
+  <md:created>2013/07/19 05:49:29 -0500</md:created>
+  <md:revised>2018/08/24 13:55:06 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>law of large numbers</md:keyword>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>median</md:keyword>
+    <md:keyword>midpoint</md:keyword>
+    <md:keyword>population mean</md:keyword>
+    <md:keyword>relative frequency distribution</md:keyword>
+    <md:keyword>relative frequency table</md:keyword>
+    <md:keyword>sample mean</md:keyword>
+    <md:keyword>sampling distribution</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="element-848">The "center" of a data set is also a way of describing location.
+The two most widely used measures of the "center" of the data are the <term>mean</term> (average) and the <term>median</term>. To calculate the <emphasis>mean weight</emphasis> of 50 people, add the 50 weights together and divide by 50. To find the <emphasis> median weight</emphasis> of the 50 people, order the data and find the number that splits the data into two equal parts. The median is generally a better measure of the center when there are extreme values or outliers because it is not affected by the precise numerical values of the outliers. The mean is the most common measure of the center.</para>
+
+<note id="eip-13"><label/>
+<title>NOTE</title>
+<para id="fs-idp62684352">The words &#8220;mean&#8221; and &#8220;average&#8221; are often used interchangeably. The substitution of one word for the other is common practice. The technical term is &#8220;arithmetic mean&#8221; and &#8220;average&#8221; is technically a center location. However, in practice among non-statisticians, &#8220;average" is commonly accepted for &#8220;arithmetic mean.&#8221;</para></note>
+
+<para id="element-44">When each value in the data set is not unique, the mean can be calculated by multiplying each distinct value by its frequency and then dividing the sum by the total number of data values. The letter used to represent the <emphasis>sample mean</emphasis> is an <emphasis effect="italics">x</emphasis> with a bar over it (pronounced &#8220;<emphasis effect="italics">x</emphasis> bar&#8221;): <m:math><m:apply><m:conjugate/><m:ci>x</m:ci></m:apply></m:math>.</para><para id="element-705">The Greek letter <emphasis effect="italics">&#956;</emphasis> (pronounced "mew") represents the <emphasis>population mean</emphasis>. One of the requirements for the <emphasis>sample mean</emphasis> to be a good estimate of the <emphasis>population mean</emphasis> is for the sample taken to be truly random.</para>
+
+<para id="element-228">To see that both ways of calculating the mean are the same, consider the sample:
+<newline/>1; 1; 1; 2; 2; 3; 4; 4; 4; 4; 4</para><equation id="element-46"><m:math>
+<m:mover>
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+<m:mo>=</m:mo>
+<m:mfrac>
+<m:mrow>
+<m:mn>1</m:mn>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+<m:mo>+</m:mo>
+<m:mn>2</m:mn>
+<m:mo>+</m:mo>
+<m:mn>2</m:mn>
+<m:mo>+</m:mo>
+<m:mn>3</m:mn>
+<m:mo>+</m:mo>
+<m:mn>4</m:mn>
+<m:mo>+</m:mo>
+<m:mn>4</m:mn>
+<m:mo>+</m:mo>
+<m:mn>4</m:mn>
+<m:mo>+</m:mo>
+<m:mn>4</m:mn>
+<m:mo>+</m:mo>
+<m:mn>4</m:mn>
+</m:mrow>
+<m:mn>11</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo>
+<m:mn>2.7</m:mn>
+</m:math>
+</equation>
+<equation id="element-662"><m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>3</m:mn><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>2</m:mn><m:mo stretchy="false">(</m:mo><m:mn>2</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>1</m:mn><m:mo stretchy="false">(</m:mo><m:mn>3</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>5</m:mn><m:mo stretchy="false">(</m:mo><m:mn>4</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>11</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>2.7</m:mn>
+ </m:mrow>
+</m:math></equation><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-180">In the second calculation, the frequencies are 3, 2, 1, and 5.</para><para id="element-429">You can quickly find the location of the median by using the expression <m:math>
+<m:mfrac>
+<m:mrow>
+<m:mi>n</m:mi>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:math>.</para>
+
+<para id="element-860">The letter <emphasis effect="italics">n</emphasis> is the total number of data values in the sample. If <emphasis effect="italics">n</emphasis> is an odd number, the median is the middle value of the ordered data (ordered smallest to largest). If <emphasis effect="italics">n</emphasis> is an even number, the median is equal to the two middle values added together and divided by two after the data has been ordered. For example, if the total number of data values is 97, then <m:math>
+<m:mfrac>
+<m:mrow>
+<m:mi>n</m:mi>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:math>=
+<m:math>
+<m:mfrac>
+<m:mrow>
+<m:mn>97</m:mn>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:math> = 49. The median is the 49<sup>th</sup> value in the ordered data. If the total number of data values is 100, then <m:math>
+<m:mfrac>
+<m:mrow>
+<m:mi>n</m:mi>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:math>=
+<m:math>
+<m:mfrac>
+<m:mrow>
+<m:mn>100</m:mn>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:math> = 50.5. The median occurs midway between the 50<sup>th</sup> and 51<sup>st</sup> values. The location of the median and the value of the median are <emphasis>not</emphasis> the same. The upper case letter <emphasis effect="italics">M</emphasis> is often used to represent the median. The next example illustrates the location of the median and the value of the median.</para><example id="element-3">
+<exercise id="exer4">
+<problem id="id45306962">
+<para id="element-226">AIDS data indicating the number of months a patient with AIDS lives after taking a new antibody drug are as follows (smallest to largest):
+<newline/>3; 4; 8; 8; 10; 11; 12; 13; 14; 15; 15; 16; 16; 17; 17; 18; 21; 22; 22; 24; 24; 25; 26; 26; 27; 27; 29; 29; 31; 32; 33; 33; 34; 34; 35; 37; 40; 44; 44; 47;
+<newline/>Calculate the mean and the median.</para></problem>
+<solution id="id45386042">
+<para id="element-471">The calculation for the mean is:</para>
+<para id="element-197"><m:math>
+<m:mover>
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+<m:mo>=</m:mo>
+<m:mfrac>
+<m:mrow>
+<m:mo>[</m:mo>
+<m:mn>3</m:mn>
+<m:mo>+</m:mo>
+<m:mn>4</m:mn>
+<m:mo>+</m:mo>
+<m:mo>(</m:mo>
+<m:mn>8</m:mn>
+<m:mo>)</m:mo>
+<m:mo>(</m:mo>
+<m:mn>2</m:mn>
+<m:mo>)</m:mo>
+<m:mo>+</m:mo>
+<m:mn>10</m:mn>
+<m:mo>+</m:mo>
+<m:mn>11</m:mn>
+<m:mo>+</m:mo>
+<m:mn>12</m:mn>
+<m:mo>+</m:mo>
+<m:mn>13</m:mn>
+<m:mo>+</m:mo>
+<m:mn>14</m:mn>
+<m:mo>+</m:mo>
+<m:mo>(</m:mo>
+<m:mn>15</m:mn>
+<m:mo>)</m:mo>
+<m:mo>(</m:mo>
+<m:mn>2</m:mn>
+<m:mo>)</m:mo>
+<m:mo>+</m:mo>
+<m:mo>(</m:mo>
+<m:mn>16</m:mn>
+<m:mo>)</m:mo>
+<m:mo>(</m:mo>
+<m:mn>2</m:mn>
+<m:mo>)</m:mo>
+<m:mo>+</m:mo>
+<m:mtext>...</m:mtext>
+<m:mo>+</m:mo>
+<m:mn>35</m:mn>
+<m:mo>+</m:mo>
+<m:mn>37</m:mn>
+<m:mo>+</m:mo>
+<m:mn>40</m:mn>
+<m:mo>+</m:mo>
+<m:mo>(</m:mo>
+<m:mn>44</m:mn>
+<m:mo>)</m:mo>
+<m:mo>(</m:mo>
+<m:mn>2</m:mn>
+<m:mo>)</m:mo>
+<m:mo>+</m:mo>
+<m:mn>47</m:mn>
+<m:mo>]</m:mo>
+</m:mrow>
+<m:mn>40</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo>
+<m:mi>23.6</m:mi>
+</m:math>
+<newline/>To find the median, <emphasis effect="italics">M</emphasis>, first use the formula for the location. The location is:
+<newline/><m:math>
+<m:mfrac>
+<m:mrow>
+<m:mi>n</m:mi>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo>
+<m:mfrac>
+<m:mrow>
+<m:mn>40</m:mn>
+<m:mo>+</m:mo>
+<m:mn>1</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo>
+<m:mn>20.5</m:mn>
+</m:math>
+<newline/>Starting at the smallest value, the median is located between the 20<sup>th</sup> and 21<sup>st</sup> values (the two 24s):
+<newline/>3; 4; 8; 8; 10; 11; 12; 13; 14; 15; 15; 16; 16; 17; 17; 18; 21; 22; 22; 24; 24; 25; 26; 26; 27; 27; 29; 29; 31; 32; 33; 33; 34; 34; 35; 37; 40; 44; 44; 47;</para><para id="element-904">
+<m:math>
+<m:mi>M</m:mi>
+<m:mo>=</m:mo>
+<m:mfrac>
+<m:mrow>
+<m:mn>24</m:mn>
+<m:mo>+</m:mo>
+<m:mn>24</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo>
+<m:mn>24</m:mn>
+</m:math>
+</para>
+</solution>
+</exercise>
+</example>
+
+<note id="fs-idp50763088" class="statistics calculator">
+<label/>
+<para id="fs-idp54507328">To find the mean and the median:</para>
+<para id="fs-idp87775312">Clear list L1.  Pres STAT 4:ClrList. Enter 2nd 1 for list L1. Press ENTER.</para>
+<para id="fs-idm47103392">Enter data into the list editor.  Press STAT 1:EDIT.</para>
+<para id="fs-idp45529696">Put the data values into list L1.</para>
+<para id="fs-idp33349200">Press STAT and arrow to CALC.  Press 1:1-VarStats. Press 2nd 1 for L1 and then ENTER.</para>
+<para id="fs-idp46064432">Press the down and up arrow keys to scroll.</para>
+<para id="fs-idp50820000"><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+</m:math> = 23.6, <emphasis effect="italics">M</emphasis> = 24</para>
+</note>
+
+<note id="fs-idp48953680" class="statistics try">
+<label/><title>Try It</title>
+<exercise id="fs-idm28353888"><problem id="fs-idm72704208">
+<para id="fs-idm46796800">The following data show the number of months patients typically wait on a transplant list before getting surgery. The data are ordered from smallest to largest. Calculate the mean and median.</para><para id="fs-idm114142640">
+<list list-type="labeled-item" display="inline">
+<item>3</item>
+<item>4</item>
+<item>5</item>
+<item>7</item>
+<item>7</item>
+<item>7</item>
+<item>7</item>
+<item>8</item>
+<item>8</item>
+<item>9</item>
+<item>9</item>
+<item>10</item>
+<item>10</item>
+<item>10</item>
+<item>10</item>
+<item>10</item>
+<item>11</item>
+<item>12</item>
+<item>12</item>
+<item>13</item>
+<item>14</item>
+<item>14</item>
+<item>15</item>
+<item>15</item>
+<item>17</item>
+<item>17</item>
+<item>18</item>
+<item>19</item>
+<item>19</item>
+<item>19</item>
+<item>21</item>
+<item>21</item>
+<item>22</item>
+<item>22</item>
+<item>23</item>
+<item>24</item>
+<item>24</item>
+<item>24</item>
+<item>24</item>
+</list></para>
+</problem>
+</exercise></note>
+
+<example id="element-231">
+<exercise id="exer6">
+<problem id="id45393377">
+<para id="element-213">Suppose that in a small town of 50 people, one person earns $5,000,000 per year and the other 49 each earn $30,000. Which is the better measure of the "center": the mean or the median?</para></problem>
+<solution id="id45393396">
+<para id="element-444"><m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>5</m:mn><m:mo>,</m:mo><m:mn>000</m:mn><m:mo>,</m:mo><m:mn>000</m:mn><m:mo>+</m:mo><m:mn>49</m:mn><m:mo stretchy="false">(</m:mo><m:mn>30</m:mn><m:mo>,</m:mo><m:mn>000</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>129,400</m:mn>
+ </m:mrow>
+</m:math></para><para id="element-311"><emphasis effect="italics">M</emphasis> = 30,000
+</para><para id="element-831">(There are 49 people who earn $30,000 and one person who earns $5,000,000.)</para>
+<para id="element-564">The median is a better measure of the "center" than the mean because 49 of  the values are 30,000 and one is 5,000,000.  The 5,000,000 is an outlier.  The 30,000 gives us a better sense of the middle of the data.</para>
+</solution>
+</exercise>
+</example>
+
+<note id="fs-idp18783360" class="statistics try">
+<label/><title>Try It</title>
+<exercise id="fs-idm79009152"><problem id="fs-idm79009024"><para id="fs-idm10019504">In a sample of 60 households, one house is worth $2,500,000. Half of the rest are worth $280,000, and all the others are worth $315,000. Which is the better measure of the &#8220;center&#8221;: the mean or the median?</para></problem>
+
+</exercise></note>
+
+<para id="element-584">Another measure of the center is the mode. The <term>mode</term> is the most frequent value. There can be more than one mode in a data set as long as those values have the same frequency and that frequency is the highest. A data set with two modes is called bimodal.</para>
+
+<example id="element-114"><para id="element-639">Statistics exam scores for 20 students are as follows:</para>
+<para id="element-104"><list id="set-536" list-type="labeled-item" display="inline">
+<item>50</item><item>53</item><item>59</item><item>59</item><item>63</item><item>63</item><item>72</item><item>72</item><item>72</item><item>72</item><item>72</item><item>76</item><item>78</item><item>81</item><item>83</item><item>84</item><item>84</item><item>84</item><item>90</item><item>93</item></list>
+</para><exercise id="exer3">
+<problem id="id44835721">
+<para id="element-32535">Find the mode.</para>
+</problem>
+<solution id="id44835735">
+<para id="element-76">The most frequent score is 72, which occurs five times. Mode  =  72.</para>
+</solution>
+</exercise>
+</example>
+
+<note id="fs-idp45793968" class="statistics try">
+<label/><title>Try It</title>
+<exercise id="fs-idm24402032"><problem id="fs-idm24643648"><para id="fs-idp74555792">The number of books checked out from the library from 25 students are as follows:</para>
+<para id="fs-idm901328"><list list-type="labeled-item" display="inline"><item>0</item><item>0</item><item>0</item><item>1</item><item>2</item><item>3</item><item>3</item><item>4</item><item>4</item><item>5</item><item>5</item><item>7</item><item>7</item><item>7</item><item>7</item><item>8</item><item>8</item><item>8</item><item>9</item><item>10</item><item>10</item><item>11</item><item>11</item><item>12</item><item>12</item></list>
+<newline/>Find the mode.
+</para>
+</problem>
+</exercise></note>
+
+<example id="element-725">
+<para id="element-622">Five real estate exam scores are 430, 430, 480, 480, 495. The data set is bimodal because the scores 430 and 480 each occur twice.</para>
+<para id="element-353">When is the mode the best measure of the "center"? Consider a weight loss program that advertises a mean weight loss of six pounds the first week of the program. The mode might indicate that most people lose two pounds the first week, making the program less appealing.</para>
+<note id="eip-146"><label/><title>NOTE</title>
+<para id="fs-idm78257648">The mode can be calculated for qualitative data as well as for quantitative data. For example, if the data set is: red, red, red, green, green, yellow, purple, black, blue, the mode is red.</para></note>
+
+<para id="element-660" class="finger">Statistical software will easily calculate the mean, the median, and the mode. Some graphing calculators can also make these calculations.  In the real world, people make these calculations using software.</para>
+</example>
+
+<note id="fs-idp55881696" class="statistics try"><label/><title>Try It</title>
+<exercise id="fs-idm2098096"><problem id="fs-idm2097968">
+<para id="fs-idm5923360">Five credit scores are 680, 680, 700, 720, 720. The data set is bimodal because the scores 680 and 720 each occur twice. Consider the annual earnings of workers at a factory. The mode is $25,000 and occurs 150 times out of 301. The median is $50,000 and the mean is $47,500. What would be the best measure of the &#8220;center&#8221;?</para></problem>
+</exercise>
+</note><section id="element-282">
+<title>The Law of Large Numbers and the Mean</title>
+<para id="element-41">The Law of Large Numbers says that if you take samples of larger and larger size from any population, then the mean <m:math><m:mover><m:mi>x</m:mi><m:mo>&#175;</m:mo></m:mover></m:math> of the sample is very likely to get closer and closer to <emphasis effect="italics">&#181;</emphasis>. This is discussed in more detail later in the text.</para>
+</section>
+
+<section id="eip-529">
+<title>Sampling Distributions and Statistic of a Sampling Distribution</title>
+<para id="eip-568">You can think of a <term>sampling distribution</term> as a <emphasis> relative frequency distribution</emphasis> with a great many samples. (See <emphasis>Sampling and Data</emphasis> for a review of relative frequency). Suppose thirty randomly selected students were asked the number of movies they watched the previous week. The results are in the <emphasis>relative frequency table</emphasis> shown below.</para>
+<table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="rel_freq_table" summary="The table presents the number of movies 30 students watched in the previous week. The first column lists the number of movies from 0-4 and the second column lists the relative frequencies.">
+<tgroup cols="2"><thead>
+<row>
+<entry># of movies</entry>
+<entry>Relative Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>5</m:mn>
+   <m:mrow>
+    <m:mn>30</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</entry>
+</row>
+<row>
+<entry>1</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>15</m:mn>
+   <m:mrow>
+    <m:mn>30</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>6</m:mn>
+   <m:mrow>
+    <m:mn>30</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>3</m:mn>
+   <m:mrow>
+    <m:mn>30</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>30</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table><para id="eip-7"><emphasis>If you let the number of samples get very large (say, 300 million or more), the relative frequency table becomes a relative frequency distribution</emphasis>.</para>
+<para id="eip-309">A <emphasis>statistic</emphasis> is a number calculated from a sample. Statistic examples include the mean, the median and the mode as well as others.  The sample mean <m:math><m:mover><m:mi>x</m:mi><m:mo>&#175;</m:mo></m:mover></m:math> is an example of a statistic which estimates the population mean <emphasis effect="italics">&#956;</emphasis>.</para></section>
+
+<section id="fs-idp28527728">
+<title>Calculating the Mean of Grouped Frequency Tables</title>
+ <para id="fs-idp16870784">When only grouped data is available, you do not know the individual data values (we only know intervals and interval frequencies); therefore, you cannot compute an exact mean for the data set. What we must do is estimate the actual mean by calculating the mean of a frequency table. A frequency table is a data representation in which grouped data is displayed along with the corresponding frequencies. To calculate the mean from a grouped frequency table we can apply the basic definition of mean: <emphasis effect="italics">mean</emphasis> = <m:math><m:mrow>
+  <m:mfrac>
+   <m:mrow>    <m:mi>d</m:mi><m:mi>a</m:mi><m:mi>t</m:mi><m:mi>a</m:mi><m:mtext>&#160;</m:mtext><m:mi>s</m:mi><m:mi>u</m:mi><m:mi>m</m:mi>
+   </m:mrow>
+   <m:mrow>    <m:mi>n</m:mi><m:mi>u</m:mi><m:mi>m</m:mi><m:mi>b</m:mi><m:mi>e</m:mi><m:mi>r</m:mi><m:mtext>&#160;</m:mtext><m:mi>o</m:mi><m:mi>f</m:mi><m:mtext>&#160;</m:mtext><m:mi>d</m:mi><m:mi>a</m:mi><m:mi>t</m:mi><m:mi>a</m:mi><m:mtext>&#160;</m:mtext><m:mi>v</m:mi><m:mi>a</m:mi><m:mi>l</m:mi><m:mi>u</m:mi><m:mi>e</m:mi><m:mi>s</m:mi>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> We simply need to modify the definition to fit within the restrictions of a frequency table.</para>
+<para id="fs-idp28261664">Since we do not know the individual data values we can instead find the midpoint of each interval. The midpoint is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow> <m:mi>l</m:mi><m:mi>o</m:mi><m:mi>w</m:mi><m:mi>e</m:mi><m:mi>r</m:mi><m:mtext>&#160;</m:mtext><m:mi>b</m:mi><m:mi>o</m:mi><m:mi>u</m:mi><m:mi>n</m:mi><m:mi>d</m:mi><m:mi>a</m:mi><m:mi>r</m:mi><m:mi>y</m:mi><m:mo>+</m:mo><m:mi>u</m:mi><m:mi>p</m:mi><m:mi>p</m:mi><m:mi>e</m:mi><m:mi>r</m:mi><m:mtext>&#160;</m:mtext><m:mi>b</m:mi><m:mi>o</m:mi><m:mi>u</m:mi><m:mi>n</m:mi><m:mi>d</m:mi><m:mi>a</m:mi><m:mi>r</m:mi><m:mi>y</m:mi>
+   </m:mrow>
+   <m:mn>2</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>. We can now modify the mean definition to be <m:math><m:mrow>   <m:mi>M</m:mi><m:mi>e</m:mi><m:mi>a</m:mi><m:mi>n</m:mi><m:mtext>&#160;</m:mtext><m:mi>o</m:mi><m:mi>f</m:mi><m:mtext>&#160;</m:mtext><m:mi>F</m:mi><m:mi>r</m:mi><m:mi>e</m:mi><m:mi>q</m:mi><m:mi>u</m:mi><m:mi>e</m:mi><m:mi>n</m:mi><m:mi>c</m:mi><m:mi>y</m:mi><m:mtext>&#160;</m:mtext><m:mi>T</m:mi><m:mi>a</m:mi><m:mi>b</m:mi><m:mi>l</m:mi><m:mi>e</m:mi><m:mo>=</m:mo><m:mfrac>
+    <m:mrow>
+     <m:mstyle displaystyle="true">
+      <m:mo>&#8721;</m:mo> <m:mrow>
+       <m:mi>f</m:mi><m:mi>m</m:mi>
+      </m:mrow>
+     </m:mstyle>
+    </m:mrow>
+    <m:mrow>
+     <m:mstyle displaystyle="true">
+      <m:mo>&#8721;</m:mo> <m:mi>f</m:mi>
+     </m:mstyle>
+    </m:mrow>
+   </m:mfrac></m:mrow></m:math> where <emphasis effect="italics">f</emphasis> = the frequency of the interval and <emphasis effect="italics">m</emphasis> = the midpoint of the interval.</para>
+
+<example id="fs-idp59127680">
+<exercise id="fs-idp61839840">
+<problem id="fs-idp47622112">
+<para id="fs-idm6896112">A frequency table displaying professor Blount&#8217;s last statistic test is shown. Find the best estimate of the class mean.</para>
+<table id="fs-idp32456976" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row><entry>Grade Interval</entry>	<entry>Number of Students</entry></row>
+</thead>
+<tbody>
+<row><entry>50&#8211;56.5</entry>	<entry>1</entry></row>
+<row><entry>56.5&#8211;62.5</entry>	<entry>0</entry></row>
+<row><entry>62.5&#8211;68.5</entry>	<entry>4</entry></row>
+<row><entry>68.5&#8211;74.5</entry>	<entry>4</entry></row>
+<row><entry>74.5&#8211;80.5</entry>	<entry>2</entry></row>
+<row><entry>80.5&#8211;86.5</entry>	<entry>3</entry></row>
+<row><entry>86.5&#8211;92.5</entry>	<entry>4</entry></row>
+<row><entry>92.5&#8211;98.5</entry>	<entry>1</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+
+<solution id="fs-idp56820112">
+<list id="fs-idp26414448" list-type="bulleted">
+<item>Find the midpoints for all intervals</item>
+</list>
+<table id="fs-idp15194576" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row><entry>Grade Interval</entry>	<entry>Midpoint</entry></row>
+</thead>
+<tbody>
+<row><entry>50&#8211;56.5</entry>	<entry>53.25</entry></row>
+<row><entry>56.5&#8211;62.5</entry>	<entry>59.5</entry></row>
+<row><entry>62.5&#8211;68.5</entry>	<entry>65.5</entry></row>
+<row><entry>68.5&#8211;74.5</entry>	<entry>71.5</entry></row>
+<row><entry>74.5&#8211;80.5</entry>	<entry>77.5</entry></row>
+<row><entry>80.5&#8211;86.5</entry>	<entry>83.5</entry></row>
+<row><entry>86.5&#8211;92.5</entry>	<entry>89.5</entry></row>
+<row><entry>92.5&#8211;98.5</entry>	<entry>95.5</entry></row>
+</tbody>
+</tgroup>
+</table>
+
+<list id="fs-idp72598816" list-type="bulleted"><item>Calculate the sum of the product of each interval frequency and midpoint.<m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mstyle mathsize="140%" displaystyle="true"><m:mo>&#8721;</m:mo></m:mstyle>
+   <m:mtext>&#8203;</m:mtext>
+  </m:msup>
+  <m:mi>f</m:mi><m:mi>m</m:mi>
+ </m:mrow>
+</m:math><newline count="2"/><m:math>
+   <m:mrow>
+   <m:mn>53.25</m:mn><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>59.5</m:mn><m:mo stretchy="false">(</m:mo><m:mn>0</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>65.5</m:mn><m:mo stretchy="false">(</m:mo><m:mn>4</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>71.5</m:mn><m:mo stretchy="false">(</m:mo><m:mn>4</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>77.5</m:mn><m:mo stretchy="false">(</m:mo><m:mn>2</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>83.5</m:mn><m:mo stretchy="false">(</m:mo><m:mn>3</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>89.5</m:mn><m:mo stretchy="false">(</m:mo><m:mn>4</m:mn><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mn>95.5</m:mn><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>1460.25</m:mn>
+  </m:mrow>
+</m:math></item>
+<item><m:math>
+ <m:semantics>
+  <m:mrow>
+   <m:mi>&#956;</m:mi><m:mo>=</m:mo><m:mfrac>
+    <m:mrow>
+     <m:mstyle displaystyle="true">
+      <m:mo>&#8721;</m:mo> <m:mrow>
+       <m:mi>f</m:mi><m:mi>m</m:mi>
+      </m:mrow>
+     </m:mstyle>
+    </m:mrow>
+    <m:mrow>
+     <m:mstyle displaystyle="true">
+      <m:mo>&#8721;</m:mo> <m:mi>f</m:mi>
+     </m:mstyle>
+    </m:mrow>
+   </m:mfrac>
+   <m:mo>=</m:mo><m:mfrac>
+    <m:mrow>
+     <m:mn>1460.25</m:mn>
+    </m:mrow>
+    <m:mrow>
+     <m:mn>19</m:mn>
+    </m:mrow>
+   </m:mfrac>
+   <m:mo>=</m:mo><m:mn>76.86</m:mn>
+  </m:mrow>
+ </m:semantics>
+</m:math></item>
+</list></solution>
+</exercise>
+</example>
+
+<note id="fs-idm52755520" class="statistics try"><label/><title>Try It</title>
+<exercise id="fs-idp22476928">
+<problem id="fs-idp50951968">
+<para id="fs-idm11216000">Maris conducted a study on the effect that playing video games has on memory recall. As part of her study, she compiled the following data:</para>
+<table id="fs-idm6918832" summary="">
+<tgroup cols="2">
+<thead><row><entry>Hours Teenagers Spend on Video Games</entry>	<entry>Number of Teenagers</entry></row></thead>
+<tbody>
+<row><entry>0&#8211;3.5</entry><entry>3</entry></row>
+<row><entry>3.5&#8211;7.5</entry><entry>7</entry></row>
+<row><entry>7.5&#8211;11.5</entry><entry>12</entry></row>
+<row><entry>11.5&#8211;15.5</entry><entry>7</entry></row>
+<row><entry>15.5&#8211;19.5</entry><entry>9</entry></row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idp10596832">What is the best estimate for the mean number of hours spent playing video games?</para>
+</problem>
+</exercise>
+</note></section>
+
+<section id="fs-idp2891248" class="references">
+<title>References</title>
+<para id="fs-idp41166864">Data from The World Bank, available online at http://www.worldbank.org (accessed April 3, 2013).</para>
+<para id="fs-idp18149184">&#8220;Demographics: Obesity &#8211; adult prevalence rate.&#8221; Indexmundi. Available online at http://www.indexmundi.com/g/r.aspx?t=50&amp;v=2228&amp;l=en (accessed April 3, 2013).</para>
+</section>
+
+<section id="fs-idm7033248" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm18283152">The mean and the median can be calculated to help you find the "center" of a data set. The mean is the best estimate for the actual data set, but the median is the best measurement when a data set contains several outliers or extreme values. The mode will tell you the most frequently occuring datum (or data) in your data set. The mean, median, and mode are extremely helpful when you need to analyze your data, but if your data set consists of ranges which lack specific values, the mean may seem impossible to calculate. However, the mean can be approximated if you add the lower boundary with the upper boundary and divide by two to find the midpoint of each interval. Multiply each midpoint by the number of values found in the corresponding range. Divide the sum of these values by the total number of data values in the set.</para></section>
+
+<section id="fs-idm345328" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idp28375264"><m:math>
+   <m:mrow>
+   <m:mi>&#956;</m:mi><m:mo>=</m:mo><m:mfrac>
+    <m:mrow>
+     <m:mstyle displaystyle="true">
+      <m:mo>&#8721;</m:mo> <m:mrow>
+       <m:mi>f</m:mi><m:mi>m</m:mi>
+      </m:mrow>
+     </m:mstyle>
+    </m:mrow>
+    <m:mrow>
+     <m:mstyle displaystyle="true">
+      <m:mo>&#8721;</m:mo> <m:mi>f</m:mi>
+     </m:mstyle>
+    </m:mrow>
+   </m:mfrac>
+
+  </m:mrow>
+
+</m:math> Where <emphasis effect="italics">f</emphasis> = interval frequencies and <emphasis effect="italics">m</emphasis> = interval midpoints.</para></section>
+
+<section id="fs-idp67676496" class="practice">
+<exercise id="fs-idp11191056">
+<problem id="fs-idp72176256">
+<para id="fs-idp29942336">Find the mean for the following frequency tables.</para>
+<list id="fs-idp39027888" list-type="enumerated" number-style="lower-alpha"><item><table id="fs-idp4665840" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead><row><entry>Grade</entry>	<entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>49.5&#8211;59.5</entry><entry>2</entry></row>
+<row><entry>59.5&#8211;69.5</entry><entry>3</entry></row>
+<row><entry>69.5&#8211;79.5</entry><entry>8</entry></row>
+<row><entry>79.5&#8211;89.5</entry><entry>12</entry></row>
+<row><entry>89.5&#8211;99.5</entry><entry>5</entry></row>
+</tbody>
+</tgroup>
+</table>
+</item>
+<item><table id="fs-idp21318848" summary="">
+<tgroup cols="2">
+<thead><row><entry>Daily Low Temperature</entry>
+<entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>49.5&#8211;59.5</entry><entry>53</entry></row>
+<row><entry>59.5&#8211;69.5</entry><entry>32</entry></row>
+<row><entry>69.5&#8211;79.5</entry><entry>15</entry></row>
+<row><entry>79.5&#8211;89.5</entry><entry>1</entry></row>
+<row><entry>89.5&#8211;99.5</entry><entry>0</entry></row>
+</tbody>
+</tgroup>
+</table>
+</item>
+<item><table id="fs-idp49142800" summary="">
+<tgroup cols="2">
+<thead><row><entry>Points per Game</entry>
+<entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>49.5&#8211;59.5</entry><entry>14</entry></row>
+<row><entry>59.5&#8211;69.5</entry><entry>32</entry></row>
+<row><entry>69.5&#8211;79.5</entry><entry>15</entry></row>
+<row><entry>79.5&#8211;89.5</entry><entry>23</entry></row>
+<row><entry>89.5&#8211;99.5</entry><entry>2</entry></row>
+</tbody>
+</tgroup>
+</table>
+</item>
+</list>
+</problem>
+</exercise>
+
+<para id="eip-193"><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> The following data show the lengths of boats moored in a marina. The data are ordered from smallest to largest:
+<list list-type="labeled-item" display="inline">
+<item>16</item><item>17</item><item>19</item><item>20</item><item>20</item><item>21</item><item>23</item><item>24</item><item>25</item><item>25</item><item>25</item><item>26</item><item>26</item><item>27</item><item>27</item><item>27</item><item>28</item><item>29</item><item>30</item><item>32</item><item>33</item><item>33</item><item>34</item><item>35</item><item>37</item><item>39</item><item>40</item></list></para><exercise id="fs-idp3713376">
+<problem id="fs-idp45051248">
+<para id="fs-idp72372672">Calculate the mean.</para>
+</problem>
+
+<solution id="fs-idp54737296">
+<para id="fs-idp31759600">Mean: 16 + 17 + 19 + 20 + 20 + 21 + 23 + 24 + 25 + 25 + 25 + 26 + 26 + 27 + 27 + 27 + 28 + 29 + 30 + 32 + 33 + 33 + 34 + 35 + 37 + 39 + 40 = 738;</para><para id="fs-idp62762816"><m:math><m:mrow><m:mfrac>
+    <m:mrow><m:mn>738</m:mn></m:mrow>
+    <m:mrow><m:mn>27</m:mn></m:mrow></m:mfrac></m:mrow>
+   </m:math> = 27.33</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp23937584">
+<problem id="fs-idm6016496">
+<para id="fs-idp65368416">Identify the median.</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm35941040">
+<problem id="fs-idp155088">
+<para id="fs-idp27706128">Identify the mode.</para>
+</problem>
+<solution id="fs-idm53012848">
+<para id="fs-idp8367280">The most frequent lengths are 25 and 27, which occur three times. Mode = 25, 27</para>
+</solution>
+</exercise>
+
+<para id="fs-idp43142960"><newline/><emphasis effect="italics">Use the following information to answer the next three exercises:</emphasis> Sixty-five randomly selected car salespersons were asked the number of cars they generally sell in one week. Fourteen people answered that they generally sell three cars; nineteen generally sell four cars; twelve generally sell five cars; nine generally sell six cars; eleven generally sell seven cars. Calculate the following:</para><exercise id="exercisefour">
+<problem id="id5461618">
+<para id="prob_4">sample mean = <m:math>
+<m:apply>
+  <m:conjugate/>
+  <m:ci>x</m:ci>
+</m:apply>
+</m:math> = _______
+</para></problem>
+</exercise>
+
+<exercise id="eip-83"><problem id="eip-718">
+  <para id="eip-423">median = _______</para>
+</problem>
+
+<solution id="eip-288">
+  <para id="eip-669">4</para>
+</solution>
+</exercise>
+
+<exercise id="eip-630">
+<problem id="eip-353">
+  <para id="eip-212">mode = _______</para>
+</problem>
+</exercise>
+</section>
+
+
+<section id="fs-idm59277808" class="free-response">
+<title>Homework</title>
+<exercise id="eip-735"><problem id="eip-618">
+<para id="eip-506">The most obese countries in the world have obesity rates that range from 11.4% to 74.6%. This data is summarized in the following table.</para>
+
+<table id="eip-456" summary="Table....">
+<tgroup cols="2"><thead>
+  <row>
+    <entry>Percent of Population Obese</entry>
+    <entry>Number of Countries</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>11.4&#8211;20.45</entry>
+    <entry>29</entry>
+  </row>
+  <row>
+    <entry>20.45&#8211;29.45</entry>
+    <entry>13</entry>
+  </row>
+  <row>
+    <entry>29.45&#8211;38.45</entry>
+    <entry>4</entry>
+  </row>
+  <row>
+    <entry>38.45&#8211;47.45</entry>
+    <entry>0</entry>
+  </row>
+  <row>
+    <entry>47.45&#8211;56.45</entry>
+    <entry>2</entry>
+  </row>
+  <row>
+    <entry>56.45&#8211;65.45</entry>
+    <entry>1</entry>
+  </row>
+  <row>
+    <entry>65.45&#8211;74.45</entry>
+    <entry>0</entry>
+  </row>
+  <row>
+    <entry>74.45&#8211;83.45</entry>
+    <entry>1</entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table><list id="eip-idm42348400" list-type="enumerated" number-style="lower-alpha"><item>What is the best estimate of the average obesity percentage for these countries?</item>
+<item>The United States has an average obesity rate of 33.9%. Is this rate above average or below?</item>
+<item>How does the United States compare to other countries?</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="eip-17">
+<problem id="eip-369">
+  <para id="eip-474"><link target-id="eip-456s" document=""/> gives the percent of children under five considered to be underweight. What is the best estimate for the mean percentage of underweight children?</para>
+<table id="eip-456s" summary="Table....">
+<tgroup cols="2"><thead>
+  <row>
+    <entry>Percent of Underweight Children</entry>
+    <entry>Number of Countries</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>16&#8211;21.45</entry>
+    <entry>23</entry>
+  </row>
+  <row>
+    <entry>21.45&#8211;26.9</entry>
+    <entry>4</entry>
+  </row>
+  <row>
+    <entry>26.9&#8211;32.35</entry>
+    <entry>9</entry>
+  </row>
+  <row>
+    <entry>32.35&#8211;37.8</entry>
+    <entry>7</entry>
+  </row>
+  <row>
+    <entry>37.8&#8211;43.25</entry>
+    <entry>6</entry>
+  </row>
+  <row>
+    <entry>43.25&#8211;48.7</entry>
+    <entry>1</entry>
+  </row>
+</tbody>
+
+
+</tgroup>
+</table></problem>
+
+<solution id="eip-492">
+  <para id="eip-517">
+    The mean percentage, <m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo stretchy="true">&#175;</m:mo>
+  </m:mover>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>1328.65</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>26.75</m:mn>
+ </m:mrow>
+</m:math>
+  </para>
+</solution>
+</exercise>
+
+</section><section id="fs-idm1725088" class="bring-together-homework"><title>Bringing It Together</title>
+<exercise id="element-832">
+<problem id="id6092616">
+<para id="JavErc">Javier and Ercilia are supervisors at a shopping mall. Each was given the task of estimating the mean distance that shoppers live from the mall. They each randomly surveyed 100 shoppers.  The samples yielded the following information.</para>
+<table id="element-72" summary="This table presents two shopping mall supervisors and their estimations of the mean distance shoppers live from the mall. Javier's data is in the second column and Ercilia is in the third column. The first row is for sample means and the second row is for standard deviations.">
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+  <row>
+    <entry/>
+    <entry>Javier</entry>
+    <entry>Ercilia</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry><m:math>
+<m:apply>
+  <m:conjugate/>
+  <m:ci>x</m:ci>
+</m:apply>
+</m:math></entry>
+    <entry>6.0 miles</entry>
+    <entry>6.0 miles</entry>
+  </row>
+  <row>
+    <entry><m:math><m:mi>s</m:mi></m:math></entry>
+    <entry>4.0 miles</entry>
+    <entry>7.0 miles</entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table>
+
+<list id="element-305" list-type="enumerated" number-style="lower-alpha">
+<item>How can you determine which survey was correct ?</item>
+<item>Explain what the difference in the results of the surveys implies about the data.</item>
+<item>If the two histograms depict the distribution of values for each supervisor, which one depicts Ercilia's sample?  How do you know?<newline/>
+<figure id="eip-idm218452576"><media id="id8387446" display="block" alt="This shows two histograms. The first histogram shows a fairly symmetrical distribution with a mode of 6. The second histogram shows a uniform distribution."><image src="fig-ch02_13_09.jpg" mime-type="image/jpg" width="450"/></media>
+</figure></item>
+<item>If the two box plots depict the distribution of values for each supervisor, which one depicts Ercilia&#8217;s sample?  How do you know?<newline/>
+<figure id="eip-idm179364784"><media id="id8629835" display="block" alt="This shows two horizontal boxplots. The first boxplot is graphed over a number line from 0 to 21. The first whisker extends from 0 to 1. The box begins at the first quartile, 1, and ends at the third quartile, 14. A vertical, dashed line marks the median at 6. The second whisker extends from the third quartile to the largest value, 21. The second boxplot is graphed over a number line from 0 to 12.  The first whisker extends from 0 to 4. The box begins at the first quartile, 4, and ends at the third quartile, 9. A vertical, dashed line marks the median at 6. The second whisker extends from the third quartile to the largest value, 12."><image src="fig-ch02_13_10.jpg" mime-type="image/jpg" width="450"/></media>
+</figure></item></list>
+</problem>
+</exercise>
+
+<para id="fs-idm4887840"><emphasis effect="italics">Use the following information to answer the next three exercises</emphasis>: We are interested in the number of years students in a particular elementary statistics class have lived in California. The information in the following table is from the entire section.
+  </para><table id="element-368" summary="This table presents the number of years students in a statistics class have lived in California. The first column lists the number of years and the second column lists the frequency.">
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+
+<thead>
+<row>
+<entry>Number of years</entry>
+<entry>Frequency</entry>
+<entry>Number of years</entry>
+<entry>Frequency</entry>
+</row>
+</thead>
+<tfoot>
+<row>
+<entry/>
+<entry/>
+<entry/>
+<entry>Total = 20</entry>
+</row>
+</tfoot>
+     <tbody>
+        <row>
+          <entry>7</entry>
+          <entry>1</entry>
+          <entry>22</entry>
+          <entry>1</entry>
+        </row>
+        <row>
+          <entry>14</entry>
+          <entry>3</entry>
+          <entry>23</entry>
+          <entry>1</entry>
+        </row>
+        <row>
+          <entry>15</entry>
+          <entry>1</entry>
+          <entry>26</entry>
+          <entry>1</entry>
+        </row>
+        <row>
+          <entry>18</entry>
+          <entry>1</entry>
+          <entry>40</entry>
+          <entry>2</entry>
+        </row>
+        <row>
+          <entry>19</entry>
+          <entry>4</entry>
+          <entry>42</entry>
+          <entry>2</entry>
+        </row>
+        <row>
+          <entry>20</entry>
+          <entry>3</entry>
+          <entry/>
+          <entry/>
+        </row>
+      </tbody>
+
+</tgroup>
+</table>
+<exercise id="element-84">
+<problem id="id4699277">
+    <para id="element-666">What is the <emphasis effect="italics">IQR</emphasis>?</para><list id="ni1" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>8</item>
+  <item>11</item>
+  <item>15</item>
+  <item>35</item>
+  </list></problem>
+  <solution id="id6016838">
+    <para id="element-991">a</para>
+  </solution>
+  </exercise>
+
+<exercise id="element-720"><problem id="id4942656">
+    <para id="element-780">What is the mode?</para>
+  <list id="ni2" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>19</item>
+  <item>19.5</item>
+<item>14 and 20</item>
+<item>22.65</item>
+</list></problem>
+</exercise>
+
+<exercise id="element-346">
+<problem id="id5971682">
+  <para id="element-972">Is this a sample or the entire population?</para>
+<list id="ni3" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>sample</item>
+<item>entire population</item>
+<item>neither</item>
+</list></problem>
+<solution id="id4081124">
+  <para id="element-366">b</para></solution>
+</exercise>
+</section>
+</content>
+
+
+<glossary>
+<definition id="fs-idm7751856">
+<term>Frequency Table</term>
+<meaning id="fs-idp28775440"> a data representation in which grouped data is displayed along with the corresponding frequencies</meaning>
+</definition>
+
+<definition id="mean">
+<term>Mean</term>
+<meaning id="id10578364"> a number that measures the central tendency of the data; a common name for mean is 'average.' The term 'mean' is a shortened form of 'arithmetic mean.' By definition, the mean for a sample (denoted by <m:math><m:apply><m:conjugate/><m:ci>x</m:ci></m:apply></m:math>) is <m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mtext>&#160;</m:mtext><m:mo>=</m:mo><m:mtext>&#160;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:mtext>Sum&#160;of&#160;all&#160;values&#160;in&#160;the&#160;sample</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mtext>Number&#160;of&#160;values&#160;in&#160;the&#160;sample</m:mtext>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>, and the mean for a population (denoted by <emphasis effect="italics">&#956;</emphasis>) is <m:math>
+ <m:mrow>
+  <m:mi>&#956;</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mtext>Sum&#160;of&#160;all&#160;values&#160;in&#160;the&#160;population</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mtext>Number&#160;of&#160;values&#160;in&#160;the&#160;population</m:mtext>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>.</meaning>
+</definition>
+
+<definition id="median">
+<term>Median</term>
+<meaning id="id44836016"> a number that separates ordered data into halves;  half the values are the same number or smaller than the median and half the values are the same number or larger than the median. The median may or may not be part of the data.</meaning>
+</definition>
+
+<definition id="fs-idp5033152">
+<term>Midpoint</term>
+<meaning id="fs-idp75012256"> the mean of an interval in a frequency table</meaning>
+</definition>
+
+<definition id="mode">
+<term>Mode</term>
+<meaning id="id44836043"> the value that appears most frequently in a set of data</meaning>
+</definition>
+</glossary>
+</document>

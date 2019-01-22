@@ -1,0 +1,1700 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="id5564559" module-id="" cnxml-version="0.7">
+  <title>Frequency, Frequency Tables, and Levels of Measurement</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46882/latest</md:content-url>
+  <md:content-id>m46882</md:content-id>
+  <md:title>Frequency, Frequency Tables, and Levels of Measurement</md:title>
+  <md:version>1.15</md:version>
+  <md:created>2013/07/19 00:42:23 -0500</md:created>
+  <md:revised>2018/08/24 15:41:28 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>cumulative relative frequency</md:keyword>
+    <md:keyword>frequency</md:keyword>
+    <md:keyword>frequency tables</md:keyword>
+    <md:keyword>interval scale</md:keyword>
+    <md:keyword>levels of measurement</md:keyword>
+    <md:keyword>nominal scale</md:keyword>
+    <md:keyword>ordinal scale</md:keyword>
+    <md:keyword>ratio scale</md:keyword>
+    <md:keyword>relative frequency</md:keyword>
+    <md:keyword>rounding</md:keyword>
+    <md:keyword>rounding off</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="fs-idp5986864">Once you have a set of data, you will need to organize it so that you can analyze how frequently each datum occurs in the set. However, when calculating the frequency, you may need to round your answers so that they are as precise as possible.</para><section id="fs-idm2552448"><title>Answers and Rounding Off</title><para id="id5602419">A simple way to round off answers is to carry your final answer one more decimal place than was present in the original data. Round off only the final answer. Do not round off any intermediate results, if possible. If it becomes necessary to round off intermediate results, carry them to at least twice as many decimal places as the final answer. For example, the average of the three quiz scores four, six, and nine is 6.3, rounded off to the nearest tenth, because the data are whole numbers. Most answers will be rounded off in this manner.</para><para id="id5164237">It is not necessary to reduce most fractions in this course. Especially in <link document="m46938">Probability Topics</link>, the chapter on probability, it is more helpful to leave an answer as an unreduced fraction.</para></section><section id="eip-109"><title>Levels of Measurement</title><para id="eip-192">The way a set of data is measured is called its <term>level of measurement</term>. Correct statistical procedures depend on a researcher being familiar with levels of measurement. Not every statistical operation can be used with every set of data. Data can be classified into four levels of measurement. They are (from lowest to highest level):</para><list id="eip-865"><item><emphasis>Nominal scale level</emphasis></item>
+<item><emphasis>Ordinal scale level</emphasis></item>
+<item><emphasis>Interval scale level</emphasis></item>
+<item><emphasis>Ratio scale level</emphasis></item></list><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-925">Data that is measured using a <term>nominal scale</term> is <emphasis>qualitative(categorical)</emphasis>. Categories, colors, names, labels and favorite foods along with yes or no responses are examples of nominal level data. Nominal scale data are not ordered. For example, trying to classify people according to their favorite food does not make any sense. Putting pizza first and sushi second is not meaningful.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-817">Smartphone companies are another example of nominal scale data. The data are the names of the companies that make smartphones, but there is no agreed upon order of these brands, even though people may have personal preferences. Nominal scale data cannot be used in calculations.</para><para id="eip-369">Data that is measured using an <term>ordinal scale</term> is similar to nominal scale data but there is a big difference. The ordinal scale data can be ordered. An example of ordinal scale data is a list of the top five national parks in the United States. The top five national parks in the United States can be ranked from one to five but we cannot measure differences between the data.</para><para id="eip-289">Another example of using the ordinal scale is a cruise survey where the responses to questions about the cruise are &#8220;excellent,&#8221; &#8220;good,&#8221; &#8220;satisfactory,&#8221; and &#8220;unsatisfactory.&#8221;  These responses are ordered from the most desired response to the least desired.  But the differences between two pieces of data cannot be measured. Like the nominal scale data, ordinal scale data cannot be used in calculations.</para><para id="eip-158">Data that is measured using the <term>interval scale</term> is similar to ordinal level data because it has a definite ordering but there is a difference between data. The differences between interval scale data can be measured though the data does not have a starting point.</para><para id="eip-134">Temperature scales like Celsius (C) and Fahrenheit (F) are measured by using the interval scale. In both temperature measurements, 40&#176; is equal to 100&#176; minus 60&#176;. Differences make sense. But 0 degrees does not because, in both scales, 0 is not the absolute lowest temperature. Temperatures like  -10&#176; F and -15&#176; C exist and are colder than 0.</para><para id="eip-435">Interval level data can be used in calculations, but one type of comparison cannot be done.  80&#176; C is not four times as hot as 20&#176; C (nor is 80&#176; F four times as hot as 20&#176; F). There is no meaning to the ratio of 80 to 20 (or four to one).</para><para id="eip-558">Data that is measured using the <term>ratio scale</term> takes care of the ratio problem and gives you the most information. Ratio scale data is like interval scale data, but it has a 0 point and ratios can be calculated. For example, four multiple choice statistics final exam scores are 80, 68, 20 and 92 (out of a possible 100 points). The exams are machine-graded.</para><para id="eip-53">The data can be put in order from lowest to highest:  20, 68, 80, 92.</para><para id="eip-750">The differences between the data have meaning. The score 92 is more than the score 68 by 24 points.
+Ratios can be calculated. The smallest score is 0. So 80 is four times 20. The score of 80 is four times better than the score of 20.</para></section><section id="eip-959"><title>Frequency</title><para id="id7489802">Twenty students were asked how many hours they worked per day. Their responses, in hours, are as follows: <list id="set-element-244" list-type="labeled-item" display="inline"><item>5</item><item>6</item><item>3</item><item>3</item><item>2</item><item>4</item><item>7</item><item>5</item><item>2</item><item>3</item><item>5</item><item>6</item><item>5</item><item>4</item><item>4</item><item>3</item><item>5</item><item>2</item><item>5</item><item>3</item></list>.</para><para id="id9267444"><link target-id="id10383738" document=""/> lists the different data values in ascending order and their frequencies. </para>
+
+
+<table id="id10383738" summary="This table presents the values provided in the previously given data set in the first column, and the frequency of each value in the second column."><title>Frequency Table of Student Work Hours</title>
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+          <thead>
+            <row>
+              <entry>DATA VALUE</entry>
+              <entry>FREQUENCY</entry>
+            </row>
+</thead>
+<tbody>
+            <row>
+              <entry><emphasis effect="normal">2</emphasis></entry>
+              <entry>3</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">3</emphasis></entry>
+              <entry>5</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">4</emphasis></entry>
+              <entry>3</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">5</emphasis></entry>
+              <entry>6</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">6</emphasis></entry>
+              <entry>2</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">7</emphasis></entry>
+              <entry>1</entry>
+            </row>
+          </tbody>
+
+</tgroup>
+</table><para id="element-118">A <term>frequency</term> is the number of times a value of the data occurs. According to <link target-id="id10383738" document=""/>, there are three students who work two hours, five students who work three hours, and so on. The sum of the values in the frequency column, 20, represents the total number of students included in the sample.</para><para id="id8007492">A <term>relative frequency</term> is the ratio (fraction or proportion) of the number of times a value of the data occurs in the set of all outcomes to the total number of outcomes. To find the relative frequencies, divide each frequency by the total number of students in the sample&#8211;in this case, 20. Relative frequencies can be written as fractions, percents, or decimals.</para><table id="id11177380" summary="Frequency Table of Student Work Hours with Relative Frequencies"><title>Frequency Table of Student Work Hours with Relative Frequencies</title>
+<tgroup cols="3"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+
+<thead>
+<row>
+<entry>DATA VALUE</entry>
+<entry>FREQUENCY</entry>
+<entry>RELATIVE FREQUENCY</entry>
+
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis effect="normal">2</emphasis></entry>
+<entry>3</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>3</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> or 0.15</entry>
+
+</row>
+<row>
+<entry><emphasis effect="normal">3</emphasis></entry>
+<entry>5</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>5</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+</m:mrow>
+</m:math> or 0.25 </entry>
+
+</row>
+<row>
+<entry><emphasis effect="normal">4</emphasis></entry>
+<entry>3</entry>
+<entry><m:math><m:mrow>
+  <m:mfrac>
+   <m:mn>3</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> or 0.15 </entry>
+
+</row>
+<row>
+<entry><emphasis effect="normal">5</emphasis></entry>
+<entry>6</entry>
+<entry><m:math><m:mrow>
+  <m:mfrac>
+   <m:mn>6</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> or 0.30 </entry>
+
+</row>
+<row>
+<entry><emphasis effect="normal">6</emphasis></entry>
+<entry>2</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> or 0.10</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">7</emphasis></entry>
+<entry>1</entry>
+<entry><m:math><m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> or 0.05</entry>
+</row>
+</tbody>
+
+
+
+</tgroup>
+</table><para id="id7087521">The sum of the values in the relative frequency column of <link target-id="id11177380" document=""/> is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+, or 1.</para><para id="id7575466"><term>Cumulative relative frequency</term> is the accumulation of the previous relative
+frequencies. To find the cumulative relative frequencies, add all the previous relative frequencies to
+the relative frequency for the current row, as shown in <link target-id="id10564302" document=""/>.</para><table id="id10564302" summary="Table shows data, frequency, relative frequency and cumulative relative frequency."><title>Frequency Table of Student Work Hours with Relative and Cumulative Relative Frequencies</title>
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>DATA VALUE</entry>
+<entry>FREQUENCY</entry>
+<entry>RELATIVE <newline/>FREQUENCY</entry>
+<entry>CUMULATIVE RELATIVE <newline/>FREQUENCY</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis effect="normal">2</emphasis></entry>
+<entry>3</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>3</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ or 0.15</entry>
+<entry>0.15</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">3</emphasis></entry>
+<entry>5</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>5</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ or 0.25</entry>
+<entry>0.15 + 0.25 = 0.40</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">4</emphasis></entry>
+<entry>3</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>3</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ or 0.15</entry>
+<entry>0.40 + 0.15 = 0.55</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">5</emphasis></entry>
+<entry>6</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>6</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ or 0.30</entry>
+<entry>0.55 + 0.30 = 0.85</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">6</emphasis></entry>
+<entry>2</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ or 0.10</entry>
+<entry>0.85 + 0.10 = 0.95</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">7</emphasis></entry>
+<entry>1</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ or 0.05</entry>
+<entry>0.95 + 0.05 = 1.00</entry>
+</row>
+</tbody>
+
+
+
+</tgroup>
+</table><para id="id3561407">The last entry of the cumulative relative frequency column is one, indicating that one hundred percent of the data has been accumulated.</para>
+<note id="id16479556"><label/><title>NOTE</title>
+<para id="eip-idp27462880">Because of rounding, the relative frequency column may not always sum to one, and the last entry in the cumulative relative frequency column may not be one. However, they each should be close to one.</para></note><para id="element-305"><link target-id="id9703284" document=""/> represents the heights, in inches, of a sample of 100 male semiprofessional soccer players.</para><table id="id9703284" summary="This table presents a range of heights in inches in the first column, the number of students whose height falls within that range in the second column, the relative frequency of students in this range (expressed as both a fraction and a decimal) in the third column, and the cumulative relative frequency (expressed as a sum of current and previous relative frequency values) in the fourth column."><title>Frequency Table of Soccer Player Height</title>
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>HEIGHTS <newline/>(INCHES)</entry>
+<entry>FREQUENCY</entry>
+<entry>RELATIVE <newline/>FREQUENCY</entry>
+<entry>CUMULATIVE <newline/>RELATIVE <newline/>FREQUENCY</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry><emphasis effect="normal">59.95&#8211;61.95</emphasis></entry>
+<entry>5</entry>
+<entry>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>5</m:mn>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math>
+ = 0.05
+</entry>
+<entry>0.05</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">61.95&#8211;63.95</emphasis></entry>
+<entry>3</entry>
+<entry>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>3</m:mn>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  </m:mrow></m:math>
+ = 0.03
+</entry>
+<entry>0.05 + 0.03 = 0.08</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">63.95&#8211;65.95</emphasis></entry>
+<entry>15</entry>
+<entry>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>15</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math>
+ = 0.15
+</entry>
+<entry>0.08 + 0.15 = 0.23</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">65.95&#8211;67.95</emphasis></entry>
+<entry>40</entry>
+<entry>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>40</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ = 0.40
+</entry>
+<entry>0.23 + 0.40 = 0.63</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">67.95&#8211;69.95</emphasis></entry>
+<entry>17</entry>
+<entry>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>17</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ = 0.17
+</entry>
+<entry>0.63 + 0.17 = 0.80</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">69.95&#8211;71.95</emphasis></entry>
+<entry>12</entry>
+<entry>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>12</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ = 0.12
+</entry>
+<entry>0.80 + 0.12 = 0.92</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">71.95&#8211;73.95</emphasis></entry>
+<entry>7</entry>
+<entry>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>7</m:mn>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math>
+ = 0.07
+</entry>
+<entry>0.92 + 0.07 = 0.99</entry>
+</row>
+
+<row>
+<entry><emphasis effect="normal">73.95&#8211;75.95</emphasis></entry>
+<entry>1</entry>
+<entry>
+<m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math>
+ = 0.01
+</entry>
+<entry>0.99 + 0.01 = 1.00</entry>
+</row>
+
+<row>
+<entry/>
+<entry><emphasis>Total = 100</emphasis></entry>
+<entry><emphasis>Total = 1.00</emphasis></entry>
+<entry/>
+</row>
+
+</tbody>
+
+
+
+
+
+</tgroup>
+</table><para id="element-591">The data in this table have been <emphasis>grouped</emphasis> into the following intervals:</para><list id="element-634" list-type="bulleted"><item>59.95 to 61.95 inches</item>
+<item>61.95 to 63.95 inches</item>
+<item>63.95 to 65.95 inches</item>
+<item>65.95 to 67.95 inches</item>
+<item>67.95 to 69.95 inches</item>
+<item>69.95 to 71.95 inches</item>
+<item>71.95 to 73.95 inches</item>
+<item>73.95 to 75.95 inches</item></list>
+<note id="id16927214"><label/><title>Note</title>
+<para id="eip-idp9286128">This example is used again in <link document="m46925">Descriptive Statistics</link>, where the method used to compute the intervals will be explained.</para></note><para id="element-689">In this sample, there are <emphasis>five</emphasis> players whose heights fall within the interval 59.95&#8211;61.95 inches, <emphasis>three</emphasis> players whose heights fall within the interval 61.95&#8211;63.95 inches, <emphasis>15</emphasis> players whose heights fall within the interval 63.95&#8211;65.95 inches, <emphasis>40</emphasis> players whose heights fall within the interval 65.95&#8211;67.95 inches, <emphasis>17</emphasis> players whose heights fall within the interval 67.95&#8211;69.95 inches, <emphasis>12</emphasis> players whose heights fall within the interval 69.95&#8211;71.95, <emphasis>seven</emphasis> players whose heights fall within the interval 71.95&#8211;73.95, and <emphasis>one</emphasis> player whose heights fall within the interval 73.95&#8211;75.95. All heights fall between the endpoints of an interval and not at the endpoints.</para><example id="element-23523">
+      <exercise id="element-881"><problem id="id16927329">
+		<para id="element-455">From <link target-id="id9703284" document=""/>, find the percentage of heights that are less than 65.95 inches.
+		</para></problem>
+
+	<solution id="id16927349">
+		<para id="element-963">If you look at the first, second, and third rows, the heights are all less than 65.95 inches. There are 5 + 3 + 15 = 23 players whose heights are less than 65.95 inches. The percentage of heights less than 65.95 inches is then <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>23</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> or 23%. This percentage is the cumulative relative frequency entry in the third row.
+</para></solution>
+</exercise>
+</example>
+
+<note id="fs-idm40908240" class="statistics try"><label/><title>Try It</title>
+<!--1-->
+<exercise id="fs-idp57790448"><problem id="fs-idm58055472">
+<para id="fs-idm72824256"><link target-id="fs-idm82680048" document=""/> shows the amount, in inches, of annual rainfall in a sample of towns.</para>
+<table id="fs-idm82680048" summary="Table shows the amount in inches, of annual rainfallin a sample towns">
+<tgroup cols="4">
+<thead>
+ <row><entry>Rainfall (Inches)</entry>	<entry>Frequency</entry>	<entry>Relative Frequency</entry>	<entry>Cumulative Relative Frequency</entry></row>
+</thead>
+<tbody>
+<row><entry>2.95&#8211;4.97</entry><entry>6</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>6</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math> = 0.12</entry> <entry>0.12</entry></row>
+
+<row><entry>4.97&#8211;6.99</entry><entry>7</entry><entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>7</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 0.14</entry> <entry>0.12 + 0.14 = 0.26</entry></row>
+
+<row><entry>6.99&#8211;9.01</entry><entry>15</entry><entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>15</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ = 0.30</entry> <entry>0.26 + 0.30 = 0.56</entry></row>
+
+<row><entry>9.01&#8211;11.03</entry><entry>8</entry><entry> <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>8</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+   </m:mrow>
+</m:math> = 0.16</entry> <entry>0.56 + 0.16 = 0.72</entry></row>
+
+<row><entry>11.03&#8211;13.05</entry><entry>9</entry><entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>9</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math>
+ = 0.18</entry> <entry>0.72 + 0.18 = 0.90</entry></row>
+
+<row><entry>13.05&#8211;15.07</entry><entry>5</entry><entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>5</m:mn>
+   <m:mrow>
+    <m:mn>50</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 0.10</entry><entry>0.90 + 0.10 = 1.00</entry></row>
+	<row><entry/><entry>Total = 50</entry><entry>Total = 1.00</entry><entry/></row>
+</tbody>
+
+
+</tgroup>
+</table>
+<para id="fs-idm81784864">From <link target-id="fs-idm82680048" document=""/>, find the percentage of rainfall that is less than 9.01 inches.</para>
+</problem>
+</exercise>
+</note><example id="element-2398">
+<exercise id="element-987"><problem id="id16927407">
+<para id="element-266">From <link target-id="id9703284" document=""/>, find the percentage of heights that fall between 61.95 and 65.95 inches.
+</para></problem>
+
+<solution id="id16927427">
+<para id="element-827">Add the relative frequencies in the second and third rows: 0.03 + 0.15 = 0.18 or 18%.
+</para>
+</solution>
+</exercise>
+</example>
+
+<note id="fs-idp124591904" class="statistics try"><label/><title>Try It</title>
+<exercise id="fs-idm61239616"><problem id="fs-idm61142976">
+<para id="fs-idm71703488">From <link target-id="fs-idm82680048" document=""/>, find the percentage of rainfall that is between 6.99 and 13.05 inches.</para>
+</problem>
+</exercise></note><example id="element-235235"><exercise id="element-994"><problem id="id16927469">
+		<para id="element-952">Use the heights of the 100 male semiprofessional soccer players in <link target-id="id9703284" document=""/>. Fill in the blanks and check your answers.
+		</para>
+<list id="element-162" list-type="enumerated" number-style="lower-alpha">
+<item>The percentage of heights that are from 67.95 to 71.95 inches is: ____.</item>
+<item>The percentage of heights that are from 67.95 to 73.95 inches is: ____.</item>
+<item>The percentage of heights that are more than 65.95 inches is: ____.</item>
+<item>The number of players in the sample who are between 61.95 and 71.95 inches tall is: ____.</item>
+<item>What kind of data are the heights?</item>
+<item>Describe how you could gather this data (the heights) so that the data are characteristic of all male semiprofessional soccer players.</item>
+
+</list><para id="element-683">Remember, you <emphasis>count frequencies</emphasis>. To find the relative frequency, divide the frequency by the total number of data values. To find the cumulative relative frequency, add all of the previous relative frequencies to the relative frequency for the current row.
+		</para>
+		</problem>
+<solution id="id16927576">
+<list id="solution-list-1" list-type="enumerated" number-style="lower-alpha"><item>29%</item>
+<item>36%</item>
+<item>77%</item>
+<item>87</item>
+<item>quantitative continuous</item>
+<item>get rosters from each team and choose a simple random sample from each</item>
+</list></solution></exercise></example>
+
+<note id="fs-idp31175024" class="statistics try"><!-- 3-->
+<label/><title>Try It</title>
+<exercise id="fs-idm58580624"><problem id="fs-idm39695376">
+<para id="fs-idm98844192">From <link target-id="fs-idm82680048" document=""/>, find the number of towns that have rainfall between 2.95 and 9.01 inches.</para></problem>
+</exercise>
+</note><note id="res" class="statistics collab"><label/><title>Collaborative Exercise</title>
+<para id="id8661133">In your class, have someone conduct a survey of the number of siblings (brothers and sisters) each student has. Create a frequency table. Add to it a relative frequency column and a cumulative relative frequency column. Answer the following questions:</para>
+&#160; &#160; &#160; <list id="element-889" list-type="enumerated"><item>What percentage of the students in your class have no siblings?</item>
+<item>What percentage of the students have from one to three siblings?</item>
+<item>What percentage of the students have fewer than three siblings?</item></list></note><example id="element-569"><para id="element-755">Nineteen people were asked how many miles, to the nearest mile, they commute to work each day. The data are as follows:
+<list id="set-element-392" list-type="labeled-item" display="inline"><item>2</item>
+<item>5</item>
+<item>7</item>
+<item>3</item>
+<item>2</item>
+<item>10</item>
+<item>18</item>
+<item>15</item>
+<item>20</item>
+<item>7</item>
+<item>10</item>
+<item>18</item>
+<item>5</item>
+<item>12</item>
+<item>13</item>
+<item>12</item>
+<item>4</item>
+<item>5</item>
+<item>10</item></list>. <link target-id="id9833287" document=""/> was produced:</para>
+<table id="id9833287" summary="This table presents the number of miles driven by survey respondents in the first column, the frequency of each response in the second column, the relative frequency (expressed as a fraction) in the third column, and the cumulative relative frequency (expressed as a decimal) in the fourth column."><title>Frequency of Commuting Distances</title>
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>DATA</entry>
+<entry>FREQUENCY</entry>
+<entry>RELATIVE <newline/>FREQUENCY</entry>
+<entry>CUMULATIVE <newline/>RELATIVE <newline/>FREQUENCY</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis effect="normal">3</emphasis></entry>
+<entry>3</entry>
+<entry><m:math>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math></entry>
+<entry>0.1579</entry>
+</row>
+<row>
+              <entry><emphasis effect="normal">4</emphasis></entry>
+              <entry>1</entry>
+              <entry><m:math>
+  <m:mfrac>
+    <m:mn>1</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math></entry>
+              <entry>0.2105</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">5</emphasis></entry>
+              <entry>3</entry>
+              <entry><m:math>
+  <m:mfrac>
+    <m:mn>3</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math></entry>
+              <entry>0.1579</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">7</emphasis></entry>
+              <entry>2</entry>
+              <entry><m:math>
+  <m:mfrac>
+    <m:mn>2</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math></entry>
+              <entry>0.2632</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">10</emphasis></entry>
+              <entry>3</entry>
+              <entry><m:math>
+  <m:mfrac>
+    <m:mn>4</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math></entry>
+              <entry>0.4737</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">12</emphasis></entry>
+              <entry>2</entry>
+              <entry><m:math>
+  <m:mfrac>
+    <m:mn>2</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math></entry>
+              <entry>0.7895</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">13</emphasis></entry>
+              <entry>1</entry>
+              <entry><m:math>
+  <m:mfrac>
+    <m:mn>1</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math></entry>
+              <entry>0.8421</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">15</emphasis></entry>
+              <entry>1</entry>
+              <entry><m:math>
+  <m:mfrac>
+    <m:mn>1</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math></entry>
+              <entry>0.8948</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">18</emphasis></entry>
+              <entry>1</entry>
+              <entry><m:math>
+  <m:mfrac>
+    <m:mn>1</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math></entry>
+              <entry>0.9474</entry>
+            </row>
+            <row>
+              <entry><emphasis effect="normal">20</emphasis></entry>
+              <entry>1</entry>
+              <entry>
+<m:math>
+  <m:mfrac>
+    <m:mn>1</m:mn>
+    <m:mn>19</m:mn>
+  </m:mfrac>
+</m:math>
+</entry>
+              <entry>1.0000</entry>
+            </row>
+          </tbody>
+
+</tgroup>
+</table><exercise id="element-268">
+<problem id="id16928563">
+      <list id="element-582" list-type="enumerated" number-style="lower-alpha"><item>Is the table correct? If it is not correct, what is wrong?</item>
+<item>True or False: Three percent of the people surveyed commute three miles. If the statement is not correct, what should it be? If the table is incorrect, make the corrections.</item>
+<item>What fraction of the people surveyed commute five or seven miles?</item>
+<item>What fraction of the people surveyed commute 12 miles or more? Less than 12 miles? Between five and 13 miles (not including five and 13 miles)?</item></list></problem>
+
+	<solution id="id16928619">
+<list id="solution-list-2" list-type="enumerated" number-style="lower-alpha"><item>No. The frequency column sums to 18, not 19. Not all cumulative relative frequencies are correct.</item>
+<item>False. The frequency for three miles should be one; for two miles (left out), two. The cumulative relative frequency column should read: 0.1052, 0.1579, 0.2105, 0.3684, 0.4737, 0.6316, 0.7368, 0.7895, 0.8421, 0.9474, 1.0000.</item>
+<item><m:math><m:mfrac><m:mn>5</m:mn><m:mn>19</m:mn></m:mfrac></m:math></item>
+<item><m:math>
+<m:mfrac><m:mn>7</m:mn><m:mn>19</m:mn></m:mfrac></m:math>, <m:math><m:mfrac><m:mn>12</m:mn><m:mn>19</m:mn></m:mfrac></m:math>, <m:math><m:mfrac><m:mn>7</m:mn><m:mn>19</m:mn></m:mfrac></m:math></item>
+</list></solution>
+</exercise>
+</example><note id="fs-idp46953216" class="statistics try"><label/><title>Try It</title>
+
+<exercise id="fs-idm57469440">
+<problem id="fs-idm86905392">
+<para id="fs-idm12777216"><link target-id="fs-idm82680048" document=""/> represents the amount, in inches, of annual rainfall in a sample of towns. What fraction of towns surveyed get between 11.03 and 13.05 inches of rainfall each year?</para>
+</problem>
+</exercise></note><example id="fs-idm64477536">
+<para id="fs-idm39829664"><link target-id="fs-idm52810848" document=""/> contains the total number of deaths worldwide as a result of earthquakes for the period from 2000 to 2012.</para><table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm52810848" summary="This table represents the total number of deaths worldwide as a result of earthquakes for the period from 2000 to 2012.">
+<tgroup cols="2"><thead>
+<row><entry>Year</entry>	<entry>Total Number of Deaths</entry></row>
+</thead>
+<tbody>
+<row><entry>2000</entry>	<entry>231</entry></row>
+<row><entry>2001</entry>	<entry>21,357</entry></row>
+<row><entry>2002</entry>	<entry>11,685</entry></row>
+<row><entry>2003</entry>	<entry>33,819</entry></row>
+<row><entry>2004</entry>	<entry>228,802</entry></row>
+<row><entry>2005</entry>	<entry>88,003</entry></row>
+<row><entry>2006</entry>	<entry>6,605</entry></row>
+<row><entry>2007</entry>	<entry>712</entry></row>
+<row><entry>2008</entry>	<entry>88,011</entry></row>
+<row><entry>2009</entry>	<entry>1,790</entry></row>
+<row><entry>2010</entry>	<entry>320,120</entry></row>
+<row><entry>2011</entry>	<entry>21,953</entry></row>
+<row><entry>2012</entry>	<entry>768</entry></row>
+<row><entry>Total</entry>	<entry>823,856</entry></row>
+</tbody>
+
+
+</tgroup>
+</table><exercise id="fs-idm15443744"><problem id="fs-idm56505488">
+<para id="fs-idm38990240">Answer the following questions.</para>
+<list id="fs-idm21722256" list-type="enumerated" number-style="lower-alpha"><item>What is the frequency of deaths measured from 2006 through 2009?</item>
+<item>What percentage of deaths occurred after 2009?</item>
+<item>What is the relative frequency of deaths that occurred in 2003 or earlier?</item>
+<item>What is the percentage of deaths that occurred in 2004?</item>
+<item>What kind of data are the numbers of deaths? </item>
+<item>The Richter scale is used to quantify the energy produced by an earthquake.  Examples of Richter scale numbers are 2.3, 4.0, 6.1, and 7.0.  What kind of data are these numbers?</item>
+</list></problem>
+<solution id="fs-idm33435392">
+<list id="fs-idm15442992" list-type="enumerated" number-style="lower-alpha"><item>97,118 (11.8%)</item>
+<item>41.6%</item>
+<item>67,092/823,356 or 0.081 or 8.1 %</item>
+<item>27.8%</item>
+<item>Quantitative discrete</item>
+<item>Quantitative continuous</item>
+</list>
+</solution>
+</exercise>
+</example>
+
+<note id="fs-idm44002848" class="statistics try"><label/><title>Try It</title>
+<exercise id="fs-idm62775664">
+<problem id="fs-idm9924272">
+<para id="fs-idm65128336"><link target-id="fs-idm74902768" document=""/> contains the total number of fatal motor vehicle traffic crashes in the United States for the period from 1994 to 2011.</para>
+<table id="fs-idm74902768" summary="">
+<tgroup cols="4">
+<thead>
+<row>
+<entry>Year</entry>
+<entry>Total Number of Crashes</entry>
+<entry>Year</entry>
+<entry>Total Number of Crashes</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1994</entry><entry>36,254</entry>
+<entry>2004</entry><entry>38,444</entry>
+</row>
+<row>
+<entry>1995</entry>	<entry>37,241</entry>
+<entry>2005</entry>	<entry>39,252</entry>
+</row>
+<row>
+<entry>1996</entry>	<entry>37,494</entry>
+<entry>2006</entry>	<entry>38,648</entry>
+</row>
+<row>
+<entry>1997</entry>	<entry>37,324</entry>
+<entry>2007</entry>	<entry>37,435</entry>
+</row>
+<row>
+<entry>1998</entry>	<entry>37,107</entry>
+<entry>2008</entry>	<entry>34,172</entry>
+</row>
+<row>
+<entry>1999</entry>	<entry>37,140</entry>
+<entry>2009</entry>	<entry>30,862</entry>
+</row>
+<row>
+<entry>2000</entry>	<entry>37,526</entry>
+<entry>2010</entry>	<entry>30,296</entry>
+</row>
+<row>
+<entry>2001</entry>	<entry>37,862</entry>
+<entry>2011</entry>	<entry>29,757</entry>
+</row>
+<row>
+<entry>2002</entry>	<entry>38,491</entry>
+<entry>Total</entry>	<entry>653,782</entry>
+</row>
+<row>
+<entry>2003</entry>	<entry>38,477</entry>
+<entry/>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idm72473616">Answer the following questions.</para>
+<list id="fs-idm94591440" list-type="enumerated" number-style="lower-alpha"><item>What is the frequency of deaths measured from 2000 through 2004?</item>
+<item>What percentage of deaths occurred after 2006?</item>
+<item>What is the relative frequency of deaths that occurred in 2000 or before?</item>
+<item>What is the percentage of deaths that occurred in 2011?</item>
+<item>What is the cumulative relative frequency for 2006? Explain what this number tells you about the data.</item>
+</list></problem>
+</exercise>
+</note></section><section id="eip-137" class="references"><title>References</title><para id="eip-idm114490208">&#8220;State &amp; County QuickFacts,&#8221; U.S. Census Bureau. http://quickfacts.census.gov/qfd/download_data.html (accessed May 1, 2013).</para><para id="eip-idm217605552">&#8220;State &amp; County QuickFacts: Quick, easy access to facts about people, business, and geography,&#8221; U.S. Census Bureau. http://quickfacts.census.gov/qfd/index.html (accessed May 1, 2013).</para><para id="eip-idm85470464">&#8220;Table 5: Direct hits by mainland United States Hurricanes (1851-2004),&#8221; National Hurricane Center, http://www.nhc.noaa.gov/gifs/table5.gif (accessed May 1, 2013).</para><para id="eip-idm126552704">&#8220;Levels of Measurement,&#8221; http://infinity.cos.edu/faculty/woodbury/stats/tutorial/Data_Levels.htm (accessed May 1, 2013).</para><para id="eip-idm96097840">Courtney Taylor, &#8220;Levels of Measurement,&#8221; about.com,
+http://statistics.about.com/od/HelpandTutorials/a/Levels-Of-Measurement.htm (accessed May 1, 2013).</para><para id="eip-idm150901088">David Lane. &#8220;Levels of Measurement,&#8221; Connexions, http://cnx.org/content/m10809/latest/ (accessed May 1, 2013).</para></section><section id="fs-idm13164064" class="summary"><title>Chapter Review</title><para id="fs-idm13630672">Some calculations generate numbers that are artificially precise. It is not necessary to report a value to eight decimal places when the measures that generated that value were only accurate to the nearest tenth. Round off your final answer to one more decimal place than was present in the original data. This means that if you have data measured to the nearest tenth of a unit, report the final statistic to the nearest hundredth.</para><para id="eip-50">In addition to rounding your answers, you can measure your data using the following four levels of measurement.</para><list id="eip-349"><item><emphasis>Nominal scale level:</emphasis> data that cannot be ordered nor can it be used in calculations</item>
+<item><emphasis>Ordinal scale level:</emphasis> data that can be ordered; the differences cannot be measured</item>
+<item><emphasis>Interval scale level:</emphasis> data with a definite ordering but no starting point; the differences can be measured, but there is no such thing as a ratio.</item>
+<item><emphasis>Ratio scale level:</emphasis> data with a starting point that can be ordered; the differences have meaning and ratios can be calculated.</item>
+</list><para id="fs-idm83721584">When organizing data, it is important to know how many times a value appears. How many statistics students study five hours or more for an exam? What percent of families on our block own two pets? Frequency, relative frequency, and cumulative relative frequency are measures that answer questions like these.</para></section>
+<section id="eip-206" class="practice"><exercise id="eip-167">
+<problem id="eip-429">
+<para id="eip-idm3326416">What type of measure scale is being used?  Nominal, ordinal, interval or ratio.</para>
+<list id="eip-idm4124352" type="enumerated" list-type="enumerated" number-style="lower-alpha"><item>High school soccer players classified by their athletic ability: Superior, Average, Above average</item>
+<item>Baking temperatures for various main dishes:  350, 400, 325, 250, 300</item>
+<item>The colors of crayons in a 24-crayon box</item>
+<item>Social security numbers</item>
+<item>Incomes measured in dollars</item>
+<item>A satisfaction survey of a social website by number: 1 = very satisfied, 2 = somewhat satisfied, 3 = not satisfied</item>
+<item>Political outlook: extreme left, left-of-center, right-of-center, extreme right</item>
+<item>Time of day on an analog watch</item>
+<item>The distance in miles to the closest grocery store</item>
+<item>The dates 1066, 1492, 1644, 1947, and 1944</item>
+<item>The heights of 21&#8211;65 year-old women</item>
+<item>Common letter grades: A, B, C, D, and F</item>
+</list></problem>
+
+<solution id="eip-171">
+<list id="eip-idm34826016" type="enumerated" list-type="enumerated" number-style="lower-alpha"><item>ordinal</item>
+<item>interval</item>
+<item>nominal</item>
+<item>nominal</item>
+<item>ratio</item>
+<item>ordinal</item>
+<item>nominal</item>
+<item>interval</item>
+<item>ratio</item>
+<item>interval</item>
+<item>ratio</item>
+<item>ordinal</item>
+</list></solution>
+</exercise></section><section id="fs-idm8238960" class="free-response"><title>HOMEWORK</title><exercise id="eip-idp18600336"><problem id="id29870590">
+<para id="element-782">Fifty part-time students were asked how many courses they were taking this term. The (incomplete) results are shown below:</para><table id="element-795" summary="This incomplete table will be completed by the student as an exercise using the values provided. Fifty students were asked how many courses they were taking; for every value in the first column, students are given or must calculate the frequency of responses in the second column, the relative frequency in the third column, and the cumulative relative frequency in the fourth column."><title>Part-time Student Course Loads</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+
+<thead>
+<row>
+<entry>
+# of Courses
+</entry>
+<entry>
+Frequency
+</entry>
+<entry>
+Relative Frequency
+</entry>
+<entry>
+Cumulative Relative Frequency
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1</entry>
+<entry>30</entry>
+<entry>0.6</entry>
+<entry/>
+</row>
+<row>
+<entry>2</entry>
+<entry>15</entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>3</entry>
+<entry/>
+<entry/>
+<entry/>
+</row>
+</tbody>
+
+</tgroup>
+</table><list id="element-190" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Fill in the blanks in <link target-id="element-795" document=""/>.</item>
+<item>What percent of students take exactly two courses?</item>
+<item>What percent of students take one or two courses?</item>
+</list></problem>
+
+<!-- <solution id="eip-idm84865280">
+<list id="eip-idm84865024" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item><table id="eip-idm19957776" summary="...">
+<tgroup cols="4">
+<colspec colnum="1" colname="header_c1" colwidth="*"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+
+<thead>
+<row>
+<entry># of Courses</entry>
+<entry>Frequency</entry>
+<entry>Relative Frequency</entry>
+<entry>Cumulative Relative Frequency</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry>1</entry>
+<entry>30</entry>
+<entry>0.6</entry>
+<entry>0.6</entry>
+</row>
+
+<row>
+<entry>2</entry>
+<entry>15</entry>
+<entry>0.3</entry>
+<entry>0.9</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>5</entry>
+<entry>0.1</entry>
+<entry>1.0</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+</item>
+<item>30%</item>
+<item>90%</item>
+</list>
+</solution> -->
+</exercise><exercise id="eip-idp1177440"><problem id="id29870923">
+<para id="element-426">Sixty adults with gum disease were asked the number of times per week they used to floss before their diagnosis. The (incomplete) results are shown in <link target-id="element-619" document=""/>.
+</para><table id="element-619" summary="Flossing Frequency for Adults with Gum Disease"><title>Flossing Frequency for Adults with Gum Disease</title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>
+# Flossing per Week
+</entry>
+<entry>
+Frequency
+</entry>
+<entry>
+Relative Frequency
+</entry>
+<entry>
+Cumulative Relative Freq.
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry>27</entry>
+<entry>0.4500</entry>
+<entry/>
+</row>
+<row>
+<entry>1</entry>
+<entry>18</entry>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry>3</entry>
+<entry/>
+<entry/>
+<entry>0.9333</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>3</entry>
+<entry>0.0500</entry>
+<entry/>
+</row>
+<row>
+<entry>7</entry>
+<entry>1</entry>
+<entry>0.0167</entry>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table><list id="element-502" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Fill in the blanks in <link target-id="element-619" document=""/>.</item>
+<item>What percent of adults flossed six times per week?</item>
+<item>What percent flossed at most three times per week?</item>
+</list>
+</problem>
+
+<solution id="id30125528">
+<list id="element-26434" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item><newline/>
+<table id="eip-93" summary="Filled Flossing Frequency for Adults with Gum Disease">
+<tgroup cols="4"><thead>
+  <row>
+    <entry># Flossing per Week</entry>
+    <entry>Frequency</entry>
+    <entry>Relative Frequency</entry>
+    <entry>Cumulative Relative Frequency</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>0</entry>
+    <entry>27</entry>
+    <entry>0.4500</entry>
+    <entry>0.4500</entry>
+  </row>
+  <row>
+    <entry>1</entry>
+    <entry>18</entry>
+    <entry>0.3000</entry>
+    <entry>0.7500</entry>
+  </row>
+  <row>
+    <entry>3</entry>
+    <entry>11</entry>
+    <entry>0.1833</entry>
+    <entry>0.9333</entry>
+  </row>
+  <row>
+    <entry>6</entry>
+    <entry>3</entry>
+    <entry>0.0500</entry>
+    <entry>0.9833</entry>
+  </row>
+  <row>
+    <entry>7</entry>
+    <entry>1</entry>
+    <entry>0.0167</entry>
+    <entry>1</entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table></item>
+<item>5.00%</item>
+<item>93.33%</item>
+</list></solution>
+</exercise><exercise id="eip-idp3710944"><problem id="id30202348">
+<para id="element-314">
+Nineteen immigrants to the U.S were asked how many years, to the nearest year, they have lived in the U.S. The data are as follows: <list id="set-element-773" list-type="labeled-item" display="inline"><item>2</item>
+<item>5</item>
+<item>7</item>
+<item>2</item>
+<item>2</item>
+<item>10</item>
+<item>20</item>
+<item>15</item>
+<item>0</item>
+<item>7</item>
+<item>0</item>
+<item>20</item>
+<item>5</item>
+<item>12</item>
+<item>15</item>
+<item>12</item>
+<item>4</item>
+<item>5</item>
+<item>10</item>
+</list>.</para><para id="element-20"><link target-id="element-9" document=""/> was produced.</para><table id="element-9" summary="This table presents the frequencies associated with the given data set, with the first column containing the data value, the second column containing the frequency, the third column containing the relative frequency (expressed as a fraction), and the fourth column expressing the cumulative relative frequency (expressed as a decimal)."><title>Frequency of Immigrant Survey Responses</title>
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>
+Data
+</entry>
+<entry>
+Frequency
+</entry>
+<entry>
+Relative Frequency
+</entry>
+<entry>
+Cumulative Relative Frequency
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry>2</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>2</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>0.1053</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>3</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>0.2632</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>1</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>0.3158</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>3</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>3</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>0.4737</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>2</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>2</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>0.5789</entry>
+</row>
+<row>
+<entry>10</entry>
+<entry>2</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>2</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>0.6842</entry>
+</row>
+<row>
+<entry>12</entry>
+<entry>2</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>2</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>0.7895</entry>
+</row>
+<row>
+<entry>15</entry>
+<entry>1</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>0.8421</entry>
+</row>
+<row>
+<entry>20</entry>
+<entry>1</entry>
+<entry>
+<m:math>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>19</m:mn>
+</m:mfrac>
+</m:math>
+</entry>
+<entry>1.0000</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table><list id="element-650" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Fix the errors in <link target-id="element-9" document=""/>. Also, explain how someone might have arrived at the incorrect
+number(s).</item>
+<item>Explain what is wrong with this statement: &#8220;47 percent of the people surveyed have lived in the U.S. for 5 years.&#8221; </item>
+<item>Fix the statement in <emphasis>b</emphasis> to make it correct.</item>
+<item>What fraction of the people surveyed have lived in the U.S. five or seven years?</item>
+<item>What fraction of the people surveyed have lived in the U.S. at most 12 years?</item>
+<item>What fraction of the people surveyed have lived in the U.S. fewer than 12 years?</item>
+<item>What fraction of the people surveyed have lived in the U.S. from five to 20 years, inclusive?</item>
+</list></problem>
+
+<!-- <solution id="eip-idm81790048">
+<list id="eip-idm81789792" list-type="enumerated" number-style="lower-alpha"><item>The Frequencies for 15 and 20 should both be two and the Relative Frequencies should both be <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>2</m:mn>
+   <m:mrow>
+    <m:mn>19</m:mn>
+   </m:mrow>
+  </m:mfrac>
+</m:mrow>
+</m:math>. The mistake could be due to copying the data down wrong. The Cumulative Relative Frequency for five years should be 0.4737. The mistake is due to calculating the Relative Frequency instead of the Cumulative Relative Frequency. The Cumulative Relative Frequency for 15 years should be 0.8947</item>
+<item>The 47% is the Cumulative Relative Frequency, not the Relative Frequency.</item>
+<item>47% of the people surveyed have lived in the U.S. for five years or less.</item>
+<item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>5</m:mn>
+   <m:mrow>
+    <m:mn>19</m:mn>
+   </m:mrow>
+  </m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+<item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>15</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>19</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</item>
+<item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>13</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>19</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</item>
+<item><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>13</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>19</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</item>
+</list></solution> --></exercise><exercise id="eip-idp24902672"><problem id="eip-idp50833472">
+<para id="fs-idp1582784">How much time does it take to travel to work? <link target-id="fs-idm68779488" document=""/> shows the mean commute time by state for workers at least 16 years old who are not working at home. Find the mean travel time, and round off the answer properly.</para>
+<table id="fs-idm68779488" summary="">
+<tgroup cols="10">
+<tbody>
+<row>
+<entry>24.0</entry>
+<entry>24.3</entry>
+<entry>25.9</entry>
+<entry>18.9</entry>
+<entry>27.5</entry>
+<entry>17.9</entry>
+<entry>21.8</entry>
+<entry>20.9</entry>
+<entry>16.7</entry>
+<entry>27.3</entry>
+</row>
+<row>
+<entry>18.2</entry>
+<entry>24.7</entry>
+<entry>20.0</entry>
+<entry>22.6</entry>
+<entry>23.9</entry>
+<entry>18.0</entry>
+<entry>31.4</entry>
+<entry>22.3</entry>
+<entry>24.0</entry>
+<entry>25.5</entry>
+</row>
+<row>
+<entry>24.7</entry>
+<entry>24.6</entry>
+<entry>28.1</entry>
+<entry>24.9</entry>
+<entry>22.6</entry>
+<entry>23.6</entry>
+<entry>23.4</entry>
+<entry>25.7</entry>
+<entry>24.8</entry>
+<entry>25.5</entry>
+</row>
+<row>
+<entry>21.2</entry>
+<entry>25.7</entry>
+<entry>23.1</entry>
+<entry>23.0</entry>
+<entry>23.9</entry>
+<entry>26.0</entry>
+<entry>16.3</entry>
+<entry>23.1</entry>
+<entry>21.4</entry>
+<entry>21.5</entry>
+</row>
+<row>
+<entry>27.0</entry>
+<entry>27.0</entry>
+<entry>18.6</entry>
+<entry>31.7</entry>
+<entry>23.3</entry>
+<entry>30.1</entry>
+<entry>22.9</entry>
+<entry>23.3</entry>
+<entry>21.7</entry>
+<entry>18.6</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+
+<solution id="eip-idp10180912">
+<para id="eip-idm56114560">The sum of the travel times is 1,173.1. Divide the sum by 50 to calculate the mean value: 23.462. Because each state&#8217;s travel time was measured to the nearest tenth, round this calculation to the nearest hundredth: 23.46.</para>
+</solution></exercise>
+
+<exercise id="eip-idm71401488"><problem id="eip-idm71401232">
+<para id="fs-idm72637568"><emphasis effect="italics">Forbes</emphasis> magazine published data on the best small firms in 2012. These were firms which had been publicly traded for at least a year, have a stock price of at least $5 per share, and have reported annual revenue between $5 million and $1 billion. <link target-id="fs-idm84109040" document=""/> shows the ages of the chief executive officers for the first 60 ranked firms.</para>
+<table id="fs-idm84109040" summary="Table shows the ages of the chief executive officers for the first 60 ranked firms">
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2" align="right"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>Age</entry>	<entry>Frequency</entry>	<entry>Relative Frequency</entry>	<entry>Cumulative Relative Frequency</entry></row></thead>
+<tbody>
+<row><entry>40&#8211;44</entry>	<entry>3</entry><entry/>	<entry/></row>
+<row><entry>45&#8211;49</entry>	<entry>11</entry>	<entry/><entry/></row>
+<row><entry>50&#8211;54</entry>	<entry>13</entry>	<entry/><entry/></row>
+<row><entry>55&#8211;59</entry>	<entry>16</entry>	<entry/><entry/></row>
+<row><entry>60&#8211;64</entry>	<entry>10</entry>	<entry/><entry/></row>
+<row><entry>65&#8211;69</entry>	<entry>6</entry>	<entry/><entry/></row>
+<row><entry>70&#8211;74</entry>	<entry>1</entry>	<entry/><entry/></row>
+</tbody>
+
+
+</tgroup>
+</table><list id="fs-idm95668240" list-type="enumerated" number-style="lower-alpha"><item>What is the frequency for CEO ages between 54 and 65?</item>
+<item>What percentage of CEOs are 65 years or older?</item>
+<item>What is the relative frequency of ages under 50?</item>
+<item>What is the cumulative relative frequency for CEOs younger than 55?</item>
+<item>Which graph shows the relative frequency and which shows the cumulative relative frequency?</item>
+</list><figure xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idp25576880" orient="horizontal"><media id="fs-idm20141232" alt="Graph A is a bar graph with 7 bars. The x-axis shows CEO's ages in intervals of 5 years starting with 40 - 44. The y-axis shows the relative frequency in intervals of 0.2 from 0 - 1. The highest relative frequency shown is 0.27. Graph B is a bar graph with 7 bars. The x-axis shows CEO's ages in intervals of 5 years starting with 40 - 44. The y-axis shows relative frequency in intervals of 0.2 from 0 - 1. The highest relative frequency shown is 1.">
+<image mime-type="image/jpg" src="CNX_Stats_C01_M10_003.jpg"/>
+</media>
+
+</figure></problem>
+
+<!-- <solution id="eip-idp30968976">
+<list id="eip-idp30969232" list-type="enumerated" number-style="lower-alpha"><item>26 (This is the count of CEOs in the 55 to 59 and 60 to 64 categories.)</item>
+<item>12% (number of CEOs age 65 or older &#247; total number of CEOs)</item>
+<item>14/60; 0.23; 23%</item>
+<item>0.45</item>
+<item>Graph A represents the cumulative relative frequency, and Graph B shows the relative frequency.</item>
+</list></solution> --></exercise><para id="id5096156"><emphasis effect="italics">Use the following information to answer the next two exercises:</emphasis> <link target-id="id9247047" document=""/> contains data on hurricanes that have made direct hits on the U.S. Between 1851 and 2004. A hurricane is given a strength category rating based on the minimum wind speed generated by the storm.</para><table id="id9247047" summary="This incomplete table presents frequency data related to hurricane activity. The first column displays the hurricane category, the second column displays the frequency of direct hits, the third column presents the relative frequency (expressed as a decimal), and the fourth column presents the cumulative relative frequency (expressed as a decimal). The two missing values are to be caluculated by the students in the upcoming exercises."><title>Frequency of Hurricane Direct Hits</title>
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <colspec colnum="3" colname="c3"/>
+          <colspec colnum="4" colname="c4"/>
+          <thead>
+ <row>
+              <entry>Category</entry>
+              <entry>Number of Direct Hits</entry>
+              <entry>Relative Frequency</entry>
+              <entry>Cumulative Frequency</entry>
+            </row>
+          </thead>
+          <tfoot><row>
+              <entry/>
+              <entry>Total = 273</entry>
+              <entry/>
+              <entry/>
+</row></tfoot>
+
+           <tbody>
+
+            <row>
+              <entry>1</entry>
+              <entry>109</entry>
+              <entry>0.3993</entry>
+              <entry>0.3993</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>72</entry>
+              <entry>0.2637</entry>
+              <entry>0.6630</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>71</entry>
+              <entry>0.2601</entry>
+              <entry/>
+            </row>
+            <row>
+              <entry>4</entry>
+              <entry>18</entry>
+              <entry/>
+              <entry>0.9890</entry>
+            </row>
+            <row>
+              <entry>5</entry>
+              <entry>3</entry>
+              <entry>0.0110</entry>
+              <entry>1.0000</entry>
+            </row>
+          </tbody>
+        </tgroup>
+</table><exercise id="element-87"><problem id="id30104614">
+		<para id="element-933">What is the relative frequency of direct hits that were category 4 hurricanes?
+		</para><list id="element-662" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>0.0768</item>
+<item>0.0659</item>
+<item>0.2601</item>
+<item>Not enough information to calculate</item></list></problem>
+<solution id="id30104703">
+<para id="element-3562341">b</para>
+</solution></exercise>
+
+      <exercise id="element-627"><problem id="id30104731">
+		<para id="element-544">What is the relative frequency of direct hits that were AT MOST a category 3 storm?
+		</para><list id="element-359" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>0.3480</item>
+<item>0.9231</item>
+<item>0.2601</item>
+<item>0.3370</item></list></problem>
+<!-- <solution id="id30104819">
+<para id="element-3564">b</para>
+</solution> --></exercise></section></content>
+
+<glossary>
+
+  <definition id="cumrelfreq">
+    <term>Cumulative Relative Frequency</term>
+    <meaning id="id19883082">
+      The term applies to an ordered set of observations from smallest to largest. The cumulative relative frequency is the sum of the relative frequencies for all values that are less than or equal to the given value.
+    </meaning>
+  </definition>
+
+
+  <definition id="freq">
+    <term>Frequency</term>
+    <meaning id="id19849552">
+   the number of times a value of the data occurs</meaning>
+  </definition>
+
+
+<definition id="relfreq">
+    <term>Relative Frequency</term>
+    <meaning id="id5747717">
+the ratio of the number of times a value of the data occurs in the set of all outcomes to the number of all outcomes to the total number of outcomes</meaning>
+  </definition>
+
+</glossary>
+</document>

@@ -1,0 +1,165 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Regression (Textbook Cost)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50285/latest</md:content-url>
+  <md:content-id>m50285</md:content-id>
+  <md:title>Regression (Textbook Cost)</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/09 10:51:45 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>influential points</md:keyword>
+    <md:keyword>outlier</md:keyword>
+    <md:keyword>potential outlier</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1172137875645" class="statistics lab"><label/><title>Regression (Textbook Cost) </title>
+
+    <para id="fs-idm90448">Class Time:</para>
+    <para id="fs-idp162776560">Names:</para>
+       <list id="fs-idp101503968" list-type="bulleted">
+<title>Student Learning Outcomes</title>      
+  <item>The student will calculate and construct the line of best fit between two variables.</item>
+        <item>The student will evaluate the relationship between two variables to determine if that relationship is significant. </item>
+      </list>
+
+
+<para id="fs-idp70571712">
+<title>Collect the Data</title>
+Survey ten textbooks. Collect bivariate data (number of pages in a textbook, the cost of the textbook).</para>
+<list id="fs-idp53322144" list-type="enumerated"><item>Complete the table.
+<table id="fs-idm40594000" summary="The blank table has number of pages in the first column and cost of textbook in the second column. 20 empty cells.">
+
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+					<colspec colnum="2" colname="c2"/>
+					<thead>
+						<row>
+							<entry>Number of pages</entry>
+							<entry>Cost of textbook</entry>
+						</row>
+</thead>
+<tbody>
+						<row>
+							<entry/>
+							<entry/>
+						</row>
+						<row>
+							<entry/>
+							<entry/>
+						</row>
+						<row>
+							<entry/>
+							<entry/>
+						</row>
+						<row>
+							<entry/>
+							<entry/>
+						</row>
+						<row>
+							<entry/>
+							<entry/>
+						</row>
+						<row>
+							<entry/>
+							<entry/>
+						</row>
+						<row>
+							<entry/>
+							<entry/>
+						</row>
+						<row>
+							<entry/>
+							<entry/>
+						</row>
+					</tbody>
+				
+</tgroup>
+</table>
+</item>
+	<item>Which variable should be the dependent variable and which should be the independent
+variable? Why?</item>
+	<item>Graph &#8220;pages&#8221; vs. &#8220;cost.&#8221; Plot the points on the graph in <link target-id="fs-idm37313136">Analyze the Data</link>. Label both axes with words. Scale both axes.</item>
+</list><para id="fs-idm37313136">
+<title>Analyze the Data</title>
+Enter your data into your calculator or computer.
+Write the linear equation, rounding to four decimal places.</para>
+
+<list id="fs-idm130060688" list-type="enumerated">
+<item>Calculate the following:
+<list id="fs-idm69177152" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">a</emphasis> = ______</item>
+<item><emphasis effect="italics">b</emphasis> = ______</item>
+<item>correlation = ______</item>
+<item><emphasis effect="italics">n</emphasis> = ______</item>
+<item>equation: <emphasis effect="italics">y</emphasis> = ______</item>
+<item>Is the correlation significant? Why or why not? (Answer in complete sentences.)</item>
+</list>
+</item>
+	<item>Supply an answer for the following senarios:
+<list id="fs-idp3298784" list-type="enumerated" number-style="lower-alpha">
+<item>For a textbook with 400 pages, predict the cost.</item>
+<item>For a textbook with 600 pages, predict the cost.</item>
+</list>
+</item>
+	<item>Obtain the graph on your calculator or computer. Sketch the regression line.
+<figure id="id19863024"><media id="id20268459" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch12_15_01.png" mime-type="image/png" width="380"/></media>
+</figure></item>
+</list>
+
+<list id="fs-idp7458256" list-type="enumerated">
+<title>Discussion Questions</title>
+<item>Answer each question in complete sentences.
+<list id="fs-idm37663456" list-type="enumerated" number-style="lower-alpha">
+<item>Does the line seem to fit the data? Why?</item>
+<item>What does the correlation imply about the relationship between the number of pages and the cost?</item>
+</list>
+</item>
+<item>Are there any outliers? If so, which point(s) is an outlier? </item>
+<item>Should the outlier, if it exists, be removed? Why or why not?</item></list>
+</note></content>
+
+</document>

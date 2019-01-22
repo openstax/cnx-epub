@@ -1,0 +1,106 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+  <title>Introduction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47088/latest</md:content-url>
+  <md:content-id>m47088</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.9</md:version>
+  <md:created>2013/07/19 14:49:28 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>chi-square distribution</md:keyword>
+    <md:keyword>contingency table</md:keyword>
+    <md:keyword>degrees of freedom</md:keyword>
+    <md:keyword>expected value</md:keyword>
+    <md:keyword>goodness-of-fit test</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>observed value</md:keyword>
+    <md:keyword>population mean</md:keyword>
+    <md:keyword>population variance</md:keyword>
+    <md:keyword>test for homogeneity</md:keyword>
+    <md:keyword>test of a single variance</md:keyword>
+    <md:keyword>test of independence</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content><?cnx.eoc class="summary" title="Chapter Review"?>
+<?cnx.eoc class="formula-review" title="Formula Review"?>
+<?cnx.eoc class="practice" title="Practice"?>
+<?cnx.eoc class="bring-together-exercises" title="Bringing It Together : Practice"?>
+<?cnx.eoc class="free-response" title="Homework"?>
+<?cnx.eoc class="bring-together-homework" title="Bringing It Together : Homework"?>
+<?cnx.eoc class="references" title="References"?>
+
+<figure id="fs-idm45331472" class="splash"><media id="CNX_Stats_C11_CO.jpg" alt="This is a photo of a pile of grocery store receipts. The items and prices are blurred.">
+<image mime-type="image/jpg" src="CNX_Stats_C11_CO.jpg" width="500"/>
+</media>
+<caption>The chi-square distribution can be used to find relationships between two things, like grocery prices at different stores. (credit: Pete/flickr)</caption></figure><note id="fs-idm151065040" class="chapter-objectives">
+<label/>
+<title>Chapter Objectives</title>
+<para id="element-335">By the end of this chapter, the student should be able to:</para>
+<list id="element-377" list-type="bulleted" bullet-style="bullet"><item>Interpret the chi-square probability distribution as the sample size
+changes.</item>
+<item>Conduct and interpret chi-square goodness-of-fit hypothesis tests.</item>
+<item>Conduct and interpret chi-square test of independence hypothesis 
+tests.</item>
+<item>Conduct and interpret chi-square homogeneity hypothesis tests.</item>
+<item>Conduct and interpret chi-square single variance hypothesis tests.</item>
+</list></note>
+
+<para id="delete_me">Have you ever wondered if lottery numbers were evenly distributed or if some numbers occurred with a greater frequency? How about if the types of movies people preferred were different across different age groups? What about if a coffee machine was dispensing approximately the same amount of coffee each time? You could answer these questions by conducting a hypothesis test.</para>
+
+<para id="element-8">You will now study a new distribution, one that is used to determine the answers to such questions. This distribution is called the chi-square distribution.</para>
+
+<para id="element-213">In this chapter, you will learn the three major applications of the chi-square distribution:
+<list id="list-9872341" list-type="enumerated">
+<item>the goodness-of-fit test, which determines if data fit a particular distribution, such as in the lottery example</item>
+<item>the test of independence, which determines if events are independent, such as in the movie example</item>
+<item>the test of a single variance, which tests variability, such as in the coffee example</item>
+</list></para><note id="id17641525" class="finger"><label/><title>NOTE</title>
+<para id="fs-idm100257904">Though the chi-square distribution depends on calculators or computers for most of the calculations, there is a table available (see <link document="m47896"/>). TI-83+ and TI-84 calculator instructions are included in the text.</para></note><note id="fs-idm94608208" class="statistics collab"><label/><title>Collaborative Classroom Exercise</title>
+<para id="element-747">Look in the sports section of a newspaper or on the Internet for some sports data (baseball averages, basketball scores, golf tournament scores, football odds, swimming times, and the like). Plot a histogram and a boxplot using your data. See if you can determine a probability distribution that your data fits. Have a discussion with the class about your choice.</para></note></content>
+</document>

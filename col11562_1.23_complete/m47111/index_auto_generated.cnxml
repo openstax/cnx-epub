@@ -1,0 +1,370 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Testing the Significance of the Correlation Coefficient</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47111/latest</md:content-url>
+  <md:content-id>m47111</md:content-id>
+  <md:title>Testing the Significance of the Correlation Coefficient</md:title>
+  <md:version>1.6</md:version>
+  <md:created>2013/07/19 10:02:32 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>coefficient</md:keyword>
+    <md:keyword>correlation</md:keyword>
+    <md:keyword>significance</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="eip-298">The correlation coefficient, <emphasis effect="italics">r</emphasis>, tells us about the strength and direction of the linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>. However, the reliability of the linear model also depends on how many observed data points are in the sample. We need to look at both the value of the correlation coefficient <emphasis effect="italics">r</emphasis> and the sample size <emphasis effect="italics">n</emphasis>, together.</para>
+
+<para id="element-3884">We perform a hypothesis test of the <emphasis> "significance of the correlation coefficient" </emphasis> to decide whether the linear relationship in the sample data is strong enough to use to model the relationship in the population.</para>
+
+<para id="eip-413">The sample data are used to compute <emphasis effect="italics">r</emphasis>, the correlation coefficient for the sample. If we had data for the entire population, we could find the population correlation coefficient. But because we have only have sample data, we cannot calculate the population correlation coefficient. The sample correlation coefficient, <emphasis effect="italics">r</emphasis>, is our estimate of the unknown population correlation coefficient.</para>
+
+<list id="eip-560" list-type="labeled-item">
+<item>The symbol for the population correlation coefficient is <emphasis effect="italics">&#961;</emphasis>, the Greek letter "rho."</item>
+<item><emphasis effect="italics">&#961;</emphasis> = population correlation coefficient (unknown)</item>
+<item><emphasis effect="italics">r</emphasis> = sample correlation coefficient (known; calculated from sample data)</item>
+</list>
+
+<para id="eip-137">The hypothesis test lets us decide whether the value of the population correlation coefficient <emphasis effect="italics">&#961;</emphasis> is "close to zero" or "significantly different from zero". We decide this based on the sample correlation coefficient <emphasis effect="italics">r</emphasis> and the sample size <emphasis effect="italics">n</emphasis>.</para>
+
+<para id="fs-idm38597088"><title>If the test concludes that the correlation coefficient is significantly different from zero, we say that the correlation coefficient is "significant."</title><list id="eip-9">
+<item>Conclusion: There is sufficient evidence to conclude that there is a significant  linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> because the correlation coefficient is significantly different from zero.</item>
+<item>What the conclusion means: There is a significant linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>. We can use the regression line to model the linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> in the population.</item>
+</list></para>
+
+<para id="fs-idp40539792"><title>If the test concludes that the correlation coefficient is not significantly different from zero (it is close to zero), we say that correlation coefficient is "not significant".</title><list id="eip-663">
+<item>Conclusion:  "There is insufficient evidence to conclude that there is a significant  linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> because the correlation coefficient is not significantly different from zero."</item>
+<item>What the conclusion means: There is not a significant linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>. Therefore, we CANNOT use the regression line to model a linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> in the population.</item>
+</list></para>
+
+<note id="eip-939">
+<label/>
+<title>Note</title>
+<list id="eip-id1164926616686">
+<item>If <emphasis effect="italics">r</emphasis> is significant and the scatter plot shows a  linear trend, the line can be used to predict the value of
+<emphasis effect="italics">y</emphasis> for values of <emphasis effect="italics">x</emphasis> that are within the domain of observed <emphasis effect="italics">x</emphasis> values.</item>
+<item>If <emphasis effect="italics">r</emphasis> is not significant OR if the scatter plot does not show a linear trend, the line should not be used for prediction.</item>
+<item>If <emphasis effect="italics">r</emphasis> is significant and if the scatter plot shows a linear trend, the line may NOT be appropriate or reliable for prediction OUTSIDE the domain of observed <emphasis effect="italics">x</emphasis> values in the data.</item>
+</list>
+</note>
+
+
+<section id="fs-idm115676240">
+<title>PERFORMING THE HYPOTHESIS TEST</title>
+<list id="eip-375"><item><emphasis> Null Hypothesis: <emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#961;</emphasis> = 0 </emphasis></item>
+<item><emphasis>Alternate Hypothesis: <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#961;</emphasis> &#8800; 0</emphasis></item>
+</list>
+
+<para id="eip-422"><title>WHAT THE HYPOTHESES MEAN IN WORDS:</title></para><list id="eip-761"><item><emphasis>Null Hypothesis <emphasis effect="italics">H<sub>0</sub></emphasis>:</emphasis> The population correlation coefficient IS NOT significantly different from zero. There IS NOT a significant linear relationship(correlation) between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> in the population.</item>
+<item><emphasis>Alternate Hypothesis <emphasis effect="italics">H<sub>a</sub></emphasis>:</emphasis> The population correlation coefficient IS significantly DIFFERENT FROM zero. There IS A SIGNIFICANT LINEAR RELATIONSHIP (correlation) between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> in the population.</item>
+</list><para id="fs-idm162949504"><title>DRAWING A CONCLUSION:</title>There are two methods of making the decision. The two methods are equivalent and give the same result.</para>
+<list id="eip-40" list-type="bulleted">
+<item><emphasis>Method 1: Using the <emphasis effect="italics">p</emphasis>-value</emphasis></item>
+<item><emphasis>Method 2: Using a table of critical values</emphasis></item>
+</list>
+<para id="eip-870">In this chapter of this textbook, we will always use a significance level of 5%, <emphasis effect="italics">&#945;</emphasis> = 0.05</para>
+
+<note id="eip-128"><label/><title>Note</title>
+<para id="fs-idp138109680">Using the <emphasis effect="italics">p</emphasis>-value method, you could choose any appropriate significance level you want; you are not limited to using <emphasis effect="italics">&#945;</emphasis> = 0.05. But the table of critical values provided in this textbook assumes that we are using a significance level of 5%, <emphasis effect="italics">&#945;</emphasis> = 0.05. (If we wanted to use a different significance level than 5% with the critical value method, we would need different tables of critical values that are not provided in this textbook.)</para>
+</note><section id="fs-idp18638240"><title>METHOD 1:  Using a <emphasis effect="italics">p</emphasis>-value to make a decision</title><note id="fs-idp16405840" class="statistics calculator">
+<label/>
+<para id="fs-idp82841104">To calculate the <emphasis effect="italics">p</emphasis>-value using LinRegTTEST:<newline/>
+On the LinRegTTEST input screen, on the line prompt for <emphasis effect="italics">&#946;</emphasis> or <emphasis effect="italics">&#961;</emphasis>, highlight "<emphasis>&#8800; 0</emphasis>"<newline/>
+The output screen shows the p-value on the line that reads "p =".<newline/>
+(Most computer statistical software can calculate the <emphasis effect="italics">p</emphasis>-value.)
+</para></note>
+
+<list id="eip-297">
+<title>If the <emphasis effect="italics">p</emphasis>-value is less than the significance level (<emphasis effect="italics">&#945;</emphasis> = 0.05):</title>
+<item>Decision: Reject the null hypothesis.</item>
+<item>Conclusion: "There is sufficient evidence to conclude that there is a significant linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> because the correlation coefficient is significantly different from zero."</item>
+</list>
+
+<list id="eip-981">
+<title>If the <emphasis effect="italics">p</emphasis>-value is NOT less than the significance level (<emphasis effect="italics">&#945;</emphasis> = 0.05)</title>
+<item>Decision: DO NOT REJECT the null hypothesis.</item>
+<item>Conclusion: "There is insufficient evidence to conclude that there is a significant linear relationship  between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> because the correlation coefficient is NOT significantly different from zero."</item>
+</list>
+
+<list id="eip-335" list-type="labeled-item">
+<title>Calculation Notes:</title>
+<item>You will use technology to calculate the <emphasis effect="italics">p</emphasis>-value. The following describes the calculations to compute the test statistics and the <emphasis effect="italics">p</emphasis>-value:</item>
+<item>The <emphasis effect="italics">p</emphasis>-value is calculated using a <emphasis effect="italics">t</emphasis>-distribution with <emphasis effect="italics">n</emphasis> - 2 degrees of freedom.</item>
+<item>  The formula for the test statistic is <m:math>
+ <m:mrow>
+  <m:mi>t</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>r</m:mi><m:msqrt>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>2</m:mn>
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msup>
+       <m:mi>r</m:mi>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>. The value of the test statistic, <emphasis effect="italics">t</emphasis>, is shown in the computer or calculator output along with the <emphasis effect="italics">p</emphasis>-value. The test statistic <emphasis effect="italics">t</emphasis>  has the same sign as the correlation coefficient <emphasis effect="italics">r</emphasis>.</item>
+<item>The <emphasis effect="italics">p</emphasis>-value is the combined area in both tails.</item>
+</list>
+
+<para id="fs-idp203218208" class="finger">An alternative way to calculate the <emphasis effect="italics">p</emphasis>-value <emphasis>(p)</emphasis> given by LinRegTTest is the command 2*tcdf(abs(t),10^99, n-2) in 2nd DISTR.</para>
+
+<list id="eip-76"><title>THIRD-EXAM vs FINAL-EXAM EXAMPLE: <emphasis effect="italics">p</emphasis>-value method</title><item>Consider the <link document="m47117" target-id="element-22">third exam/final exam example</link>.</item>
+<item>The line of best fit is: &#375; = -173.51 + 4.83<emphasis effect="italics">x</emphasis> with <emphasis effect="italics">r</emphasis> = 0.6631 and there are <emphasis effect="italics">n</emphasis> = 11 data points.</item>
+<item>Can the regression line be used for prediction? <emphasis>Given a third exam score (<emphasis effect="italics">x</emphasis> value), can we
+use the line to predict the final exam score (predicted <emphasis effect="italics">y</emphasis> value)?</emphasis></item></list><para id="eip-714"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#961;</emphasis> = 0</para><para id="eip-222"><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#961;</emphasis> &#8800; 0</para><para id="eip-719"><emphasis effect="italics">&#945;</emphasis> = 0.05</para>
+
+<list id="eip-933" list-type="bulleted"><item>The <emphasis effect="italics">p</emphasis>-value is 0.026 (from LinRegTTest on your calculator or from computer software).</item>
+<item>The <emphasis effect="italics">p</emphasis>-value, 0.026, is less than the significance level of <emphasis effect="italics">&#945;</emphasis> = 0.05.</item>
+<item>Decision: Reject the Null Hypothesis <emphasis effect="italics">H<sub>0</sub></emphasis></item>
+ <item>Conclusion: There is sufficient evidence to conclude that there is a significant linear relationship between the third exam score (<emphasis effect="italics">x</emphasis>) and the final exam score (<emphasis effect="italics">y</emphasis>) because the correlation coefficient is significantly different from zero.</item>
+</list><para id="eip-385"><emphasis>Because <emphasis effect="italics">r</emphasis> is significant and the scatter plot shows a linear trend, the regression line can be used to predict final exam scores.</emphasis></para>
+</section><section id="fs-idp201258800">
+<title>METHOD 2: Using a table of Critical Values to make a decision</title>
+<para id="fs-idm167281024">The <link document="m47107" target-id="eip-idm31993488">95% Critical Values of the Sample Correlation Coefficient Table</link> can be used to give you a good idea of whether the computed value of <emphasis><m:math><m:mi>r</m:mi></m:math> is significant or not</emphasis>. Compare <emphasis effect="italics">r</emphasis> to the appropriate critical value in the table. If <emphasis effect="italics">r</emphasis> is not between the positive and negative critical values, then the correlation coefficient is significant. If <emphasis effect="italics">r</emphasis> is significant, then you may want to use the line for prediction.</para><example id="element-684">
+<para id="element-798">Suppose you computed <emphasis effect="italics">r</emphasis> = 0.801 using <emphasis effect="italics">n</emphasis> = 10 data points.<emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> - 2 = 10  - 2 = 8. The critical values associated with <emphasis effect="italics">df</emphasis> = 8 are -0.632 and + 0.632. If <emphasis effect="italics">r</emphasis> &lt; negative critical value or <emphasis effect="italics">r</emphasis> &gt; positive critical value, then <emphasis effect="italics">r</emphasis> issignificant. Since <emphasis effect="italics">r</emphasis> = 0.801 and 0.801 &gt; 0.632, <emphasis effect="italics">r</emphasis> is significant and the line may be usedfor prediction. If you view this example on a number line, it will help you.</para>
+<figure id="id1165447908809"><media id="id1165447908813" alt="Horizontal number line with values of -1, -0.632, 0, 0.632, 0.801, and 1. A dashed line above values -0.632, 0, and 0.632 indicates not significant values."><image src="fig-ch12_07_01.jpg" mime-type="image/jpeg" width="380"/></media><caption><emphasis effect="italics">r</emphasis> is not significant between -0.632 and +0.632. <emphasis effect="italics">r</emphasis> = 0.801 &gt; +0.632. Therefore, <emphasis effect="italics">r</emphasis> is significant.</caption></figure>
+</example>
+
+<note id="fs-idp24557360" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-97">
+<problem id="eip-646">
+<para id="eip-154">
+    For a given line of best fit, you computed that <emphasis effect="italics">r</emphasis> = 0.6501 using <emphasis effect="italics">n</emphasis> = 12 data points and the critical value is 0.576. Can the line be used for prediction? Why or why not?</para>
+	</problem>
+</exercise>
+
+</note>
+
+<example id="element-358">
+<para id="element-206">Suppose you computed <emphasis effect="italics">r</emphasis> = &#8211;0.624 with 14 data points. <emphasis effect="italics">df</emphasis> = 14 &#8211; 2 = 12. The critical values are &#8211;0.532 and 0.532. Since &#8211;0.624 &lt; &#8211;0.532, <emphasis effect="italics">r</emphasis> is significant and the line can be used for prediction</para><figure xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="id1165447908929"><media id="id1165447908933" alt="Horizontal number line with values of -0.624, -0.532, and 0.532."><image src="fig-ch12_07_02.jpg" mime-type="image/jpeg" width="380"/></media><caption>r = &#8211;0.624 &lt; -0.532. Therefore, <emphasis effect="italics">r</emphasis> is significant.</caption></figure></example>
+
+<note id="fs-idp165498288" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-847">
+<problem id="eip-834">
+<para id="eip-262">
+For a given line of best fit, you compute that <emphasis effect="italics">r</emphasis> = 0.5204 using <emphasis effect="italics">n</emphasis> = 9 data points, and the critical value is 0.666. Can the line be used for prediction? Why or why not?</para>
+</problem>
+</exercise>
+</note>
+
+
+<example id="element-719">
+<para id="element-446">Suppose you computed <emphasis effect="italics">r</emphasis> = 0.776 and <emphasis effect="italics">n</emphasis> = 6. <emphasis effect="italics">df</emphasis> = 6 &#8211; 2 = 4. The critical values are &#8211;0.811 and 0.811. Since &#8211;0.811 &lt; 0.776 &lt; 0.811, <emphasis effect="italics">r</emphasis> is not significant, and the line should not be used for prediction.</para><figure id="linrgs_facts5"><media id="id1165447912701" alt="Horizontal number line with values -0.924, -0.532, and 0.532."><image src="fig-ch12_07_03.jpg" mime-type="image/jpeg" width="380"/></media><caption>-0.811 &lt; <emphasis effect="italics">r</emphasis> = 0.776 &lt; 0.811. Therefore, <emphasis effect="italics">r</emphasis> is not significant.</caption>
+</figure>
+</example>
+
+<note id="fs-idp121877392" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="eip-610">
+<problem id="eip-276">
+<para id="eip-396">For a given line of best fit, you compute that <emphasis effect="italics">r</emphasis> = &#8211;0.7204 using <emphasis effect="italics">n</emphasis> = 8 data points, and the critical value is = 0.707. Can the line be used for prediction? Why or why not?</para></problem>
+</exercise>
+</note></section>
+</section>
+
+
+<section id="fs-idm89842304"><title>THIRD-EXAM vs FINAL-EXAM EXAMPLE: critical value method</title><para id="eip-666">Consider the <link document="m47117" target-id="element-22">third exam/final exam example</link>.
+The line of best fit is: <emphasis effect="italics">&#375;</emphasis> = &#8211;173.51+4.83<emphasis effect="italics">x</emphasis>  with <emphasis effect="italics">r</emphasis> = 0.6631 and there are <emphasis effect="italics">n</emphasis> = 11 data points. Can the regression line be used for prediction? <emphasis>Given a third-exam score (<emphasis effect="italics">x</emphasis> value), can we use the line to predict the final exam score (predicted <emphasis effect="italics">y</emphasis> value)?</emphasis>
+</para><list id="eip-830" list-type="labeled-item">
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#961;</emphasis> = 0</item>
+<item> <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#961;</emphasis> &#8800; 0 </item>
+<item><emphasis effect="italics">&#945;</emphasis> = 0.05</item>
+</list>
+
+<list id="eip-557" list-type="bulleted" bullet-style="bullet"><item>Use the "95% Critical Value" table for <emphasis effect="italics">r</emphasis> with <emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> &#8211; 2 = 11 &#8211; 2 = 9.</item>
+<item>The critical values are &#8211;0.602 and +0.602</item>
+<item>Since 0.6631 &gt; 0.602, <emphasis effect="italics">r</emphasis> is significant.</item>
+<item>Decision: Reject the null hypothesis.</item>
+<item>Conclusion:There is sufficient evidence to conclude that there is a significant  linear relationship between the third exam score (<emphasis effect="italics">x</emphasis>) and the final exam score (<emphasis effect="italics">y</emphasis>) because the correlation coefficient is significantly different from zero.</item>
+</list><para id="eip-138"><emphasis>Because <emphasis effect="italics">r</emphasis> is significant and the scatter plot shows a linear trend, the regression line can be used to predict final exam scores.</emphasis></para>
+
+<example id="element-433"><para id="element-294">Suppose you computed the following correlation coefficients. Using the table at the end of the chapter, determine if <emphasis effect="italics">r</emphasis> is significant and the line of best fit associated with each <emphasis effect="italics">r</emphasis> can be used to predict a <emphasis effect="italics">y</emphasis> value. If it helps, draw a number line.</para>
+
+<list id="element-467" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">r</emphasis> = &#8211;0.567 and the sample size, <emphasis effect="italics">n</emphasis>, is 19. The <emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> &#8211; 2 = 17. The critical value is &#8211;0.456. &#8211;0.567 &lt; &#8211;0.456 so <emphasis effect="italics">r</emphasis> is significant.</item>
+<item><emphasis effect="italics">r</emphasis> = 0.708 and the sample size, <emphasis effect="italics">n</emphasis>, is nine. The <emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> &#8211; 2 = 7. The critical value is 0.666. 0.708 &gt; 0.666 so <emphasis effect="italics">r</emphasis> is significant.</item>
+<item><emphasis effect="italics">r</emphasis> = 0.134 and the sample size, <emphasis effect="italics">n</emphasis>, is 14. The <emphasis effect="italics">df</emphasis> = 14 &#8211; 2 = 12. The critical value is 0.532. 0.134 is between &#8211;0.532 and 0.532 so <emphasis effect="italics">r</emphasis> is not significant.</item>
+<item><emphasis effect="italics">r</emphasis> = 0 and the sample size, <emphasis effect="italics">n</emphasis>, is five. No matter what the dfs are, <emphasis effect="italics">r</emphasis> = 0 is between the two critical values so <emphasis effect="italics">r</emphasis> is not significant.</item>
+</list></example><note id="fs-idp56886288" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-316">
+<problem id="eip-112">
+  <para id="eip-483">For a given line of best fit, you compute that <emphasis effect="italics">r</emphasis> = 0 using <emphasis effect="italics">n</emphasis> = 100 data points. Can the line be used for prediction? Why or why not?</para>
+</problem>
+</exercise>
+
+</note>
+</section><section id="eip-570">
+<title>Assumptions in Testing the Significance of the Correlation Coefficient</title>
+<para id="eip-485">Testing the significance of the correlation coefficient requires that certain assumptions about the data are satisfied. The premise of this test is that the data are a sample of observed points taken from a larger population.  We have not examined the entire population because it is not possible or feasible to do so.  We are examining the sample to draw a conclusion about whether the linear relationship that we see between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> in the sample data provides strong enough evidence so that we can conclude that there is a linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> in the population.</para>
+<para id="eip-953">The regression line equation that we calculate from the sample data gives the best-fit line for our particular sample. We want to use this best-fit line for the sample as an estimate of the best-fit line for the population. Examining the scatterplot and testing the significance of the correlation coefficient helps us determine if it is appropriate to do this.</para>
+
+<list id="eip-873" list-type="bulleted"><title>The assumptions underlying the test of significance are:</title><item>There is a linear relationship in the population that models the average value of <emphasis effect="italics">y</emphasis> for varying values of <emphasis effect="italics">x</emphasis>. In other words, the expected value of <emphasis effect="italics">y</emphasis> for each particular value lies on a straight line in the population. (We do not know the equation for the line for the population. Our regression line from the sample is our best estimate of this line in the population.)</item>
+
+<item> The <emphasis effect="italics">y</emphasis> values for any particular <emphasis effect="italics">x</emphasis> value are normally distributed about the line. This implies that there are more <emphasis effect="italics">y</emphasis> values scattered closer to the line than are scattered farther away. Assumption (1) implies that these normal distributions are centered on the line: the means of these normal distributions of <emphasis effect="italics">y</emphasis> values lie on the line.</item>
+
+<item> The standard deviations of the population <emphasis effect="italics">y</emphasis> values about the line are equal for each value of <emphasis effect="italics">x</emphasis>. In other words, each of these normal distributions of <emphasis effect="italics">y</emphasis> values has the same shape and spread about the line.</item>
+
+<item>The residual errors are mutually independent (no pattern).</item>
+
+<item>The data are produced from a well-designed, random sample or randomized experiment.</item>
+</list><figure id="linrgs_facts_normal"><media id="id9999999999999" alt="The left graph shows three sets of points. Each set falls in a vertical line. The points in each set are normally distributed along the line &#8212; they are densely packed in the middle and more spread out at the top and bottom. A downward sloping regression line passes through the mean of each set. The right graph shows the same regression line plotted. A vertical normal curve is shown for each line.">
+<image src="fig-ch12_07_04.jpg" mime-type="image/jpeg" width="380"/>
+</media>
+
+<caption>The <emphasis effect="italics">y</emphasis> values for each <emphasis effect="italics">x</emphasis> value are normally distributed about the line with the same standard deviation.  For each <emphasis effect="italics">x</emphasis> value, the mean of the <emphasis effect="italics">y</emphasis> values lies on the regression line. More <emphasis effect="italics">y</emphasis> values lie near the line than are scattered further away from the line.
+</caption></figure>
+
+</section>
+
+
+<section id="eip-724" class="summary"><title>Chapter Review</title><para id="eip-idp150994848">Linear regression is a procedure for fitting a straight line of the form <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis> to data. The conditions for regression are:</para>
+
+<list id="eip-idm157640544" list-type="bulleted" bullet-style="open-circle">
+<item><emphasis>Linear</emphasis> In the population, there is a linear relationship that models the average value of <emphasis effect="italics">y</emphasis> for different values of <emphasis effect="italics">x</emphasis>.</item>
+<item><emphasis>Independent</emphasis> The residuals are assumed to be independent.</item>
+<item><emphasis>Normal</emphasis> The <emphasis effect="italics">y</emphasis> values are distributed normally for any value of <emphasis effect="italics">x</emphasis>.</item>
+<item><emphasis>Equal variance</emphasis> The standard deviation of the <emphasis effect="italics">y</emphasis> values is equal for each <emphasis effect="italics">x</emphasis> value.</item>
+<item><emphasis>Random</emphasis> The data are produced from a well-designed random sample or randomized experiment.</item></list>
+
+<para id="eip-idp46255472">The slope <emphasis><emphasis effect="italics">b</emphasis></emphasis> and intercept <emphasis><emphasis effect="italics">a</emphasis></emphasis> of the least-squares line estimate the slope <emphasis effect="italics">&#946;</emphasis> and intercept <emphasis effect="italics">&#945;</emphasis> of the population (true) regression line. To estimate the population standard deviation of <emphasis effect="italics">y</emphasis>, <emphasis effect="italics">&#963;</emphasis>, use the standard deviation of the residuals, <emphasis effect="italics">s</emphasis>. <m:math>
+ <m:mrow>
+  <m:mi>s</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>S</m:mi><m:mi>E</m:mi><m:mi>E</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>2</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>. The variable <emphasis effect="italics">&#961;</emphasis> (rho) is the population correlation coefficient. To test the null hypothesis
+ <emphasis effect="italics">H</emphasis><sub>0</sub>: <emphasis effect="italics">&#961;</emphasis> = <emphasis effect="italics">hypothesized value</emphasis>, use a linear regression t-test.  The most common null hypothesis is <emphasis effect="italics">H</emphasis><sub>0</sub>: <emphasis effect="italics">&#961;</emphasis> = 0 which indicates there is no linear relationship between <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis> in the population. The TI-83, 83+, 84, 84+ calculator function LinRegTTest can perform this test (STATS TESTS LinRegTTest).</para></section><section id="eip-896" class="formula-review">
+<title>Formula Review</title>
+<para id="eip-388">Least Squares Line or Line of Best Fit: </para>
+<para id="eip-64"><m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>y</m:mi>
+   <m:mo>^</m:mo>
+  </m:mover>
+  <m:mo>=</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>x</m:mi>
+ </m:mrow>
+</m:math></para><para id="eip-716">where </para>
+<para id="eip-574"><emphasis effect="italics">a</emphasis> = <emphasis effect="italics">y</emphasis>-intercept</para><para id="eip-41"><emphasis effect="italics">b</emphasis> = slope</para>
+<para id="eip-484">Standard deviation of the residuals: </para>
+<para id="eip-496"><m:math>
+ <m:mrow>
+  <m:mi>s</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>S</m:mi><m:mi>E</m:mi><m:mi>E</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>2</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+   <m:mi>.</m:mi>
+ </m:mrow>
+</m:math></para><para id="eip-463">where</para>
+<para id="eip-814">SSE = sum of squared errors</para>
+<para id="eip-799"><emphasis effect="italics">n</emphasis> = the number of data points</para>
+</section>
+
+<section id="eip-142" class="practice">
+<exercise id="eip-552"><problem id="eip-226">
+  <para id="eip-707">
+When testing the significance of the correlation coefficient, what is the null hypothesis?
+  </para>
+</problem></exercise><exercise id="eip-592"><problem id="eip-798">
+  <para id="eip-725">
+When testing the significance of the correlation coefficient, what is the alternative hypothesis?
+  </para>
+</problem>
+
+<solution id="eip-840">
+  <para id="eip-880"><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#961;</emphasis> &#8800; 0</para></solution>
+</exercise><exercise id="eip-59"><problem id="eip-960">
+  <para id="eip-596">
+If the level of significance is 0.05 and the <emphasis effect="italics">p</emphasis>-value is 0.04, what conclusion can you draw?
+  </para>
+</problem></exercise></section>
+
+</content>
+</document>

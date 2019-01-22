@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" class="appendix" module-id="" cnxml-version="0.7">
+  <title>Tables</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47875/latest</md:content-url>
+  <md:content-id>m47875</md:content-id>
+  <md:title>Tables</md:title>
+  <md:version>1.12</md:version>
+  <md:created>2013/10/29 11:21:51 -0500</md:created>
+  <md:revised>2018/11/12 16:08:59 -0600</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content class="appendix">
+    <para id="eip-753">The module contains links to government site tables used in statistics.</para><note id="idp85711232"><label/><title>Note</title>
+<para id="eip-idp140444955343872">When you are finished with the table link, use the back button on your browser to return here.</para></note><list id="element-477" list-type="bulleted"><title>Tables (NIST/SEMATECH e-Handbook of Statistical Methods,  http://www.itl.nist.gov/div898/handbook/, January 3, 2009)</title><item>  
+<link url="http://www.itl.nist.gov/div898/handbook/eda/section3/eda3672.htm">Student <emphasis effect="italics">t</emphasis> table</link></item>
+
+<item>  
+<link url="http://www.itl.nist.gov/div898/handbook/eda/section3/eda3671.htm">Normal table</link></item>
+
+<item>  
+<link url="http://www.itl.nist.gov/div898/handbook/eda/section3/eda3674.htm">Chi-Square table</link></item>
+
+<item>  
+<link url="http://www.itl.nist.gov/div898/handbook/eda/section3/eda3673.htm">F-table</link></item>
+
+<item>All <link url="http://www.itl.nist.gov/div898/handbook/eda/section3/eda367.htm">four tables</link> can be accessed by going to</item></list><list id="element-919" list-type="bulleted"><title>95% Critical Values of the Sample Correlation Coefficient Table</title><item><link document="m47107" target-id="eip-idm31993488">95% Critical Values of the Sample Correlation Coefficient</link></item>
+</list></content>
+
+  
+</document>

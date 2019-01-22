@@ -1,0 +1,192 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Introduction</title><meta name="created-time" content="2013/07/19 03:37:06 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="area, continuous probability function, continuous random variable, cumulative distribution function, exponential distribution, memoryless property, normal distribution, probability, probability density function, uniform distribution"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" class="introduction" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Introduction</div><cnx-pi data-type="cnx.flag.introduction">
+        class="introduction"
+      </cnx-pi><cnx-pi data-type="cnx.eoc">class="summary" title="Chapter Review"</cnx-pi>
+<cnx-pi data-type="cnx.eoc">class="formula-review" title="Formula Review"</cnx-pi>
+<cnx-pi data-type="cnx.eoc">class="practice" title="Practice"</cnx-pi>
+<cnx-pi data-type="cnx.eoc">class="bring-together-exercises" title="Bringing It Together : Practice"</cnx-pi>
+<cnx-pi data-type="cnx.eoc">class="free-response" title="Homework"</cnx-pi>
+<cnx-pi data-type="cnx.eoc">class="bring-together-homework" title="Bringing It Together : Homework"</cnx-pi>
+<cnx-pi data-type="cnx.eoc">class="references" title="References"</cnx-pi>
+
+<figure id="fs-idp107728704" class="splash"><figcaption>The heights of these radish plants are continuous random variables.  (Credit: Rev Stan)</figcaption><span data-type="media" id="fs-idp88279424" data-alt="The image shows radish plants of various heights sprouting out of dirt.">
+<img src="/resources/721e5e0950be6f11e4991a5837e843f181d5185e/CNX_Stats_C05_CO.jpg" data-media-type="image/jpeg" alt="The image shows radish plants of various heights sprouting out of dirt." width="380"/>
+</span>
+
+</figure><div data-type="note" data-has-label="true" id="fs-idp13104688" class="chapter-objectives" data-label=""><div data-type="title">Chapter Objectives</div>
+<p id="element-103">By the end of this chapter, the student should be able to:</p>
+<ul id="list1">
+<li>Recognize and understand continuous probability density functions in general.</li>
+<li>Recognize the uniform probability distribution and apply it appropriately.</li>
+<li>Recognize the exponential probability distribution and apply it appropriately.</li>
+</ul>
+</div>
+<p id="eip-idp101194160">Continuous random variables have many applications. Baseball batting averages, IQ scores, the length of time a long distance telephone call lasts, the amount of money a person carries, the length of time a computer chip lasts, and SAT scores are just a few. The field of reliability depends on a variety of continuous random variables.</p>
+<div data-type="note" data-has-label="true" id="fs-idp89655056" data-label=""><div data-type="title">Note</div>
+<p id="fs-idm83037888">The values of discrete and continuous random variables can be ambiguous. For example, if <em data-effect="italics">X</em> is equal to the number of miles (to the nearest mile) you drive to work, then <em data-effect="italics">X</em> is a discrete random variable. You count the miles. If <em data-effect="italics">X</em> is the distance you drive to work, then you measure values of <em data-effect="italics">X</em> and <em data-effect="italics">X</em> is a continuous random variable. For a second example, if <em data-effect="italics">X</em> is equal to the number of books in a backpack, then <em data-effect="italics">X</em> is a discrete random variable. If <em data-effect="italics">X</em> is the weight of a book, then <em data-effect="italics">X</em> is a continuous random variable because weights are measured. How the random variable is defined is very important.</p>
+</div>
+<section data-depth="1" id="eip-606"><h3 data-type="title">Properties of Continuous Probability Distributions</h3>
+<p id="eip-60">The graph of a continuous probability distribution is a curve. Probability is represented by area under the curve.</p>
+<p id="eip-33">The curve is called the <span data-type="term">probability density function</span> (abbreviated as <strong>pdf</strong>). We use the symbol <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) to represent the curve. <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) is the function that corresponds to the graph; we use the density function <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) to draw the graph of the probability distribution. </p><p id="eip-474"><strong>Area under the curve</strong> is given by a different function called the  <strong>cumulative distribution function </strong> (abbreviated as <strong>cdf</strong>). The cumulative distribution function is used to evaluate probability as area.</p>
+<ul id="eip-id1170587055152"><li>The outcomes are measured, not counted.</li>
+<li>The entire area under the curve and above the x-axis is equal to one.</li>
+<li>Probability is found for intervals of <em data-effect="italics">x</em> values rather than for individual <em data-effect="italics">x</em> values.</li>
+<li><em data-effect="italics">P(c &lt; x &lt; d)</em> is the probability that the random variable <em data-effect="italics">X</em> is in the interval between the values <em data-effect="italics">c</em> and <em data-effect="italics">d</em>. <em data-effect="italics">P(c &lt; x &lt; d)</em> is the area under the curve, above the <em data-effect="italics">x</em>-axis, to the right of <em data-effect="italics">c</em> and the left of <em data-effect="italics">d</em>.</li>
+<li><em data-effect="italics">P(x = c) =</em> 0 The probability that <em data-effect="italics">x</em> takes on any single individual value is zero. The area below the curve, above the <em data-effect="italics">x</em>-axis, and between <em data-effect="italics">x</em> = <em data-effect="italics">c</em> and <em data-effect="italics">x</em> = <em data-effect="italics">c</em> has no width, and therefore no area (area = 0). Since the probability is equal to the area, the probability is also zero.</li>
+<li><em data-effect="italics">P(c &lt; x &lt; d)</em> is the same as <em data-effect="italics">P(c &#8804; x &#8804; d)</em> because probability is equal to area.</li>
+</ul>
+<p id="eip-423">We will find the area that represents probability by using geometry, formulas, technology, or probability tables.  In general, calculus is needed to find the area under the curve for many probability density functions.  When we use formulas to find the area in this textbook, the formulas were found by using the techniques of integral calculus.  However, because most students taking this course have not studied calculus, we will not be using calculus in this textbook.</p>
+<p id="eip-335">There are many continuous probability distributions. When using a continuous probability distribution to model probability, the distribution used is selected to model and fit the particular situation in the best way.</p>
+<p id="eip-94">In this chapter and the next, we will study the uniform distribution, the exponential distribution, and the normal distribution. The following graphs illustrate these distributions.</p><figure id="id4131243"><figcaption>The graph shows a Uniform Distribution with the area between <em data-effect="italics">x</em> = 3 and <em data-effect="italics">x</em> = 6 shaded to represent the probability that the value of the random variable <em data-effect="italics">X</em> is in the interval between three and six.</figcaption>
+<span data-type="media" id="id1164320264037" data-alt="This graph shows a uniform distribution. The horizontal axis ranges from 0 to 10. The distribution is modeled by a rectangle extending from x = 2 to x = 8.8. A region from x = 3 to x = 6 is shaded inside the rectangle. The shaded area represents P(3  x &lt; 6).">
+<img src="/resources/09089d8741088259dd8953b0ced9d41813d1ca9d/fig-ch05_01_01.jpg" data-media-type="image/jpg" alt="This graph shows a uniform distribution. The horizontal axis ranges from 0 to 10. The distribution is modeled by a rectangle extending from x = 2 to x = 8.8. A region from x = 3 to x = 6 is shaded inside the rectangle. The shaded area represents P(3  x &lt; 6)." width="380"/>
+</span>
+
+</figure><figure id="id3243513"><figcaption>The graph shows an Exponential Distribution with the area between <em data-effect="italics">x</em> = 2 and <em data-effect="italics">x</em> = 4 shaded to represent the probability that the value of the random variable <em data-effect="italics">X</em> is in the interval between two and four.</figcaption><span data-type="media" id="id1164323972015" data-alt="">
+<img src="/resources/6838b1c546d56c6fb980a68715a26d097b339ebb/fig-ch05_01_02.jpg" data-media-type="image/jpg" alt="" width="380"/>
+</span>
+
+</figure><figure id="eip-id1164898429541"><figcaption>The graph shows the Standard Normal Distribution with the area between <em data-effect="italics">x</em> = 1 and <em data-effect="italics">x</em> = 2 shaded to represent the probability that the value of the random variable <em data-effect="italics">X</em> is in the interval between one and two.</figcaption>
+<span data-type="media" id="id1164323801239" data-alt="This graph shows an exponential distribution. The graph slopes downward. It begins at a point on the y-axis and approaches the x-axis at the right edge of the graph. The region under the graph from x = 2 to x = 4 is shaded to represent P(2 &lt; x &lt; 4).">
+<img src="/resources/a0fbaae04b2386f412a075b409980063208c09ea/fig-ch05_01_03.jpg" data-media-type="image/jpg" alt="This graph shows an exponential distribution. The graph slopes downward. It begins at a point on the y-axis and approaches the x-axis at the right edge of the graph. The region under the graph from x = 2 to x = 4 is shaded to represent P(2 &lt; x &lt; 4)." width="380"/>
+</span>
+
+</figure>
+</section><div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+<dl id="fs-idm138335264">
+<dt>Uniform Distribution</dt>
+<dd id="fs-idm102638224">a continuous random variable (RV) that has equally likely outcomes over the domain, <em data-effect="italics">a</em> &lt; <em data-effect="italics">x</em> &lt; <em data-effect="italics">b</em>. Notation: <em data-effect="italics">X</em> ~ <em data-effect="italics">U</em>(<em data-effect="italics">a</em>,<em data-effect="italics">b</em>). The mean is <em data-effect="italics">&#956;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>a</mi><mo>+</mo><mi>b</mi>
+</mrow>
+<mn>2</mn>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>a</mi><mo>+</mo><mi>b</mi>
+</mrow>
+<mn>2</mn>
+</mfrac>
+</mrow></annotation-xml></semantics></math>
+and the standard deviation is <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+<mrow>
+<mi>&#963;</mi><mo>=</mo><msqrt>
+<mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mi>b</mi><mo>&#8722;</mo><mi>a</mi>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+</mrow>
+<mrow>
+<mn>12</mn>
+</mrow>
+</mfrac>
+</mrow>
+</msqrt>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>&#963;</mi><mo>=</mo><msqrt>
+<mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mi>b</mi><mo>&#8722;</mo><mi>a</mi>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+</mrow>
+<mrow>
+<mn>12</mn>
+</mrow>
+</mfrac>
+</mrow>
+</msqrt>
+</mrow></annotation-xml></semantics></math>. The probability density function is <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mi>b</mi><mo>&#8722;</mo><mi>a</mi>
+</mrow>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mi>b</mi><mo>&#8722;</mo><mi>a</mi>
+</mrow>
+</mfrac>
+</mrow></annotation-xml></semantics></math> for <em data-effect="italics">a</em> &lt; <em data-effect="italics">x</em> &lt; <em data-effect="italics">b</em> or <em data-effect="italics">a</em> &#8804; <em data-effect="italics">x</em> &#8804; <em data-effect="italics">b</em>. The  cumulative distribution is <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8804; <em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>x</mi><mo>&#8722;</mo><mi>a</mi>
+</mrow>
+<mrow>
+<mi>b</mi><mo>&#8722;</mo><mi>a</mi>
+</mrow>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>x</mi><mo>&#8722;</mo><mi>a</mi>
+</mrow>
+<mrow>
+<mi>b</mi><mo>&#8722;</mo><mi>a</mi>
+</mrow>
+</mfrac>
+</mrow></annotation-xml></semantics></math>.
+</dd>
+</dl>
+<dl id="fs-idm29977280">
+<dt>Exponential Distribution</dt>
+<dd id="fs-idm115662720">a continuous random variable (RV) that appears when we are interested in the intervals of time between some random events, for example, the length of time between emergency arrivals at a hospital; the notation is <em data-effect="italics">X</em> ~ <em data-effect="italics">Exp</em>(<em data-effect="italics">m</em>). The mean is <em data-effect="italics">&#956;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mi>m</mi>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>1</mn>
+<mi>m</mi>
+</mfrac>
+</mrow></annotation-xml></semantics></math> and the standard deviation is &#963; = <math xmlns="http://www.w3.org/1998/Math/MathML" display=""><semantics><mrow>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<mi>m</mi>
+</mfrac>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mn>1</mn>
+<mi>m</mi>
+</mfrac>
+</mrow></annotation-xml></semantics></math>. The probability density function is <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = <em data-effect="italics">me<sup>&#8722;mx</sup></em>, <em data-effect="italics">x</em> &#8805; 0 and the cumulative distribution function is <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8804; <em data-effect="italics">x</em>) = 1 &#8722; <em data-effect="italics">e<sup>&#8722;mx</sup></em>.</dd>
+</dl>
+</div></body>
+
+</html>

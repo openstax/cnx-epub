@@ -1,0 +1,384 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Scatter Plots</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47109/latest</md:content-url>
+  <md:content-id>m47109</md:content-id>
+  <md:title>Scatter Plots</md:title>
+  <md:version>1.5</md:version>
+  <md:created>2013/07/19 15:01:22 -0500</md:created>
+  <md:revised>2018/09/07 16:15:54 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>deviations</md:keyword>
+    <md:keyword>direction</md:keyword>
+    <md:keyword>linear regression</md:keyword>
+    <md:keyword>scatter plot</md:keyword>
+    <md:keyword>strength</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="delete_me">Before we take up the discussion of linear regression and correlation, we need to examine a way to display the relation between two variables <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>. The most common and easiest way is a <emphasis>scatter plot</emphasis>. The following example illustrates a scatter plot.</para>
+
+<example xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-777"><para id="element-622">In Europe and Asia, m-commerce is popular. M-commerce users have special mobile phones that work like electronic wallets as well as provide phone and Internet services. Users can do everything from paying for parking to buying a TV set or soda from a machine to banking to checking sports scores on the Internet. For the years 2000 through 2004, was
+there a relationship between the year and the number of m-commerce users? Construct a scatter plot. Let <emphasis effect="italics">x</emphasis> = the year and let <emphasis effect="italics">y</emphasis> = the number of m-commerce users, in millions.</para>
+<table id="linrgs_scater1" summary="">
+<tgroup cols="2"><thead>
+  <row>
+    <entry><m:math><m:mi>x</m:mi></m:math> (year)</entry>
+    <entry><m:math><m:mi>y</m:mi></m:math> (# of users)</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>2000</entry>
+    <entry>0.5</entry>
+  </row>
+  <row>
+    <entry>2002</entry>
+    <entry>20.0</entry>
+  </row>
+  <row>
+    <entry>2003</entry>
+    <entry>33.0</entry>
+  </row>
+  <row>
+    <entry>2004</entry>
+    <entry>47.0</entry>
+  </row>
+</tbody>
+
+
+
+</tgroup>
+<caption>Table showing the number of m-commerce users (in millions) by year.</caption>
+</table>
+
+<figure id="linrgs_scater12">
+  <media id="id1171452159644" alt="This is a scatter plot for the data provided. The x-axis represents the year and the y-axis represents the number of m-commerce users in millions. There are four points plotted, at (2000, 0.5), (2002, 20.0), (2003, 33.0), (2004, 47.0)."><image src="fig-ch12_04_01.jpg" mime-type="image/jpeg" width="380"/></media>
+  <caption>Scatter plot showing the number of m-commerce users (in millions) by year.</caption>
+</figure></example><note id="fs-idp52837344" class="statistics calculator"><label/>
+To create a scatter plot:
+<list id="fs-idp71144528" list-type="enumerated">
+<item>Enter your X data into list L1 and your Y data into list L2.</item>
+<item>Press 2nd STATPLOT ENTER to use Plot 1.  On the input screen for PLOT 1, highlight On and press ENTER. (Make sure the other plots are OFF.)</item>
+<item>For TYPE: highlight the very first icon, which is the scatter plot, and press ENTER.</item>
+<item>For Xlist:, enter L1 ENTER and for Ylist: L2 ENTER.</item>
+<item>For Mark: it does not matter which symbol you highlight, but the square is the easiest to see. Press ENTER.</item>
+<item>Make sure there are no other equations that could be plotted.  Press Y = and clear any equations out.</item>
+<item>Press the ZOOM key and then the number 9 (for menu item "ZoomStat") ; the calculator will fit the window to the data.  You can press WINDOW to see the scaling of the axes.</item>
+</list>
+</note><note id="fs-idm16826784" class="statistics try">
+<label/>
+<title>Try It</title>
+
+<exercise id="eip-339">
+<problem id="eip-740">
+  <para id="eip-489">Amelia plays basketball for her high school. She wants to improve to play at the college level. She notices that the number of points she scores in a game goes up in response to the number of hours she practices her jump shot each week. She records the following data:</para>
+<table id="eip-idp1116432" summary="">
+<tgroup cols="2">
+<thead><row><entry><emphasis effect="italics">X</emphasis> (hours practicing jump shot)</entry>	<entry><emphasis effect="italics">Y</emphasis> (points scored in a game)</entry></row></thead>
+<tbody>
+<row><entry>5</entry>	<entry>15</entry></row>
+<row><entry>7</entry>	<entry>22</entry></row>
+<row><entry>9</entry>	<entry>28</entry></row>
+<row><entry>10</entry>	<entry>31</entry></row>
+<row><entry>11</entry>	<entry>33</entry></row>
+<row><entry>12</entry>	<entry>36</entry></row>
+</tbody>
+</tgroup>
+</table>
+<para id="eip-idm36661536">Construct a scatter plot and state if what Amelia thinks appears to be true.</para>
+</problem>
+</exercise>
+
+</note>
+
+<para id="element-83">A scatter plot shows the <emphasis>direction</emphasis> of a relationship between the variables. A clear direction happens when there is either:
+<list id="list1" list-type="bulleted">
+<item>High values of one variable occurring with high values of the other variable or low values of one variable occurring with low values of the other variable.</item>
+<item>High values of one variable occurring with low values of the other variable.</item>
+</list></para>
+<para id="element-674">You can determine the <emphasis effect="bold">strength</emphasis> of the relationship by looking at the scatter plot and seeing how close the points are to a line, a power function, an exponential function,
+or to some other type of function.  For a linear relationship there is an exception. Consider a scatter plot where all the points fall on a horizontal line providing a "perfect fit." The horizontal line would in fact show no relationship.</para>
+
+<para id="element-708">When you look at a scatterplot, you want to notice the <emphasis>overall pattern</emphasis> and any <emphasis>deviations</emphasis> from the pattern. The following scatterplot examples illustrate these concepts.</para>
+
+<figure id="lingrgs10"><media id="id1171450550347" alt="The first graph is a scatter plot with 6 points plotted. The points form a pattern that moves upward to the right, almost in a straight line. The second graph is a scatter plot with the same 6 points as the first graph. A 7th point is plotted in the top left corner of the quadrant. It falls outside the general pattern set by the other 6 points."><image src="fig-ch12_04_02.jpg" mime-type="image/jpeg" width="380"/>
+</media></figure>
+<figure id="lingrgs20"><media id="id1171453496318" alt="The first graph is a scatter plot with 6 points plotted. The points form a pattern that moves downward to the right, almost in a straight line. The second graph is a scatter plot of 8 points. These points form a general downward pattern, but the point do not align in a tight pattern."><image src="fig-ch12_04_03.jpg" mime-type="image/jpeg" width="380"/>
+</media></figure>
+<figure id="lingrgs30"><media id="id1171454842074" alt="The first graph is a scatter plot of 7 points in an exponential pattern. The pattern of the points begins along the x-axis and curves steeply upward to the right side of the quadrant. The second graph shows a scatter plot with many points scattered everywhere, exhibiting no pattern.">
+<image src="fig-ch12_04_04.jpg" mime-type="image/jpeg" width="380"/>
+</media></figure>
+<para id="element-243">In this chapter, we are interested in scatter plots that show a linear pattern. Linear patterns are quite common. The linear relationship is strong if the points are close to a straight line,  except in the case of a horizontal line where there is no relationship. If we think that the points show a linear relationship, we would like to draw a line on the scatter plot. This line can be calculated through a process called <term>linear regression</term>. However, we only calculate a regression line if one of the variables helps to explain or predict the other variable. If <emphasis effect="italics">x</emphasis> is the independent variable and <emphasis effect="italics">y</emphasis> the dependent variable,
+then we can use a regression line to predict <emphasis effect="italics">y</emphasis> for a given value of <emphasis effect="italics">x</emphasis></para><section id="eip-407" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm18585216">Scatter plots are particularly helpful graphs when we want to see if there is a linear relationship among data points. They indicate both the direction of the relationship between the <emphasis effect="italics">x</emphasis> variables and the <emphasis effect="italics">y</emphasis> variables, and the strength of the relationship. We calculate the strength of the relationship between an independent variable and a dependent variable using linear regression.</para></section>
+
+
+<section id="eip-98" class="practice">
+<exercise id="eip-379">
+<problem id="eip-474">
+  <para id="eip-780">Does the scatter plot appear linear? Strong or weak? Positive or negative?</para>
+<figure id="fs-idp130114112"><media id="eip-idm143400624" alt="This is a scatterplot with several points plotted in the first quadrant. The points form a clear pattern, moving upward to the right. The points do not line up , but the overall pattern can be modeled with a line." display="block">
+  <image mime-type="image/jpeg" src="CNX_Stats_C012_M04_item001.jpg" width="450"/>
+</media></figure>
+</problem>
+<solution id="eip-206">
+  <para id="eip-989">The data appear to be linear with a strong, positive correlation.</para></solution>
+</exercise>
+
+<exercise id="eip-281"><problem id="eip-986">
+  <para id="eip-542">Does the scatter plot appear linear? Strong or weak? Positive or negative?</para>
+<figure id="fs-idp68059856"><media id="eip-idp14193472" alt="This is a scatterplot with several points plotted in the first quadrant. The points move downward to the right. The overall pattern can be modeled with a line, but the points are widely scattered." display="block">
+  <image mime-type="image/jpeg" src="CNX_Stats_C012_M04_item002.jpg" width="450"/>
+</media></figure>
+</problem></exercise><exercise id="eip-781">
+<problem id="eip-746">
+  <para id="eip-162">Does the scatter plot appear linear? Strong or weak? Positive or negative?</para>
+
+<figure id="fs-idp63135408"><media id="eip-idp1376736" alt="This is a scatter plot with several points plotted all over the first quadrant. There is no pattern." display="block">
+  <image mime-type="image/jpeg" src="CNX_Stats_C012_M04_item003.jpg" width="450"/>
+</media></figure>
+
+</problem>
+
+<solution id="eip-921">
+  <para id="eip-529">The data appear to have no correlation.</para></solution>
+</exercise>
+</section>
+<section id="fs-idm75649888" class="free-response">
+<title>Homework</title>
+<exercise id="fs-idp128138576">
+<problem id="fs-idp35640784">
+<para id="fs-idp63162736">The Gross Domestic Product Purchasing Power Parity is an indication of a country’s currency value compared to another country. <link target-id="fs-idm59733200"/> shows the GDP PPP of Cuba as compared to US dollars. Construct a scatter plot of the data.</para><table id="fs-idm59733200" summary="..">
+<title/>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>Year</entry>
+<entry>Cuba’s PPP </entry>
+<entry>Year</entry>
+<entry>Cuba’s PPP</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1999</entry>
+<entry>1,700</entry>
+<entry>2006</entry>
+<entry>4,000</entry>
+</row>
+<row>
+<entry>2000</entry>
+<entry>1,700</entry>
+<entry>2007</entry>
+<entry>11,000</entry>
+</row>
+<row>
+<entry>2002</entry>
+<entry>2,300</entry>
+<entry>2008</entry>
+<entry>9,500</entry>
+</row>
+<row>
+<entry>2003</entry>
+<entry>2,900</entry>
+<entry>2009</entry>
+<entry>9,700</entry>
+</row>
+<row>
+<entry>2004</entry>
+<entry>3,000</entry>
+<entry>2010</entry>
+<entry>9,900</entry>
+</row>
+<row>
+<entry>2005</entry>
+<entry>3,500</entry>
+<entry/>
+<entry/>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+</problem>
+<solution id="fs-idm27096576">
+<para id="fs-idm47595680">Check student’s solution.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm75154176"><problem id="fs-idm56634624">
+<para id="fs-idp103485488">The following table shows the poverty rates and cell phone usage in the United States. Construct a scatter plot of the data</para>
+<table id="fs-idm6414736" summary="..">
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>Year</entry>
+<entry>Poverty Rate</entry>
+<entry>Cellular Usage per Capita</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>2003</entry>
+<entry>12.7</entry>
+<entry>54.67</entry>
+</row>
+<row>
+<entry>2005</entry>
+<entry>12.6</entry>
+<entry>74.19</entry>
+</row>
+<row>
+<entry>2007</entry>
+<entry>12</entry>
+<entry>84.86</entry>
+</row>
+<row>
+<entry>2009</entry>
+<entry>12</entry>
+<entry>90.82</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem></exercise><exercise id="fs-idp83642048">
+<problem id="fs-idp127740240">
+<para id="fs-idm35544512">Does the higher cost of tuition translate into higher-paying jobs? The table lists the top ten colleges based on mid-career salary and the associated yearly tuition costs. Construct a scatter plot of the data.</para>
+<table id="fs-idp39411984" summary="..">
+<title/>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>School</entry>
+<entry>Mid-Career Salary (in thousands)</entry>
+<entry>Yearly Tuition</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Princeton</entry>
+<entry>137</entry>
+<entry>28,540</entry>
+</row>
+<row>
+<entry>Harvey Mudd</entry>
+<entry>135</entry>
+<entry>40,133</entry>
+</row>
+<row>
+<entry>CalTech</entry>
+<entry>127</entry>
+<entry>39,900</entry>
+</row>
+<row>
+<entry>US Naval Academy</entry>
+<entry>122</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>West Point</entry>
+<entry>120</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>MIT</entry>
+<entry>118</entry>
+<entry>42,050</entry>
+</row>
+<row>
+<entry>Lehigh University</entry>
+<entry>118</entry>
+<entry>43,220</entry>
+</row>
+<row>
+<entry>NYU-Poly</entry>
+<entry>117</entry>
+<entry>39,565</entry>
+</row>
+<row>
+<entry>Babson College</entry>
+<entry>117</entry>
+<entry>40,400</entry>
+</row>
+<row>
+<entry>Stanford</entry>
+<entry>114</entry>
+<entry>54,506</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+
+<solution id="fs-idp37956800">
+<para id="fs-idp99428928">For graph: check student’s solution. Note that tuition is the independent variable and salary is the dependent variable.</para></solution>
+</exercise><exercise id="eip-201"><problem id="eip-875">
+  <para id="eip-910">
+If the level of significance is 0.05 and the <emphasis effect="italics">p</emphasis>-value is 0.06, what conclusion can you draw?
+  </para>
+</problem></exercise><exercise id="eip-951"><problem id="eip-idm68833888">
+  <para id="eip-idm163228576">If there are 15 data points in a set of data, what is the number of degree of freedom?</para>
+</problem>
+
+<solution id="eip-idm194939824">
+  <para id="eip-idp17840640">13</para>
+</solution></exercise>
+</section>
+</content>
+</document>

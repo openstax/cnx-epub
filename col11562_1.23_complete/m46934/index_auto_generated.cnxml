@@ -1,0 +1,1129 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+<title>Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46934/latest</md:content-url>
+  <md:content-id>m46934</md:content-id>
+  <md:title>Stem-and-Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs</md:title>
+  <md:version>1.9</md:version>
+  <md:created>2013/07/19 05:49:42 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>bar graph</md:keyword>
+    <md:keyword>extreme value</md:keyword>
+    <md:keyword>final significant digit</md:keyword>
+    <md:keyword>outlier</md:keyword>
+    <md:keyword>side-by-side stem-and-leaf plot</md:keyword>
+    <md:keyword>side by side stemplot</md:keyword>
+    <md:keyword>stem and leaf graph</md:keyword>
+    <md:keyword>stem-and-leaf graph</md:keyword>
+    <md:keyword>stemplot</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="id6999853">One simple graph, the <emphasis>stem-and-leaf graph</emphasis> or <emphasis>stemplot</emphasis>, comes from the field of exploratory data analysis. It is a good choice when the data sets are small. To create the plot, divide each observation of data into a stem and a leaf. The leaf consists of a <emphasis>final significant digit</emphasis>. For example, 23 has stem two and leaf three. The number 432 has stem 43 and leaf two. Likewise, the number 5,432 has stem 543 and leaf two. The decimal 9.3 has stem nine and leaf three. Write the stems in a vertical line from smallest to largest. Draw a vertical line to the right of the stems. Then write the leaves in increasing order next to their corresponding stem.</para>
+<example id="element-696">
+<para id="element-948">For Susan Dean's spring pre-calculus class, scores for the first exam were as follows (smallest to largest):
+<newline/>
+ 33; 42; 49; 49; 53; 55; 55; 61; 63; 67; 68; 68; 69; 69; 72; 73; 74; 78; 80; 83; 88; 88; 88; 90; 92; 94; 94; 94; 94; 96; 100</para><table id="element-185" summary="Table displaying stem in first column and leaf in second column for the values listed above."><title>Stem-and-Leaf Graph</title>
+<tgroup cols="2"><thead>
+<row>
+<entry>Stem</entry>
+<entry>Leaf</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry>3</entry><entry>3</entry>
+</row>
+<row>
+<entry>4</entry><entry>2 9 9</entry>
+</row>
+<row>
+<entry>5</entry><entry>3 5 5</entry>
+</row>
+<row>
+<entry>6</entry><entry>1 3 7 8 8 9 9</entry>
+</row>
+<row>
+<entry>7</entry><entry>2 3 4 8</entry>
+</row>
+<row>
+<entry>8</entry><entry>0 3 8 8 8</entry>
+</row>
+<row>
+<entry>9</entry><entry>0 2 4 4 4 4 6</entry>
+</row>
+<row>
+<entry>10</entry><entry>0</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table><para id="element-541">The stemplot shows that most scores fell in the 60s, 70s, 80s, and 90s.  Eight out of the 31 scores or approximately 26% <m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>8</m:mn>
+<m:mrow>
+<m:mn>31</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math> were in the 90s or 100, a fairly high number of As.</para>
+</example>
+
+<note id="fs-idp6114880" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp3142256">
+<problem id="fs-idm28250320">
+<para id="fs-idp29192512">For the Park City basketball team, scores for the last 30 games were as follows (smallest to largest):
+<newline/>
+ 32; 32; 33; 34; 38; 40; 42; 42; 43; 44; 46; 47; 47; 48; 48; 48; 49; 50; 50; 51; 52; 52; 52; 53; 54; 56; 57; 57; 60; 61
+<newline/>Construct a stem plot for the data.</para></problem>
+</exercise></note>
+
+
+<para id="eip-522">The stemplot is a quick way to graph data and gives an exact picture of the data. You want to look for an overall pattern and any outliers. An <term>outlier</term> is an observation of data that does not fit the rest of the data. It is sometimes called an <emphasis>extreme value.</emphasis> When you graph an outlier, it will appear not to fit the pattern of the graph. Some outliers are due to mistakes (for example, writing down 50 instead of 500) while others may indicate that something unusual is happening. It takes some background information to explain outliers, so we will cover them in more detail later.</para><example id="element-798">
+<para id="element-534">The data are the distances (in kilometers) from a home to local supermarkets. Create a stemplot using the data:
+<newline/>1.1; 1.5; 2.3; 2.5; 2.7; 3.2; 3.3; 3.3; 3.5; 3.8; 4.0; 4.2; 4.5; 4.5; 4.7; 4.8; 5.5; 5.6; 6.5; 6.7; 12.3</para><exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-6923"><problem id="id8567884">
+<para id="fs-idp11807920">Do the data seem to have any concentration of values?</para>
+<note id="id8559724">
+<label/><title>NOTE</title>
+<para id="fs-idp145995424">The leaves are to the right of the decimal.</para>
+</note>
+</problem>
+<solution id="id8559734" print-placement="end">
+<para id="element-23523">The value 12.3 may be an outlier. Values appear to concentrate at three and four kilometers.</para>
+<table id="element-533" summary="This is a Stem-Leaf graph with stems 1, 2, 3, 4, 5, 6, 12 and leaves to the right of the decimal point.">
+<tgroup cols="2"><thead>
+<row>
+<entry>Stem</entry>
+<entry>Leaf</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1</entry><entry>1&#160;5</entry>
+</row>
+<row>
+<entry>2</entry><entry>3&#160;5&#160;7</entry>
+</row>
+<row>
+<entry>3</entry><entry>2&#160;3&#160;3&#160;5&#160;8</entry>
+</row>
+<row>
+<entry>4</entry><entry>0&#160;2&#160;5&#160;5&#160;7&#160;8</entry>
+</row>
+<row>
+<entry>5</entry><entry>5&#160;6</entry>
+</row>
+<row>
+<entry>6</entry><entry>5&#160;7</entry>
+</row>
+<row>
+<entry>7</entry><entry/>
+</row>
+<row>
+<entry>8</entry><entry/>
+</row>
+<row>
+<entry>9</entry><entry/>
+</row>
+<row>
+<entry>10</entry><entry/>
+</row>
+<row>
+<entry>11</entry><entry/>
+</row>
+<row>
+<entry>12</entry><entry>3</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise></example>
+
+<note id="fs-idp4001472" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm40603312">
+<problem id="fs-idm28790944">
+<para id="fs-idp73770272">The following data show the distances (in miles) from the homes of off-campus statistics students to the college. Create a stem plot using the data and identify any outliers:</para>
+<para id="fs-idp20460656">0.5; 0.7; 1.1; 1.2; 1.2; 1.3; 1.3; 1.5; 1.5; 1.7; 1.7; 1.8; 1.9; 2.0; 2.2; 2.5; 2.6; 2.8; 2.8; 2.8; 3.5; 3.8; 4.4; 4.8; 4.9; 5.2; 5.5; 5.7; 5.8; 8.0
+</para></problem>
+</exercise>
+</note>
+
+
+<example id="fs-idp11879648"><exercise id="fs-idp161531440"><problem id="fs-idp99219856">
+<para id="fs-idp93832256">A <emphasis>side-by-side stem-and-leaf plot</emphasis> allows a comparison of the two data sets in two columns. In a side-by-side stem-and-leaf plot, two sets of leaves share the same stem. The leaves are to the left and the right of the stems.  <link target-id="M01_Ch02_tbl005"/> and <link target-id="M01_Ch02_tbl006"/> show the ages of presidents at their inauguration and at their death. Construct a side-by-side stem-and-leaf plot using this data.</para>
+</problem>
+<solution id="fs-idp107817952">
+<table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="M01_Ch02_tbl007" summary="---">
+<tgroup cols="3"><colspec colnum="1" colname="c1" align="right"/>
+<colspec colnum="2" colname="c2" align="center"/>
+<colspec colnum="3" colname="c3" align="left"/>
+<thead>
+<row>
+<entry>Ages at Inauguration</entry>
+<entry/>
+<entry>Ages at Death</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>9 9 8 7 7 7 6 3 2</entry><entry>4</entry><entry>6 9</entry>
+</row>
+<row>
+<entry>8 7 7 7 7 6 6 6 5 5 5 5 4 4 4 4 4 2 2 1 1 1 1 1 0</entry><entry>5</entry><entry>3 6 6 7 7 8</entry>
+</row>
+<row>
+<entry>9 8 5 4 4 2 1 1 1 0</entry><entry>6</entry><entry>0 0 3 3 4 4 5 6 7 7 7 8</entry>
+</row>
+<row>
+<entry/><entry>7</entry><entry>0 0 1 1 1 4 7 8 8 9</entry>
+</row>
+<row>
+<entry/><entry>8</entry><entry>0 1 3 5 8</entry>
+</row>
+<row>
+<entry/><entry>9</entry><entry>0 0 3 3</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table></solution>
+</exercise></example>
+<para id="eip-431"><table id="M01_Ch02_tbl005" summary="">
+<title>Presidential Ages at Inauguration</title>
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c1"/>
+<colspec colnum="3" colname="c1"/>
+<colspec colnum="4" colname="c1"/>
+<colspec colnum="5" colname="c1"/>
+<colspec colnum="6" colname="c6"/>
+<thead>
+<row><entry>President</entry><entry>Age</entry><entry>President</entry><entry>Age</entry><entry>President</entry><entry>Age</entry></row>
+</thead>
+<tbody>
+<row><entry>Washington</entry><entry>57</entry><entry>Lincoln</entry><entry>52</entry><entry>Hoover</entry><entry>54</entry></row>
+<row><entry>J. Adams</entry><entry>61</entry><entry>A. Johnson</entry><entry>56</entry><entry>F. Roosevelt</entry><entry>51</entry></row>
+<row><entry>Jefferson</entry><entry>57</entry><entry>Grant</entry><entry>46</entry><entry>Truman</entry><entry>60</entry></row>
+<row><entry>Madison</entry><entry>57</entry><entry>Hayes</entry><entry>54</entry><entry>Eisenhower</entry><entry>62</entry></row>
+<row><entry>Monroe</entry><entry>58</entry><entry>Garfield</entry><entry>49</entry><entry>Kennedy</entry><entry>43</entry></row>
+<row><entry>J. Q. Adams</entry><entry>57</entry><entry>Arthur</entry><entry>51</entry><entry>L. Johnson</entry><entry>55</entry></row>
+<row><entry>Jackson</entry><entry>61</entry><entry>Cleveland</entry><entry>47</entry><entry>Nixon</entry><entry>56</entry></row>
+<row><entry>Van Buren</entry><entry>54</entry><entry>B. Harrison</entry><entry>55</entry><entry>Ford</entry><entry>61</entry></row>
+<row><entry>W. H. Harrison</entry><entry>68</entry><entry>Cleveland</entry><entry>55</entry><entry>Carter</entry><entry>52</entry></row>
+<row><entry>Tyler</entry><entry>51</entry><entry>McKinley</entry><entry>54</entry><entry>Reagan</entry><entry>69</entry></row>
+<row><entry>Polk</entry><entry>49</entry><entry>T. Roosevelt</entry><entry>42</entry><entry>G.H.W. Bush</entry><entry>64</entry></row>
+<row><entry>Taylor</entry><entry>64</entry><entry>Taft</entry><entry>51</entry><entry>Clinton</entry><entry>47</entry></row>
+<row><entry>Fillmore</entry><entry>50</entry><entry>Wilson</entry><entry>56</entry><entry>G. W. Bush</entry><entry>54</entry></row>
+<row><entry>Pierce</entry><entry>48</entry><entry>Harding</entry><entry>55</entry><entry>Obama</entry><entry>47</entry></row>
+<row><entry>Buchanan</entry><entry>65</entry><entry>Coolidge</entry><entry>51</entry><entry/><entry/></row>
+</tbody>
+</tgroup>
+</table>
+
+
+<table id="M01_Ch02_tbl006" summary="">
+<title>Presidential Age at Death</title>
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<thead>
+<row><entry>President</entry><entry>Age</entry><entry>President</entry><entry>Age</entry><entry>President</entry><entry>Age</entry></row>
+</thead>
+<tbody>
+<row><entry>Washington</entry><entry>67</entry><entry>Lincoln</entry><entry>56</entry><entry>Hoover</entry><entry>90</entry></row>
+<row><entry>J. Adams</entry><entry>90</entry><entry>A. Johnson</entry><entry>66</entry><entry>F. Roosevelt</entry><entry>63</entry></row>
+<row><entry>Jefferson</entry><entry>83</entry><entry>Grant</entry><entry>63</entry><entry>Truman</entry><entry>88</entry></row>
+<row><entry>Madison</entry><entry>85</entry><entry>Hayes</entry><entry>70</entry><entry>Eisenhower</entry><entry>78</entry></row>
+<row><entry>Monroe</entry><entry>73</entry><entry>Garfield</entry><entry>49</entry><entry>Kennedy</entry><entry>46</entry></row>
+<row><entry>J. Q. Adams</entry><entry>80</entry><entry>Arthur</entry><entry>56</entry><entry>L. Johnson</entry><entry>64</entry></row>
+<row><entry>Jackson</entry><entry>78</entry><entry>Cleveland</entry><entry>71</entry><entry>Nixon</entry><entry>81</entry></row>
+<row><entry>Van Buren</entry><entry>79</entry><entry>B. Harrison</entry><entry>67</entry><entry>Ford</entry><entry>93</entry></row>
+<row><entry>W. H. Harrison</entry><entry>68</entry><entry>Cleveland</entry><entry>71</entry><entry>Reagan</entry><entry>93</entry></row>
+<row><entry>Tyler</entry><entry>71</entry><entry>McKinley</entry><entry>58</entry><entry/><entry/></row>
+<row><entry>Polk</entry><entry>53</entry><entry>T. Roosevelt</entry><entry>60</entry><entry/><entry/></row>
+<row><entry>Taylor</entry><entry>65</entry><entry>Taft</entry><entry>72</entry><entry/><entry/></row>
+<row><entry>Fillmore</entry><entry>74</entry><entry>Wilson</entry><entry>67</entry><entry/><entry/></row>
+<row><entry>Pierce</entry><entry>64</entry><entry>Harding</entry><entry>57</entry><entry/><entry/></row>
+<row><entry>Buchanan</entry><entry>77</entry><entry>Coolidge</entry><entry>60</entry><entry/><entry/></row>
+</tbody>
+</tgroup>
+</table></para><note id="fs-idp9770768" class="statistics try">
+<label/>
+<exercise id="fs-idp35107968">
+<problem id="fs-idm2063072">
+<para id="fs-idm4586448">The table shows the number of wins and losses the Atlanta Hawks have had in 42 seasons. Create a side-by-side stem-and-leaf plot of these wins and losses.</para>
+<table id="fs-idm25873440" summary="..">
+<title/>
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<thead>
+<row>
+<entry>Losses</entry>
+<entry>Wins</entry>
+<entry>Year</entry>
+<entry>Losses </entry>
+<entry>Wins</entry>
+<entry>Year</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>34</entry>
+<entry>48</entry>
+<entry>1968&#8211;1969</entry>
+<entry>41</entry>
+<entry>41</entry>
+<entry>1989&#8211;1990</entry>
+</row>
+<row>
+<entry>34</entry>
+<entry>48</entry>
+<entry>1969&#8211;1970</entry>
+<entry>39</entry>
+<entry>43</entry>
+<entry>1990&#8211;1991</entry>
+</row>
+<row>
+<entry>46</entry>
+<entry>36</entry>
+<entry>1970&#8211;1971</entry>
+<entry>44</entry>
+<entry>38</entry>
+<entry>1991&#8211;1992</entry>
+</row>
+<row>
+<entry>46</entry>
+<entry>36</entry>
+<entry>1971&#8211;1972</entry>
+<entry>39</entry>
+<entry>43</entry>
+<entry>1992&#8211;1993</entry>
+</row>
+<row>
+<entry>36</entry>
+<entry>46</entry>
+<entry>1972&#8211;1973</entry>
+<entry>25</entry>
+<entry>57</entry>
+<entry>1993&#8211;1994</entry>
+</row>
+<row>
+<entry>47</entry>
+<entry>35</entry>
+<entry>1973&#8211;1974</entry>
+<entry>40</entry>
+<entry>42</entry>
+<entry>1994&#8211;1995</entry>
+</row>
+<row>
+<entry>51</entry>
+<entry>31</entry>
+<entry>1974&#8211;1975</entry>
+<entry>36</entry>
+<entry>46</entry>
+<entry>1995&#8211;1996</entry>
+</row>
+<row>
+<entry>53</entry>
+<entry>29</entry>
+<entry>1975&#8211;1976</entry>
+<entry>26</entry>
+<entry>56</entry>
+<entry>1996&#8211;1997</entry>
+</row>
+<row>
+<entry>51</entry>
+<entry>31</entry>
+<entry>1976&#8211;1977</entry>
+<entry>32</entry>
+<entry>50</entry>
+<entry>1997&#8211;1998</entry>
+</row>
+<row>
+<entry>41</entry>
+<entry>41</entry>
+<entry>1977&#8211;1978</entry>
+<entry>19</entry>
+<entry>31</entry>
+<entry>1998&#8211;1999</entry>
+</row>
+<row>
+<entry>36</entry>
+<entry>46</entry>
+<entry>1978&#8211;1979</entry>
+<entry>54</entry>
+<entry>28</entry>
+<entry>1999&#8211;2000</entry>
+</row>
+<row>
+<entry>32</entry>
+<entry>50</entry>
+<entry>1979&#8211;1980</entry>
+<entry>57</entry>
+<entry>25</entry>
+<entry>2000&#8211;2001</entry>
+</row>
+<row>
+<entry>51</entry>
+<entry>31</entry>
+<entry>1980&#8211;1981</entry>
+<entry>49</entry>
+<entry>33</entry>
+<entry>2001&#8211;2002</entry>
+</row>
+<row>
+<entry>40</entry>
+<entry>42</entry>
+<entry>1981&#8211;1982</entry>
+<entry>47</entry>
+<entry>35</entry>
+<entry>2002&#8211;2003</entry>
+</row>
+<row>
+<entry>39</entry>
+<entry>43</entry>
+<entry>1982&#8211;1983</entry>
+<entry>54</entry>
+<entry>28</entry>
+<entry>2003&#8211;2004</entry>
+</row>
+<row>
+<entry>42</entry>
+<entry>40</entry>
+<entry>1983&#8211;1984</entry>
+<entry>69</entry>
+<entry>13</entry>
+<entry>2004&#8211;2005</entry>
+</row>
+<row>
+<entry>48</entry>
+<entry>34</entry>
+<entry>1984&#8211;1985</entry>
+<entry>56</entry>
+<entry>26</entry>
+<entry>2005&#8211;2006</entry>
+</row>
+<row>
+<entry>32</entry>
+<entry>50</entry>
+<entry>1985&#8211;1986</entry>
+<entry>52</entry>
+<entry>30</entry>
+<entry>2006&#8211;2007</entry>
+</row>
+<row>
+<entry>25</entry>
+<entry>57</entry>
+<entry>1986&#8211;1987</entry>
+<entry>45</entry>
+<entry>37</entry>
+<entry>2007&#8211;2008</entry>
+</row>
+<row>
+<entry>32</entry>
+<entry>50</entry>
+<entry>1987&#8211;1988</entry>
+<entry>35</entry>
+<entry>47</entry>
+<entry>2008&#8211;2009</entry>
+</row>
+<row>
+<entry>30</entry>
+<entry>52</entry>
+<entry>1988&#8211;1989</entry>
+<entry>29</entry>
+<entry>53</entry>
+<entry>2009&#8211;2010</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+</note>
+
+<para id="eip-313">Another type of graph that is useful for specific data values is a <emphasis>line graph</emphasis>. In the particular line graph shown in <link target-id="example4"/>, the <emphasis><emphasis effect="italics">x</emphasis>-axis</emphasis> (horizontal axis) consists of <emphasis>data values</emphasis> and the <emphasis><emphasis effect="italics">y</emphasis>-axis</emphasis> (vertical axis) consists of <emphasis>frequency points</emphasis>. The frequency points are connected  using line segments.</para>
+
+<example id="example4">
+<para id="eip-682">In a survey, 40 mothers were asked how many times per week a teenager must be reminded to do his or her chores. The results are shown in <link target-id="M01_Ch02_tbl008"/> and in <link target-id="M01_Ch02_fig001"/>.</para><table id="M01_Ch02_tbl008" summary="The first column of the table consists of the number of times a teenager must be reminded to do his/her chores and the second column consists of frequency.">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Number of times
+teenager is reminded</entry>
+<entry>Frequency</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry>0</entry><entry>2</entry>
+</row>
+<row>
+<entry>1</entry><entry>5</entry>
+</row>
+<row>
+<entry>2</entry><entry>8</entry>
+</row>
+<row>
+<entry>3</entry><entry>14</entry>
+</row>
+<row>
+<entry>4</entry><entry>7</entry>
+</row>
+<row>
+<entry>5</entry><entry>4</entry>
+</row>
+
+</tbody>
+</tgroup>
+</table>
+
+<figure id="M01_Ch02_fig001">
+<media id="fs-idp107902784" display="block" alt="A line graph showing the number of times a teenager needs to be reminded to do chores on the x-axis and  frequency on the y-axis.">
+<image src="fig-ch_02_03_01.jpg" mime-type="image/jpg" width="380" print-width="4in"/></media>
+</figure>
+</example>
+
+
+<note id="fs-idm28536512" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm95574864"><problem id="fs-idp19862832">
+
+<para id="fs-idp28849584">In a survey, 40 people were asked how many times per year they had their car in the shop for repairs. The results are shown in <link target-id="M01_Ch02_tbl009"/>. Construct a line graph.</para>
+
+<table id="M01_Ch02_tbl009" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row><entry>Number of times in shop</entry><entry>Frequency</entry></row>
+</thead>
+<tbody>
+<row><entry>0</entry><entry>7</entry></row>
+<row><entry>1</entry><entry>10</entry></row>
+<row><entry>2</entry><entry>14</entry></row>
+<row><entry>3</entry><entry>9</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise></note>
+
+<para id="eip-136"><emphasis>Bar graphs</emphasis> consist of bars that are separated from each other. The bars can be rectangles or they can be rectangular boxes (used in three-dimensional plots), and they can be vertical or horizontal. The <emphasis>bar graph</emphasis> shown in <link target-id="example5"/> has age groups represented on the <emphasis><emphasis effect="italics">x</emphasis>-axis</emphasis> and proportions on the <emphasis><emphasis effect="italics">y</emphasis>-axis</emphasis>.</para><example id="example5">
+<exercise id="fs-idm7260336">
+<problem id="fs-idp99169968">
+<para id="eip-666">By the end of 2011, Facebook had over 146 million users in the United States. <link target-id="M01_Ch02_tbl010"/> shows three age groups, the number of users in each age group, and the proportion (%) of users in each age group. Construct a bar graph using this data.</para><table id="M01_Ch02_tbl010" summary="The information is from Facebook. The first row of the table displays age groups, the second row displays number of Facebook users and the third row displays percentages.">
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>Age groups</entry>
+<entry>Number of Facebook users</entry>
+<entry>Proportion (%) of Facebook users</entry>
+</row>
+</thead><tbody>
+<row>
+<entry>13&#8211;25</entry>
+<entry>65,082,280</entry>
+<entry>45%</entry>
+</row>
+<row>
+<entry>26&#8211;44</entry>
+<entry>53,300,200</entry>
+<entry>36%</entry>
+</row>
+<row>
+<entry>45&#8211;64</entry>
+<entry>27,885,100</entry>
+<entry>19%</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="fs-idp32850832">
+<figure id="fs-idm25485824"><media id="bar_graph_Facebook" display="block" alt="This is a bar graph that matches the supplied data. The x-axis shows age groups,  and the y-axis shows the percentages of Facebook users.">
+<image src="fig-ch02_03_02.jpg" mime-type="image/jpg" width="380"/></media>
+</figure></solution>
+</exercise>
+</example>
+
+
+<note id="fs-idp2492880" class="statistics try">
+<label/><title>Try It</title>
+<exercise id="fs-idm47906688">
+<problem id="fs-idm7708128">
+
+<para id="fs-idp6746384">The population in Park City is made up of children, working-age adults, and retirees. <link target-id="M01_Ch02_tbl011"/> shows the three age groups, the number of people in the town from each age group, and the proportion (%) of people in each age group. Construct a bar graph showing the proportions.</para>
+
+<table id="M01_Ch02_tbl011" summary="">
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row><entry>Age groups</entry><entry>Number of people</entry><entry>Proportion of population</entry></row>
+</thead>
+<tbody>
+<row><entry>Children</entry>	<entry>67,059</entry>	<entry>19%</entry></row>
+<row><entry>Working-age adults</entry>	<entry>152,198</entry>	<entry>43%</entry></row>
+<row><entry>Retirees</entry>	<entry>131,662</entry>	<entry>38%</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+</note>
+
+
+<example id="eip-708">
+<exercise id="fs-idm25526448">
+<problem id="fs-idm19535184">
+<para id="eip-655">The columns in <link target-id="M01_Ch02_tbl012"/> contain: the race or ethnicity of students in U.S. Public Schools for the class of 2011, percentages for the Advanced Placement examine population for that class, and percentages for the overall student population. Create a bar graph with the student race or ethnicity (qualitative data) on the <emphasis effect="italics">x</emphasis>-axis, and the Advanced Placement examinee population percentages on the <emphasis effect="italics">y</emphasis>-axis.</para><table id="M01_Ch02_tbl012" summary="The table shows Race and Ethnicity in the first column, Advanced Placement Examinee Population in the second column and Overall Student Population in the third column.">
+<tgroup cols="3"><thead>
+<row>
+<entry>Race/Ethnicity</entry>
+<entry>AP Examinee Population</entry>
+<entry>Overall Student Population</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1 = Asian, Asian American or Pacific Islander</entry>
+<entry>10.3%</entry>
+<entry>5.7%</entry>
+</row>
+<row>
+<entry>2 = Black or African American</entry>
+<entry>9.0%</entry>
+<entry>14.7%</entry>
+</row>
+<row>
+<entry>3 = Hispanic or Latino</entry>
+<entry>17.0%</entry>
+<entry>17.6%</entry>
+</row>
+<row>
+<entry>4 = American Indian or Alaska Native</entry>
+<entry>0.6%</entry>
+<entry>1.1%</entry>
+</row>
+<row>
+<entry>5 = White</entry>
+<entry>57.1%</entry>
+<entry>59.2%</entry>
+</row>
+<row>
+<entry>6 = Not reported/other</entry>
+<entry>6.0%</entry>
+<entry>1.7%</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="fs-idp30402432">
+<figure id="M01_Ch02_fig003"><media id="bar_graph_Ap_Examinee" display="block" alt="This is a bar graph that matches the supplied data. The x-axis shows race and ethnicity, and the y-axis shows the percentages of AP examinees.">
+<image src="fig-ch02_03_03.jpg" mime-type="image/jpg" width="380"/></media>
+</figure></solution>
+</exercise>
+</example>
+
+<note id="fs-idp41522672" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm43065520">
+<problem id="fs-idp3652336">
+
+<para id="fs-idp31379616">Park city is broken down into six voting districts. The table shows the percent of the total registered voter population that lives in each district as well as the percent total of the entire population that lives in each district. Construct a bar graph that shows the registered voter population by district.</para><table id="M01_Ch02_tbl013" summary="">
+<tgroup cols="3" align="left">
+<colspec colnum="1" colname="c1" align="center"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row><entry>District</entry><entry>Registered voter population</entry><entry>Overall city population</entry></row>
+</thead>
+<tbody>
+<row><entry>1</entry><entry>15.5%</entry><entry>19.4%</entry></row>
+<row><entry>2</entry><entry>12.2%</entry><entry>15.6%</entry></row>
+<row><entry>3</entry><entry>9.8%</entry><entry>9.0%</entry></row>
+<row><entry>4</entry><entry>17.4%</entry><entry>18.5%</entry></row>
+<row><entry>5</entry><entry>22.8%</entry><entry>20.7%</entry></row>
+<row><entry>6</entry><entry>22.3%</entry><entry>16.8%</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+</note>
+
+<section id="fs-idm21451296" class="references">
+<title>References</title>
+<para id="fs-idm29098416">Burbary, Ken. <emphasis effect="italics">Facebook Demographics Revisited &#8211; 2001 Statistics,</emphasis> 2011. Available online at http://www.kenburbary.com/2011/03/facebook-demographics-revisited-2011-statistics-2/ (accessed August 21, 2013).</para><para id="fs-idm29098160">&#8220;9th Annual AP Report to the Nation.&#8221; CollegeBoard, 2013. Available online at http://apreport.collegeboard.org/goals-and-findings/promoting-equity (accessed September 13, 2013).</para>
+<para id="fs-idp130237744">&#8220;Overweight and Obesity: Adult Obesity Facts.&#8221; Centers for Disease Control and Prevention. Available online at http://www.cdc.gov/obesity/data/adult.html (accessed September 13, 2013).</para>
+</section>
+
+<section id="fs-idp18706816" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idp5119792">A <emphasis>stem-and-leaf plot</emphasis> is a way to plot data and look at the distribution. In a stem-and-leaf plot, all data values within a class are visible. The advantage in a stem-and-leaf plot is that all values are listed, unlike a histogram, which gives classes of data values. A <emphasis>line graph</emphasis> is often used to represent a set of data values in which a quantity varies with time. These graphs are useful for finding trends. That is, finding a general pattern in data sets including temperature, sales, employment, company profit or cost over a period of time. A <emphasis>bar graph</emphasis> is a chart that uses either horizontal or vertical bars to show comparisons among categories. One axis of the chart shows the specific categories being compared, and the other axis represents a discrete value. Some bar graphs present bars clustered in groups of more than one (grouped bar graphs), and others show the bars divided into subparts to show cumulative effect (stacked bar graphs). Bar graphs are especially useful when categorical data is being used.</para></section>
+
+<section id="fs-idp51353072" class="practice">
+<title/>
+<para id="fs-idp2088992"><emphasis effect="italics">For each of the following data sets, create a stem plot and identify any outliers.</emphasis></para>
+
+<exercise id="fs-idp77965776">
+<problem id="fs-idp104599392">
+<para id="fs-idp96747200">The miles per gallon rating for 30 cars are shown below (lowest to highest).
+<newline/>19, 19, 19, 20, 21, 21, 25, 25, 25, 26, 26, 28, 29, 31, 31, 32, 32, 33, 34, 35, 36, 37, 37, 38, 38, 38, 38, 41, 43, 43</para></problem>
+<solution id="fs-idm37847504">
+<table id="fs-idp96212464" summary="The miles per gallon rating for 30 cars">
+<tgroup cols="2"><colspec colnum="1" colname="c1" align="center"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead><row><entry>Stem</entry><entry align="center">Leaf</entry></row></thead>
+<tbody>
+<row><entry>1</entry><entry>9 9 9</entry></row>
+<row><entry>2</entry><entry>0 1 1 5 5 5 6 6 8 9</entry></row>
+<row><entry>3</entry><entry>1 1 2 2 3 4 5 6 7 7 8 8 8 8</entry></row>
+<row><entry>4</entry><entry>1 3  3</entry></row>
+</tbody>
+
+</tgroup>
+</table></solution>
+</exercise>
+
+<exercise id="fs-idp69585968">
+<problem id="fs-idp5781504">
+<para id="fs-idp7036560">The height in feet of 25 trees is shown below (lowest to highest).
+<newline/>25, 27, 33, 34, 34, 34, 35, 37, 37, 38, 39, 39, 39, 40, 41, 45, 46, 47, 49, 50, 50, 53, 53, 54, 54</para></problem>
+</exercise>
+
+<exercise id="exercise8">
+<problem id="fs-idp105863648">
+<para id="fs-idp8584400">The data are the prices of different laptops at an electronics store. Round each value to the nearest ten.
+<newline/>249, 249, 260, 265, 265, 280, 299, 299, 309, 319, 325, 326, 350, 350, 350, 365, 369, 389, 409, 459, 489, 559, 569, 570, 610</para></problem>
+
+<solution id="fs-idp114380816">
+<table id="M01_Ch02_tbl016" summary="The data are the prices of different laptops at an electronics store.">
+<tgroup cols="2"><colspec colnum="1" colname="c1" align="center"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row><entry>Stem</entry>
+<entry align="center">Leaf</entry></row></thead>
+<tbody>
+<row><entry>2</entry><entry>5 5 6 7 7 8</entry></row>
+<row><entry>3</entry><entry>0 0 1 2 3 3 5 5 5 7 7 9</entry></row>
+<row><entry>4</entry><entry>1 6 9</entry></row>
+<row><entry>5</entry><entry>6 7 7</entry></row>
+<row><entry>6</entry><entry>1</entry></row>
+</tbody>
+
+
+
+</tgroup>
+</table></solution>
+</exercise>
+
+<exercise id="fs-idp48193248">
+<problem id="fs-idp71330208">
+<para id="fs-idp71330464">The data are daily high temperatures in a town for one month.
+<newline/>61, 61, 62, 64, 66, 67, 67, 67, 68, 69, 70, 70, 70, 71, 71, 72, 74, 74, 74, 75, 75, 75, 76, 76, 77, 78, 78, 79, 79, 95</para></problem>
+</exercise>
+
+<para id="eip-488"><newline/><emphasis effect="italics">For the next three exercises, use the data to construct a line graph.</emphasis></para><exercise id="fs-idp113295424">
+<problem id="fs-idp29821584">
+<para id="fs-idp29821712">In a survey, 40 people were asked how many times they visited a store before making a major purchase. The results are shown in <link target-id="M01_Ch02_tbl018"/>.</para><table id="M01_Ch02_tbl018" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row><entry>Number of times in store</entry><entry>Frequency</entry></row>
+</thead>
+<tbody>
+<row><entry>1</entry><entry>4</entry></row>
+<row><entry>2</entry><entry>10</entry></row>
+<row><entry>3</entry><entry>16</entry></row>
+<row><entry>4</entry><entry>6</entry></row>
+<row><entry>5</entry><entry>4</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="fs-idp47635040">
+<figure id="fs-idp29124208"><media id="fs-idp63600976" display="block" alt="This is a line graph that matches the supplied data. The x-axis shows the number of times people reported visiting a store before making a major purchase, and the y-axis shows the frequency.">
+<image mime-type="image/png" src="CNX_Stats_C02_M03_005.jpg" width="350"/>
+</media>
+</figure></solution>
+</exercise>
+
+<exercise id="fs-idp11360192">
+<problem id="fs-idp6234528">
+<para id="fs-idp6234784">In a survey, several people were asked how many years it has been since they purchased a mattress. The results are shown in <link target-id="M01_Ch02_tbl019"/>.</para><table id="M01_Ch02_tbl019" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead><row><entry>Years since last purchase</entry>	<entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>0</entry>	<entry>2</entry></row>
+<row><entry>1</entry>	<entry>8</entry></row>
+<row><entry>2</entry>	<entry>13</entry></row>
+<row><entry>3</entry>	<entry>22</entry></row>
+<row><entry>4</entry>	<entry>16</entry></row>
+<row><entry>5</entry>	<entry>9</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+
+<exercise id="fs-idp113509472">
+<problem id="fs-idp113509728">
+<para id="fs-idp85802064">Several children were asked how many TV shows they watch each day. The results of the survey are shown in <link target-id="M01_Ch02_tbl020"/>.</para><table id="M01_Ch02_tbl020" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead><row><entry>Number of TV Shows</entry>	<entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>0</entry>	<entry>12</entry></row>
+<row><entry>1</entry>	<entry>18</entry></row>
+<row><entry>2</entry>	<entry>36</entry></row>
+<row><entry>3</entry>	<entry>7</entry></row>
+<row><entry>4</entry>	<entry>2</entry></row>
+</tbody>
+</tgroup>
+</table>
+
+</problem>
+<solution id="fs-idp49973120">
+<figure id="fs-idm11163840"><media id="fs-idp43437792" display="block" alt="This is a line graph that matches the supplied data. The x-axis shows the number of TV shows a kid watches each day, and the y-axis shows the frequency."><image mime-type="image/png" src="CNX_Stats_C02_M03_007.jpg" width="350"/></media></figure></solution>
+</exercise>
+
+<exercise id="exercise13">
+<problem id="fs-idp84353344">
+<para id="fs-idp75581568">The students in Ms. Ramirez&#8217;s math class have birthdays in each of the four seasons. <link target-id="M01_Ch02_tbl021"/> shows the four seasons, the number of students who have birthdays in each season, and the percentage (%) of students in each group. Construct a bar graph showing the number of students.</para>
+<table id="M01_Ch02_tbl021" summary="">
+<tgroup cols="3" align="left">
+<colspec colnum="1" colname="c1" align="center"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row><entry>Seasons</entry>	<entry align="center">Number of students</entry>	<entry align="center">Proportion of population</entry></row>
+</thead>
+<tbody>
+<row><entry>Spring</entry>	<entry>8</entry>	<entry>24%</entry></row>
+<row><entry>Summer</entry>	<entry>9</entry>	<entry>26%</entry></row>
+<row><entry>Autumn</entry>	<entry>11</entry>	<entry>32%</entry></row>
+<row><entry>Winter</entry>	<entry>6</entry>	<entry>18%</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+
+<exercise id="fs-idp114173136">
+<problem id="fs-idp114173392"><para id="fs-idp114173520">Using the data from Mrs. Ramirez&#8217;s math class supplied in <link target-id="exercise13"/>, construct a bar graph showing the percentages.</para></problem>
+<solution id="fs-idp107574416">
+<figure id="fs-idp48344576"><media id="fs-idp74133360" display="block" alt="This is a bar graph that matches the supplied data. The x-axis shows the seasons of the year, and the y-axis shows the proportion of birthdays."><image mime-type="image/jpg" src="CNX_Stats_C02_M03_009.jpg" width="350"/></media></figure></solution>
+</exercise>
+
+<exercise id="exercise10">
+<problem id="fs-idm2655872">
+<para id="fs-idp32116368">David County has six high schools. Each school sent students to participate in a county-wide science competition. <link target-id="M01_Ch02_tbl022"/> shows the percentage breakdown of competitors from each school, and the percentage of the entire student population of the county that goes to each school. Construct a bar graph that shows the population percentage of competitors from each school.</para>
+
+<table id="M01_Ch02_tbl022" summary="">
+<tgroup cols="3">
+<colspec colnum="1" align="center"/>
+<colspec colnum="2" align="left"/>
+<colspec colnum="3" align="left"/>
+<thead><row><entry>High School</entry><entry align="center">Science competition population</entry><entry align="center">Overall student population</entry></row></thead>
+<tbody>
+<row><entry>Alabaster</entry><entry>28.9%</entry><entry>8.6%</entry></row>
+<row><entry>Concordia</entry><entry>7.6%</entry><entry>23.2%</entry></row>
+<row><entry>Genoa</entry><entry>12.1%</entry><entry>15.0%</entry></row>
+<row><entry>Mocksville</entry><entry>18.5%</entry><entry>14.3%</entry></row>
+<row><entry>Tynneson</entry><entry>24.2%</entry><entry>10.1%</entry></row>
+<row><entry>West End</entry><entry>8.7%</entry><entry>28.8%</entry></row>
+</tbody>
+</tgroup>
+</table>
+
+</problem>
+</exercise>
+
+<exercise id="fs-idp107146752">
+<problem id="fs-idp107568048">
+<para id="fs-idp107568176">Use the data from the David County science competition supplied in <link target-id="exercise10"/>. Construct a bar graph that shows the county-wide population percentage of students at each school.</para></problem>
+<solution id="fs-idp4118704">
+<figure id="fs-idp86744448"><media id="fs-idp112012640" display="block" alt="This is a bar graph that matches the supplied data. The x-axis shows the county high schools, and the y-axis shows the proportion of county students."><image mime-type="image/jpg" src="CNX_Stats_C02_M03_011.jpg" width="420"/></media></figure></solution>
+</exercise>
+</section>
+
+<section id="fs-idp103158432" class="free-response">
+<title>Homework</title>
+<exercise id="fs-idp49136992">
+<problem id="fs-idp49137248">
+<para id="fs-idp104446256">Student grades on a chemistry exam were: 77, 78, 76, 81, 86, 51, 79, 82, 84, 99</para><list id="fs-idp96417840" list-type="enumerated" number-style="lower-alpha"><item>Construct a stem-and-leaf plot of the data.</item>
+<item>Are there any potential outliers?  If so, which scores are they?  Why do you consider them outliers?</item>
+</list></problem>
+</exercise>
+
+<exercise id="eip-440"><problem id="eip-765">
+<para id="eip-929"><link target-id="M01_Ch02_tbl024"/> contains the 2010 obesity rates in U.S. states and Washington, DC.</para>
+<table id="M01_Ch02_tbl024" summary="The tables represents United States states and Obesity Rates. The first column and third columns list the names of the states and the second and fourth columns list Obesity Rates.">
+<tgroup cols="4">
+<thead>
+<row>
+<entry>State</entry>
+<entry>Percent (%)</entry>
+<entry>State</entry>
+<entry>Percent (%)</entry>
+<entry>State</entry>
+<entry>Percent (%)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Alabama</entry>
+<entry>32.2</entry>
+<entry>Kentucky</entry>
+<entry>31.3</entry>
+<entry>North Dakota</entry>
+<entry>27.2</entry>
+</row>
+<row>
+<entry>Alaska</entry>
+<entry>24.5</entry>
+<entry>Louisiana</entry>
+<entry>31.0</entry>
+<entry>Ohio</entry>
+<entry>29.2</entry>
+</row>
+<row>
+<entry>Arizona</entry>
+<entry>24.3</entry>
+<entry>Maine</entry>
+<entry>26.8</entry>
+<entry>Oklahoma</entry>
+<entry>30.4</entry>
+</row>
+<row>
+<entry>Arkansas</entry>
+<entry>30.1</entry>
+<entry>Maryland</entry>
+<entry>27.1</entry>
+<entry>Oregon</entry>
+<entry>26.8</entry>
+</row>
+<row>
+<entry>California</entry>
+<entry>24.0</entry>
+<entry>Massachusetts</entry>
+<entry>23.0</entry>
+<entry>Pennsylvania</entry>
+<entry>28.6</entry>
+</row>
+<row>
+<entry>Colorado</entry>
+<entry>21.0</entry>
+<entry>Michigan</entry>
+<entry>30.9</entry>
+<entry>Rhode Island</entry>
+<entry>25.5</entry>
+</row>
+<row>
+<entry>Connecticut</entry>
+<entry>22.5</entry>
+<entry>Minnesota</entry>
+<entry>24.8</entry>
+<entry>South Carolina</entry>
+<entry>31.5</entry>
+</row>
+<row>
+<entry>Delaware</entry>
+<entry>28.0</entry>
+<entry>Mississippi</entry>
+<entry>34.0</entry>
+<entry>South Dakota</entry>
+<entry>27.3</entry>
+</row>
+<row>
+<entry>Washington, DC</entry>
+<entry>22.2</entry>
+<entry>Missouri</entry>
+<entry>30.5</entry>
+<entry>Tennessee</entry>
+<entry>30.8</entry>
+</row>
+<row>
+<entry>Florida</entry>
+<entry>26.6</entry>
+<entry>Montana</entry>
+<entry>23.0</entry>
+<entry>Texas</entry>
+<entry>31.0</entry>
+</row>
+<row>
+<entry>Georgia</entry>
+<entry>29.6</entry>
+<entry>Nebraska</entry>
+<entry>26.9</entry>
+<entry>Utah</entry>
+<entry>22.5</entry>
+</row>
+<row>
+<entry>Hawaii</entry>
+<entry>22.7</entry>
+<entry>Nevada</entry>
+<entry>22.4</entry>
+<entry>Vermont</entry>
+<entry>23.2</entry>
+</row>
+<row>
+<entry>Idaho</entry>
+<entry>26.5</entry>
+<entry>New Hampshire</entry>
+<entry>25.0</entry>
+<entry>Virginia</entry>
+<entry>26.0</entry>
+</row>
+<row>
+<entry>Illinois</entry>
+<entry>28.2</entry>
+<entry>New Jersey</entry>
+<entry>23.8</entry>
+<entry>Washington</entry>
+<entry>25.5</entry>
+</row>
+<row>
+<entry>Indiana</entry>
+<entry>29.6</entry>
+<entry>New Mexico</entry>
+<entry>25.1</entry>
+<entry>West Virginia</entry>
+<entry>32.5</entry>
+</row>
+<row>
+<entry>Iowa</entry>
+<entry>28.4</entry>
+<entry>New York</entry>
+<entry>23.9</entry>
+<entry>Wisconsin</entry>
+<entry>26.3</entry>
+</row>
+<row>
+<entry>Kansas</entry>
+<entry>29.4</entry>
+<entry>North Carolina</entry>
+<entry>27.8</entry>
+<entry>Wyoming</entry>
+<entry>25.1</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<list id="Obesity_Rate_Bar_Graphs" list-type="enumerated" number-style="lower-alpha"><item>Use a random number generator to randomly pick eight states.  Construct a bar graph of the obesity rates of those eight states.</item>
+<item>Construct a bar graph for all the states beginning with the letter "A."</item>
+<item>Construct a bar graph for all the states beginning with the letter "M."</item>
+</list></problem>
+<solution id="eip-27">
+<list id="fs-idp52451232" list-type="enumerated" number-style="lower-alpha"><item>Example solution for using the random number generator for the TI-84+ to generate a simple random sample of 8 states. Instructions are as follows.
+<list id="Random_Number_Inst." list-type="labeled-item">
+<item>Number the entries in the table 1&#8211;51 (Includes Washington, DC; Numbered vertically)</item>
+<item>Press MATH</item>
+<item>Arrow over to PRB</item>
+<item>Press 5:randInt(</item>
+<item>Enter 51,1,8)</item>
+</list>
+<para id="fs-idp5295728">Eight numbers are generated (use the right arrow key to scroll through the numbers). The numbers correspond to the numbered states (for this example: {47 21 9 23 51 13 25 4}. If any numbers are repeated, generate a different number by using 5:randInt(51,1)). Here, the states (and Washington DC) are {Arkansas, Washington DC, Idaho, Maryland, Michigan, Mississippi, Virginia, Wyoming}.</para>
+<para id="fs-idp5295984">Corresponding percents are {30.1, 22.2, 26.5, 27.1, 30.9, 34.0, 26.0, 25.1}.</para>
+<figure id="eip-idp38340544">
+<media id="States_Obesity" display="block" alt="A bar graph showing 8 states on the x-axis and corresponding obesity rates on the y-axis.">
+<image src="fig-ch_02_sol_06.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+</item>
+<item><newline/>
+<figure id="eip-idp3788400"><media id="fs-idm6698448" display="block" alt="This is a bar graph that matches the supplied data. The x-axis shows states, and the y-axis shows percentages.">
+<image src="CNX_Stats_C02_M02_100N.jpg" mime-type="image/png" width="350"/>
+</media>
+</figure></item>
+<item><figure id="eip-idp2189920">
+<media id="fs-idp3027872" display="block" alt="This is a bar graph that matches the supplied data. The x-axis shows states, and the y-axis shows percentages.">
+<image src="CNX_Stats_C02_M02_101.jpg" mime-type="image/png" width="350"/>
+</media>
+</figure>
+</item>
+</list></solution>
+</exercise></section></content>
+</document>

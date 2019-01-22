@@ -1,0 +1,360 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Sampling Experiment</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50243/latest</md:content-url>
+  <md:content-id>m50243</md:content-id>
+  <md:title>Sampling Experiment</md:title>
+  <md:version>1.3</md:version>
+  <md:created>2014/05/08 16:01:43 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">cnxstats OpenStaxCollege</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>blinding</md:keyword>
+    <md:keyword>control group</md:keyword>
+    <md:keyword>double blind</md:keyword>
+    <md:keyword>double-blinding</md:keyword>
+    <md:keyword>ethics</md:keyword>
+    <md:keyword>experimental unit</md:keyword>
+    <md:keyword>experiment design</md:keyword>
+    <md:keyword>explanatory variable</md:keyword>
+    <md:keyword>informed consent</md:keyword>
+    <md:keyword>institution review board</md:keyword>
+    <md:keyword>lurking variable</md:keyword>
+    <md:keyword>placebo</md:keyword>
+    <md:keyword>random assignment</md:keyword>
+    <md:keyword>response variable</md:keyword>
+    <md:keyword>treatments</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1167914447982" class="statistics lab"><label/><title>Sampling Experiment</title>
+
+<para id="id9893246">Class Time:</para>
+<para id="element-745">Names:</para>
+<list id="element-806" list-type="bulleted">
+<title>Student Learning Outcomes</title>
+<item>The student will demonstrate the simple random, systematic, stratified, and cluster sampling techniques.</item>
+<item>The student will explain the details of each procedure used.<newline count="2"/></item>
+</list>
+
+<para id="element-153">In this lab, you will be asked to pick several random samples of restaurants. In each case, describe your procedure briefly, including how you might have used the random number generator, and then list the restaurants in the sample you obtained.</para>
+
+<note id="id11521709"><label/><title>Note</title>
+<para id="fs-idp40181216">The following section contains restaurants stratified by city into columns and grouped horizontally by entree cost (clusters).</para>
+</note><para id="fs-idp15735184"><title>Restaurants Stratified by City and Entree Cost </title>
+</para>
+<table id="id9894hh324636" pgwide="1" summary="This table provides a sample of restaurants.  Each cell contains a list of restaurants that correspond to the given location and price range.  The first column lists the location, the second column contains restaurants with entrees under $10, the third column contains restaurants with entrees between $10 and $15, the fourth column between $15 and $20, and the fifth column restaurants with entrees over $20.">
+<title>Restaurants Used in Sample</title>
+<tgroup cols="5">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+<row>
+<entry>Entree Cost</entry>
+<entry>Under $10</entry>
+<entry>$10 to under $15</entry>
+<entry>$15 to under $20</entry>
+<entry>Over $20</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>San Jose</entry>
+<entry>El Abuelo Taq, Pasta Mia, Emma&#8217;s Express, Bamboo Hut</entry>
+<entry>Emperor&#8217;s Guard, Creekside Inn</entry>
+<entry>Agenda, Gervais, Miro&#8217;s</entry>
+<entry>Blake&#8217;s, Eulipia, Hayes Mansion, Germania</entry>
+</row>
+<row>
+<entry>Palo Alto</entry>
+<entry>Senor Taco, Olive Garden, Taxi&#8217;s</entry>
+<entry>Ming&#8217;s, P.A. Joe&#8217;s, Stickney&#8217;s</entry>
+<entry>Scott&#8217;s Seafood, Poolside Grill, Fish Market</entry>
+<entry>Sundance Mine, Maddalena&#8217;s, Spago&#8217;s</entry>
+</row>
+<row>
+<entry>Los Gatos</entry>
+<entry>Mary&#8217;s Patio, Mount Everest, Sweet Pea&#8217;s, Andele Taqueria</entry>
+<entry>Lindsey&#8217;s, Willow Street</entry>
+<entry>Toll House</entry>
+<entry>Charter House, La Maison Du Cafe</entry>
+</row>
+<row>
+<entry>Mountain View</entry>
+<entry>Maharaja, New Ma&#8217;s, Thai-Rific, Garden Fresh</entry>
+<entry>Amber Indian, La Fiesta, Fiesta del Mar, Dawit</entry>
+<entry>Austin&#8217;s, Shiva&#8217;s, Mazeh</entry>
+<entry>Le Petit Bistro</entry>
+</row>
+<row>
+<entry>Cupertino</entry>
+<entry>Hobees, Hung Fu, Samrat, Panda Express</entry>
+<entry>Santa Barb. Grill, Mand. Gourmet, Bombay Oven, Kathmandu West</entry>
+<entry>Fontana&#8217;s, Blue Pheasant</entry>
+<entry>Hamasushi, Helios</entry>
+</row>
+<row>
+<entry>Sunnyvale</entry>
+<entry>Chekijababi, Taj India, Full Throttle, Tia Juana, Lemon Grass</entry>
+<entry>Pacific Fresh, Charley Brown&#8217;s, Cafe Cameroon, Faz, Aruba&#8217;s</entry>
+<entry>Lion &amp; Compass, The Palace, Beau Sejour</entry>
+<entry/>
+</row>
+<row>
+<entry>Santa Clara</entry>
+<entry>Rangoli, Armadillo Willy&#8217;s, Thai Pepper, Pasand</entry>
+<entry>Arthur&#8217;s, Katie&#8217;s Cafe, Pedro&#8217;s, La Galleria</entry>
+<entry>Birk&#8217;s, Truya Sushi, Valley Plaza</entry>
+<entry>Lakeside, Mariani&#8217;s</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="element-23513616999"><title>A Simple Random Sample</title>Pick a <emphasis>simple random sample</emphasis> of 15 restaurants.</para><list id="list-23562" list-type="enumerated"><item>Describe your procedure.</item>
+<item>Complete the table with your sample.
+<table id="tableone" summary="This table is presented as a template for collecting data and contains a total of 15 blank cells.">
+<tgroup cols="3">
+<tbody>
+<row>
+<entry>1. __________</entry>
+<entry>6. __________</entry>
+<entry>11. __________</entry>
+</row>
+<row>
+<entry>2. __________</entry>
+<entry>7. __________</entry>
+<entry>12. __________</entry>
+</row>
+<row>
+<entry>3. __________</entry>
+<entry>8. __________</entry>
+<entry>13. __________</entry>
+</row>
+<row>
+<entry>4. __________</entry>
+<entry>9. __________</entry>
+<entry>14. __________</entry>
+</row>
+<row>
+<entry>5. __________</entry>
+<entry>10. __________</entry>
+<entry>15. __________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+</list>
+<para id="element-235975691"><title>A Systematic Sample</title>Pick a <emphasis>systematic sample</emphasis> of 15 restaurants.</para><list id="list-235562" list-type="enumerated"><item>Describe your procedure.</item>
+<item>Complete the table with your sample.
+<table id="tabletwo" summary="This table is presented as a template for collecting data and contains a total of 15 blank cells.">
+<tgroup cols="3">
+<tbody>
+<row>
+<entry>1. __________</entry>
+<entry>6. __________</entry>
+<entry>11. __________</entry>
+</row>
+<row>
+<entry>2. __________</entry>
+<entry>7. __________</entry>
+<entry>12. __________</entry>
+</row>
+<row>
+<entry>3. __________</entry>
+<entry>8. __________</entry>
+<entry>13. __________</entry>
+</row>
+<row>
+<entry>4. __________</entry>
+<entry>9. __________</entry>
+<entry>14. __________</entry>
+</row>
+<row>
+<entry>5. __________</entry>
+<entry>10. __________</entry>
+<entry>15. __________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+</list>
+<para id="element-2466992"><title>A Stratified Sample</title>Pick a <emphasis>stratified sample</emphasis>, by city, of 20 restaurants. Use 25% of the restaurants from each stratum. Round to the nearest whole number.</para><list id="list-23566372" list-type="enumerated"><item>Describe your procedure.</item>
+<item>Complete the table with your sample.
+<table id="tablethree" summary="This table is presented as a template for collecting data and contains a total of 20 blank cells.">
+<tgroup cols="4">
+<tbody>
+<row>
+<entry>1. __________</entry>
+<entry>6. __________</entry>
+<entry>11. __________</entry>
+<entry>16. __________</entry>
+</row>
+<row>
+<entry>2. __________</entry>
+<entry>7. __________</entry>
+<entry>12. __________</entry>
+<entry>17. __________</entry>
+</row>
+<row>
+<entry>3. __________</entry>
+<entry>8. __________</entry>
+<entry>13. __________</entry>
+<entry>18. __________</entry>
+</row>
+<row>
+<entry>4. __________</entry>
+<entry>9. __________</entry>
+<entry>14. __________</entry>
+<entry>19. __________</entry>
+</row>
+<row>
+<entry>5. __________</entry>
+<entry>10. __________</entry>
+<entry>15. __________</entry>
+<entry>20. __________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+</list>
+<para id="element-2359869125"><title>A Stratified Sample</title>Pick a <emphasis>stratified sample</emphasis>, by entree cost, of 21 restaurants. Use 25% of the restaurants from each stratum.  Round to the nearest whole number.</para><list id="list-235966372" list-type="enumerated"><item>Describe your procedure.</item>
+<item>Complete the table with your sample.
+<table id="tablefour" summary="This table is presented as a template for collecting data and contins a total of 21 blank cells.">
+<tgroup cols="4">
+<tbody>
+<row>
+<entry>1. __________</entry>
+<entry>6. __________</entry>
+<entry>11. __________</entry>
+<entry>16. __________</entry>
+</row>
+<row>
+<entry>2. __________</entry>
+<entry>7. __________</entry>
+<entry>12. __________</entry>
+<entry>17. __________</entry>
+</row>
+<row>
+<entry>3. __________</entry>
+<entry>8. __________</entry>
+<entry>13. __________</entry>
+<entry>18. __________</entry>
+</row>
+<row>
+<entry>4. __________</entry>
+<entry>9. __________</entry>
+<entry>14. __________</entry>
+<entry>19. __________</entry>
+</row>
+<row>
+<entry>5. __________</entry>
+<entry>10. __________</entry>
+<entry>15. __________</entry>
+<entry>20. __________</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry/>
+<entry>21. __________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+</list>
+<para id="element-252976925"><title>A Cluster Sample</title>Pick a <emphasis>cluster sample</emphasis> of restaurants from two cities. The number of restaurants will vary.</para><list id="list-2359669372" list-type="enumerated"><item>Describe your procedure.</item>
+<item>Complete the table with your sample.
+<table id="tablefive" summary="This table is presented as a template for collecting data and contains a total of 25 blank cells.">
+<tgroup cols="5">
+<tbody>
+<row>
+<entry>1. ________</entry>
+<entry>6. ________</entry>
+<entry>11. ________</entry>
+<entry>16. ________</entry>
+<entry>21. ________</entry>
+</row>
+<row>
+<entry>2. ________</entry>
+<entry>7. ________</entry>
+<entry>12. ________</entry>
+<entry>17. ________</entry>
+<entry>22. ________</entry>
+</row>
+<row>
+<entry>3. ________</entry>
+<entry>8. ________</entry>
+<entry>13. ________</entry>
+<entry>18. ________</entry>
+<entry>23. ________</entry>
+</row>
+<row>
+<entry>4. ________</entry>
+<entry>9. ________</entry>
+<entry>14. ________</entry>
+<entry>19. ________</entry>
+<entry>24. ________</entry>
+</row>
+<row>
+<entry>5. ________</entry>
+<entry>10. ________</entry>
+<entry>15. ________</entry>
+<entry>20. ________</entry>
+<entry>25. ________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+</list></note></content>
+
+</document>

@@ -1,0 +1,112 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+  <title>Introduction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47098/latest</md:content-url>
+  <md:content-id>m47098</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.6</md:version>
+  <md:created>2013/07/19 15:00:53 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>absolute values of a residual</md:keyword>
+    <md:keyword>bivariate</md:keyword>
+    <md:keyword>coefficient</md:keyword>
+    <md:keyword>coefficient of determination</md:keyword>
+    <md:keyword>correlation</md:keyword>
+    <md:keyword>correlation coefficient</md:keyword>
+    <md:keyword>dependent variable</md:keyword>
+    <md:keyword>deviations</md:keyword>
+    <md:keyword>direction</md:keyword>
+    <md:keyword>extrapolation</md:keyword>
+    <md:keyword>independent variable</md:keyword>
+    <md:keyword>influential points</md:keyword>
+    <md:keyword>interpolation</md:keyword>
+    <md:keyword>least-squares line</md:keyword>
+    <md:keyword>linear correlations</md:keyword>
+    <md:keyword>linear regression</md:keyword>
+    <md:keyword>line of best fit</md:keyword>
+    <md:keyword>multivariate</md:keyword>
+    <md:keyword>outlier</md:keyword>
+    <md:keyword>potential outlier</md:keyword>
+    <md:keyword>prediction</md:keyword>
+    <md:keyword>residual</md:keyword>
+    <md:keyword>scatter plot</md:keyword>
+    <md:keyword>significance</md:keyword>
+    <md:keyword>slope</md:keyword>
+    <md:keyword>sse</md:keyword>
+    <md:keyword>straight line</md:keyword>
+    <md:keyword>strength</md:keyword>
+    <md:keyword>sum of squared errors</md:keyword>
+    <md:keyword>y-intercept</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<?cnx.eoc class="summary" title="Chapter Review"?>
+  <?cnx.eoc class="formula-review" title="Formula Review"?>
+  <?cnx.eoc class="practice" title="Practice"?>
+  <?cnx.eoc class="free-response" title="Homework"?>
+  <?cnx.eoc class="references" title="References"?>
+<?cnx.eoc class="bring-together-exercises" title="Bringing It Together : Practice"?>
+<?cnx.eoc class="bring-together-homework" title="Bringing It Together : Homework"?>
+
+  <figure id="fs-idm37352640" class="splash"><media id="fs-idm47477408" alt="This is a photo of a car mechanic&#8217;s shop. There are three United States Postal Services trucks being serviced, and one not being serviced.">
+<image src="CNX_Stats_C12_CO.jpg" width="380" mime-type="image/jpeg"/>
+</media>
+  <caption>Linear regression and correlation can help you determine if an auto mechanic&#8217;s salary is related to his work experience. (credit: Joshua Rothhaas)</caption></figure><note id="fs-idm16563264" class="chapter-objectives">
+  <label/>
+<title>Chapter Objectives</title>
+<para id="element-382">By the end of this chapter, the student should be able to:</para>
+<list id="element-22" list-type="bulleted">
+<item>Discuss basic ideas of linear regression and correlation.</item>
+<item>Create and interpret a line of best fit.</item>
+<item>Calculate and interpret the correlation coefficient.</item>
+<item>Calculate and interpret outliers.</item></list>
+</note>
+<para id="delete_me">Professionals often want to know how two or more numeric variables are related. For example, is there a relationship between the grade on the second math exam a student takes and the grade on the final exam? If there is a relationship, what is the relationship and how strong is it?</para>
+<para id="element-814">In another example, your income may be determined by your education, your profession, your years of experience, and your ability. The amount you pay a repair person for labor is often determined by an initial amount plus an hourly fee.</para>
+<para id="element-363">The type of data described in the examples is <term>bivariate</term> data &#8212; "bi" for two variables. In reality, statisticians use <term>multivariate</term> data, meaning many variables.</para><para id="element-601">In this chapter, you will be studying the simplest form of regression, "linear regression" with one independent variable (<emphasis effect="italics">x</emphasis>). This involves data that fits a line in two dimensions. You will also study correlation which measures how strong the relationship is.</para>
+    </content>
+</document>

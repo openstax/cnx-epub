@@ -1,0 +1,818 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Hypergeometric Distribution</title><meta name="created-time" content="2013/07/19 13:29:44 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/3.0/"/><meta name="keywords" content="hypergeometric distribution, hypergeometric probability distribution, hypergeometric probability distribution function"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Hypergeometric Distribution</div>
+<p id="element-408">There are five characteristics of a hypergeometric experiment.</p>
+<ol id="element-999"><li>You take samples from <strong>two</strong> groups.</li>
+<li>You are concerned with a group of interest, called the first group.</li>
+<li>You sample <strong>without replacement</strong> from the combined groups. For example, you want to choose a softball team from a combined group of 11 men and 13 women. The team consists of ten players.</li>
+<li>Each pick is <strong>not</strong> independent, since sampling is without replacement. In the softball example, the probability of picking a woman first is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mn>13</mn>
+   </mrow>
+   <mrow>
+    <mn>24</mn>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mn>13</mn>
+   </mrow>
+   <mrow>
+    <mn>24</mn>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. The probability of picking a man second is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>11</mn>
+   <mrow>
+    <mn>23</mn>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>11</mn>
+   <mrow>
+    <mn>23</mn>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> if a woman was picked first. It is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>10</mn>
+   <mrow>
+    <mn>23</mn>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>10</mn>
+   <mrow>
+    <mn>23</mn>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> if a man was picked first. The probability of the second pick depends on what happened in the first pick.</li>
+<li>You are <strong>not</strong> dealing with Bernoulli Trials.</li>
+</ol>
+<p id="fs-idp102799616">The outcomes of a hypergeometric experiment fit a <span data-type="term">hypergeometric probability</span> distribution. The random variable <em data-effect="italics">X</em> = the number of items from the group of interest.</p><div data-type="example" id="element-84">
+<div data-type="exercise" id="fs-idp41303504"><div data-type="problem" id="fs-idm310432"><p id="element-88">A candy dish contains 100 jelly beans and 80 gumdrops. Fifty candies are picked at random. What is the probability that 35 of the 50 are gumdrops? The two groups are jelly beans and gumdrops. Since the probability question asks for the probability of picking gumdrops, the group of interest (first group) is gumdrops. The size of the group of interest (first group) is 80. The size of the second group is 100. The size of the sample is 50 (jelly beans or gumdrops). Let <em data-effect="italics">X</em> = the number of gumdrops in the sample of 50. <em data-effect="italics">X</em> takes on the values <em data-effect="italics">x</em> = 0, 1, 2, ..., 50. What is the probability statement written mathematically?</p></div>
+<div data-type="solution" id="fs-idm31176384">
+<p id="fs-idm45247120"><em data-effect="italics">P</em>(<em data-effect="italics">x</em> = 35)</p></div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idm112699744" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm3161264"><div data-type="problem" id="fs-idp72756304">
+<p id="fs-idp107407200">A bag contains letter tiles. Forty-four of the tiles are vowels, and 56 are consonants. Seven tiles are picked at random. You want to know the probability that four of the seven tiles are vowels. What is the group of interest, the size of the group of interest, and the size of the sample?</p></div>
+</div></div><div data-type="example" id="element-968">
+<div data-type="exercise" id="fs-idm83529440">
+<div data-type="problem" id="fs-idm47818416">
+<p id="element-661">Suppose a shipment of 100 DVD players is known to have ten defective players. An inspector randomly chooses 12 for inspection. He is interested in determining the probability that, among the 12 players, at most two are defective. The two groups are the 90 non-defective DVD players and the 10 defective DVD players. The group of interest (first group) is the defective group because the probability question asks for the probability of at most two defective DVD players. The size of the sample is 12 DVD players. (They may be non-defective or defective.) Let <em data-effect="italics">X</em> = the number of defective DVD players in the sample of 12. <em data-effect="italics">X</em> takes on the values 0, 1, 2, ..., 10. <em data-effect="italics">X</em> may not take on the values 11 or 12. The sample size is 12, but there are only 10 defective DVD players. Write the probability statement mathematically.</p></div>
+<div data-type="solution" id="fs-idp28452128">
+<p id="fs-idm89520464"><em data-effect="italics">P</em>(<em data-effect="italics">x</em> &#8804; 2)</p>
+</div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idm96082960" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idp7372528"><div data-type="problem" id="fs-idp85406816">
+<p id="fs-idp85729168">A gross of eggs contains 144 eggs. A particular gross is known to have 12 cracked eggs. An inspector randomly chooses 15 for inspection. She wants to know the probability that, among the 15, at most three are cracked. What is <em data-effect="italics">X</em>, and what values does it take on?</p></div>
+</div></div><div data-type="example" id="element-582">
+<p id="element-885">You are president of an on-campus special events organization. You need a committee of seven students to plan a special birthday party for the president of the college. Your organization consists of 18 women and 15 men. You are interested in the number of men on your committee. If the members of the committee are randomly selected, what is the probability that your committee has more than four men?</p>
+<p id="element-990">This is a hypergeometric problem because you are choosing your committee from two groups (men and women).<div data-type="newline" data-count="2"><br/><br/></div></p><div data-type="exercise" id="element-720"><div data-type="problem" id="id43788540">
+  <p id="element-965">a. Are you choosing with or without replacement?</p>
+</div>
+<div data-type="solution" id="id43788559">
+  <p id="element-142">a. without<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div><div data-type="exercise" id="element-154"><div data-type="problem" id="id43788588">
+  <p id="element-356">b. What is the group of interest?</p>
+</div>
+<div data-type="solution" id="id43788607">
+  <p id="element-80">b. the men<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div>
+
+<div data-type="exercise" id="element-78"><div data-type="problem" id="id43788636">
+  <p id="element-378">c. How many are in the group of interest?</p>
+</div>
+<div data-type="solution" id="id43788655">
+  <p id="element-597">c. 15 men<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div><div data-type="exercise" id="element-801">
+<div data-type="problem" id="id43788684">
+  <p id="element-730">d. How many are in the other group?</p>
+</div>
+<div data-type="solution" id="id43788703">
+  <p id="element-465">d. 18 women<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div>
+<div data-type="exercise" id="element-675">
+<div data-type="problem" id="id43788731">
+  <p id="element-304">e. Let <em data-effect="italics">X</em> = _________ on the committee. What values does <em data-effect="italics">X</em> take on?</p>
+</div>
+
+<div data-type="solution" id="id43788760">
+  <p id="element-529">e. Let <em data-effect="italics">X</em> = <strong>the number of men</strong> on the committee. <em data-effect="italics">x</em> = 0, 1, 2, &#8230;, 7.<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div>
+
+<div data-type="exercise" id="element-1231">
+<div data-type="problem" id="id43780639">
+<p id="element-49">f. The probability question is <em data-effect="italics">P</em>(_______).</p></div>
+<div data-type="solution" id="id43780660">
+ <p id="element-0836">f. <em data-effect="italics">P</em>(<em data-effect="italics">x</em> &gt; 4)</p></div>
+</div></div>
+
+<div data-type="note" data-has-label="true" id="fs-idm11539184" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm40312064">
+<div data-type="problem" id="fs-idp112379936">
+<p id="fs-idm31607136">A palette has 200 milk cartons. Of the 200 cartons, it is known that ten of them have leaked and cannot be sold. A stock clerk randomly chooses 18 for inspection. He wants to know the probability that among the 18, no more than two are leaking. Give five reasons why this is a hypergeometric problem.</p></div>
+</div>
+</div><section data-depth="1" id="element-516"><h3 data-type="title">Notation for the Hypergeometric: H = Hypergeometric Probability Distribution Function</h3>
+<p id="element-870"><em data-effect="italics">X</em> ~ <em data-effect="italics">H</em>(<em data-effect="italics">r</em>, <em data-effect="italics">b</em>, <em data-effect="italics">n</em>)</p>
+
+
+<p id="element-869">Read this as "<em data-effect="italics">X</em> is a random variable with a hypergeometric distribution." The parameters are <em data-effect="italics">r</em>, <em data-effect="italics">b</em>, and <em data-effect="italics">n</em>; <em data-effect="italics">r</em> = the size of the group of interest (first group), <em data-effect="italics">b</em> = the size of the second group, <em data-effect="italics">n</em> = the size of the chosen sample.</p>
+</section>
+
+<div data-type="example" id="element-180">
+<p id="element-874">A school site committee is to be chosen randomly from six men and five women. If the committee consists of four members chosen randomly, what is the probability that two of them are men? How many men do you expect to be on the committee?</p>
+
+<p id="element-875">Let <em data-effect="italics">X</em> = the number of men on the committee of four. The men are the group of interest (first group).</p>
+
+<p id="element-876"><em data-effect="italics">X</em> takes on the values 0, 1, 2, 3, 4, where <em data-effect="italics">r = 6</em>, <em data-effect="italics">b = 5</em>, and <em data-effect="italics">n = 4</em>. <em data-effect="italics">X ~ H</em>(6, 5, 4)</p>
+
+<p id="element-877" class="finger">Find <em data-effect="italics">P</em>(<em data-effect="italics">x</em> = 2). <em data-effect="italics">P</em>(<em data-effect="italics">x</em> = 2) = 0.4545 (calculator or computer)</p><div data-type="note" data-has-label="true" id="id43780917" class="finger" data-label=""><div data-type="title">NOTE</div>
+<p id="fs-idm9108464">Currently, the TI-83+ and TI-84 do not have hypergeometric probability functions. There are a number of computer packages, including Microsoft Excel, that do.</p>
+</div><p id="element-879">The probability that there are two men on the committee is about 0.45.</p>
+
+<p id="element-136">The graph of <em data-effect="italics">X</em> ~ <em data-effect="italics">H</em>(6, 5, 4) is:</p><figure id="fs-idp36734864"><span data-type="media" id="id43780967" data-display="block" data-alt="This graph shows a hypergeometric probability distribution. It has five bars that are slightly normally distributed. The x-axis shows values from 0 to 4 in increments of 1, representing the number of men on the four-person committee. The y-axis ranges from 0 to 0.5 in increments of 0.1."><img src="/resources/a935e6e12aae78185dc62986769ffab118f46c83/fig-ch04_07_01N.jpg" data-media-type="image/jpg" alt="This graph shows a hypergeometric probability distribution. It has five bars that are slightly normally distributed. The x-axis shows values from 0 to 4 in increments of 1, representing the number of men on the four-person committee. The y-axis ranges from 0 to 0.5 in increments of 0.1." width="400"/></span>
+</figure><p id="element-704">The <em data-effect="italics">y</em>-axis contains the probability of <em data-effect="italics">X</em>, where <em data-effect="italics">X</em> = the number of men on the committee.</p>
+
+<p id="element-369">You would expect <em data-effect="italics">m</em> = 2.18 (about two) men on the committee.</p>
+
+<p id="element-702">The formula for the mean is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>&#956;</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mi>n</mi><mi>r</mi>
+   </mrow>
+   <mrow>
+    <mi>r</mi><mo>+</mo><mi>b</mi>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>6</mn><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <mn>6</mn><mo>+</mo><mn>5</mn>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>2.18</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>&#956;</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mi>n</mi><mi>r</mi>
+   </mrow>
+   <mrow>
+    <mi>r</mi><mo>+</mo><mi>b</mi>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <mo stretchy="false">(</mo><mn>4</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>6</mn><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <mn>6</mn><mo>+</mo><mn>5</mn>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>2.18</mn>
+ </mrow></annotation-xml></semantics></math></p></div>
+
+<div data-type="note" data-has-label="true" id="fs-idm54957120" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm10553104">
+<div data-type="problem" id="fs-idm142583216">
+<p id="fs-idp43780624">An intramural basketball team is to be chosen randomly from 15 boys and 12 girls. The team has ten slots. You want to know the probability that eight of the players will be boys. What is the group of interest and the sample?</p></div>
+</div>
+</div><section data-depth="1" id="fs-idp20462736" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="fs-idm26047632">A <span data-type="term">hypergeometric experiment</span> is a statistical experiment with the following properties:</p>
+<ol id="fs-idp5636464">
+<li>You take samples from two groups.</li>
+<li>You are concerned with a group of interest, called the first group.</li>
+<li>You sample without replacement from the combined groups.</li>
+<li>Each pick is not independent, since sampling is without replacement.</li>
+<li>You are not dealing with Bernoulli Trials.</li>
+</ol>
+
+<p id="fs-idm39657744">The outcomes of a hypergeometric experiment fit a hypergeometric probability distribution. The random variable <em data-effect="italics">X</em> = the number of items from the group of interest. The distribution of <em data-effect="italics">X</em> is denoted <em data-effect="italics">X</em> ~ <em data-effect="italics">H</em>(<em data-effect="italics">r</em>, <em data-effect="italics">b</em>, <em data-effect="italics">n</em>), where <em data-effect="italics">r</em> = the size of the group of interest (first group), <em data-effect="italics">b</em> = the size of the second group, and <em data-effect="italics">n</em> = the size of the chosen sample. It follows that <div data-type="newline"><br/></div><em data-effect="italics">n</em> &#8804; <em data-effect="italics">r</em> + <em data-effect="italics">b</em>. The mean of <em data-effect="italics">X</em> is <em data-effect="italics">&#956;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mi>n</mi><mi>r</mi>
+   </mrow>
+   <mrow>
+    <mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mi>n</mi><mi>r</mi>
+   </mrow>
+   <mrow>
+    <mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> and the standard deviation is <em data-effect="italics">&#963;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mi>r</mi><mi>b</mi><mi>n</mi><mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mtext>&#160;&#8722;&#160;</mtext><mi>n</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+      <mtext>&#8201;</mtext><mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo>&#8722;</mo><mtext>1)</mtext>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mi>r</mi><mi>b</mi><mi>n</mi><mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mtext>&#160;&#8722;&#160;</mtext><mi>n</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+      <mtext>&#8201;</mtext><mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo>&#8722;</mo><mtext>1)</mtext>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math>.</p></section>
+
+<section data-depth="1" id="fs-idm29445280" class="formula-review"><h3 data-type="title">Formula Review</h3>
+<p id="fs-idm47471792"><em data-effect="italics">X</em> ~ <em data-effect="italics">H</em>(<em data-effect="italics">r</em>, <em data-effect="italics">b</em>, <em data-effect="italics">n</em>) means that the discrete random variable <em data-effect="italics">X</em> has a hypergeometric probability distribution with <em data-effect="italics">r</em> = the size of the group of interest (first group), <em data-effect="italics">b</em> = the size of the second group, and <em data-effect="italics">n</em> = the size of the chosen sample.</p><p id="fs-idp74346496"><em data-effect="italics">X</em> = the number of items from the group of interest that are in the chosen sample, and <em data-effect="italics">X</em> may take on the values <em data-effect="italics">x</em> = 0, 1, ..., up to the size of the group of interest. (The minimum value for <em data-effect="italics">X</em> may be larger than zero in some instances.)</p><p id="fs-idm57506624"><em data-effect="italics">n</em> &#8804; <em data-effect="italics">r</em> + <em data-effect="italics">b</em></p>
+<p id="fs-idm63887360">The mean of <em data-effect="italics">X</em> is given by the formula <em data-effect="italics">&#956;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mi>n</mi><mi>r</mi>
+   </mrow>
+   <mrow>
+    <mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mi>n</mi><mi>r</mi>
+   </mrow>
+   <mrow>
+    <mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> and the standard deviation is = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mi>r</mi><mi>b</mi><mi>n</mi><mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo>&#8722;</mo><mi>n</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+      <mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo>&#8722;</mo><mtext>1)</mtext>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mi>r</mi><mi>b</mi><mi>n</mi><mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo>&#8722;</mo><mi>n</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+      <mo stretchy="false">(</mo><mi>r</mi><mtext>&#160;+&#160;</mtext><mi>b</mi><mo>&#8722;</mo><mtext>1)</mtext>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math>.</p></section>
+
+
+<section data-depth="1" id="fs-idp90772672" class="practice">
+<p id="fs-idp25310848"><em data-effect="italics">Use the following information to answer the next five exercises:</em> Suppose that a group of statistics students is divided into two groups: business majors and non-business majors. There are 16 business majors in the group and seven non-business majors in the group. A random sample of nine students is taken. We are interested in the number of business majors in the sample.</p>
+<div data-type="exercise" id="exerciseone">
+<div data-type="problem" id="fs-idp379600">
+<p id="fs-idm140697232">In words, define the random variable <em data-effect="italics">X</em>.</p>
+</div>
+<div data-type="solution" id="fs-idp6558064">
+<p id="fs-idm7320000"><em data-effect="italics">X</em> = the number of business majors in the sample.</p>
+</div>
+</div>
+
+<div data-type="exercise" id="exercisetwo"><div data-type="problem" id="fs-idp70303568">
+<p id="fs-idp15614240"><em data-effect="italics">X</em> ~ _____(_____,_____)</p>
+</div>
+<!-- <solution id="fs-idm46774464">
+<para id="fs-idp21268080"><emphasis effect="italics">H</emphasis>(16, 7, 9)</para></solution> -->
+</div><div data-type="exercise" id="exercisethree">
+<div data-type="problem" id="fs-idm11748912">
+<p id="fs-idp42646160">What values does <em data-effect="italics">X</em> take on?</p>
+</div>
+<div data-type="solution" id="fs-idp37311840">
+<p id="fs-idm22499136">2, 3, 4, 5, 6, 7, 8, 9</p></div>
+</div>
+
+<div data-type="exercise" id="exercisefour"><div data-type="problem" id="fs-idm61178576">
+<p id="fs-idm2364000">Find the standard deviation.</p></div>
+
+<!-- <solution id="fs-idm7562448">
+<table id="fs-idp5721200" summary="PDF table for the number of business majors and probabilities.">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+  <row>
+    <entry><emphasis effect="italics">x</emphasis></entry>
+    <entry><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis>)</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+</tbody>
+
+
+
+</tgroup>
+</table>
+</solution> -->
+
+</div><div data-type="exercise" id="fs-idp74125840">
+<div data-type="problem" id="fs-idp13761904">
+<p id="fs-idm31429488">On average (<em data-effect="italics">&#956;</em>), how many would you expect to be business majors?</p></div>
+<div data-type="solution" id="fs-idp122801024">
+<p id="fs-idp49880624">6.26</p>
+</div>
+</div>
+</section>
+
+<section data-depth="1" id="fs-idm62349392" class="free-response"><h3 data-type="title">HOMEWORK</h3>
+
+<div data-type="exercise" id="element-194"><div data-type="problem" id="id5899812">
+  <p id="element-438">A group of Martial Arts students is planning on participating in an upcoming demonstration. Six are students of Tae Kwon Do; seven are students of Shotokan Karate. Suppose that eight students are randomly picked to be in the first demonstration. We are interested in the number of Shotokan Karate students in that first demonstration.</p>
+<ol id="element-803" type="a">
+<li>In words, define the random variable <em data-effect="italics">X</em>.</li>
+<li>List the values that <em data-effect="italics">X</em> may take on.</li>
+<li>Give the distribution of <em data-effect="italics">X</em>. <em data-effect="italics">X</em> ~ _____(_____,_____)</li>
+<li>How many Shotokan Karate students do we expect to be in that first demonstration?</li>
+</ol></div>
+
+<!-- <solution id="fs-idp3312224">
+<list id="fs-idp10897328" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the number of Shotokan Karate students in the first demonstration</item>
+<item>0, 1, 2, 3, 4, 5, 6, 7</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">H</emphasis>(7, 6, 8)</item>
+<item>4.31</item>
+</list></solution> -->
+</div><div data-type="exercise" id="fs-idm49012784"><div data-type="problem" id="fs-idm49012656">
+  <p id="fs-idm22644768">In one of its Spring catalogs, L.L. Bean&#174; advertised footwear on 29 of its 192 catalog pages. Suppose we randomly survey 20 pages. We are interested in the number of pages that advertise footwear. Each page may be picked at most once.</p>
+<ol id="fs-idp38152128" type="a">
+<li>In words, define the random variable <em data-effect="italics">X</em>.</li>
+<li>List the values that <em data-effect="italics">X</em> may take on.</li>
+<li>Give the distribution of <em data-effect="italics">X</em>. <em data-effect="italics">X</em> ~ _____(_____,_____)</li>
+<li>How many pages do you expect to advertise footwear on them?</li>
+<li>Calculate the standard deviation.</li>
+</ol>
+</div>
+<div data-type="solution" id="eip-idp25780992">
+<ol id="eip-idp90664864" type="a"><li><em data-effect="italics">X</em> = the number of pages that advertise footwear</li>
+<li>0, 1, 2, 3, ..., 20</li>
+<li><em data-effect="italics">X</em> ~ <em data-effect="italics">H</em>(29, 163, 20);  <em data-effect="italics">r</em> = 29, <em data-effect="italics">b</em> = 163, <em data-effect="italics">n</em> = 20</li>
+<li>3.03</li>
+<li>1.5197</li>
+</ol></div></div>
+
+<div data-type="exercise" id="fs-idp106306576"><div data-type="problem" id="id11679086">
+<p id="element-416">Suppose that a technology task force is being formed to study technology awareness among instructors. Assume that ten people will be randomly chosen to be on the committee from a group of 28 volunteers, 20 who are technically proficient and eight who are not. We are interested in the number on the committee who are <strong>not</strong> technically proficient.</p>
+
+<ol id="element-211" type="a">
+<li>In words, define the random variable <em data-effect="italics">X</em>.</li>
+<li>List the values that <em data-effect="italics">X</em> may take on.</li>
+<li>Give the distribution of <em data-effect="italics">X</em>. <em data-effect="italics">X</em> ~ _____(_____,_____)</li>
+<li>How many instructors do you expect on the committee who are <strong>not</strong> technically proficient?</li>
+<li>Find the probability that at least five on the committee are not technically proficient.</li>
+<li>Find the probability that at most three on the committee are not technically proficient.</li></ol></div>
+
+<!-- <solution id="eip-idm90541104">
+<list id="eip-idm90540848" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the number of people on the committee who are not technically proficient</item>
+<item>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">B</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>10,&#160;</m:mtext><m:mfrac>
+     <m:mn>8</m:mn>
+     <m:mrow>
+      <m:mn>28</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item>2.8571</item>
+<item>0.1269</item>
+<item>0.6873</item>
+</list></solution> --></div><div data-type="exercise" id="element-755"><div data-type="problem" id="id17019371">
+  <p id="element-515">Suppose that nine Massachusetts athletes are scheduled to appear at a charity benefit. The nine are randomly chosen from eight volunteers from the Boston Celtics and four volunteers from the New England Patriots. We are interested in the number of Patriots picked.</p>
+<ol id="element-134" type="a"><li>In words, define the random variable <em data-effect="italics">X</em>.</li>
+<li>List the values that <em data-effect="italics">X</em> may take on.</li>
+<li>Give the distribution of <em data-effect="italics">X</em>. <em data-effect="italics">X</em> ~ _____(_____,_____)</li>
+<li>Are you choosing the nine athletes with or without replacement?</li>
+</ol></div>
+<div data-type="solution" id="eip-idp145850256">
+<ol id="eip-idp20489040" type="a"><li><em data-effect="italics">X</em> = the number of Patriots picked</li>
+<li>0, 1, 2, 3, 4</li>
+<li><em data-effect="italics">X</em> ~ <em data-effect="italics">H</em>(4, 8, 9)</li>
+<li>Without replacement</li></ol></div></div>
+
+<div data-type="exercise" id="fs-idm55206656"><div data-type="problem" id="fs-idm5844240">
+<p id="fs-idm61134400">A bridge hand is defined as 13 cards selected at random and without replacement from a deck of 52 cards. In a standard deck of cards, there are 13 cards from each suit: hearts, spades, clubs, and diamonds. What is the probability of being dealt a hand that does not contain a heart?</p>
+
+<ol id="fs-idp85797696" type="a"><li>What is the group of interest?</li>
+<li>How many are in the group of interest?</li>
+<li>How many are in the other group?</li>
+<li>Let <em data-effect="italics">X</em> = _________. What values does <em data-effect="italics">X</em> take on?</li>
+<li>The probability question is <em data-effect="italics">P</em>(_______).</li>
+<li>Find the probability in question.</li>
+<li>Find the (i) mean and (ii) standard deviation of <em data-effect="italics">X</em>.</li>
+</ol>
+</div>
+
+<!-- <solution id="fs-idp25943152">
+<list id="fs-idm26191744" list-type="enumerated" number-style="lower-alpha"><item>Cards that are not hearts</item>
+<item>52 &#8722; 13 = 39</item>
+<item>Other group = hearts; there are 13 hearts in a deck.</item>
+<item><emphasis effect="italics">X</emphasis> = the number of cards that are not hearts; <emphasis effect="italics">x</emphasis> = 0, 1, 2, 3, &#8230; , 13</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 13)</item>
+<item><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>39</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>52</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>38</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>51</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>37</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>50</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>36</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>49</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>35</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>48</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>34</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>47</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>33</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>46</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>32</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>45</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>31</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>44</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>30</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>43</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>29</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>42</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>28</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>41</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>27</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>40</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> &#8776; 0.0128</item>
+
+
+<item>
+<list id="fs-idm150880" list-type="enumerated" number-style="lower-roman"><item>Mean = <emphasis effect="italics">&#956;</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>n</m:mi><m:mi>r</m:mi>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>r</m:mi><m:mtext>&#160;+&#160;</m:mtext><m:mi>b</m:mi>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mn>13</m:mn><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mn>39</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>39</m:mn><m:mtext>&#160;+&#160;</m:mtext><m:mn>13</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 9.75</item>
+<item>Standard Deviation = <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>r</m:mi><m:mi>b</m:mi><m:mi>n</m:mi><m:mo stretchy="false">(</m:mo><m:mi>r</m:mi><m:mtext>&#160;+&#160;</m:mtext><m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mi>n</m:mi><m:mo stretchy="false">)</m:mo>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>r</m:mi><m:mtext>&#160;+&#160;</m:mtext><m:mi>b</m:mi><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+      <m:mo stretchy="false">(</m:mo><m:mi>r</m:mi><m:mtext>&#160;+&#160;</m:mtext><m:mi>b</m:mi><m:mo>&#8722;</m:mo><m:mtext>1)</m:mtext>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mtext>39(13)13(39&#160;+&#160;13</m:mtext><m:mo>&#8211;</m:mo><m:mtext>13)</m:mtext>
+     </m:mrow>
+     <m:mrow>
+      <m:msup>
+       <m:mrow>
+        <m:mtext>(39&#160;+&#160;13)</m:mtext>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+      <m:mtext>(39&#160;+&#160;13</m:mtext><m:mo>&#8211;</m:mo><m:mtext>1)</m:mtext>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> &#8776; 1.3653</item>
+</list></item>
+</list>
+<para id="fs-idp11825152">Alternate Solution Set Up</para>
+<list id="fs-idp24183888" list-type="enumerated" number-style="lower-alpha"><item>Cards that are hearts</item>
+<item>13</item>
+<item>Other group = non-hearts; <emphasis effect="italics">b</emphasis> = 39</item>
+<item><emphasis effect="italics">X</emphasis> = the number of cards that are hearts; <emphasis effect="italics">x</emphasis> = 0, 1, 2, 3, &#8230; , 13</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> = 0)</item>
+</list><note id="eip-idp114013328" class="finger"><label/><title>NOTE</title>
+<para id="fs-idm27875232">If you have access to it, use Microsoft Excel HYPERGEOM.DIST function with the following syntax: = HYPGEOM.DIST(x, sample size, size of group of interest, size of total population, FALSE)</para>
+</note></solution> --></div></section>
+
+  <div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+<dl id="fs-idm65310160">
+<dt>Hypergeometric Experiment</dt>
+<dd id="fs-idp17931344">a statistical experiment with the following properties:
+<ol id="fs-idp30513360">
+<li>You take samples from two groups.</li>
+<li>You are concerned with a group of interest, called the first group.</li>
+<li>You sample without replacement from the combined groups.</li>
+<li>Each pick is not independent, since sampling is without replacement.</li>
+<li>You are not dealing with Bernoulli Trials.</li>
+</ol>
+</dd>
+</dl>
+
+<dl id="hpygeoprob">
+    <dt>Hypergeometric Probability</dt>
+    <dd id="id19874231">a discrete random variable (RV) that is characterized by:
+<ol id="hyp1">
+<li>A fixed number of trials.</li>
+<li>The probability of success is not the same from trial to trial.</li>
+</ol>
+We sample from two groups of items when we are interested in only one group. <em data-effect="italics">X</em> is defined as the number of successes out of the total number of items chosen. Notation: <em data-effect="italics">X</em> ~ <em data-effect="italics">H</em>(<em data-effect="italics">r</em>, <em data-effect="italics">b</em>, <em data-effect="italics">n</em>), where <em data-effect="italics">r</em> = the number of items in the group of interest, <em data-effect="italics">b</em> = the number of items in the group not of interest, and <em data-effect="italics">n</em> = the number of items chosen.</dd>
+  </dl>
+</div></body>
+
+</html>

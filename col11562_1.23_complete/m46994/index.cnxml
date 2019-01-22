@@ -1,0 +1,1570 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>The Central Limit Theorem for Sample Means (Averages)</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46994/latest</md:content-url>
+  <md:content-id>m46994</md:content-id>
+  <md:title>The Central Limit Theorem for Sample Means (Averages)</md:title>
+  <md:version>1.13</md:version>
+  <md:created>2013/07/19 13:42:39 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>central limit theorem</md:keyword>
+    <md:keyword>central limit theorem for averages</md:keyword>
+    <md:keyword>central limit theorem for means</md:keyword>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>normal distribution</md:keyword>
+    <md:keyword>random variables</md:keyword>
+    <md:keyword>sample mean</md:keyword>
+    <md:keyword>sample size</md:keyword>
+    <md:keyword>sampling distribution</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="fs-idm47553248">Suppose <emphasis effect="italics">X</emphasis> is a random variable with a distribution that may be known or unknown (it can be any distribution). Using a subscript that matches the random variable, suppose:</para>
+<list id="list-1" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">&#956;</emphasis><emphasis effect="italics"><sub>X</sub></emphasis> = the mean of <emphasis effect="italics">X</emphasis></item>
+<item><emphasis effect="italics">&#963;</emphasis><emphasis effect="italics"><sub>X</sub></emphasis> = the standard deviation of <emphasis effect="italics">X</emphasis></item>
+</list>
+<para id="fs-idm4523440">If you draw random samples of size <emphasis effect="italics">n</emphasis>, then as <emphasis effect="italics">n</emphasis> increases, the random variable <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> which consists of sample means, tends to be <term>normally distributed</term> and</para><para id="element-810"><m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> ~ <emphasis effect="italics">N</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msub>
+<m:mi>&#956;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mtext>,&#160;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mi>&#963;</m:mi><m:mi>x</m:mi>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>.</para>
+
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-489">The <term>central limit theorem</term> for sample means says that if you keep drawing larger and larger samples (such as rolling one, two, five, and finally, ten dice) and <emphasis>calculating their means,</emphasis> the sample means form their own <emphasis>normal distribution</emphasis> (the sampling distribution). The normal distribution has the same mean as the original distribution and a variance that equals the original variance divided by the sample size. Standard deviation is the square root of variance, so the standard deviation of the sampling distribution is the standard deviation of the original distribution divided by the square root of <emphasis effect="italics">n</emphasis>. The variable <emphasis effect="italics">n</emphasis> is the number of values that are averaged together, not the number of times the experiment is done.</para><para id="fs-idm26555216">To put it more formally, if you draw random samples of size <emphasis effect="italics">n</emphasis>, the distribution of the random variable <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math>, which consists of sample means, is called the <emphasis>sampling distribution of the mean</emphasis>. The sampling distribution of the mean approaches a normal distribution as <emphasis effect="italics">n</emphasis>, the <term>sample size</term>, increases. </para>
+
+<para id="element-54">The random variable <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> has a different <emphasis effect="italics">z</emphasis>-score associated with it from that of the random variable <emphasis effect="italics">X</emphasis>. The mean <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> is the value of <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> in one sample.</para><equation id="element-684"><m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo stretchy="true">&#175;</m:mo>
+</m:mover>
+<m:mo>&#8722;</m:mo><m:msub>
+<m:mi>&#956;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+</m:mrow>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>&#963;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></equation>
+
+<para id="element-686"><emphasis effect="italics">&#956;</emphasis><sub><emphasis effect="italics">X</emphasis></sub> is the average of both <emphasis effect="italics">X</emphasis> and <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math>.</para><para id="element-455"><m:math>
+<m:mrow>
+<m:mi>&#963;</m:mi><m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+<m:mtext>&#160;=&#160;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mi>&#963;</m:mi><m:mi>x</m:mi>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> = standard deviation of <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> and is called the <term>standard error of the mean.</term></para>
+
+<note id="fs-idm74236704" class="statistics calculator">
+<label/>
+<para id="fs-idm164143744">To find probabilities for means on the calculator, follow these steps.</para>
+<para id="fs-idm81814896">2nd DISTR<newline/>2:normalcdf</para>
+<para id="fs-idm32771680"><m:math>
+ <m:mrow>
+  <m:mi>n</m:mi><m:mi>o</m:mi><m:mi>r</m:mi><m:mi>m</m:mi><m:mi>a</m:mi><m:mi>l</m:mi><m:mi>c</m:mi><m:mi>d</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>o</m:mi><m:mi>w</m:mi><m:mi>e</m:mi><m:mi>r</m:mi><m:mtext>&#160;</m:mtext><m:mi>v</m:mi><m:mi>a</m:mi><m:mi>l</m:mi><m:mi>u</m:mi><m:mi>e</m:mi><m:mtext>&#160;</m:mtext><m:mi>o</m:mi><m:mi>f</m:mi><m:mtext>&#160;</m:mtext><m:mi>t</m:mi><m:mi>h</m:mi><m:mi>e</m:mi><m:mtext>&#160;</m:mtext><m:mi>a</m:mi><m:mi>r</m:mi><m:mi>e</m:mi><m:mi>a</m:mi><m:mo>,</m:mo><m:mtext>&#160;</m:mtext><m:mi>u</m:mi><m:mi>p</m:mi><m:mi>p</m:mi><m:mi>e</m:mi><m:mi>r</m:mi><m:mtext>&#160;</m:mtext><m:mi>v</m:mi><m:mi>a</m:mi><m:mi>l</m:mi><m:mi>u</m:mi><m:mi>e</m:mi><m:mtext>&#160;</m:mtext><m:mi>o</m:mi><m:mi>f</m:mi><m:mtext>&#160;</m:mtext><m:mi>t</m:mi><m:mi>h</m:mi><m:mi>e</m:mi><m:mtext>&#160;</m:mtext><m:mi>a</m:mi><m:mi>r</m:mi><m:mi>e</m:mi><m:mi>a</m:mi><m:mo>,</m:mo><m:mtext>&#160;</m:mtext><m:mi>m</m:mi><m:mi>e</m:mi><m:mi>a</m:mi><m:mi>n</m:mi><m:mo>,</m:mo><m:mtext>&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mi>s</m:mi><m:mi>t</m:mi><m:mi>a</m:mi><m:mi>n</m:mi><m:mi>d</m:mi><m:mi>a</m:mi><m:mi>r</m:mi><m:mi>d</m:mi><m:mo>&#160;</m:mo><m:mi>d</m:mi><m:mi>e</m:mi><m:mi>v</m:mi><m:mi>i</m:mi><m:mi>a</m:mi><m:mi>t</m:mi><m:mi>i</m:mi><m:mi>o</m:mi><m:mi>n</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mi>s</m:mi><m:mi>a</m:mi><m:mi>m</m:mi><m:mi>p</m:mi><m:mi>l</m:mi><m:mi>e</m:mi><m:mo>&#160;</m:mo><m:mi>s</m:mi><m:mi>i</m:mi><m:mi>z</m:mi><m:mi>e</m:mi>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para><para id="fs-idm176650400">where:
+<list id="fs-idm130027040" list-type="bulleted">
+<item><emphasis effect="italics">mean</emphasis> is the mean of the original distribution</item>
+<item><emphasis effect="italics">standard deviation</emphasis> is the standard deviation of the original distribution</item>
+<item><emphasis effect="italics">sample size</emphasis> = <emphasis effect="italics">n</emphasis></item>
+</list>
+</para>
+</note>
+
+<example id="element-469">
+<para id="element-961">An unknown distribution has a mean of 90 and a standard deviation of 15. Samples of size <emphasis effect="italics">n</emphasis> = 25 are drawn randomly from the population.</para>
+<exercise id="element-705">
+<problem id="id5873867">
+<para id="element-704"><newline/>a. Find the probability that the <term>sample mean</term> is between 85 and 92.</para></problem>
+<solution id="id5873893">
+<para id="fs-idp14520352">a. Let <emphasis effect="italics">X</emphasis> = one value from the original unknown population. The probability question asks you to find a probability for the <emphasis>sample mean</emphasis>.</para>
+
+<para id="element-126">Let <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> = the mean of a sample of size 25. Since <emphasis effect="italics">&#956;</emphasis><sub><emphasis effect="italics">X</emphasis></sub> = 90, <emphasis effect="italics">&#963;<sub>X</sub></emphasis> = 15, and <emphasis effect="italics">n</emphasis> = 25, </para>
+
+<para id="element-756"><m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>90</m:mn><m:mtext>,&#160;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>25</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>.</para>
+
+<para id="element-181">Find <emphasis effect="italics">P</emphasis>(85 &lt; <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> &lt; 92). Draw a graph.</para>
+
+<para id="element-196">
+<emphasis effect="italics">P</emphasis>(85 &lt; <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> &lt; 92) = 0.6997</para>
+
+<para id="element-594">The probability that the sample mean is between 85 and 92 is 0.6997.</para>
+</solution>
+</exercise>
+
+<figure id="fs-idm143949248">
+<media id="id5864797" alt="This is a normal distribution curve. The peak of the curve coincides with the point 90 on the horizontal axis. The points 85 and 92 are labeled on the axis. Vertical lines are drawn from these points to the curve and the area between the lines is shaded. The shaded region represents the probability that 85 &lt; x &lt; 92.">
+<image src="fig-ch07_02_01.jpg" mime-type="image/jpg" width="380"/></media>
+</figure>
+
+
+<note id="fs-idm146534448" class="statistics calculator">
+<label/>
+<para id="element-868"><code>normalcdf</code>(lower value, upper value, mean, standard error of the mean)</para>
+<para id="element-106">The parameter list is abbreviated (lower value, upper value, <emphasis effect="italics">&#956;</emphasis>, <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mi>&#963;</m:mi>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>)</para><para id="element-77"><code>normalcdf</code>(85,92,90,<m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>25</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>) = 0.6997</para></note>
+
+<exercise id="element-808">
+<problem id="id5864943">
+<para id="fs-idm58973456">b. Find the value that is two standard deviations above the expected value, 90, of the sample mean.</para>
+</problem>
+
+<solution id="id5864961">
+<para id="element-91">b. To find the value that is two standard deviations above the expected value 90, use the formula:</para>
+<para id="eip-idm63061120">value = <emphasis effect="italics">&#956;</emphasis><sub>x</sub> + (#ofTSDEVs)<m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>&#963;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math></para><para id="eip-idp63452384">value = 90 + 2 <m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>25</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math> = 96</para>
+<para id="element-564">The value that is two standard deviations above the expected value is 96.</para>
+
+<para id="fs-idp29133808">The standard error of the mean is <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mi>&#963;</m:mi><m:mi>x</m:mi>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>25</m:mn>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = 3. Recall that the standard error of the mean is a description of how far (on average) that the sample mean will be from the population mean in repeated simple random samples of size <emphasis effect="italics">n</emphasis>.</para></solution>
+</exercise></example>
+
+<note id="fs-idm83395104" class="statistics try">
+<label/><title>Try It</title>
+
+<exercise id="fs-idm18823760">
+<problem id="fs-idp5202224">
+<para id="fs-idp2240544">An unknown distribution has a mean of 45 and a standard deviation of eight. Samples of size <emphasis effect="italics">n</emphasis> = 30 are drawn randomly from the population. Find the probability that the sample mean is between 42 and 50.</para>
+</problem>
+</exercise>
+</note>
+
+<example id="element-708">
+<exercise id="element-794">
+<problem id="id5865146">
+<para id="element-24">The length of time, in hours, it takes an "over 40" group of people to play one soccer match is normally distributed with a <emphasis>mean of two hours</emphasis> and a <emphasis>standard deviation of 0.5 hours</emphasis>. A <emphasis>sample of size <emphasis effect="italics">n</emphasis> = 50</emphasis> is drawn randomly from the population. Find the probability that the <emphasis>sample mean</emphasis> is between 1.8 hours and 2.3 hours.</para>
+</problem>
+
+<solution id="id5865170">
+<para id="element-723">
+Let <emphasis effect="italics">X</emphasis> = the time, in hours, it takes to play one soccer match.</para>
+<para id="element-302">The probability question asks you to find a probability for the <emphasis>sample mean time, in hours</emphasis>, it takes to play one soccer match.</para>
+
+<para id="element-849">Let <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> = the <term>mean</term> time, in hours, it takes to play one soccer match.</para>
+<para id="fs-idm28701424">If <emphasis effect="italics">&#956;<sub>X</sub></emphasis> = _________, <emphasis effect="italics">&#963;<sub>X</sub></emphasis> = __________, and <emphasis effect="italics">n</emphasis> =  ___________, then <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(______, ______) by the <term>central limit theorem for means</term>.</para>
+
+<para id="fs-idm68643920"><emphasis effect="italics">&#956;<sub>X</sub></emphasis> = 2, <emphasis effect="italics">&#963;<sub>X</sub></emphasis> = 0.5, <emphasis effect="italics">n</emphasis> = 50, and <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>2,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>0.5</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>50</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para>
+
+<para id="fs-idm39125184">Find <emphasis effect="italics">P</emphasis>(1.8 &lt; <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> &lt; 2.3). Draw a graph.</para>
+
+<para id="fs-idp90367824"><emphasis effect="italics">P</emphasis>(1.8 &lt; <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> &lt; 2.3) = 0.9977</para>
+
+<para id="element-290" class="finger"><code>normalcdf</code><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1.</m:mn><m:mtext>8,2</m:mtext><m:mtext>.3,2,</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>.5</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>50</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = 0.9977</para><para id="element-13">The probability that the mean time is between 1.8 hours and 2.3 hours is 0.9977.</para></solution>
+</exercise></example>
+
+
+<note id="fs-idm109373536" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp55734224">
+<problem id="fs-idp43500160">
+<para id="fs-idp24603664">The length of time taken on the SAT for a group of students is normally distributed with a mean of 2.5 hours and a standard deviation of 0.25 hours. A sample size of <emphasis effect="italics">n</emphasis> = 60 is drawn randomly from the population. Find the probability that the sample mean is between two hours and three hours.</para>
+</problem>
+
+</exercise></note>
+
+<note id="fs-idm13085488" class="statistics calculator">
+<label/>
+<para id="fs-idm146458576">To find percentiles for means on the calculator, follow these steps.</para>
+<para id="fs-idm39446144">2<sup>nd</sup> DIStR
+<newline/>3:invNorm</para>
+
+<para id="fs-idm50856880"><emphasis effect="italics">k</emphasis> = invNorm<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>area&#160;to&#160;the&#160;left&#160;of&#160;</m:mtext><m:mi>k</m:mi><m:mtext>,&#160;mean,</m:mtext><m:mo>&#160;</m:mo><m:mfrac>
+     <m:mrow>
+      <m:mi>s</m:mi><m:mi>t</m:mi><m:mi>a</m:mi><m:mi>n</m:mi><m:mi>d</m:mi><m:mi>a</m:mi><m:mi>r</m:mi><m:mi>d</m:mi><m:mo>&#160;</m:mo><m:mi>d</m:mi><m:mi>e</m:mi><m:mi>v</m:mi><m:mi>i</m:mi><m:mi>a</m:mi><m:mi>t</m:mi><m:mi>i</m:mi><m:mi>o</m:mi><m:mi>n</m:mi>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mi>s</m:mi><m:mi>a</m:mi><m:mi>m</m:mi><m:mi>p</m:mi><m:mi>l</m:mi><m:mi>e</m:mi><m:mo>&#160;</m:mo><m:mi>s</m:mi><m:mi>i</m:mi><m:mi>z</m:mi><m:mi>e</m:mi>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para><para id="fs-idm74111040">where:
+<list id="fs-idm74110784" list-type="bulleted"><item><emphasis effect="italics">k</emphasis> = the <emphasis effect="italics">k</emphasis><sup>th</sup> percentile</item>
+<item><emphasis effect="italics">mean</emphasis> is the mean of the original distribution</item>
+<item><emphasis effect="italics">standard deviation</emphasis> is the standard deviation of the original distribution</item>
+<item><emphasis effect="italics">sample size</emphasis> = <emphasis effect="italics">n</emphasis></item>
+</list></para>
+</note>
+
+
+<example id="fs-idp22561888">
+<exercise id="fs-idp8724208">
+<problem id="fs-idp17530752">
+<para id="fs-idp27120736">In a recent study reported Oct. 29, 2012 on the Flurry Blog, the mean age of tablet users is 34 years. Suppose the standard deviation is 15 years. Take a sample of size <emphasis effect="italics">n</emphasis> = 100.</para>
+<list id="fs-idm47147072" list-type="enumerated" number-style="lower-alpha">
+<item>What are the mean and standard deviation for the sample mean ages of tablet users?</item>
+<item>What does the distribution look like?</item>
+<item>Find the probability that the sample mean age is more than 30 years (the reported mean age of tablet users in this particular study).</item>
+<item>Find the 95<sup>th</sup> percentile for the sample mean age (to one decimal place).</item>
+</list></problem>
+<solution id="fs-idp42522512">
+<list id="fs-idm50017008" list-type="enumerated" number-style="lower-alpha"><item>Since the sample mean tends to target the population mean, we have <emphasis effect="italics">&#956;<sub>&#967;</sub></emphasis> = <emphasis effect="italics">&#956;</emphasis> = 34. The sample standard deviation is given by <emphasis effect="italics">&#963;<sub>&#967;</sub></emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mi>&#963;</m:mi>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>100</m:mn>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math> = 1.5</item>
+<item>The central limit theorem states that for large sample sizes(<emphasis effect="italics">n</emphasis>), the sampling distribution will be approximately normal.</item>
+<item>The probability that the sample mean age is more than 30 is given by <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#935;</emphasis> &gt; 30) = <code>normalcdf</code>(30,E99,34,1.5) = 0.9962</item>
+<item>Let <emphasis effect="italics">k</emphasis> = the 95<sup>th</sup> percentile.
+<newline count="1"/><emphasis effect="italics">k</emphasis> = invNorm<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0.</m:mn><m:mtext>95,34,</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>15</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>100</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = 36.5</item>
+</list></solution>
+</exercise>
+</example>
+
+<note id="fs-idm63776496" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm62512800">
+<problem id="fs-idm44878080">
+<para id="fs-idm48406832">In an article on Flurry Blog, a gaming marketing gap for men between the ages of 30 and 40 is identified. You are researching a startup game targeted at the 35-year-old demographic. Your idea is to develop a strategy game that can be played by men from their late 20s through their late 30s. Based on the article&#8217;s data, industry research shows that the average strategy player is 28 years old with a standard deviation of 4.8 years. You take a sample of 100 randomly selected gamers. If your target market is 29- to 35-year-olds, should you continue with your development strategy?</para></problem>
+</exercise>
+</note>
+
+<example id="fs-idm59036512">
+<exercise id="fs-idp15422768">
+<problem id="fs-idp210784">
+<para id="fs-idm45834688">The mean number of minutes for app engagement by a tablet user is 8.2 minutes. Suppose the standard deviation is one minute. Take a sample of 60.</para>
+
+<list id="fs-idm51964960" list-type="enumerated" number-style="lower-alpha">
+<item>What are the mean and standard deviation for the sample mean number of app engagement by a tablet user?</item>
+<item>What is the standard error of the mean?</item>
+<item>Find the 90<sup>th</sup> percentile for the sample mean time for app engagement for a tablet user. Interpret this value in a complete sentence.</item>
+<item>Find the probability that the sample mean is between eight minutes and 8.5 minutes.</item>
+</list></problem>
+</exercise>
+</example>
+
+<note id="fs-idm70207568" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp8586512">
+<problem id="fs-idm57780000">
+<para id="fs-idm57779872">Cans of a cola beverage claim to contain 16 ounces. The amounts in a sample are measured and the statistics are <emphasis effect="italics">n</emphasis> = 34, <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> = 16.01 ounces. If the cans are filled so that <emphasis effect="italics">&#956;</emphasis> = 16.00 ounces (as labeled) and <emphasis effect="italics">&#963;</emphasis> = 0.143 ounces, find the probability that a sample of 34 cans will have an average amount greater than 16.01 ounces. Do the results suggest that cans are filled with an amount greater than 16 ounces?</para></problem>
+
+</exercise>
+</note>
+
+
+<section id="fs-idp10661120" class="references">
+<title>References</title>
+<para id="fs-idp64632544">Baran, Daya. &#8220;20 Percent of Americans Have Never Used Email.&#8221;WebGuild, 2010. Available online at http://www.webguild.org/20080519/20-percent-of-americans-have-never-used-email (accessed May 17, 2013).</para>
+<para id="fs-idp57996496">Data from The Flurry Blog, 2013. Available online at http://blog.flurry.com (accessed May 17, 2013).</para>
+<para id="fs-idp112347536">Data from the United States Department of Agriculture.</para>
+</section>
+
+<section id="fs-idm33599328" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm66102448">In a population whose distribution may be known or unknown, if the size (<emphasis effect="italics">n</emphasis>) of samples is sufficiently large, the distribution of the sample means will be approximately normal. The mean of the sample means will equal the population mean. The standard deviation of the distribution of the sample means, called the standard error of the mean, is equal to the population standard deviation divided by the square root of the sample size (<emphasis effect="italics">n</emphasis>).</para></section>
+
+
+<section id="fs-idm104045584" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idm43969232">The Central Limit Theorem for Sample Means: <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> ~ <emphasis effect="italics">N</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:msub>
+<m:mi>&#956;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+<m:mtext>,&#160;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mi>&#963;</m:mi><m:mi>x</m:mi>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math></para>
+<para id="fs-idm14943744">The Mean <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math>: <emphasis effect="italics">&#956;<sub>x</sub></emphasis></para>
+<para id="fs-idp59416400">Central Limit Theorem for Sample Means z-score and standard error of the mean: <m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo stretchy="true">&#175;</m:mo>
+</m:mover>
+<m:mo>&#8722;</m:mo><m:msub>
+<m:mi>&#956;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+</m:mrow>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>&#963;</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mi>n</m:mi>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para><para id="fs-idp66400464">Standard Error of the Mean (Standard Deviation (<m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math>)): <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msub>
+     <m:mi>&#963;</m:mi>
+     <m:mi>x</m:mi>
+    </m:msub>
+
+   </m:mrow>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></para></section>
+
+
+<section id="fs-idm23437024" class="practice">
+<para id="fs-idm21552528"><emphasis effect="italics">Use the following information to answer the next six exercises:</emphasis> Yoonie is a personnel manager in a large corporation. Each month she must review 16 of the employees. From past experience, she has found that the reviews take her approximately four hours each to do with a population standard deviation of 1.2 hours. Let <emphasis effect="italics">&#935;</emphasis> be the random variable representing the time it takes her to complete one review. Assume <emphasis effect="italics">&#935;</emphasis> is normally distributed. Let <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> be the random variable representing the mean time to complete the 16 reviews. Assume that the 16 reviews represent a random set of reviews.</para><exercise id="fs-idm15565424"><problem id="fs-idm37731072">
+<para id="fs-idm37730816">What is the mean, standard deviation, and sample size?</para>
+</problem>
+<solution id="eip-id1165897421719"><para id="eip-id1165895503793">mean = 4 hours; standard deviation = 1.2 hours; sample size = 16</para></solution></exercise><exercise id="fs-idp17869408"><problem id="fs-idm62741104">
+<para id="fs-idm25207024">Complete the distributions.
+<list id="fs-idm16577088" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ _____(_____,_____)</item>
+</list>
+</para>
+</problem>
+
+<!-- <solution id="fs-idm6886848">
+<list id="fs-idm86789888" list-type="enumerated">
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(4, 1.2).</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>4,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>1.2</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>16</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+</list></solution> --></exercise><exercise id="element-446">
+<problem id="id16709593">
+<para id="element-345">Find the probability that <emphasis>one</emphasis> review will take Yoonie from 3.5 to 4.25 hours. Sketch the graph, labeling and scaling the horizontal axis. Shade the region corresponding to the probability.
+<list id="sublist1346264" list-type="enumerated" number-style="lower-alpha"><item><figure id="fs-idm61024352"><media id="id14288416" alt="This is a frequency curve for a normal distribution. It shows a single peak in the center with the curve tapering down to the horizontal axis on each side. The distribution is symmetrical. The horizontal axis represents the random variable X.">
+<image src="fig-ch07_06_01.jpg" mime-type="image/jpg" width="380"/>
+</media></figure></item>
+<item><emphasis effect="italics">P</emphasis>(________ &lt; <emphasis effect="italics">x</emphasis> &lt; ________) = _______</item>
+</list></para>
+</problem>
+<solution id="id14567929">
+<para id="element-875">a. Check student's solution.<newline/>
+b. 3.5, 4.25, 0.2441</para></solution>
+</exercise>
+
+<exercise id="element-322"><problem id="id14777355">
+<para id="element-914">Find the probability that the <emphasis>mean</emphasis> of a month&#8217;s reviews will take Yoonie from 3.5 to 4.25 hrs. Sketch the graph, labeling and scaling the horizontal axis. Shade the region corresponding to the probability.
+<list id="sublist27646547" list-type="enumerated" number-style="lower-alpha">
+<item><figure id="fs-idm31915744">
+<media id="fs-idm62152464" alt="This is a frequency curve for a normal distribution. It shows a single peak in the center with the curve tapering down to the horizontal axis on each side. The distribution is symmetrical. The horizontal axis represents the random variable X.">
+<image src="fig-ch07_06_02.jpg" mime-type="image/jpg" width="380"/>
+</media></figure></item>
+<item><emphasis effect="italics">P</emphasis>(________________) = _______</item>
+</list>
+</para></problem>
+
+<!-- <solution id="id18025798">
+<para id="element-710">b. 0.7499</para></solution> --></exercise><exercise id="fs-idm42157984">
+<problem id="fs-idm42157728">
+<para id="fs-idm42157472">What causes the probabilities in <link target-id="element-446" document=""/> and <link target-id="element-322" document=""/> to be different?</para>
+</problem>
+<solution id="fs-idm43625488">
+<para id="fs-idm67842816">The fact that the two distributions are different accounts for the different probabilities.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm70816816"><problem id="fs-idm70816560">
+<para id="fs-idm70816304">Find the 95<sup>th</sup> percentile for the mean time to complete one month's reviews. Sketch the graph.</para>
+<list id="fs-idm62305696" list-type="enumerated" number-style="lower-alpha">
+<item><figure id="fs-idm79810480">
+<media id="fs-idm101235264" alt="This is a frequency curve for a normal distribution. It shows a single peak in the center with the curve tapering down to the horizontal axis on each side. The distribution is symmetrical. The horizontal axis represents the random variable X.">
+<image src="fig-ch07_06_02.jpg" mime-type="image/jpg" width="380"/>
+</media></figure></item>
+<item>The 95<sup>th</sup> Percentile =____________</item>
+</list>
+</problem>
+
+<!-- <solution id="fs-idm40700112">
+<para id="fs-idm40699856"><emphasis effect="italics">P</emphasis>(3.5 &lt; <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> &lt; 4.25) = <code>invNorm</code><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>95,4,</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>1.2</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>16</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = 4.49</para></solution> --></exercise></section>
+
+<section id="fs-idp66376176" class="free-response">
+<title>Homework</title>
+<exercise id="element-475">
+<problem id="id6273705">
+<para id="element-850">Previously, De Anza statistics students estimated that the amount of change daytime statistics students carry is exponentially distributed with a mean of $0.88. Suppose that we randomly pick 25 daytime statistics students.</para>
+<list id="element-224" list-type="enumerated" number-style="lower-alpha">
+<item>In words, <emphasis effect="italics">&#935;</emphasis> = ____________</item>
+<item><emphasis effect="italics">&#935;</emphasis> ~ _____(_____,_____)</item>
+<item>In words, <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> = ____________</item>
+<item><m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> ~ ______ (______, ______)</item>
+<item>Find the probability that an individual had between $0.80 and $1.00. Graph the situation, and shade in the area to be determined.</item>
+<item>Find the probability that the average of the 25 students was between $0.80 and $1.00. Graph the situation, and shade in the area to be determined.</item>
+<item>Explain why there is a difference in part e and part f.</item>
+</list></problem>
+<solution id="fs-idp10454080">
+<list id="fs-idm137132816" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">&#935;</emphasis> = amount of change students carry</item>
+<item><emphasis effect="italics">&#935;</emphasis> ~ <emphasis effect="italics">E</emphasis>(0.88, 0.88)</item>
+<item><m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> = average amount of change carried by a sample of 25 sstudents.</item>
+<item><m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis>(0.88, 0.176)</item>
+<item>0.0819</item>
+<item>0.1882</item>
+<item>The distributions are different. Part a is exponential and part b is normal.</item>
+</list></solution>
+</exercise>
+
+<exercise id="element-51"><problem id="id6273949">
+<para id="element-365">Suppose that the distance of fly balls hit to the outfield (in baseball) is normally distributed with a mean of 250 feet and a standard deviation of 50 feet. We randomly sample 49 fly balls.</para><list id="element-530" list-type="enumerated" number-style="lower-alpha"><item>If <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> = average distance in feet for 49 fly balls, then <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> ~ _______(_______,_______)</item>
+<item>What is the probability that the 49 balls traveled an average of less than 240 feet? Sketch the graph. Scale the horizontal axis for <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math>. Shade the region corresponding to the probability. Find the probability.</item>
+<item>Find the 80<sup>th</sup> percentile of the distribution of the average of 49 fly balls.</item>
+</list></problem>
+
+<!-- <solution id="id6274098">
+<list id="element-804" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>250,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>50</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>49</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item>0.0808</item>
+<item>256.01 feet</item></list></solution> -->
+</exercise><exercise id="element-820">
+<problem id="id6533450">
+<para id="element-518">According to the Internal Revenue Service, the average length of time for an individual to complete (keep records for, learn, prepare, copy, assemble, and send) IRS Form 1040 is 10.53 hours (without any attached schedules). The distribution is unknown. Let us assume that the standard deviation is two hours. Suppose we randomly sample 36 taxpayers.</para>
+
+<list id="element-685" list-type="enumerated" number-style="lower-alpha"><item>In words, <emphasis effect="italics">&#935;</emphasis> = _____________</item>
+<item>In words, <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> = _____________</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ _____(_____,_____)</item>
+<item>Would you be surprised if the 36 taxpayers finished their Form 1040s in an average of more than 12 hours? Explain why or why not in complete sentences.</item>
+<item>Would you be surprised if one taxpayer finished his or her Form 1040 in more than 12 hours? In a complete sentence, explain why.</item></list></problem>
+<solution id="fs-idm166717360">
+<list id="fs-idm37918272" list-type="enumerated" number-style="lower-alpha"><item>length of time for an individual to complete IRS form 1040, in hours.</item>
+<item>mean length of time for a sample of 36 taxpayers to complete IRS form 1040, in hours.</item>
+<item><emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>10</m:mtext><m:mtext>.53,&#160;</m:mtext><m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>3</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item>Yes. I would be surprised, because the probability is almost 0.</item>
+<item>No. I would not be totally surprised because the probability is 0.2312</item></list></solution>
+</exercise>
+
+<exercise id="element-133"><problem id="id6533652">
+<para id="element-243">Suppose that a category of world-class runners are known to run a marathon (26 miles) in an average of 145 minutes with a standard deviation of 14 minutes. Consider 49 of the races. Let <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> the average of the 49 races.</para>
+
+<list id="element-45" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ _____(_____,_____)</item>
+<item>Find the probability that the runner will average between 142 and 146 minutes in these 49 marathons.</item>
+<item>Find the 80<sup>th</sup> percentile for the average of these 49 marathons.</item>
+<item>Find the median of the average running times.</item></list></problem>
+
+<!-- <solution id="id6533816">
+<list id="element-402" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>145,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>14</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>49</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item>0.6247</item>
+<item>146.68 </item>
+<item>145 minutes</item></list></solution> -->
+</exercise><exercise id="element-848">
+<problem id="id6534960">
+<para id="element-175">The length of songs in a collector&#8217;s iTunes album collection is uniformly distributed from two to 3.5 minutes. Suppose we randomly pick five albums from the collection. There are a total of 43 songs on the five albums.</para>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-118" list-type="enumerated" number-style="lower-alpha"><item>In words, <emphasis effect="italics">&#935;</emphasis> = _________</item>
+<item><emphasis effect="italics">&#935;</emphasis> ~ _____________</item>
+<item>In words, <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> = _____________</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ _____(_____,_____)</item>
+<item>Find the first quartile for the average song length, <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+</m:math>.</item>
+<item>The IQR (interquartile range) for the average song length, <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+</m:math>, is from ___ - ___.</item></list></problem>
+<solution id="fs-idm135637280">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm135637024" list-type="enumerated" number-style="lower-alpha"><item>the length of a song, in minutes, in the collection</item>
+<item><emphasis effect="italics">U</emphasis>(2, 3.5)</item>
+<item>the average length, in minutes, of the songs from a sample of five albums from the collection</item>
+<item><emphasis effect="italics">N</emphasis>(2.75, 0.0660)</item>
+<item>2.71 minutes</item>
+<item>0.09 minutes</item>
+</list></solution>
+</exercise>
+
+<exercise id="element-424"><problem id="id6536525">
+<para id="element-799">In 1940 the average size of a U.S. farm was 174 acres. Let&#8217;s say that the standard deviation was 55 acres. Suppose we randomly survey 38 farmers from 1940.</para>
+<list id="madeup2" list-type="enumerated" number-style="lower-alpha">
+<item>In words, <emphasis effect="italics">&#935;</emphasis> = _____________</item>
+<item>In words, <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> = _____________</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ _____(_____,_____)</item>
+<item>The IQR for <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> is from _______ acres to _______ acres.</item>
+</list></problem>
+
+<!-- <solution id="fs-idm55467904">
+<list id="fs-idm55467648" list-type="enumerated" number-style="lower-alpha"><item>the size of a U.S. farm in 1940</item>
+<item>the average size of a U.S. farm, in acres</item>
+<item><emphasis effect="italics">N</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mn>174</m:mn><m:mtext>,&#160;</m:mtext><m:mfrac>
+<m:mrow>
+<m:mn>55</m:mn>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>38</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math></item>
+<item>168.0, 180.0</item>
+</list></solution> -->
+</exercise><exercise id="element-371">
+<problem id="id6264723">
+<para id="fs-idm19354672">Determine which of the following are true and which are false. Then, in complete sentences, justify your answers.</para>
+
+<list id="fs-idm39736064" list-type="enumerated" number-style="lower-alpha">
+<item>When the sample size is large, the mean of <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> is approximately equal to the mean of <emphasis effect="italics">&#935;</emphasis>.</item>
+<item>When the sample size is large, <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> is approximately normally distributed.</item>
+<item>When the sample size is large, the standard deviation of <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> is approximately the same as the standard deviation of <emphasis effect="italics">&#935;</emphasis>.</item></list></problem>
+<solution id="fs-idp58516336">
+<list id="fs-idp58516592" list-type="enumerated" number-style="lower-alpha"><item>True. The mean of a sampling distribution of the means is approximately the mean of the data distribution.</item>
+<item>True. According to the Central Limit Theorem, the larger the sample, the closer the sampling distribution of the means becomes normal.</item>
+<item>The standard deviation of the sampling distribution of the means will decrease making it approximately the same as the standard deviation of X as the sample size increases.</item></list></solution>
+</exercise>
+
+<exercise id="element-169"><problem id="id6272391">
+<para id="element-76">The percent of fat calories that a person in America consumes each day is normally distributed with a mean of about 36 and a standard deviation of about ten. Suppose that 16 individuals are randomly chosen. Let <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> = average percent of fat calories.</para>
+<list id="eip-idm27753728" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> ~ ______(______, ______)</item>
+<item>For the group of 16, find the probability that the average percent of fat calories consumed is more than five. Graph the situation and shade in the area to be determined.</item>
+<item>Find the first quartile for the average percent of fat calories.</item>
+</list>
+</problem>
+
+<!-- <solution id="id6272525">
+<list id="element-89" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>36,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>10</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>16</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item>1</item>
+<item>34.31</item>
+</list></solution> -->
+</exercise><exercise id="element-795">
+<problem id="id6535840">
+<para id="fs-idm32345632">The distribution of income in some Third World countries is considered wedge shaped (many very poor people, very few middle income people, and even fewer wealthy people). Suppose we pick a country with a wedge shaped distribution. Let the average salary be $2,000 per year with a standard deviation of $8,000. We randomly survey 1,000 residents of that country.</para>
+
+<list id="element-834" list-type="enumerated" number-style="lower-alpha">
+<item>In words, <emphasis effect="italics">&#935;</emphasis> = _____________</item>
+<item>In words, <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> = _____________</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ _____(_____,_____)</item>
+<item>How is it possible for the standard deviation to be greater than the average?</item>
+<item>Why is it more likely that the average of the 1,000 residents will be from $2,000 to $2,100 than from $2,100 to $2,200?</item></list></problem>
+<solution id="fs-idm50399184">
+<list id="fs-idp55008880" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the yearly income of someone in a third world country</item>
+<item>the average salary from samples of 1,000 residents of a third world country</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> &#8764; <emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>2000,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mtext>8000</m:mtext>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mtext>1000</m:mtext>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item>Very wide differences in data values can have averages smaller than standard deviations.</item>
+<item>The distribution of the sample mean will have higher probabilities closer to the population mean.
+<newline/><emphasis effect="italics">P</emphasis>(2000 &lt; <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> &lt; 2100) = 0.1537
+<newline/><emphasis effect="italics">P</emphasis>(2100 &lt; <m:math>
+<m:mover accent="true">
+<m:mi>X</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> &lt; 2200) = 0.1317
+</item>
+</list></solution>
+</exercise>
+
+<exercise id="element-338"><problem id="id6538396">
+<para id="element-943">Which of the following is NOT TRUE about the distribution for averages?</para>
+<list id="element-992" list-type="enumerated" number-style="lower-alpha"><item>The mean, median, and mode are equal.</item>
+<item>The area under the curve is one.</item>
+<item>The curve never touches the <emphasis effect="italics">x</emphasis>-axis.</item>
+<item>The curve is skewed to the right.</item>
+</list></problem>
+
+<!-- <solution id="id6538477">
+<para id="element-60">d</para>
+</solution> -->
+</exercise><exercise id="element-680"><problem id="id6538522">
+<para id="fs-idp43800992">The cost of unleaded gasoline in the Bay Area once followed an unknown distribution with a mean of $4.59 and a standard deviation of $0.10. Sixteen gas stations from the Bay Area are randomly chosen. We are interested in the average cost of gasoline for the 16 gas stations. The distribution to use for the average cost of gasoline for the 16 gas stations is:
+<list id="element-728" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis>(4.59, 0.10)</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>4</m:mtext><m:mtext>.59,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>0.10</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>16</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>4</m:mtext><m:mtext>.59,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>16</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>0.10</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>4</m:mtext><m:mtext>.59,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+     <m:msqrt>
+       <m:mrow>
+        <m:mn>16</m:mn>
+       </m:mrow>
+      </m:msqrt>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>0.10</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+</list></para></problem>
+
+<solution id="id6538759">
+<para id="element-156">b</para>
+</solution>
+</exercise>
+</section>
+
+
+</content>
+
+<glossary>
+  <definition id="average">
+    <term>Average</term>
+    <meaning id="id16316921">a number that describes the central tendency of the data; there are a number of specialized averages, including the arithmetic mean, weighted mean, median, mode, and geometric mean.</meaning>
+  </definition>
+  <definition id="centlimit">
+    <term>Central Limit Theorem</term>
+    <meaning id="id43867050">Given a random variable (RV) with known mean <emphasis effect="italics">&#956;</emphasis> and known standard deviation, <emphasis effect="italics">&#963;</emphasis>, we are sampling with size <emphasis effect="italics">n</emphasis>, and we are interested in two new RVs: the sample mean, <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math>, and the sample sum, <emphasis effect="italics">&#931;&#935;</emphasis>. If the size (<emphasis effect="italics">n</emphasis>) of the sample is sufficiently large, then <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis>(<emphasis effect="italics">&#956;</emphasis>, <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mi>&#963;</m:mi>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>) and <emphasis effect="italics">&#931;&#935;</emphasis> ~ <emphasis effect="italics">N</emphasis>(<emphasis effect="italics">n&#956;</emphasis>, (<m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>)(<emphasis effect="italics">&#963;</emphasis>)). If the size (<emphasis effect="italics">n</emphasis>) of the sample is sufficiently large, then the distribution of the sample means and the distribution of the sample sums will approximate a normal distributions regardless of the shape of the population. The mean of the sample  means will equal the population mean, and the mean of the sample sums will equal <emphasis effect="italics">n</emphasis> times the population mean. The standard deviation of the distribution of the sample means, <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mi>&#963;</m:mi>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>, is called the standard error of the mean.</meaning>
+  </definition>
+
+<definition id="normdist">
+    <term>Normal Distribution</term>
+    <meaning id="id42733014">a continuous random variable (RV) with pdf <m:math>
+ <m:mrow>
+  <m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mtext>&#160;=&#160;</m:mtext><m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mrow>
+    <m:mi>&#963;</m:mi><m:msqrt>
+     <m:mrow>
+      <m:mn>2</m:mn><m:mi>&#960;</m:mi>
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>&#160;</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mo>&#8211;</m:mo><m:msup>
+       <m:mrow>
+        <m:mtext>(</m:mtext><m:mi>x</m:mi><m:mtext>&#160;</m:mtext><m:mo>&#8211;</m:mo><m:mtext>&#160;</m:mtext><m:mi>&#956;</m:mi><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mrow>
+      <m:mn>2</m:mn><m:msup>
+       <m:mi>&#963;</m:mi>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+
+ </m:mrow>
+</m:math>, where <emphasis effect="italics">&#956;</emphasis> is the mean of the distribution and <emphasis effect="italics">&#963;</emphasis> is the standard deviation; notation: <emphasis effect="italics">&#935;</emphasis> ~ <emphasis effect="italics">N</emphasis>(<emphasis effect="italics">&#956;</emphasis>, <emphasis effect="italics">&#963;</emphasis>). If <emphasis effect="italics">&#956;</emphasis> = 0 and <emphasis effect="italics">&#963;</emphasis> = 1, the RV is called a <emphasis> standard normal distribution</emphasis>.</meaning>
+  </definition>
+
+<definition id="stdmean">
+    <term>Standard Error of the Mean</term>
+    <meaning id="id6201946">the standard deviation of the distribution of the sample means, or <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mi>&#963;</m:mi>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+   </m:mrow>
+  </m:mfrac>
+ </m:mrow>
+</m:math>.</meaning>
+</definition>
+</glossary>
+</document>

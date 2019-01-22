@@ -1,0 +1,1108 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+<title>Practice Test 1</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://staging2.cnx.org/content</md:repository>
+  <md:content-id>new</md:content-id>
+  <md:title>Practice Test 1</md:title>
+  <md:version>**new**</md:version>
+  <md:created>2013/10/18 02:18:58.419 GMT-5</md:created>
+  <md:revised>2013/10/18 02:18:58.487 GMT-5</md:revised>
+  <md:actors>
+    <md:person userid="words_stats">
+      <md:firstname>Words</md:firstname>
+      <md:surname>Numbers</md:surname>
+      <md:fullname>Words Numbers</md:fullname>
+      <md:email>techsupport@cnx.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">words_stats</md:role>
+    <md:role type="maintainer">words_stats</md:role>
+    <md:role type="licensor">words_stats</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/" />
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<section id="fs-idm70683648">
+<title>1.1: Definitions of Statistics, Probability, and Key Terms</title>
+<para id="fs-idm115358880"><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> A grocery store is interested in how much money, on average, their customers spend each visit in the produce department. Using their store records, they draw a sample of 1,000 visits and calculate each customer’s average spending on produce.</para>
+<exercise id="fs-idm139166256">
+<problem id="fs-idm65325328">
+<para id="fs-idm129508032">Identify the population, sample, parameter, statistic, variable, and data for this example.</para>
+<list id="fs-idm11789248" list-type="enumerated" number-style="lower-alpha">
+<item>population</item>
+<item>sample</item>
+<item>parameter</item>
+<item>statistic</item>
+<item>variable</item>
+<item>data</item>
+</list>
+</problem>
+<solution id="fs-idm60759552">
+<list id="fs-idp13765504" list-type="enumerated" number-style="lower-alpha">
+<item>population: all the shopping visits by all the store’s customers</item>
+<item>sample: the 1,000 visits drawn for the study</item>
+<item>parameter: the average expenditure on produce per visit by all the store’s customers</item>
+<item>statistic: the average expenditure on produce per visit by the sample of 1,000</item>
+<item>variable: the expenditure on produce for each visit</item>
+<item>data: the dollar amounts spent on produce; for instance, $15.40, $11.53, etc</item>
+</list>
+</solution>
+</exercise>
+<exercise id="fs-idp106065680">
+<problem id="fs-idm76208720">
+<para id="fs-idp64051776">What kind of data is “amount of money spent on produce per visit”?</para>
+<list id="fs-idm40274432" list-type="enumerated" number-style="lower-alpha">
+<item>qualitative</item>
+<item>quantitative-continuous</item>
+<item>quantitative-discrete</item>
+</list>
+</problem>
+<solution id="fs-idm6527408">
+<para id="fs-idp68215408">c</para>
+</solution>
+</exercise>
+<exercise id="fs-idm86679408">
+<problem id="fs-idp107810560">
+<para id="fs-idm89022320">The study finds that the mean amount spent on produce per visit by the customers in the sample is $12.84. This is an example of a:</para>
+<list id="fs-idp18266512" list-type="enumerated" number-style="lower-alpha">
+<item>population</item>
+<item>sample</item>
+<item>parameter</item>
+<item>statistic</item>
+<item>variable</item>
+</list>
+</problem>
+<solution id="fs-idp4971232">
+<para id="fs-idp58429600">d</para>
+</solution>
+</exercise>
+<para id="fs-idp40294992"><emphasis effect="italics">Use the following information to answer the next two exercises.</emphasis> A health club is interested in knowing how many times a typical member uses the club in a week. They decide to ask every tenth customer on a specified day to complete a short survey including information about how many times they have visited the club in the past week.</para>
+</section>
+<section id="fs-idp77463008">
+<title>1.2: Data, Sampling, and Variation in Data and Sampling</title>
+<exercise id="fs-idp2335360">
+<problem id="fs-idp70985648">
+<para id="fs-idp55313008">What kind of a sampling design is this?</para>
+<list id="fs-idp36414400" list-type="enumerated" number-style="lower-alpha">
+<item>cluster</item>
+<item>stratified</item>
+<item>simple random</item>
+<item>systematic</item>
+</list>
+</problem>
+<solution id="fs-idm35564112">
+<para id="fs-idm102539872">d</para>
+</solution>
+</exercise>
+<exercise id="fs-idm24765424">
+<problem id="fs-idm119517376">
+<para id="fs-idp30847568">“Number of visits per week” is what kind of data?</para>
+<list id="fs-idp60317184" list-type="enumerated" number-style="lower-alpha">
+<item>qualitative</item>
+<item>quantitative-continuous</item>
+<item>quantitative-discrete</item>
+</list>
+</problem>
+<solution id="fs-idp50502464">
+<para id="fs-idm124064512">c</para>
+</solution>
+</exercise>
+<exercise id="fs-idm118513088">
+<problem id="fs-idm93239424">
+<para id="fs-idm11545808">Describe a situation in which you would calculate a parameter, rather than a statistic.</para>
+</problem>
+<solution id="fs-idm89520992">
+<para id="fs-idm98108112">Answers will vary.
+<newline/>Sample Answer: Any solution in which you use data from the entire population is acceptable. For instance, a professor might calculate the average exam score for her class: because the scores of all members of the class were used in the calculation, the average is a parameter.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm79598832">
+<problem id="fs-idp77714320">
+<para id="fs-idp12975856">The U.S. federal government conducts a survey of high school seniors concerning their plans for future education and employment. One question asks whether they are planning to attend a four-year college or university in the following year. Fifty percent answer yes to this question; that fifty percent is a:</para>
+<list id="fs-idp53885392" list-type="enumerated" number-style="lower-alpha">
+<item>parameter</item>
+<item>statistic </item>
+<item>variable</item>
+<item>data</item>
+</list>
+</problem>
+<solution id="fs-idm85445504">
+<para id="fs-idp21637728">b</para>
+</solution>
+</exercise>
+<exercise id="fs-idm98042768">
+<problem id="fs-idp110066336">
+<para id="fs-idm140768528">Imagine that the U.S. federal government had the means to survey all high school seniors in the U.S. concerning their plans for future education and employment, and found that 50 percent were planning to attend a 4-year college or university in the following year. This 50 percent is an example of a:</para>
+<list id="fs-idm117906800" list-type="enumerated" number-style="lower-alpha">
+<item>parameter</item>
+<item>statistic </item>
+<item>variable</item>
+<item>data</item>
+</list>
+</problem>
+<solution id="fs-idp58351616">
+<para id="fs-idm61113296">a</para>
+</solution>
+</exercise>
+<para id="fs-idm23392864"><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> A survey of a random sample of 100 nurses working at a large hospital asked how many years they had been working in the profession. Their answers are summarized in the following (incomplete) table.</para>
+<exercise id="fs-idp41709600">
+<problem id="fs-idm86497936">
+<para id="fs-idm35535712">Fill in the blanks in the table and round your answers to two decimal places for the Relative Frequency and Cumulative Relative Frequency cells.</para>
+<table id="fs-idp4987552" summary="..">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry># of years</entry>
+<entry>Frequency</entry>
+<entry>Relative Frequency</entry>
+<entry>Cumulative Relative Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>&lt; 5</entry>
+<entry>25</entry>
+<entry>empty</entry>
+<entry>empty</entry>
+</row>
+<row>
+<entry>5-10</entry>
+<entry>30</entry>
+<entry>empty</entry>
+<entry>empty</entry>
+</row>
+<row>
+<entry>&gt; 10</entry>
+<entry>empty</entry>
+<entry>empty</entry>
+<entry>empty</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="fs-idm55204288">
+<table id="fs-idp43286224" summary="..">
+<title/>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry># of years</entry>
+<entry>Frequency</entry>
+<entry>Relative Frequency</entry>
+<entry>Cumulative Relative Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>&lt; 5</entry>
+<entry>25</entry>
+<entry>0.25</entry>
+<entry>0.25</entry>
+</row>
+<row>
+<entry>5-10</entry>
+<entry>30</entry>
+<entry>0.30</entry>
+<entry>0.55</entry>
+</row>
+<row>
+<entry>&gt; 10</entry>
+<entry>45</entry>
+<entry>0.45</entry>
+<entry>1.00</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise>
+<exercise id="fs-idp37482000">
+<problem id="fs-idm12388080">
+<para id="fs-idm21973424">What proportion of nurses have five or more years of experience?</para>
+</problem>
+<solution id="fs-idm132007776">
+<para id="fs-idm74549856">0.75</para>
+</solution>
+</exercise>
+<exercise id="fs-idp137584112">
+<problem id="fs-idp64896736">
+<para id="fs-idm74432608">What proportion of nurses have ten or fewer years of experience?</para>
+</problem>
+<solution id="fs-idm81445216">
+<para id="fs-idm103133664">0.55</para>
+</solution>
+</exercise>
+<exercise id="fs-idp59926208">
+<problem id="fs-idm134922416">
+<para id="fs-idm56549120">Describe how you might draw a random sample of 30 students from a lecture class of 200 students.</para>
+</problem>
+<solution id="fs-idp82002096">
+<para id="fs-idp42421328">Answers will vary.
+<newline/>Sample Answer: One possibility is to obtain the class roster and assign each student a number from 1 to 200. Then use a random number generator or table of random number to generate 30 numbers between 1 and 200, and select the students matching the random numbers. It would also be acceptable to write each student’s name on a card, shuffle them in a box, and draw 30 names at random.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm56018240">
+<problem id="fs-idm105865936">
+<para id="fs-idm86564112">Describe how you might draw a stratified sample of students from a college, where the strata are the students’ class standing (freshman, sophomore, junior, or senior).</para>
+</problem>
+<solution id="fs-idm11122672">
+<para id="fs-idm110460240">One possibility would be to obtain a roster of students enrolled in the college, including the class standing for each student. Then you would draw a proportionate random sample from within each class (for instance, if 30 percent of the students in the college are freshman, then 30 percent of your sample would be drawn from the freshman class).</para>
+</solution>
+</exercise>
+<exercise id="fs-idm122672288">
+<problem id="fs-idp52665072">
+<para id="fs-idm106954912">A manager wants to draw a sample, without replacement, of 30 employees from a workforce of 150. Describe how the chance of being selected will change over the course of drawing the sample.</para>
+</problem>
+<solution id="fs-idm10790128">
+<para id="fs-idp14330208">For the first person picked, the chance of any individual being selected is one in 150. For the second person, it is one in 149, for the third it is one in 148, and so on. For the 30th person selected, the chance of selection is one in 121.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm126738928">
+<problem id="fs-idm80675984">
+<para id="fs-idm71122784">The manager of a department store decides to measure employee satisfaction by selecting four departments at random, and conducting interviews with all the employees in those four departments. What type of survey design is this?</para>
+<list id="fs-idp65603104" list-type="enumerated" number-style="lower-alpha">
+<item>cluster</item>
+<item>stratified</item>
+<item>simple random</item>
+<item>systematic</item>
+</list>
+</problem>
+<solution id="fs-idp27142448">
+<para id="fs-idp63692592">a</para>
+</solution>
+</exercise>
+<exercise id="fs-idm33861472">
+<problem id="fs-idm9054896">
+<para id="fs-idm38701568">A popular American television sports program conducts a poll of viewers to see which team they believe will win the NFL (National Football League) championship this year. Viewers vote by calling a number displayed on the television screen and telling the operator which team they think will win. Do you think that those who participate in this poll are representative of all football fans in America?</para>
+</problem>
+<solution id="fs-idm61355600">
+<para id="fs-idp40267344">No. There are at least two chances for bias. First, the viewers of this particular program may not be representative of American football fans as a whole. Second, the sample will be self-selected, because people have to make a phone call in order to take part, and those people are probably not representative of the American football fan population as a whole.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm94734016">
+<problem id="fs-idm40584832">
+<para id="fs-idp80001088">Two researchers studying vaccination rates independently draw samples of 50 children, ages 3–18 months, from a large urban area, and determine if they are up to date on their vaccinations. One researcher finds that 84 percent of the children in her sample are up to date, and the other finds that 86 percent in his sample are up to date. Assuming both followed proper sampling procedures and did their calculations correctly, what is a likely explanation for this discrepancy?</para>
+</problem>
+<solution id="fs-idm78913520">
+<para id="fs-idm86503584">These results (84 percent in one sample, 86 percent in the other) are probably due to sampling variability. Each researcher drew a different sample of children, and you would not expect them to get exactly the same result, although you would expect the results to be similar, as they are in this case.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm82969920">
+<problem id="fs-idp107678832">
+<para id="fs-idm106482192">A high school increased the length of the school day from 6.5 to 7.5 hours. Students who wished to attend this high school were required to sign contracts pledging to put forth their best effort on their school work and to obey the school rules; if they did not wish to do so, they could attend another high school in the district. At the end of one year, student performance on statewide tests had increased by ten percentage points over the previous year. Does this improvement prove that a longer school day improves student achievement?</para>
+</problem>
+<solution id="fs-idp69510256">
+<para id="fs-idp108234768">No. The improvement could also be due to self-selection: only motivated students were willing to sign the contract, and they would have done well even in a school with 6.5 hour days. Because both changes were implemented at the same time, it is not possible to separate out their influence.</para>
+</solution>
+</exercise>
+<exercise id="fs-idp108285296">
+<problem id="fs-idm70611312">
+<para id="fs-idm118941200">You read a newspaper article reporting that eating almonds leads to increased life satisfaction. The study was conducted by the Almond Growers Association, and was based on a randomized survey asking people about their consumption of various foods, including almonds, and also about their satisfaction with different aspects of their life. Does anything about this poll lead you to question its conclusion?</para>
+</problem>
+<solution id="fs-idm117326592">
+<para id="fs-idm84226496">At least two aspects of this poll are troublesome. The first is that it was conducted by a group who would benefit by the result—almond sales are likely to increase if people believe that eating almonds will make them happier. The second is that this poll found that almond consumption and life satisfaction are correlated, but does not establish that eating almonds causes satisfaction. It is equally possible, for instance, that people with higher incomes are more likely to eat almonds, and are also more satisfied with their lives.</para>
+</solution>
+</exercise>
+<exercise id="fs-idp136815440">
+<problem id="fs-idp11953776">
+<para id="fs-idm118075296">Why is non-response a problem in surveys?</para>
+</problem>
+<solution id="fs-idp70644672">
+<para id="fs-idp9002944">You want the sample of people who take part in a survey to be representative of the population from which they are drawn. People who refuse to take part in a survey often have different views than those who do participate, and so even a random sample may produce biased results if a large percentage of those selected refuse to participate in a survey.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idp3285808">
+<title>1.4: Experimental Design and Ethics</title>
+<exercise id="fs-idp77766480">
+<problem id="fs-idp47842032">
+<para id="fs-idp7441120">A psychologist is interested in whether the size of tableware (bowls, plates, etc.) influences how much college students eat. He randomly assigns 100 college students to one of two groups: the first is served a meal using normal-sized tableware, while the second is served the same meal, but using tableware that it 20 percent smaller than normal. He records how much food is consumed by each group. Identify the following components of this study.</para>
+<list id="fs-idp18249888" list-type="enumerated" number-style="lower-alpha">
+<item>population</item>
+<item>sample</item>
+<item>experimental units</item>
+<item>explanatory variable</item>
+<item>treatment</item>
+<item>response variable</item>
+</list>
+</problem>
+<solution id="fs-idp56673408">
+<list id="fs-idm11251472" list-type="enumerated" number-style="lower-alpha">
+<item>population: all college students </item>
+<item>sample: the 100 college students in the study</item>
+<item>experimental units: each individual college student who participated</item>
+<item>explanatory variable: the size of the tableware</item>
+<item>treatment: tableware that is 20 percent smaller than normal</item>
+<item>response variable: the amount of food eaten</item>
+</list>
+</solution>
+</exercise>
+<exercise id="fs-idm115895552">
+<problem id="fs-idp47171616">
+<para id="fs-idm165016816">A researcher analyzes the results of the SAT (Scholastic Aptitude Test) over a five-year period and finds that male students on average score higher on the math section, and female students on average score higher on the verbal section. She concludes that these observed differences in test performance are due to genetic factors. Explain how lurking variables could offer an alternative explanation for the observed differences in test scores.</para>
+</problem>
+<solution id="fs-idp52607088">
+<para id="fs-idm51875616">There are many lurking variables that could influence the observed differences in test scores. Perhaps the boys, on average, have taken more math courses than the girls, and the girls have taken more English classes than the boys. Perhaps the boys have been encouraged by their families and teachers to prepare for a career in math and science, and thus have put more effort into studying math, while the girls have been encouraged to prepare for fields like communication and psychology that are more focused on language use. A study design would have to control for these and other potential lurking variables (anything that could explain the observed difference in test scores, other than the genetic explanation) in order to draw a scientifically sound conclusion about genetic differences.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm81138304">
+<problem id="fs-idp4573040">
+<para id="fs-idp72257136">Explain why it would not be possible to use random assignment to study the health effects of smoking.</para>
+</problem>
+<solution id="fs-idm120186896">
+<para id="fs-idm117620432">To use random assignment, you would have to be able to assign people to either smoke or not smoke. Because smoking has many harmful effects, this would not be an ethical experiment. Instead, we study people who have chosen to smoke, and compare them to others who have chosen not to smoke, and try to control for the other ways those two groups may differ (lurking variables).</para>
+</solution>
+</exercise>
+<exercise id="fs-idm53022912">
+<problem id="fs-idp40776672">
+<para id="fs-idp116873808">A professor conducts a telephone survey of a city’s population by drawing a sample of numbers from the phone book and having her student assistants call each of the selected numbers once to administer the survey. What are some sources of bias with this survey?</para>
+</problem>
+<solution id="fs-idm34108720">
+<para id="fs-idm43576704">Sources of bias include the fact that not everyone has a telephone, that cell phone numbers are often not listed in published directories, and that an individual might not be at home at the time of the phone call; all these factors make it likely that the respondents to the survey will not be representative of the population as a whole.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm83664448">
+<problem id="fs-idp64580336">
+<para id="fs-idp35799392">A professor offers extra credit to students who take part in her research studies. What is an ethical problem with this method of recruiting subjects?</para>
+</problem>
+<solution id="fs-idm36266208">
+<para id="fs-idm64440080">Research subjects should not be coerced into participation, and offering extra credit in exchange for participation could be construed as coercion. In addition, this method will result in a volunteer sample, which cannot be assumed to be representative of the population as a whole.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idm56322224">
+<title>1.3: Frequency, Frequency Tables, and Levels of Measurement</title>
+<exercise id="fs-idm64926800">
+<problem id="fs-idp80614304">
+<para id="fs-idp66197408">Compute the mean of the following numbers, and report your answer using one more decimal place than is present in the original data:
+<newline/>14, 5, 18, 23, 6</para>
+</problem>
+<solution id="fs-idp29851808">
+<para id="fs-idp35663040">13.2</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idp4391744">
+<title>2.1: Stem-and Leaf Graphs (Stemplots), Line Graphs, and Bar Graphs</title>
+<para id="fs-idm59454960"><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> The midterm grades on a chemistry exam, graded on a scale of 0 to 100, were:
+<newline/>62, 64, 65, 65, 68, 70, 72, 72, 74, 75, 75, 75, 76,78, 78, 81, 83, 83, 84, 85, 87, 88, 92, 95, 98, 98, 100, 100, 740</para>
+<exercise id="fs-idm961120">
+<problem id="fs-idm141492880">
+<para id="fs-idm19994320">Do you see any outliers in this data? If so, how would you address the situation?</para>
+</problem>
+<solution id="fs-idm2403200">
+<para id="fs-idp51270896">The value 740 is an outlier, because the exams were graded on a scale of 0 to 100, and 740 is far outside that range. It may be a data entry error, with the actual score being 74, so the professor should check that exam again to see what the actual score was.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm59225136">
+<problem id="fs-idm147457280">
+<para id="fs-idm84142992">Construct a stem plot for this data, using only the values in the range 0–100.</para>
+</problem>
+<solution id="fs-idp69839280">
+<table id="fs-idm58232784" summary="..">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Stem</entry>
+<entry>Leaf</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>6</entry>
+<entry>2 4 5 5 8</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>0 2 2 4 5 5 5 6 8 8</entry>
+</row>
+<row>
+<entry>8</entry>
+<entry>1 3 3 4 5 7 8</entry>
+</row>
+<row>
+<entry>9</entry>
+<entry>2 5 8 8</entry>
+</row>
+<row>
+<entry>10</entry>
+<entry>0 0</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise>
+<exercise id="fs-idp38529488">
+<problem id="fs-idm82676272">
+<para id="fs-idm57848272">Describe the distribution of exam scores.</para>
+</problem>
+<solution id="fs-idp102051472">
+<para id="fs-idp34938880">Most scores on this exam were in the range of 70–89, with a few scoring in the 60–69 range, and a few in the 90–100 range.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idm34602112">
+<title>2.2: Histograms, Frequency Polygons, and Time Series Graphs</title>
+<exercise id="fs-idp57416912">
+<problem id="fs-idp117040992">
+<para id="fs-idp109142000">In a class of 35 students, seven students received scores in the 70–79 range. What is the relative frequency of scores in this range?</para>
+</problem>
+<solution id="fs-idm142979488">
+<para id="fs-idp52769232"><m:math>
+<m:mrow>
+<m:mi>R</m:mi><m:mi>F</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mn>7</m:mn>
+<m:mrow>
+<m:mn>35</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.2</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<para id="fs-idm141601856"><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> You conduct a poll of 30 students to see how many classes they are taking this term. Your results are:
+<newline/>1; 1; 1; 1
+<newline/>2; 2; 2; 2; 2
+<newline/>3; 3; 3; 3; 3; 3; 3; 3
+<newline/>4; 4; 4; 4; 4; 4; 4; 4; 4
+<newline/>5; 5; 5; 5</para>
+<exercise id="fs-idm134428912">
+<problem id="fs-idm76712064">
+<para id="fs-idp18718640">You decide to construct a histogram of this data. What will be the range of your first bar, and what will be the central point?</para>
+</problem>
+<solution id="fs-idp68998016">
+<para id="fs-idm40579776">The range will be 0.5–1.5, and the central point will be 1.</para>
+</solution>
+</exercise>
+<exercise id="fs-idp37356112">
+<problem id="fs-idm12412944">
+<para id="fs-idp85250288">What will be the widths and central points of the other bars?</para>
+</problem>
+<solution id="fs-idp139693040">
+<para id="fs-idm161400768">Range 1.5–2.5, central point 2; range 2.5–3.5, central point 3; range 3.5–4.5, central point 4; range 4.5–5.5., central point 5.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm94106752">
+<problem id="fs-idp60435632">
+<para id="fs-idp107317088">Which bar in this histogram will be the tallest, and what will be its height?</para>
+</problem>
+<solution id="fs-idm9067088">
+<para id="fs-idp105819344">The bar from 3.5 to 4.5, with a central point of 4, will be tallest; its height will be nine, because there are nine students taking four courses.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm119146560">
+<problem id="fs-idm14120944">
+<para id="fs-idp43998960">You get data from the U.S. Census Bureau on the median household income for your city, and decide to display it graphically. Which is the better choice for this data, a bar graph or a histogram?</para>
+</problem>
+<solution id="fs-idp35746064">
+<para id="fs-idp43391040">The histogram is a better choice, because income is a continuous variable.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm65546256">
+<problem id="fs-idm9037712">
+<para id="fs-idp68768688">You collect data on the color of cars driven by students in your statistics class, and want to display this information graphically. Which is the better choice for this data, a bar graph or a histogram?</para>
+</problem>
+<solution id="fs-idp68504656">
+<para id="fs-idp14073888">A bar graph is the better choice, because this data is categorical rather than continuous.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idp42529360">
+<title>2.4: Box Plots</title>
+<para id="fs-idm3775712"><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> 1; 1; 2; 3; 4; 4; 5; 5; 6; 7; 7; 8; 9</para>
+<exercise id="fs-idp61743232">
+<problem id="fs-idp39351456">
+<para id="fs-idp57912752">What is the median for this data?</para>
+</problem>
+<solution id="fs-idm97603472">
+<para id="fs-idp8863808">5</para>
+</solution>
+</exercise>
+<exercise id="fs-idp42641200">
+<problem id="fs-idp63610336">
+<para id="fs-idm74008240">What is the first quartile for this data?</para>
+</problem>
+<solution id="fs-idp53845120">
+<para id="fs-idp14190752">3</para>
+</solution>
+</exercise>
+<exercise id="fs-idp37829408">
+<problem id="fs-idm115320944">
+<para id="fs-idm146344368">What is the third quartile for this data?</para>
+</problem>
+<solution id="fs-idp21654304">
+<para id="fs-idm215525888">7</para>
+</solution>
+</exercise>
+<para id="fs-idp70619808"><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> This box plot represents scores on the final exam for a physics class.</para>
+<figure id="fs-idp58462000">
+<media id="fs-idm63149472" alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Practice_Test_1_fig01.jpg" width="380"/>
+</media>
+</figure>
+<exercise id="fs-idp138600928">
+<problem id="fs-idm71921552">
+<para id="fs-idp15363888">What is the median for this data, and how do you know?</para>
+</problem>
+<solution id="fs-idm105733200">
+<para id="fs-idm104861984">The median is 86, as represented by the vertical line in the box.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm43252384">
+<problem id="fs-idm64921760">
+<para id="fs-idm65953536">What are the first and third quartiles for this data, and how do you know?</para>
+</problem>
+<solution id="fs-idm3770352">
+<para id="fs-idm81256560">The first quartile is 80, and the third quartile is 92, as represented by the left and right boundaries of the box.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm10288496">
+<problem id="fs-idp80194384">
+<para id="fs-idp4726000">What is the interquartile range for this data?</para>
+</problem>
+<solution id="fs-idm58925184">
+<para id="fs-idp22595136"><emphasis effect="italics">IQR</emphasis> = 92 – 80 = 12</para>
+</solution>
+</exercise>
+<exercise id="fs-idm60498592">
+<problem id="fs-idp99829536">
+<para id="fs-idm14404592">What is the range for this data?</para>
+</problem>
+<solution id="fs-idm81301680">
+<para id="fs-idp11958000">Range = 100 – 75 = 25</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idm50074832">
+<title>2.3: Measures of the Location of the Data</title>
+<exercise id="fs-idm14489488">
+<problem id="fs-idp50241872">
+<para id="fs-idm1437408">Your daughter brings home test scores showing that she scored in the 80<sup>th</sup> percentile in math and the 76<sup>th</sup> percentile in reading for her grade. Interpret these scores.</para>
+</problem>
+<solution id="fs-idp23121792">
+<para id="fs-idm97996336">Your daughter scored better than 80 percent of the students in her grade on math and better than 76 percent of the students in reading. Both scores are very good, and place her in the upper quartile, but her math score is slightly better in relation to her peers than her reading score.</para>
+</solution>
+</exercise>
+<exercise id="fs-idm81717792">
+<problem id="fs-idm64791872">
+<para id="fs-idm12247712">You have to wait 90 minutes in the emergency room of a hospital before you can see a doctor.  You learn that your wait time was in the 82<sup>nd</sup> percentile of all wait times. Explain what this means, and whether you think it is good or bad.</para>
+</problem>
+<solution id="fs-idp42450864">
+<para id="fs-idm65455888">You had an unusually long wait time, which is bad: 82 percent of patients had a shorter wait time than you, and only 18 percent had a longer wait time.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idp79012576">
+<title>2.5: Measures of the Center of the Data</title>
+<exercise id="fs-idm11959280">
+<problem id="fs-idm82969440">
+<para id="fs-idp43418944">In a marathon, the median finishing time was 3:35:04 (three hours, 35 minutes, and four seconds). You finished in 3:34:10. Interpret the meaning of the median time, and discuss your time in relation to it.</para>
+</problem>
+<solution id="fs-idm24773616">
+<para id="fs-idm38495376">Half the runners who finished the marathon ran a time faster than 3:35:04, and half ran a time slower than 3:35:04. Your time is faster than the median time, so you did better than more than half of the runners in this race.</para>
+</solution>
+</exercise>
+<para id="fs-idp66838592"><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> The value, in thousands of dollars, for houses on a block, are:
+<newline/>45; 47; 47.5; 51; 53.5; 125.</para>
+<exercise id="fs-idp40411088">
+<problem id="fs-idm74278544">
+<para id="fs-idp106075088">Calculate the mean for this data.</para>
+</problem>
+<solution id="fs-idp136795600">
+<para id="fs-idp91541472">61.5, or $61,500</para>
+</solution>
+</exercise>
+<exercise id="fs-idm115771504">
+<problem id="fs-idm49993824">
+<para id="fs-idm19918736">Calculate the median for this data.</para>
+</problem>
+<solution id="fs-idm131274400">
+<para id="fs-idp77573808">49.25 or $49,250</para>
+</solution>
+</exercise>
+<exercise id="fs-idp76947200">
+<problem id="fs-idm48207200">
+<para id="fs-idp38813520">Which do you think better reflects the average value of the homes on this block?</para>
+</problem>
+<solution id="fs-idm122770912">
+<para id="fs-idp85222928">The median, because the mean is distorted by the high value of one house.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idp76944256">
+<title>2.6: Skewness and the Mean, Median, and Mode</title>
+<exercise id="fs-idm3727648">
+<problem id="fs-idp103231808">
+<para id="fs-idm98483200">In a left-skewed distribution, which is greater?</para>
+<list id="fs-idm91855312" list-type="enumerated" number-style="lower-alpha">
+<item>the mean</item>
+<item>the media</item>
+<item>the mode</item>
+</list>
+</problem>
+<solution id="fs-idp4582448">
+<para id="fs-idp5706896">c</para>
+</solution>
+</exercise>
+<exercise id="fs-idm51247312">
+<problem id="fs-idp43354176">
+<para id="fs-idp66436112">In a right-skewed distribution, which is greater?</para>
+<list id="fs-idp146366352" list-type="enumerated" number-style="lower-alpha">
+<item>the mean</item>
+<item>the median</item>
+<item>the mode</item>
+</list>
+</problem>
+<solution id="fs-idm94168112">
+<para id="fs-idm117593488">a</para>
+</solution>
+</exercise>
+<exercise id="fs-idp65494800">
+<problem id="fs-idm135562416">
+<para id="fs-idm13572352">In a symmetrical distribution what will be the relationship among the mean, median, and mode?</para>
+</problem>
+<solution id="fs-idp53572928">
+<para id="fs-idp83071888">They will all be fairly close to each other.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idm38303408">
+<title>2.7: Measures of the Spread of the Data</title>
+<para id="fs-idp51301712"><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> 10; 11; 15; 15; 17; 22</para>
+<exercise id="fs-idp36508096">
+<problem id="fs-idp72061600">
+<para id="fs-idm2517184">Compute the mean and standard deviation for this data; use the sample formula for the standard deviation.</para>
+</problem>
+<solution id="fs-idp94751776">
+<para id="fs-idm74913856">Mean: 15
+<newline/>Standard deviation: 4.3
+<newline/><m:math display="">
+<m:mrow>
+<m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>10</m:mn><m:mo>+</m:mo><m:mn>11</m:mn><m:mo>+</m:mo><m:mn>15</m:mn><m:mo>+</m:mo><m:mn>15</m:mn><m:mo>+</m:mo><m:mn>17</m:mn><m:mo>+</m:mo><m:mn>22</m:mn>
+</m:mrow>
+<m:mn>6</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>18</m:mn>
+</m:mrow>
+</m:math>
+<newline/><m:math>
+<m:mrow>
+<m:mi>s</m:mi><m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mstyle displaystyle="true">
+<m:mo>∑</m:mo> <m:mrow>
+<m:msup>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mi>x</m:mi><m:mo>−</m:mo><m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>¯</m:mo>
+</m:mover>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:mstyle>
+</m:mrow>
+<m:mrow>
+<m:mi>n</m:mi><m:mo>−</m:mo><m:mn>1</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>94</m:mn>
+</m:mrow>
+<m:mn>5</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>4.3</m:mn><m:mi>f</m:mi>
+</m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+<exercise id="fs-idp91561360">
+<problem id="fs-idm66001440">
+<para id="fs-idm134004800">What number is two standard deviations above the mean of this data?</para>
+</problem>
+<solution id="fs-idp84297392">
+<para id="fs-idp25507392">18 + (2)(4.3) = 26.6</para>
+</solution>
+</exercise>
+<exercise id="fs-idm93132736">
+<problem id="fs-idp55575376">
+<para id="fs-idm15547856">Express the number 13.7 in terms of the mean and standard deviation of this data.</para>
+</problem>
+<solution id="fs-idm36576896">
+<para id="fs-idp42489200">13.7 is one standard deviation below the mean of this data, because 18 – 4.3 = 13.7</para>
+</solution>
+</exercise>
+<exercise id="fs-idm74589920">
+<problem id="fs-idp117072896">
+<para id="fs-idm140679600">In a biology class, the scores on the final exam were normally distributed, with a mean of 85, and a standard deviation of five. Susan got a final exam score of 95. Express her exam result as a z-score, and interpret its meaning.</para>
+</problem>
+<solution id="fs-idm60181248">
+<para id="fs-idm108666960"><m:math>
+<m:mrow>
+<m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>95</m:mn><m:mo>−</m:mo><m:mn>85</m:mn>
+</m:mrow>
+<m:mn>5</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>2.0</m:mn>
+</m:mrow>
+</m:math>
+</para>
+<para id="fs-idp39377216">Susan’s <emphasis effect="italics">z</emphasis>-score was 2.0, meaning she scored two standard deviations above the class mean for the final exam.</para>
+</solution>
+</exercise>
+<para id="fs-idp17200"><emphasis effect="italics">Use the following information to answer the next two exercises.</emphasis> You have a jar full of marbles: 50 are red, 25 are blue, and 15 are yellow. Assume you draw one marble at random for each trial, and replace it before the next trial.
+<newline/>Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">R</emphasis>) = the probability of drawing a red marble.
+<newline/>Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>) = the probability of drawing a blue marble.
+<newline/>Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">Y</emphasis>) = the probability of drawing a yellow marble.</para>
+</section>
+<section id="fs-idp110086880">
+<title>3.1: Terminology</title>
+<exercise id="fs-idm129059392">
+<problem id="fs-idp34528832">
+<para id="fs-idm52799792">Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>).</para>
+</problem>
+<solution id="fs-idp67537728">
+<para id="fs-idp83165488"><m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>B</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>25</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>90</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.28</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise id="fs-idm129078464">
+<problem id="fs-idp23739104">
+<para id="fs-idm123393168">Which is more likely, drawing a red marble or a yellow marble? Justify your answer numerically.</para>
+</problem>
+<solution id="fs-idp48325248">
+<para id="fs-idm122700896">Drawing a red marble is more likely.
+<newline/><m:math>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>R</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>50</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>80</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.62</m:mn>
+</m:math>
+<newline/><m:math>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>Y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>80</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.19</m:mn>
+</m:math>
+</para>
+</solution>
+</exercise>
+<para id="fs-idm61416608"><emphasis effect="italics">Use the following information to answer the next two exercises.</emphasis> The following are probabilities describing a group of college students.
+<newline/>Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">M</emphasis>) = the probability that the student is male
+<newline/>Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">F</emphasis>) = the probability that the student is female
+<newline/>Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">E</emphasis>) = the probability the student is majoring in education
+<newline/>Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis>) = the probability the student is majoring in science</para>
+<exercise id="fs-idm9698464">
+<problem id="fs-idm22083200">
+<para id="fs-idm74033168">Write the symbols for the probability that a student, selected at random, is both female and a science major.</para>
+</problem>
+<solution id="fs-idp4954048">
+<para id="fs-idp135015536"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">F</emphasis> AND <emphasis effect="italics">S</emphasis>)</para>
+</solution>
+</exercise>
+<exercise id="fs-idp78406592">
+<problem id="fs-idm77448576">
+<para id="fs-idp37124128">Write the symbols for the probability that the student is an education major, given that the student is male.</para>
+</problem>
+<solution id="fs-idm56047184">
+<para id="fs-idm7819648"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">E</emphasis>|<emphasis effect="italics">M</emphasis>)</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idm55505552">
+<title>3.2: Independent and Mutually Exclusive Events</title>
+<exercise id="fs-idm21078176">
+<problem id="fs-idm47799856">
+<para id="fs-idm79548496">Events <emphasis effect="italics">A</emphasis> and <emphasis effect="italics">B</emphasis> are independent.
+<newline/>If <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis>) = 0.3 and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>) = 0.5, find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis> AND <emphasis effect="italics">B</emphasis>).</para>
+</problem>
+<solution id="fs-idm122624064">
+<para id="fs-idm94377536"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis> AND <emphasis effect="italics">B</emphasis>) = (0.3)(0.5) = 0.15</para>
+</solution>
+</exercise>
+<exercise id="fs-idm95747104">
+<problem id="fs-idp4846304">
+<para id="fs-idp68837872"><emphasis effect="italics">C</emphasis> and <emphasis effect="italics">D</emphasis> are mutually exclusive events.
+<newline/>If <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">C</emphasis>) = 0.18 and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">D</emphasis>) = 0.03, find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">C</emphasis> OR <emphasis effect="italics">D</emphasis>).</para>
+</problem>
+<solution id="fs-idm48272016">
+<para id="fs-idp54204368"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">C</emphasis> OR <emphasis effect="italics">D</emphasis>) = 0.18 + 0.03 = 0.21</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idm93842096">
+<title>3.3: Two Basic Rules of Probability</title>
+<exercise id="fs-idp36518944">
+<problem id="fs-idm38726128">
+<para id="fs-idp6527520">In a high school graduating class of 300, 200 students are going to college, 40 are planning to work full-time, and 80 are taking a gap year. Are these events mutually exclusive?</para>
+</problem>
+<solution id="fs-idp40417104">
+<para id="fs-idp116086576">No, they cannot be mutually exclusive, because they add up to more than 300. Therefore, some students must fit into two or more categories (e.g., both going to college and working full time).</para>
+</solution>
+</exercise>
+<para id="fs-idp83142960"><emphasis effect="italics">Use the following information to answer the next two exercises.</emphasis> An archer hits the center of the target (the bullseye) 70 percent of the time. However, she is a streak shooter, and if she hits the center on one shot, her probability of hitting it on the shot immediately following is 0.85. Written in probability notation:
+<newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>) = <emphasis effect="italics">P</emphasis>(hitting the center on one shot) = 0.70
+<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>|<emphasis effect="italics">A</emphasis>) = P(hitting the center on a second shot, given that she hit it on the first) = 0.85</para>
+<exercise id="fs-idm78582224">
+<problem id="fs-idp84674720">
+<para id="fs-idm107261488">Calculate the probability that she will hit the center of the target on two consecutive shots.</para>
+</problem>
+<solution id="fs-idm23515376">
+<para id="fs-idp105826640"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis> and <emphasis effect="italics">B</emphasis>) = (<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>|<emphasis effect="italics">A</emphasis>))(<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis>)) = (0.85)(0.70) = 0.595</para>
+</solution>
+</exercise>
+<exercise id="fs-idm15158752">
+<problem id="fs-idm130527776">
+<para id="fs-idp46638448">Are <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">A</emphasis>) and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>) independent in this example?</para>
+</problem>
+<solution id="fs-idp47465280">
+<para id="fs-idp43651920">No. If they were independent, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>) would be the same as <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>|<emphasis effect="italics">A</emphasis>). We know this is not the case, because <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>) = 0.70 and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">B</emphasis>|<emphasis effect="italics">A</emphasis>) = 0.85.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idp105829072">
+<title>3.4: Contingency Tables</title>
+<para id="fs-idp43926960"><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> The following contingency table displays the number of students who report studying at least 15 hours per week, and how many made the honor roll in the past semester.</para>
+<table id="fs-idm22192560" summary="..">
+<title/>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry/>
+<entry>Honor roll</entry>
+<entry>No honor roll</entry>
+<entry>Total </entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Study at least 15 hours/week</entry>
+<entry/>
+<entry>200</entry>
+<entry/>
+</row>
+<row>
+<entry>Study less than 15 hours/week</entry>
+<entry>125</entry>
+<entry>193</entry>
+<entry/>
+</row>
+<row>
+<entry>Total</entry>
+<entry/>
+<entry/>
+<entry>1,000</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<exercise id="fs-idm65422048">
+<problem id="fs-idp89863456">
+<para id="fs-idm117323632">Complete the table</para>
+</problem>
+<solution id="fs-idm83272704">
+<table id="fs-idp59830304" summary="..">
+<title/>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry/>
+<entry>Honor roll</entry>
+<entry>No honor roll</entry>
+<entry>Total</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Study at least 15 hours/week</entry>
+<entry>482</entry>
+<entry>200</entry>
+<entry>682</entry>
+</row>
+<row>
+<entry>Study less than 15 hours/week</entry>
+<entry>125</entry>
+<entry>193</entry>
+<entry>318</entry>
+</row>
+<row>
+<entry>Total</entry>
+<entry>607</entry>
+<entry>393</entry>
+<entry>1,000</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise>
+<exercise id="fs-idp30815616">
+<problem id="fs-idm63764768">
+<para id="fs-idm63284624">Find <emphasis effect="italics">P</emphasis>(honor roll|study at least 15 hours per week).</para>
+</problem>
+<solution id="fs-idm64093424">
+<para id="fs-idp24154352"><m:math display="">
+<m:mrow>
+<m:mi>P</m:mi><m:mtext>(honor roll | study at least 15 hours/week) = </m:mtext><m:mfrac>
+<m:mrow>
+<m:mn>482</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>1000</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.482</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise id="fs-idp46207632">
+<problem id="fs-idm127013360">
+<para id="fs-idm61938400">What is the probability a student studies less than 15 hours per week?</para>
+</problem>
+<solution id="fs-idp29275936">
+<para id="fs-idm79136576"><m:math display="">
+<m:mrow>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mtext>studies less than 15 hours/week)</m:mtext><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>125</m:mn><m:mo>+</m:mo><m:mn>193</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>1000</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.318</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise id="fs-idp31687744">
+<problem id="fs-idp31688000">
+<para id="fs-idp50497808">Are the events “study at least 15 hours per week” and “makes the honor roll” independent? Justify your answer numerically.</para>
+</problem>
+<solution id="fs-idp83144496">
+<para id="fs-idm61828992">Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis>) = study at least 15 hours per week
+<newline/>Let <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>) = makes the honor roll
+<newline/>From the table, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis>) = 0.682, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>) = 0.607, and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis> AND <emphasis effect="italics">H</emphasis>) =0.482. 
+<newline/>If <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis>) and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>) were independent, then <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis> AND <emphasis effect="italics">H</emphasis>) would equal (<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis>))(<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>)).
+<newline/>However, (<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis>))(<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>)) = (0.682)(0.607) = 0.414, while <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis> AND <emphasis effect="italics">H</emphasis>) = 0.482.
+<newline/>Therefore, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">S</emphasis>) and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">H</emphasis>) are not independent.</para>
+</solution>
+</exercise>
+</section>
+<section id="fs-idm109928496">
+<title>3.5: Tree and Venn Diagrams</title>
+<exercise id="fs-idp37521744">
+<problem id="fs-idp37522000">
+<para id="fs-idp50419280">At a high school, some students play on the tennis team, some play on the soccer team, but neither plays both tennis and soccer. Draw a Venn diagram illustrating this.</para>
+</problem>
+<solution id="fs-idp79065376">
+<figure id="fs-idp79065632">
+<media id="fs-idm22553488" alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Appendix_1.jpg" width="380"/>
+</media>
+</figure>
+</solution>
+</exercise>
+<exercise id="fs-idm41814000">
+<problem id="fs-idm69568320">
+<para id="fs-idm69568064">At a high school, some students play tennis, some play soccer, and some play both. Draw a Venn diagram illustrating this.</para>
+</problem>
+<solution id="fs-idp40898448">
+<figure id="fs-idm137739008">
+<media id="fs-idm137738752" alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Appendix_2.jpg" width="380"/>
+</media> 
+</figure>
+</solution>
+</exercise>
+</section>
+</content>
+</document>

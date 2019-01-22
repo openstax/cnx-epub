@@ -1,0 +1,105 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7" class="introduction">
+  <title>Introduction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46925/latest</md:content-url>
+  <md:content-id>m46925</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:version>1.7</md:version>
+  <md:created>2013/07/19 00:48:58 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>Boxplot</md:keyword>
+    <md:keyword>First Quartile</md:keyword>
+    <md:keyword>Frequency</md:keyword>
+    <md:keyword>Frequency Polygon</md:keyword>
+    <md:keyword>Frequency Table</md:keyword>
+    <md:keyword>Histogram</md:keyword>
+    <md:keyword>Interquartile Range</md:keyword>
+    <md:keyword>Interval</md:keyword>
+    <md:keyword>Mean</md:keyword>
+    <md:keyword>Median</md:keyword>
+    <md:keyword>Midpoint</md:keyword>
+    <md:keyword>Mode</md:keyword>
+    <md:keyword>Outlier</md:keyword>
+    <md:keyword>Paired Data Set</md:keyword>
+    <md:keyword>Percentile</md:keyword>
+    <md:keyword>Quartiles</md:keyword>
+    <md:keyword>Relative Frequency</md:keyword>
+    <md:keyword>Skewed</md:keyword>
+    <md:keyword>Standard Deviation</md:keyword>
+    <md:keyword>Variance</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+       <?cnx.eoc class="summary" title="Chapter Review"?>
+<?cnx.eoc class="formula-review" title="Formula Review"?>
+<?cnx.eoc class="practice" title="Practice"?>
+<?cnx.eoc class="bring-together-exercises" title="Bringing It Together : Practice"?>
+<?cnx.eoc class="free-response" title="Homework"?>
+<?cnx.eoc class="bring-together-homework" title="Bringing It Together : Homework"?>
+<?cnx.eoc class="references" title="References"?>
+
+<figure id="fs-idm37970816" class="splash">
+<media id="fs-idm99957184" alt="This photo shows about 26 rolls of paper piled together. The rolls are different sizes.">
+<image mime-type="image/png" width="500" src="CNX_Stats_C02_CO Photo.jpg"/>
+</media>
+<caption>When you have large amounts of data, you will need to organize it in a way that makes sense. These ballots from an election are rolled together with similar ballots to keep them organized. (credit: William Greeson)</caption></figure><note id="fs-idp14137120" class="chapter-objectives">
+<label/>
+<title>Chapter Objectives</title>
+<para id="element-910">By the end of this chapter, the student should be able to:</para>
+<list id="list123523"><item>Display data graphically and interpret graphs: stemplots, histograms, and box plots.</item>
+<item>Recognize, describe, and calculate the measures of location of data: quartiles and percentiles.</item>
+<item>Recognize, describe, and calculate the measures of the center of data: mean, median, and mode.</item>
+<item>Recognize, describe, and calculate the measures of the spread of data: variance, standard deviation, and range.</item>
+</list>
+</note>
+<para id="fs-idp57139568">Once you have collected data, what will you do with it?  Data can be described and presented in many different formats.  For example, suppose you are interested in buying a house in a particular area.   You may have no clue about the house prices, so you might ask your real estate agent to give you a sample data set of prices.  Looking at all the prices in the sample often is overwhelming.  A better way might be to look at the median price and the variation of prices.  The median and variation are just two ways that you will learn to describe data.  Your agent might also provide you with a graph of the data.</para>
+<para id="element-908">In this chapter, you will study numerical and graphical ways to describe and display your data. This area of statistics is called <emphasis>"Descriptive Statistics."</emphasis>  You will learn how to calculate, and even more importantly, how to interpret these measurements and graphs.</para>
+<para id="id6322560">A statistical graph is a tool that helps you learn about the shape or distribution of a sample or a population. A graph can be a more effective way of presenting data than a mass of numbers because we can see where data clusters and where there are only a few data values. Newspapers and the Internet use graphs to show trends and to enable readers to compare facts and figures quickly. Statisticians often graph data first to get a picture of the data. Then, more formal tools may be applied.</para><para id="id5413204">Some of the types of graphs that are used to summarize and organize data are the dot plot, the bar graph, the histogram, the stem-and-leaf plot, the frequency polygon (a type of broken line graph), the pie chart, and the box plot. In this chapter, we will briefly look at stem-and-leaf plots, line graphs, and bar graphs, as well as frequency polygons, and time series graphs. Our emphasis will be on histograms and box plots.</para><note id="fs-idp5542896">
+<label/>
+<title>NOTE</title>
+<para id="fs-idm1055600">This book contains instructions for constructing a histogram and a box plot for the TI-83+ and TI-84 calculators. The <link url="http://education.ti.com/educationportal/sites/US/sectionHome/support.html">Texas Instruments (TI) website</link> provides additional instructions for using these calculators.</para></note>
+</content>
+</document>

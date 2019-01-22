@@ -1,0 +1,153 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Regression (Distance from School)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50283/latest</md:content-url>
+  <md:content-id>m50283</md:content-id>
+  <md:title>Regression (Distance from School)</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/09 10:42:23 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>influential points</md:keyword>
+    <md:keyword>outlier</md:keyword>
+    <md:keyword>potential outlier</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1172772301748" class="statistics lab"><label/><title>Regression (Distance from School)</title>
+
+<para id="fs-idp105700624">Class Time: </para>
+    <para id="fs-idp69476432">Names:</para>
+        <list id="fs-idm39104336" list-type="bulleted">
+<title>Student Learning Outcomes</title>
+        <item>The student will calculate and construct the line of best fit between two variables.</item>
+        <item>The student will evaluate the relationship between two variables to determine if that relationship is significant. </item>
+      </list>
+    
+    <para id="element-7"><title>Collect the Data</title>Use eight members of your class for the sample. Collect bivariate data (distance an individual lives
+from school, the cost of supplies for the current term).
+</para><list id="fs-idp17639616" list-type="enumerated">
+<item>Complete the table.
+<table id="fs-idp6640" summary="Blank table with distance from school in the first column and cost of supplies this term in the second column. 16 empty cells">
+
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Distance from school</entry>
+<entry>Cost of supplies this term</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+</tbody>
+
+</tgroup>
+</table></item>
+	<item>Which variable should be the dependent variable and which should be the independent
+variable? Why?</item>
+	<item>Graph &#8220;distance&#8221; vs. &#8220;cost.&#8221; Plot the points on the graph. Label both axes with
+words. Scale both axes.<figure id="id6749459"><media id="id6749463" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch12_14_01.png" mime-type="image/png" width="380"/></media></figure></item>
+</list>
+<para id="fs-idm26666928"><title>Analyze the Data</title>Enter your data into your calculator or computer. Write the linear equation, rounding to four decimal places.</para><list id="fs-idm15728672" list-type="enumerated" number-style="arabic">
+<item>Calculate the following:
+<list id="fs-idp38070176" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">a</emphasis> = ______</item>
+<item><emphasis effect="italics">b</emphasis> = ______</item>
+<item>correlation = ______</item>
+<item><emphasis effect="italics">n</emphasis> = ______</item>
+<item>equation: <emphasis effect="italics">&#375;</emphasis> = ______</item>
+<item>Is the correlation significant? Why or why not? (Answer in one to three complete sentences.)</item>
+ </list></item>
+	<item>Supply an answer for the following senarios:
+<list id="fs-idm25916576" list-type="enumerated" number-style="lower-alpha">
+			<item>For a person who lives eight miles from campus, predict the total cost of supplies this term:</item>
+			<item>For a person who lives eighty miles from campus, predict the total cost of supplies this term:</item>
+		</list></item>
+	<item>Obtain the graph on your calculator or computer. Sketch the regression line.
+<figure id="id6749694"><media id="id6749698" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch12_14_02.png" mime-type="image/png" width="380"/></media></figure></item>
+</list>
+<list id="fs-idm72135792" list-type="enumerated"><title>Discussion Questions</title><item>Answer each question in complete sentences.
+<list id="fs-idp21518976" list-type="enumerated" number-style="lower-alpha">
+			<item>Does the line seem to fit the data? Why?</item>
+			<item>What does the correlation imply about the relationship between the distance and the cost?</item>
+</list></item>
+	<item>Are there any outliers? If so, which point is an outlier? </item>
+	<item>Should the outlier, if it exists, be removed? Why or why not?</item>
+</list></note></content>
+
+</document>

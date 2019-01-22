@@ -1,0 +1,2165 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Practice Test 3</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://staging2.cnx.org/content</md:repository>
+  <md:content-id>new</md:content-id>
+  <md:title>Practice Test 3</md:title>
+  <md:version>**new**</md:version>
+  <md:created>2013/10/18 17:24:41.277 GMT-5</md:created>
+  <md:revised>2013/10/18 17:24:41.334 GMT-5</md:revised>
+  <md:actors>
+    <md:person userid="words_stats">
+      <md:firstname>Words</md:firstname>
+      <md:surname>Numbers</md:surname>
+      <md:fullname>Words Numbers</md:fullname>
+      <md:email>techsupport@cnx.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">words_stats</md:role>
+    <md:role type="maintainer">words_stats</md:role>
+    <md:role type="licensor">words_stats</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/" />
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<section>
+<title>8.1: Confidence Interval, Single Population Mean, Population Standard Deviation Known, Normal</title>
+
+<para>Use the following information to answer the next seven exercises. You draw a sample of size 30 from a normally distributed population with a standard deviation of four.</para>
+
+<exercise>
+<problem><para>What is the standard error of the sample mean in this scenario, rounded to two decimal places?</para></problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mi>&#x03C3;</m:mi>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mn>4</m:mn>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:mn>30</m:mn>
+     </m:mrow>
+    </m:msqrt>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>0.73</m:mn>
+ </m:mrow>
+</m:math>
+</para></solution>
+
+</exercise>
+
+<exercise>
+<problem><para>What is the distribution of the sample mean?</para></problem>
+<solution><para>normal</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>If you want to construct a two-sided 95% confidence interval, how much probability will be in each tail of the distribution?</para></problem>
+<solution><para>0.025 or 2.5%</para></solution>
+</exercise>
+
+<para>A 95% confidence interval contains 95% of the probability, and excludes five percent, and the five percent excluded is split evenly between the upper and lower tails of the distribution.</para>
+
+<exercise>
+<problem>
+<para>What is the appropriate <emphasis effect="italics">z</emphasis>-score and error bound or margin of error (<emphasis effect="italics">EBM</emphasis>) for a 95% confidence interval for this data?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">z</emphasis>-score = 1.96; <m:math>
+ <m:mrow>
+  <m:mi>E</m:mi><m:mi>B</m:mi><m:mi>M</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03C3;</m:mi>
+     <m:mrow>
+      <m:msqrt>
+       <m:mi>n</m:mi>
+      </m:msqrt>
+      
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1.96</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0.73</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mn>1.4308</m:mn>
+ </m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Rounding to two decimal places, what is the 95% confidence interval if the sample mean is 41?</para></problem>
+<solution><para>41 ± 1.43 = (39.57, 42.43)</para></solution>
+</exercise>
+
+<para>Using the calculator function Zinterval, answer is (40.74, 41.26.  Answers differ due to rounding.</para>
+
+<exercise>
+<problem><para>What is the 90% confidence interval if the sample mean is 41? Round to two decimal places</para></problem>
+<solution>
+<para>The <emphasis effect="italics">z</emphasis>-value for a 90% confidence interval is 1.645, so <emphasis effect="italics">EBM</emphasis> = 1.645(0.73) = 1.20085.
+<newline/>The 90% confidence interval is 41 ± 1.20 = (39.80, 42.20). 
+<newline/>The calculator function Zinterval answer is (40.78, 41.23). Answers differ due to rounding.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Suppose the sample size in this study had been 50, rather than 30. What would the 95% confidence interval be if the sample mean is 41? Round your answer to two decimal places.</para></problem>
+<solution>
+<para>The standard error of measurement is: <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mi>&#x03C3;</m:mi>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mn>4</m:mn>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:mn>50</m:mn>
+     </m:mrow>
+    </m:msqrt>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>0.57</m:mn>
+ </m:mrow>
+</m:math>
+<newline/><m:math>
+ <m:mrow>
+  <m:mi>E</m:mi><m:mi>B</m:mi><m:mi>M</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03C3;</m:mi>
+     <m:mrow>
+      <m:msqrt>
+       <m:mi>n</m:mi>
+      </m:msqrt>
+      
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1.96</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0.57</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mn>1.12</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>The 95% confidence interval is 41 ± 1.12 = (39.88, 42.12).
+<newline/>The calculator function Zinterval answer is (40.84, 41.16). Answers differ due to rounding.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>For any given data set and sampling situation, which would you expect to be wider: a 95% confidence interval or a 99% confidence interval?</para></problem>
+<solution>
+<para>The 99% confidence interval, because it includes all but one percent of the distribution. The 95% confidence interval will be narrower, because it excludes five percent of the distribution. </para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>8.2: Confidence Interval, Single Population Mean, Standard Deviation Unknown, Student’s t</title>
+<exercise>
+<problem><para>Comparing graphs of the standard normal distribution (<emphasis effect="italics">z</emphasis>-distribution) and a <emphasis effect="italics">t</emphasis>-distribution with 15 degrees of freedom (<emphasis effect="italics">df</emphasis>), how do they differ?</para></problem>
+<solution>
+<para>The <emphasis effect="italics">t</emphasis>-distribution will have more probability in its tails (“thicker tails”) and less probability near the mean of the distribution (“shorter in the center”).</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Comparing graphs of the standard normal distribution (<emphasis effect="italics">z</emphasis>-distribution) and a <emphasis effect="italics">t</emphasis>-distribution with 15 degrees of freedom (<emphasis effect="italics">df</emphasis>), how are they similar?</para></problem>
+<solution>
+<para>Both distributions are symmetrical and centered at zero.</para>
+</solution>
+</exercise>
+
+<para><emphasis effect="italics">Use the following information to answer the next five exercises.</emphasis> Body temperature is known to be distributed normally among healthy adults. Because you do not know the population standard deviation, you use the t-distribution to study body temperature. You collect data from a random sample of 20 healthy adults and find that your sample temperatures have a mean of 98.4 and a sample standard deviation of 0.3 (both in degrees Fahrenheit).</para>
+
+<exercise>
+<problem><para>What is the degrees of freedom (<emphasis effect="italics">df</emphasis>) for this study?</para></problem>
+<solution><para><emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> – 1 = 20 – 1 = 19</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>For a two-tailed 95% confidence interval, what is the appropriate <emphasis effect="italics">t</emphasis>-value to use in the formula?</para></problem>
+<solution><para>You can get the <emphasis effect="italics">t</emphasis>-value from a probability table or a calculator. In this case, for a <emphasis effect="italics">t</emphasis>-distribution with 19 degrees of freedom, and a 95% two-sided confidence interval, the value is 2.093, i.e.,
+<newline/><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>t</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    <m:mo>&#x00A0;</m:mo>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>2.093</m:mn>
+ </m:mrow>
+</m:math>. The calculator function is invT(0.975, 19).</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the 95% confidence interval?</para></problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:mi>E</m:mi><m:mi>B</m:mi><m:mi>M</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+   <m:mi>t</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>s</m:mi>
+     <m:mrow>
+      <m:msqrt>
+       <m:mi>n</m:mi>
+      </m:msqrt>
+      
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>2.093</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>0.3</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>20</m:mn>
+       </m:mrow>
+      </m:msqrt>
+      
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mn>0.140</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>98.4 ± 0.14 = (98.26, 98.54).
+<newline/>The calculator function Tinterval answer is (98.26, 98.54).</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Suppose your sample size had been 30 rather than 20. What would the 95% confidence interval be then? Round to two decimal places</para></problem>
+<solution>
+<para><emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> – 1 = 30 – 1 = 29. <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>t</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    <m:mo>&#x00A0;</m:mo>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>2.045</m:mn>
+ </m:mrow>
+</m:math>
+<newline/><m:math>
+ <m:mrow>
+  <m:mi>E</m:mi><m:mi>B</m:mi><m:mi>M</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+   <m:mi>z</m:mi>
+   <m:mi>t</m:mi>
+  </m:msub>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>s</m:mi>
+     <m:mrow>
+      <m:msqrt>
+       <m:mi>n</m:mi>
+      </m:msqrt>
+      
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>2.045</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>0.3</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>30</m:mn>
+       </m:mrow>
+      </m:msqrt>
+      
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mn>0.112</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>98.4 ± 0.11 = (98.29, 98.51). The calculator function Tinterval answer is (98.29, 98.51).</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>8.3: Confidence Interval for a Population Proportion</title>
+<para><emphasis effect="italics">Use this information to answer the next four exercises.</emphasis> You conduct a poll of 500 randomly selected city residents, asking them if they own an automobile. 280 say they do own an automobile, and 220 say they do not.</para>
+
+<exercise>
+<problem>
+<para>Find the sample proportion and sample standard deviation for this data.</para>
+</problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mi>p</m:mi>
+   <m:mo>&#x2032;</m:mo>
+  </m:msup>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>280</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>500</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>0.56</m:mn>
+ </m:mrow>
+</m:math></para>
+<para><m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mi>q</m:mi>
+   <m:mo>&#x2032;</m:mo>
+  </m:msup>
+  <m:mo>=</m:mo><m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:msup>
+   <m:mi>p</m:mi>
+   <m:mo>&#x2032;</m:mo>
+  </m:msup>
+  <m:mo>=</m:mo><m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:mn>0.56</m:mn><m:mo>=</m:mo><m:mn>0.44</m:mn>
+ </m:mrow>
+</m:math>
+</para>
+<para><m:math>
+ <m:mrow>
+  <m:mi>s</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>p</m:mi><m:mi>q</m:mi>
+     </m:mrow>
+     <m:mi>n</m:mi>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>0.56</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>0.44</m:mn><m:mo stretchy='false'>)</m:mo>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>500</m:mn>
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:mn>0.0222</m:mn>
+ </m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the 95% two-sided confidence interval? Round to four decimal places.</para></problem>
+<solution>
+<para>Because you are using the normal approximation to the binomial, <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>1.96</m:mn>
+ </m:mrow>
+</m:math>.
+<newline/>Calculate the error bound for the population (<emphasis effect="italics">EBP</emphasis>):
+<newline/><m:math>
+ <m:mrow>
+  <m:mi>E</m:mi><m:mi>B</m:mi><m:mi>P</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>a</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>p</m:mi><m:mi>q</m:mi>
+     </m:mrow>
+     <m:mi>n</m:mi>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:mn>1.96</m:mn><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0.222</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0.0435</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>Calculate the 95% confidence interval:
+<newline/>0.56 ± 0.0435 = (0.5165, 0.6035). 
+<newline/>The calculator function 1-PropZint answer is (0.5165, 0.6035).
+</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Calculate the 90% confidence interval. Round to four decimal places.</para>
+</problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>1.64</m:mn>
+ </m:mrow>
+</m:math>
+<newline/><m:math>
+ <m:mrow>
+  <m:mi>E</m:mi><m:mi>B</m:mi><m:mi>P</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>a</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>p</m:mi><m:mi>q</m:mi>
+     </m:mrow>
+     <m:mi>n</m:mi>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:mn>1.64</m:mn><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0.0222</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0.0364</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>0.56 ± 0.03 = (0.5236, 0.5964). The calculator function 1-PropZint answer is (0.5235, 0.5965)</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Calculate the 99% confidence interval. Round to four decimal places.</para></problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>2.58</m:mn>
+ </m:mrow>
+</m:math>
+<newline/><m:math>
+ <m:mrow>
+  <m:mi>E</m:mi><m:mi>B</m:mi><m:mi>P</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>a</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>p</m:mi><m:mi>q</m:mi>
+     </m:mrow>
+     <m:mi>n</m:mi>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:mn>2.58</m:mn><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0.0222</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mn>0.0573</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>0.56 ± 0.05 = (0.5127, 0.6173).
+<newline/>The calculator function 1-PropZint answer is (0.5028, 0.6172).
+</para>
+</solution>
+</exercise>
+
+<para><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> You are planning to conduct a poll of community members age 65 and older, to determine how many own mobile phones. You want to produce an estimate whose 95% confidence interval will be within four percentage points (plus or minus) the true population proportion. Use an estimated population proportion of 0.5.</para>
+
+<exercise>
+<problem>
+<para>What sample size do you need?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">EBP</emphasis> = 0.04 (because 4% = 0.04)
+<newline/><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>z</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>&#x03B1;</m:mi>
+     <m:mn>2</m:mn>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>1.96</m:mn>
+ </m:mrow>
+</m:math> for a 95% confidence interval</para>
+<para><m:math>
+ <m:mrow>
+  <m:mi>n</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mi>z</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+    <m:mi>p</m:mi><m:mi>q</m:mi>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>E</m:mi><m:mi>B</m:mi><m:msup>
+     <m:mi>P</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>1.96</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mn>0.5</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow><m:mo stretchy='false'>(</m:mo><m:mn>0.5</m:mn><m:mo stretchy='false'>)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>0.04</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:mn>0.9604</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>0.0016</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>600.25</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>You need 601 subjects (rounding upward from 600.25).</para>
+</solution> 
+</exercise>
+
+<exercise>
+<problem><para>Suppose you knew from prior research that the population proportion was 0.6. What sample size would you need?</para></problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:mi>n</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mi>n</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+    <m:mi>p</m:mi><m:mi>q</m:mi>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>E</m:mi><m:mi>B</m:mi><m:msup>
+     <m:mi>P</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>1.96</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mn>0.6</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow><m:mo stretchy='false'>(</m:mo><m:mn>0.4</m:mn><m:mo stretchy='false'>)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>0.04</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:mn>0.9220</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>0.0016</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>576.24</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>You need 577 subjects (rounding upward from 576.24).</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Suppose you wanted a 95% confidence interval within three percentage points of the population. Assume the population proportion is 0.5. What sample size do you need?</para>
+</problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:mi>n</m:mi><m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mi>n</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+    <m:mi>p</m:mi><m:mi>q</m:mi>
+   </m:mrow>
+   <m:mrow>
+    <m:mi>E</m:mi><m:mi>B</m:mi><m:msup>
+     <m:mi>P</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>1.96</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mn>0.5</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow><m:mo stretchy='false'>(</m:mo><m:mn>0.5</m:mn><m:mo stretchy='false'>)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mn>0.03</m:mn>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mtext>&#x00A0;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:mn>0.9604</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>0.0009</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>1067.11</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>You need 1,068 subjects (rounding upward from 1,067.11).</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>9.1: Null and Alternate Hypotheses</title>
+<exercise>
+<problem><para>In your state, 58 percent of registered voters in a community are registered as Republicans. You want to conduct a study to see if this also holds up in your community. State the null and alternative hypotheses to test this.</para></problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> = 0.58; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> ≠ 0.58</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>You believe that at least 58 percent of registered voters in a community are registered as Republicans. State the null and alternative hypotheses to test this.</para></problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: p ≥ 0.58; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &lt; 0.58</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>The mean household value in a city is $268,000. You believe that the mean household value in a particular neighborhood is lower than the city average. Write the null and alternative hypotheses to test this.</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≥ $268,000; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> &lt; $268,000</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>State the appropriate alternative hypothesis to this null hypothesis:</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> = 107; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≠ 107</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>State the appropriate alternative hypothesis to this null hypothesis:</para></problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> &lt; 0.25; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> ≥ 0.25</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>9.2: Outcomes and the Type I and Type II Errors</title>
+<exercise>
+<problem><para>If you reject H0 when H0 is correct, what type of error is this?</para></problem>
+<solution><para>a Type I error</para></solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>If you fail to reject H0 when H0 is false, what type of error is this?</para>
+</problem>
+<solution>
+<para>a Type II error</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the relationship between the Type II error and the power of a test?</para></problem>
+<solution>
+<para>Power = 1 – <emphasis effect="italics">β</emphasis> = 1 – <emphasis effect="italics">P</emphasis>(Type II error).</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>A new blood test is being developed to screen patients for cancer. Positive results are followed up by a more accurate (and expensive) test. It is assumed that the patient does not have cancer. Describe the null hypothesis, the Type I and Type II errors for this situation, and explain which type of error is more serious.</para>
+</problem>
+<solution>
+<para>The null hypothesis is that the patient does not have cancer. A Type I error would be detecting cancer when it is not present. A Type II error would be not detecting cancer when it is present. A Type II error is more serious, because failure to detect cancer could keep a patient from receiving appropriate treatment.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Explain in words what it means that a screening test for TB has an α level of 0.10.  The null hypothesis is that the patient does not have TB.</para></problem>
+<solution>
+<para>The screening test has a ten percent probability of a Type I error, meaning that ten percent of the time, it will detect TB when it is not present.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Explain in words what it means that a screening test for TB has a β level of 0.20.  The null hypothesis is that the patient does not have TB.</para>
+</problem>
+<solution>
+<para>The screening test has a 20 percent probability of a Type II error, meaning that 20 percent of the time, it will fail to detect TB when it is in fact present.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Explain in words what it means that a screening test for TB has a power of 0.80.</para>
+</problem>
+<solution>
+<para>Eighty percent of the time, the screening test will detect TB when it is actually present.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>9.3: Distribution Needed for Hypothesis Testing</title>
+<exercise>
+<problem>
+<para>If you are conducting a hypothesis test of a single population mean, and you do not know the population variance, what test will you use if the sample size is 10 and the population is normal.?</para>
+</problem>
+<solution><para>The Student’s <emphasis effect="italics">t</emphasis>-test.</para></solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>If you are conducting a hypothesis test of a single population mean, and you know the population variance, what test will you use?</para>
+</problem>
+<solution>
+<para>The normal distribution or <emphasis effect="italics">z</emphasis>-test.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>If you are conducting a hypothesis test of a single population proportion, with np and nq greater than or equal to five, what test will you use, and with what parameters?</para>
+</problem>
+<solution>
+<para>The normal distribution with <emphasis effect="italics">μ</emphasis> = <emphasis effect="italics">p</emphasis> and <emphasis effect="italics">σ</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>p</m:mi><m:mi>q</m:mi>
+     </m:mrow>
+     <m:mi>n</m:mi>
+    </m:mfrac>
+    
+   </m:mrow>
+  </m:msqrt>
+  
+ </m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Published information indicates that, on average, college students spend less than 20 hours studying per week. You draw a sample of 25 students from your college, and find the sample mean to be 18.5 hours, with a standard deviation of 1.5 hours. What distribution will you use to test whether study habits at your college are the same as the national average, and why?</para></problem>
+<solution>
+<para><emphasis effect="italics">t</emphasis><sub>24</sub>. You use the <emphasis effect="italics">t</emphasis>-distribution because you don’t know the population standard deviation, and the degrees of freedom are 24 because <emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> – 1.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>A published study says that 95 percent of American children are vaccinated against measles, with a standard deviation of 1.5 percent. You draw a sample of 100 children from your community and check their vaccination records, to see if the vaccination rate in your community is the same as the national average. What distribution will you use for this test, and why?</para>
+</problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:mover accent='true'>
+   <m:mi>X</m:mi>
+   <m:mo>&#x00AF;</m:mo>
+  </m:mover>
+  <m:mo>~</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0.95</m:mn><m:mo>,</m:mo><m:mfrac>
+     <m:mrow>
+      <m:mn>0.051</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>100</m:mn>
+       </m:mrow>
+      </m:msqrt>
+      
+     </m:mrow>
+    </m:mfrac>
+    
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>
+<newline/>Because you know the population standard deviation, and have a large sample, you can use the normal distribution.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>9.4: Rare Events, the Sample, Decision, and Conclusion</title>
+<exercise>
+<problem><para>You are conducting a study with an α level of 0.05. If you get a result with a p-value of 0.07, what will be your decision?</para></problem>
+<solution><para>Fail to reject the null hypothesis, because <emphasis effect="italics">α</emphasis> ≤ <emphasis effect="italics">p</emphasis></para></solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>You are conducting a study with <emphasis effect="italics">α</emphasis> = 0.01. If you get a result with a <emphasis effect="italics">p</emphasis>-value of 0.006, what will be your decision?</para></problem>
+<solution><para>Reject the null hypothesis, because <emphasis effect="italics">α</emphasis> ≥ <emphasis effect="italics">p</emphasis>.</para></solution>
+</exercise>
+
+<para><emphasis effect="italics">Use the following information to answer the next five exercises.</emphasis> According to the World Health Organization,  the average height of a one-year-old child is 29”. You believe children with a particular disease are smaller than average, so you draw a sample of 20 children with this disease and find a mean height of 27.5” and a sample standard deviation of 1.5”.</para>
+
+<exercise>
+<problem>
+<para>What are the null and alternative hypotheses for this study?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≥ 29.0”; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> &lt; 29.0”</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What distribution will you use to test your hypothesis, and why?</para></problem>
+<solution>
+<para><emphasis effect="italics">t</emphasis><sub>19</sub>. Because you do not know the population standard deviation, use the <emphasis effect="italics">t</emphasis>-distribution. The degrees of freedom are 19, because <emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> – 1.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>What is the test statistic and the <emphasis effect="italics">p</emphasis>-value?</para>
+</problem>
+<solution>
+<para>The test statistic is -4.4721 and the <emphasis effect="italics">p</emphasis>-value is 0.00013 using the calculator function TTEST.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Based on your sample results, what is your decision? </para></problem>
+<solution><para>With <emphasis effect="italics">α</emphasis> = 0.05, reject the null hypothesis.</para></solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Suppose the mean for your sample was 25.0. Redo the calculations and describe what your decision would be.</para>
+</problem>
+<solution>
+<para>With <emphasis effect="italics">α</emphasis> = 0.05, the <emphasis effect="italics">p</emphasis>-value is almost zero using the calculator function TTEST so reject the null hypothesis.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>9.5: Additional Information and Full Hypothesis Test Examples</title>
+<exercise>
+<problem><para>9.5: Additional Information and Full Hypothesis Test Examples</para></problem>
+<solution><para>The level of significance is five percent.</para></solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>You conduct a study, based on a sample drawn from a normally distributed population with a known variance, with the following hypotheses:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> = 35.5; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≠ 35.5
+<newline/>Will you conduct a one-tailed or two-tailed test?</para>
+</problem>
+<solution><para>two-tailed</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>You conduct a study, based on a sample drawn from a normally distributed population with a known variance, with the following hypotheses:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≥ 35.5; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> &lt; 35.5
+<newline/>Will you conduct a one-tailed or two-tailed test?</para></problem>
+<solution>
+<para>one-tailed test</para>
+</solution>
+</exercise>
+
+<para><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> Nationally, 80 percent of adults own an automobile. You are interested in whether the same proportion in your community own cars. You draw a sample of 100 and find that 75 percent own cars.</para>
+
+<exercise>
+<problem><para>What are the null and alternative hypotheses for this study?</para></problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> = 0.8; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> ≠ 0.8</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What test will you use, and why?</para></problem>
+<solution>
+<para>You will use the normal test for a single population proportion because <emphasis effect="italics">np</emphasis> and <emphasis effect="italics">nq</emphasis> are both greater than five.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>10.1: Comparing Two Independent Population Means with Unknown Population Standard Deviations</title>
+<exercise>
+<problem>
+<para>You conduct a poll of political opinions, interviewing both members of 50 married couples. Are the groups in this study independent or matched?</para>
+</problem>
+<solution>
+<para>They are matched (paired), because you interviewed married couples.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>You are testing a new drug to treat insomnia. You randomly assign 80 volunteer subjects to either the experimental (new drug) or control (standard treatment) conditions. Are the groups in this study independent or matched?</para>
+</problem>
+<solution><para>They are independent, because participants were assigned at random to the groups.</para></solution>
+</exercise>
+
+<exercise>
+<problem><para>You are investigating the effectiveness of a new math textbook for high school students. You administer a pretest to a group of students at the beginning of the semester, and a posttest at the end of a year’s instruction using this textbook, and compare the results. Are the groups in this study independent or matched?</para></problem>
+<solution>
+<para>They are matched (paired), because you collected data twice from each individual.</para>
+</solution>
+</exercise>
+
+<para><emphasis effect="italics">Use the following information to answer the next two exercises.</emphasis> You are conducting a study of the difference in time at two colleges for undergraduate degree completion. At College A, students take an average of 4.8 years to complete an undergraduate degree, while at College B, they take an average of 4.2 years. The pooled standard deviation for this data is 1.6 years</para>
+
+<exercise>
+<problem>
+<para>Calculate Cohen’s <emphasis effect="italics">d</emphasis> and interpret it.</para>
+</problem>
+<solution><para><m:math>
+ <m:mrow>
+  <m:mi>d</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:msub>
+     <m:mover accent='true'>
+      <m:mi>x</m:mi>
+      <m:mo>&#x00AF;</m:mo>
+     </m:mover>
+     
+     <m:mn>1</m:mn>
+    </m:msub>
+    <m:mo>&#x2212;</m:mo><m:msub>
+     <m:mover accent='true'>
+      <m:mi>x</m:mi>
+      <m:mo>&#x00AF;</m:mo>
+     </m:mover>
+     
+     <m:mn>2</m:mn>
+    </m:msub>
+    
+   </m:mrow>
+   <m:mrow>
+    <m:msub>
+     <m:mi>s</m:mi>
+     <m:mrow>
+      <m:mi>p</m:mi><m:mi>o</m:mi><m:mi>o</m:mi><m:mi>l</m:mi><m:mi>e</m:mi><m:mi>d</m:mi>
+     </m:mrow>
+    </m:msub>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>4.8</m:mn><m:mo>&#x2212;</m:mo><m:mn>4.2</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>1.6</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>0.375</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>This is a small effect size, because 0.375 falls between Cohen’s small (0.2) and medium (0.5) effect sizes.</para></solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Suppose the mean time to earn an undergraduate degree at College A was 5.2 years. Calculate the effect size and interpret it.</para>
+</problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:mi>d</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:msub>
+     <m:mover accent='true'>
+      <m:mi>x</m:mi>
+      <m:mo>&#x00AF;</m:mo>
+     </m:mover>
+     
+     <m:mn>1</m:mn>
+    </m:msub>
+    <m:mo>&#x2212;</m:mo><m:msub>
+     <m:mover accent='true'>
+      <m:mi>x</m:mi>
+      <m:mo>&#x00AF;</m:mo>
+     </m:mover>
+     
+     <m:mn>2</m:mn>
+    </m:msub>
+    
+   </m:mrow>
+   <m:mrow>
+    <m:msub>
+     <m:mi>s</m:mi>
+     <m:mrow>
+      <m:mi>p</m:mi><m:mi>o</m:mi><m:mi>o</m:mi><m:mi>l</m:mi><m:mi>e</m:mi><m:mi>d</m:mi>
+     </m:mrow>
+    </m:msub>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>5.2</m:mn><m:mo>&#x2212;</m:mo><m:mn>4.2</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>1.6</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>0.625</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>The effect size is 0.625. By Cohen’s standard, this is a medium effect size, because it falls between the medium (0.5) and large (0.8) effect sizes.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>You conduct an independent-samples t-test with sample size ten in each of two groups. If you are conducting a two-tailed hypothesis test with α = 0.01, what p-values will cause you to reject the null hypothesis?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">p</emphasis>-value &lt; 0.01.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>You conduct an independent samples t-test with sample size 15 in each group, with the following hypotheses:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis> ≥ 110
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">μ</emphasis> &lt; 110
+<newline/>If <emphasis effect="italics">α</emphasis> = 0.05, what <emphasis effect="italics">t</emphasis>-values will cause you to reject the null hypothesis?</para>
+</problem>
+<solution>
+<para>You will only reject the null hypothesis if you get a value significantly below the hypothesized mean of 110.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>10.2: Comparing Two Independent Population Means with Known Population Standard Deviations</title>
+<para><emphasis effect="italics">Use the following information to answer the next six exercises.</emphasis> College students in the sciences often complain that they must spend more on textbooks each semester than students in the humanities. To test this, you draw random samples of 50 science and 50 humanities students from your college, and record how much each spent last semester on textbooks. Consider the science students to be group one, and the humanities students to be group two.</para>
+
+<exercise>
+<problem>
+<para>What is the random variable for this study?</para>
+</problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>1</m:mn>
+  </m:msub>
+  <m:mo>&#x2212;</m:mo><m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>2</m:mn>
+  </m:msub>
+  
+ </m:mrow>
+</m:math>, i.e., the mean difference in amount spent on textbooks for the two groups.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What are the null and alternative hypotheses for this study?</para></problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>1</m:mn>
+  </m:msub>
+  <m:mo>&#x2212;</m:mo><m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>2</m:mn>
+  </m:msub>
+  
+ </m:mrow>
+</m:math> ≤ 0
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>1</m:mn>
+  </m:msub>
+  <m:mo>&#x2212;</m:mo><m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>2</m:mn>
+  </m:msub>
+  
+ </m:mrow>
+</m:math> > 0
+<newline/>This could also be written as:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>1</m:mn>
+  </m:msub>
+  <m:mo>&#x2264;</m:mo><m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>2</m:mn>
+  </m:msub>
+  
+ </m:mrow>
+</m:math>
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>1</m:mn>
+  </m:msub>
+  <m:mo>&#x003E;</m:mo><m:msub>
+   <m:mover accent='true'>
+    <m:mi>X</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mn>2</m:mn>
+  </m:msub>
+  
+ </m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>If the 50 science students spent an average of $530 with a sample standard deviation of $20 and the 50 humanities students spent an average of $380 with a sample standard deviation of $15, would you not reject or reject the null hypothesis? Use an alpha level of 0.05. What is your conclusion?</para></problem>
+<solution>
+<para>Using the calculator function 2-SampTtest, reject the null hypothesis. At the 5% significance level, there is sufficient evidence to conclude that the science students spend more on textbooks than the humanities students.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What would be your decision, if you were using <emphasis effect="italics">α</emphasis> = 0.01?</para></problem>
+<solution>
+<para>Using the calculator function 2-SampTtest, reject the null hypothesis.  At the 1% significance level, there is sufficient evidence to conclude that the science students spend more on textbooks than the humanities students.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>10.3: Comparing Two Independent Population Proportions</title>
+<para><emphasis effect="italics">Use the information to answer the next six exercises.</emphasis> You want to know if proportion of homes with cable television service differs between Community A and Community B. To test this, you draw a random sample of 100 for each and record whether they have cable service.</para>
+
+<exercise>
+<problem><para>What are the null and alternative hypotheses for this study</para></problem>
+<solution><para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> = <emphasis effect="italics">p<sub>B</sub></emphasis>; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p<sub>A</sub></emphasis> ≠ <emphasis effect="italics">p<sub>B</sub></emphasis></para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>If 65 households in Community A have cable service, and 78 households in community B, what is the pooled proportion?</para>
+</problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>p</m:mi>
+   <m:mi>c</m:mi>
+  </m:msub>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:msub>
+     <m:mi>x</m:mi>
+     <m:mi>A</m:mi>
+    </m:msub>
+    <m:mo>+</m:mo><m:msub>
+     <m:mi>x</m:mi>
+     <m:mi>A</m:mi>
+    </m:msub>
+    
+   </m:mrow>
+   <m:mrow>
+    <m:msub>
+     <m:mi>n</m:mi>
+     <m:mi>A</m:mi>
+    </m:msub>
+    <m:mo>+</m:mo><m:msub>
+     <m:mi>n</m:mi>
+     <m:mi>A</m:mi>
+    </m:msub>
+    
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>65</m:mn><m:mo>+</m:mo><m:mn>78</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>100</m:mn><m:mo>+</m:mo><m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>0.715</m:mn>
+ </m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>At <emphasis effect="italics">α</emphasis> = 0.03, will you reject the null hypothesis? What is your conclusion? 65 households in Community A have cable service, and 78 households in community B. 100 households in each community were surveyed.</para></problem>
+<solution>
+<para>Using the calculator function 2-PropZTest, the p-value = 0.0417. Reject the null hypothesis. At the 3% significance level, here is sufficient evidence to conclude that there is a difference between the proportions of households in the two communities that have cable service.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Using an alpha value of 0.01, would you reject the null hypothesis? What is your conclusion? 65 households in Community A have cable service, and 78 households in community B. 100 households in each community were surveyed.</para>
+</problem>
+<solution>
+<para>Using the calculator function 2-PropZTest, the <emphasis effect="italics">p</emphasis>-value = 0.0417. Do not reject the null hypothesis. At the 1% significance level, there is insufficient evidence to conclude that there is a difference between the proportions of households in the two communities that have cable service.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>10.4: Matched or Paired Samples</title>
+<para><emphasis effect="italics">Use the following information to answer the next five exercises.</emphasis> You are interested in whether a particular exercise program helps people lose weight. You conduct a study in which you weigh the participants at the start of the study, and again at the conclusion, after they have participated in the exercise program for six months. You compare the results using a matched-pairs t-test, in which the data is {weight at conclusion – weight at start}. You believe that, on average, the participants will have lost weight after six months on the exercise program.</para>
+
+<exercise>
+<problem>
+<para>What are the null and alternative hypotheses for this study?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <m:math display='block'>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent='true'>
+    <m:mi>x</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mi>d</m:mi>
+  </m:msub>
+  <m:mo>&#x2265;</m:mo><m:mn>0</m:mn>
+ </m:mrow>
+</m:math>
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <m:math display='block'>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent='true'>
+    <m:mi>x</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mi>d</m:mi>
+  </m:msub>
+  <m:mo>&#x003C;</m:mo><m:mn>0</m:mn>
+ </m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Calculate the test statistic, assuming that <m:math display='block'>
+ <m:mrow>
+  <m:msub>
+   <m:mover accent='true'>
+    <m:mi>x</m:mi>
+    <m:mo>&#x00AF;</m:mo>
+   </m:mover>
+   
+   <m:mi>d</m:mi>
+  </m:msub>
+  
+ </m:mrow>
+</m:math> = –5, <emphasis effect="italics">s<sub>d</sub></emphasis> = 6, and <emphasis effect="italics">n</emphasis> = 30 (pairs)</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">t</emphasis> = – 4.5644</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What is the degrees of freedom for this statistic?</para></problem>
+<solution><para><emphasis effect="italics">df</emphasis> = 30 – 1 = 29.</para></solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Using <emphasis effect="italics">α</emphasis> = 0.05, what is your decision regarding the effectiveness of this program in causing weight loss? What is the conclusion?</para>
+</problem>
+<solution>
+<para>Using the calculator function TTEST, the <emphasis effect="italics">p</emphasis>-value = 0.00004 so reject the null hypothesis. At the 5% level, there is sufficient evidence to conclude that the participants lost weight, on average.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>What would it mean if the t-statistic had been 4.56, and what would have been your decision in that case?</para></problem>
+<solution><para>A positive <emphasis effect="italics">t</emphasis>-statistic would mean that participants, on average, gained weight over the six months.</para></solution>
+</exercise>
+</section>
+
+<section>
+<title>11.1: Facts About the Chi-Square Distribution</title>
+<exercise>
+<problem><para>What is the mean and standard deviation for a chi-square distribution with 20 degrees of freedom?</para></problem>
+<solution>
+<para><emphasis effect="italics">μ</emphasis> = <emphasis effect="italics">df</emphasis> = 20
+<newline/><m:math>
+ <m:mrow>
+  <m:mi>&#x03C3;</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mn>2</m:mn><m:mo stretchy='false'>(</m:mo><m:mi>d</m:mi><m:mi>f</m:mi><m:mo stretchy='false'>)</m:mo>
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mn>40</m:mn>
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:mn>6.32</m:mn>
+ </m:mrow>
+</m:math></para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>11.2: Goodness-of-Fit Test</title>
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> Nationally, about 66 percent of high school graduates enroll in higher education. You perform a chi-square goodness of fit test to see if this same proportion applies to your high school’s most recent graduating class of 200. Your null hypothesis is that the national distribution also applies to your high school.</para>
+
+<exercise>
+<problem><para>What are the expected numbers of students from your high school graduating class enrolled and not enrolled in higher education?</para></problem>
+<solution><para>Enrolled = 200(0.66) = 132. Not enrolled = 200(0.34) = 68</para></solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Fill out the rest of this table.</para>
+<table summary="..">
+<title></title>
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<thead>
+<row>
+<entry></entry>
+<entry>Observed (O)</entry>
+<entry>Expected (E)</entry>
+<entry>O – E</entry>
+<entry>(O – E)2</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mo stretchy='false'>(</m:mo><m:mi>O</m:mi><m:mo>&#x2212;</m:mo><m:mi>E</m:mi><m:mo stretchy='false'>)</m:mo>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+   <m:mi>z</m:mi>
+  </m:mfrac>
+  
+ </m:mrow>
+</m:math>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Enrolled</entry>
+<entry>145</entry>
+<entry></entry>
+<entry></entry>
+<entry></entry>
+<entry></entry>
+</row>
+<row>
+<entry>Not enrolled</entry>
+<entry>55</entry>
+<entry></entry>
+<entry></entry>
+<entry></entry>
+<entry></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution>
+<table summary="..">
+<title></title>
+<tgroup cols="6">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<thead>
+<row>
+<entry></entry>
+<entry>Observed (O)</entry>
+<entry>Expected (E)</entry>
+<entry>O – E</entry>
+<entry>(O – E)2</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mo stretchy='false'>(</m:mo><m:mi>O</m:mi><m:mo>&#x2212;</m:mo><m:mi>E</m:mi><m:mo stretchy='false'>)</m:mo>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+   <m:mi>z</m:mi>
+  </m:mfrac>
+  
+ </m:mrow>
+</m:math>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Enrolled</entry>
+<entry>145</entry>
+<entry>132</entry>
+<entry>145 – 132 = 13</entry>
+<entry>169</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>169</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>132</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>1.280</m:mn>
+ </m:mrow>
+</m:math></entry>
+</row>
+<row>
+<entry>Not enrolled</entry>
+<entry>55</entry>
+<entry>68</entry>
+<entry>55 – 68 = -13</entry>
+<entry>169</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>169</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>68</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>2.485</m:mn>
+ </m:mrow>
+</m:math>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>What are the degrees of freedom for this chi-square test?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> – 1 = 2 – 1 = 1.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>What is the chi-square test statistic and the <emphasis effect="italics">p</emphasis>-value.  At the 5% significance level, what do you conclude?</para>
+</problem>
+<solution>
+<para>Using the calculator function Chi-square GOF – Test (in STAT TESTS), the test statistic is 3.7656 and the p-value is 0.0523.  Do not reject the null hypothesis. At the 5% significance level, there is insufficient evidence to conclude that high school most recent graduating class distribution of enrolled and not enrolled does not fit that of the national distribution.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>For a chi-square distribution with 92 degrees of freedom, the curve _____________.</para>
+</problem>
+<solution>
+<para>approximates the normal</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>For a chi-square distribution with five degrees of freedom, the curve is ______________.</para></problem>
+<solution><para>skewed right</para></solution>
+</exercise>
+</section>
+
+<section>
+<title>Test of Independence</title>
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> You are considering conducting a chi-square test of independence for the data in this table, which displays data about cell phone ownership for freshman and seniors at a high school. Your null hypothesis is that cell phone ownership is independent of class standing.</para>
+
+<exercise>
+<problem>
+<para>Compute the expected values for the cells.</para>
+<table summary="..">
+<title></title>
+<tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry></entry>
+<entry>Cell = Yes</entry>
+<entry>Cell = No</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Freshman</entry>
+<entry>100</entry>
+<entry>150</entry>
+</row>
+<row>
+<entry>Senior</entry>
+<entry>200</entry>
+<entry>50</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution>
+<table summary="..">
+<title></title>
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry></entry>
+<entry>Cell = Yes</entry>
+<entry>Cell = No</entry>
+<entry>Total</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Freshman</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>250</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>300</m:mn><m:mo stretchy='false'>)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>500</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>150</m:mn>
+ </m:mrow>
+</m:math>
+</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>250</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>200</m:mn><m:mo stretchy='false'>)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>500</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>100</m:mn>
+ </m:mrow>
+</m:math>
+</entry>
+<entry>250</entry>
+</row>
+<row>
+<entry>Senior</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>250</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>300</m:mn><m:mo stretchy='false'>)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>500</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>150</m:mn>
+ </m:mrow>
+</m:math>
+</entry>
+<entry><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>250</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>200</m:mn><m:mo stretchy='false'>)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>500</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>100</m:mn>
+ </m:mrow>
+</m:math>
+</entry>
+<entry>250</entry>
+</row>
+<row>
+<entry>Total</entry>
+<entry>300</entry>
+<entry>200</entry>
+<entry>500</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Compute <m:math display='block'>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mo stretchy='false'>(</m:mo><m:mi>O</m:mi><m:mo>&#x2212;</m:mo><m:mi>E</m:mi><m:mo stretchy='false'>)</m:mo>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+   <m:mi>z</m:mi>
+  </m:mfrac>
+  
+ </m:mrow>
+</m:math> for each cell, where <emphasis effect="italics">O</emphasis> = observed and <emphasis effect="italics">E</emphasis> = expected.</para>
+</problem>
+<solution>
+<para><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mrow><m:mo>(</m:mo>
+       <m:mrow>
+        <m:mn>100</m:mn><m:mo>&#x2212;</m:mo><m:mn>150</m:mn>
+       </m:mrow>
+      <m:mo>)</m:mo></m:mrow>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+   <m:mrow>
+    <m:mn>150</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>16.67</m:mn>
+ </m:mrow>
+</m:math>
+</para>
+<para><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mrow><m:mo>(</m:mo>
+       <m:mrow>
+        <m:mn>150</m:mn><m:mo>&#x2212;</m:mo><m:mn>100</m:mn>
+       </m:mrow>
+      <m:mo>)</m:mo></m:mrow>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>25</m:mn>
+ </m:mrow>
+</m:math>
+</para>
+<para><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mrow><m:mo>(</m:mo>
+       <m:mrow>
+        <m:mn>200</m:mn><m:mo>&#x2212;</m:mo><m:mn>100</m:mn>
+       </m:mrow>
+      <m:mo>)</m:mo></m:mrow>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+   <m:mrow>
+    <m:mn>150</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>16.67</m:mn>
+ </m:mrow>
+</m:math>
+</para>
+<para><m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mrow>
+      <m:mrow><m:mo>(</m:mo>
+       <m:mrow>
+        <m:mn>50</m:mn><m:mo>&#x2212;</m:mo><m:mn>100</m:mn>
+       </m:mrow>
+      <m:mo>)</m:mo></m:mrow>
+     </m:mrow>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>25</m:mn>
+ </m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the chi-square statistic and degrees of freedom for this study?</para>
+</problem>
+<solution>
+<para>Chi-square = 16.67 + 25 + 16.67 + 25 = 83.34.
+<newline/><emphasis effect="italics">df</emphasis> = (<emphasis effect="italics">r</emphasis> – 1)(<emphasis effect="italics">c</emphasis> – 1) = 1</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>At the <emphasis effect="italics">α</emphasis> = 0.5 significance level, what is your decision regarding the null hypothesis?</para></problem>
+<solution>
+<para><emphasis effect="italics">p</emphasis>-value = <emphasis effect="italics">P</emphasis>(Chi-square, 83.34) = 0
+<newline/>Reject the null hypothesis.
+<newline/>You could also use the calculator function STAT TESTS Chi-Square – Test.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>Test of Homogeneity</title>
+<exercise>
+<problem><para>You conduct a chi-square test of homogeneity for data in a five by two table. What is the degrees of freedom for this test?</para></problem>
+<solution>
+<para>The table has five rows and two columns. <emphasis effect="italics">df</emphasis> = (<emphasis effect="italics">r</emphasis> – 1)(<emphasis effect="italics">c</emphasis> – 1) = (4)(1) = 4.</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>11.5: Comparison Summary of the Chi-Square Tests: Goodness-of-Fit, Independence and Homogeneity</title>
+<exercise>
+<problem>
+<para>A 2013 poll in the State of California surveyed people about taxing sugar-sweetened beverages. The results are presented in the following table, and are classified by ethnic group and response type.  Are the poll responses independent of the participants’ ethnic group? Conduct a hypothesis test at the 5% significance level.</para>
+<table summary="..">
+<title></title>
+<tgroup cols="5">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+<row>
+<entry>Ethnic Group \ Response Type</entry>
+<entry>Favor</entry>
+<entry>Oppose</entry>
+<entry>No Opinion</entry>
+<entry>Row  Total</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>White / Non-Hispanic</entry>
+<entry>234</entry>
+<entry>433</entry>
+<entry>43</entry>
+<entry>710</entry>
+</row>
+<row>
+<entry>Latino</entry>
+<entry>147</entry>
+<entry>106</entry>
+<entry>19</entry>
+<entry>272</entry>
+</row>
+<row>
+<entry>African American</entry>
+<entry>24</entry>
+<entry>41</entry>
+<entry>6</entry>
+<entry>71</entry>
+</row>
+<row>
+<entry>Asian American</entry>
+<entry>54</entry>
+<entry>48</entry>
+<entry>16</entry>
+<entry>118</entry>
+</row>
+<row>
+<entry><emphasis>Column Total</emphasis></entry>
+<entry>459</entry>
+<entry>628</entry>
+<entry>84</entry>
+<entry>1171</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution>
+<para>Using the calculator function (STAT TESTS) Chi-square Test, the <emphasis effect="italics">p</emphasis>-value = 0. Reject the null hypothesis. At the 5% significance level, there is sufficient evidence to conclude that the poll responses independent of the participants’ ethnic group.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>In a test of homogeneity, what must be true about the expected value of each cell?</para>
+</problem>
+<solution>
+<para>The expected value of each cell must be at least five.</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem><para>Stated in general terms, what are the null and alternative hypotheses for the chi-square test of independence?</para></problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: The variables are independent.
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: The variables are not independent.
+</para>
+</solution>
+</exercise>
+
+<exercise>
+<problem>
+<para>Stated in general terms, what are the null and alternative hypotheses for the chi-square test of homogeneity?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: The populations have the same distribution. 
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: The populations do not have the same distribution.
+</para>
+</solution>
+</exercise>
+</section>
+
+<section>
+<title>11.6: Test of a Single Variance</title>
+<exercise>
+<problem>
+<para>A lab test claims to have a variance of no more than  five. You believe the variance is greater. What are the null and alternative hypothesis to test this?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">σ</emphasis><sup>2</sup> ≤ 5
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">σ</emphasis><sup>2</sup> > 5
+</para>
+</solution>
+</exercise>
+</section>
+</content>
+</document>

@@ -1,0 +1,932 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Practice Test 4</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+<!-- WARNING! The 'metadata' section is read only. Do not edit below.
+Changes to the metadata section in the source will not be saved. -->
+<md:repository>http://staging2.cnx.org/content</md:repository>
+<md:content-id>new</md:content-id>
+<md:title>Practice Test 4</md:title>
+<md:version>**new**</md:version>
+<md:created>2013/10/18 21:47:29.711 GMT-5</md:created>
+<md:revised>2013/10/18 21:47:29.765 GMT-5</md:revised>
+<md:actors>
+<md:person userid="words_stats">
+<md:firstname>Words</md:firstname>
+<md:surname>Numbers</md:surname>
+<md:fullname>Words Numbers</md:fullname>
+<md:email>techsupport@cnx.org</md:email>
+</md:person>
+</md:actors>
+<md:roles>
+<md:role type="author">words_stats</md:role>
+<md:role type="maintainer">words_stats</md:role>
+<md:role type="licensor">words_stats</md:role>
+</md:roles>
+<md:license url="http://creativecommons.org/licenses/by/3.0/"/>
+<!-- For information on license requirements for use or modification, see license url in the
+above <md:license> element.
+For information on formatting required attribution, see the URL:
+CONTENT_URL/content_info#cnx_cite_header
+where CONTENT_URL is the value provided above in the <md:content-url> element.
+-->
+<md:subjectlist>
+<md:subject>Mathematics and Statistics</md:subject>
+</md:subjectlist>
+<md:abstract/>
+<md:language>en</md:language>
+<!-- WARNING! The 'metadata' section is read only. Do not edit above.
+Changes to the metadata section in the source will not be saved. -->
+</metadata>
+<content>
+<section>
+<title>12.1 Linear Equations</title>
+<exercise>
+<problem>
+<para>Which of the following equations is/are linear?</para>
+<list list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">y</emphasis> = &#x2013;3<emphasis effect="italics">x</emphasis></item>
+<item><emphasis effect="italics">y</emphasis> = 0.2 + 0.74<emphasis effect="italics">x</emphasis></item>
+<item><emphasis effect="italics">y</emphasis> = &#x2013;9.4 &#x2013; 2<emphasis effect="italics">x</emphasis></item>
+<item>A and B</item>
+<item>A, B, and C</item>
+</list>
+</problem>
+<solution>
+<para>e. A, B, and C.
+<newline/>All three are linear equations of the form <emphasis effect="italics">y</emphasis> = <emphasis effect="italics">mx</emphasis> + <emphasis effect="italics">b</emphasis>.
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>To complete a painting job requires four hours setup time plus one hour per 1,000 square feet. How would you express this information in a linear equation?</para>
+</problem>
+<solution>
+<para>Let <emphasis effect="italics">y</emphasis> = the total number of hours required, and <emphasis effect="italics">x</emphasis> the square footage, measured in units of 1,000. The equation is: <emphasis effect="italics">y</emphasis> = <emphasis effect="italics">x</emphasis> + 4</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>A statistics instructor is paid a per-class fee of $2,000 plus $100 for each student in the class. How would you express this information in a linear equation?</para>
+</problem>
+<solution>
+<para>Let <emphasis effect="italics">y</emphasis> = the total payment, and <emphasis effect="italics">x</emphasis> the number of students in a class.  The equation is:
+<newline/><emphasis effect="italics">y</emphasis> = 100(<emphasis effect="italics">x</emphasis>) + 2,000</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>A tutoring school requires students to pay a one-time enrollment fee of $500 plus tuition of $3,000 per year. Express this information in an equation.</para>
+</problem>
+<solution>
+<para>Let <emphasis effect="italics">y</emphasis> = the total cost of attendance, and <emphasis effect="italics">x</emphasis> the number of years enrolled.  The equation is: <emphasis effect="italics">y</emphasis> = 3,000(<emphasis effect="italics">x</emphasis>) + 500</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>12.2: Slope and Y-intercept of a Linear Equation</title>
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> For the labor costs of doing repairs, an auto mechanic charges a flat fee of $75 per car, plus an hourly rate of $55.</para>
+<exercise>
+<problem>
+<para>What are the independent and dependent variables for this situation?</para>
+</problem>
+<solution>
+<para>The independent variable is the hours worked on a car. The dependent variable is the total labor charges to fix a car.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Write the equation and identify the slope and intercept.</para>
+</problem>
+<solution>
+<para>Let <emphasis effect="italics">y</emphasis> = the total charge, and <emphasis effect="italics">x</emphasis> the number of hours required. The equation is:
+<newline/><emphasis effect="italics">y</emphasis> = 55<emphasis effect="italics">x</emphasis> + 75
+<newline/>The slope is 55 and the intercept is 75.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the labor charge for a job that takes 3.5 hours to complete?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">y</emphasis> = 55(3.5) + 75 = 267.50</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>One job takes 2.4 hours to complete, while another takes 6.3 hours. What is the difference in labor costs for these two jobs?</para>
+</problem>
+<solution>
+<para>Because the intercept is included in both equations, while you are only interested in the difference in costs, you do not need to include the intercept in the solution. The difference in number of hours required is: 6.3 &#x2013; 2.4 = 3.9.
+<newline/>Multiply this difference by the cost per hour: 55(3.9) = 214.5.
+<newline/>The difference in cost between the two jobs is $214.50.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>12.3: Scatter Plots</title>
+<exercise>
+<problem>
+<para>Describe the pattern in this scatter plot, and decide whether the <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis> variables would be good candidates for linear regression.</para>
+<figure>
+<media alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Practice_Test_4_fig01.jpg" width="380"/> 
+</media>
+</figure>
+</problem>
+<solution>
+<para>The <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis> variables have a strong linear relationship. These variables would be good candidates for analysis with linear regression.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Describe the pattern in this scatter plot, and decide whether the <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis> variables would be good candidates for linear regression.</para>
+<figure>
+<media alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Practice_Test_4_fig02.jpg" width="380"/>
+</media>
+</figure>
+</problem>
+<solution>
+<para>The <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis> variables have a strong negative linear relationship. These variables would be good candidates for analysis with linear regression.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Describe the pattern in this scatter plot, and decide whether the <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis> variables would be good candidates for linear regression.</para>
+<figure>
+<media alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Practice_Test_4_fig03.jpg" width="380"/>
+</media>
+</figure>
+</problem>
+<solution>
+<para>There is no clear linear relationship between the <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis> variables, so they are not good candidates for linear regression.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Describe the pattern in this scatter plot, and decide whether the <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis> variables would be good candidates for linear regression.</para>
+<figure>
+<media alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Practice_Test_4_fig04.jpg" width="380"/>
+</media>
+</figure>
+</problem>
+<solution>
+<para>The <emphasis effect="italics">X</emphasis> and <emphasis effect="italics">Y</emphasis> variables have a strong positive relationship, but it is curvilinear rather than linear. These variables are not good candidates for linear regression.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>12.4: The Regression Equation</title>
+<para><emphasis effect="italics">Use the following information to answer the next four exercises.</emphasis> Height (in inches) and weight (In pounds) in a sample of college freshman men have a linear relationship with the following summary statistics:
+<newline/><m:math>
+<m:mover accent='true'>
+<m:mi>x</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+</m:math> = 68.4
+<newline/><m:math>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+</m:math> =141.6
+<newline/><emphasis effect="italics">s<sub>x</sub></emphasis> = 4.0
+<newline/><emphasis effect="italics">s<sub>y</sub></emphasis> = 9.6
+<newline/><emphasis effect="italics">r</emphasis> = 0.73
+<newline/>Let <emphasis effect="italics">Y</emphasis> = weight and <emphasis effect="italics">X</emphasis> = height, and write the regression equation in the form:
+<newline/><m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x005E;</m:mo>
+</m:mover>
+<m:mo>=</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>x</m:mi>
+</m:mrow>
+</m:math></para>
+<exercise>
+<problem>
+<para>What is the value of the slope?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>r</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msub>
+<m:mi>s</m:mi>
+<m:mi>y</m:mi>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:msub>
+<m:mi>s</m:mi>
+<m:mi>x</m:mi>
+</m:msub>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0.73</m:mn><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>9.6</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>4.0</m:mn>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>1.752</m:mn><m:mo>&#x2248;</m:mo><m:mn>1.75</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the value of the y intercept?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>a</m:mi><m:mo>=</m:mo><m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+<m:mo>&#x2212;</m:mo><m:mi>b</m:mi><m:mover accent='true'>
+<m:mi>x</m:mi>
+<m:mo>&#x00AF;</m:mo>
+</m:mover>
+<m:mo>=</m:mo><m:mn>141.6</m:mn><m:mo>&#x2212;</m:mo><m:mn>1.752</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>68.4</m:mn><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mn>21.7632</m:mn><m:mo>&#x2248;</m:mo><m:mn>21.76</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Write the regression equation predicting weight from height in this data set, and calculate the predicted weight for someone 68 inches tall.</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x005E;</m:mo>
+</m:mover>
+<m:mo>=</m:mo><m:mn>21.76</m:mn><m:mo>+</m:mo><m:mn>1.75</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>68</m:mn><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mn>140.76</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>12.5: Correlation Coefficient and Coefficient of Determination</title>
+<exercise>
+<problem>
+<para>The correlation between body weight and fuel efficiency (measured as miles per gallon)  for a sample of 2,012 model cars is &#x2013;0.56. Calculate the coefficient of determination for this data and explain what it means.</para>
+</problem>
+<solution>
+<para>The coefficient of determination is the square of the correlation, or <emphasis effect="italics">r</emphasis><sup>2</sup>.
+<newline/>For this data, <emphasis effect="italics">r</emphasis><sup>2</sup> = (&#x2013;0.56)2 = 0.3136 ≈ 0.31 or 31%. This means that 31 percent of the variation in fuel efficiency can be explained by the bodyweight of the automobile.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>The correlation between high school GPA and freshman college GPA for a sample of 200 university students is 0.32. How much variation in freshman college GPA is not explained by high school GPA?</para>
+</problem>
+<solution>
+<para>The coefficient of determination = 0.32<sup>2</sup> = 0.1024. This is the amount of variation in freshman college GPA that can be explained by high school GPA. The amount that cannot be explained is 1 &#x2013; 0.1024 = 0.8976 ≈ 0.90. So about 90 percent of variance in freshman college GPA in this data is not explained by high school GPA.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Rounded to two decimal places what correlation between two variables is necessary to have a coefficient of determination of at least 0.50?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mi>r</m:mi><m:mo>=</m:mo><m:msqrt>
+<m:mrow>
+<m:msup>
+<m:mi>r</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:msqrt>
+
+</m:math>
+<newline/><m:math>
+<m:msqrt>
+<m:mrow>
+<m:mn>0.5</m:mn>
+</m:mrow>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>0.707106781</m:mn><m:mo>&#x2248;</m:mo><m:mn>0.71</m:mn>
+</m:math>
+<newline/>You need a correlation of 0.71 or higher to have a coefficient of determination of at least 0.5.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>12.6: Testing the Significance of the Correlation Coefficient</title>
+<exercise>
+<problem>
+<para>Write the null and alternative hypotheses for a study to determine if two variables are significantly correlated.</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">ρ</emphasis> = 0
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">ρ</emphasis> ≠ 0</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>In a sample of 30 cases, two variables have a correlation of 0.33. Do a <emphasis effect="italics">t</emphasis>-test to see if this result is significant at the <emphasis effect="italics">α</emphasis> = 0.05 level. Use the formula:
+<newline/><m:math>
+<m:mrow>
+<m:mi>t</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>r</m:mi><m:msqrt>
+<m:mrow>
+<m:mi>n</m:mi><m:mo>&#x2212;</m:mo><m:mn>2</m:mn>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:msup>
+<m:mi>r</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+</m:mrow>
+</m:msqrt>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></para>
+</problem>
+<solution>
+<para><m:math display="">
+<m:mrow>
+<m:mi>t</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>r</m:mi><m:msqrt>
+<m:mrow>
+<m:mi>n</m:mi><m:mo>&#x2212;</m:mo><m:mn>2</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:msup>
+<m:mi>r</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>0.33</m:mn><m:msqrt>
+<m:mrow>
+<m:mn>30</m:mn><m:mo>&#x2212;</m:mo><m:mn>2</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:msup>
+<m:mrow>
+<m:mn>0.33</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>1.85</m:mn>
+</m:mrow>
+</m:math>
+<newline/>The critical value for <emphasis effect="italics">α</emphasis> = 0.05 for a two-tailed test using the <emphasis effect="italics">t</emphasis><sub>29</sub> distribution is 2.045. Your value is less than this, so you fail to reject the null hypothesis and conclude that the study produced no evidence that the variables are significantly correlated.
+<newline/>Using the calculator function tcdf, the <emphasis effect="italics">p</emphasis>-value is 2tcdf(1.85, 10^99, 29) = 0.0373.  Do not reject the null hypothesis and conclude that the study produced no evidence that the variables are significantly correlated.
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>In a sample of 25 cases, two variables have a correlation of 0.45. Do a <emphasis effect="italics">t</emphasis>-test to see if this result is significant at the <emphasis effect="italics">α</emphasis> = 0.05 level. Use the formula:
+<newline/><m:math>
+<m:mrow>
+<m:mi>t</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>r</m:mi><m:msqrt>
+<m:mrow>
+<m:mi>n</m:mi><m:mo>&#x2212;</m:mo><m:mn>2</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:msup>
+<m:mi>r</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math></para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>t</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>r</m:mi><m:msqrt>
+<m:mrow>
+<m:mi>n</m:mi><m:mo>&#x2212;</m:mo><m:mn>2</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:msup>
+<m:mi>r</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>0.45</m:mn><m:msqrt>
+<m:mrow>
+<m:mn>25</m:mn><m:mo>&#x2212;</m:mo><m:mn>2</m:mn>
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+<m:mrow>
+<m:msqrt>
+<m:mrow>
+<m:mn>1</m:mn><m:mo>&#x2212;</m:mo><m:msup>
+<m:mrow>
+<m:mn>0.45</m:mn>
+</m:mrow>
+<m:mn>2</m:mn>
+</m:msup>
+
+</m:mrow>
+</m:msqrt>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>2.417</m:mn>
+</m:mrow>
+</m:math>
+<newline/>The critical value for <emphasis effect="italics">α</emphasis> = 0.05 for a two-tailed test using the <emphasis effect="italics">t</emphasis><sub>24</sub> distribution is 2.064. Your value is greater than this, so you reject the null hypothesis and conclude that the study produced evidence that the variables are significantly correlated.
+<newline/>Using the calculator function tcdf, the p-value is 2tcdf(2.417, 10^99, 24) = 0.0118.  Reject the null hypothesis and conclude that the study produced evidence that the variables are significantly correlated.
+</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>12.7: Prediction</title>
+<para><emphasis effect="italics">Use this information for the next two questions.</emphasis> A study relating the grams of potassium (<emphasis effect="italics">Y</emphasis>) to the grams of fiber (<emphasis effect="italics">X</emphasis>) per serving in enriched flour products (bread, rolls, etc.) produced the equation:
+<newline/><m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x005E;</m:mo>
+</m:mover>
+<m:mo>=</m:mo><m:mn>25</m:mn><m:mo>+</m:mo><m:mn>16</m:mn><m:mi>x</m:mi>
+</m:mrow>
+</m:math></para>
+<exercise>
+<problem>
+<para>For a product with five grams of fiber per serving, what are the expected grams of potassium per serving?</para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x005E;</m:mo>
+</m:mover>
+<m:mo>=</m:mo><m:mn>25</m:mn><m:mo>+</m:mo><m:mn>16</m:mn><m:mo stretchy='false'>(</m:mo><m:mn>5</m:mn><m:mo stretchy='false'>)</m:mo><m:mo>=</m:mo><m:mn>105</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Comparing two products, one with three grams of fiber per serving and one with six grams of fiber per serving, what is the expected difference in grams of potassium per serving?</para>
+</problem>
+<solution>
+<para>Because the intercept appears in both predicted values, you can ignore it in calculating a predicted difference score. The difference in grams of fiber per serving is 6 &#x2013;  3 = 3 and the predicted difference in grams of potassium per serving is (16)(3) = 48.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>12.8: Outliers</title>
+<exercise>
+<problem>
+<para>In the context of regression analysis, what is the definition of an outlier, and what is a rule of thumb to evaluate if a given value in a data set is an outlier?</para>
+</problem>
+<solution>
+<para>An outlier is an observed value that is far from the least squares regression line. A rule of thumb is that a point more than two standard deviations of the residuals from its predicted value on the least squares regression line is an outlier.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>In the context of regression analysis, what is the definition of an influential point, and how does an influential point differ from an outlier?</para>
+</problem>
+<solution>
+<para>An influential point is an observed value in a data set that is far from other points in the data set, in a horizontal direction. Unlike an outlier, an influential point is determined by its relationship with other values in the data set, not by its relationship to the regression line.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>The least squares regression line for a data set is <m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x005E;</m:mo>
+</m:mover>
+<m:mo>=</m:mo><m:mn>5</m:mn><m:mo>+</m:mo><m:mn>0.3</m:mn><m:mi>x</m:mi>
+</m:mrow>
+</m:math> and the standard deviation of the residuals is 0.4. Does a case with the values <emphasis effect="italics">x</emphasis> = 2, <emphasis effect="italics">y</emphasis> = 6.2 qualify as an outlier?
+</para>
+</problem>
+<solution>
+<para>The predicted value for y is: <m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x005E;</m:mo>
+</m:mover>
+<m:mo>=</m:mo><m:mn>5</m:mn><m:mo>+</m:mo><m:mn>0.3</m:mn><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>5.6</m:mn>
+</m:mrow>
+</m:math>. The value of 6.2 is less than two standard deviations from the predicted value, so it does not qualify as an outlier.
+<newline/>Residual for (2, 6.2):  6.2 &#x2013; 5.6 = 0.6  (0.6 &lt; 2(0.4))
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>The least squares regression line for a data set is <m:math>
+<m:mrow>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x005E;</m:mo>
+</m:mover>
+<m:mo>=</m:mo><m:mn>2.3</m:mn><m:mo>&#x2212;</m:mo><m:mn>0.1</m:mn><m:mi>x</m:mi>
+</m:mrow>
+</m:math> and the standard deviation of the residuals is 0.13. Does a case with the values <emphasis effect="italics">x</emphasis> = 4.1, <emphasis effect="italics">y</emphasis> = 2.34 qualify as an outlier?</para>
+</problem>
+<solution>
+<para>The predicted value for y is: <m:math>
+<m:mover accent='true'>
+<m:mi>y</m:mi>
+<m:mo>&#x005E;</m:mo>
+</m:mover>
+</m:math> = 2.3 &#x2013; 0.1(4.1) = 1.89. The value of 2.32 is more than two standard deviations from the predicted value, so it qualifies as an outlier.
+<newline/>Residual for (4.1, 2.34): 2.32 &#x2013; 1.89 = 0.43  (0.43 &gt; 2(0.13))
+</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>13.1: One-Way ANOVA</title>
+<exercise>
+<problem>
+<para>What are the five basic assumptions to be met if you want to do a one-way ANOVA?</para>
+</problem>
+<solution>
+<list list-type="enumerated">
+<item>Each sample is drawn from a normally distributed population</item>
+<item>All samples are independent and randomly selected.</item>
+<item>The populations from which the samples are draw have equal standard deviations.</item>
+<item>The factor is a categorical variable.</item>
+<item>The response is a numerical variable.</item>
+</list>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You are conducting a one-way ANOVA comparing the effectiveness of four drugs in lowering blood pressure in hypertensive patients. What are the null and alternative hypotheses for this study?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">μ</emphasis>1 = <emphasis effect="italics">μ</emphasis>2 = <emphasis effect="italics">μ</emphasis>3 = <emphasis effect="italics">μ</emphasis>4
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: At least two of the group means <emphasis effect="italics">μ</emphasis>1, <emphasis effect="italics">μ</emphasis>2, <emphasis effect="italics">μ</emphasis>3, <emphasis effect="italics">μ</emphasis>4 are not equal.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the primary difference between the independent samples <emphasis effect="italics">t</emphasis>-test and one-way ANOVA?</para>
+</problem>
+<solution>
+<para>The independent samples <emphasis effect="italics">t</emphasis>-test can only compare means from two groups, while one-way ANOVA can compare means of more than two groups.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You are comparing the results of three methods of teaching geometry to high school students. The final exam scores <emphasis effect="italics">X</emphasis><sub>1</sub>, <emphasis effect="italics">X</emphasis><sub>2</sub>, <emphasis effect="italics">X</emphasis><sub>3</sub>, for the samples taught by the different methods have the following distributions:
+<newline/><emphasis effect="italics">X</emphasis><sub>1</sub> ~ <emphasis effect="italics">N</emphasis>(85, 3.6)
+<newline/><emphasis effect="italics">X</emphasis><sub>1</sub> ~ <emphasis effect="italics">N</emphasis>(82, 4.8)
+<newline/><emphasis effect="italics">X</emphasis><sub>1</sub> ~ <emphasis effect="italics">N</emphasis>(79, 2.9)
+<newline/>Each sample includes 100 students, and the final exam scores have a range of 0&#x2013;100. Assuming the samples are independent and randomly selected, have the requirements for conducting a one-way ANOVA been met? Explain why or why not for each assumption.</para>
+</problem>
+<solution>
+<para>Each sample appears to have been drawn from a normally distributed populations, the factor is a categorical variable (method), the outcome is a numerical variable (test score), and you were told the samples were independent and randomly selected, so those requirements are met. However, each sample has a different standard deviation, and this suggests that the populations from which they were drawn also have different standard deviations, which is a violation of an assumption for one-way ANOVA. Further statistical testing will be necessary to test the assumption of equal variance before proceeding with the analysis.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You conduct a study comparing the effectiveness of four types of fertilizer to increase crop yield on wheat farms. When examining the sample results, you find that two of the samples have an approximately normal distribution, and two have an approximately uniform distribution. Is this a violation of the assumptions for conducting a one-way ANOVA?</para>
+</problem>
+<solution>
+<para>One of the assumptions for a one-way ANOVA is that the samples are drawn from normally distributed populations. Since two of your samples have an approximately uniform distribution, this casts doubt on whether this assumption has been met. Further statistical testing will be necessary to determine if you can proceed with the analysis.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>13.2: The <emphasis effect="italics">F</emphasis> Distribution</title>
+<para><emphasis effect="italics">Use the following information to answer the next seven exercises.</emphasis> You are conducting a study of three types of feed supplements for cattle to test their effectiveness in producing weight gain among calves whose feed includes one of the supplements. You have four groups of 30 calves (one is a control group receiving the usual feed, but no supplement). You will conduct a one-way ANOVA after one year to see if there are difference in the mean weight for the four groups.</para>
+<exercise>
+<problem>
+<para>What is <emphasis effect="italics">SS<sub>within</sub></emphasis> in this experiment, and what does it mean?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">SS<sub>within</sub></emphasis> is the sum of squares within groups, representing the variation in outcome that cannot be attributed to the different feed supplements, but due to individual or chance factors among the calves in each group.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is <emphasis effect="italics">SS<sub>between</sub></emphasis> in this experiment, and what does it mean?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">SS<sub>between</sub></emphasis> is the sum of squares between groups, representing the variation in outcome that can be attributed to the different feed supplements.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What are <emphasis effect="italics">k</emphasis> and <emphasis effect="italics">i</emphasis> for this experiment?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">k</emphasis> = the number of groups = 4
+<newline/><emphasis effect="italics">n</emphasis><sub>1</sub> = the number of cases in group 1 = 30
+<newline/><emphasis effect="italics">n</emphasis> = the total number of cases = 4(30) = 120</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If <emphasis effect="italics">SS<sub>within</sub></emphasis> = 374.5 and <emphasis effect="italics">SS<sub>total</sub></emphasis> = 621.4 for this data, what is = <emphasis effect="italics">SS<sub>between</sub></emphasis>?</para>
+</problem>
+<solution>
+<para><emphasis effect="italics">SS<sub>total</sub></emphasis> = <emphasis effect="italics">SS<sub>within</sub></emphasis> +  <emphasis effect="italics">SS<sub>between</sub></emphasis> so <emphasis effect="italics">SS<sub>between</sub></emphasis> = <emphasis effect="italics">SS<sub>total</sub></emphasis> &#x2013; <emphasis effect="italics">SS<sub>within</sub></emphasis>
+<newline/>621.4 &#x2013; 374.5 = 246.9</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What are <emphasis effect="italics">MS<sub>between</sub></emphasis>, and <emphasis effect="italics">MS<sub>within</sub></emphasis>, for this experiment?</para>
+</problem>
+<solution>
+<para>The mean squares in an ANOVA are found by dividing each sum of squares by its respective degrees of freedom (<emphasis effect="italics">df</emphasis>).
+<newline/>For <emphasis effect="italics">SS<sub>total</sub></emphasis>, <emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> &#x2013; 1 = 120 &#x2013; 1 = 119.
+<newline/>For <emphasis effect="italics">SSbetween</emphasis>, <emphasis effect="italics">df</emphasis> = k &#x2013; 1 = 4 &#x2013; 1 = 3.
+<newline/>For <emphasis effect="italics">SS<sub>within</sub></emphasis>, <emphasis effect="italics">df</emphasis> = 120 &#x2013; 4 = 116.
+<newline/><emphasis>MS<sub>between</sub></emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>246.9</m:mn>
+</m:mrow>
+<m:mn>3</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math> = 82.3
+<newline/><emphasis>MS<sub>within</sub></emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>374.5</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>116</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = 3.23</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>What is the <emphasis effect="italics">F</emphasis> Statistic for this data? </para>
+</problem>
+<solution>
+<para><m:math>
+<m:mrow>
+<m:mi>F</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>M</m:mi><m:msub>
+<m:mi>S</m:mi>
+<m:mrow>
+<m:mi>b</m:mi><m:mi>e</m:mi><m:mi>t</m:mi><m:mi>w</m:mi><m:mi>e</m:mi><m:mi>e</m:mi><m:mi>n</m:mi>
+</m:mrow>
+</m:msub>
+
+</m:mrow>
+<m:mrow>
+<m:mi>M</m:mi><m:msub>
+<m:mi>S</m:mi>
+<m:mrow>
+<m:mi>w</m:mi><m:mi>i</m:mi><m:mi>t</m:mi><m:mi>h</m:mi><m:mi>i</m:mi><m:mi>n</m:mi>
+</m:mrow>
+</m:msub>
+
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mn>82.3</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>3.23</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>25.48</m:mn>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>If there had been 35 calves in each group, instead of 30, with the sums of squares remaining the same, would the <emphasis effect="italics">F</emphasis> Statistic be larger or smaller?</para>
+</problem>
+<solution>
+<para>It would be larger, because you would be dividing by a smaller number. The value of <emphasis effect="italics">MS<sub>between</sub></emphasis> would not change with a change of sample size, but the value of <emphasis effect="italics">MS<sub>within</sub></emphasis> would be smaller, because you would be dividing by a larger number (<emphasis effect="italics">df<sub>within</sub></emphasis> would be 136, not 116). Dividing a constant by a smaller number produces a larger result.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>13.3: Facts About the F Distribution</title>
+<exercise>
+<problem>
+<para>Which of the following numbers are possible <emphasis effect="italics">F</emphasis> Statistics?</para>
+<list list-type="enumerated" number-style="lower-alpha">
+<item>2.47</item>
+<item>5.95</item>
+<item>–3.61</item>
+<item>7.28</item>
+<item>0.97</item>
+</list>
+</problem>
+<solution>
+<para>All but choice c, &#x2013;3.61. <emphasis effect="italics">F</emphasis> Statistics are always greater than or equal to 0.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>Histograms <emphasis effect="italics">F</emphasis>1 and <emphasis effect="italics">F</emphasis>2 below display the distribution of cases from samples from two populations, one distributed <emphasis effect="italics">F</emphasis><sub>3,15</sub> and one distributed <emphasis effect="italics">F</emphasis><sub>5,500</sub>. Which sample came from which population?</para>
+<figure>
+<media alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Practice_Test_4_fig05.jpg" width="380"/>
+</media>
+</figure>
+<figure>
+<media alt="">
+<image mime-type="image/jpeg" src="CNX_Stats_Practice_Test_4_fig06.jpg" width="380"/>
+</media>
+</figure>
+</problem>
+<solution>
+<para>As the degrees of freedom increases in an <emphasis effect="italics">F</emphasis> distribution, the distribution becomes more nearly normal. Histogram <emphasis effect="italics">F</emphasis>2 is closer to a normal distribution than histogram <emphasis effect="italics">F</emphasis>1, so the sample displayed in histogram <emphasis effect="italics">F</emphasis>1 was drawn from the <emphasis effect="italics">F</emphasis><sub>3,15</sub> population, and the sample displayed in histogram <emphasis effect="italics">F</emphasis>2 was drawn from the <emphasis effect="italics">F</emphasis><sub>5,500</sub> population.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>The <emphasis effect="italics">F</emphasis> Statistic from an experiment with <emphasis effect="italics">k</emphasis> = 3 and <emphasis effect="italics">n</emphasis> = 50 is 3.67. At <emphasis effect="italics">α</emphasis> = 0.05, will you reject the null hypothesis?</para>
+</problem>
+<solution>
+<para>Using the calculator function Fcdf, <emphasis effect="italics">p</emphasis>-value = Fcdf(3.67, 1E, 3,50) = 0.0182.  Reject the null hypothesis.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>The <emphasis effect="italics">F</emphasis> Statistic from an experiment with <emphasis effect="italics">k</emphasis> = 4 and <emphasis effect="italics">n</emphasis> = 100 is 4.72. At <emphasis effect="italics">α</emphasis> = 0.01, will you reject the null hypothesis?</para>
+</problem>
+<solution>
+<para>Using the calculator function Fcdf, <emphasis effect="italics">p</emphasis>-value = Fcdf(4.72, 1E, 4, 100) = 0.0016 Reject the null hypothesis.</para>
+</solution>
+</exercise>
+</section>
+<section>
+<title>13.4: Test of Two Variances</title>
+<exercise>
+<problem>
+<para>What assumptions must be met to perform the <emphasis effect="italics">F</emphasis> test of two variances?</para>
+</problem>
+<solution>
+<para>The samples must be drawn from populations that are normally distributed, and must be drawn from independent populations.</para>
+</solution>
+</exercise>
+<exercise>
+<problem>
+<para>You believe there is greater variance in grades given by the math department at your university than in the English department. You collect all the grades for undergraduate classes in the two departments for a semester, and compute the variance of each, and conduct an F test of two variances. What are the null and alternative hypotheses for this study?</para>
+</problem>
+<solution>
+<para>Let <m:math>
+<m:mrow>
+<m:msubsup>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>M</m:mi>
+<m:mn>2</m:mn>
+</m:msubsup>
+</m:mrow>
+</m:math>  = variance in math grades, and <m:math>
+<m:mrow>
+<m:msubsup>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>E</m:mi>
+<m:mn>2</m:mn>
+</m:msubsup>
+
+</m:mrow>
+</m:math>  = variance in English grades.
+<newline/>H0: <m:math>
+<m:mrow>
+<m:msubsup>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>M</m:mi>
+<m:mn>2</m:mn>
+</m:msubsup>
+</m:mrow>
+</m:math> ≤ <m:math>
+<m:mrow>
+<m:msubsup>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>E</m:mi>
+<m:mn>2</m:mn>
+</m:msubsup>
+</m:mrow>
+</m:math>
+<newline/>Ha: <m:math>
+<m:mrow>
+<m:msubsup>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>M</m:mi>
+<m:mn>2</m:mn>
+</m:msubsup>
+</m:mrow>
+</m:math> &gt; <m:math>
+<m:mrow>
+<m:msubsup>
+<m:mi>&#x03C3;</m:mi>
+<m:mi>E</m:mi>
+<m:mn>2</m:mn>
+</m:msubsup>
+</m:mrow>
+</m:math>
+</para>
+</solution>
+</exercise>
+</section>
+</content>
+</document>

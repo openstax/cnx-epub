@@ -1,0 +1,2296 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>The F Distribution and the F-Ratio</title><meta name="created-time" content="2013/07/19 10:09:59 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="F distribution, F-distribution, F ratio, f-ratio, mean square, sum of squares, variance between samples, variance within samples"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">The F Distribution and the F-Ratio</div>
+<p id="me001">The distribution used for the hypothesis test is a new one. It is called the <span data-type="term"><em data-effect="italics">F</em> distribution</span>, named after Sir Ronald Fisher, an English statistician. The <em data-effect="italics">F</em> statistic is a ratio (a fraction). There are two sets of degrees of freedom; one for the numerator and one for the denominator.</p>
+
+<p id="element-674">For example, if <em data-effect="italics">F</em> follows an <em data-effect="italics">F</em> distribution and the number of degrees of freedom for the numerator is four, and the number of degrees of freedom for the denominator is ten, then <em data-effect="italics">F</em> ~ <em data-effect="italics">F<sub>4,10</sub></em>.</p>
+
+<div data-type="note" data-has-label="true" id="eip-261" data-label=""><div data-type="title">Note</div>
+<p id="eip-idm170830672">The <em data-effect="italics">F</em> distribution is derived from the Student's t-distribution. The values of the <em data-effect="italics">F</em> distribution are squares of the corresponding values of the <em data-effect="italics">t</em>-distribution. One-Way ANOVA expands the <em data-effect="italics">t</em>-test for comparing more than two groups. The scope of that derivation is beyond the level of this course. It is preferable to use ANOVA when there are more than two groups instead of performing pairwise <em data-effect="italics">t</em>-tests because performing multiple tests introduces the likelihood of making a Type 1 error.</p></div>
+
+<p id="element-967">To calculate the <span data-type="term"><em data-effect="italics">F</em> ratio</span>, two estimates of the variance are made.</p>
+
+<ol id="element-236">
+<li><span data-type="term">Variance between samples</span><strong>:</strong> An estimate of <em data-effect="italics">&#963;</em><sup>2</sup> that is the variance of the sample means multiplied by <em data-effect="italics">n</em> (when the sample sizes are the same.). If the samples are different sizes, the variance between samples is weighted to account for the different sample sizes. The variance is also called <strong>variation due to treatment or explained variation.</strong></li>
+<li><span data-type="term">Variance within samples</span><strong>:</strong> An estimate of <em data-effect="italics">&#963;</em><sup>2</sup> that is the average of the sample variances (also known as a pooled variance). When the sample sizes are different, the variance within samples is weighted. The variance is also called the <strong>variation due to error or unexplained variation.</strong></li>
+</ol>
+
+<ul id="eip-197">
+<li><em data-effect="italics">SS</em><sub>between</sub> = the <span data-type="term">sum of squares</span> that represents the variation among the different samples</li>
+<li><em data-effect="italics">SS</em><sub>within</sub> = the sum of squares that represents the variation within samples that is due to chance.</li>
+</ul>
+
+<p id="eip-668">To find a "sum of squares" means to add together squared quantities that, in some
+cases, may be weighted. We used sum of squares to calculate the sample variance and
+the sample standard deviation in <a href="/contents/67ff0f10-8867-4852-85f6-0f0be2257ed4">Descriptive Statistics</a>.</p><p id="eip-39"><em data-effect="italics">MS</em> means "<span data-type="term">mean square</span>." <em data-effect="italics">MS</em><sub>between</sub> is the variance between groups, and <em data-effect="italics">MS</em><sub>within</sub> is the variance within groups.</p>
+
+<p id="eip-12"><strong>Calculation of Sum of Squares and Mean Square</strong>
+</p><ul id="eip-idm81361504"><li><em data-effect="italics">k</em> = the number of different groups</li>
+<li><em data-effect="italics">n<sub>j</sub></em> = the size of the <em data-effect="italics">j<sup>th</sup></em> group</li>
+<li><em data-effect="italics">s<sub>j</sub></em> = the sum of the values in the <em data-effect="italics">j<sup>th</sup></em> group</li>
+<li><em data-effect="italics">n</em> = total number of all the values combined (total&#160;sample&#160;size: &#8721;<em data-effect="italics">n<sub>j</sub></em>)</li>
+<li><em data-effect="italics">x</em> = one value: &#8721;<em data-effect="italics">x</em> = &#8721;<em data-effect="italics">s<sub>j</sub></em></li>
+<li>Sum of squares of all values from every group combined: &#8721;<em data-effect="italics">x</em><sup>2</sup></li>
+<li>Between group variability: <em data-effect="italics">SS</em><sub>total</sub> = &#8721;<em data-effect="italics">x</em><sup>2</sup> &#8211;  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mstyle displaystyle="true">
+<mo>&#8721;</mo> <mrow>
+<msup>
+<mi>x</mi>
+<mn>2</mn>
+</msup>
+
+</mrow>
+</mstyle>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mstyle displaystyle="true">
+<mo>&#8721;</mo> <mrow>
+<msup>
+<mi>x</mi>
+<mn>2</mn>
+</msup>
+
+</mrow>
+</mstyle>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</li>
+<li>Total sum of squares: &#8721;<em data-effect="italics">x</em><sup>2</sup> &#8211;  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mo>&#8721;</mo><mi>x</mi>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mo>&#8721;</mo><mi>x</mi>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</li>
+<li>Explained variation: sum of squares representing variation among the different samples: <em data-effect="italics">SS</em><sub>between</sub> =  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mo>&#8721;</mo><mrow><mo>[</mo> <mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub><mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow> <mo>]</mo></mrow><mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><mo>&#8721;</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+<mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mo>&#8721;</mo><mrow><mo>[</mo> <mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub><mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow> <mo>]</mo></mrow><mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><mo>&#8721;</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+<mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</li>
+
+<li>Unexplained variation: sum of squares representing variation within samples due to chance:  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+<mo>=</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>total</mtext>
+</mrow>
+</msub>
+<mo>&#8211;</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+<mo>=</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>total</mtext>
+</mrow>
+</msub>
+<mo>&#8211;</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow></annotation-xml></semantics></math> </li>
+<li><em data-effect="italics">df</em>'s for different groups (<em data-effect="italics">df</em>'s for the numerator): <em data-effect="italics">df</em> = <em data-effect="italics">k</em> &#8211; 1</li>
+
+<li>Equation for errors within samples (<em data-effect="italics">df</em>'s for the denominator): <em data-effect="italics">df</em><sub>within</sub> = <em data-effect="italics">n</em> &#8211; <em data-effect="italics">k</em></li>
+<li>Mean square (variance estimate) explained by the different groups: <em data-effect="italics">MS</em><sub>between</sub> =  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub><mi>f</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub><mi>f</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </li>
+
+<li>Mean square (variance estimate) that is due to chance (unexplained): <em data-effect="italics">MS</em><sub>within</sub> =  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </li>
+</ul>
+
+<p id="eip-858"><em data-effect="italics">MS</em><sub>between</sub> and <em data-effect="italics">MS</em><sub>within</sub> can be written as follows:</p>
+<ul id="eip-822"><li> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+<mo>=</mo><mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+<mo>=</mo><mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>k</mi><mo>&#8722;</mo><mn>1</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+<mo>=</mo><mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+<mo>=</mo><mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>k</mi><mo>&#8722;</mo><mn>1</mn>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </li>
+
+<li> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo><mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+<mo>=</mo><mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>n</mi><mo>&#8722;</mo><mi>k</mi>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo><mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+<mo>=</mo><mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>n</mi><mo>&#8722;</mo><mi>k</mi>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</li>
+</ul>
+<p id="element-138">The one-way ANOVA test depends on the fact that <em data-effect="italics">MS</em><sub>between</sub> can be influenced by population differences among means of the several groups. Since <em data-effect="italics">MS</em><sub>within</sub> compares values of each group to its own group mean, the fact that group means might be different does not affect <em data-effect="italics">MS</em><sub>within</sub>.</p>
+<p id="element-807">The null hypothesis says that all groups are samples from populations having the same normal distribution. The alternate hypothesis says that at least two of the sample groups come from populations with different normal distributions. If the null hypothesis is true, <em data-effect="italics">MS</em><sub>between</sub> and <em data-effect="italics">MS</em><sub>within</sub> should both estimate the same value.</p>
+
+<div data-type="note" data-has-label="true" id="eip-82" data-label=""><div data-type="title">Note</div>
+<p id="eip-idp56014144">The null hypothesis says that all the group population means are equal. The hypothesis of equal means implies that the populations have the same normal distribution, because it is assumed that the populations are normal and that they have equal variances.</p></div>
+
+<p id="fs-idp125283568"><span data-type="title"><em data-effect="italics">F</em>-Ratio or <em data-effect="italics">F</em> Statistic</span>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>F</mi><mo>=</mo><mfrac>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>F</mi><mo>=</mo><mfrac>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</p>
+<p id="element-712">If <em data-effect="italics">MS</em><sub>between</sub> and <em data-effect="italics">MS</em><sub>within</sub> estimate the same value (following the belief that <em data-effect="italics">H<sub>0</sub></em> is true), then the <em data-effect="italics">F</em>-ratio should be approximately equal to one. Mostly, just sampling errors would contribute to variations away from one. As it turns out, <em data-effect="italics">MS</em><sub>between</sub> consists of the population variance plus a variance produced from the differences between the samples. <em data-effect="italics">MS</em><sub>within</sub> is an estimate of the population variance. Since variances are always positive, if the null hypothesis is false, <em data-effect="italics">MS</em><sub>between</sub> will generally be larger than <em data-effect="italics">MS</em><sub>within</sub>.Then the <em data-effect="italics">F</em>-ratio will be larger than one. However, if the population effect is small, it is not unlikely that <em data-effect="italics">MS</em><sub>within</sub> will be larger in a given sample.</p>
+<p id="eip-611">The foregoing calculations were done with groups of different sizes. If the groups are the same size, the calculations simplify somewhat and the <em data-effect="italics">F</em>-ratio can be written as:</p>
+
+<p id="fs-idp2223584"><span data-type="title"><em data-effect="italics">F</em>-Ratio Formula when the groups are the same size</span>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>F</mi><mo>=</mo><mfrac>
+<mrow>
+<mi>n</mi><mo>&#8901;</mo><msub>
+<mi>s</mi>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+</msub>
+<msup>
+<mrow/>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msup>
+<mi>s</mi>
+<mn>2</mn>
+</msup>
+<msub>
+<mrow/>
+<mrow>
+<mtext>pooled</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>F</mi><mo>=</mo><mfrac>
+<mrow>
+<mi>n</mi><mo>&#8901;</mo><msub>
+<mi>s</mi>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+</msub>
+<msup>
+<mrow/>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msup>
+<mi>s</mi>
+<mn>2</mn>
+</msup>
+<msub>
+<mrow/>
+<mrow>
+<mtext>pooled</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </p>
+<div data-type="list" id="eip-389"><div data-type="title">where ...</div><ul>
+<li><em data-effect="italics">n</em> = the sample size</li>
+<li> <em data-effect="italics">df</em><sub>numerator</sub> = <em data-effect="italics">k</em> &#8211; 1</li>
+
+<li> <em data-effect="italics">df</em><sub>denominator</sub> = <em data-effect="italics">n</em> &#8211; <em data-effect="italics">k</em></li>
+
+<li><em data-effect="italics">s</em><sup>2</sup> pooled = the mean of the sample variances (pooled variance)</li>
+
+<li> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<msub>
+<mi>s</mi>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+</msub>
+<msup>
+<mrow/>
+<mn>2</mn>
+</msup>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<msub>
+<mi>s</mi>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+</msub>
+<msup>
+<mrow/>
+<mn>2</mn>
+</msup>
+
+</mrow></annotation-xml></semantics></math>  = the variance of the sample means</li>
+</ul></div><p id="eip-580">Data are typically put into a table for easy viewing.  One-Way ANOVA results are often displayed in this manner by computer software.
+
+</p><table id="eip-id1172021872456" summary="General One-Way ANOVA Table with 3 rows and 4 columns."><thead>
+<tr>
+<th data-align="center">Source of Variation</th>
+<th data-align="center">Sum of Squares (<em data-effect="italics">SS</em>)</th>
+<th data-align="center">Degrees of Freedom (<em data-effect="italics">df</em>)</th>
+<th data-align="center">Mean Square (<em data-effect="italics">MS</em>)</th>
+<th data-align="center"><em data-effect="italics">F</em></th>
+</tr>
+</thead><tbody>
+<tr>
+<td data-align="center">Factor <div data-type="newline"><br/></div>(Between)</td>
+<td data-align="center"><em data-effect="italics">SS</em>(Factor)</td>
+<td data-align="center"><em data-effect="italics">k</em> &#8211; 1</td>
+<td data-align="center"><em data-effect="italics">MS</em>(Factor) = <em data-effect="italics">SS</em>(Factor)/(<em data-effect="italics">k</em> &#8211; 1)</td>
+<td data-align="center"><em data-effect="italics">F</em> = <em data-effect="italics">MS</em>(Factor)/<em data-effect="italics">MS</em>(Error)</td>
+</tr>
+<tr>
+<td data-align="center">Error <div data-type="newline"><br/></div>(Within)</td>
+<td data-align="center"><em data-effect="italics">SS</em>(Error)</td>
+<td data-align="center"><em data-effect="italics">n</em> &#8211; <em data-effect="italics">k</em></td>
+<td data-align="center"><em data-effect="italics">MS</em>(Error) = <em data-effect="italics">SS</em>(Error)/(<em data-effect="italics">n</em> &#8211; <em data-effect="italics">k</em>)</td>
+<td data-align="center"/>
+</tr>
+<tr>
+<td data-align="center">Total</td>
+<td data-align="center"><em data-effect="italics">SS</em>(Total)</td>
+<td data-align="center"><em data-effect="italics">n</em> &#8211; 1</td>
+<td data-align="center"/>
+<td data-align="center"/>
+</tr>
+</tbody></table>
+
+<div data-type="example" id="eip-546"><p id="eip-125">Three different diet plans are to be tested for mean weight loss.  The entries in the table are the weight losses for the different plans. The one-way ANOVA results are shown in <a href="#eip-id2754369" class="autogenerated-content">[link]</a>.</p><table id="eip-id2754369" summary="The Table consists of 3 columns: CNN, Fox and Local. The table entries are the mean time, in minutes, that people watch their favorite news station on CNN, Fox or the local station."><thead>
+<tr>
+<th>Plan 1: <em data-effect="italics">n</em><sub>1</sub> = 4</th>
+<th>Plan 2: <em data-effect="italics">n</em><sub>2</sub> = 3</th>
+<th>Plan 3: <em data-effect="italics">n</em><sub>3</sub> = 3</th>
+</tr>
+</thead><tbody>
+<tr>
+<td data-align="center">5</td>
+<td data-align="center">3.5</td>
+<td data-align="center">8</td>
+</tr>
+<tr>
+<td data-align="center">4.5</td>
+<td data-align="center">7</td>
+<td data-align="center">4</td>
+</tr>
+<tr>
+<td data-align="center">4</td>
+<td data-align="center"/>
+<td data-align="center">3.5</td>
+</tr>
+<tr>
+<td data-align="center">3</td>
+<td data-align="center">4.5</td>
+<td data-align="center"/>
+</tr>
+</tbody></table>
+
+<p id="fs-idp93901056"><em data-effect="italics">s</em><sub>1</sub> = 16.5, <em data-effect="italics">s</em><sub>2</sub> =15, <em data-effect="italics">s</em><sub>3</sub> = 15.5</p><p id="fs-idp76691888">Following are the calculations needed to fill in the one-way ANOVA table. The table is used to conduct a hypothesis test.</p>
+<div data-type="equation" id="fs-idp76692400"> <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&#8721;</mo><mrow><mo>[</mo> <mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+<mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow> <mo>]</mo></mrow><mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mo>&#8721;</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mi>n</mi><mo>&#160;</mo>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&#8721;</mo><mrow><mo>[</mo> <mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+<mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow> <mo>]</mo></mrow><mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mo>&#8721;</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mi>n</mi><mo>&#160;</mo>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</div>
+<div data-type="equation" id="fs-idm399264">
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mo>=</mo><mo>&#160;</mo><mfrac>
+<mrow>
+<msubsup>
+<mi>s</mi>
+<mn>1</mn>
+<mn>2</mn>
+</msubsup>
+
+</mrow>
+<mn>4</mn>
+</mfrac>
+<mo>+</mo><mfrac>
+<mrow>
+<msubsup>
+<mi>s</mi>
+<mn>2</mn>
+<mn>2</mn>
+</msubsup>
+
+</mrow>
+<mn>3</mn>
+</mfrac>
+<mo>+</mo><mfrac>
+<mrow>
+<msubsup>
+<mi>s</mi>
+<mn>3</mn>
+<mn>2</mn>
+</msubsup>
+
+</mrow>
+<mn>3</mn>
+</mfrac>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<msub>
+<mi>s</mi>
+<mn>1</mn>
+</msub>
+<mo>+</mo><msub>
+<mi>s</mi>
+<mn>2</mn>
+</msub>
+<mo>+</mo><msub>
+<mi>s</mi>
+<mn>3</mn>
+</msub>
+
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mn>10</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mo>=</mo><mo>&#160;</mo><mfrac>
+<mrow>
+<msubsup>
+<mi>s</mi>
+<mn>1</mn>
+<mn>2</mn>
+</msubsup>
+
+</mrow>
+<mn>4</mn>
+</mfrac>
+<mo>+</mo><mfrac>
+<mrow>
+<msubsup>
+<mi>s</mi>
+<mn>2</mn>
+<mn>2</mn>
+</msubsup>
+
+</mrow>
+<mn>3</mn>
+</mfrac>
+<mo>+</mo><mfrac>
+<mrow>
+<msubsup>
+<mi>s</mi>
+<mn>3</mn>
+<mn>2</mn>
+</msubsup>
+
+</mrow>
+<mn>3</mn>
+</mfrac>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<msub>
+<mi>s</mi>
+<mn>1</mn>
+</msub>
+<mo>+</mo><msub>
+<mi>s</mi>
+<mn>2</mn>
+</msub>
+<mo>+</mo><msub>
+<mi>s</mi>
+<mn>3</mn>
+</msub>
+
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mn>10</mn>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</div>
+
+<p id="eip-idp15158384">where <em data-effect="italics">n</em><sub>1</sub> = 4, <em data-effect="italics">n</em><sub>2</sub> = 3, <em data-effect="italics">n</em><sub>3</sub> = 3  and  <em data-effect="italics">n</em> = <em data-effect="italics">n</em><sub>1</sub> + <em data-effect="italics">n</em><sub>2</sub> + <em data-effect="italics">n</em><sub>3</sub> = 10</p><div data-type="equation" id="fs-idp1558352"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mo>&#160;</mo><mo>&#160;</mo><mo>=</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mn>16.5</mn>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mn>4</mn>
+</mfrac>
+<mo>+</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mn>15</mn>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mn>3</mn>
+</mfrac>
+<mo>+</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mn>15.5</mn>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mn>3</mn>
+</mfrac>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mn>16.5</mn><mo>+</mo><mn>15</mn><mo>+</mo><mn>15.5</mn>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mn>10</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mo>&#160;</mo><mo>&#160;</mo><mo>=</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mn>16.5</mn>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mn>4</mn>
+</mfrac>
+<mo>+</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mn>15</mn>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mn>3</mn>
+</mfrac>
+<mo>+</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mn>15.5</mn>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mn>3</mn>
+</mfrac>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mn>16.5</mn><mo>+</mo><mn>15</mn><mo>+</mo><mn>15.5</mn>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mn>10</mn>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</div><div data-type="equation" id="fs-idp47211392">
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2.2458</mn>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2.2458</mn>
+</mrow></annotation-xml></semantics></math>
+</div>
+
+<div data-type="equation" id="fs-idm43777664"> <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mi>S</mi><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&#8721;</mo><msup>
+<mi>x</mi>
+<mn>2</mn>
+</msup>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mo>&#8721;</mo><mi>x</mi>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&#8721;</mo><msup>
+<mi>x</mi>
+<mn>2</mn>
+</msup>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<mo>&#8721;</mo><mi>x</mi>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</div><div data-type="equation" id="fs-idp28622176"> <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mo>&#160;</mo><mo>=</mo><mrow><mo>(</mo>
+<mrow>
+<msup>
+<mn>5</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mrow>
+<mn>4.5</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>4</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>3</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mrow>
+<mn>3.5</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>7</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mrow>
+<mn>4.5</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>8</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>4</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mrow>
+<mn>3.5</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mo>&#160;</mo><mo>=</mo><mrow><mo>(</mo>
+<mrow>
+<msup>
+<mn>5</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mrow>
+<mn>4.5</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>4</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>3</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mrow>
+<mn>3.5</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>7</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mrow>
+<mn>4.5</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>8</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mn>4</mn>
+<mn>2</mn>
+</msup>
+<mo>+</mo><msup>
+<mrow>
+<mn>3.5</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mo>)</mo></mrow>
+</mrow></annotation-xml></semantics></math>
+</div>
+
+<div data-type="equation" id="fs-idp99714192"> <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><mn>5</mn><mo>+</mo><mn>4.5</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>3.5</mn><mo>+</mo><mn>7</mn><mo>+</mo><mn>4.5</mn><mo>+</mo><mn>8</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>3.5</mn><mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mn>10</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><mn>5</mn><mo>+</mo><mn>4.5</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>3.5</mn><mo>+</mo><mn>7</mn><mo>+</mo><mn>4.5</mn><mo>+</mo><mn>8</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>3.5</mn><mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mn>10</mn>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </div>
+
+<div data-type="equation" id="fs-idp13819792"> <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mo>=</mo><mn>244</mn><mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mn>47</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mn>10</mn>
+</mrow>
+</mfrac>
+<mo>=</mo><mn>244</mn><mo>&#8722;</mo><mn>220.9</mn>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mo>=</mo><mn>244</mn><mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mn>47</mn>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mn>10</mn>
+</mrow>
+</mfrac>
+<mo>=</mo><mn>244</mn><mo>&#8722;</mo><mn>220.9</mn>
+</mrow></annotation-xml></semantics></math>
+</div>
+
+<div data-type="equation" id="fs-idm45074976">
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mo stretchy="false">)</mo><mo>=</mo><mn>23.1</mn>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mo stretchy="false">)</mo><mo>=</mo><mn>23.1</mn>
+</mrow></annotation-xml></semantics></math> </div>
+
+<div data-type="equation" id="fs-idp85849072">
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mo stretchy="false">)</mo><mo>&#8722;</mo><mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mo stretchy="false">)</mo>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mo stretchy="false">)</mo><mo>&#8722;</mo><mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>b</mi><mi>e</mi><mi>t</mi><mi>w</mi><mi>e</mi><mi>e</mi><mi>n</mi><mo stretchy="false">)</mo>
+</mrow></annotation-xml></semantics></math> </div>
+
+<div data-type="equation" id="fs-idp97238064">
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mo>=</mo><mo>&#160;</mo><mn>23.1</mn><mo>&#8722;</mo><mn>2.2458</mn>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mo>=</mo><mo>&#160;</mo><mn>23.1</mn><mo>&#8722;</mo><mn>2.2458</mn>
+</mrow></annotation-xml></semantics></math>
+</div>
+
+<div data-type="equation" id="fs-idp19006144">
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+<mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>20.8542</mn>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><mi>S</mi><mo stretchy="false">(</mo><mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>i</mi><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>20.8542</mn>
+</mrow></annotation-xml></semantics></math>
+</div>
+
+
+<div data-type="note" data-has-label="true" id="fs-idp86961312" class="statistics calculator" data-label="">
+<p id="eip-786">One-Way ANOVA Table:  The formulas for <em data-effect="italics">SS</em>(Total), <em data-effect="italics">SS</em>(Factor) = <em data-effect="italics">SS</em>(Between) and <em data-effect="italics">SS</em>(Error) = <em data-effect="italics">SS</em>(Within) as shown previously. The same information is provided by the TI calculator hypothesis test function ANOVA in STAT TESTS (syntax is ANOVA(L1, L2, L3) where L1, L2, L3 have the data from Plan 1, Plan 2, Plan 3 respectively).</p></div>
+
+<table id="eip-id1172005012068" summary="General One-Way ANOVA Table with 3 rows and 4 columns."><thead>
+<tr>
+<th data-align="center">Source of Variation</th>
+<th data-align="center">Sum of Squares (<em data-effect="italics">SS</em>)</th>
+<th data-align="center">Degrees of Freedom (<em data-effect="italics">df</em>)</th>
+<th data-align="center">Mean Square (<em data-effect="italics">MS</em>)</th>
+<th data-align="center"><em data-effect="italics">F</em></th>
+</tr>
+</thead><tbody>
+<tr>
+<td data-align="center">Factor <div data-type="newline"><br/></div>(Between)</td>
+<td data-align="center"><em data-effect="italics">SS</em>(Factor) <div data-type="newline"><br/></div>= <em data-effect="italics">SS</em>(Between) <div data-type="newline"><br/></div>= 2.2458</td>
+<td data-align="center"><em data-effect="italics">k</em> &#8211; 1 <div data-type="newline"><br/></div>= 3 groups &#8211; 1 <div data-type="newline"><br/></div>= 2</td>
+<td data-align="center"><em data-effect="italics">MS</em>(Factor) <div data-type="newline"><br/></div>= <em data-effect="italics">SS</em>(Factor)/(<em data-effect="italics">k</em> &#8211; 1)<div data-type="newline"><br/></div> = 2.2458/2 <div data-type="newline"><br/></div>= 1.1229</td>
+<td data-align="center"><em data-effect="italics">F</em> =<div data-type="newline"><br/></div> <em data-effect="italics">MS</em>(Factor)/<em data-effect="italics">MS</em>(Error) <div data-type="newline"><br/></div>= 1.1229/2.9792 <div data-type="newline"><br/></div>= 0.3769</td>
+</tr>
+<tr>
+<td data-align="center">Error <div data-type="newline"><br/></div>(Within)</td>
+<td data-align="center"><em data-effect="italics">SS</em>(Error) <div data-type="newline"><br/></div>= <em data-effect="italics">SS</em>(Within) <div data-type="newline"><br/></div>= 20.8542</td>
+<td data-align="center"><em data-effect="italics">n</em> &#8211; <em data-effect="italics">k</em> <div data-type="newline"><br/></div>= 10 total data &#8211; 3 groups <div data-type="newline"><br/></div>= 7</td>
+<td data-align="center"><em data-effect="italics">MS</em>(Error) <div data-type="newline"><br/></div>= <em data-effect="italics">SS</em>(Error)/(<em data-effect="italics">n</em> &#8211; <em data-effect="italics">k</em>) <div data-type="newline"><br/></div>= 20.8542/7 <div data-type="newline"><br/></div>= 2.9792</td>
+<td data-align="center"/>
+</tr>
+<tr>
+<td data-align="center">Total</td>
+<td data-align="center"><em data-effect="italics">SS</em>(Total) <div data-type="newline"><br/></div>= 2.2458 + 20.8542 <div data-type="newline"><br/></div>= 23.1</td>
+<td data-align="center"><em data-effect="italics">n</em> &#8211; 1 <div data-type="newline"><br/></div>= 10 total data &#8211; 1 <div data-type="newline"><br/></div>= 9</td>
+<td data-align="center"/>
+<td data-align="center"/></tr>
+
+
+</tbody></table>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idp19091024" class="statistics try finger" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm48661072">
+<div data-type="problem" id="fs-idp24724224">
+<p id="fs-idp86837680">As part of an experiment to see how different types of soil cover would affect slicing tomato production, Marist College students grew tomato plants under different soil cover conditions. Groups of three plants each had one of the following treatments</p>
+<ul id="fs-idp86838320">
+<li>bare soil</li>
+<li>a commercial ground cover</li>
+<li>black plastic</li>
+<li>straw</li>
+<li>compost</li>
+</ul>
+<p id="fs-idm49310544">All plants grew under the same conditions and were the same variety.  Students recorded the weight (in grams) of tomatoes produced by each of the <em data-effect="italics">n</em> = 15 plants:</p>
+
+<table id="fs-idm49309984" summary=""><thead>
+<tr><th>Bare: <em data-effect="italics">n</em><sub>1</sub> = 3</th>	<th>Ground Cover: <em data-effect="italics">n</em><sub>2</sub> = 3</th>	<th>Plastic: <em data-effect="italics">n</em><sub>3</sub> = 3</th>	<th>Straw: <em data-effect="italics">n</em><sub>4</sub> = 3</th> <th>Compost: <em data-effect="italics">n</em><sub>5</sub> = 3</th></tr>
+</thead><tbody>
+<tr><td>2,625</td>	<td>5,348</td>	<td>6,583</td>	<td>7,285</td>	<td>6,277</td></tr>
+<tr><td>2,997</td>	<td>5,682</td>	<td>8,560</td>	<td>6,897</td>	<td>7,818</td></tr>
+<tr><td>4,915</td>	<td>5,482</td>	<td>3,830</td>	<td>9,230</td>	<td>8,677</td></tr>
+
+</tbody></table>
+<p id="fs-idp30767328"><div data-type="newline"><br/></div>Create the one-way ANOVA table.</p></div>
+</div>
+</div>
+
+
+<p id="element-260"><strong>The one-way ANOVA hypothesis test is always right-tailed</strong> because larger <em data-effect="italics">F</em>-values are way out in the right tail of the <em data-effect="italics">F</em>-distribution curve and tend to make us reject <em data-effect="italics">H<sub>0</sub></em>.</p>
+
+<section data-depth="1" id="element-628"><h3 data-type="title">Notation</h3>
+<p id="element-999">The notation for the <em data-effect="italics">F</em> distribution is <em data-effect="italics">F</em> ~ <em data-effect="italics">F</em><sub><em data-effect="italics">df</em>(<em data-effect="italics">num</em>),<em data-effect="italics">df</em>(<em data-effect="italics">denom</em>)</sub></p>
+
+<p id="element-966">where <em data-effect="italics">df</em>(<em data-effect="italics">num</em>) = <em data-effect="italics">df</em><sub>between</sub> and <em data-effect="italics">df</em>(<em data-effect="italics">denom</em>) = <em data-effect="italics">df</em><sub>within</sub> </p>
+
+<p id="element-181">The mean for the <em data-effect="italics">F</em> distribution is  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>&#956;</mi><mo>=</mo><mfrac>
+<mrow>
+<mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>d</mi><mi>e</mi><mi>n</mi><mi>o</mi><mi>m</mi><mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>d</mi><mi>e</mi><mi>n</mi><mi>o</mi><mi>m</mi><mo stretchy="false">)</mo><mo>&#8211;</mo><mn>2</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>&#956;</mi><mo>=</mo><mfrac>
+<mrow>
+<mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>d</mi><mi>e</mi><mi>n</mi><mi>o</mi><mi>m</mi><mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>d</mi><mi>e</mi><mi>n</mi><mi>o</mi><mi>m</mi><mo stretchy="false">)</mo><mo>&#8211;</mo><mn>2</mn>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </p></section>
+
+<section data-depth="1" id="eip-957" class="references"><h3 data-type="title">References</h3>
+<p id="eip-405">Tomato Data, Marist College School of Science (unpublished student research)
+</p></section>
+
+<section data-depth="1" id="fs-idp65787616" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="eip-18">Analysis of variance compares the means of a response variable for several groups. ANOVA compares the variation within each group to the variation of the mean of each group. The ratio of these two is the <em data-effect="italics">F</em> statistic from an <em data-effect="italics">F</em> distribution with (number of groups &#8211; 1) as the numerator degrees of freedom and (number of observations &#8211; number of groups) as the denominator degrees of freedom.  These statistics are summarized in the ANOVA table.
+</p>
+</section>
+
+<section data-depth="1" id="fs-idm69171152" class="formula-review"><h3 data-type="title">Formula Review</h3>
+<p id="eip-149"> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mo>&#160;</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+<mo>=</mo><msup>
+<mstyle mathsize="140%" displaystyle="true"><mo>&#8721;</mo></mstyle>
+<mtext>&#8203;</mtext>
+</msup>
+<mrow><mo>[</mo> <mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+<mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow> <mo>]</mo></mrow><mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<msup>
+<mstyle mathsize="140%" displaystyle="true"><mo>&#8721;</mo></mstyle>
+<mtext>&#8203;</mtext>
+</msup>
+<msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mi>n</mi><mo>&#160;</mo>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mo>&#160;</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+<mo>=</mo><msup>
+<mstyle mathsize="140%" displaystyle="true"><mo>&#8721;</mo></mstyle>
+<mtext>&#8203;</mtext>
+</msup>
+<mrow><mo>[</mo> <mrow>
+<mfrac>
+<mrow>
+<msup>
+<mrow>
+<mo stretchy="false">(</mo><msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+<mo stretchy="false">)</mo>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msub>
+<mi>n</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow> <mo>]</mo></mrow><mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<msup>
+<mstyle mathsize="140%" displaystyle="true"><mo>&#8721;</mo></mstyle>
+<mtext>&#8203;</mtext>
+</msup>
+<msub>
+<mi>s</mi>
+<mi>j</mi>
+</msub>
+
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<mi>n</mi><mo>&#160;</mo>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </p>
+
+<p id="eip-104">
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>total</mtext>
+</mrow>
+</msub>
+<mo>=</mo><msup>
+<mstyle mathsize="140%" displaystyle="true"><mo>&#8721;</mo></mstyle>
+<mtext>&#8203;</mtext>
+</msup>
+<msup>
+<mi>x</mi>
+<mn>2</mn>
+</msup>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<msup>
+<mstyle mathsize="140%" displaystyle="true"><mo>&#8721;</mo></mstyle>
+<mtext>&#8203;</mtext>
+</msup>
+<mi>x</mi>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>total</mtext>
+</mrow>
+</msub>
+<mo>=</mo><msup>
+<mstyle mathsize="140%" displaystyle="true"><mo>&#8721;</mo></mstyle>
+<mtext>&#8203;</mtext>
+</msup>
+<msup>
+<mi>x</mi>
+<mn>2</mn>
+</msup>
+<mo>&#8722;</mo><mfrac>
+<mrow>
+<msup>
+<mrow>
+<mrow><mo>(</mo>
+<mrow>
+<msup>
+<mstyle mathsize="140%" displaystyle="true"><mo>&#8721;</mo></mstyle>
+<mtext>&#8203;</mtext>
+</msup>
+<mi>x</mi>
+</mrow>
+<mo>)</mo></mrow>
+</mrow>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mi>n</mi>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</p>
+
+<p id="eip-19"> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+<mo>=</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>total</mtext>
+</mrow>
+</msub>
+<mo>&#8722;</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+<mo>=</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>total</mtext>
+</mrow>
+</msub>
+<mo>&#8722;</mo><mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow></annotation-xml></semantics></math> </p>
+
+<p id="eip-357"><em data-effect="italics">df</em><sub>between</sub> = <em data-effect="italics">df</em>(<em data-effect="italics">num</em>) = <em data-effect="italics">k</em> &#8211; 1</p><p id="eip-152"><em data-effect="italics">df</em><sub>within</sub> = <em data-effect="italics">df(denom)</em> = <em data-effect="italics">n</em> &#8211; <em data-effect="italics">k</em> </p><p id="eip-135"><em data-effect="italics">MS</em><sub>between</sub> =  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </p><p id="eip-719"><em data-effect="italics">MS</em><sub>within</sub> =  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>S</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>d</mi><msub>
+<mi>f</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </p><p id="eip-714"><em data-effect="italics">F</em> =  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>between</mtext>
+</mrow>
+</msub>
+
+</mrow>
+<mrow>
+<mi>M</mi><msub>
+<mi>S</mi>
+<mrow>
+<mtext>within</mtext>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </p>
+
+<p id="eip-151"><em data-effect="italics">F</em> ratio when the groups are the same size: <em data-effect="italics">F</em> =   <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>n</mi><msub>
+<mi>s</mi>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+</msub>
+<msup>
+<mrow/>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msup>
+<mi>s</mi>
+<mtext>2</mtext>
+</msup>
+<msub>
+<mrow/>
+<mrow>
+<mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>n</mi><msub>
+<mi>s</mi>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+</msub>
+<msup>
+<mrow/>
+<mn>2</mn>
+</msup>
+
+</mrow>
+<mrow>
+<msup>
+<mi>s</mi>
+<mtext>2</mtext>
+</msup>
+<msub>
+<mrow/>
+<mrow>
+<mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+</mrow>
+</msub>
+
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math>
+</p><p id="eip-8">Mean of the <em data-effect="italics">F</em> distribution:  <em data-effect="italics">&#181;</em> =  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mfrac>
+<mrow>
+<mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mi>u</mi><mi>m</mi><mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>d</mi><mi>e</mi><mi>n</mi><mi>o</mi><mi>m</mi><mo stretchy="false">)</mo><mo>&#8722;</mo><mn>1</mn>
+</mrow>
+</mfrac>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mfrac>
+<mrow>
+<mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mi>u</mi><mi>m</mi><mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>d</mi><mi>e</mi><mi>n</mi><mi>o</mi><mi>m</mi><mo stretchy="false">)</mo><mo>&#8722;</mo><mn>1</mn>
+</mrow>
+</mfrac>
+
+</mrow></annotation-xml></semantics></math> </p><p id="eip-251">where:
+</p><ul id="eip-idp177552"><li><em data-effect="italics">k</em> = the number of groups</li>
+<li><em data-effect="italics">n<sub>j</sub></em> = the size of the <em data-effect="italics">j<sup>th</sup></em> group</li>
+<li><em data-effect="italics">s<sub>j</sub></em> = the sum of the values in the <em data-effect="italics">j<sup>th</sup></em> group</li>
+<li><em data-effect="italics">n</em> = the total number of all values (observations) combined</li>
+<li><em data-effect="italics">x</em> = one value (one observation) from the data</li>
+<li> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<msub>
+<mi>s</mi>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+</msub>
+<msup>
+<mrow/>
+<mn>2</mn>
+</msup>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<msub>
+<mi>s</mi>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+
+</msub>
+<msup>
+<mrow/>
+<mn>2</mn>
+</msup>
+
+</mrow></annotation-xml></semantics></math>  = the variance of the sample means</li>
+<li> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<msup>
+<mi>s</mi>
+<mn>2</mn>
+</msup>
+<msub>
+<mrow/>
+<mrow>
+<mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+</mrow>
+</msub>
+
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<msup>
+<mi>s</mi>
+<mn>2</mn>
+</msup>
+<msub>
+<mrow/>
+<mrow>
+<mi>p</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>d</mi>
+</mrow>
+</msub>
+
+</mrow></annotation-xml></semantics></math>
+= the mean of the sample variances (pooled variance)</li>
+</ul></section>
+
+<section data-depth="1" id="fs-idm89796288" class="practice">
+<p id="eip-723"><em data-effect="italics">Use the following information to answer the next eight exercises.</em> Groups of men from three different areas of the country are to be tested for mean weight. The entries in <a href="#eip-556" class="autogenerated-content">[link]</a> are the weights for the different groups.</p><table id="eip-556" summary=".."><thead>
+<tr><th>Group 1</th>	<th>Group 2</th>	<th>Group 3</th></tr>
+</thead><tbody>
+<tr><td>216</td>	<td>202</td>	<td>170</td></tr>
+<tr><td>198</td>	<td>213</td>	<td>165</td></tr>
+<tr><td>240</td>	<td>284</td>	<td>182</td></tr>
+<tr><td>187</td>	<td>228</td>	<td>197</td></tr>
+<tr><td>176</td>	<td>210</td>	<td>201</td></tr>
+</tbody></table>
+<div data-type="exercise" id="eip-317">
+<div data-type="problem" id="eip-77">
+<p id="eip-342">What is the Sum of Squares Factor?</p>
+</div>
+
+<div data-type="solution" id="eip-115">
+<p id="eip-242">4,939.2</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-394"><div data-type="problem" id="eip-184">
+<p id="eip-338">
+What is the Sum of Squares Error?
+</p>
+</div>  </div>
+
+<div data-type="exercise" id="eip-617">
+<div data-type="problem" id="eip-473">
+<p id="eip-2">What is the <em data-effect="italics">df</em> for the numerator?</p>
+</div>
+<div data-type="solution" id="eip-838">
+<p id="eip-777">2</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-920"><div data-type="problem" id="eip-47">
+<p id="eip-661">What is the <em data-effect="italics">df</em> for the denominator?</p>
+</div></div>
+
+<div data-type="exercise" id="eip-297">
+<div data-type="problem" id="eip-609">
+<p id="eip-328">What is the Mean Square Factor?</p>
+</div>
+
+<div data-type="solution" id="eip-764">
+<p id="eip-400">2,469.6</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-869"><div data-type="problem" id="eip-383">
+<p id="eip-944">What is the Mean Square Error?</p>
+</div>  </div><div data-type="exercise" id="eip-485"><div data-type="problem" id="eip-502">
+<p id="eip-44">What is the <em data-effect="italics">F</em> statistic?</p>
+</div>
+<div data-type="solution" id="eip-987">
+<p id="eip-573">3.7416</p>
+</div>
+</div>
+
+<p id="eip-938"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next eight exercises.</em> Girls from four different soccer teams are to be tested for mean goals scored per game. The entries in the table are the goals per game for the different teams. The one-way ANOVA results are shown in <a href="#eip-461" class="autogenerated-content">[link]</a>.</p><table id="eip-461" summary=".."><thead><tr><th>Team 1</th>	<th>Team 2</th>	<th>Team 3</th>	<th>Team 4</th></tr></thead><tbody>
+<tr><td>1</td>	<td>2</td>	<td>0</td>	<td>3</td></tr>
+<tr><td>2</td>	<td>3</td>	<td>1</td>	<td>4</td></tr>
+<tr><td>0</td>	<td>2</td>	<td>1</td>	<td>4</td></tr>
+<tr><td>3</td>	<td>4</td>	<td>0</td>	<td>3</td></tr>
+<tr><td>2</td>	<td>4</td>	<td>0</td>	<td>2</td></tr>
+</tbody></table><div data-type="exercise" id="eip-380"><div data-type="problem" id="eip-915">
+<p id="eip-796">
+What is <em data-effect="italics">SS<sub>between</sub></em>?
+</p>
+</div>
+</div><div data-type="exercise" id="eip-332">
+<div data-type="problem" id="eip-86">
+<p id="eip-524">What is the <em data-effect="italics">df</em> for the numerator?</p>
+</div>
+<div data-type="solution" id="eip-212">
+<p id="eip-79">3</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-361"><div data-type="problem" id="eip-211">
+<p id="eip-270">What is <em data-effect="italics">MS<sub>between</sub></em>?
+</p></div>  </div><div data-type="exercise" id="eip-543">
+<div data-type="problem" id="eip-340">
+<p id="eip-276">
+What is <em data-effect="italics">SS<sub>within</sub></em>?
+
+</p>
+</div>
+
+<div data-type="solution" id="eip-60">
+<p id="eip-399">13.2</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-200"><div data-type="problem" id="eip-830">
+<p id="eip-564">What is the <em data-effect="italics">df</em> for the denominator?</p>
+</div>  </div><div data-type="exercise" id="eip-91"><div data-type="problem" id="eip-81">
+<p id="eip-709">What is <em data-effect="italics">MS<sub>within</sub></em>?
+</p></div>
+
+<div data-type="solution" id="eip-913">
+<p id="eip-831">0.825</p>
+</div>
+</div>
+
+<div data-type="exercise" id="eip-501"><div data-type="problem" id="eip-955">
+<p id="eip-653">What is the <em data-effect="italics">F</em> statistic?</p>
+</div>  </div>
+
+<div data-type="exercise" id="eip-23">
+<div data-type="problem" id="eip-715">
+<p id="eip-695">Judging by the <em data-effect="italics">F</em> statistic, do you think it is likely or unlikely that you will reject the null hypothesis?</p></div>
+<div data-type="solution" id="eip-61">
+<p id="eip-996">Because a one-way ANOVA test is always right-tailed, a high <em data-effect="italics">F</em> statistic corresponds to a low <em data-effect="italics">p</em>-value, so it is likely that we will reject the null hypothesis.</p></div>
+</div>
+</section>
+
+<section data-depth="1" id="eip-103" class="free-response"><h3 data-type="title">Homework</h3><p id="eip-434">
+<em data-effect="italics">Use the following information to answer the next three exercises.</em> Suppose a group is interested in determining whether teenagers obtain their drivers licenses at approximately the same average age across the country.
+Suppose that the following data are randomly collected from five teenagers in each region of the country. The numbers represent the age at which teenagers obtained their drivers licenses.
+</p>
+<table id="eip-idp64551440" summary="..."><thead>
+<tr>
+<th/>
+<th>Northeast</th>
+<th>South</th>
+<th>West</th>
+<th>Central</th>
+<th>East</th>
+</tr>
+</thead><tbody>
+
+<tr>
+<td/>
+<td>16.3</td>
+<td>16.9</td>
+<td>16.4</td>
+<td>16.2</td>
+<td>17.1</td>
+</tr>
+<tr>
+<td/>
+<td>16.1</td>
+<td>16.5</td>
+<td>16.5</td>
+<td>16.6</td>
+<td>17.2</td>
+</tr>
+<tr>
+<td/>
+<td>16.4</td>
+<td>16.4</td>
+<td>16.6</td>
+<td>16.5</td>
+<td>16.6</td>
+</tr>
+<tr>
+<td/>
+<td>16.5</td>
+<td>16.2</td>
+<td>16.1</td>
+<td>16.4</td>
+<td>16.8</td>
+</tr>
+<tr>
+<td>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+<mo>=</mo>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+<mo>=</mo>
+</mrow></annotation-xml></semantics></math>
+</td>
+<td>________</td>
+<td>________</td>
+<td>________</td>
+<td>________</td>
+<td>________</td>
+</tr>
+<tr>
+<td>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mrow>
+<msup>
+<mi>s</mi>
+<mn>2</mn>
+</msup>
+<mo>=</mo>
+</mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+<msup>
+<mi>s</mi>
+<mn>2</mn>
+</msup>
+<mo>=</mo>
+</mrow></annotation-xml></semantics></math> </td>
+<td>________</td>
+<td>________</td>
+<td>________</td>
+<td>________</td>
+<td>________</td>
+</tr>
+</tbody></table>
+
+
+<p id="eip-93"><em data-effect="italics">H<sub>0</sub></em>: <em data-effect="italics">&#181;</em><sub>1</sub> = <em data-effect="italics">&#181;</em><sub>2</sub> = <em data-effect="italics">&#181;</em><sub>3</sub> = <em data-effect="italics">&#181;</em><sub>4</sub> = <em data-effect="italics">&#181;</em><sub>5</sub></p>
+<p id="eip-idp81417168"><em data-effect="italics">H&#945;</em>: At least any two of the group means <em data-effect="italics">&#181;</em><sub>1</sub>, <em data-effect="italics">&#181;</em><sub>2</sub>, &#8230;, <em data-effect="italics">&#181;</em><sub>5</sub> are not equal.</p>
+
+
+<div data-type="exercise" id="fs-idm50760160"><div data-type="problem" id="id47643237">
+<p id="element-341">degrees of freedom &#8211; numerator: <em data-effect="italics">df</em>(<em data-effect="italics">num</em>) = _________</p></div></div>
+
+<div data-type="exercise" id="fs-idp124948560">
+<div data-type="problem" id="id47591322">
+<p id="element-242">degrees of freedom &#8211; denominator: <em data-effect="italics">df</em>(<em data-effect="italics">denom</em>) = ________</p></div>
+<div data-type="solution" id="id47591380">
+<p id="element-124"><em data-effect="italics">df</em>(<em data-effect="italics">denom</em>) = 15</p></div>
+</div>
+
+<div data-type="exercise" id="element-115">
+<div data-type="problem" id="id47591432">
+<p id="element-677"><em data-effect="italics">F</em> statistic = ________</p></div>
+</div>
+
+</section></body>
+
+</html>

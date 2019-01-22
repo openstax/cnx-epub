@@ -1,0 +1,818 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>The Central Limit Theorem for Sums</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46997/latest</md:content-url>
+  <md:content-id>m46997</md:content-id>
+  <md:title>The Central Limit Theorem for Sums</md:title>
+  <md:version>1.11</md:version>
+  <md:created>2013/07/19 13:42:48 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>central limit theorem for sums</md:keyword>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>percentile</md:keyword>
+    <md:keyword>random variable</md:keyword>
+    <md:keyword>sample size</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+    <md:keyword>z-score</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="delete_me">Suppose <emphasis effect="italics">X</emphasis> is a random variable with a distribution that may be <emphasis>known or unknown</emphasis> (it can be any distribution) and suppose:</para>
+
+<list id="list-1" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">&#956;<sub>X</sub></emphasis> = the mean of <emphasis effect="italics">&#935;</emphasis></item>
+<item><emphasis effect="italics">&#963;<sub>&#935;</sub></emphasis> = the standard deviation of <emphasis effect="italics">X</emphasis></item>
+</list>
+
+<para id="fs-idm29530720">If you draw random samples of size <emphasis effect="italics">n</emphasis>, then as <emphasis effect="italics">n</emphasis> increases, the random variable &#931;<emphasis effect="italics">X</emphasis> consisting of sums tends to be <term>normally distributed</term> and &#931;<emphasis effect="italics">&#935;</emphasis> ~ <emphasis effect="italics">N</emphasis>((<emphasis effect="italics">n</emphasis>)(<emphasis effect="italics">&#956;<sub>&#935;</sub></emphasis>), (<m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+ </m:mrow>
+</m:math>)(<emphasis effect="italics">&#963;<sub>&#935;</sub></emphasis>)).</para><para id="element-603"><emphasis>The</emphasis> <term>central limit theorem for sums</term> says that if you keep drawing larger and larger samples and taking their sums, the sums form their own normal distribution (the sampling distribution), which approaches a normal distribution as the sample size increases. <emphasis>The normal distribution has a mean equal to the original mean multiplied by the sample size and a standard deviation equal to the original standard deviation multiplied by the square root of the sample size.</emphasis></para><para id="element-7">The random variable &#931;<emphasis effect="italics">X</emphasis> has the following <emphasis effect="italics">z</emphasis>-score associated with it:</para>
+
+<list id="element-434" list-type="enumerated" number-style="lower-alpha"><item>&#931;<emphasis effect="italics">x</emphasis> is one sum.</item>
+<item><m:math>
+ <m:mrow>
+  <m:mi>z</m:mi><m:mtext>&#160;=&#160;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:mi>&#931;</m:mi><m:mi>x</m:mi><m:mo>&#8211;</m:mo><m:mo stretchy="false">(</m:mo><m:mi>n</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:msub>
+     <m:mi>&#956;</m:mi>
+     <m:mi>X</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+    <m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:msub>
+     <m:mi>&#963;</m:mi>
+     <m:mi>X</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+<list id="element-444" list-type="enumerated" number-style="lower-roman">
+<item>(<emphasis effect="italics">n</emphasis>)(<emphasis effect="italics">&#956;<sub>X</sub></emphasis>) = the mean of &#931;<emphasis effect="italics">X</emphasis></item>
+	<item>
+<m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+  <m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:msub>
+   <m:mi>&#963;</m:mi>
+   <m:mi>X</m:mi>
+  </m:msub>
+  <m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+</m:math> = standard deviation of <m:math>
+ <m:mrow>
+  <m:mi>&#931;</m:mi><m:mi>X</m:mi>
+ </m:mrow>
+</m:math>
+</item>
+	</list></item></list><note id="fs-idm172522384" class="statistics calculator">
+<label/>
+<para id="fs-idp42629152">To find probabilities for sums on the calculator, follow these steps.</para>
+<para id="fs-idm146409264">2<sup>nd</sup> <code>DISTR</code>
+<newline/>2:<code>normalcdf</code>
+<newline/><code>normalcdf</code>(lower value of the area, upper value of the area, (<emphasis effect="italics">n</emphasis>)(mean), (<m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>)(standard deviation))</para>
+<para id="fs-idm140461680">where:
+<list id="fs-idm89750656" list-type="bulleted"><item><emphasis effect="italics">mean</emphasis> is the mean of the original distribution</item>
+<item><emphasis effect="italics">standard deviation</emphasis> is the standard deviation of the original distribution</item>
+<item><term><emphasis effect="italics">sample size</emphasis></term> = n</item>
+</list></para>
+</note>
+
+
+<example id="element-747">
+<para id="element-455">An unknown distribution has a mean of 90 and a standard deviation of 15. A sample of size 80 is drawn randomly from the population.<newline/></para><exercise id="element-55"><problem id="id12220262">
+  <list id="element-710" list-type="enumerated" number-style="lower-alpha"><item>Find the probability that the sum of the 80 values (or the total of the 80 values) is more than 7,500.</item>
+<item>Find the sum that is 1.5 standard deviations above the mean of the sums.</item>
+</list>
+</problem>
+
+<solution id="id12220316">
+  <para id="element-804">Let <emphasis effect="italics">X</emphasis> = one value from the original unknown population. The probability question asks you to find a probability for <emphasis>the sum (or total of) 80 values.</emphasis></para>
+<para id="element-56">&#931;<emphasis effect="italics">X</emphasis> = the sum or total of 80 values. Since <emphasis effect="italics">&#956;<sub>X</sub></emphasis> = 90, <emphasis effect="italics">&#963;<sub>X</sub></emphasis> = 15, and <emphasis effect="italics">n</emphasis> = 80, <m:math>
+ <m:mrow>
+  <m:mi>&#931;</m:mi><m:mi>X</m:mi>
+ </m:mrow>
+</m:math> ~ <emphasis effect="italics">N</emphasis>((80)(90), <newline/>(<m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mtext>80</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>)(15))</para>
+
+<list id="element-907" list-type="bulleted"><item>mean of the sums = (<emphasis effect="italics">n</emphasis>)(<emphasis effect="italics">&#956;<sub>X</sub></emphasis>) = (80)(90) = 7,200</item>
+<item>standard deviation of the sums = <m:math>
+ <m:mrow>
+  <m:mtext>(</m:mtext><m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+  <m:mtext>)(</m:mtext><m:msub>
+   <m:mi>&#963;</m:mi>
+   <m:mi>X</m:mi>
+  </m:msub>
+  <m:mtext>) = (</m:mtext><m:msqrt>
+   <m:mrow>
+    <m:mtext>80</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+  <m:mtext>)</m:mtext>
+ </m:mrow>
+</m:math>(15)</item>
+<item>sum of 80 values = <emphasis effect="italics">&#931;x</emphasis> = 7,500<newline/></item>
+</list><para id="fs-idm55727008">a. Find <emphasis effect="italics">P</emphasis>(&#931;<emphasis effect="italics">x</emphasis> &gt; 7,500)</para>
+<para id="element-704"><emphasis effect="italics">P</emphasis>(&#931;<emphasis effect="italics">x</emphasis> &gt; 7,500) = 0.0127</para>
+
+<figure id="fs-idm54365952">
+<media id="id12212529" alt="This is a normal distribution curve. The peak of the curve coincides with the point 7200 on the horizontal axis. The point 7500 is also labeled. A vertical line extends from point 7500 to the curve. The area to the right of 7500 below the curve is shaded.">
+<image src="fig-ch07_03_01.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+
+<note id="fs-idm202010592" class="statistics calculator">
+<label/>
+<para id="element-389">
+<code>normalcdf</code>(lower value, upper value, mean of sums, <code>stdev</code> of sums)</para>
+<para id="element-503">The parameter list is abbreviated(lower, upper, (<emphasis effect="italics">n</emphasis>)(<emphasis effect="italics">&#956;<sub>X</sub></emphasis>, <m:math><m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>(<emphasis effect="italics">&#963;<sub>X</sub></emphasis>))</para>
+<para id="element-458"><code>normalcdf</code> (7500,1E99,(80)(90),<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:msqrt>
+     <m:mrow>
+      <m:mn>80</m:mn>
+     </m:mrow>
+    </m:msqrt>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>(15)) = 0.0127</para></note>
+
+<note id="fs-idm71809936" type="Reminder">
+<label/>
+<title>Reminder</title>
+<para id="element-565"><emphasis>1E99 = 10<sup>99</sup></emphasis>.</para>
+<para id="fs-idm138173168">Press the <code>EE</code> key for E.</para>
+</note>
+
+<para id="fs-idm48238000">b. Find &#931;<emphasis effect="italics">x</emphasis> where <emphasis effect="italics">z</emphasis> = 1.5.</para>
+
+<para id="fs-idm83248080">&#931;<emphasis effect="italics">x</emphasis> = (<emphasis effect="italics">n</emphasis>)(<emphasis effect="italics">&#956;<sub>X</sub></emphasis>) + (<emphasis effect="italics">z</emphasis>)<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>(<emphasis effect="italics">&#963;<sub>&#935;</sub></emphasis>) = (80)(90) + (1.5)(<m:math>
+<m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mn>80</m:mn>
+   </m:mrow>
+  </m:msqrt>
+ </m:mrow>
+</m:math>)(15) = 7,401.2</para>
+</solution>
+</exercise></example>
+
+<note id="fs-idm51983600" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm105647824"><problem id="fs-idm71758576">
+<para id="fs-idp18637136">An unknown distribution has a mean of 45 and a standard deviation of eight. A sample size of 50 is drawn randomly from the population. Find the probability that the sum of the 50 values is more than 2,400.</para>
+</problem>
+</exercise></note>
+
+<note id="fs-idm133155984" class="statistics calculator">
+<label/>
+<para id="fs-idm82544544">To find percentiles for sums on the calculator, follow these steps.</para>
+<para id="fs-idm25568352">2<sup>nd</sup> DIStR
+<newline/>3:invNorm
+<newline/><emphasis effect="italics">k</emphasis> = invNorm (area to the left of <emphasis effect="italics">k</emphasis>, (<emphasis effect="italics">n</emphasis>)(mean), <m:math>
+ <m:mrow>
+  <m:mtext>(</m:mtext><m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+  <m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+</m:math>(standard deviation))</para>
+
+<para id="fs-idm95058576">where:
+<list id="fs-idm10652880" list-type="bulleted"><item><emphasis effect="italics">k</emphasis> is the <emphasis effect="italics">k</emphasis><sup>th</sup> <term>percentile</term></item>
+<item><emphasis effect="italics">mean</emphasis> is the mean of the original distribution</item>
+<item><emphasis effect="italics">standard deviation</emphasis> is the standard deviation of the original distribution</item>
+<item><emphasis effect="italics">sample size</emphasis> = <emphasis effect="italics">n</emphasis></item>
+</list></para>
+</note>
+
+<example id="fs-idm82232896">
+<exercise id="fs-idm90047616">
+<problem id="fs-idm70958544">
+<para id="fs-idm5626528">In a recent study reported Oct. 29, 2012 on the Flurry Blog, the mean age of tablet users is 34 years. Suppose the standard deviation is 15 years. The sample of size is 50.</para>
+
+<list id="fs-idm90393840" list-type="enumerated" number-style="lower-alpha">
+<item>What are the mean and standard deviation for the sum of the ages of tablet users? What is the distribution?</item>
+<item>Find the probability that the sum of the ages is between 1,500 and 1,800 years.</item>
+<item>Find the 80<sup>th</sup> percentile for the sum of the 50 ages.</item>
+</list>
+</problem>
+
+<solution id="fs-idp41767792">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp6531984" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">&#956;<sub>&#931;x</sub></emphasis> = <emphasis effect="italics">n&#956;<sub>x</sub></emphasis> = 50(34) = 1,700 and <emphasis effect="italics">&#963;<sub>&#931;x</sub></emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+ </m:mrow>
+</m:math><emphasis effect="italics">&#963;<sub>x</sub></emphasis> = <m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mtext>50</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+  <m:mtext>&#160;)</m:mtext>
+ </m:mrow>
+</m:math>(15) = 106.07
+<newline count="1"/>The distribution is normal for sums by the central limit theorem.</item>
+<item><emphasis effect="italics">P</emphasis>(1500 &lt; &#931;<emphasis effect="italics">x</emphasis> &lt; 1800) = <code>normalcdf</code>
+(1,500, 1,800, (50)(34), <m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mtext>50</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+  <m:mtext>&#160;)</m:mtext>
+ </m:mrow>
+</m:math>(15)) = 0.7974</item>
+<item>Let <emphasis effect="italics">k</emphasis> = the 80<sup>th</sup> percentile.
+<newline count="1"/><emphasis effect="italics">k</emphasis> = <code>invNorm</code>(0.80,(50)(34),<m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mtext>50</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+  <m:mtext>&#160;)</m:mtext>
+ </m:mrow>
+</m:math>(15)) = 1,789.3</item>
+</list></solution>
+</exercise>
+</example>
+
+<note id="fs-idp87073664" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm67768928">
+<problem id="fs-idm16414224">
+ <para id="fs-idm98358608">In a recent study reported Oct.29, 2012 on the Flurry Blog, the mean age of tablet users is 35 years. Suppose the standard deviation is ten years. The sample size is 39.</para>
+
+<list id="fs-idp46009888" list-type="enumerated" number-style="lower-alpha">
+<item>What are the mean and standard deviation for the sum of the ages of tablet users? What is the distribution?</item>
+<item>Find the probability that the sum of the ages is between 1,400 and 1,500 years.</item>
+<item>Find the 90<sup>th</sup> percentile for the sum of the 39 ages.</item>
+</list></problem>
+</exercise>
+</note>
+
+<example id="fs-idm145402592">
+<exercise id="fs-idm29377216">
+<problem id="fs-idm71536528">
+<para id="fs-idm105248448">The mean number of minutes for app engagement by a tablet user is 8.2 minutes. Suppose the standard deviation is one minute. Take a sample of size 70.</para>
+<list id="fs-idm71334512" list-type="enumerated" number-style="lower-alpha">
+<item>What are the mean and standard deviation for the sums?</item>
+<item>Find the 95<sup>th</sup> percentile for the sum of the sample. Interpret this value in a complete sentence.</item>
+<item>Find the probability that the sum of the sample is at least ten hours.</item>
+</list>
+</problem>
+<solution id="fs-idp2253552">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm78488688" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">&#956;<sub>&#931;x</sub></emphasis> = <emphasis effect="italics">n&#956;<sub>x</sub></emphasis> = 70(8.2) = 574 minutes and <emphasis effect="italics">&#963;<sub>&#931;x</sub></emphasis> = <m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:msub>
+     <m:mi>&#963;</m:mi>
+     <m:mi>x</m:mi>
+    </m:msub>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = <m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mtext>70</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+  <m:mtext>&#160;)</m:mtext>
+ </m:mrow>
+</m:math>(1) = 8.37 minutes</item>
+<item>Let <emphasis effect="italics">k</emphasis> = the 95<sup>th</sup> percentile.
+<newline/><emphasis effect="italics">k</emphasis> = invNorm
+(0.95,(70)(8.2),<m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mtext>70</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+  <m:mtext>)</m:mtext>
+ </m:mrow>
+</m:math>(1)) = 587.76 minutes
+<newline count="1"/>Ninety five percent of the sums of app engagement times are at most 587.76 minutes.</item>
+<item>ten hours = 600 minutes
+<newline/><emphasis effect="italics">P</emphasis>(&#931;<emphasis effect="italics">x</emphasis> &#8805; 600) = <code>normalcdf</code>(600,E99,(70)(8.2),<m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mtext>70</m:mtext>
+   </m:mrow>
+  </m:msqrt>
+  <m:mtext>)</m:mtext>
+ </m:mrow>
+</m:math>(1)) = 0.0009</item>
+</list></solution>
+</exercise>
+</example>
+
+<note id="fs-idp10112640" class="statistics try">
+<label/>
+<exercise id="fs-idp7815296"><problem id="fs-idm10364128">
+<para id="fs-idp93890400">The mean number of minutes for app engagement by a table use is 8.2 minutes. Suppose the standard deviation is one minute. Take a sample size of 70.</para>
+<list id="fs-idm85536928" list-type="enumerated" number-style="lower-alpha"><item>What is the probability that the sum of the sample is between seven hours and ten hours? What does this mean in context of the problem?</item>
+<item>Find the 84<sup>th</sup> and 16<sup>th</sup> percentiles for the sum of the sample. Interpret these values in context.</item>
+</list></problem>
+</exercise>
+</note>
+
+
+<section id="fs-idm111968496" class="references">
+<title>References</title>
+<para id="fs-idp20761264">Farago, Peter. &#8220;The Truth About Cats and Dogs: Smartphone vs Tablet Usage Differences.&#8221; The Flurry Blog, 2013. Posted October 29, 2012. Available online at http://blog.flurry.com (accessed May 17, 2013).</para>
+</section>
+
+<section id="fs-idp3599840" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm3318224">The central limit theorem tells us that for a population with any distribution, the distribution of the sums for the sample means approaches a normal distribution as the sample size increases. In other words, if the sample size is large enough, the distribution of the sums can be approximated by a normal distribution even if the original population is not normally distributed. Additionally, if the original population has a mean of <emphasis effect="italics">&#956;<sub>X</sub></emphasis> and a standard deviation of <emphasis effect="italics">&#963;<sub>x</sub></emphasis>, the mean of the sums is <emphasis effect="italics">n&#956;<sub>x</sub></emphasis> and the standard deviation is <m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+  <m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+</m:math>(<emphasis effect="italics">&#963;<sub>x</sub></emphasis>) where <emphasis effect="italics">n</emphasis> is the sample size.</para></section>
+
+
+<section id="fs-idm66969536" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idm124500752">The Central Limit Theorem for Sums: <emphasis effect="italics">&#8721;X</emphasis> ~ <emphasis effect="italics">N</emphasis>[(<emphasis effect="italics">n</emphasis>)(<emphasis effect="italics">&#956;<sub>x</sub></emphasis>),(<m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>)(<emphasis effect="italics">&#963;<sub>x</sub></emphasis>)]</para><para id="fs-idp90486256">Mean for Sums (<emphasis effect="italics">&#8721;X</emphasis>): (<emphasis effect="italics">n</emphasis>)(<emphasis effect="italics">&#956;<sub>x</sub></emphasis>)</para><para id="fs-idm105675120">The Central Limit Theorem for Sums <emphasis effect="italics">z</emphasis>-score and standard deviation for sums: <m:math>
+ <m:mrow>
+  <m:mi>z</m:mi><m:mtext> for the sample mean&#160;=&#160;</m:mtext><m:mfrac>
+   <m:mrow>
+    <m:mi>&#931;</m:mi><m:mi>x</m:mi><m:mo>&#8211;</m:mo><m:mo stretchy="false">(</m:mo><m:mi>n</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:msub>
+     <m:mi>&#956;</m:mi>
+     <m:mi>X</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+    <m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:msub>
+     <m:mi>&#963;</m:mi>
+     <m:mi>X</m:mi>
+    </m:msub>
+    <m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></para><para id="fs-idm85860000">Standard deviation for Sums (<emphasis effect="italics">&#8721;X</emphasis>): <m:math>
+ <m:mrow>
+  <m:mo stretchy="false">(</m:mo><m:msqrt>
+   <m:mi>n</m:mi>
+  </m:msqrt>
+  <m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+</m:math>(<emphasis effect="italics">&#963;<sub>x</sub></emphasis>)</para></section>
+
+<section id="fs-idp47137600" class="practice">
+<para id="eip-221"><emphasis effect="italics">Use the following information to answer the next four exercises:</emphasis> An unknown distribution has a mean of 80 and a standard deviation of 12. A sample size of 95 is drawn randomly from the population.</para><exercise id="eip-769">
+<problem id="eip-202">
+  <para id="eip-854">Find the probability that the sum of the 95 values is greater than 7,650.</para>
+</problem>
+
+<solution id="eip-80">
+  <para id="eip-970">0.3345</para>
+</solution>
+</exercise><exercise id="eip-145"><problem id="eip-777">
+  <para id="eip-162">Find the probability that the sum of the 95 values is less than 7,400.</para>
+</problem>
+
+<!-- <solution id="eip-299">
+  <para id="eip-858">0.0436</para>
+</solution> -->
+</exercise><exercise id="eip-335">
+<problem id="eip-637">
+  <para id="eip-655">Find the sum that is two standard deviations above the mean of the sums.</para>
+</problem>
+
+<solution id="eip-363">
+  <para id="eip-154">7,833.92</para>
+</solution>
+</exercise>
+
+<exercise id="eip-251"><problem id="eip-702">
+  <para id="eip-381">Find the sum that is 1.5 standard deviations below the mean of the sums.</para>
+</problem>
+
+<!-- <solution id="eip-64">
+  <para id="eip-528">7,424.56</para>
+</solution> -->
+</exercise><para id="eip-582"><newline/><emphasis effect="italics">Use the following information to answer the next five exercises:</emphasis> The distribution of results from a cholesterol test has a mean of 180 and a standard deviation of 20. A sample size of 40 is drawn randomly.</para>
+<exercise id="eip-539">
+<problem id="eip-930">
+  <para id="eip-853">Find the probability that the sum of the 40 values is greater than 7,500.</para>
+</problem>
+<solution id="eip-146">
+  <para id="eip-375">0.0089</para>
+</solution>
+</exercise>
+<exercise id="eip-169"><problem id="eip-608">
+  <para id="eip-27">Find the probability that the sum of the 40 values is less than 7,000.</para>
+</problem>
+
+<!-- <solution id="eip-186">
+  <para id="eip-625">0.0569</para>
+</solution> -->
+</exercise><exercise id="eip-308"><problem id="eip-399">
+  <para id="eip-831">Find the sum that is one standard deviation above the mean of the sums.</para>
+</problem>
+
+<solution id="eip-875">
+  <para id="eip-963">7,326.49</para>
+</solution>
+</exercise>
+
+<exercise id="eip-743"><problem id="eip-495">
+  <para id="eip-110">Find the sum that is 1.5 standard deviations below the mean of the sums.</para>
+</problem>
+
+<!-- <solution id="eip-96">
+  <para id="eip-455">7,010.26</para>
+</solution> -->
+</exercise><exercise id="eip-593"><problem id="eip-726">
+  <para id="eip-909">Find the percentage of sums between 1.5 standard deviations below the mean of the sums and one standard deviation above the mean of the sums.</para>
+</problem>
+
+<solution id="eip-673">
+  <para id="eip-467">77.45%</para>
+</solution>
+</exercise>
+
+<para id="eip-786"><newline/><emphasis effect="italics">Use the following information to answer the next six exercises:</emphasis> A researcher measures the amount of sugar in several cans of the same soda. The mean is 39.01 with a standard deviation of 0.5. The researcher randomly selects a sample of 100.</para>
+
+<exercise id="exercise11"><problem id="eip-311">
+  <para id="eip-656">Find the probability that the sum of the 100 values is greater than 3,910.</para>
+</problem>
+
+<!-- <solution id="eip-452">
+  <para id="eip-156">0.0359</para>
+</solution> -->
+</exercise><exercise id="exercise12"><problem id="eip-886">
+  <para id="eip-642">Find the probability that the sum of the 100 values is less than 3,900.</para>
+</problem>
+
+<solution id="eip-687">
+  <para id="eip-425">0.4207</para>
+</solution>
+</exercise>
+
+<exercise id="eip-718"><problem id="eip-127">
+  <para id="eip-143">Find the probability that the sum of the 100 values falls between the numbers you found in <link target-id="eip-311" document=""/> and <link target-id="eip-886" document=""/>.</para>
+</problem>
+
+<!-- <solution id="eip-908">
+  <para id="eip-459">0.5433</para>
+</solution> -->
+</exercise><exercise id="eip-750"><problem id="eip-662">
+  <para id="eip-876">Find the sum with a <emphasis effect="italics">z</emphasis>&#8211;score of &#8211;2.5.</para></problem>
+
+<solution id="eip-650">
+  <para id="eip-708">3,888.5</para>
+</solution>
+</exercise>
+
+<exercise id="eip-763"><problem id="eip-808">
+  <para id="eip-306">Find the sum with a <emphasis effect="italics">z</emphasis>&#8211;score of 0.5.</para></problem>
+
+<!-- <solution id="eip-927">
+  <para id="eip-117">3,903.5</para>
+</solution> -->
+</exercise><exercise id="eip-44"><problem id="eip-573">
+  <para id="eip-887">Find the probability that the sums will fall between the <emphasis effect="italics">z</emphasis>-scores &#8211;2 and 1.</para></problem>
+
+<solution id="eip-910">
+  <para id="eip-238">0.8186</para>
+</solution>
+</exercise>
+
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-93"><newline/><emphasis effect="italics">Use the following information to answer the next four exercises:</emphasis> An unknown distribution has a mean 12 and a standard deviation of one. A sample size of 25 is taken. Let <emphasis effect="italics">X</emphasis> = the object of interest.</para><exercise id="eip-175"><problem id="eip-37">
+  <para id="eip-591">What is the mean of <emphasis effect="italics">&#931;X</emphasis>?</para>
+</problem>
+
+<!-- <solution id="eip-9">
+  <para id="eip-960">300</para>
+</solution> -->
+</exercise><exercise id="eip-213">
+<problem id="eip-345">
+  <para id="eip-248">What is the standard deviation of <emphasis effect="italics">&#931;X</emphasis>?</para>
+</problem>
+
+<solution id="eip-603">
+  <para id="eip-522">5</para>
+</solution>
+</exercise>
+
+<exercise id="eip-592"><problem id="eip-435">
+  <para id="eip-366">What is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#931;x</emphasis> = 290)?</para>
+</problem>
+
+<!-- <solution id="eip-535">
+  <para id="eip-931">0</para>
+</solution> -->
+</exercise><exercise id="eip-710">
+<problem id="eip-587">
+  <para id="eip-649">What is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#931;x</emphasis> &gt; 290)?</para>
+</problem>
+
+<solution id="eip-179">
+  <para id="eip-715">0.9772</para>
+</solution>
+</exercise>
+
+<exercise id="eip-102"><problem id="eip-529">
+  <para id="eip-836">True or False: only the sums of normal distributions are also normal distributions.</para>
+</problem>
+
+<!-- <solution id="eip-140">
+  <para id="eip-670">False, the sums of any distribution approach a normal distribution as the sample size increases.</para>
+</solution> -->
+</exercise><exercise id="eip-580">
+<problem id="eip-688">
+  <para id="eip-392">In order for the sums of a distribution to approach a normal distribution, what must be true?</para>
+</problem>
+
+<solution id="eip-227">
+  <para id="eip-920">The sample size, <emphasis effect="italics">n</emphasis>, gets larger.</para>
+</solution>
+</exercise>
+
+<exercise id="eip-266"><problem id="eip-412">
+  <para id="eip-125">What three things must you know about a distribution to find the probability of sums?</para>
+</problem>
+
+<!-- <solution id="eip-865">
+  <para id="eip-71">the mean of the distribution, the standard deviation of the distribution, and the sample size</para></solution> -->
+</exercise><exercise id="eip-943">
+<problem id="eip-389">
+  <para id="eip-327">An unknown distribution has a mean of 25 and a standard deviation of six. Let <emphasis effect="italics">X</emphasis> = one object from this distribution. What is the sample size if the standard deviation of <emphasis effect="italics">&#931;X</emphasis> is 42?</para></problem>
+
+<solution id="eip-826">
+  <para id="eip-639">49</para>
+</solution>
+</exercise>
+
+
+<exercise id="eip-427"><problem id="eip-269">
+  <para id="eip-246">An unknown distribution has a mean of 19 and a standard deviation of 20. Let <emphasis effect="italics">X</emphasis> = the object of interest. What is the sample size if the mean of <emphasis effect="italics">&#931;X</emphasis> is 15,200?</para>
+</problem>
+
+<!-- <solution id="eip-88">
+  <para id="eip-507">800</para>
+</solution> -->
+</exercise><para id="eip-622"><emphasis effect="italics"><newline/>Use the following information to answer the next three exercises.</emphasis> A market researcher analyzes how many electronics devices customers buy in a single purchase. The distribution has a mean of three with a standard deviation of 0.7. She samples 400 customers.</para><exercise id="eip-626"><problem id="eip-496">
+  <para id="eip-744">What is the <emphasis effect="italics">z</emphasis>-score for <emphasis effect="italics">&#931;x</emphasis> = 840?</para>
+</problem>
+
+<solution id="eip-263">
+  <para id="eip-132">26.00</para></solution>
+</exercise>
+
+<exercise id="eip-224"><problem id="eip-562">
+  <para id="eip-268">What is the <emphasis effect="italics">z</emphasis>-score for <emphasis effect="italics">&#931;x</emphasis> = 1,186?</para>
+</problem>
+
+<!-- <solution id="eip-729">
+  <para id="eip-395">&#8211;1</para></solution> -->
+</exercise><exercise id="eip-616"><problem id="eip-893">
+  <para id="eip-866">What is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#931;x</emphasis> &lt; 1,186)?</para>
+</problem>
+
+<solution id="eip-925">
+  <para id="eip-823">0.1587</para>
+</solution>
+</exercise>
+
+<para id="eip-465"><emphasis effect="italics"><newline/>Use the following information to answer the next three exercises:</emphasis> An unkwon distribution has a mean of 100, a standard deviation of 100, and a sample size of 100. Let <emphasis effect="italics">X</emphasis> = one object of interest.</para><exercise id="eip-956"><problem id="eip-217">
+  <para id="eip-561">What is the mean of <emphasis effect="italics">&#931;X</emphasis>?</para>
+</problem>
+
+<!-- <solution id="eip-190">
+  <para id="eip-328">10,000</para>
+</solution> -->
+</exercise><exercise id="eip-368"><problem id="eip-193">
+  <para id="eip-214">What is the standard deviation of <emphasis effect="italics">&#931;X</emphasis>?</para>
+</problem>
+
+<solution id="eip-891">
+  <para id="eip-892">1,000</para>
+</solution>
+</exercise><exercise id="eip-899"><problem id="eip-725">
+  <para id="eip-406">What is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">&#931;x</emphasis> &gt; 9,000)?</para>
+</problem>
+
+<!-- <solution id="eip-948">
+  <para id="eip-531">0.8413</para>
+</solution> -->
+</exercise></section>
+
+
+<section id="fs-idm107340336" class="free-response">
+<title>Homework</title>
+<exercise id="fs-idm54402176"><problem id="fs-idm54401920">
+<para id="fs-idm98145648">Which of the following is NOT TRUE about the theoretical distribution of sums?</para><list id="fs-idm98145264" list-type="enumerated" number-style="lower-alpha"><item>The mean, median and mode are equal.</item>
+<item>The area under the curve is one.</item>
+<item>The curve never touches the <emphasis effect="italics">x</emphasis>-axis.</item>
+<item>The curve is skewed to the right.</item>
+</list></problem>
+
+<!-- <solution id="fs-idm22313616">
+<para id="fs-idm22313360">d</para>
+</solution> -->
+</exercise><exercise id="element-119">
+<problem id="id6533195">
+  <para id="element-950">Suppose that the duration of a particular type of criminal trial is known to have a mean of 21 days and a standard deviation of seven days. We randomly sample nine trials.</para>
+
+<list id="element-645" list-type="enumerated" number-style="lower-alpha">
+<item>In words, <emphasis effect="italics">&#931;X</emphasis> = ______________</item>
+<item><emphasis effect="italics">&#931;X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that the total length of the nine trials is at least 225 days.</item>
+<item>Ninety percent of the total of nine of these types of trials will last at least how long?</item>
+</list></problem>
+
+<solution id="id6533339">
+  <list id="element-220" list-type="enumerated" number-style="lower-alpha"><item>the total length of time for nine criminal trials </item>
+<item><emphasis effect="italics">N</emphasis>(189, 21)</item>
+<item>0.0432</item>
+<item>162.09; ninety percent of the total nine trials of this type will last 162 days or more.</item>
+</list></solution>
+</exercise>
+
+<exercise id="element-797"><problem id="id6532824">
+  <para id="element-935">Suppose that the weight of open boxes of cereal in a home with children is uniformly distributed from two to six pounds with a mean of four pounds and standard deviation of 1.1547. We randomly survey 64 homes with children.</para>
+<list id="element-173" list-type="enumerated" number-style="lower-alpha">
+<item>In words, <emphasis effect="italics">X</emphasis> = _____________</item>
+<item>The distribution is _______.</item>
+<item>In words, <emphasis effect="italics">&#931;X</emphasis> = _______________</item>
+<item><emphasis effect="italics">&#931;X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that the total weight of open boxes is less than 250 pounds.</item>
+<item>Find the 35<sup>th</sup> percentile for the total weight of open boxes of cereal.</item></list></problem>
+
+<!-- <solution id="fs-idm128242640">
+<list id="fs-idm128242384" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = weight of open cereal boxes</item>
+<item>The distribution is uniform.</item>
+<item><emphasis effect="italics">&#931;X</emphasis> = the sum of the weights of 64 randomly chosen cereal boxes.</item>
+<item><emphasis effect="italics">N</emphasis>(256, 9.24)</item>
+<item>0.2581</item>
+<item>252.44 pounds</item>
+</list>
+</solution> -->
+</exercise><exercise id="element-138">
+<problem id="id6535223">
+  <para id="element-245">Salaries for teachers in a particular elementary school district are normally distributed with a mean of $44,000 and a standard deviation of $6,500. We randomly survey ten teachers from that district.</para>
+
+<list id="fs-idm127251264" list-type="enumerated" number-style="lower-alpha">
+<item>In words, <emphasis effect="italics">X</emphasis> = ______________</item>
+<item><emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>In words, <emphasis effect="italics">&#931;X</emphasis> = _____________</item>
+<item><emphasis effect="italics">&#931;X</emphasis> ~ _____(_____,_____)</item>
+<item>Find the probability that the teachers earn a total of over $400,000.</item>
+<item>Find the 90<sup>th</sup> percentile for an individual teacher's salary.</item>
+<item>Find the 90<sup>th</sup> percentile for the sum of ten teachers' salary.</item>
+<item>If we surveyed 70 teachers instead of ten, graphically, how would that change the distribution in part d?</item>
+<item>If each of the 70 teachers received a $3,000 raise, graphically, how would that change the distribution in part b?</item>
+</list></problem>
+<solution id="fs-idm67922240">
+<list id="fs-idm82776816" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">X</emphasis> = the salary of one elementary school teacher in the district</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(44,000, 6,500)</item>
+<item><emphasis effect="italics">&#931;X</emphasis> ~ sum of the salaries of ten elementary school teachers in the sample</item>
+<item><emphasis effect="italics">&#931;X</emphasis> ~ <emphasis effect="italics">N</emphasis>(44000, 20554.80)</item>
+<item>0.9742</item>
+<item>$52,330.09</item>
+<item>466,342.04</item>
+<item>Sampling 70 teachers instead of ten would cause the distribution to be more spread out. It would be a more symmetrical normal curve.</item>
+<item>If every teacher received a $3,000 raise, the distribution of <emphasis effect="italics">X</emphasis> would shift to the right by $3,000. In other words, it would have a mean of $47,000.</item>
+</list></solution>
+</exercise>
+
+</section>
+</content>
+</document>

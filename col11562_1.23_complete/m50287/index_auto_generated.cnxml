@@ -1,0 +1,210 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Regression (Fuel Efficiency)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50287/latest</md:content-url>
+  <md:content-id>m50287</md:content-id>
+  <md:title>Regression (Fuel Efficiency)</md:title>
+  <md:version>1.5</md:version>
+  <md:created>2014/05/09 10:47:20 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>influential points</md:keyword>
+    <md:keyword>outlier</md:keyword>
+    <md:keyword>potential outlier</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1170235891735" class="statistics lab"><label/><title>Regression (Fuel Efficiency)</title>
+
+    <para id="id7738260">Class Time: </para>
+    <para id="id7843117">Names:</para>
+    
+      <list id="id7650443" list-type="bulleted">
+        <title>Student Learning Outcomes</title>
+        <item>The student will calculate and construct the line of best fit between two variables.</item>
+        <item>The student will evaluate the relationship between two variables to determine if that relationship is significant. </item>
+      </list>
+    
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp36246160"><title>Collect the Data</title>Find a reputable source that provides information on total fuel efficiency (in miles per gallon) and weight (in pounds) of new model cars with automatic transmissions. We will use this data to determine the relationship, if any, between the fuel efficiency of a car and its weight.
+</para><list id="fs-idp98195168" list-type="enumerated">
+<item>Using your random number generator, randomly select 20 cars from the list and record their
+weights and fuel efficiency into <link target-id="id7895697570" document=""/>.
+
+<table id="id7895697570" summary="Blank table with weight in the first column and fuel efficiency in the second column. 40 empty cells.">
+
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Weight</entry>
+<entry>Fuel Efficiency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+<entry/>
+</row>
+<row>
+<entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</item>
+	<item>Which variable should be the dependent variable and which should be the independent
+variable? Why?</item>
+	<item>By hand, do a scatterplot of &#8220;weight&#8221; vs. &#8220;fuel efficiency&#8221;. Plot the points on graph paper.
+Label both axes with words. Scale both axes accurately.
+
+<figure id="id21784687"><media id="id21784693" alt="Blank graph with vertical and horizontal axes."><image src="fig-ch12_16_01.png" mime-type="image/pngg" width="380"/></media>
+</figure></item>
+</list>
+
+<para id="fs-idm70550048">
+<title>Analyze the Data</title>
+Enter your data into your calculator or computer. Write the linear equation, rounding to 4 decimal places.</para>
+
+<list id="fs-idp56557248" list-type="enumerated">
+<item> Calculate the following:
+<list id="fs-idp7856912" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">a</emphasis> = ______</item>
+<item><emphasis effect="italics">b</emphasis> = ______</item>
+<item>correlation = ______</item>
+<item><emphasis effect="italics">n</emphasis> = ______</item>
+<item>equation: <emphasis effect="italics">&#375;</emphasis> = ______</item>
+</list>
+</item>
+<item>Obtain the graph of the regression line on your calculator. Sketch the regression line on the
+same axes as your scatter plot.</item>
+</list><list id="fs-idp91842272" mark-suffix="." list-type="enumerated"><title>Discussion Questions</title><item> Is the correlation significant? Explain how you determined this in complete sentences.</item>
+<item>Is the relationship a positive one or a negative one? Explain how you can tell and what
+this means in terms of weight and fuel efficiency.</item>
+<item>In one or two complete sentences, what is the practical interpretation of the slope of the least
+squares line in terms of fuel efficiency and weight?</item>
+<item>For a car that weighs 4,000 pounds, predict its fuel efficiency. Include units.</item>
+<item>Can we predict the fuel efficiency of a car that weighs 10,000 pounds using the least
+squares line? Explain why or why not.</item>
+<item>Answer each question in complete sentences.
+<list id="list-9769782345" list-type="enumerated" number-style="lower-alpha">
+<item>Does the line seem to fit the data? Why or why not?</item>
+<item>What does the correlation imply about the relationship between fuel efficiency and
+weight of a car? Is this what you expected?</item></list></item>
+<item> Are there any outliers? If so, which point is an outlier?</item>
+</list></note></content>
+
+</document>

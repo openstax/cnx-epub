@@ -1,0 +1,368 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+<title>Null and Alternative Hypotheses</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47033/latest</md:content-url>
+  <md:content-id>m47033</md:content-id>
+  <md:title>Null and Alternative Hypotheses</md:title>
+  <md:version>1.6</md:version>
+  <md:created>2013/07/19 14:18:24 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternative hypothesis</md:keyword>
+    <md:keyword>hypothesis</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="delete_me">The actual test begins by considering two <term>hypotheses</term>. They are called the <term>null hypothesis</term> and the <term>alternative hypothesis</term>. These hypotheses contain opposing viewpoints.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-619"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis>The null hypothesis:</emphasis> It is a statement of no difference between sample means or proportions or no difference between a sample mean or proportion and a population mean or proportion. In other words, the difference equals 0.</para><para id="element-320"><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis>The alternative hypothesis:</emphasis> It is a claim about the population that is
+contradictory to <emphasis effect="italics">H<sub>0</sub></emphasis> and what we conclude when we reject <emphasis effect="italics">H<sub>0</sub></emphasis>.</para>
+<para id="element-478">Since the null and alternative hypotheses are contradictory, you must examine evidence to decide if you have enough evidence to reject the null hypothesis or not. The evidence is in the form of sample data.</para><para id="element-862">After you have determined which hypothesis the sample supports, you make a <emphasis>decision.</emphasis>
+There are two options for a decision. They are "reject <emphasis effect="italics">H<sub>0</sub></emphasis>" if the sample information favors the alternative hypothesis or "do not reject <emphasis effect="italics">H<sub>0</sub></emphasis>" or "decline to reject <emphasis effect="italics">H<sub>0</sub></emphasis>" if the sample information is insufficient to reject the null hypothesis.</para><para id="element-689">Mathematical Symbols Used in <emphasis effect="italics">H<sub>0</sub></emphasis> and <emphasis effect="italics">H<sub>a</sub></emphasis>:
+
+<table id="element-341" frame="none" summary="Table presenting mathematical symbols used with the null and alternate hypothesis. The first column contains the null hypothesis and its 3 mathematical symbols and the second column has the alternate hypothesis and its mathematical symbols.">
+
+<tgroup cols="2"><thead valign="middle">
+<row>
+<entry align="center"><emphasis effect="italics">H<sub>0</sub></emphasis></entry>
+<entry align="center"><emphasis effect="italics">H<sub>a</sub></emphasis></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>equal (=)</entry>
+<entry>not equal (&#8800;) <emphasis>or</emphasis> greater than (&gt;) <emphasis>or</emphasis> less than (&lt;)</entry>
+</row>
+<row>
+<entry>greater than or equal to (&#8805;)</entry>
+<entry>less than (&lt;)</entry>
+</row>
+<row>
+<entry>less than or equal to (&#8804;)</entry>
+<entry>more than (&gt;)</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</para><note id="id1168218302693"><label/><title>Note</title>
+<para id="eip-idp37732128"><emphasis effect="italics">H<sub>0</sub></emphasis> always has a symbol with an equal in it. <emphasis effect="italics">H<sub>a</sub></emphasis> never has a symbol with an equal in it. The choice of symbol depends on the wording of the hypothesis test. However, be aware that many researchers (including one of the co-authors in research work) use = in the null hypothesis, even with &gt; or &lt; as the symbol in the alternative hypothesis. This practice is acceptable because we only make the decision to reject or not reject the null hypothesis.</para></note>
+
+<example id="element-183">
+<para id="element-283"><emphasis effect="italics">H<sub>0</sub></emphasis>: No more than 30% of the registered voters in Santa Clara County voted in the primary election. <emphasis effect="italics">p</emphasis> &#8804; 30
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: More than 30% of the registered voters in Santa Clara County voted in the primary election. <emphasis effect="italics">p</emphasis> &gt; 30</para></example>
+<note id="fs-idp10178800" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="eip-665">
+<problem id="eip-803">
+<para id="eip-144">A medical trial is conducted to test whether or not a new medicine reduces cholesterol by 25%. State the null and alternative hypotheses.</para>
+</problem>
+</exercise>
+</note>
+
+<example id="element-641">
+<para id="element-508">We want to test whether the mean GPA of students in American colleges is different from 2.0 (out of 4.0). The null and alternative hypotheses are:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> = 2.0
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8800; 2.0</para></example>
+
+<note id="fs-idp91068816" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm576512">
+<problem id="fs-idm16416">
+<para id="eip-247">We want to test whether the mean height of eighth graders is 66 inches. State the null and alternative hypotheses. Fill in the correct symbol (=, &#8800;, &#8805;, &lt;, &#8804;, &gt;) for the null and alternative hypotheses.
+<list id="eip-idm122826912" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> __ 66</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> __ 66</item>
+</list></para></problem>
+</exercise>
+</note>
+<example id="element-296">
+<para id="element-114">We want to test if college students take less than five years to graduate from college, on the average. The null and alternative hypotheses are:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8805; 5
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &lt; 5</para></example>
+<note id="fs-idp119641264" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm2856320">
+<problem id="fs-idp126181968">
+<para id="eip-414">We want to test if it takes fewer than 45 minutes to teach a lesson plan. State the null and alternative hypotheses. Fill in the correct symbol ( =, &#8800;, &#8805;, &lt;, &#8804;, &gt;) for the null and alternative hypotheses.
+<list id="eip-idm84545584" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> __ 45</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> __ 45</item>
+</list></para>
+</problem>
+</exercise>
+</note>
+<example id="element-410">
+<para id="fs-idm30028400">In an issue of <emphasis effect="italics">U. S. News and World Report</emphasis>, an article on school standards stated that about half of all students in France, Germany, and Israel take advanced placement exams and a third pass. The same article stated that 6.6% of U.S. students take advanced placement exams and 4.4% pass. Test if the percentage of U.S. students who take advanced placement exams is more than 6.6%. State the null and alternative hypotheses.
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> &#8804; 0.066
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &gt; 0.066
+</para></example>
+<note id="fs-idm2566848" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm126344352">
+<problem id="fs-idm54604944">
+<para id="fs-idm131727840">On a state driver&#8217;s test, about 40% pass the test on the first try. We want to test if more than 40% pass on the first try. Fill in the correct symbol (=, &#8800;, &#8805;, &lt;, &#8804;, &gt;) for the null and alternative hypotheses.
+<list id="eip-idp142654064" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> __ 0.40</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> __ 0.40</item>
+</list>
+</para>
+</problem>
+</exercise>
+</note>
+
+<!-- ??? -->
+<note id="fs-idm73791920" class="statistics collab"><label/><title>Collaborative Exercise</title>
+<para id="element-171">Bring to class a newspaper, some news magazines, and some Internet articles . In groups, find articles from which your group can write null and alternative hypotheses. Discuss your hypotheses with the rest of the class.</para>
+
+</note><section id="eip-591" class="summary">
+<title>Chapter Review</title>
+<para id="eip-593">In a <emphasis>hypothesis test</emphasis>, sample data is evaluated in order to arrive at a decision about some type of claim. If certain conditions about the sample are satisfied, then the claim can be evaluated for a population. In a hypothesis test, we:
+
+
+<list id="eip-idp72518864" list-type="enumerated" number-style="arabic"><item>Evaluate the <emphasis>null hypothesis</emphasis>, typically denoted with <emphasis effect="italics">H<sub>0</sub></emphasis>. The null is not rejected unless the hypothesis test shows otherwise. The null statement must always contain some form of equality (=, &#8804; or &#8805;)</item>
+
+<item>Always write the <emphasis>alternative hypothesis</emphasis>, typically denoted with <emphasis effect="italics">H<sub>a</sub></emphasis> or <emphasis effect="italics">H<sub>1</sub></emphasis>, using less than, greater than, or not equals symbols, i.e., (&#8800;, &gt;, or &lt;).</item>
+
+<item>If we reject the null hypothesis, then we can assume there is enough evidence to support the alternative hypothesis.</item>
+
+<item>Never state that a claim is proven true or false. Keep in mind the underlying fact that hypothesis testing is based on probability laws; therefore, we can talk only in terms of non-absolute certainties.</item>
+</list></para></section>
+
+<section id="fs-idm23881072" class="formula-review">
+<title>Formula Review</title>
+
+<para id="element-999"><emphasis effect="italics">H<sub>0</sub></emphasis> and <emphasis effect="italics">H<sub>a</sub></emphasis> are contradictory.</para><table id="element-377" summary="This table states the mathematical symbols associated with either null or alternate hypothesis. The first row is for the null hypothesis and the second row is for the alternate hypothesis. There are three columns of mathematical symbols for each.">
+
+<tgroup cols="4"><tbody>
+<row>
+<entry><emphasis>If <emphasis effect="italics">H<sub>o</sub></emphasis> has:</emphasis></entry>
+<entry>equal (=)</entry>
+<entry>greater than or equal to (&#8805;)</entry>
+<entry>less than or equal to (&#8804;)</entry>
+</row>
+<row>
+<entry><emphasis>then <emphasis effect="italics">H<sub>a</sub></emphasis> has:</emphasis></entry>
+<entry>not equal (&#8800;) <emphasis>or</emphasis> greater than (&gt;) <emphasis>or</emphasis> less than (&lt;)</entry>
+<entry>less than (&lt;)</entry>
+<entry>greater than (&gt;)</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="element-987">If <emphasis effect="italics">&#945;</emphasis> &#8804; <emphasis effect="italics">p</emphasis>-value, then do not reject <emphasis effect="italics">H<sub>0</sub></emphasis>.</para><para id="element-43">If <emphasis effect="italics">&#945;</emphasis> &gt; <emphasis effect="italics">p</emphasis>-value, then reject <emphasis effect="italics">H<sub>0</sub></emphasis>.</para><para id="element-305"><emphasis effect="italics">&#945;</emphasis> is preconceived. Its value is set before the hypothesis test starts. The <emphasis effect="italics">p</emphasis>-value is calculated from the data.</para>
+</section>
+
+
+<section id="fs-idm15064784" class="practice">
+<exercise id="eip-350">
+<problem id="eip-421">
+<para id="fs-idm78419312">
+You are testing that the mean speed of your cable Internet connection is more than three Megabits per second. What is the random variable? Describe in words.
+</para>
+</problem>
+
+<solution id="eip-136">
+<para id="fs-idm73404464">
+The random variable is the mean Internet speed in Megabits per second.
+</para>
+</solution>
+</exercise>
+<exercise id="eip-411"><problem id="eip-666">
+<para id="eip-853">
+You are testing that the mean speed of your cable Internet connection is more than three Megabits per second. State the null and alternative hypotheses.</para>
+</problem></exercise><exercise id="eip-629"><problem id="eip-259">
+<para id="eip-749">
+The American family has an average of two children. What is the random variable? Describe in words.
+</para>
+</problem>
+
+<solution id="eip-644">
+<para id="eip-263">The random variable is the mean number of children an American family has.</para>
+</solution>
+</exercise>
+
+<exercise id="eip-692"><problem id="eip-192">
+<para id="eip-495">The mean entry level salary of an employee at a company is $58,000. You believe it is higher for IT professionals in the company. State the null and alternative hypotheses.</para>
+</problem></exercise><exercise id="eip-334">
+<problem id="eip-277">
+<para id="eip-1">A sociologist claims the probability that a person picked at random in Times Square in New York City is visiting the area is 0.83. You want to test to see if the proportion is actually less. What is the random variable? Describe in words.
+</para></problem>
+
+<solution id="eip-265">
+<para id="eip-545">
+The random variable is the proportion of people picked at random in Times Square visiting the city.</para>
+</solution>
+</exercise><exercise id="eip-235"><problem id="eip-100">
+<para id="eip-262">
+A sociologist claims the probability that a person picked at random in Times Square in New York City is visiting the area is 0.83. You want to test to see if the claim is correct. State the null and alternative hypotheses.</para>
+</problem></exercise><exercise id="eip-75">
+<problem id="eip-512">
+<para id="eip-102">In a population of fish, approximately 42% are female. A test is conducted to see if, in fact, the proportion is less. State the null and alternative hypotheses.</para>
+</problem>
+
+<solution id="eip-217">
+<para id="eip-161">
+<list id="eip-idm74385712" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> = 0.42</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &lt; 0.42</item>
+</list></para>
+</solution>
+</exercise>
+
+<exercise id="element-242"><problem id="id7396007">
+<para id="element-203">Suppose that a recent article stated that the mean time spent in jail by a first&#8211;time convicted burglar is 2.5 years. A study was then done to see if the mean time has increased in the new century. A random sample of 26 first-time convicted burglars in a recent year was picked. The mean length of time in jail from the survey was 3 years with a standard deviation of 1.8 years. Suppose that it is somehow known that the population standard deviation is 1.5. If you were conducting a hypothesis test to determine if the mean length of jail time has increased, what would the null and alternative hypotheses be? The distribution of the population is normal.
+<list id="list-986798234" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: ________</item>
+
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: ________</item>
+</list></para>
+</problem></exercise><exercise id="element-422"><problem id="id13907062">
+<para id="eip-idm29584912">A random survey of 75 death row inmates revealed that the mean length of time on death row is 17.4 years with a standard deviation of 6.3 years. If you were conducting a hypothesis test to determine if the population mean time on death row could likely be 15 years, what would the null and alternative hypotheses be?</para>
+<list id="list-92369" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: __________</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: __________</item>
+</list></problem>
+
+<solution id="id13907281">
+<list id="list-8927365476" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> = 15</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8800; 15</item>
+</list>
+</solution>
+</exercise><exercise id="element-818"><problem id="id13929352">
+<para id="element-591">The National Institute of Mental Health published an article stating that in any one-year period, approximately 9.5 percent of American adults suffer from depression or a depressive illness. Suppose that in a survey of 100 people in a certain town, seven of them suffered from depression or a depressive illness. If you were conducting a hypothesis test to determine if the true proportion of people in that town suffering from depression or a depressive illness is lower than the percent in the general adult American population, what would the null and alternative hypotheses be?
+<list id="eip-idm4137600" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: ________</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: ________</item>
+</list></para></problem></exercise></section>
+
+<section id="fs-idm8472096" class="free-response">
+<title>Homework</title>
+
+<exercise id="element-919"><problem id="id8382572">
+<para id="element-802">Some of the following statements refer to the null hypothesis, some to the alternate hypothesis.
+</para><para id="element-449">State the null hypothesis, <emphasis effect="italics">H<sub>0</sub></emphasis>, and the alternative hypothesis. <emphasis effect="italics">H<sub>a</sub></emphasis>, in terms of the appropriate parameter (<emphasis effect="italics">&#956;</emphasis> or <emphasis effect="italics">p</emphasis>).</para><list id="element-222" list-type="enumerated" number-style="lower-alpha"><item>The mean number of years Americans work before retiring is 34.</item>
+<item>At most 60% of Americans vote in presidential elections.</item>
+<item>The mean starting salary for San Jose State University graduates is at least $100,000 per year.</item>
+<item>Twenty-nine percent of high school seniors get drunk each month.</item>
+<item>Fewer than 5% of adults ride the bus to work in Los Angeles.</item>
+<item>The mean number of cars a person owns in her lifetime is not more than ten.</item>
+<item>About half of Americans prefer to live away from cities, given the choice.</item>
+<item>Europeans have a mean paid vacation each year of six weeks.</item>
+<item>The chance of developing breast cancer is under 11% for women.</item>
+<item>Private universities' mean tuition cost is more than $20,000 per year.</item>
+</list></problem>
+
+<solution id="id9205906">
+<list id="fs-idm3759984" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> = 34; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8800; 34</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> &#8804; 0.60; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &gt; 0.60</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8805; 100,000; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &lt; 100,000</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> = 0.29; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &#8800; 0.29</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> = 0.05; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &lt; 0.05</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8804; 10; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &gt; 10</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> = 0.50; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &#8800; 0.50</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> = 6; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8800; 6</item>
+
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">p</emphasis> &#8805; 0.11; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">p</emphasis> &lt; 0.11</item>
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8804; 20,000; <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &gt; 20,000</item>
+</list></solution>
+</exercise>
+
+<exercise id="exer11"><problem id="id9404524">
+<para id="id5049073">Over the past few decades, public health officials have examined the link between weight concerns and teen girls' smoking. Researchers surveyed a group of 273 randomly selected teen girls living in Massachusetts (between 12 and 15 years old). After four years the girls were surveyed again. Sixty-three said they smoked to stay thin. Is there good evidence that more than thirty percent of the teen girls smoke to stay thin? The alternative hypothesis is:</para><list id="id12166958" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">p</emphasis> &lt; 0.30</item>
+<item><emphasis effect="italics">p</emphasis> &#8804; 0.30 </item>
+<item><emphasis effect="italics">p</emphasis> &#8805; 0.30 </item>
+<item><emphasis effect="italics">p</emphasis> &gt; 0.30 </item>
+</list>
+</problem>
+</exercise><exercise id="exer13"><problem id="id8184432">
+<para id="eip-idp133963488">A statistics instructor believes that fewer than 20% of Evergreen Valley College (EVC) students attended the opening night midnight showing of the latest Harry Potter movie. She surveys 84 of her students and finds that 11 attended the midnight showing. An appropriate alternative hypothesis is:</para><list id="id8618736" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">p</emphasis> = 0.20</item>
+<item><emphasis effect="italics">p</emphasis> &gt; 0.20</item>
+<item><emphasis effect="italics">p</emphasis> &lt; 0.20</item>
+<item><emphasis effect="italics">p</emphasis> &#8804; 0.20</item>
+</list>
+</problem>
+<solution id="id8184727"><para id="paragrams">c</para>
+</solution>
+</exercise><exercise id="exer18"><problem id="id8185544">
+<para id="eip-idm3083104">Previously, an organization reported that teenagers spent 4.5 hours per week, on average, on the phone. The organization thinks that, currently, the mean is higher. Fifteen randomly chosen teenagers were asked how many hours per week they spend on the phone. The sample mean was 4.75 hours with a sample standard deviation of 2.0. Conduct a hypothesis test. The null and alternative hypotheses are:</para><list id="id9908251" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>o</sub></emphasis>: <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+
+</m:math> = 4.5, <emphasis effect="italics">H<sub>a</sub></emphasis> : <m:math>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+</m:math> &gt; 4.5</item>
+<item><emphasis effect="italics">H<sub>o</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &#8805; 4.5, <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &lt; 4.5</item>
+<item><emphasis effect="italics">H<sub>o</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> = 4.75, <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &gt; 4.75</item>
+<item><emphasis effect="italics">H<sub>o</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> = 4.5, <emphasis effect="italics">H<sub>a</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis> &gt; 4.5</item>
+</list></problem></exercise></section>
+
+<section id="fs-idm48036544" class="references">
+<title>References</title>
+<para id="fs-idp5641168">Data from the National Institute of Mental Health. Available online at http://www.nimh.nih.gov/publicat/depression.cfm.</para></section>
+
+</content>
+<glossary>
+<definition id="hypothesis">
+<term>Hypothesis</term>
+<meaning id="id1168218799446">a statement about the value of a population parameter, in case of two hypotheses, the statement assumed to be true is called the null hypothesis (notation <emphasis effect="italics">H</emphasis><sub>0</sub>) and the contradictory statement is called the alternative hypothesis (notation <emphasis effect="italics">H<sub>a</sub></emphasis>).
+</meaning>
+</definition>
+</glossary>
+</document>

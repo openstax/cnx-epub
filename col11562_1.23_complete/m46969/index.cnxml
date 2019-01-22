@@ -1,0 +1,1841 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+<title>The Exponential Distribution</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46969/latest</md:content-url>
+  <md:content-id>m46969</md:content-id>
+  <md:title>The Exponential Distribution</md:title>
+  <md:version>1.15</md:version>
+  <md:created>2013/07/19 08:37:33 -0500</md:created>
+  <md:revised>2018/08/29 17:46:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>continuous random variable</md:keyword>
+    <md:keyword>exponential distribution</md:keyword>
+    <md:keyword>memoryless property</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="fs-idm32858512">The <term>exponential distribution</term> is often concerned with the amount of time until some specific event occurs. For example, the amount of time (beginning now) until an earthquake occurs has an exponential distribution. Other examples include the length, in minutes, of long distance business telephone calls, and the amount of time, in months, a car battery lasts. It can be shown, too, that the value of the change that you have in your pocket or purse approximately follows an exponential distribution.</para>
+<para id="fs-idp21035296">Values for an exponential random variable occur in the following way. There are fewer large values and more small values. For example, the amount of money customers spend in one trip to the supermarket follows an exponential distribution. There are more people who spend small amounts of money and fewer people who spend large amounts of money.</para>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp25761408">Exponential distributions are commonly used in calculations of product reliability, or the length of time a product lasts.</para><example id="fs-idp58220144">
+<para id="fs-idm49054640">Let <emphasis effect="italics">X</emphasis> = amount of time (in minutes) a postal clerk spends with his or her customer. The time is known to have an exponential distribution with the average amount of time equal to four minutes.</para>
+<para id="fs-idm36708000"><emphasis effect="italics">X</emphasis> is a <term>continuous random variable</term> since time is measured. It is given that <emphasis effect="italics">&#956;</emphasis> = 4 minutes. To do any calculations, you must know <emphasis effect="italics">m</emphasis>, the decay parameter.</para>
+<para id="fs-idp7978896"><m:math>
+<m:mrow>
+<m:mi>m</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mi>&#956;</m:mi>
+</m:mfrac>
+</m:mrow>
+</m:math>. Therefore, <m:math>
+<m:mrow>
+<m:mi>m</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.25.</m:mn>
+</m:mrow>
+</m:math></para><para id="fs-idm26233856">The standard deviation, <emphasis effect="italics">&#963;</emphasis>, is the same as the mean. <emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">&#963;</emphasis></para>
+<para id="fs-idp111556368">The distribution notation is <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(<emphasis effect="italics">m</emphasis>). Therefore, <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(0.25).</para>
+<para id="fs-idm18148336" class="finger">The probability density function is <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">me</emphasis><sup>-<emphasis effect="italics">mx</emphasis></sup>. The number <emphasis effect="italics">e</emphasis> = 2.71828182846... It is a number that is used often in mathematics. Scientific calculators have the key "<emphasis effect="italics">e<sup>x</sup></emphasis>." If you enter one for <emphasis effect="italics">x</emphasis>, the calculator will display the value <emphasis effect="italics">e</emphasis>.</para>
+<para id="fs-idm74833712">The curve is:</para>
+<para id="fs-idp44233136"><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = 0.25<emphasis effect="italics">e</emphasis><sup>&#8211;0.25<emphasis effect="italics">x</emphasis></sup> where <emphasis effect="italics">x</emphasis> is at least zero and <emphasis effect="italics">m</emphasis> = 0.25.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp127275616">For example, <emphasis effect="italics">f</emphasis>(5) = 0.25<emphasis effect="italics">e</emphasis><sup>(-0.25)(5)</sup> = 0.072. The probability that the postal clerk spends five minutes with the customers is 0.072.</para><para id="fs-idm23774336">The graph is as follows:</para>
+<figure id="fs-idp49716608">
+<media id="fs-idp114542640" alt="Exponential graph with increments of 2 from 0-20 on the x-axis of &#956; = 4 and increments of 0.05 from 0.05-0.25 on the y-axis of m = 0.25. The curved line begins at the top at point (0, 0.25) and curves down to point (20, 0). The x-axis is equal to a continuous random variable.">
+<image src="fig-ch05_04_01N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+<para id="fs-idm725296">Notice the graph is a declining curve. When <emphasis effect="italics">x</emphasis> = 0,</para>
+<para id="fs-idm61837632"><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = 0.25<emphasis effect="italics">e</emphasis><sup>(&#8722;0.25)(0)</sup> = (0.25)(1) = 0.25 = <emphasis effect="italics">m</emphasis>. The maximum value on the <emphasis effect="italics">y</emphasis>-axis is <emphasis effect="italics">m</emphasis>.</para></example>
+<note id="fs-idm39150960" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm37492592">
+<problem id="fs-idp79313392">
+<para id="fs-idm18125728">The amount of time spouses shop for anniversary cards can be modeled by an exponential distribution with the average amount of time equal to eight minutes. Write the distribution, state the probability density function, and graph the distribution.</para></problem>
+</exercise>
+</note>
+
+
+<example id="fs-idm47363760"><exercise id="fs-idp222482240">
+<problem id="fs-idp108591968">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp171899680">a. Using the information in <link target-id="fs-idp58220144"/>, find the probability that a clerk spends four to five minutes with a randomly selected customer.</para></problem>
+<solution id="fs-idm17662704">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp81828496">a. Find <emphasis effect="italics">P</emphasis>(4 &lt; <emphasis effect="italics">x</emphasis> &lt; 5).
+<newline/>The <term>cumulative distribution function (CDF)</term> gives the area to the left.
+<newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">x</emphasis>) = 1 &#8211; <emphasis effect="italics">e<sup>&#8211;mx</sup></emphasis>
+<newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 5) = 1 &#8211; <emphasis effect="italics">e</emphasis><sup>(&#8722;0.25)(5)</sup> = 0.7135 and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 4) = 1 &#8211; <emphasis effect="italics">e</emphasis><sup>(&#8211;0.25)(4)</sup> = 0.6321</para><figure id="fs-idm58174736">
+<media id="fs-idm82717248" alt="Exponential graph with the curved line beginning at point (0, 0.25) and curves down towards point (&#8734;, 0). Two vertical upward lines extend from points 4 and 5 to the curved line. The probability is in the area between points 4 and 5.">
+<image src="fig-ch05_04_02N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+<note id="fs-idp59726080">
+<label/>
+<title>NOTE</title>
+<para id="fs-idm24272592">You can do these calculations easily on a calculator.</para>
+</note>
+<para id="fs-idp1927968"><newline/>
+The probability that a postal clerk spends four to five minutes with a randomly selected customer is <emphasis effect="italics">P</emphasis>(4 &lt; <emphasis effect="italics">x</emphasis> &lt; 5) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 5) &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 4) = 0.7135 &#8722; 0.6321 = 0.0814.</para><note id="fs-idp55383888" class="statistics calculator">
+<label/>
+<para id="fs-idp125894928">On the home screen, enter (1 &#8211; e^(&#8211;0.25*5))&#8211;(1&#8211;e^(&#8211;0.25*4)) or enter e^(&#8211;0.25*4) &#8211; e^(&#8211;0.25*5).</para>
+</note>
+</solution>
+</exercise>
+<exercise id="fs-idp32153216">
+<problem id="fs-idp110012448"><para id="fs-idp59748032">b. Half of all customers are finished within how long? (Find the 50<sup>th</sup> percentile)<newline count="2"/></para></problem>
+<solution id="fs-idp177104864">
+<para id="fs-idm31379520">b. Find the 50<sup>th</sup> percentile.</para><figure id="fs-idm48286512">
+<media id="fs-idm16795200" alt="Exponential graph with the curved line beginning at point (0, 0.25) and curves down towards point (&#8734;, 0). A vertical upward line extends from point k to the curved line. The probability area from 0-k is equal to 0.50.">
+<image src="fig-ch05_04_03N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+<para id="fs-idp138263568" class="finger"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 0.50, <emphasis effect="italics">k</emphasis> = 2.8 minutes (calculator or computer)</para>
+<para id="fs-idp70510832">Half of all customers are finished within 2.8 minutes.</para>
+<para id="fs-idp142531232">You can also do the calculation as follows:</para>
+<para id="fs-idp56204048"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 0.50 and <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 1 &#8211;<emphasis effect="italics">e</emphasis><sup>&#8211;0.25<emphasis effect="italics">k</emphasis></sup></para>
+<para id="fs-idm67235152">Therefore, 0.50 = 1 &#8722; <emphasis effect="italics">e</emphasis><sup>&#8722;0.25<emphasis effect="italics">k</emphasis></sup> and <emphasis effect="italics">e</emphasis><sup>&#8722;0.25<emphasis effect="italics">k</emphasis></sup> = 1 &#8722; 0.50 = 0.5</para>
+<para id="fs-idp105448400">Take natural logs: <emphasis effect="italics">ln</emphasis>(<emphasis effect="italics">e</emphasis><sup>&#8211;0.25<emphasis effect="italics">k</emphasis></sup>) = <emphasis effect="italics">ln</emphasis>(0.50). So, &#8211;0.25<emphasis effect="italics">k</emphasis> = <emphasis effect="italics">ln</emphasis>(0.50)</para><para id="fs-idm24415952">Solve for <emphasis effect="italics">k</emphasis>:<m:math>
+<m:mrow>
+<m:mi>k</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:mi>l</m:mi><m:mi>n</m:mi><m:mo stretchy="false">(</m:mo><m:mn>0.50</m:mn><m:mo stretchy="false">)</m:mo>
+</m:mrow>
+<m:mrow>
+<m:mo>-</m:mo><m:mn>0.25</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>2.8</m:mn>
+</m:mrow>
+</m:math> minutes. The calculator simplifies the calculation for percentile <emphasis effect="italics">k</emphasis>. See the following two notes.</para>
+
+<note id="fs-idp114975808">
+<label/>
+<title>Note</title>
+<para id="fs-idm164380848">A formula for the percentile <emphasis effect="italics">k</emphasis> is <m:math>
+ <m:mrow>
+  <m:mi>k</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>n</m:mi><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mi>A</m:mi><m:mi>r</m:mi><m:mi>e</m:mi><m:mi>a</m:mi><m:mi>T</m:mi><m:mi>o</m:mi><m:mi>T</m:mi><m:mi>h</m:mi><m:mi>e</m:mi><m:mi>L</m:mi><m:mi>e</m:mi><m:mi>f</m:mi><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mi>m</m:mi>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> where <emphasis effect="italics">ln</emphasis> is the natural log.</para>
+</note>
+<note xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm48901520" class="statistics calculator"><label/>
+
+<para id="fs-idm160482432">On the home screen, enter ln(1 &#8211; 0.50)/&#8211;0.25. Press the (-) for the negative.</para>
+</note></solution>
+</exercise>
+<exercise id="fs-idp38439776">
+<problem id="fs-idp20289808">
+<para id="fs-idp11229136">c. Which is larger, the mean or the median?<newline count="2"/></para>
+</problem>
+
+<solution id="fs-idp25339968">
+<para id="fs-idp53461120">c. From part b, the median or 50<sup>th</sup> percentile is 2.8 minutes. The theoretical mean is four minutes. The mean is larger.</para></solution>
+</exercise>
+</example><note id="fs-idp37171808" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp69715216">
+<problem id="fs-idm17706272">
+<para id="fs-idm34762896">The number of days ahead travelers purchase their airline tickets can be modeled by an exponential distribution with the average amount of time equal to 15 days. Find the probability that a traveler will purchase a ticket fewer than ten days in advance. How many days do half of all travelers wait?</para>
+</problem>
+</exercise>
+</note>
+<note id="fs-idm13164528" class="statistics collab">
+<label/>
+<title>Collaborative Exercise</title>
+<para id="fs-idm38401216">Have each class member count the change he or she has in his or her pocket or purse. Your instructor will record the amounts in dollars and cents. Construct a histogram of the data taken by the class. Use five intervals. Draw a smooth curve through the bars. The graph should look approximately exponential. Then calculate the mean.</para>
+<para id="fs-idp24026224">Let <emphasis effect="italics">X</emphasis> = the amount of money a student in your class has in his or her pocket or purse.</para>
+<para id="fs-idm20762208">The distribution for <emphasis effect="italics">X</emphasis> is approximately exponential with mean, <emphasis effect="italics">&#956;</emphasis> = _______ and <emphasis effect="italics">m</emphasis>  = _______. The standard deviation, <emphasis effect="italics">&#963;</emphasis> = ________.</para>
+<para id="fs-idp99610512">Draw the appropriate exponential graph. You should label the x&#8211; and y&#8211;axes, the decay rate, and the mean. Shade the area that represents the probability that one student has less than $.40 in his or her pocket or purse. (Shade <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 0.40)).</para>
+</note>
+
+
+<example id="fs-idp51839440">
+<para id="fs-idp93704912">On the average, a certain computer part lasts ten years. The length of time the computer part lasts is exponentially distributed.<newline/></para>
+<exercise id="fs-idp69435808"><problem id="fs-idm12470992">
+<para id="fs-idm33791232">a. What is the probability that a computer part lasts more than 7 years?<newline count="2"/></para>
+</problem>
+<solution id="fs-idp48877072">
+<para id="fs-idp73432928">a. Let <emphasis effect="italics">x</emphasis> = the amount of time (in years) a computer part lasts.
+<newline/><emphasis effect="italics">&#956;</emphasis> = 10 so <m:math>
+<m:mrow>
+<m:mi>m</m:mi><m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mi>&#956;</m:mi>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>10</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>=</m:mo><m:mn>0.1</m:mn>
+</m:mrow>
+</m:math>
+<newline/>Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 7). Draw the graph.
+<newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 7) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 7).
+<newline/>Since <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) = 1 &#8211;<emphasis effect="italics">e<sup>&#8211;mx</sup></emphasis> then <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis>) = 1 &#8211;(1 &#8211;<emphasis effect="italics">e<sup>&#8211;mx</sup></emphasis>) = <emphasis effect="italics">e<sup>-mx</sup></emphasis>
+<newline/><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 7) = <emphasis effect="italics">e</emphasis><sup>(&#8211;0.1)(7)</sup> = 0.4966. The probability that a computer part lasts more than seven years is 0.4966.</para>
+</solution>
+</exercise><note id="fs-idm37926768" class="statistics calculator">
+<label/>
+<para id="fs-idp98577776">On the home screen, enter e^(-.1*7).</para>
+</note>
+<figure id="fs-idm49565232">
+<media id="fs-idp119826048" alt="Exponential graph with the curved line beginning at point (0, 0.1) and curves down towards point (&#8734;, 0). A vertical upward line extends from point 1 to the curved line. The probability area occurs from point 1 to the end of the curve. The x-axis is equal to the amount of time a computer part lasts.">
+<image src="fig-ch05_04_04N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+<exercise id="fs-idp116955392"><problem id="fs-idm10742336">
+<para id="fs-idm10126448">b. On the average, how long would five computer parts last if they are used one after another?<newline count="2"/></para>
+</problem>
+<solution id="fs-idm22282384">
+<para id="fs-idm47408320">b. On the average, one computer part lasts ten years. Therefore, five computer parts, if they are used one right after the other would last, on the average, (5)(10) = 50 years.<newline count="2"/></para></solution>
+</exercise><exercise id="fs-idp12291440">
+<problem id="fs-idp190351008">
+<para id="fs-idm64221696">c. Eighty percent of computer parts last at most how long?</para>
+</problem>
+<solution id="fs-idm5825984">
+<para id="fs-idm20707392">c. Find the 80<sup>th</sup> percentile. Draw the graph. Let <emphasis effect="italics">k</emphasis> = the 80<sup>th</sup> percentile.</para>
+<figure id="fs-idm185319392">
+<media id="fs-idp97349984" alt="Exponential graph with the curved line beginning at point (0, 0.1) and curves down towards point (&#8734;, 0). A vertical upward line extends from point k to the curved line. k is the 80th percentile. The probability area from 0-k is equal to 0.80.">
+<image src="fig-ch05_04_05N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+<para id="fs-idm26221856">Solve for <emphasis effect="italics">k</emphasis>: <m:math>
+ <m:mrow>
+  <m:mi>k</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>n</m:mi><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:mn>0.80</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo>&#8211;</m:mo><m:mn>0.1</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>16.1</m:mn>
+ </m:mrow>
+</m:math> years</para>
+<para id="fs-idm23761616">Eighty percent of the computer parts last at most 16.1 years.</para>
+</solution></exercise>
+
+
+<note id="fs-idm26222928" class="statistics calculator">
+<label/>
+<para id="fs-idm132774320">On the home screen, enter <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>ln</m:mi><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:mn>0.80</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo>&#8211;</m:mo><m:mn>0.1</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></para>
+</note>
+
+<exercise id="fs-idm593120">
+<problem id="fs-idp161665792">
+<para id="fs-idp23647760">d. What is the probability that a computer part lasts between nine and 11 years?</para>
+</problem>
+<solution id="fs-idp122166176">
+<para id="fs-idm36478832">d. Find <emphasis effect="italics">P</emphasis>(9 &lt; <emphasis effect="italics">x</emphasis> &lt; 11). Draw the graph.</para>
+<figure id="fs-idm74816976">
+<media id="fs-idp57990224" alt="Exponential graph with the curved line beginning at point (0, 0.1) and curves down towards point (&#8734;, 0). Two vertical upward lines extend from point 9 and 11 to the curved line. The probability area occurs between point 9 and 11.">
+<image src="fig-ch05_04_06N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+<para id="fs-idm74819984"><emphasis effect="italics">P</emphasis>(9 &lt; <emphasis effect="italics">x</emphasis> &lt; 11) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 11) &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 9) = (1 &#8211; <emphasis effect="italics">e</emphasis><sup>(&#8211;0.1)(11)</sup>) &#8211; (1 &#8211; <emphasis effect="italics">e</emphasis><sup>(&#8211;0.1)(9)</sup>) = 0.6671 &#8211; 0.5934 = 0.0737. The probability that a computer part lasts between nine and 11 years is 0.0737.</para></solution>
+</exercise>
+
+
+<note id="fs-idp64620208" class="statistics calculator">
+<label/>
+<para id="fs-idp127070960">On the home screen, enter <emphasis effect="italics">e</emphasis>^(&#8211;0.1*9) &#8211; <emphasis effect="italics">e</emphasis>^(&#8211;0.1*11).</para>
+</note>
+</example>
+<note id="fs-idp37483984" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp160524848">
+<problem id="fs-idp143017440">
+<para id="fs-idm23273856">On average, a pair of running shoes can last 18 months if used every day. The length of time running shoes last is exponentially distributed. What is the probability that a pair of running shoes last more than 15 months? On average, how long would six pairs of running shoes last if they are used one after the other? Eighty percent of running shoes last at most how long if used every day?</para>
+</problem>
+</exercise>
+</note>
+<example id="fs-idm16942224">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm75204480">Suppose that the length of a phone call, in minutes, is an exponential random variable with decay parameter <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math>. If another person arrives at a public telephone just before you, find the probability that you will have to wait more than five minutes. Let <emphasis effect="italics">X</emphasis>  = the length of a phone call, in minutes.</para><exercise id="fs-idm10254256">
+<problem id="fs-idm26812224">
+<para id="fs-idm16486960">What is <emphasis effect="italics">m</emphasis>, <emphasis effect="italics">&#956;</emphasis>, and <emphasis effect="italics">&#963;</emphasis>? The probability that you must wait more than five minutes is _______ .</para>
+</problem>
+<solution id="fs-idm16514768" print-placement="end">
+<list id="fs-idm74868272" list-type="bulleted">
+<item><emphasis effect="italics">m</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>12</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math></item>
+<item><emphasis effect="italics">&#956;</emphasis> = 12</item>
+<item><emphasis effect="italics">&#963;</emphasis> = 12</item>
+</list>
+<para id="fs-idp112077456"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 5) = 0.6592</para>
+</solution>
+</exercise>
+</example>
+<note id="fs-idp114002624" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idp171920384">
+<problem id="fs-idp50292576">
+<para id="fs-idp164776016">Suppose that the distance, in miles, that people are willing to commute to work is an exponential random variable with a decay parameter <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>20</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math>. Let <emphasis effect="italics">X</emphasis> = the distance people are willing to commute in miles. What is <emphasis effect="italics">m</emphasis>, <emphasis effect="italics">&#956;</emphasis>, and <emphasis effect="italics">&#963;</emphasis>? What is the probability that a person is willing to commute more than 25 miles?</para>
+</problem>
+</exercise>
+</note>
+
+
+<example id="fs-idm3585936">
+<para id="fs-idp124120288">The time spent waiting between events is often modeled using the exponential distribution. For example, suppose that an average of 30 customers per hour arrive at a store and the time between arrivals is exponentially distributed.</para>
+<exercise id="fs-idm3860128"><problem id="fs-idp104702752"><list id="fs-idp122384032" list-type="enumerated" number-style="lower-alpha">
+<item>On average, how many minutes elapse between two successive arrivals?</item>
+<item>When the store first opens, how long on average does it take for three customers to arrive?</item>
+<item>After a customer arrives, find the probability that it takes less than one minute for the next customer to arrive.</item>
+<item>After a customer arrives, find the probability that it takes more than five minutes for the next customer to arrive.</item>
+<item>Seventy percent of the customers arrive within how many minutes of the previous customer?</item>
+<item>Is an exponential distribution reasonable for this situation?</item>
+</list></problem>
+<solution id="fs-idp31491664">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm67132976" list-type="enumerated" number-style="lower-alpha"><item>Since we expect 30 customers to arrive per hour (60 minutes), we expect on average one customer to arrive every two minutes on average.</item>
+<item>Since one customer arrives every two minutes on average, it will take six minutes on average for three customers to arrive.</item>
+<item>Let <emphasis effect="italics">X</emphasis> = the time between arrivals, in minutes. By part a, <emphasis effect="italics">&#956;</emphasis> = 2, so <emphasis effect="italics">m</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>2</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math> = 0.5.
+<newline/>Therefore, <emphasis effect="italics">X</emphasis> &#8764; <emphasis effect="italics">Exp</emphasis>(0.5).
+<newline/>The cumulative distribution function is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) = 1 &#8211; <emphasis effect="italics">e</emphasis><sup>(-0.5)(x)</sup>.
+<newline/><emphasis>Therefore</emphasis> <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; 1) = 1 &#8211; e<sup>(&#8211;0.5)(1)</sup> &#8776; 0.3935.
+<note id="fs-idm151753536" class="statistics calculator">
+<label/>
+<para id="fs-idm49583248">1 - <emphasis effect="italics">e</emphasis>^(&#8211;0.5) &#8776; 0.3935</para>
+</note>
+<figure id="fs-idp55682592">
+<media id="fs-idm58409472" alt="">
+<image src="CNX_Stats_C05_M04_001.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 5) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; 5) = 1 &#8211; (1 &#8211; <emphasis effect="italics">e</emphasis><sup>(-0.50)(5)</sup>) = e<sup>&#8211;2.5</sup> &#8776; 0.0821.
+<figure id="fs-idm13320960">
+<media id="fs-idp101415248" alt="">
+<image src="CNX_Stats_C05_M04_002N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+<note id="fs-idm57824464" class="statistics calculator">
+<label/>
+<para id="fs-idm142138736">1 &#8211; (1 &#8211; e^((-0.50)(5))) or e^( &#8211; 5*0.5)</para>
+</note>
+</item>
+<item>We want to solve 0.70 = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) for <emphasis effect="italics">x</emphasis>.
+<newline/>Substituting in the cumulative distribution function gives 0.70 = 1 &#8211; <emphasis effect="italics">e</emphasis><sup>&#8211;0.5<emphasis effect="italics">x</emphasis></sup>, so that <emphasis effect="italics">e</emphasis><sup>&#8211;0.5x</sup> = 0.30. Converting this to logarithmic form gives &#8211;0.5<emphasis effect="italics">x</emphasis> = <emphasis effect="italics">ln</emphasis>(0.30), or <m:math>
+ <m:mrow>
+  <m:mi>x</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>n</m:mi><m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mn>0.30</m:mn>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+   <m:mrow>
+    <m:mo>&#8211;</m:mo><m:mn>0.5</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>&#8776;</m:mo><m:mn>2.41</m:mn>
+ </m:mrow>
+</m:math>
+ minutes.
+<newline/>Thus, seventy percent of customers arrive within 2.41 minutes of the previous customer.
+<newline/>You are finding the 70<sup>th</sup> percentile <emphasis effect="italics">k</emphasis> so you can use the formula <emphasis effect="italics">k</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>n</m:mi><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:mi>A</m:mi><m:mi>r</m:mi><m:mi>e</m:mi><m:mi>a</m:mi><m:mo>_</m:mo><m:mi>T</m:mi><m:mi>o</m:mi><m:mo>_</m:mo><m:mi>T</m:mi><m:mi>h</m:mi><m:mi>e</m:mi><m:mo>_</m:mo><m:mi>L</m:mi><m:mi>e</m:mi><m:mi>f</m:mi><m:mi>t</m:mi><m:mo>_</m:mo><m:mi>O</m:mi><m:mi>f</m:mi><m:mo>_</m:mo><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mo>&#8211;</m:mo><m:mi>m</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+<newline/><emphasis effect="italics">k</emphasis> = <m:math display="">
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>n</m:mi><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:mn>0.70</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mo>&#8211;</m:mo><m:mn>0.5</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>&#8776;</m:mo><m:mn>2.41</m:mn>
+ </m:mrow>
+</m:math>
+ minutes
+<figure id="fs-idp171901552">
+<media id="fs-idp37010704" alt="" display="block">
+<image src="CNX_Stats_C05_M04_003.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+</item>
+<item>This model assumes that a single customer arrives at a time, which may not be reasonable since people might shop in groups, leading to several customers arriving at the same time. It also assumes that the flow of customers does not change throughout the day, which is not valid if some times of the day are busier than others.</item>
+</list></solution>
+</exercise></example>
+
+
+<note id="fs-idm8049696" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm82243888">
+<problem id="fs-idm82243632">
+<para id="fs-idp88700464">Suppose that on a certain stretch of highway, cars pass at an average rate of five cars per minute. Assume that the duration of time between successive cars follows the exponential distribution.</para>
+<list id="fs-idm57552288" list-type="enumerated" number-style="lower-alpha">
+<item>On average, how many seconds elapse between two successive cars?</item>
+<item>After a car passes by, how long on average will it take for another seven cars to pass by?</item>
+<item>Find the probability that after a car passes by, the next car will pass within the next 20 seconds.</item>
+<item>Find the probability that after a car passes by, the next car will not pass for at least another 15 seconds.</item>
+</list>
+</problem>
+</exercise>
+</note>
+
+<section id="fs-idm4878944">
+    <title>Memorylessness of the Exponential Distribution</title>
+<para id="fs-idm15452368">In <link target-id="fs-idp58220144"/> recall that the amount of time between customers is exponentially distributed with a mean of two minutes (<emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis> (0.5)). Suppose that five minutes have elapsed since the last customer arrived. Since an unusually long amount of time has now elapsed, it would seem to be more likely for a customer to arrive within the next minute. With the exponential distribution, this is not the case&#8211;the additional time spent waiting for the next customer does not depend on how much time has already elapsed since the last customer. This is referred to as the <emphasis>memoryless property</emphasis>. Specifically, the <emphasis>memoryless property</emphasis> says that</para><para id="fs-idp48694608"><emphasis effect="italics">P</emphasis> (<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">r</emphasis> + <emphasis effect="italics">t</emphasis> | <emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">r</emphasis>) = <emphasis effect="italics">P</emphasis> (<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">t</emphasis>) for all <emphasis effect="italics">r</emphasis> &#8805; 0 and <emphasis effect="italics">t</emphasis> &#8805; 0</para>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp98282704">For example, if five minutes have elapsed since the last customer arrived, then the probability that more than one minute will elapse before the next customer arrives is computed by using <emphasis effect="italics">r</emphasis> = 5 and <emphasis effect="italics">t</emphasis> = 1 in the foregoing equation.</para><para id="fs-idm55172592"><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 5 + 1 | <emphasis effect="italics">X</emphasis> &gt; 5) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 1) = <m:math>
+<m:mrow>
+<m:msup>
+<m:mi>e</m:mi>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mo>&#8211;</m:mo><m:mn>0.5</m:mn>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo>
+<m:mn>1</m:mn>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:msup>
+</m:mrow>
+</m:math> &#8776; 0.6065.</para>
+<para id="fs-idm9174224"><emphasis effect="italics">This is the same</emphasis> probability as that of waiting more than one minute for a customer to arrive after the previous arrival.</para>
+<para id="fs-idm25008304">The exponential distribution is often used to model the longevity of an electrical or mechanical device. In <link target-id="fs-idp51839440"/>, the lifetime of a certain computer part has the exponential distribution with a mean of ten years (<emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(0.1)). The <emphasis>memoryless property</emphasis> says that knowledge of what has occurred in the past has no effect on future probabilities. In this case it means that an old part is not any more likely to break down at any particular time than a brand new part. In other words, the part stays as good as new until it suddenly breaks. For example, if the part has already lasted ten years, then the probability that it lasts another seven years is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 17|<emphasis effect="italics">X</emphasis> &gt; 10) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 7) = 0.4966.</para></section>
+
+<example id="fs-idm19960800">
+<para id="fs-idp112053216">Refer to <link target-id="fs-idp58220144"/> where the time a postal clerk spends with his or her customer has an exponential distribution with a mean of four minutes. Suppose a customer has spent four minutes with a postal clerk. What is the probability that he or she will spend at least an additional three minutes with the postal clerk?<newline count="2"/></para><para id="fs-idm16550752">The decay parameter of <emphasis effect="italics">X</emphasis> is <emphasis effect="italics">m</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>4</m:mn>
+</m:mfrac>
+</m:mrow>
+</m:math>
+= 0.25, so <emphasis effect="italics">X</emphasis> &#8764; <emphasis effect="italics">Exp</emphasis>(0.25).</para>
+<para id="fs-idp64725296">The cumulative distribution function is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">x</emphasis>) = 1 &#8211; <emphasis effect="italics">e</emphasis><sup>&#8211;0.25<emphasis effect="italics">x</emphasis></sup>.
+</para>
+<para id="fs-idp127070144">We want to find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 7|<emphasis effect="italics">X</emphasis> &gt; 4). The <emphasis>memoryless property</emphasis> says that <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 7|<emphasis effect="italics">X</emphasis> &gt; 4) = <emphasis effect="italics">P</emphasis> (<emphasis effect="italics">X</emphasis> &gt; 3), so we just need to find the probability that a customer spends more than three minutes with a postal clerk.</para>
+
+<para id="fs-idm82829888">This is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 3) = 1 &#8211; <emphasis effect="italics">P</emphasis> (<emphasis effect="italics">X</emphasis> &lt; 3) = 1 &#8211; (1 &#8211; <emphasis effect="italics">e</emphasis><sup>&#8211;0.25&#8901;3</sup>) = <emphasis effect="italics">e</emphasis><sup>&#8211;0.75</sup> &#8776; 0.4724.</para>
+<figure id="fs-idm5754752">
+<media id="fs-idp52917248" alt="This graph shows an exponential distribution. The graph slopes downward. It begins at the point (0, 0.25) on the y-axis and approaches the x-axis at the right edge of the graph. The region under the graph to the right of x = 3 is shaded to represent P(x &gt; 3) = 0.4724.">
+<image src="CNX_Stats_C05_M04_005N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+<note id="fs-idp45251104" class="statistics calculator">
+<label/>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp114743232">1&#8211;(1&#8211;e^(&#8211;0.25*3)) = e^(&#8211;0.25*3).</para></note>
+</example>
+<note id="fs-idm77006064" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm127426368">
+<problem id="fs-idp1742048">
+<para id="fs-idp1742304">Suppose that the longevity of a light bulb is exponential with a mean lifetime of eight years. If a bulb has already lasted 12 years, find the probability that it will last a total of over 19 years.</para>
+</problem>
+</exercise>
+</note>
+<section id="fs-idp112021200">
+<title>Relationship between the Poisson and the Exponential Distribution</title>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp96158416">There is an interesting relationship between the exponential distribution and the Poisson distribution. Suppose that the time that elapses between two successive events follows the exponential distribution with a mean of <emphasis effect="italics">&#956;</emphasis> units of time. Also assume that these times are independent, meaning that the time between events is not affected by the times between previous events. If these assumptions hold, then the number of events per unit time follows a Poisson distribution with mean <emphasis effect="italics">&#955;</emphasis> = 1/&#956;. Recall from the chapter on <link document="m46955">Discrete Random Variables</link> that if <emphasis effect="italics">X</emphasis> has the Poisson distribution with mean <emphasis effect="italics">&#955;</emphasis>, then <m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mi>&#955;</m:mi>
+<m:mi>k</m:mi>
+</m:msup>
+<m:msup>
+<m:mi>e</m:mi>
+<m:mrow>
+<m:mo>&#8722;</m:mo><m:mi>&#955;</m:mi>
+</m:mrow>
+</m:msup>
+
+</m:mrow>
+<m:mrow>
+<m:mi>k</m:mi><m:mo>!</m:mo>
+</m:mrow>
+</m:mfrac>
+
+</m:mrow>
+</m:math>. Conversely, if the number of events per unit time follows a Poisson distribution, then the amount of time between events follows the exponential distribution. (<emphasis effect="italics">k</emphasis>! = <emphasis effect="italics">k</emphasis>*(<emphasis effect="italics">k</emphasis>&#8211;1*)(<emphasis effect="italics">k</emphasis>&#8211;2)*(<emphasis effect="italics">k</emphasis>&#8211;3)*&#8230;3*2*1)</para><note id="fs-idm148932176" class="statistics calculator">
+<label/>
+<para id="fs-idp35150608">Suppose <emphasis effect="italics">X</emphasis> has the Poisson distribution with mean <emphasis effect="italics">&#955;</emphasis>. Compute <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = <emphasis effect="italics">k</emphasis>) by entering 2<sup>nd</sup>, VARS(DISTR), C: poissonpdf(<emphasis effect="italics">&#955;</emphasis>, <emphasis effect="italics">k</emphasis>). To compute <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; <emphasis effect="italics">k</emphasis>), enter 2<sup>nd</sup>, VARS (DISTR), D:poissoncdf(<emphasis effect="italics">&#955;</emphasis>, <emphasis effect="italics">k</emphasis>).</para></note>
+</section>
+<example id="fs-idp35148784">
+<para id="fs-idp142528272">At a police station in a large city, calls come in at an average rate of four calls per minute. Assume that the time that elapses from one call to the next has the exponential distribution. Take note that we are concerned only with the rate at which calls come in, and we are ignoring the time spent on the phone. We must also assume that the times spent between calls are independent. This means that a particularly long delay between two calls does not mean that there will be a shorter waiting period for the next call. We may then deduce that the total number of calls received during a time period has the Poisson distribution.</para>
+<exercise id="fs-idp142528656">
+<problem id="fs-idp117818128">
+<list id="fs-idp117818384" list-type="enumerated" number-style="lower-alpha">
+<item>Find the average time between two successive calls.</item>
+<item>Find the probability that after a call is received, the next call occurs in less than ten seconds.</item>
+<item>Find the probability that exactly five calls occur within a minute.</item>
+<item>Find the probability that less than five calls occur within a minute.</item>
+<item>Find the probability that more than 40 calls occur in an eight-minute period.</item>
+</list>
+</problem>
+<solution id="fs-idp51452560">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp51452816" list-type="enumerated" number-style="lower-alpha"><item>On average there are four calls occur per minute, so 15 seconds, or <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:mn>15</m:mn>
+</m:mrow>
+<m:mrow>
+<m:mn>60</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = 0.25 minutes occur between successive calls on average.</item>
+<item>Let <emphasis effect="italics">T</emphasis> = time elapsed between calls. From part a, <emphasis effect="italics">&#956;</emphasis> = 0.25, so <emphasis effect="italics">m</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>0.25</m:mn>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> = 4. Thus, <emphasis effect="italics">T</emphasis> &#8764; <emphasis effect="italics">Exp</emphasis>(4).
+<newline/>The cumulative distribution function is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; <emphasis effect="italics">t</emphasis>) = 1 &#8211; <emphasis effect="italics">e</emphasis><sup>&#8211;4<emphasis effect="italics">t</emphasis></sup>.
+<newline/>The probability that the next call occurs in less than ten seconds  (ten seconds = 1/6 minute) is <m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mi>T</m:mi><m:mtext>&#160;&lt;&#160;</m:mtext><m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>6</m:mn>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:msup>
+<m:mi>e</m:mi>
+<m:mrow>
+<m:mo>(</m:mo><m:mo>&#8211;</m:mo><m:mn>4</m:mn><m:mo>)</m:mo><m:mo>(</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>6</m:mn>
+</m:mfrac><m:mo>)</m:mo>
+</m:mrow>
+</m:msup>
+<m:mo>&#8776;</m:mo><m:mn>0.4866.</m:mn>
+</m:mrow>
+</m:math>
+<figure id="fs-idp698848">
+<media id="fs-idp4692208" alt="This graph shows an exponential distribution. The graph slopes downward. It begins at the point (0, 0.8) on the y-axis and approaches the x-axis at the right edge of the graph. The region under the graph to the left of x = 20 is shaded to represent P(x &lt; 1/6) = 0.4866." display="block">
+<image src="CNX_Stats_C05_M04_006N.jpg" mime-type="image/jpg" width="380"/>
+</media>
+</figure>
+</item>
+<item>Let <emphasis effect="italics">X</emphasis> = the number of calls per minute. As previously stated, the number of calls per minute has a Poisson distribution, with a mean of four calls per minute.
+<newline/>Therefore, <emphasis effect="italics">X</emphasis> &#8764; <emphasis effect="italics">Poisson</emphasis>(4), and so <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = 5) = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mn>4</m:mn>
+<m:mn>5</m:mn>
+</m:msup>
+<m:msup>
+<m:mi>e</m:mi>
+<m:mrow>
+<m:mo>&#8722;</m:mo><m:mn>4</m:mn>
+</m:mrow>
+</m:msup>
+</m:mrow>
+<m:mrow>
+<m:mn>5</m:mn><m:mo>!</m:mo>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> &#8776; 0.1563. (5! = (5)(4)(3)(2)(1))
+
+<note id="fs-idp140339744" class="statistics calculator"><label/>
+<para id="fs-idp115054976">poissonpdf(4, 5) = 0.1563.</para>
+</note></item>
+
+<item>Keep in mind that <emphasis effect="italics">X</emphasis> must be a whole number, so <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; 5) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; 4).
+<newline/>To compute this, we could take <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = 0) + <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = 1) + <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = 2) + <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = 3) + <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = 4).
+<newline/>Using technology, we see that <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; 4) = 0.6288.
+<note id="fs-idp70409712" class="statistics calculator"><label/>
+<para id="fs-idp165812304">poisssoncdf(4, 4) = 0.6288</para>
+</note></item>
+<item>Let <emphasis effect="italics">Y</emphasis> = the number of calls that occur during an eight minute period.
+<newline/>Since there is an average of four calls per minute, there is an average of (8)(4) = 32 calls during each eight minute period.
+<newline/>Hence, <emphasis effect="italics">Y</emphasis> &#8764; <emphasis effect="italics">Poisson</emphasis>(32). Therefore, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">Y</emphasis> &gt; 40) = 1 &#8211; <emphasis effect="italics">P</emphasis> (<emphasis effect="italics">Y</emphasis> &#8804; 40) = 1 &#8211; 0.9294 = 0.0707.
+<note id="fs-idp161494592" class="statistics calculator"><label/>
+<para id="fs-idp137845728">1 &#8211; poissoncdf(32, 40). = 0.0707</para>
+</note></item>
+</list></solution>
+</exercise>
+</example>
+
+
+<note id="fs-idp97352064" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="fs-idm15154880">
+<problem id="fs-idm15154624">
+<para id="fs-idm15154368">In a small city, the number of automobile accidents occur with a Poisson distribution at an average of three per week.</para>
+<list id="fs-idp53070848" list-type="enumerated" number-style="lower-alpha">
+<item>Calculate the probability that there are at most 2 accidents occur in any given week.</item>
+<item>What is the probability that there is at least two weeks between any 2 accidents?</item>
+</list>
+</problem>
+</exercise>
+</note>
+
+<section id="fs-idp72211680" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idp72212448">If <emphasis effect="italics">X</emphasis> has an <emphasis>exponential distribution</emphasis> with mean <emphasis effect="italics">&#956;</emphasis>, then the <emphasis>decay parameter</emphasis> is <emphasis effect="italics">m</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mi>&#956;</m:mi>
+</m:mfrac>
+</m:mrow>
+</m:math>, and we write <emphasis effect="italics">X</emphasis> &#8764; <emphasis effect="italics">Exp</emphasis>(<emphasis effect="italics">m</emphasis>) where <emphasis effect="italics">x</emphasis> &#8805; 0 and <emphasis effect="italics">m</emphasis> &gt; 0 . The probability density function of <emphasis effect="italics">X</emphasis> is <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">me<sup>-mx</sup></emphasis> (or equivalently <m:math>
+ <m:mrow>
+  <m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mi>&#956;</m:mi>
+  </m:mfrac>
+  <m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mi>x</m:mi><m:mo>/</m:mo><m:mi>&#956;</m:mi>
+   </m:mrow>
+  </m:msup>
+ </m:mrow>
+</m:math>. The cumulative distribution function of <emphasis effect="italics">X</emphasis> is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; <emphasis effect="italics">x</emphasis>) = 1 &#8211; <emphasis effect="italics">e</emphasis><sup>&#8211;<emphasis effect="italics">mx</emphasis></sup>.</para><para id="fs-idp165810896">The exponential distribution has the <emphasis>memoryless property</emphasis>, which says that future probabilities do not depend on any past information. Mathematically, it says that <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis> + <emphasis effect="italics">k</emphasis>|<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">k</emphasis>).</para>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp81759104">If <emphasis effect="italics">T</emphasis> represents the waiting time between events, and if <emphasis effect="italics">T</emphasis> &#8764; <emphasis effect="italics">Exp</emphasis>(<emphasis effect="italics">&#955;</emphasis>), then the number of events <emphasis effect="italics">X</emphasis> per unit time follows the Poisson distribution with mean <emphasis effect="italics">&#955;</emphasis>. The probability density function of <emphasis effect="italics">X</emphasis> is <m:math><m:mo>P</m:mo>
+<m:mrow>
+<m:mo stretchy="false">(</m:mo><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mi>&#955;</m:mi>
+<m:mi>k</m:mi>
+</m:msup>
+<m:msup>
+<m:mi>e</m:mi>
+<m:mrow>
+<m:mo>&#8722;</m:mo><m:mi>k</m:mi>
+</m:mrow>
+</m:msup>
+</m:mrow>
+<m:mrow>
+<m:mi>k</m:mi><m:mo>!</m:mo>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math>. This may be computed using a TI-83, 83+, 84, 84+ calculator with the command poissonpdf(<emphasis effect="italics">&#955;</emphasis>, <emphasis effect="italics">k</emphasis>). The cumulative distribution function <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; <emphasis effect="italics">k</emphasis>) may be computed using the TI-83, 83+,84, 84+ calculator with the command poissoncdf(<emphasis effect="italics">&#955;</emphasis>, <emphasis effect="italics">k</emphasis>).</para></section>
+<section id="fs-idp8617136" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idp453680">Exponential: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(<emphasis effect="italics">m</emphasis>) where <emphasis effect="italics">m</emphasis> = the decay parameter</para>
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp121046784" list-type="bulleted"><item>pdf: <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">me</emphasis><sup>(&#8211;<emphasis effect="italics">mx</emphasis>)</sup> where <emphasis effect="italics">x</emphasis> &#8805; 0 and <emphasis effect="italics">m</emphasis> &gt; 0</item>
+
+<item>cdf: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; <emphasis effect="italics">x</emphasis>) = 1 &#8211; <emphasis effect="italics">e</emphasis><sup>(&#8211;<emphasis effect="italics">mx</emphasis>)</sup></item>
+
+<item>mean <emphasis effect="italics">&#181;</emphasis> = <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mi>m</m:mi>
+</m:mfrac>
+</m:mrow>
+</m:math>
+</item>
+
+<item>standard deviation <emphasis effect="italics">&#963;</emphasis> = <emphasis effect="italics">&#181;</emphasis></item>
+
+<item>percentile <emphasis effect="italics">k</emphasis>: <emphasis effect="italics">k</emphasis> = <m:math display="">
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>n</m:mi><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mi>A</m:mi><m:mi>r</m:mi><m:mi>e</m:mi><m:mi>a</m:mi><m:mi>T</m:mi><m:mi>o</m:mi><m:mi>T</m:mi><m:mi>h</m:mi><m:mi>e</m:mi><m:mi>L</m:mi><m:mi>e</m:mi><m:mi>f</m:mi><m:mi>t</m:mi><m:mi>O</m:mi><m:mi>f</m:mi><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mo>&#8722;</m:mo><m:mi>m</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</item>
+<item>Additionally
+<list id="fs-idp34394496" list-type="bulleted"><item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">e</emphasis><sup>(&#8211;<emphasis effect="italics">mx</emphasis>)</sup></item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">a</emphasis> &lt; <emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">b</emphasis>) = <emphasis effect="italics">e</emphasis><sup>(&#8211;<emphasis effect="italics">ma</emphasis>)</sup> &#8211; <emphasis effect="italics">e</emphasis><sup>(&#8211;<emphasis effect="italics">mb</emphasis>)</sup>
+</item>
+</list>
+</item>
+<item>Memoryless Property: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis> + <emphasis effect="italics">k</emphasis>|<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">P</emphasis> (<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">k</emphasis>)</item>
+<item>Poisson probability: <m:math>
+<m:mrow>
+<m:mo>&#160;</m:mo><m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mi>&#955;</m:mi>
+<m:mi>k</m:mi>
+</m:msup>
+<m:msup>
+<m:mi>e</m:mi>
+<m:mrow>
+<m:mo>&#8722;</m:mo><m:mi>k</m:mi>
+</m:mrow>
+</m:msup>
+</m:mrow>
+<m:mrow>
+<m:mi>k</m:mi><m:mo>!</m:mo>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math> with mean <emphasis effect="italics">&#955;</emphasis></item>
+<item><emphasis effect="italics">k</emphasis>! = <emphasis effect="italics">k</emphasis>*(<emphasis effect="italics">k</emphasis>-1)*(<emphasis effect="italics">k</emphasis>-2)*(<emphasis effect="italics">k</emphasis>-3)*&#8230;3*2*1</item>
+</list></section>
+<section id="eip-568" class="references">
+<title>References</title>
+<para id="eip-idp68491088">Data from the United States Census Bureau.</para>
+
+<para id="eip-idp68491472">Data from World Earthquakes, 2013. Available online at http://www.world-earthquakes.com/ (accessed June 11, 2013).</para>
+
+ <para id="eip-idm120258768">&#8220;No-hitter.&#8221; Baseball-Reference.com, 2013. Available online at http://www.baseball-reference.com/bullpen/No-hitter (accessed June 11, 2013).</para>
+
+<para id="eip-idm120258064">Zhou, Rick. &#8220;Exponential Distribution lecture slides.&#8221; Available online at www.public.iastate.edu/~riczw/stat330s11/lecture/lec13.pdf&#8206; (accessed June 11, 2013).</para></section>
+
+<section id="fs-idp88695408" class="practice"><para id="fs-idm2785536"><emphasis effect="italics">Use the following information to answer the next ten exercises.</emphasis> A customer service representative must spend different amounts of time with each customer to resolve various concerns. The amount of time spent with each customer can be modeled by the following distribution: <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(0.2)</para><exercise id="fs-idp88695904">
+<problem id="fs-idm2785792">
+<para id="fs-idp25759856">What type of distribution is this?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp131072752">
+<problem id="fs-idp131073008">
+<para id="fs-idp131073264">Are outcomes equally likely in this distribution? Why or why not?</para>
+</problem>
+<solution id="fs-idp103438240">
+<para id="fs-idp103438496">No, outcomes are not equally likely. In this distribution, more people require a little bit of time, and fewer people require a lot of time, so it is more likely that someone will require less time.</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp103439344">
+<problem id="fs-idm5858272">
+<para id="fs-idm5858016">What is <emphasis effect="italics">m</emphasis>? What does it represent?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp66812752">
+<problem id="fs-idp66813008">
+<para id="fs-idp2023392">What is the mean?</para>
+</problem>
+<solution id="fs-idp2023904">
+<para id="fs-idp2024160">five</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp2024800">
+<problem id="fs-idm6142000">
+<para id="fs-idm6141744">What is the standard deviation?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm6140336">
+<problem id="fs-idp85386080">
+<para id="fs-idp85386336">State the probability density function.</para>
+</problem>
+<solution id="fs-idp85386848">
+<para id="fs-idp85387104"><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = 0.2e<sup>-0.2<emphasis effect="italics">x</emphasis></sup></para></solution>
+</exercise>
+
+<exercise id="fs-idp25279376">
+<problem id="fs-idp25279632">
+<para id="fs-idp25279888">Graph the distribution.</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm18193360">
+<problem id="fs-idm18193104">
+<para id="fs-idm18192848">Find <emphasis effect="italics">P</emphasis>(2 &lt; <emphasis effect="italics">x</emphasis> &lt; 10).</para>
+</problem>
+<solution id="fs-idm38665552">
+<para id="fs-idm38665296">0.5350</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm38664656">
+<problem id="fs-idp73440256">
+<para id="fs-idp73440512">Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 6).</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp55954320">
+<problem id="fs-idp55954576">
+<para id="fs-idm23349040">Find the 70<sup>th</sup> percentile.</para>
+</problem>
+<solution id="fs-idm23348144">
+<para id="fs-idm23347888">6.02</para>
+</solution>
+</exercise>
+
+<para id="eip-179"><newline/><emphasis effect="italics">Use the following information to answer the next seven exercises.</emphasis> A distribution is given as <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(0.75).</para><exercise id="fs-idp102397024">
+<problem id="fs-idp102397280">
+<para id="fs-idp124045200">What is <emphasis effect="italics">m</emphasis>?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp2772016">
+<problem id="fs-idp2772272">
+<para id="fs-idp2772528">What is the probability density function?</para>
+</problem>
+<solution id="fs-idp2773040">
+<para id="fs-idp2773296"><emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = 0.75<emphasis effect="italics">e</emphasis><sup>-0.75<emphasis effect="italics">x</emphasis></sup></para></solution>
+</exercise>
+
+<exercise id="fs-idm34697936">
+<problem id="fs-idm34697680">
+<para id="fs-idm34697424">What is the cumulative distribution function?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp110613552">
+<problem id="fs-idp74063520">
+<para id="fs-idp74063776">Draw the distribution.</para>
+</problem>
+<solution id="fs-idp74064288">
+<figure id="fs-idp74064544">
+<media id="fs-idp74064800" alt="This graph shows an exponential distribution. The graph slopes downward. It begins at the point (0, 0.75) on the y-axis and approaches the x-axis at the right edge of the graph. The decay parameter, m, equals 0.75.">
+<image mime-type="image/jpg" src="CNX_Stats_C05_M04_item002annoN.jpg" width="380"/>
+</media>
+</figure>
+</solution>
+</exercise>
+
+<exercise id="fs-idm34988928">
+<problem id="fs-idm34988672">
+<para id="fs-idm34988416">Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 4).</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm14412736">
+<problem id="fs-idm14412480">
+<para id="fs-idp105873216">Find the 30<sup>th</sup> percentile.</para>
+</problem>
+<solution id="fs-idp105874112">
+<para id="fs-idp105874368">0.4756</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp23631744">
+<problem id="fs-idp23632000">
+<para id="fs-idp23632256">Find the median.</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp51932320">
+<problem id="fs-idp51932576">
+<para id="fs-idp51932832">Which is larger, the mean or the median?</para>
+</problem>
+<solution id="fs-idp51933344">
+<para id="fs-idp51933600">The mean is larger. The mean is <m:math>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mi>m</m:mi>
+</m:mfrac>
+<m:mo>=</m:mo><m:mfrac>
+<m:mn>1</m:mn>
+<m:mrow>
+<m:mn>0.75</m:mn>
+</m:mrow>
+</m:mfrac>
+<m:mo>&#8776;</m:mo><m:mn>1.33</m:mn>
+</m:mrow>
+</m:math>, which is greater than 0.9242.</para>
+</solution>
+</exercise>
+<para id="fs-idm26755488"><emphasis effect="italics">Use the following information to answer the next 16 exercises.</emphasis> Carbon-14 is a radioactive element with a half-life of about 5,730 years. Carbon-14 is said to decay exponentially. The decay rate is 0.000121. We start with one gram of carbon-14. We are interested in the time (years) it takes to decay carbon-14.</para><exercise id="fs-idp107050752">
+<problem id="fs-idp107051008">
+<para id="fs-idp107051264">What is being measured here?</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm50791120">
+<problem id="fs-idm50790864">
+<para id="fs-idm50790608">Are the data discrete or continuous?</para>
+</problem>
+<solution id="fs-idm50790096">
+<para id="fs-idm50789840">continuous</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp50908000">
+<problem id="fs-idp50908256">
+<para id="fs-idp50908512">In words, define the random variable <emphasis effect="italics">X</emphasis>.</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idp35926784">
+<problem id="fs-idp35927040">
+<para id="fs-idp35927296">What is the decay rate (<emphasis effect="italics">m</emphasis>)?</para>
+</problem>
+<solution id="fs-idp65094784">
+<para id="fs-idp65095040"><emphasis effect="italics">m</emphasis> = 0.000121</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp64205504">
+<problem id="fs-idp64205760">
+<para id="fs-idp64206016">The distribution for <emphasis effect="italics">X</emphasis> is ______.</para></problem>
+</exercise>
+
+<exercise id="fs-idp21762624">
+<problem id="fs-idm2764496">
+<para id="fs-idm2764240">Find the amount (percent of one gram) of carbon-14 lasting less than 5,730 years. This means, find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 5,730).</para>
+<list id="fs-idm2762608" list-type="enumerated" number-style="lower-alpha">
+<item>Sketch the graph, and shade the area of interest.
+<figure id="fs-idp48103632"><media id="fs-idp48103888" alt="This is a blank graph template. The vertical and horizontal axes are unlabeled.">
+<image src="fig-ch05_06_01.png" mime-type="png/jpg" width="380"/>
+</media>
+</figure></item>
+<item>Find the probability. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 5,730) = __________</item>
+</list>
+</problem>
+<solution id="fs-idp5358432">
+<list id="fs-idp5358688" list-type="enumerated" number-style="lower-alpha">
+<item>Check student's solution</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 5,730) = 0.5001</item>
+</list>
+</solution>
+</exercise>
+
+<exercise id="fs-idp139005520">
+<problem id="fs-idp139005776">
+<para id="fs-idp139006032">Find the percentage of carbon-14 lasting longer than 10,000 years.</para>
+<list id="fs-idp72202640" list-type="enumerated" number-style="lower-alpha"><item>Sketch the graph, and shade the area of interest.
+<figure id="fs-idp72203632"><media id="fs-idp72203888" alt="Blank graph with horizontal and vertical axes.">
+<image src="fig-ch05_06_01.png" mime-type="png/jpg" width="380"/>
+</media>
+</figure></item>
+<item>Find the probability. <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &gt; 10,000) = ________</item>
+</list></problem>
+</exercise>
+
+<exercise id="fs-idp120888672">
+<problem id="fs-idp120888928">
+<para id="fs-idp17735296">Thirty percent (30%) of carbon-14 will decay within how many years?</para>
+<list id="fs-idp17735680" list-type="enumerated" number-style="lower-alpha"><item>Sketch the graph, and shade the area of interest.
+<figure id="fs-idp17736672"><media id="fs-idp17736928" alt="This is a blank graph template. The vertical and horizontal axes are unlabeled.">
+<image src="fig-ch05_06_01.png" mime-type="png/jpg" width="380"/>
+</media>
+</figure></item>
+<item>Find the value <emphasis effect="italics">k</emphasis> such that <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = 0.30.</item></list></problem>
+<solution id="fs-idp45651680">
+<list id="fs-idp22046624" list-type="enumerated" number-style="lower-alpha">
+<item>Check student's solution.</item>
+<item><emphasis effect="italics">k</emphasis> = 2947.73</item>
+</list>
+</solution>
+</exercise>
+</section>
+
+<section id="fs-idp106402544" class="free-response">
+<title>Homework</title>
+<exercise id="fs-idp106403424">
+<problem id="fs-idp106403680">
+<para id="fs-idp106403936">Suppose that the length of long distance phone calls, measured in minutes, is known to have an exponential distribution with the average length of a call equal to eight minutes.</para>
+<list id="fs-idp35999984" list-type="enumerated" number-style="lower-alpha">
+<item>Define the random variable. <emphasis effect="italics">X</emphasis> = ________________.</item>
+<item>Is <emphasis effect="italics">X</emphasis> continuous or discrete?</item>
+<item><emphasis effect="italics">X</emphasis> ~ ________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = ________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = ________</item>
+<item>Draw a graph of the probability distribution. Label the axes.</item>
+<item>Find the probability that a phone call lasts less than nine minutes.</item>
+<item>Find the probability that a phone call lasts more than nine minutes.</item>
+<item>Find the probability that a phone call lasts between seven and nine minutes.</item>
+<item>If 25 phone calls are made one after another, on average, what would you expect the total to be? Why?</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="fs-idp127287888">
+<problem id="fs-idp127288144">
+<para id="fs-idp127288400">Suppose that the useful life of a particular car battery, measured in months, decays with parameter 0.025. We are interested in the life of the battery.</para>
+<list id="fs-idp127288960" list-type="enumerated" number-style="lower-alpha">
+<item>Define the random variable. <emphasis effect="italics">X</emphasis> = _________________________________.</item>
+<item>Is <emphasis effect="italics">X</emphasis> continuous or discrete?</item>
+<item><emphasis effect="italics">X</emphasis> ~ ________</item>
+<item>On average, how long would you expect one car battery to last?</item>
+<item>On average, how long would you expect nine car batteries to last, if they are used one after another?</item>
+<item>Find the probability that a car battery lasts more than 36 months.</item>
+<item>Seventy percent of the batteries last at least how long?</item>
+</list>
+</problem>
+<solution id="fs-idm47663488">
+<list id="fs-idm47663232" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the useful life of a particular car battery, measured in months.</item>
+<item><emphasis effect="italics">X</emphasis> is continuous.</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(0.025)</item>
+<item>40 months</item>
+<item>360 months</item>
+<item>0.4066</item>
+<item>14.27</item>
+</list>
+</solution>
+</exercise>
+
+<exercise id="fs-idm20022272">
+<problem id="fs-idm20022016">
+<para id="fs-idm19086640">The percent of persons (ages five and older) in each state who speak a language at home other than English is approximately exponentially distributed with a mean of 9.848. Suppose we randomly pick a state.</para><list id="fs-idm19085984" list-type="enumerated" number-style="lower-alpha"><item>Define the random variable. <emphasis effect="italics">X</emphasis> = _________________________________.</item>
+<item>Is <emphasis effect="italics">X</emphasis> continuous or discrete?</item>
+<item><emphasis effect="italics">X</emphasis> ~ ________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = ________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = ________</item>
+<item>Draw a graph of the probability distribution. Label the axes.</item>
+<item>Find the probability that the percent is less than 12.</item>
+<item>Find the probability that the percent is between eight and 14.</item>
+<item>The percent of all individuals living in the United States who speak a language at home other than English is 13.8.
+<list id="fs-idm34527280" list-type="enumerated" number-style="lower-roman">
+<item>Why is this number different from 9.848%?</item>
+<item>What would make this number higher than 9.848%?</item></list>
+</item>
+</list></problem>
+</exercise>
+
+<exercise id="fs-idp23265056">
+<problem id="fs-idp23265312">
+<para id="fs-idp23265568">The time (in years) <emphasis>after</emphasis> reaching age 60 that it takes an individual to retire is approximately exponentially distributed with a mean of about five years. Suppose we randomly pick one retired individual. We are interested in the time after age 60 to retirement.</para>
+<list id="fs-idp112515824" list-type="enumerated" number-style="lower-alpha">
+<item>Define the random variable. <emphasis effect="italics">X</emphasis> = _________________________________.</item>
+<item>Is <emphasis effect="italics">X</emphasis> continuous or discrete?</item>
+<item><emphasis effect="italics">X</emphasis> ~ = ________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = ________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = ________</item>
+<item>Draw a graph of the probability distribution. Label the axes.</item>
+<item>Find the probability that the person retired after age 70.</item>
+<item>Do more people retire before age 65 or after age 65?</item>
+<item>In a room of 1,000 people over age 80, how many do you expect will NOT have retired yet?</item>
+</list>
+</problem>
+<solution id="fs-idm77894240">
+<list id="fs-idm77893984" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the time (in years) after reaching age 60 that it takes an individual to retire</item>
+<item><emphasis effect="italics">X</emphasis> is continuous.</item>
+<item><emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis><m:math>
+<m:mrow>
+<m:mrow><m:mo>(</m:mo>
+<m:mrow>
+<m:mfrac>
+<m:mn>1</m:mn>
+<m:mn>5</m:mn>
+</m:mfrac>
+</m:mrow>
+<m:mo>)</m:mo></m:mrow>
+</m:mrow>
+</m:math>
+</item>
+<item>five</item>
+<item>five</item>
+<item>Check student&#8217;s solution.</item>
+<item>0.1353</item>
+<item>before</item>
+<item>18.3</item>
+</list>
+</solution>
+</exercise>
+
+<exercise id="fs-idp123376336">
+<problem id="fs-idp123376592">
+<para id="fs-idp123376848">The cost of all maintenance for a car during its first year is approximately exponentially distributed with a mean of $150.</para>
+<list id="fs-idp123377376" list-type="enumerated" number-style="lower-alpha">
+<item>Define the random variable. <emphasis effect="italics">X</emphasis> = _________________________________.</item>
+<item><emphasis effect="italics">X</emphasis> ~ = ________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = ________</item>
+<item><emphasis effect="italics">&#963;</emphasis> = ________</item>
+<item>Draw a graph of the probability distribution. Label the axes.</item>
+<item>Find the probability that a car required over $300 for maintenance during its first year.</item>
+</list>
+</problem>
+</exercise>
+
+<para id="fs-idp25410160"><newline/><emphasis effect="italics">Use the following information to answer the next three exercises.</emphasis> The average lifetime of a certain new cell phone is three years. The manufacturer will replace any cell phone failing within two years of the date of purchase. The lifetime of these cell phones is known to follow an exponential distribution.</para><exercise id="fs-idp164419184">
+<problem id="fs-idp164419440">
+<para id="fs-idp164419696">The decay rate is:</para><list id="fs-idp164420080" list-type="enumerated" number-style="lower-alpha">
+<item>0.3333</item>
+<item>0.5000</item>
+<item>2</item>
+<item>3</item>
+</list>
+</problem>
+<solution id="fs-idm2162928">
+<para id="fs-idm2162672">a</para>
+</solution>
+</exercise>
+<exercise id="fs-idp147488160">
+<problem id="fs-idp147488416">
+<para id="fs-idp147488672">What is the probability that a phone will fail within two years of the date of purchase?</para>
+<list id="fs-idp147489168" list-type="enumerated" number-style="lower-alpha">
+<item>0.8647</item>
+<item>0.4866</item>
+<item>0.2212</item>
+<item>0.9997</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="fs-idm3440688">
+<problem id="fs-idm3440432">
+<para id="fs-idm3440176">What is the median lifetime of these phones (in years)?</para>
+<list id="fs-idp138734432" list-type="enumerated" number-style="lower-alpha">
+<item>0.1941</item>
+<item>1.3863</item>
+<item>2.0794</item>
+<item>5.5452</item>
+</list>
+</problem>
+<solution id="fs-idp45848832">
+<para id="fs-idp45849088">c</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idp45849728">
+<problem id="fs-idp45849984">
+<para id="fs-idp45850240">Let <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">Exp</emphasis>(0.1).</para><list id="fs-idp51266048" list-type="enumerated" number-style="lower-alpha"><item>decay rate = ________</item>
+<item><emphasis effect="italics">&#956;</emphasis> = ________</item>
+<item>Graph the probability distribution function.</item>
+<item>On the graph, shade the area corresponding to <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 6) and find the probability.</item>
+<item>Sketch a new graph, shade the area corresponding to <emphasis effect="italics">P</emphasis>(3 &lt; <emphasis effect="italics">x</emphasis> &lt; 6) and find the probability.</item>
+<item>Sketch a new graph, shade the area corresponding to <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">x</emphasis> &lt; 7) and find the probability.</item>
+<item>Sketch a new graph, shade the area corresponding to the 40<sup>th</sup> percentile and find the value.</item>
+<item>Find the average value of <emphasis effect="italics">x</emphasis>.</item>
+</list></problem>
+</exercise>
+
+<exercise id="fs-idm5013072">
+<problem id="fs-idm5012816">
+<para id="fs-idm17726944">Suppose that the longevity of a light bulb is exponential with a mean lifetime of eight years.</para>
+<list id="fs-idm17726448" list-type="enumerated" number-style="lower-alpha"><item>Find the probability that a light bulb lasts less than one year.</item>
+<item>Find the probability that a light bulb lasts between six and ten years.</item>
+<item>Seventy percent of all light bulbs last at least how long?</item>
+<item>A company decides to offer a warranty to give refunds to light bulbs whose lifetime is among the lowest two percent of all bulbs. To the nearest month, what should be the cutoff lifetime for the warranty to take place?</item>
+<item>If a light bulb has lasted seven years, what is the probability that it fails within the 8<sup>th</sup> year.</item>
+</list></problem>
+<solution id="fs-idm44735184">
+<para id="fs-idm44734928">Let <emphasis effect="italics">T</emphasis> = the life time of a light bulb.</para>
+<para id="fs-idp121756864">The decay parameter is <emphasis effect="italics">m</emphasis> = 1/8, and <emphasis effect="italics">T</emphasis> &#8764; Exp(1/8). The cumulative distribution function is <m:math>
+ <m:mrow>
+  <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>T</m:mi><m:mo>&lt;</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mfrac>
+     <m:mi>t</m:mi>
+     <m:mi>8</m:mi>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+
+ </m:mrow>
+</m:math></para><list id="fs-idp58814560" list-type="enumerated" number-style="lower-alpha"><item>Therefore, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; 1) = 1 &#8211; e<sup><m:math display="">
+ <m:mrow>
+  <m:mo>&#8211;</m:mo><m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>8</m:mn>
+  </m:mfrac>
+ </m:mrow>
+</m:math></sup> &#8776; 0.1175.</item>
+<item>We want to find <emphasis effect="italics">P</emphasis>(6 &lt; <emphasis effect="italics">t</emphasis> &lt; 10).
+    <newline/>To do this, <emphasis effect="italics">P</emphasis>(6 &lt; <emphasis effect="italics">t</emphasis> &lt; 10) &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">t</emphasis> &lt; 6)
+    <newline/>= <m:math display="">
+ <m:mrow>
+  <m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:msup>
+     <m:mi>e</m:mi>
+     <m:mrow>
+      <m:mo>&#8211;</m:mo><m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mn>8</m:mn>
+      </m:mfrac>
+      <m:mo>*</m:mo><m:mn>10</m:mn>
+     </m:mrow>
+    </m:msup>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>&#8211;</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:msup>
+     <m:mi>e</m:mi>
+     <m:mrow>
+      <m:mo>&#8211;</m:mo><m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mn>8</m:mn>
+      </m:mfrac>
+      <m:mo>*</m:mo><m:mn>6</m:mn>
+     </m:mrow>
+    </m:msup>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> &#8776; 0.7135 &#8211; 0.5276 = 0.1859
+<figure id="fs-idp22135936"><media id="fs-idp22136192" alt="">
+<image mime-type="png/jpg" src="soln_04bF.jpg" width="380"/>
+</media>
+</figure></item>
+<item>We want to find 0.70 <m:math display="">
+ <m:mrow>
+  <m:mo>=</m:mo><m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>T</m:mi><m:mo>&gt;</m:mo><m:mi>t</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:msup>
+     <m:mi>e</m:mi>
+     <m:mrow>
+      <m:mo>&#8722;</m:mo><m:mfrac>
+       <m:mi>t</m:mi>
+       <m:mn>8</m:mn>
+      </m:mfrac>
+
+     </m:mrow>
+    </m:msup>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mfrac>
+     <m:mi>t</m:mi>
+     <m:mn>8</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+  <m:mo>.</m:mo>
+ </m:mrow>
+</m:math>
+<newline/>Solving for <emphasis effect="italics">t</emphasis>, e<sup><m:math display="">
+ <m:mrow>
+  <m:mo>&#8211;</m:mo><m:mfrac>
+   <m:mi>t</m:mi>
+   <m:mn>8</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></sup> = 0.70, so <m:math display="">
+ <m:mrow>
+  <m:mo>&#8211;</m:mo><m:mfrac>
+   <m:mi>t</m:mi>
+   <m:mn>8</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <emphasis effect="italics">ln</emphasis>(0.70), and <emphasis effect="italics">t</emphasis> = &#8211;8<emphasis effect="italics">ln</emphasis>(0.70) &#8776; 2.85 years.
+<newline/>Or use <emphasis effect="italics">t</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>n</m:mi><m:mtext>(area_to_the_right)</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mo stretchy="false">(</m:mo><m:mo>&#8211;</m:mo><m:mi>m</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>l</m:mi><m:mi>n</m:mi><m:mtext>(0</m:mtext><m:mtext>.70)</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mo>&#8211;</m:mo><m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>8</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>&#8776;</m:mo><m:mn>2.</m:mn><m:mtext>85&#160;years</m:mtext>
+ </m:mrow>
+</m:math>.
+<figure id="fs-idp80629056"><media id="fs-idp80629312" alt="">
+<image mime-type="png/jpg" width="380" src="soln_04cF.jpg"/>
+</media>
+</figure></item>
+<item>We want to find 0.02 = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; <emphasis effect="italics">t</emphasis>) = 1 &#8211; <emphasis effect="italics">e</emphasis><sup><m:math>
+ <m:mrow>
+  <m:mo>&#8211;</m:mo><m:mfrac>
+   <m:mi>t</m:mi>
+   <m:mn>8</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></sup>.
+<newline/>Solving for <emphasis effect="italics">t</emphasis>, <emphasis effect="italics">e</emphasis><sup><m:math display="">
+ <m:mrow>
+  <m:mo>&#8211;</m:mo><m:mfrac>
+   <m:mi>t</m:mi>
+   <m:mn>8</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></sup> = 0.98, so <m:math display="">
+ <m:mrow>
+  <m:mo>&#8211;</m:mo><m:mfrac>
+   <m:mi>t</m:mi>
+   <m:mn>8</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = <emphasis effect="italics">ln</emphasis>(0.98), and t = &#8211;8<emphasis effect="italics">ln</emphasis>(0.98) &#8776; 0.1616 years, or roughly two months.
+<newline/>The warranty should cover light bulbs that last less than 2 months.
+<newline/>Or use <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mi>ln</m:mi><m:mtext>(area_to_the_right)</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mtext>(</m:mtext><m:mo>&#8211;</m:mo><m:mtext>m)</m:mtext>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>ln</m:mi><m:mtext>(1</m:mtext><m:mo>&#8211;</m:mo><m:mn>0.2</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+   <m:mrow>
+    <m:mo>&#8211;</m:mo><m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>8</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 0.1616.</item>
+<item>We must find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; 8|<emphasis effect="italics">T</emphasis> &gt; 7).
+<newline/>Notice that by the rule of complement events, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; 8|<emphasis effect="italics">T</emphasis> &gt; 7) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 8|<emphasis effect="italics">T</emphasis> &gt; 7).
+<newline/>By the memoryless property (<emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">r</emphasis> + <emphasis effect="italics">t</emphasis>|<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">r</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">t</emphasis>)).
+<newline/>So <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 8|<emphasis effect="italics">T</emphasis> &gt; 7) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 1) = <m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1</m:mn><m:mo>&#8211;</m:mo><m:msup>
+     <m:mi>e</m:mi>
+     <m:mrow>
+      <m:mo>&#8211;</m:mo><m:mfrac>
+       <m:mn>1</m:mn>
+       <m:mn>8</m:mn>
+      </m:mfrac>
+
+     </m:mrow>
+    </m:msup>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8211;</m:mo><m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>8</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+  <m:mo>&#8776;</m:mo><m:mn>0.8825</m:mn>
+ </m:mrow>
+</m:math>
+<newline/>Therefore, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; 8|<emphasis effect="italics">T</emphasis> &gt; 7) = 1 &#8211; 0.8825 = 0.1175.</item>
+</list></solution>
+</exercise>
+
+<exercise id="fs-idm65827552">
+<problem id="fs-idp18748656">
+<para id="fs-idp18748912">At a 911 call center, calls come in at an average rate of one call every two minutes. Assume that the time that elapses from one call to the next has the exponential distribution.</para>
+<list id="fs-idp91268000" list-type="enumerated" number-style="lower-alpha">
+<item>On average, how much time occurs between five consecutive calls?</item>
+<item>Find the probability that after a call is received, it takes more than three minutes for the next call to occur.</item>
+<item>Ninety-percent of all calls occur within how many minutes of the previous call?</item>
+<item>Suppose that two minutes have elapsed since the last call. Find the probability that the next call will occur within the next minute.</item>
+<item>Find the probability that less than 20 calls occur within an hour.</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="fs-idm6685504">
+<problem id="fs-idm22064656">
+<para id="fs-idm22064400">In major league baseball, a no-hitter is a game in which a pitcher, or pitchers, doesn't give up any hits throughout the game. No-hitters occur at a rate of about three per season. Assume that the duration of time between no-hitters is exponential.</para>
+
+<list id="fs-idp96967792" list-type="enumerated" number-style="lower-alpha">
+<item>What is the probability that an entire season elapses with a single no-hitter?</item>
+<item>If an entire season elapses without any no-hitters, what is the probability that there are no no-hitters in the following season?</item>
+<item>What is the probability that there are more than 3 no-hitters in a single season?</item>
+</list>
+</problem>
+<solution id="fs-idp98972560">
+<para id="fs-idp98972816">Let <emphasis effect="italics">X</emphasis> = the number of no-hitters throughout a season. Since the duration of time between no-hitters is exponential, the <emphasis effect="underline">number</emphasis> of no-hitters <emphasis effect="underline">per season</emphasis> is Poisson with mean <emphasis effect="italics">&#955;</emphasis> = 3.
+<newline/>Therefore, (<emphasis effect="italics">X</emphasis> = 0) = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:msup>
+     <m:mn>3</m:mn>
+     <m:mn>0</m:mn>
+    </m:msup>
+    <m:msup>
+     <m:mi>e</m:mi>
+     <m:mrow>
+      <m:mo>&#8211;</m:mo><m:mn>3</m:mn>
+     </m:mrow>
+    </m:msup>
+
+   </m:mrow>
+   <m:mrow>
+    <m:mn>0</m:mn><m:mtext>!</m:mtext>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = e<sup>&#8211;3</sup> &#8776; 0.0498
+</para><note xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm21296544"><title>NOTE</title><para id="fs-idm30929792">You could let <emphasis effect="italics">T</emphasis> = duration of time between no-hitters. Since the time is exponential and there are 3 no-hitters per season, then the time between no-hitters is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>3</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> season. For the exponential, <emphasis effect="italics">&#181;</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>3</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>.
+<newline/>Therefore, <emphasis effect="italics">m</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mi>&#956;</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 3 and <emphasis effect="italics">T</emphasis> &#8764; <emphasis effect="italics">Exp</emphasis>(3).</para>
+</note><list id="fs-idm50334880" list-type="enumerated" number-style="lower-alpha"><item>The desired probability is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 1) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; 1) = 1 &#8211; (1 &#8211; e<sup>&#8211;3</sup>) = e<sup>&#8211;3</sup> &#8776; 0.0498.</item>
+<item>Let <emphasis effect="italics">T</emphasis> = duration of time between no-hitters. We find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 2|<emphasis effect="italics">T</emphasis> &gt; 1), and by the <emphasis>memoryless property</emphasis> this is simply <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 1), which we found to be 0.0498 in part a.</item>
+<item>Let <emphasis effect="italics">X</emphasis> = the <emphasis effect="underline">number</emphasis> of no-hitters is a season. Assume that <emphasis effect="italics">X</emphasis> is Poisson with mean <emphasis effect="italics">&#955;</emphasis> = 3. Then <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 3) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; 3) = 0.3528.</item>
+</list></solution>
+</exercise>
+
+<exercise id="fs-idp62078752">
+<problem id="fs-idp62079008">
+<para id="fs-idp62079264">During the years 1998&#8211;2012, a total of 29 earthquakes of magnitude greater than 6.5 have occurred in Papua New Guinea. <emphasis effect="underline">Assume that the time spent waiting between earthquakes is exponential.</emphasis></para>
+<list id="fs-idm42322800" list-type="enumerated" number-style="lower-alpha">
+<item>What is the probability that the next earthquake occurs within the next three months?</item>
+<item>Given that six months has passed without an earthquake in Papua New Guinea, what is the probability that the next three months will be <emphasis effect="underline">free</emphasis> of earthquakes?</item>
+<item>What is the probability of zero earthquakes occurring in 2014?</item>
+<item>What is the probability that at least two earthquakes will occur in 2014?</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="fs-idp35197296">
+<problem id="fs-idp35197552">
+<para id="fs-idp68624880">According to the American Red Cross, about one out of nine people in the U.S. have Type B blood. Suppose the blood types of people arriving at a blood drive are independent. In this case, the number of Type B blood types that arrive roughly follows the Poisson distribution.</para>
+<list id="fs-idm17505088" list-type="enumerated" number-style="lower-alpha">
+<item>If 100 people arrive, how many on average would be expected to have Type B blood?</item>
+<item>What is the probability that over 10 people out of these 100 have type B blood?</item>
+<item>What is the probability that more than 20 people arrive before a person with type B blood is found?</item>
+</list>
+</problem>
+<solution id="fs-idm172049056">
+<list id="fs-idm172048800" list-type="enumerated" number-style="lower-alpha"><item><m:math display="">
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>100</m:mn>
+   </m:mrow>
+   <m:mn>9</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> = 11.11</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 10) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; 10) = 1 &#8211; Poissoncdf(11.11, 10) &#8776; 0.5532.</item>
+<item>The number of people with Type B blood encountered roughly follows the Poisson distribution, so the number of people <emphasis effect="italics">X</emphasis> who arrive between successive Type B arrivals is roughly exponential with mean <emphasis effect="italics">&#956;</emphasis> = 9 and <emphasis effect="italics">m</emphasis> = <m:math display="">
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>9</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>. The cumulative distribution function of <emphasis effect="italics">X</emphasis> is <m:math>
+ <m:mrow>
+  <m:mi>P</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mi>X</m:mi><m:mo>&lt;</m:mo><m:mi>x</m:mi>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mfrac>
+     <m:mi>x</m:mi>
+     <m:mn>9</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+
+ </m:mrow>
+</m:math>. Thus hus, <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 20) = 1 - <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; 20) = <m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msup>
+     <m:mi>e</m:mi>
+     <m:mrow>
+      <m:mo>&#8722;</m:mo><m:mfrac>
+       <m:mrow>
+        <m:mn>20</m:mn>
+       </m:mrow>
+       <m:mn>9</m:mn>
+      </m:mfrac>
+
+     </m:mrow>
+    </m:msup>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>&#8776;</m:mo><m:mn>0.1084.</m:mn>
+ </m:mrow>
+</m:math></item>
+</list><note id="fs-idm18595152"><label/><title>Note</title>
+<para id="fs-idm44681536">We could also deduce that each person arriving has a 8/9 chance of not having Type B blood. So the probability that none of the first 20 people arrive have Type B blood is <m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mrow>
+    <m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mfrac>
+       <m:mn>8</m:mn>
+       <m:mn>9</m:mn>
+      </m:mfrac>
+
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:msup>
+  <m:mo>&#8776;</m:mo><m:mn>0.0948</m:mn>
+ </m:mrow>
+</m:math>. (The geometric distribution is more appropriate than the exponential because the number of people between Type B people is discrete instead of continuous.)</para></note></solution>
+</exercise>
+
+<exercise id="fs-idm65311088">
+<problem id="fs-idm65310832">
+<para id="fs-idm65310576">A web site experiences traffic during normal working hours at a rate of 12 visits per hour. Assume that the duration between visits has the exponential distribution.</para>
+<list id="fs-idp32763856" list-type="enumerated" number-style="lower-alpha">
+<item>Find the probability that the duration between two successive visits to the web site is more than ten minutes.</item>
+<item>The top 25% of durations between visits are at least how long?</item>
+<item>Suppose that 20 minutes have passed since the last visit to the web site. What is the probability that the next visit will occur within the next 5 minutes?</item>
+<item>Find the probability that less than 7 visits occur within a one-hour period.</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="fs-idm90634192">
+<problem id="fs-idm54069632">
+<para id="fs-idm54069376">At an urgent care facility, patients arrive at an average rate of one patient every seven minutes. Assume that the duration between arrivals is exponentially distributed.</para>
+<list id="fs-idm54068800" list-type="enumerated" number-style="lower-alpha">
+<item>Find the probability that the time between two successive visits to the urgent care facility is less than 2 minutes.</item>
+<item>Find the probability that the time between two successive visits to the urgent care facility is more than 15 minutes.</item>
+<item>If 10 minutes have passed since the last arrival, what is the probability that the next person will arrive within the next five minutes?</item>
+<item>Find the probability that more than eight patients arrive during a half-hour period.</item>
+</list>
+</problem>
+<solution id="fs-idp21955232">
+<para id="fs-idp21955488">Let <emphasis effect="italics">T</emphasis> = duration (in minutes) between successive visits. Since patients arrive at a rate of one patient every seven minutes, <emphasis effect="italics">&#956;</emphasis> = 7 and the decay constant is <emphasis effect="italics">m</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mn>1</m:mn>
+   <m:mn>7</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>. The cdf is <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; <emphasis effect="italics">t</emphasis>) = <m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mfrac>
+     <m:mi>t</m:mi>
+     <m:mn>7</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+
+ </m:mrow>
+</m:math></para>
+<list id="fs-idp33483200" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &lt; 2) = 1 - <m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mfrac>
+     <m:mn>2</m:mn>
+     <m:mn>7</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+
+ </m:mrow>
+</m:math> &#8776; 0.2485.</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 15) = <m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mi>P</m:mi><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mi>T</m:mi><m:mo>&lt;</m:mo><m:mn>15</m:mn>
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msup>
+     <m:mi>e</m:mi>
+     <m:mrow>
+      <m:mo>&#8722;</m:mo><m:mfrac>
+       <m:mrow>
+        <m:mn>15</m:mn>
+       </m:mrow>
+       <m:mn>7</m:mn>
+      </m:mfrac>
+
+     </m:mrow>
+    </m:msup>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>&#8776;</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mfrac>
+     <m:mrow>
+      <m:mn>15</m:mn>
+     </m:mrow>
+     <m:mn>7</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+  <m:mo>&#8776;</m:mo><m:mn>0.1173</m:mn>
+ </m:mrow>
+</m:math>.</item>
+<item><emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 15|<emphasis effect="italics">T</emphasis> &gt; 10) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">T</emphasis> &gt; 5) = <m:math>
+ <m:mrow>
+  <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>1</m:mn><m:mo>&#8722;</m:mo><m:msup>
+     <m:mi>e</m:mi>
+     <m:mrow>
+      <m:mo>&#8722;</m:mo><m:mfrac>
+       <m:mn>5</m:mn>
+       <m:mn>7</m:mn>
+      </m:mfrac>
+
+     </m:mrow>
+    </m:msup>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msup>
+   <m:mi>e</m:mi>
+   <m:mrow>
+    <m:mo>&#8722;</m:mo><m:mfrac>
+     <m:mn>5</m:mn>
+     <m:mn>7</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msup>
+  <m:mo>&#8776;</m:mo><m:mn>0.4895</m:mn>
+ </m:mrow>
+</m:math>.</item>
+<item>Let <emphasis effect="italics">X</emphasis> = # of patients arriving during a half-hour period. Then <emphasis effect="italics">X</emphasis> has the Poisson distribution with a mean of <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>30</m:mn>
+   </m:mrow>
+   <m:mn>7</m:mn>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>, <emphasis effect="italics">X</emphasis> &#8764; Poisson<m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>30</m:mn>
+     </m:mrow>
+     <m:mn>7</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math>. Find <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; 8) = 1 &#8211; <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &#8804; 8) &#8776; 0.0311.</item></list></solution>
+</exercise>
+
+</section>
+</content>
+<glossary>
+<definition id="fs-idp71683472">
+<term>decay parameter</term>
+<meaning id="fs-idp71684112">The decay parameter describes the rate at which probabilities decay to zero for increasing values of <emphasis effect="italics">x</emphasis>. It is the value <emphasis effect="italics">m</emphasis> in the probability density function <emphasis effect="italics">f</emphasis>(<emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">me</emphasis><sup>(-<emphasis effect="italics">mx</emphasis>)</sup> of an exponential random variable. It is also equal to <emphasis effect="italics">m</emphasis> = <m:math>
+ <m:mrow>
+  <m:mrow>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mi>&#956;</m:mi>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:mrow>
+ </m:mrow>
+</m:math>
+, where <emphasis effect="italics">&#956;</emphasis> is the mean of the random variable.</meaning>
+</definition>
+
+<definition id="fs-idm87843664">
+<term>memoryless property</term>
+<meaning id="fs-idm76302032">For an exponential random variable <emphasis effect="italics">X</emphasis>, the memoryless property is the statement that knowledge of what has occurred in the past has no effect on future probabilities. This means that the probability that <emphasis effect="italics">X</emphasis> exceeds <emphasis effect="italics">x</emphasis> + <emphasis effect="italics">k</emphasis>, given that it has exceeded <emphasis effect="italics">x</emphasis>, is the same as the probability that <emphasis effect="italics">X</emphasis> would exceed <emphasis effect="italics">k</emphasis> if we had no knowledge about it. In symbols we say that <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis> + <emphasis effect="italics">k</emphasis>|<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">x</emphasis>) = <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &gt; <emphasis effect="italics">k</emphasis>).</meaning>
+</definition>
+<definition id="fs-idp21495392">
+<term>Poisson distribution</term>
+<meaning id="fs-idp21496032">If there is a known average of <emphasis effect="italics">&#955;</emphasis> events occurring per unit time, and these events are independent of each other, then the number of events <emphasis effect="italics">X</emphasis> occurring in one unit of time has the Poisson distribution. The probability of <emphasis effect="italics">k</emphasis> events occurring in one unit time is equal to <m:math>
+<m:mrow>
+<m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>k</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac>
+<m:mrow>
+<m:msup>
+<m:mi>&#955;</m:mi>
+<m:mi>k</m:mi>
+</m:msup>
+<m:msup>
+<m:mi>e</m:mi>
+<m:mrow>
+<m:mo>&#8722;</m:mo><m:mi>&#955;</m:mi>
+</m:mrow>
+</m:msup>
+</m:mrow>
+<m:mrow>
+<m:mi>k</m:mi><m:mo>!</m:mo>
+</m:mrow>
+</m:mfrac>
+</m:mrow>
+</m:math>.</meaning>
+</definition>
+</glossary>
+</document>

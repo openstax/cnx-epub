@@ -1,0 +1,172 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Comparison of the Chi-Square Tests</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47082/latest</md:content-url>
+  <md:content-id>m47082</md:content-id>
+  <md:title>Comparison of the Chi-Square Tests</md:title>
+  <md:version>1.9</md:version>
+  <md:created>2013/07/19 09:50:10 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>goodness-of-fit test</md:keyword>
+    <md:keyword>test for homogeneity</md:keyword>
+    <md:keyword>test of independence</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+ <para id="delete_me">You have seen the <emphasis effect="italics">&#967;</emphasis><sup>2</sup> test statistic used in three different circumstances. The following bulleted list is a summary that will help you decide which <emphasis effect="italics">&#967;</emphasis><sup>2</sup> test is the appropriate one to use.</para>
+<list id="eip-id8185633"><item><emphasis>Goodness-of-Fit:</emphasis> Use the goodness-of-fit test to decide whether a population with an unknown distribution "fits" a known distribution. In this case there will be a single qualitative survey question or a single outcome of an experiment from a single population. Goodness-of-Fit is typically used to see if the population is uniform (all outcomes occur with equal frequency), the population is normal, or the population is the same as another population with a known distribution. The null and alternative hypotheses are:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: The population fits the given distribution.
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: The population does not fit the given distribution.</item>
+<item><emphasis>Independence:</emphasis> Use the test for independence to decide whether two variables (factors) are independent or dependent. In this case there will be two qualitative survey questions or experiments and a contingency table will be constructed. The goal is to see if the two variables are unrelated (independent) or related (dependent). The null and alternative hypotheses are:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: The two variables (factors) are independent.
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: The two variables (factors) are dependent.</item>
+<item><emphasis>Homogeneity:</emphasis> Use the test for homogeneity to decide if two populations with unknown distributions have the same distribution as each other. In this case there will be a single qualitative survey question or experiment given to two different populations. The null and alternative hypotheses are:
+<newline/><emphasis effect="italics">H<sub>0</sub></emphasis>: The two populations follow the same distribution.
+<newline/><emphasis effect="italics">H<sub>a</sub></emphasis>: The two populations have different distributions.
+</item></list><section id="fs-idm111900416" class="summary"><title>Chapter Review</title><para id="eip-208">The goodness-of-fit test is typically used to determine if data fits a particular distribution. The test of independence makes use of a contingency table to determine the independence of two factors. The test for homogeneity determines whether two populations come from the same distribution, even if this distribution is unknown.</para></section><section id="fs-idm179333552" class="practice">
+ <exercise id="eip-117">
+ <problem id="eip-278">
+ <para id="eip-951">Which test do you use to decide whether an observed distribution is the same as an expected distribution?</para>
+ </problem>
+<solution id="eip-542">
+ <para id="eip-666">a goodness-of-fit test</para>
+</solution>
+ </exercise>
+ 
+ <exercise id="eip-610"><problem id="eip-684">
+ <para id="eip-753">What is the null hypothesis for the type of test from <link target-id="eip-117"/>?</para>
+</problem>
+</exercise><exercise id="eip-541">
+ <problem id="eip-195">
+ <para id="eip-360">Which test would you use to decide whether two factors have a relationship?
+ </para>
+</problem>
+<solution id="eip-718">
+ <para id="eip-848">a test for independence</para>
+</solution>
+ </exercise>
+ 
+ <exercise id="eip-795"><problem id="eip-81">
+ <para id="eip-733">Which test would you use to decide if two populations have the same distribution?</para>
+ </problem>
+ </exercise><exercise id="eip-506">
+ <problem id="eip-427">
+ <para id="eip-830">How are tests of independence similar to tests for homogeneity?</para></problem>
+<solution id="eip-945">
+ <para id="eip-614">Answers will vary. Sample answer: Tests of independence and tests for homogeneity both calculate the test statistic the same way <m:math>
+ <m:mrow>
+ <m:munder>
+ <m:mstyle mathsize="140%" displaystyle="true"><m:mo>&#8721;</m:mo></m:mstyle>
+ <m:mrow>
+ <m:mo stretchy="false">(</m:mo><m:mi>i</m:mi><m:mi>j</m:mi><m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+ </m:munder>
+ <m:mfrac>
+ <m:mrow>
+ <m:msup>
+ <m:mrow>
+ <m:mo stretchy="false">(</m:mo><m:mi>O</m:mi><m:mo>-</m:mo><m:mi>E</m:mi><m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+ <m:mn>2</m:mn>
+ </m:msup>
+ 
+ </m:mrow>
+ <m:mi>E</m:mi>
+ </m:mfrac>
+ 
+ </m:mrow>
+ </m:math>. In addition, all values must be greater than or equal to five. </para></solution>
+</exercise><exercise id="eip-206"><problem id="eip-34">
+ <para id="eip-882">How are tests of independence different from tests for homogeneity?</para></problem>
+</exercise></section>
+<section id="fs-idp35566032" class="free-response">
+ <title>Homework</title>
+ <para id="fs-idm155789040"><emphasis effect="italics">For each word problem, use a solution sheet to solve the hypothesis test problem. Go to <link document="m47882"/> for the chi-square solution sheet. Round expected frequency to two decimal places.</emphasis></para><exercise id="eip-519">
+ <problem id="eip-604">
+ <para id="eip-412">Is there a difference between the distribution of community college statistics students and the distribution of university statistics students in what technology they use on their homework? Of some randomly selected community college students, 43 used a computer, 102 used a calculator with built in statistics functions, and 65 used a table from the textbook. Of some randomly selected university students, 28 used a computer, 33 used a calculator with built in statistics functions, and 40 used a table from the textbook. Conduct an appropriate hypothesis test using a 0.05 level of significance.
+ </para></problem>
+<solution id="eip-860">
+ <list id="fs-idm31687136" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">H<sub>0</sub></emphasis>: The distribution for technology use is the same for community college students and university students.</item>
+ <item><emphasis effect="italics">H<sub>a</sub></emphasis>: The distribution for technology use is not the same for community college students and university students.</item>
+ <item>2</item>
+ <item>chi-square with <emphasis effect="italics">df</emphasis> = 2</item>
+ <item>7.05</item>
+ <item><emphasis effect="italics">p</emphasis>-value = 0.0294</item>
+ <item>Check student&#8217;s solution.</item>
+ <item>
+ <list id="fs-idm193418768" list-type="enumerated" number-style="lower-roman">
+ <item>Alpha: 0.05</item>
+ <item>Decision: Reject the null hypothesis.</item>
+ <item>Reason for decision: <emphasis effect="italics">p</emphasis>-value &lt; alpha</item>
+ <item>Conclusion: There is sufficient evidence to conclude that the distribution of technology use for statistics homework is not the same for statistics students at community colleges and at universities.</item>
+ </list>
+ </item>
+ </list></solution>
+</exercise>
+<para id="fs-idm173269120">Read the statement and decide whether it is true or false.</para><exercise id="element-963"><problem id="id21088939">
+ <para id="element-324">
+ If <emphasis effect="italics">df</emphasis> = 2, the chi-square distribution has a shape that reminds us of the exponential.
+ </para>
+</problem>
+</exercise></section><section id="eip-idp90445392" class="bring-together-homework"><title>Bringing It Together</title><exercise id="element-728">
+ <problem id="id20682914">
+ <list id="fs-idm248592976" list-type="enumerated" number-style="lower-alpha">
+ <item>Explain why a goodness-of-fit test and a test of independence are generally right-tailed tests.</item>
+ <item>If you did a left-tailed test, what would you be testing?</item>
+ </list>
+ 
+ </problem>
+ <solution id="fs-idm144548544">
+ <list id="fs-idm11228640" list-type="enumerated" number-style="lower-alpha">
+ <item>The test statistic is always positive and if the expected and observed values are not close together, the test statistic is large and the null hypothesis will be rejected.</item>
+ <item>Testing to see if the data fits the distribution &#8220;too well&#8221; or is too perfect.</item>
+ </list>
+ </solution>
+</exercise>
+</section></content>
+</document>

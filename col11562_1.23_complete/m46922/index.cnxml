@@ -1,0 +1,1866 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Measures of the Spread of the Data</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m46922/latest</md:content-url>
+  <md:content-id>m46922</md:content-id>
+  <md:title>Measures of the Spread of the Data</md:title>
+  <md:version>1.16</md:version>
+  <md:created>2013/07/19 10:48:55 -0500</md:created>
+  <md:revised>2018/08/29 18:22:47 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>deviation</md:keyword>
+    <md:keyword>population</md:keyword>
+    <md:keyword>sample</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+    <md:keyword>variance</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+
+
+<para id="element-683">An important characteristic of any set of data is the variation in the data. In some data sets, the data values are concentrated closely near the mean; in other data sets, the data values are more widely spread out from the mean. The most common measure of variation, or spread, is the standard deviation. The <term>standard deviation</term> is a number that measures how far data values are from their mean.</para><section id="fs-idm94849104">
+<title>The standard deviation</title>
+<list id="eip-id1169998044652" list-type="bulleted">
+<item>provides a numerical measure of the overall amount of variation in a data set, and</item>
+<item>can be used to determine whether a particular data value is close to or far from the mean.</item>
+</list>
+
+
+<section id="fs-idm34509216">
+<title>The standard deviation provides a measure of the overall variation in a data set</title>
+<para id="fs-idm111390400">The standard deviation is always positive or zero. The standard deviation is small when the data are all concentrated close to the mean, exhibiting little variation or spread. The standard deviation is larger when the data values are more spread out from the mean, exhibiting more variation.</para><para id="eip-419">Suppose that we are studying the amount of time customers wait in line at the checkout at supermarket <emphasis effect="italics">A</emphasis> and supermarket <emphasis effect="italics">B</emphasis>. the average wait time at both supermarkets is five minutes. At supermarket <emphasis effect="italics">A</emphasis>, the standard deviation for the wait time is two minutes; at supermarket <emphasis effect="italics">B</emphasis> the standard deviation for the wait time is four minutes.</para>
+<para id="fs-idm8407856">Because supermarket <emphasis effect="italics">B</emphasis> has a higher standard deviation, we know that there is more variation in the wait times at supermarket <emphasis effect="italics">B</emphasis>. Overall, wait times at supermarket <emphasis effect="italics">B</emphasis> are more spread out from the average; wait times at  supermarket <emphasis effect="italics">A</emphasis> are more concentrated near the average.</para></section>
+
+<section id="fs-idm58314928">
+<title>The standard deviation can be used to determine whether a data value is close to or far from the mean.</title>
+
+<para id="fs-idm19508768">Suppose that Rosa and Binh both shop at supermarket <emphasis effect="italics">A</emphasis>. Rosa waits at the checkout counter for seven minutes and Binh waits for one minute. At supermarket <emphasis effect="italics">A</emphasis>, the mean waiting time is five minutes and the standard deviation is two minutes. The standard deviation can be used to determine whether a data value is close to or far from the mean.</para>
+<para id="eip-992"><emphasis>Rosa waits for seven minutes:</emphasis></para>
+<list id="eip-id1172354240261">
+<item>Seven is two minutes longer than the average of five; two minutes is equal to one standard deviation.</item>
+<item>Rosa's wait time of seven minutes is <emphasis>two minutes longer than the average</emphasis> of five minutes.</item>
+<item>Rosa's wait time of seven minutes is <emphasis>one standard deviation above the average</emphasis> of five minutes.</item>
+</list>
+
+<para id="eip-973"><emphasis>Binh waits for one minute.</emphasis></para>
+<list id="eip-id1164884926039">
+<item>One is four minutes less than the average of five; four minutes is equal to two standard deviations.</item>
+<item>Binh's wait time of one minute is <emphasis>four minutes less than the average</emphasis> of five minutes.</item>
+<item>Binh's wait time of one minute is <emphasis>two standard deviations below the average</emphasis> of five minutes.</item>
+<item>A data value that is two standard deviations from the average is just on the borderline for what many statisticians would consider to be far from the average. Considering data to be far from the mean if it is more than two standard deviations away is more of an approximate "rule of thumb" than a rigid rule. In general, the shape of the distribution of the data affects how much of the data is further away than two standard deviations. (You will learn more about this in later chapters.)</item>
+</list>
+
+<para id="element-517">The number line may help you understand standard deviation. If we were to put five and seven on a number line, seven is to the right of five. We say, then, that seven is <emphasis>one</emphasis> standard deviation to the <emphasis>right</emphasis> of five because 5 + (1)(2) = 7.</para><para id="fs-idm83232288">If one were also part of the data set, then one is <emphasis>two</emphasis> standard deviations to the <emphasis>left</emphasis> of five because 5 + (&#8211;2)(2) = 1.</para><figure id="fs-idm12176304"><media id="id7156187" alt="This shows a number line in intervals of 1 from 0 to 7."><image src="fig-ch02_09_01.jpg" mime-type="image/jpg" print-width="2.5in"/></media></figure><list id="eip-id1164316275630"><item>In general, a <emphasis>value = mean + (#ofSTDEV)(standard deviation)</emphasis></item>
+<item>where #ofSTDEVs = the number of standard deviations</item>
+<item>#ofSTDEV does not need to be an integer</item>
+<item>One is <emphasis>two standard deviations less than the mean</emphasis> of five because: 1 = 5 + (&#8211;2)(2).</item>
+</list><para id="eip-922">The equation <emphasis>value = mean + (#ofSTDEVs)(standard deviation)</emphasis> can be expressed for a sample and for a population.
+<list id="eip-id1164892626854"><item><emphasis>sample:</emphasis>  <m:math>
+ <m:mrow>
+  <m:mi>x</m:mi><m:mtext>&#160;=&#160;</m:mtext><m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mtext>&#160;+&#160;</m:mtext><m:mo stretchy="false">(</m:mo><m:mo>#</m:mo><m:mi>o</m:mi><m:mi>f</m:mi><m:mi>S</m:mi><m:mi>T</m:mi><m:mi>D</m:mi><m:mi>E</m:mi><m:mi>V</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mi>s</m:mi><m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+</m:math></item>
+<item><emphasis>Population:</emphasis>  <m:math>
+ <m:mrow>
+  <m:mi>x</m:mi><m:mo>=</m:mo><m:mi>&#956;</m:mi><m:mo>+</m:mo><m:mo stretchy="false">(</m:mo><m:mo>#</m:mo><m:mi>o</m:mi><m:mi>f</m:mi><m:mi>S</m:mi><m:mi>T</m:mi><m:mi>D</m:mi><m:mi>E</m:mi><m:mi>V</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mi>&#963;</m:mi><m:mo stretchy="false">)</m:mo>
+ </m:mrow>
+</m:math>
+</item>
+</list>
+The lower case letter <emphasis effect="italics">s</emphasis> represents the sample standard deviation and the Greek letter <emphasis effect="italics">&#963;</emphasis> (sigma, lower case) represents the population standard deviation.
+<newline/>
+<newline/>
+The symbol <m:math>
+<m:apply>
+  <m:conjugate/>
+  <m:ci>x</m:ci>
+</m:apply>
+</m:math> is the sample mean and the Greek symbol
+<m:math><m:mi>&#956;</m:mi></m:math> is the population mean.</para></section>
+
+<section id="fs-idm36185184">
+<title>Calculating the Standard Deviation</title>
+<para id="fs-idm109226656">If <emphasis effect="italics">x</emphasis> is a number, then the difference "<emphasis effect="italics">x</emphasis> &#8211; mean" is called its <emphasis>deviation</emphasis>. In a data set, there are as many deviations as there are items in the data set. The deviations are used to calculate the standard deviation. If the numbers belong to a population, in symbols a deviation is <emphasis effect="italics">x</emphasis> &#8211; <emphasis effect="italics">&#956;</emphasis>. For sample data, in symbols a deviation is <emphasis effect="italics">x</emphasis> &#8211; <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math>.</para><para id="eip-45">The procedure to calculate the standard deviation depends on whether the numbers are the entire population or are data from a sample.  The calculations are similar, but not identical.  Therefore the symbol used to represent the standard deviation depends on whether it is calculated from a population or a sample. The lower case letter s represents the sample standard deviation and the Greek letter <emphasis effect="italics">&#963;</emphasis> (sigma, lower case) represents the population standard deviation. If the sample has the same characteristics as the population, then s should be a good estimate of <emphasis effect="italics">&#963;</emphasis>.</para>
+<para id="eip-689">To calculate the standard deviation, we need to calculate the variance first.  The <term>variance</term> is the <emphasis>average of the squares of the deviations</emphasis> (the <emphasis effect="italics">x</emphasis> &#8211; <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> values for a sample, or the <emphasis effect="italics">x</emphasis> &#8211; <emphasis effect="italics">&#956;</emphasis> values for a population). The symbol <emphasis effect="italics">&#963;</emphasis><sup>2</sup> represents the population variance; the population standard deviation <emphasis effect="italics">&#963;</emphasis> is the square root of the population variance. The symbol <emphasis effect="italics">s</emphasis><sup>2</sup> represents the sample variance; the sample standard deviation <emphasis effect="italics">s</emphasis> is the square root of the sample variance. You can think of the standard deviation as a special average of the deviations.</para><para id="eip-790">If the numbers come from a census of the entire <emphasis>population</emphasis> and not a sample, when we calculate the average of the squared deviations to find the variance, we divide by <emphasis effect="italics">N</emphasis>, the number of items in the population. If the data are from a <emphasis>sample</emphasis> rather than a population, when we calculate the average of the squared deviations, we divide by <emphasis><emphasis effect="italics">n</emphasis> &#8211; 1</emphasis>, one less than the number of items in the sample.</para></section>
+
+<section id="fs-idm36483152">
+<title>Formulas for the Sample Standard Deviation</title>
+<list id="eip-id1172772662272"><item> <m:math>
+ <m:mrow>
+  <m:mi>s</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>&#931;</m:mi><m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi> <m:mo>&#8722;</m:mo> <m:mover accent="true">
+         <m:mi>x</m:mi>
+         <m:mo>&#175;</m:mo>
+        </m:mover>
+        <m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> or <m:math>
+ <m:mrow>
+  <m:mi>s</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>&#931;</m:mi><m:mi>f</m:mi><m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mover accent="true">
+         <m:mi>x</m:mi>
+         <m:mo>&#175;</m:mo>
+        </m:mover>
+        <m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>
+    </item>
+<item> For the sample standard deviation, the denominator is <emphasis><emphasis effect="italics">n</emphasis> - 1</emphasis>, that is the sample size MINUS 1.</item>
+</list></section>
+
+<section id="fs-idm102220704">
+<title>Formulas for the Population Standard Deviation</title>
+<list id="eip-id1171740197716"><item>
+<m:math>
+ <m:mrow>
+   <m:mi>&#963;</m:mi>
+  <m:mo>&#160;</m:mo><m:mo>=</m:mo><m:mo>&#160;</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>&#931;</m:mi><m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mi>&#956;</m:mi><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mi>N</m:mi>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> or <m:math>
+ <m:mrow>
+   <m:mi>&#963;</m:mi>
+  <m:mo>&#160;</m:mo><m:mo>=</m:mo><m:mo>&#160;</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>&#931;</m:mi><m:mi>f</m:mi><m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8211;</m:mo><m:mi>&#956;</m:mi><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mi>N</m:mi>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math></item>
+<item>For the population standard deviation, the denominator is <emphasis effect="italics">N</emphasis>, the number of items in the population.</item>
+</list><para id="eip-465">In these formulas, <emphasis effect="italics">f</emphasis> represents the frequency with which a value appears. For example, if a value appears once, <emphasis effect="italics">f</emphasis> is one. If a value appears three times in the data set or population, <emphasis effect="italics">f</emphasis> is three.</para>
+</section>
+</section>
+
+
+
+<section id="fs-idm60688208"><title>Sampling Variability of a Statistic</title><para id="fs-idm41862832">The statistic of a sampling distribution was discussed in <link document="m46928">Descriptive Statistics: Measuring the Center of the Data</link>. How much the statistic varies from one sample to another is known as the  <term>sampling variability of a statistic</term>. You typically measure the sampling variability of a statistic by its standard error. The <emphasis>standard error of the mean</emphasis> is an example of a standard error. It is a special standard deviation and is known as the standard deviation of the sampling distribution of the mean. You will cover the standard error of the mean in the chapter <link document="m46983">The Central Limit Theorem</link> (not now). The notation for the standard error of the mean is <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mi>&#963;</m:mi>
+   <m:mrow>
+    <m:msqrt>
+     <m:mi>n</m:mi>
+    </m:msqrt>
+
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math> where <emphasis effect="italics">&#963;</emphasis> is the standard deviation of the population and n is the size of the sample.</para><note id="id7166567" class="finger"><label/><title>NOTE</title>
+<para id="eip-idp582096">
+<emphasis>In practice, USE A CALCULATOR OR COMPUTER SOFTWARE TO CALCULATE THE STANDARD DEVIATION. If you are using a TI-83, 83+, 84+ calculator, you need to select the appropriate standard deviation <emphasis effect="italics">&#963;<sub>x</sub></emphasis> or <emphasis effect="italics">s<sub>x</sub></emphasis> from the summary statistics.</emphasis> We will concentrate on using and interpreting the information that the standard deviation gives us. However you should study the following step-by-step example to help you understand how the standard deviation measures variation from the mean. (The calculator instructions appear at the end of this example.)</para>
+</note><example id="element-655"><para id="element-440">In a fifth grade class, the teacher was interested in the average age and the sample standard deviation of the ages of her students. The following data are the ages for a SAMPLE of <emphasis effect="italics">n</emphasis> = 20 fifth grade students. The ages are rounded to the nearest half year: </para>
+
+<para id="element-433">9; 9.5; 9.5; 10; 10; 10; 10; 10.5; 10.5; 10.5; 10.5; 11; 11; 11; 11; 11; 11; 11.5; 11.5; 11.5;</para><equation id="element-320"><m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>x</m:mi>
+   <m:mo>&#175;</m:mo>
+  </m:mover>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mtext>9&#160;+&#160;9</m:mtext><m:mtext>.5(2)&#160;+&#160;10(4)&#160;+&#160;10</m:mtext><m:mtext>.5(4)&#160;+&#160;11(6)&#160;+&#160;11</m:mtext><m:mtext>.5(3)</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>20</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>10.525</m:mn>
+ </m:mrow>
+</m:math></equation>
+
+<para id="element-642">The average age is 10.53 years, rounded to two places.</para>
+
+<para id="element-442">The variance may be calculated by using a table. Then the standard deviation is calculated by taking the square root of the variance. We will explain the parts of the table after calculating <emphasis effect="italics">s</emphasis>.</para>
+
+<table id="element-978" summary="This table presents the formulas and calculations of various values. The first column has the data, second column has frequency, third column has deviations, fourth column has deviations squared, fifth column has frequency times deviations squared. There are 6 rows of values.">
+<tgroup cols="5"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<thead>
+  <row>
+    <entry>Data</entry>
+    <entry>Freq.</entry>
+    <entry>Deviations</entry>
+    <entry><emphasis effect="italics">Deviations</emphasis><sup>2</sup></entry>
+    <entry>(Freq.)(<emphasis effect="italics">Deviations</emphasis><sup>2</sup>)</entry>
+  </row>
+  </thead>
+  <tbody>
+  <row>
+    <entry><emphasis effect="italics">x</emphasis></entry>
+    <entry><emphasis effect="italics">f</emphasis></entry>
+    <entry>(<emphasis effect="italics">x</emphasis> &#8211; <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ </m:math>)</entry>
+    <entry>(<emphasis effect="italics">x</emphasis> &#8211; <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math>)<sup>2</sup></entry>
+    <entry>(<emphasis effect="italics">f</emphasis>)(<emphasis effect="italics">x</emphasis> &#8211; <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math>)<sup>2</sup></entry>
+  </row>
+  <row>
+    <entry>9</entry>
+    <entry>1</entry>
+    <entry>9 &#8211; 10.525 = &#8211;1.525</entry>
+    <entry>(&#8211;1.525)<sup>2</sup> = 2.325625</entry>
+    <entry>1 &#215; 2.325625 = 2.325625</entry>
+  </row>
+  <row>
+    <entry>9.5</entry>
+    <entry>2</entry>
+    <entry>9.5 &#8211; 10.525 = &#8211;1.025</entry>
+    <entry>(&#8211;1.025)<sup>2</sup> = 1.050625</entry>
+    <entry>2 &#215; 1.050625 = 2.101250</entry>
+  </row>
+  <row>
+    <entry>10</entry>
+    <entry>4</entry>
+    <entry>10 &#8211; 10.525 = &#8211;0.525</entry>
+    <entry>(&#8211;0.525)<sup>2</sup> = 0.275625</entry>
+    <entry>4 &#215; 0.275625 = 1.1025</entry>
+  </row>
+  <row>
+    <entry>10.5</entry>
+    <entry>4</entry>
+    <entry>10.5 &#8211; 10.525 = &#8211;0.025</entry>
+    <entry>(&#8211;0.025)<sup>2</sup> = 0.000625</entry>
+    <entry>4 &#215; 0.000625 = 0.0025</entry>
+  </row>
+  <row>
+    <entry>11</entry>
+    <entry>6</entry>
+    <entry>11 &#8211; 10.525 = 0.475</entry>
+    <entry>(0.475)<sup>2</sup> = 0.225625</entry>
+    <entry>6 &#215; 0.225625 = 1.35375</entry>
+  </row>
+  <row>
+    <entry>11.5</entry>
+    <entry>3</entry>
+    <entry>11.5 &#8211; 10.525 = 0.975</entry>
+    <entry>(0.975)<sup>2</sup> = 0.950625</entry>
+    <entry>3 &#215; 0.950625 = 2.851875</entry>
+  </row>
+<row>
+<entry/>
+<entry/>
+<entry/>
+<entry/>
+<entry>The total is 9.7375</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table><para id="element-367">The sample variance, <emphasis effect="italics">s</emphasis><sup>2</sup>, is equal to the sum of the last column (9.7375) divided by the total number of data values minus one (20 &#8211; 1):</para><para id="element-631"><m:math>
+ <m:mrow>
+  <m:msup>
+   <m:mi>s</m:mi>
+   <m:mn>2</m:mn>
+  </m:msup>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>9.7375</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>20</m:mn><m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mn>0.5125</m:mn>
+ </m:mrow>
+</m:math></para>
+
+<para id="element-424">The <emphasis>sample standard deviation</emphasis> <emphasis effect="italics">s</emphasis> is equal to the square root of the sample variance:</para>
+<para id="element-127"><m:math>
+ <m:mrow>
+  <m:mi>s</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mn>0.5125</m:mn>
+   </m:mrow>
+  </m:msqrt>
+  <m:mo>=</m:mo><m:mn>0.715891</m:mn><m:mo>,</m:mo>
+ </m:mrow>
+</m:math> which is rounded to two decimal places, <emphasis effect="italics">s</emphasis> = 0.72.</para><para id="eip-563"><emphasis>Typically, you do the calculation for the standard deviation on your calculator or computer</emphasis>. The intermediate results are not rounded.  This is done for accuracy.</para><exercise id="element-397"><problem id="id3262370">
+    <para id="eip-idp3473760">
+    <list id="eip-id1171734426444"><item>For the following problems, recall that <emphasis>value = mean + (#ofSTDEVs)(standard deviation)</emphasis>. Verify the mean and standard deviation or a calculator or computer.</item>
+      <item>For a sample: <emphasis effect="italics">x</emphasis> = <m:math>
+        <m:mover accent="true">
+          <m:mi>x</m:mi>
+          <m:mo>&#175;</m:mo>
+        </m:mover>
+
+      </m:math> + (#ofSTDEVs)(<emphasis effect="italics">s</emphasis>)</item>
+      <item>For a population: <emphasis effect="italics">x</emphasis> = <emphasis effect="italics">&#956;</emphasis> + (#ofSTDEVs)(<emphasis effect="italics">&#963;</emphasis>)</item>
+      <item>For this example, use <emphasis effect="italics">x</emphasis> = <m:math>
+        <m:mover accent="true">
+          <m:mi>x</m:mi>
+          <m:mo>&#175;</m:mo>
+        </m:mover>
+
+      </m:math> + (#ofSTDEVs)(<emphasis effect="italics">s</emphasis>) because the data is from a sample</item>
+    </list></para>
+
+    <list id="eip-idm60068992" list-type="enumerated" number-style="lower-alpha"><item>Verify the mean and standard deviation on your calculator or computer.</item>
+    <item>Find the value that is one standard deviation above the mean. Find (<m:math>
+      <m:mover accent="true">
+        <m:mi>x</m:mi>
+        <m:mo>&#175;</m:mo>
+      </m:mover>
+
+    </m:math> + 1s).</item>
+      <item>Find the value that is two standard deviations below the mean. Find (<m:math>
+      <m:mover accent="true">
+        <m:mi>x</m:mi>
+        <m:mo>&#175;</m:mo>
+      </m:mover>
+
+    </m:math> &#8211; 2s).</item>
+
+      <item>Find the values that are 1.5 standard deviations <emphasis>from</emphasis> (below and above) the mean.</item>
+    </list></problem>
+
+    <solution id="id1167261579717">
+      <list id="eip-idm6421744" list-type="enumerated" number-style="lower-alpha"><item><note id="fs-idm22381712" class="statistics calculator finger"><label/>
+        <list id="fs-idm96652896" list-type="bulleted">
+          <item>Clear lists L1 and L2. Press STAT 4:ClrList. Enter 2nd 1 for L1, the comma (,), and
+            2nd 2 for L2.</item>
+          <item>Enter data into the list editor. Press STAT 1:EDIT. If necessary, clear the lists by
+            arrowing up into the name. Press CLEAR and arrow down.</item>
+          <item>Put the data values (9, 9.5, 10, 10.5, 11, 11.5) into list L1 and the frequencies (1, 2, 4, 4, 6, 3) into list L2. Use the arrow keys to move around.</item>
+          <item>Press STAT and arrow to CALC. Press 1:1-VarStats and enter L1 (2nd 1), L2 (2nd 2). Do not forget the comma. Press ENTER.</item>
+          <item><m:math>
+            <m:mover accent="true">
+              <m:mi>x</m:mi>
+              <m:mo>&#175;</m:mo>
+            </m:mover>
+
+          </m:math> = 10.525</item>
+          <item>Use Sx because this is sample data (not a population): Sx=0.715891</item>
+        </list>
+      </note></item>
+    <item>(<m:math>
+          <m:mover accent="true">
+            <m:mi>x</m:mi>
+            <m:mo>&#175;</m:mo>
+          </m:mover>
+
+        </m:math> + 1s) = 10.53 + (1)(0.72) = 11.25</item>
+
+     <item>(<m:math>
+        <m:mover accent="true">
+          <m:mi>x</m:mi>
+          <m:mo>&#175;</m:mo>
+        </m:mover>
+
+     </m:math> &#8211; 2<emphasis effect="italics">s</emphasis>) = 10.53 &#8211; (2)(0.72) = 9.09</item>
+      <item><list id="element-364" list-type="bulleted"><item>(<m:math>
+        <m:mover accent="true">
+          <m:mi>x</m:mi>
+          <m:mo>&#175;</m:mo>
+        </m:mover>
+
+      </m:math> &#8211; 1.5<emphasis effect="italics">s</emphasis>) = 10.53 &#8211; (1.5)(0.72) = 9.45</item>
+        <item>(<m:math>
+          <m:mover accent="true">
+            <m:mi>x</m:mi>
+            <m:mo>&#175;</m:mo>
+          </m:mover>
+
+        </m:math> + 1.5<emphasis effect="italics">s</emphasis>) = 10.53 + (1.5)(0.72) = 11.61</item>
+      </list>
+      </item>
+    </list></solution>
+  </exercise></example><note id="fs-idp2767424" class="statistics try finger">
+<label/><title>Try It</title>
+<exercise id="fs-idm106330688">
+<problem id="fs-idm106330432">
+<para id="fs-idm116204608">On a baseball team, the ages of each of the players are as follows:</para>
+<para id="fs-idm29758800">21; 21; 22; 23; 24; 24; 25; 25; 28; 29; 29; 31; 32; 33; 33; 34; 35; 36; 36; 36; 36; 38; 38; 38; 40
+</para><para id="fs-idm46692272"><newline/>Use your calculator or computer to find the mean and standard deviation. Then find the value that is two standard deviations above the mean.</para></problem>
+</exercise></note>
+
+<section id="fs-idm66792288"><title>Explanation of the standard deviation calculation shown in the table</title><para id="element-877">The deviations show how spread out the data are about the mean. The data value 11.5 is farther from the mean than is the data value 11 which is indicated by the deviations 0.97 and 0.47. A positive deviation occurs when the data value is greater than the mean, whereas a negative deviation occurs when the data value is less than the mean. The deviation is &#8211;1.525 for the data value nine. <emphasis>If you add the deviations, the sum is always zero</emphasis>. (For <link target-id="element-655"/>, there are <emphasis effect="italics">n</emphasis> = 20 deviations.) So you cannot simply add the deviations to get the spread of the data. By squaring the deviations, you make them positive numbers, and the sum will also be positive. The variance, then, is the average squared deviation.</para><para id="element-969">The variance is a squared measure and does not have the same units as the data. Taking the square root solves the problem. The standard deviation measures the spread in the same units as the data.</para>
+
+<para id="eip-880">Notice that instead of dividing by <emphasis effect="italics">n</emphasis> = 20, the calculation divided by <emphasis effect="italics">n</emphasis> &#8211; 1 = 20 &#8211; 1 = 19 because the data is a sample. For the <emphasis>sample</emphasis> variance, we divide by the sample size minus one (<emphasis effect="italics">n</emphasis> &#8211; 1). Why not divide by <emphasis effect="italics">n</emphasis>?  The answer has to do with the population variance. <emphasis>The sample variance is an estimate of the population variance.</emphasis> Based on the theoretical mathematics that lies behind these calculations, dividing by (<emphasis effect="italics">n</emphasis> &#8211; 1) gives a better estimate of the population variance.</para>
+
+<note id="eip-718" class="finger"><label/><title>NOTE</title>
+<para id="eip-idp106491856">Your concentration should be on what the standard deviation tells us about the data. The standard deviation is a number which measures how far the data are spread from the mean. Let a calculator or computer do the arithmetic.</para>
+</note><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-323">The standard deviation, <emphasis effect="italics">s</emphasis> or <emphasis effect="italics">&#963;</emphasis>, is either zero or larger than zero. Describing the data with reference to the spread is called "variability".  The variability in data depends upon the method by which the outcomes are obtained; for example, by measuring or by random sampling. When the standard deviation is zero, there is no spread; that is, the all the data values are equal to each other. The standard deviation is small when the data are all concentrated close to the mean, and is larger when the data values show more variation from the mean. When the standard deviation is a lot larger than zero, the data values are very spread out about the mean; outliers can make <emphasis effect="italics">s</emphasis> or <emphasis effect="italics">&#963;</emphasis> very large.</para><para id="element-789">The standard deviation, when first presented, can seem unclear.  By graphing your data, you can get a better "feel" for the deviations and the standard deviation.  You will find that in symmetrical distributions, the standard deviation can be very helpful but in skewed distributions, the standard deviation may not be much help. The reason is that the two sides of a skewed distribution have different spreads. In a skewed distribution, it is better to look at the first quartile, the median, the third quartile, the smallest value, and the largest value. Because numbers can be confusing, <emphasis>always graph your data</emphasis>. Display your data in a histogram or a box plot.</para>
+
+<example id="element-649">
+<exercise id="exer2"><problem id="id6379302">
+<para id="element-592">Use the following data (first exam scores) from Susan Dean's spring pre-calculus class:</para>
+<para id="element-961">33; 42; 49; 49; 53; 55; 55; 61;   63; 67; 68; 68; 69; 69; 72; 73;   74; 78; 80; 83; 88; 88; 88; 90;   92; 94; 94; 94; 94; 96; 100</para><list id="element-744" list-type="enumerated" number-style="lower-alpha"><item>Create a chart containing the data, frequencies, relative frequencies, and cumulative relative frequencies to three decimal places.</item>
+<item class="finger">Calculate the following to one decimal place using a TI-83+ or TI-84 calculator:
+<list id="element-9170" list-type="enumerated" number-style="lower-roman"><item>The sample mean</item>
+<item>The sample standard deviation</item>
+<item>The median</item>
+<item>The first quartile</item>
+<item>The third quartile</item>
+<item><emphasis effect="italics">IQR</emphasis></item>
+</list></item>
+<item>Construct a box plot and a histogram on the same set of axes. Make comments about the box plot, the histogram, and the chart.</item></list></problem>
+<solution id="id6379699">
+<list id="list1" list-type="enumerated" number-style="lower-alpha"><item>See <link target-id="id6947804"/></item>
+
+<item>
+<list id="element-904534" list-type="enumerated" number-style="lower-roman"><item>The sample mean = 73.5</item>
+<item>The sample standard deviation = 17.9</item>
+<item>The median = 73</item>
+<item>The first quartile = 61</item>
+<item>The third quartile = 90</item>
+<item><emphasis effect="italics">IQR</emphasis> = 90 &#8211; 61 = 29</item>
+</list></item>
+<item>The <emphasis effect="italics">x</emphasis>-axis goes from 32.5 to 100.5; <emphasis effect="italics">y</emphasis>-axis goes from &#8211;2.4 to 15 for the histogram. The number of intervals is five, so the width of an interval is (100.5 &#8211; 32.5) divided by five, is equal to 13.6. Endpoints of the intervals are as follows: the starting point is 32.5, 32.5 + 13.6 = 46.1, 46.1 + 13.6 = 59.7, 59.7 + 13.6 = 73.3, 73.3 + 13.6 = 86.9, 86.9 + 13.6 = 100.5 = the ending value; No data values fall on an interval boundary.</item></list><figure id="id6380826"><media id="id6380831" alt="A hybrid image displaying both a histogram and box plot described in detail in the answer solution above.">
+<image src="fig-ch02_09_02.jpg" mime-type="image/jpg" width="350"/>
+</media></figure>
+</solution>
+</exercise>
+<para id="element-242">The long left whisker in the box plot is reflected in the left side of the histogram.  The spread of the exam scores in the lower 50% is greater (73 &#8211; 33 = 40) than the spread in the upper 50% (100 &#8211; 73 = 27).  The histogram, box plot, and chart all reflect this.  There are a substantial number of A and B grades (80s, 90s, and 100).  The histogram clearly shows this.  The box plot shows us that the middle 50% of the exam scores  (<emphasis effect="italics">IQR</emphasis> = 29) are Ds, Cs, and Bs. The box plot also shows us that the lower 25% of the exam scores are Ds and Fs.</para>
+</example>
+<table id="id6947804" summary="This table presents the values listed above arranged with the data in the first column, frequency in the second column, relative frequency in the third column, and cumulative relative frequency in the fourth column.">
+<tgroup cols="4"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <colspec colnum="3" colname="c3"/>
+        <colspec colnum="4" colname="c4"/>
+        <thead>
+          <row>
+            <entry>Data</entry>
+            <entry>Frequency</entry>
+            <entry>Relative Frequency</entry>
+            <entry>Cumulative Relative Frequency</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry>33</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.032</entry>
+          </row>
+          <row>
+            <entry>42</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.064</entry>
+          </row>
+          <row>
+            <entry>49</entry>
+            <entry>2</entry>
+            <entry>0.065</entry>
+            <entry>0.129</entry>
+          </row>
+          <row>
+            <entry>53</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.161</entry>
+          </row>
+          <row>
+            <entry>55</entry>
+            <entry>2</entry>
+            <entry>0.065</entry>
+            <entry>0.226</entry>
+          </row>
+          <row>
+            <entry>61</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.258</entry>
+          </row>
+          <row>
+            <entry>63</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.29</entry>
+          </row>
+          <row>
+            <entry>67</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.322</entry>
+          </row>
+          <row>
+            <entry>68</entry>
+            <entry>2</entry>
+            <entry>0.065</entry>
+            <entry>0.387</entry>
+          </row>
+          <row>
+            <entry>69</entry>
+            <entry>2</entry>
+            <entry>0.065</entry>
+            <entry>0.452</entry>
+          </row>
+          <row>
+            <entry>72</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.484</entry>
+          </row>
+          <row>
+            <entry>73</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.516</entry>
+          </row>
+          <row>
+            <entry>74</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.548</entry>
+          </row>
+          <row>
+            <entry>78</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.580</entry>
+          </row>
+          <row>
+            <entry>80</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.612</entry>
+          </row>
+          <row>
+            <entry>83</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.644</entry>
+          </row>
+          <row>
+            <entry>88</entry>
+            <entry>3</entry>
+            <entry>0.097</entry>
+            <entry>0.741</entry>
+          </row>
+          <row>
+            <entry>90</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.773</entry>
+          </row>
+          <row>
+            <entry>92</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.805</entry>
+          </row>
+          <row>
+            <entry>94</entry>
+            <entry>4</entry>
+            <entry>0.129</entry>
+            <entry>0.934</entry>
+          </row>
+          <row>
+            <entry>96</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.966</entry>
+          </row>
+          <row>
+            <entry>100</entry>
+            <entry>1</entry>
+            <entry>0.032</entry>
+            <entry>0.998 (Why isn't this value 1?)</entry>
+          </row>
+        </tbody>
+</tgroup>
+</table>
+
+<note id="fs-idp3274832" class="statistics try finger"><label/><title>Try It</title>
+<exercise id="fs-idm22220656">
+<problem id="fs-idm22220400">
+<para id="fs-idm125056">The following data show the different types of pet food stores in the area carry.
+<newline/>6; 6; 6; 6; 7; 7; 7; 7; 7; 8; 9; 9; 9; 9; 10; 10; 10; 10; 10; 11; 11; 11; 11; 12; 12; 12; 12; 12; 12;
+<newline/>Calculate the sample mean and the sample standard deviation to one decimal place using a TI-83+ or TI-84 calculator.</para>
+</problem>
+</exercise>
+</note></section></section><section id="fs-idm111076336"><title>Standard deviation of Grouped Frequency Tables</title><para id="fs-idm31040688">Recall that for grouped data we do not know individual data values, so we cannot describe the typical value of the data with precision. In other words, we cannot find the exact mean, median, or mode. We can, however, determine the best estimate of the measures of center by finding the mean of the grouped data with the formula:
+
+<m:math><m:mrow><m:mi>M</m:mi><m:mi>e</m:mi><m:mi>a</m:mi><m:mi>n</m:mi><m:mtext>&#160;</m:mtext><m:mi>o</m:mi><m:mi>f</m:mi><m:mtext>&#160;</m:mtext><m:mi>F</m:mi><m:mi>r</m:mi><m:mi>e</m:mi><m:mi>q</m:mi><m:mi>u</m:mi><m:mi>e</m:mi><m:mi>n</m:mi><m:mi>c</m:mi><m:mi>y</m:mi><m:mtext>&#160;</m:mtext><m:mi>T</m:mi><m:mi>a</m:mi><m:mi>b</m:mi><m:mi>l</m:mi><m:mi>e</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow>
+     <m:mstyle displaystyle="true">
+      <m:mo>&#8721;</m:mo> <m:mrow>
+       <m:mi>f</m:mi><m:mi>m</m:mi>
+      </m:mrow></m:mstyle></m:mrow><m:mrow>
+     <m:mstyle displaystyle="true">
+      <m:mo>&#8721;</m:mo> <m:mi>f</m:mi>
+     </m:mstyle></m:mrow></m:mfrac></m:mrow>
+   </m:math>
+
+<newline/>where <m:math>
+  <m:mrow><m:mi>f</m:mi><m:mo>=</m:mo></m:mrow></m:math> interval frequencies and <emphasis effect="italics">m</emphasis> = interval midpoints.</para><para id="fs-idm98694272">Just as we could not find the exact mean, neither can we find the exact standard deviation. Remember that standard deviation describes numerically the expected deviation a data value has from the mean. In simple English, the standard deviation allows us to compare how &#8220;unusual&#8221; individual data is compared to the mean.</para><example id="fs-idm67331024"><para id="eip-897">Find the standard deviation for the data in <link target-id="fs-idm67330768"/>.</para><table id="fs-idm67330768" summary="">
+<tgroup cols="7">
+<thead>
+<row>
+<entry>Class</entry>
+<entry>Frequency, <emphasis effect="italics">f</emphasis></entry>
+<entry>Midpoint, <emphasis effect="italics">m</emphasis></entry>
+<entry><emphasis effect="italics">m</emphasis><sup>2</sup></entry>
+<entry><m:math><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo stretchy="true">&#175;</m:mo>
+   </m:mover></m:mrow>
+</m:math><sup>2</sup></entry><entry><emphasis effect="italics">fm</emphasis><sup>2</sup></entry><entry>Standard Deviation</entry></row>
+</thead>
+<tbody>
+<row><entry>0&#8211;2</entry><entry>1</entry><entry>1</entry><entry>1</entry><entry>7.58</entry>	<entry>1</entry><entry>3.5</entry></row>
+<row><entry>3&#8211;5</entry><entry>6</entry><entry>4</entry><entry>16</entry><entry>7.58</entry>	<entry>96</entry><entry>3.5</entry></row>
+<row><entry>6&#8211;8</entry><entry>10</entry><entry>7</entry><entry>49</entry><entry>7.58</entry>	<entry>490</entry><entry>3.5</entry></row>
+<row><entry>9&#8211;11</entry><entry>7</entry><entry>10</entry><entry>100</entry><entry>7.58</entry>	<entry>700</entry><entry>3.5</entry></row>
+<row><entry>12&#8211;14</entry><entry>0</entry><entry>13</entry><entry>169</entry><entry>7.58</entry>	<entry>0</entry><entry>3.5</entry></row>
+<row><entry>15&#8211;17</entry><entry>2</entry><entry>16</entry><entry>256</entry><entry>7.58</entry>	<entry>512</entry><entry>3.5</entry></row>
+</tbody></tgroup></table>
+
+<para id="fs-idm109620704">For this data set, we have the mean, <m:math><m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover></m:math> = 7.58 and the standard deviation, <emphasis effect="italics">s<sub>x</sub></emphasis> = 3.5. This means that a randomly selected data value would be expected to be 3.5 units from the mean. If we look at the first class, we see that the class midpoint is equal to one. This is almost two full standard deviations from the mean since 7.58 &#8211; 3.5 &#8211; 3.5 = 0.58. While the formula for calculating the standard deviation is not complicated, <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>s</m:mi>
+   <m:mi>x</m:mi>
+  </m:msub>
+  <m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mi>f</m:mi><m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>m</m:mi><m:mo>&#8722;</m:mo><m:mover accent="true">
+         <m:mi>x</m:mi>
+         <m:mo>&#175;</m:mo>
+        </m:mover>
+        <m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> where <emphasis effect="italics">s<sub>x</sub></emphasis> = sample standard deviation, <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> = sample mean, the calculations are tedious. It is usually best to use technology when performing the calculations.</para></example>
+
+<note id="fs-idm15915776" class="statistics try finger">
+<label/><title>Try It</title>
+<para id="fs-idm104856336">Find the standard deviation for the data from the previous example</para>
+<table id="fs-idm8420544" summary="">
+<tgroup cols="2">
+<thead><row><entry>Class</entry><entry>Frequency, <emphasis effect="italics">f</emphasis></entry></row></thead>
+<tbody>
+<row><entry>0&#8211;2</entry><entry>1</entry></row>
+<row><entry>3&#8211;5</entry><entry>6</entry></row>
+<row><entry>6&#8211;8</entry><entry>10</entry></row>
+<row><entry>9&#8211;11</entry><entry>7</entry></row>
+<row><entry>12&#8211;14</entry><entry>0</entry></row>
+<row><entry>15&#8211;17</entry><entry>2</entry></row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idm94998400">First, press the <emphasis effect="bold">STAT</emphasis> key and select <emphasis effect="bold">1:Edit</emphasis></para>
+<figure id="fs-idm103802688"><media id="fs-idm105687776" alt="">
+<image mime-type="image/jpg" src="CNX_Stats_C02_M09_016.jpg" width="250"/>
+</media></figure>
+
+<para id="fs-idm106690304">Input the midpoint values into <emphasis effect="bold">L1</emphasis> and the frequencies into <emphasis effect="bold">L2</emphasis></para><figure id="fs-idm104201392"><media id="fs-idm104201264" alt="">
+<image mime-type="image/jpg" src="CNX_Stats_C02_M09_017.jpg" width="250"/>
+</media></figure>
+
+<para id="fs-idm48907888">Select <emphasis effect="bold">STAT</emphasis>, <emphasis effect="bold">CALC</emphasis>, and <emphasis effect="bold">1: 1-Var Stats</emphasis></para>
+
+<figure id="fs-idm63814800"><media id="fs-idm63814672" alt="">
+<image mime-type="image/jpg" src="CNX_Stats_C02_M09_018.jpg" width="250"/>
+</media></figure>
+
+<para id="fs-idm123128416">Select <emphasis effect="bold">2<sup>nd</sup></emphasis> then <emphasis effect="bold">1</emphasis> then , <emphasis effect="bold">2<sup>nd</sup></emphasis> then <emphasis effect="bold">2 Enter</emphasis></para>
+
+<figure id="fs-idm105681296"><media id="fs-idm105681168" alt="">
+<image mime-type="image/jpg" src="CNX_Stats_C02_M09_019.jpg" width="250"/>
+</media></figure>
+
+<para id="fs-idm108979264">You will see displayed both a population standard deviation, <emphasis effect="italics">&#963;<sub>x</sub></emphasis>, and the sample standard deviation, <emphasis effect="italics">s<sub>x</sub></emphasis>.</para></note></section><section id="fs-idm77326096">
+<title>Comparing Values from Different Data Sets</title>
+<para id="eip-176">The standard deviation is useful when comparing data values that come from different data sets. If the data sets have different means and standard deviations, then comparing the data values directly can be misleading.</para>
+<list id="eip-id1170599203736"><item>For each data value, calculate how many standard deviations away from its mean the value is.</item>
+<item>Use the formula: value = mean + (#ofSTDEVs)(standard deviation); solve for #ofSTDEVs.</item>
+<item><m:math>
+ <m:mrow>
+  <m:mo>#</m:mo><m:mi>o</m:mi><m:mi>f</m:mi><m:mi>S</m:mi><m:mi>T</m:mi><m:mi>D</m:mi><m:mi>E</m:mi><m:mi>V</m:mi><m:mi>s</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mtext>value&#160;&#8211;&#160;mean</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mtext>standard&#160;deviation</m:mtext>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></item>
+<item>Compare the results of this calculation.</item>
+</list><para id="eip-946">#ofSTDEVs is often called a "<emphasis effect="italics">z</emphasis>-score"; we can use the symbol <emphasis effect="italics">z</emphasis>. In symbols, the formulas become:</para>
+<table id="eip-329" summary="The table shows the z-score formula.">
+<tgroup cols="3"><tbody>
+  <row>
+    <entry>Sample</entry>
+    <entry><m:math><m:mi>x</m:mi></m:math> = <m:math>
+<m:apply>
+  <m:conjugate/>
+  <m:ci>x</m:ci>
+</m:apply>
+</m:math> + <emphasis effect="italics">zs</emphasis> </entry>
+    <entry><m:math>
+ <m:mrow>
+  <m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>x</m:mi><m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;</m:mtext><m:mover accent="true">
+     <m:mi>x</m:mi>
+     <m:mo>&#175;</m:mo>
+    </m:mover>
+
+   </m:mrow>
+   <m:mi>s</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></entry>
+  </row>
+  <row>
+    <entry>Population</entry>
+    <entry><m:math><m:mi>x</m:mi></m:math> = <m:math>
+<m:mi>&#956;</m:mi>
+</m:math> + <emphasis effect="italics">z&#963;</emphasis></entry>
+    <entry><m:math>
+ <m:mrow>
+  <m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>x</m:mi><m:mtext>&#160;</m:mtext><m:mo>&#8722;</m:mo><m:mtext>&#160;</m:mtext><m:mi>&#956;</m:mi>
+   </m:mrow>
+   <m:mi>&#963;</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math></entry>
+  </row>
+</tbody>
+
+
+</tgroup>
+</table><example id="element-387"><exercise id="exer1">
+<problem id="id6380897">
+<para id="element-928">Two students, John and Ali, from different high schools, wanted to find out who had the highest GPA when compared to his school. Which student had the highest GPA when compared to his school?
+
+<table id="element-798" summary="This table provides two students and their GPAs. The first row represents John and the second row represents Ali. The first column lists students, second column lists GPA, third column lists school mean GPA, and the fourth column list the school standard deviation.">
+
+<tgroup cols="4"><thead>
+  <row>
+    <entry>Student</entry>
+    <entry>GPA</entry>
+    <entry>School Mean GPA</entry>
+    <entry>School Standard Deviation</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>John</entry>
+    <entry>2.85</entry>
+    <entry>3.0</entry>
+    <entry>0.7</entry>
+  </row>
+  <row>
+    <entry>Ali</entry>
+    <entry>77</entry>
+    <entry>80</entry>
+    <entry>10</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+</para></problem>
+<solution id="id7180364">
+<para id="element-71">For each student, determine how many standard deviations (#ofSTDEVs) his GPA is away from the average, for his school. Pay careful attention to signs when comparing and interpreting the answer.</para>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-590"><m:math>
+ <m:mrow><m:mi>z</m:mi><m:mo>=</m:mo>
+  <m:mo># of STDEVs</m:mo><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mtext>value&#160;</m:mtext><m:mo>&#8211;</m:mo><m:mtext>mean</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mtext>standard&#160;deviation</m:mtext>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mi>x</m:mi><m:mo>&#8211;</m:mo><m:mi>&#956;</m:mi>
+   </m:mrow>
+   <m:mi>&#963;</m:mi>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+</para><para id="element-378">For John, <m:math display="">
+ <m:mrow>
+  <m:mi>z</m:mi><m:mo>=</m:mo><m:mo>#</m:mo><m:mi>o</m:mi><m:mi>f</m:mi><m:mi>S</m:mi><m:mi>T</m:mi><m:mi>D</m:mi><m:mi>E</m:mi><m:mi>V</m:mi><m:mi>s</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>2.85</m:mn><m:mo>&#8211;</m:mo><m:mn>3.0</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>0.7</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mo>&#8211;</m:mo><m:mn>0.21</m:mn>
+ </m:mrow>
+</m:math>
+</para><para id="element-712">For Ali, <m:math>
+ <m:mrow>
+  <m:mi>z</m:mi><m:mo>=</m:mo><m:mo>#</m:mo><m:mi>o</m:mi><m:mi>f</m:mi><m:mi>S</m:mi><m:mi>T</m:mi><m:mi>D</m:mi><m:mi>E</m:mi><m:mi>V</m:mi><m:mi>s</m:mi><m:mo>=</m:mo><m:mfrac>
+   <m:mrow>
+    <m:mn>77</m:mn><m:mo>&#8722;</m:mo><m:mn>80</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>10</m:mn>
+   </m:mrow>
+  </m:mfrac>
+  <m:mo>=</m:mo><m:mo>&#8722;</m:mo><m:mn>0.3</m:mn>
+ </m:mrow>
+</m:math>
+</para><para id="element-344">John has the better GPA when compared to his school because his GPA is 0.21 standard deviations <emphasis>below</emphasis> his school's mean while Ali's GPA is 0.3 standard deviations <emphasis>below</emphasis> his school's mean.</para>
+<para id="fs-idp36263696">John's <emphasis effect="italics">z</emphasis>-score of &#8211;0.21 is higher than Ali's <emphasis effect="italics">z</emphasis>-score of &#8211;0.3. For GPA, higher values are  better, so we conclude that John has the better GPA when compared to his school.</para>
+</solution>
+</exercise></example><note id="fs-idm22007088" class="statistics try"><label/>
+<title>Try It</title>
+<exercise id="fs-idm30975248">
+<problem id="fs-idm30974992">
+<para id="fs-idm30974736">Two swimmers, Angie and Beth, from different teams, wanted to find out who had the fastest time for the 50 meter freestyle when compared to her team. Which swimmer had the fastest time when compared to her team?</para>
+<table id="fs-idm44209040" summary="">
+<tgroup cols="4">
+<thead><row><entry>Swimmer</entry><entry>Time (seconds)</entry><entry>Team Mean Time</entry>	<entry>Team Standard Deviation</entry></row></thead>
+<tbody>
+<row><entry>Angie</entry><entry>26.2</entry><entry>27.2</entry><entry>0.8</entry></row>
+<row><entry>Beth</entry><entry>27.3</entry><entry>30.1</entry><entry>1.4</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise></note><para id="eip-33">The following lists give a few facts that provide a little more insight into what the standard deviation tells us about the distribution of the data.</para>
+<list id="eip-303">
+<title>For ANY data set, no matter what the distribution of the data is:</title>
+<item>At least 75% of the data is within two standard deviations of the mean.</item>
+<item>At least 89% of the data is within three standard deviations of the mean.</item>
+<item>At least 95% of the data is within 4.5 standard deviations of the mean.</item>
+<item>This is known as Chebyshev's Rule.</item>
+</list>
+
+<list id="eip-188"><title>For data having a distribution that is BELL-SHAPED and SYMMETRIC:</title><item>Approximately 68% of the data is within one standard deviation of the mean.</item>
+<item>Approximately 95% of the data is within two standard deviations of the mean.</item>
+<item>More than 99% of the data is within three standard deviations of the mean.</item>
+<item>This is known as the Empirical Rule.</item>
+<item>It is important to note that this rule only applies when the shape of the distribution of the data is bell-shaped and symmetric. We will learn more about this when studying the "Normal" or "Gaussian" probability distribution in later chapters.</item>
+</list></section>
+
+<section id="fs-idp5887184" class="references">
+<title>References</title>
+<para id="fs-idm65006032">Data from Microsoft Bookshelf.</para>
+<para id="fs-idm65005648">King, Bill.&#8220;Graphically Speaking.&#8221; Institutional Research, Lake Tahoe Community College. Available online at http://www.ltcc.edu/web/about/institutional-research (accessed April 3, 2013).</para>
+</section>
+
+<section id="fs-idm30772592" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm30771952">The standard deviation can help you calculate the spread of data. There are different equations to use if are calculating the standard deviation of a sample or of a population. </para><list id="fs-idm41288176" list-type="bulleted">
+<item>The Standard Deviation allows us to compare individual data or classes to the data set mean numerically.</item>
+<item><emphasis effect="italics">s</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:msup>
+       <m:mstyle mathsize="140%" displaystyle="true"><m:mo>&#8721;</m:mo></m:mstyle>
+       <m:mtext>&#8203;</m:mtext>
+      </m:msup>
+      <m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mover accent="true">
+         <m:mi>x</m:mi>
+         <m:mo>&#175;</m:mo>
+        </m:mover>
+        <m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> or <emphasis effect="italics">s</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:msup>
+       <m:mstyle mathsize="140%" displaystyle="true"><m:mo>&#8721;</m:mo></m:mstyle>
+       <m:mtext>&#8203;</m:mtext>
+      </m:msup>
+      <m:mi>f</m:mi><m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mover accent="true">
+         <m:mi>x</m:mi>
+         <m:mo>&#175;</m:mo>
+        </m:mover>
+        <m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mrow>
+      <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mn>1</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> is the formula for calculating the standard deviation of a sample. To calculate the standard deviation of a population, we would use the population mean, <emphasis effect="italics">&#956;</emphasis>, and the formula <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:msup>
+       <m:mstyle mathsize="140%" displaystyle="true"><m:mo>&#8721;</m:mo></m:mstyle>
+       <m:mtext>&#8203;</m:mtext>
+      </m:msup>
+      <m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mi>&#956;</m:mi><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mi>N</m:mi>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> or <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:msup>
+       <m:mstyle mathsize="140%" displaystyle="true"><m:mo>&#8721;</m:mo></m:mstyle>
+       <m:mtext>&#8203;</m:mtext>
+      </m:msup>
+      <m:mi>f</m:mi><m:msup>
+       <m:mrow>
+        <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mi>&#956;</m:mi><m:mo stretchy="false">)</m:mo>
+       </m:mrow>
+       <m:mn>2</m:mn>
+      </m:msup>
+
+     </m:mrow>
+     <m:mi>N</m:mi>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math>.</item>
+</list>
+</section>
+
+<section id="fs-idm71113376" class="formula-review">
+<title>Formula Review</title>
+<para id="fs-idm727968"><m:math><m:mrow><m:msub><m:mi>s</m:mi>
+    <m:mi>x</m:mi></m:msub><m:mo>=</m:mo><m:msqrt><m:mrow>
+     <m:mfrac><m:mrow><m:mstyle displaystyle="true"><m:mo>&#8721;</m:mo> <m:mrow>
+         <m:mi>f</m:mi><m:msup><m:mi>m</m:mi><m:mn>2</m:mn>
+         </m:msup></m:mrow></m:mstyle></m:mrow><m:mi>n</m:mi>
+     </m:mfrac><m:mo>&#8722;</m:mo><m:msup><m:mrow>
+       <m:mover accent="true"><m:mi>x</m:mi>
+        <m:mo stretchy="true">&#175;</m:mo></m:mover></m:mrow>
+      <m:mn>2</m:mn></m:msup></m:mrow>
+   </m:msqrt></m:mrow></m:math> where <m:math><m:mtable columnalign="left"><m:mtr><m:mtd>
+     <m:msub><m:mi>s</m:mi><m:mi>x</m:mi></m:msub>
+     <m:mo>=</m:mo><m:mtext>&#160;sample&#160;standard&#160;deviation</m:mtext>
+    </m:mtd></m:mtr><m:mtr><m:mtd><m:mover accent="true"><m:mi>x</m:mi>
+      <m:mo stretchy="true">&#175;</m:mo>
+     </m:mover><m:mtext>&#160;=&#160;sample&#160;mean</m:mtext>
+    </m:mtd></m:mtr></m:mtable></m:math>
+</para>
+</section>
+
+<section id="fs-idm102658016" class="practice">
+<title/>
+<para id="fs-idp12495840"><emphasis effect="italics">Use the following information to answer the next two exercises</emphasis>: The following data are the distances between 20 retail stores and a large distribution center. The distances are in miles.
+<newline/>29; 37; 38; 40; 58; 67; 68; 69; 76; 86; 87; 95; 96; 96; 99; 106; 112; 127; 145; 150</para><exercise id="fs-idm25484256" class="finger"><problem id="fs-idm25484000">
+<para id="fs-idm83184320" class="finger">Use a graphing calculator or computer to find the standard deviation and round to the nearest tenth.</para></problem>
+<solution id="fs-idm109784640">
+<para id="fs-idm109784384"><emphasis effect="italics">s</emphasis> = 34.5</para>
+</solution>
+</exercise>
+
+<exercise id="fs-idm62691728">
+<problem id="fs-idm16323776">
+<para id="fs-idm48883840">Find the value that is one standard deviation below the mean.</para>
+</problem>
+</exercise>
+
+<exercise id="fs-idm9402560">
+<problem id="fs-idm41792944">
+<para id="fs-idm41792688">Two baseball players, Fredo and Karl, on different teams wanted to find out who had the higher batting average when compared to his team. Which baseball player had the higher batting average when compared to his team?</para>
+<table id="fs-idm133764640" summary="">
+<tgroup cols="4">
+<thead><row><entry>Baseball Player</entry>	<entry>Batting Average</entry>	<entry>Team Batting Average</entry>	<entry>Team Standard Deviation</entry></row></thead>
+<tbody>
+<row><entry>Fredo</entry>	<entry>0.158</entry>	<entry>0.166</entry>	<entry>0.012</entry></row>
+<row><entry>Karl</entry>	<entry>0.177</entry>	<entry>0.189</entry>	<entry>0.015</entry></row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+<solution id="fs-idm34270368">
+<para id="fs-idm34270112">For Fredo: <emphasis effect="italics">z</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>0.158</m:mn><m:mtext>&#160;&#8211;&#160;</m:mtext><m:mn>0.166</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>0.012</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ = &#8211;0.67</para><para id="fs-idm71183520">For Karl: <emphasis effect="italics">z</emphasis> = <m:math>
+ <m:mrow>
+  <m:mfrac>
+   <m:mrow>
+    <m:mn>0.177</m:mn><m:mtext>&#160;&#8211;&#160;</m:mtext><m:mn>0.189</m:mn>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>0.015</m:mn>
+   </m:mrow>
+  </m:mfrac>
+
+ </m:mrow>
+</m:math>
+ = &#8211;0.8</para>
+<para id="fs-idm79202000">Fredo&#8217;s <emphasis effect="italics">z</emphasis>-score of &#8211;0.67 is higher than Karl&#8217;s <emphasis effect="italics">z</emphasis>-score of &#8211;0.8. For batting average, higher values are better, so Fredo has a better batting average compared to his team.</para></solution>
+</exercise>
+
+<exercise id="exercisefifteen">
+<problem id="id24167266">
+<para id="prob_15">Use <link target-id="fs-idm133764640"/> to find the value that is three standard deviations:</para><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-012345" mark-suffix="." list-type="labeled-item"><item>above the mean</item>
+<item>below the mean</item>
+</list></problem>
+</exercise>
+
+<para id="eip-370" class="finger"><newline/><emphasis effect="italics">Find the standard deviation for the following frequency tables using the formula. Check the calculations with the TI 83/84</emphasis>.</para><exercise id="fs-idm109676912"><problem id="fs-idm109676656"><para id="eip-id1166677427293">Find the standard deviation for the following frequency tables using the formula. Check the calculations with the TI 83/84.</para>
+<list id="fs-idp11094096" list-type="enumerated" number-style="lower-alpha"><item><table id="fs-idm103039104" summary="">
+<tgroup cols="2">
+<thead><row><entry>Grade</entry><entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>49.5&#8211;59.5</entry><entry>2</entry></row>
+<row><entry>59.5&#8211;69.5</entry><entry>3</entry></row>
+<row><entry>69.5&#8211;79.5</entry><entry>8</entry></row>
+<row><entry>79.5&#8211;89.5</entry><entry>12</entry></row>
+<row><entry>89.5&#8211;99.5</entry><entry>5</entry></row>
+</tbody>
+</tgroup>
+</table></item>
+<item><table id="fs-idm26532112" summary="">
+<tgroup cols="2">
+<thead><row><entry>Daily Low Temperature</entry>	<entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>49.5&#8211;59.5</entry>	<entry>53</entry></row>
+<row><entry>59.5&#8211;69.5</entry>	<entry>32</entry></row>
+<row><entry>69.5&#8211;79.5</entry>	<entry>15</entry></row>
+<row><entry>79.5&#8211;89.5</entry>	<entry>1</entry></row>
+<row><entry>89.5&#8211;99.5</entry>	<entry>0</entry></row>
+</tbody>
+</tgroup>
+</table></item>
+<item><table id="fs-idm21103120" summary="">
+<tgroup cols="2">
+<thead><row><entry>Points per Game</entry>	<entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>49.5&#8211;59.5</entry>	<entry>14</entry></row>
+<row><entry>59.5&#8211;69.5</entry>	<entry>32</entry></row>
+<row><entry>69.5&#8211;79.5</entry>	<entry>15</entry></row>
+<row><entry>79.5&#8211;89.5</entry>	<entry>23</entry></row>
+<row><entry>89.5&#8211;99.5</entry>	<entry>2</entry></row>
+</tbody>
+</tgroup>
+</table></item>
+</list></problem>
+<solution id="fs-idm18306912">
+<list id="fs-idm49462512" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+<m:mrow><m:msub><m:mi>s</m:mi><m:mi>x</m:mi></m:msub>
+   <m:mo>=</m:mo><m:msqrt><m:mrow><m:mfrac><m:mrow><m:mstyle displaystyle="true"><m:mo>&#8721;</m:mo> <m:mrow>
+         <m:mi>f</m:mi><m:msup><m:mi>m</m:mi><m:mn>2</m:mn></m:msup></m:mrow>
+       </m:mstyle></m:mrow><m:mi>n</m:mi></m:mfrac><m:mo>&#8722;</m:mo><m:msup><m:mrow>
+       <m:mover accent="true"><m:mi>x</m:mi><m:mo stretchy="true">&#175;</m:mo>      </m:mover></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:mo>=</m:mo><m:msqrt><m:mrow>
+     <m:mfrac><m:mrow><m:mn>193157.45</m:mn></m:mrow><m:mrow><m:mn>30</m:mn></m:mrow>
+     </m:mfrac><m:mo>&#8722;</m:mo><m:msup><m:mrow><m:mn>79.5</m:mn></m:mrow><m:mn>2</m:mn>
+     </m:msup></m:mrow></m:msqrt><m:mo>=</m:mo><m:mn>10.88</m:mn></m:mrow>
+   </m:math></item>
+<item><m:math> <m:mrow><m:msub><m:mi>s</m:mi><m:mi>x</m:mi>
+   </m:msub><m:mo>=</m:mo><m:msqrt><m:mrow><m:mfrac><m:mrow><m:mstyle displaystyle="true"><m:mo>&#8721;</m:mo> <m:mrow><m:mi>f</m:mi><m:msup><m:mi>m</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mstyle></m:mrow>
+      <m:mi>n</m:mi></m:mfrac><m:mo>&#8722;</m:mo><m:msup><m:mrow>
+       <m:mover accent="true"><m:mi>x</m:mi><m:mo stretchy="true">&#175;</m:mo></m:mover></m:mrow>
+      <m:mn>2</m:mn></m:msup></m:mrow></m:msqrt>
+   <m:mo>=</m:mo><m:msqrt><m:mrow><m:mfrac><m:mrow><m:mn>380945.3</m:mn></m:mrow><m:mrow>
+       <m:mn>101</m:mn></m:mrow></m:mfrac><m:mo>&#8722;</m:mo><m:msup>      <m:mrow><m:mn>60.94</m:mn></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:mo>=</m:mo><m:mn>7.62</m:mn></m:mrow></m:math></item>
+<item><m:math>
+<m:mrow><m:msub><m:mi>s</m:mi><m:mi>x</m:mi></m:msub>
+   <m:mo>=</m:mo><m:msqrt><m:mrow><m:mfrac><m:mrow><m:mstyle displaystyle="true">
+        <m:mo>&#8721;</m:mo> <m:mrow><m:mi>f</m:mi><m:msup><m:mi>m</m:mi>
+          <m:mn>2</m:mn></m:msup></m:mrow></m:mstyle></m:mrow><m:mi>n</m:mi>
+     </m:mfrac><m:mo>&#8722;</m:mo><m:msup><m:mrow><m:mover accent="true">
+        <m:mi>x</m:mi><m:mo stretchy="true">&#175;</m:mo></m:mover></m:mrow><m:mn>2</m:mn>
+     </m:msup></m:mrow></m:msqrt><m:mo>=</m:mo><m:msqrt><m:mrow><m:mfrac><m:mrow><m:mn>440051.5</m:mn>
+      </m:mrow><m:mrow><m:mn>86</m:mn></m:mrow></m:mfrac>
+     <m:mo>&#8722;</m:mo><m:msup><m:mrow>
+       <m:mn>70.66</m:mn></m:mrow><m:mn>2</m:mn></m:msup></m:mrow>
+   </m:msqrt><m:mo>=</m:mo><m:mn>11.14</m:mn></m:mrow></m:math></item></list></solution>
+</exercise></section>
+
+<section id="fs-idm25848496" class="free-response"><title>Homework</title>
+<para id="eip-446"><newline/>
+<emphasis effect="italics">Use the following information to answer the next nine exercises:</emphasis> The population parameters below describe the full-time equivalent number of students (FTES) each year at Lake Tahoe Community College from 1976&#8211;1977 through 2004&#8211;2005.</para><list id="element-479" list-type="bulleted"><item><emphasis effect="italics">&#956;</emphasis> = 1000 FTES</item>
+      <item>median = 1,014 FTES</item>
+      <item><emphasis effect="italics">&#963;</emphasis> = 474 FTES</item>
+      <item>first quartile = 528.5 FTES</item>
+      <item>third quartile = 1,447.5 FTES</item>
+      <item><emphasis effect="italics">n</emphasis> = 29 years</item>
+    </list><exercise id="exercisetwenty">
+      <problem id="id8123889">
+        <para id="prob_20">A sample of 11 years is taken. About how many are expected to have a FTES of 1014 or above? Explain how you determined your answer.</para>
+      </problem>
+      <solution id="id8123906">
+        <para id="element-236">The median value is the middle value in the ordered list of data values. The median value of a set of 11 will be the 6th number in order. Six years will have totals at or below the median.</para></solution>
+    </exercise>
+
+    <exercise id="exercisetwentyone">
+      <problem id="id8123930">
+        <para id="prob_21">75% of all years have an FTES:
+          <list id="element-123123" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>at or below: _____</item>
+            <item>at or above: _____</item>
+          </list></para></problem>
+    </exercise>
+
+    <exercise id="exercisetwentytwo">
+      <problem id="id8181793">
+        <para id="prob_22">The population standard deviation = _____</para></problem>
+      <solution id="id8181808">
+        <para id="element-23356">474 FTES</para>
+      </solution>
+    </exercise>
+
+    <exercise id="exercisetwentythree">
+      <problem id="id8181834">
+        <para id="prob_23">What percent of the FTES were from 528.5 to 1447.5? How do you know?</para>
+      </problem>
+    </exercise>
+
+    <exercise id="exercisetwentyfour">
+      <problem id="id8181876">
+        <para id="prob_24">What is the <emphasis effect="italics">IQR</emphasis>? What does the <emphasis effect="italics">IQR</emphasis> represent?</para></problem>
+      <solution id="id8181901">
+        <para id="element-2236">919</para>
+      </solution>
+    </exercise>
+
+    <exercise id="exercisetwentyfive">
+      <problem id="id8181927">
+        <para id="prob_25">How many standard deviations away from the mean is the median?</para>
+        <para id="eip-4"><emphasis effect="italics">Additional Information:</emphasis> The population FTES for 2005&#8211;2006 through 2010&#8211;2011 was given in an updated report. The data are reported here.</para><table id="eip-395" summary="This is a table of FTES for 2005-06 through 2010-2011.">
+          <tgroup cols="7">
+            <tbody>
+              <row>
+                <entry><emphasis>Year</emphasis></entry>
+                <entry>2005&#8211;06</entry>
+                <entry>2006&#8211;07</entry>
+                <entry>2007&#8211;08</entry>
+                <entry>2008&#8211;09</entry>
+                <entry>2009&#8211;10</entry>
+                <entry>2010&#8211;11</entry>
+              </row>
+              <row>
+                <entry><emphasis>Total FTES</emphasis></entry>
+                <entry>1,585</entry>
+                <entry>1,690</entry>
+                <entry>1,735</entry>
+                <entry>1,935</entry>
+                <entry>2,021</entry>
+                <entry>1,890</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </problem>
+    </exercise>
+
+    <exercise id="eip-746">
+      <problem id="eip-481">
+        <para id="eip-363">Calculate the mean, median, standard deviation, the first quartile, the third quartile and the <emphasis effect="italics">IQR</emphasis>. Round to one decimal place.</para></problem>
+      <solution id="eip-407">
+        <list id="fs-idm80888224" list-type="bulleted"><item>mean = 1,809.3</item>
+          <item>median = 1,812.5</item>
+          <item>standard deviation = 151.2</item>
+          <item>first quartile = 1,690</item>
+          <item>third quartile = 1,935</item>
+          <item><emphasis effect="italics">IQR</emphasis> = 245</item>
+        </list></solution>
+    </exercise>
+
+    <exercise id="eip-279">
+      <problem id="eip-876">
+        <para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-36">What additional information is needed to construct a box plot for the FTES for 2005-2006 through 2010-2011 and a box plot for the FTES for 1976-1977 through 2004-2005?</para></problem>
+    </exercise>
+
+    <exercise id="eip-975">
+      <problem id="eip-748">
+        <para id="eip-507">Compare the  <emphasis effect="italics">IQR</emphasis> for the FTES for 1976&#8211;77 through 2004&#8211;2005 with the <emphasis effect="italics">IQR</emphasis> for the FTES for 2005-2006 through 2010&#8211;2011.  Why do you suppose the <emphasis effect="italics">IQR</emphasis>s are so different?</para></problem>
+      <solution id="eip-602">
+        <para id="eip-165">Hint: Think about the number of years covered by each time period and what happened to higher education during those periods.</para>
+      </solution>
+    </exercise>
+
+  <exercise id="element-844">
+<problem id="id3734385">
+<para id="element-228">Three students were applying to the same graduate school. They came from schools with different grading systems. Which student had the best GPA when compared to other students at his school? Explain how you determined your answer.</para>
+<table id="element-814" summary="This table presents three students and their GPAs. The first column lists the students, the second column lists the GPA, the third column lists the school average GPA, and the fourth column lists the school standard deviations. The first row represents Thuy, the second row represents Vichet, and the third row represents Kamala.">
+<tgroup cols="4">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<thead>
+<row>
+<entry>Student</entry>
+<entry>GPA</entry>
+<entry>School Average GPA</entry>
+<entry>School Standard Deviation</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Thuy</entry>
+<entry>2.7</entry>
+<entry>3.2</entry>
+<entry>0.8</entry>
+</row>
+<row>
+<entry>Vichet</entry>
+<entry>87</entry>
+<entry>75</entry>
+<entry>20</entry>
+</row>
+<row>
+<entry>Kamala</entry>
+<entry>8.6</entry>
+<entry>8</entry>
+<entry>0.4</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</problem>
+</exercise>
+
+<exercise id="eip-207">
+<problem id="eip-290"><para id="eip-327">A music school has budgeted to purchase three musical instruments. They plan to purchase a piano costing $3,000, a guitar costing $550, and a drum set costing $600. The mean cost for a piano is $4,000 with a standard deviation of $2,500. The mean cost for a guitar is $500 with a standard deviation of $200. The mean cost for drums is $700 with a standard deviation of $100. Which cost is the lowest, when compared to other instruments of the same type? Which cost is the highest when compared to other instruments of the same type. Justify your answer.</para>
+</problem>
+<solution id="eip-21">
+<para id="eip-740">For pianos, the cost of the piano is 0.4 standard deviations BELOW the mean.  For guitars, the cost of the guitar is 0.25 standard deviations ABOVE the mean. For drums, the cost of the drum set is 1.0 standard deviations BELOW the mean. Of the three, the drums cost the lowest in comparison to the cost of other instruments of the same type. The guitar costs the most in comparison to the cost of other instruments of the same type.</para>
+</solution>
+</exercise>
+
+<exercise id="element-799"><problem id="id6038456">
+<para id="fs-idm25455232">An elementary school class ran one mile with a mean of 11 minutes and a standard deviation of three minutes. Rachel, a student in the class, ran one mile in eight minutes. A junior high school class ran one mile with a mean of nine minutes and a standard deviation of two minutes. Kenji, a student in the class, ran 1 mile in 8.5 minutes. A high school class ran one mile with a mean of seven minutes and a standard deviation of four minutes.  Nedda, a student in the class, ran one mile in eight minutes.</para>
+<list id="element-895" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Why is Kenji considered a better runner than Nedda, even though Nedda ran faster than he?</item>
+<item>Who is the fastest runner with respect to his or her class?  Explain why.</item>
+</list></problem>
+</exercise>
+
+<exercise id="fs-idm6474736">
+<problem id="fs-idm6474480">
+<para id="fs-idm6474224">The most obese countries in the world have obesity rates that range from 11.4% to 74.6%. This data is summarized in <link target-id="fs-idm115378592">Table 14</link>.</para><table id="fs-idm115378592" summary="">
+<tgroup cols="2">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead><row><entry>Percent of Population Obese</entry><entry>Number of Countries</entry></row></thead>
+<tbody>
+<row><entry>11.4&#8211;20.45</entry><entry>29</entry></row>
+<row><entry>20.45&#8211;29.45</entry><entry>13</entry></row>
+<row><entry>29.45&#8211;38.45</entry><entry>4</entry></row>
+<row><entry>38.45&#8211;47.45</entry><entry>0</entry></row>
+<row><entry>47.45&#8211;56.45</entry><entry>2</entry></row>
+<row><entry>56.45&#8211;65.45</entry><entry>1</entry></row>
+<row><entry>65.45&#8211;74.45</entry><entry>0</entry></row>
+<row><entry>74.45&#8211;83.45</entry><entry>1</entry></row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idm115073344">What is the best estimate of the average obesity percentage for these countries? What is the standard deviation for the listed obesity rates? The United States has an average obesity rate of 33.9%. Is this rate above average or below? How &#8220;unusual&#8221; is the United States&#8217; obesity rate compared to the average rate? Explain.</para>
+</problem>
+
+<solution id="fs-idm115072832">
+<list id="fs-idm65872400" list-type="bulleted"><item><m:math>
+   <m:mrow>
+   <m:mover accent="true">
+    <m:mi>x</m:mi>
+    <m:mo stretchy="true">&#175;</m:mo>
+   </m:mover>
+   <m:mo>=</m:mo><m:mn>23.32</m:mn>
+  </m:mrow>
+  </m:math></item>
+<item class="finger">Using the TI 83/84, we obtain a standard deviation of: <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>s</m:mi>
+   <m:mi>x</m:mi>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>12.95.</m:mn>
+ </m:mrow>
+</m:math></item>
+<item>The obesity rate of the United States is 10.58% higher than the average obesity rate.</item>
+<item>Since the standard deviation is 12.95, we see that 23.32 + 12.95 = 36.27 is the obesity percentage that is one standard deviation from the mean. The United States obesity rate is slightly less than one standard deviation from the mean. Therefore, we can assume that the United States, while 34% obese, does not hav e an unusually high percentage of obese people.</item>
+</list></solution>
+</exercise>
+
+<exercise id="fs-idm70000608">
+<problem id="fs-idm70000352">
+<para id="fs-idm116547040"><link target-id="fs-idm116546656"/> gives the percent of children under five considered to be underweight.</para><table id="fs-idm116546656" summary="">
+<tgroup cols="2">
+<thead><row><entry>Percent of Underweight Children</entry>	<entry>Number of Countries</entry></row></thead>
+<tbody>
+<row><entry>16&#8211;21.45</entry><entry>23</entry></row>
+<row><entry>21.45&#8211;26.9</entry><entry>4</entry></row>
+<row><entry>26.9&#8211;32.35</entry><entry>9</entry></row>
+<row><entry>32.35&#8211;37.8</entry><entry>7</entry></row>
+<row><entry>37.8&#8211;43.25</entry><entry>6</entry></row>
+<row><entry>43.25&#8211;48.7</entry><entry>1</entry></row>
+</tbody>
+</tgroup>
+</table>
+<para id="fs-idm46041824">What is the best estimate for the mean percentage of underweight children? What is the standard deviation? Which interval(s) could be considered unusual? Explain.</para></problem>
+</exercise>
+
+
+
+</section>
+<section id="fs-idm9788176a" class="bring-together-homework">
+    <title>Bringing It Together</title>
+<exercise id="element-833">
+<problem id="id3776067">
+<para id="element-202">Twenty-five randomly selected students were asked the number of movies they watched the previous week. The results are as follows:</para>
+<table id="element-681" summary="The table presents the number of movies 25 students watched in the previous week. The first column lists the number of movies from 0-4, the second column lists the frequency with the values of 5, 9, 6, 4, 1, the third column is for relative frequency and is blank, and the fourth column is for cumulative relative frequency and is blank.">
+<tgroup cols="2"><thead>
+ <row>
+    <entry># of movies</entry>
+    <entry>Frequency</entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>0</entry>
+    <entry>5</entry>
+  </row>
+  <row>
+    <entry>1</entry>
+    <entry>9</entry>
+  </row>
+  <row>
+    <entry>2</entry>
+    <entry>6</entry>
+  </row>
+  <row>
+    <entry>3</entry>
+    <entry>4</entry>
+  </row>
+  <row>
+    <entry>4</entry>
+    <entry>1</entry>
+  </row>
+</tbody>
+
+
+</tgroup>
+</table><list id="element-113" list-type="enumerated" number-style="lower-alpha"><item>Find the sample mean <m:math>
+<m:apply>
+  <m:conjugate/>
+  <m:ci>x</m:ci>
+</m:apply>
+</m:math>.</item>
+<item>Find the approximate sample standard deviation, <emphasis effect="italics">s</emphasis>.</item>
+</list></problem>
+<solution id="id6101341">
+<list id="element-934" list-type="enumerated" number-style="lower-alpha">
+<item>1.48</item>
+<item>1.12</item>
+</list></solution>
+</exercise>
+
+<exercise id="element-976"><problem id="id6006371">
+<para id="element-567">Forty randomly selected students were asked the number of pairs of sneakers they owned. Let <emphasis effect="italics">X</emphasis> = the number of pairs of sneakers owned. The results are as follows:</para>
+<table id="element-130" summary="The table presents the number of pairs of sneakers forty students own. The first column lists the number of pairs of sneakers owned from 0-7, the second column lists the frequency, the third column is relative frequency and is blank, and the fourth column is cumulative relative frequency and is blank.">
+<tgroup cols="2"><thead>
+<row>
+<entry><emphasis effect="italics">X</emphasis></entry>
+<entry>Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>1</entry>
+<entry>2</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>5</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>8</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>12</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>12</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>0</entry>
+</row>
+<row>
+<entry>7</entry>
+<entry>1</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table><list id="element-277" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Find the sample mean <m:math><m:apply><m:conjugate/><m:ci>x</m:ci></m:apply></m:math></item>
+<item>Find the sample standard deviation, <emphasis effect="italics">s</emphasis></item>
+<item>Construct a histogram of the data.</item>
+<item>Complete the columns of the chart.</item>
+<item>Find the first quartile.</item>
+<item>Find the median.</item>
+<item>Find the third quartile.</item>
+<item>Construct a box plot of the data.</item>
+<item>What percent of the students owned at least five pairs?</item>
+<item>Find the 40<sup>th</sup> percentile.</item>
+<item>Find the 90<sup>th</sup> percentile.</item>
+<item>Construct a line graph of the data</item>
+<item>Construct a stemplot of the data</item></list></problem>
+</exercise>
+
+<exercise id="element-324s"><problem id="id4231623">
+<para id="fs-idm32869728">Following are the published weights (in pounds) of all of the team members of the San Francisco 49ers from a previous year.</para><para id="element-598">177;  205;  210;  210;  232;  205;  185;  185;  178;  210;  206;  212;  184;  174;  185;  242;  188;  212;  215;  247;  241;  223;  220;  260;  245;  259;  278;  270;  280;  295;  275;  285;  290;  272;  273;  280;  285;  286;  200;  215;  185;  230;  250;  241;  190;  260;  250;  302;  265;  290;  276;  228;  265</para><list id="fs-idm96948032" list-type="enumerated" number-style="lower-alpha">
+<item>Organize the data from smallest to largest value.</item>
+<item>Find the median.</item>
+<item>Find the first quartile.</item>
+<item>Find the third quartile.</item>
+<item>Construct a box plot of the data.</item>
+<item>The middle 50% of the weights are from _______ to _______.</item>
+<item>If our population were all professional football players, would the above data be a sample of weights or the population of weights?  Why?</item>
+<item>If our population included every team member who ever played for the San Francisco 49ers, would the above data be a sample of weights or the population of weights?  Why?</item>
+<item>Assume the population was the San Francisco 49ers.  Find:
+<list id="nestlist4" mark-suffix="." list-type="enumerated" number-style="lower-roman"><item>the population mean, <emphasis effect="italics">&#956;</emphasis>.</item>
+<item>the population standard deviation, <emphasis effect="italics">&#963;</emphasis>.</item>
+<item>the weight that is two standard deviations below the mean.</item>
+<item>When Steve Young, quarterback, played football, he weighed 205 pounds.  How many standard deviations above or below the mean was he?</item>
+</list>
+</item>
+<item>That same year, the mean weight for the Dallas Cowboys was 240.08 pounds with a standard deviation of 44.38 pounds.  Emmit Smith weighed in at 209 pounds.  With respect to his team, who was lighter, Smith or Young?  How did you determine your answer?</item></list></problem>
+<solution id="id4782460">
+<list id="element-189" list-type="enumerated" number-style="lower-alpha"><item>174; 177; 178; 184; 185; 185; 185; 185; 188; 190; 200; 205; 205; 206; 210; 210; 210; 212; 212; 215; 215; 220; 223; 228; 230; 232; 241; 241; 242; 245; 247; 250; 250; 259; 260; 260; 265; 265; 270; 272; 273; 275; 276; 278; 280; 280; 285; 285; 286; 290; 290; 295; 302</item>
+<item>241</item>
+<item>205.5</item>
+<item>272.5</item>
+<item><media id="id8617734" alt="A box plot with a whisker between 174 and 205.5, a solid line at 205.5, a dashed line at 241, a solid line at 272.5, and a whisker between 272.5 and 302.">
+<image src="fig-ch02_sol_04.jpg" mime-type="image/jpg" print-width="2.5in"/>
+</media></item>
+<item>205.5, 272.5</item>
+<item>sample</item>
+<item>population</item>
+<item>
+<list id="element-409" mark-suffix="." list-type="enumerated" number-style="lower-roman"><item>236.34</item>
+<item>37.50</item>
+<item>161.34</item>
+<item>0.84 std. dev. below the mean</item>
+</list>
+</item>
+<item>Young</item>
+</list></solution></exercise>
+
+<exercise id="element-211">
+<problem id="id4976485">
+<para id="element-353">One hundred teachers attended a seminar on mathematical problem solving. The attitudes of a representative sample of 12 of the teachers were measured before and after the seminar. A positive number for change in attitude indicates that a teacher's attitude toward math became more positive. The 12 change scores are as follows:</para>
+<para id="element-6236"><list list-type="labeled-item" display="inline" id="set-linelist1"><item>3</item><item> 8</item><item>&#8211;1</item><item>2</item><item> 0</item><item>5</item><item>&#8211;3</item><item>1</item><item>&#8211;1</item><item>6</item><item> 5</item><item>&#8211;2</item></list></para><list id="element-217" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>What is the mean change score?</item>
+<item>What is the standard deviation for this population?</item>
+<item>What is the median change score?</item>
+<item>Find the change score that is 2.2 standard deviations below the mean.</item></list></problem>
+</exercise>
+
+<exercise id="element-314"><problem id="id6158752">
+<para id="element-223">Refer to <link target-id="fs-idm70725344"/> determine which of the following are true and which are false. Explain your solution to each part in complete sentences.</para><figure id="fs-idm70725344"><media id="id4115299" alt="This shows three graphs. The first is a histogram with a mode of 3 and fairly symmetrical distribution between 1 (minimum value) and 5 (maximum value). The second graph is a histogram with peaks at 1 (minimum value) and 5 (maximum value) with 3 having the lowest frequency. The third graph is a box plot. The first whisker extends from 0 to 1. The box begins at the firs quartile, 1, and ends at the third quartile,6. A vertical, dashed line marks the median at 3. The second whisker extends from 6 on. " display="block"><image src="fig-ch02_13_05.jpg" mime-type="image/jpg" width="550"/></media>
+</figure>
+<list id="element-25" list-type="enumerated" number-style="lower-alpha"><item>The medians for all three graphs are the same.</item>
+<item>We cannot determine if any of the means for the three graphs is different.</item>
+<item>The standard deviation for graph b is larger than the standard deviation for graph a.</item>
+<item>We cannot determine if any of the third quartiles for the three graphs is different.</item></list>
+</problem>
+<solution id="id7741745">
+<para id="fs-idm24575312"><list id="element-340" list-type="enumerated" number-style="lower-alpha">
+<item>True</item>
+<item>True</item>
+<item>True</item>
+<item>False</item></list></para></solution>
+</exercise>
+
+<exercise id="fs-idm40658512"><problem id="id4298561">
+<para id="id12029548">In a recent issue of the <cite><cite-title>IEEE Spectrum</cite-title></cite>, 84 engineering conferences were announced. Four conferences lasted two days. Thirty-six lasted three days. Eighteen lasted four days. Nineteen lasted five days. Four lasted six days. One lasted seven days. One lasted eight days. One lasted nine days. Let <emphasis effect="italics">X</emphasis> = the length (in days) of an engineering conference.</para><list id="id6952326" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Organize the data in a chart.</item>
+<item>Find the median, the first quartile, and the third quartile.</item>
+<item>Find the 65<sup>th</sup> percentile.</item>
+<item>Find the 10<sup>th</sup> percentile.</item>
+<item>Construct a box plot of the data.</item>
+<item>The middle 50% of the conferences last from _______ days to _______ days.</item>
+<item>Calculate the sample mean of days of engineering conferences.</item>
+<item>Calculate the sample standard deviation of days of engineering conferences.</item>
+<item>Find the mode.</item>
+<item>If you were planning an engineering conference, which would you choose as the length of the conference: mean; median; or mode? Explain why you made that choice.</item>
+<item>Give two reasons why you think that three to five days seem to be popular lengths of engineering conferences.</item>
+</list>
+</problem>
+</exercise>
+
+<exercise id="element-891"><problem id="id3671813">
+<para id="element-707">A survey of enrollment at 35 community colleges across the United States yielded the following figures:</para><para id="element-23455">6414;  1550; 2109; 9350; 21828; 4300;  5944; 5722; 2825; 2044; 5481;  5200; 5853; 2750; 10012; 6357;  27000; 9414; 7681; 3200; 17500;  9200; 7380; 18314; 6557; 13713;  17768; 7493; 2771; 2861; 1263;  7285; 28165; 5080; 11622</para><list id="id12992735" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Organize the data into a chart with five intervals of equal width. Label the two columns "Enrollment" and "Frequency."</item>
+<item>Construct a histogram of the data.</item>
+<item>If you were to build a new community college, which piece of information would be more valuable: the mode or the mean?</item>
+<item>Calculate the sample mean.</item>
+<item>Calculate the sample standard deviation.</item>
+<item>A school with an enrollment of 8000 would be how many standard deviations away from the mean?</item>
+</list></problem>
+
+<solution id="eip-idm26749440">
+<list id="id12992735a" list-type="enumerated" number-style="lower-alpha"><item>
+<table id="fs-idm103039104a" summary="">
+<tgroup cols="2">
+<thead><row><entry>Enrollment</entry><entry>Frequency</entry></row></thead>
+<tbody>
+<row><entry>1000-5000</entry><entry>10</entry></row>
+<row><entry>5000-10000</entry><entry>16</entry></row>
+<row><entry>10000-15000</entry><entry>3</entry></row>
+<row><entry>15000-20000</entry><entry>3</entry></row>
+<row><entry>20000-25000</entry><entry>1</entry></row>
+<row><entry>25000-30000</entry><entry>2</entry></row>
+</tbody>
+</tgroup>
+</table>
+
+</item>
+<item>Check student&#8217;s solution.</item>
+<item>mode</item>
+<item>8628.74</item>
+<item>6943.88</item>
+<item>&#8211;0.09</item>
+</list></solution></exercise><para id="element-225"><newline/>
+<emphasis effect="italics">Use the following information to answer the next two exercises.</emphasis> <emphasis effect="italics">X</emphasis> = the number of days per week that 100 clients use a particular exercise facility.</para><table id="element-813" summary="This table presents the number of days a week clients use a particular exercise facility. The first column lists the number of days from 0-6 and the second column lists the frequency.">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry><emphasis effect="italics">x</emphasis></entry>
+<entry>Frequency</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>0</entry>
+<entry>3</entry>
+</row>
+<row>
+<entry>1</entry>
+<entry>12</entry>
+</row>
+<row>
+<entry>2</entry>
+<entry>33</entry>
+</row>
+<row>
+<entry>3</entry>
+<entry>28</entry>
+</row>
+<row>
+<entry>4</entry>
+<entry>11</entry>
+</row>
+<row>
+<entry>5</entry>
+<entry>9</entry>
+</row>
+<row>
+<entry>6</entry>
+<entry>4</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table><exercise id="element-290"><problem id="id4945198">
+<para id="element-441">The 80<sup>th</sup> percentile is _____</para><list id="ni4" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>5</item>
+<item>80</item>
+<item>3</item>
+<item>4</item>
+</list></problem>
+</exercise>
+
+<exercise id="element-867">
+<problem id="id4861412">
+<para id="element-793">The number that is 1.5 standard deviations BELOW the mean is approximately _____</para><list id="ni5" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>0.7</item>
+<item>4.8</item>
+<item>&#8211;2.8</item>
+<item>Cannot be determined</item>
+</list></problem>
+<solution id="id7360802">
+<para id="element-539">a</para>
+</solution>
+</exercise>
+
+<exercise id="eip-961">
+<problem id="eip-175">
+<para id="eip-902">Suppose that a publisher conducted a survey asking adult consumers the number of fiction paperback books they had purchased in the previous month. The results are summarized in the <link target-id="table23"/>.</para><table id="table23" summary="Publisher B is the table with number of books in the first column, from 0-5, 7, 9, frequency in the second column, and relative frequency in the third column which is blank.">
+<tgroup cols="3"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry># of books</entry>
+<entry>Freq.</entry>
+<entry>Rel. Freq.</entry>
+</row>
+</thead>
+<tbody>
+<row><entry>0</entry>
+<entry>18</entry><entry/></row><row>
+<entry>1</entry><entry>24</entry>
+<entry/></row><row><entry>2</entry>
+<entry>24</entry><entry/></row><row>
+<entry>3</entry><entry>22</entry>
+<entry/></row><row><entry>4</entry>
+<entry>15</entry><entry/></row>
+<row><entry>5</entry><entry>10</entry><entry/></row>
+<row><entry>7</entry>
+<entry>5</entry><entry/></row>
+<row><entry>9</entry><entry>1</entry>
+<entry/></row>
+</tbody>
+
+</tgroup>
+</table><list id="eip-id1170221803861" mark-suffix="." list-type="enumerated" number-style="lower-alpha"><item>Are there any outliers in the data? Use an appropriate numerical test involving the <emphasis effect="italics">IQR</emphasis> to identify outliers, if any, and clearly state your conclusion.</item>
+<item>If a data value is identified as an outlier, what should be done about it?</item>
+<item>Are any data values further than two standard deviations away from the mean? In some situations, statisticians may use this criteria to identify data values that are unusual, compared to the other data values. (Note that this criteria is most appropriate to use for data that is mound-shaped and symmetric, rather than for skewed data.)</item>
+<item>Do parts a and c of this problem give the same answer?</item>
+<item>Examine the shape of the data.  Which part, a or c, of this question gives a more appropriate result for this data?</item>
+<item>Based on the shape of the data which is the most appropriate measure of center for this data: mean, median or mode?</item>
+</list></problem>
+</exercise>
+</section>
+
+</content>
+
+<glossary>
+<definition id="stddev">
+<term>Standard Deviation</term>
+<meaning id="id20302532"> a number that is equal to the square root of the variance and measures how far data values are from their mean; notation: <emphasis effect="italics">s</emphasis> for sample standard deviation and &#963; for population standard deviation.</meaning>
+</definition>
+
+<definition id="variance">
+    <term>Variance</term>
+    <meaning id="id3154337"> mean of the squared deviations from the mean, or the square of the standard deviation; for a set of data, a deviation can be represented as <emphasis effect="italics">x</emphasis> &#8211; <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> where <emphasis effect="italics">x</emphasis> is a value of the data and <m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> is the sample mean. The sample variance is equal to the sum of the squares of the deviations divided by the difference of the sample size and one.</meaning>
+  </definition>
+
+</glossary>
+</document>

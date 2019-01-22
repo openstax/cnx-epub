@@ -1,0 +1,462 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Distribution Needed for Hypothesis Testing</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47036/latest</md:content-url>
+  <md:content-id>m47036</md:content-id>
+  <md:title>Distribution Needed for Hypothesis Testing</md:title>
+  <md:version>1.6</md:version>
+  <md:created>2013/07/19 14:18:06 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternate hypothesis</md:keyword>
+    <md:keyword>alternative hypothesis</md:keyword>
+    <md:keyword>binomial distribution</md:keyword>
+    <md:keyword>normal distribution</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>null hypothesis</md:keyword>
+    <md:keyword>p-value</md:keyword>
+    <md:keyword>simple random sample</md:keyword>
+    <md:keyword>single population mean</md:keyword>
+    <md:keyword>single population proportion</md:keyword>
+    <md:keyword>standard deviation</md:keyword>
+    <md:keyword>student&#8217;s t-distribution</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm27402752">Earlier in the course, we discussed sampling distributions. <emphasis>Particular distributions are associated with hypothesis testing.</emphasis> Perform tests of a population mean using a <term>normal distribution</term> or a <term>Student's <emphasis effect="italics">t</emphasis>-distribution</term>. (Remember, use a Student's <emphasis effect="italics">t</emphasis>-distribution when the population <term>standard deviation</term> is unknown and the distribution of the sample mean is approximately normal.) We perform tests of a population proportion using a normal distribution (usually <emphasis effect="italics">n</emphasis> is large).</para><para id="element-418">If you are testing a <term>single population mean</term>, the distribution for the test is for <emphasis>means</emphasis>:</para><para id="element-363"><m:math>
+    <m:mrow>
+      <m:mover accent="true">
+        <m:mi>X</m:mi>
+        <m:mo>&#175;</m:mo>
+      </m:mover>
+      <m:mo>~</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+        <m:mrow>
+          <m:msub>
+            <m:mi>&#956;</m:mi>
+            <m:mi>X</m:mi>
+          </m:msub>
+          <m:mo>,</m:mo><m:mfrac>
+            <m:mrow>
+              <m:msub>
+                <m:mi>&#963;</m:mi>
+                <m:mi>X</m:mi>
+              </m:msub>
+              
+            </m:mrow>
+            <m:mrow>
+              <m:msqrt>
+                <m:mi>n</m:mi>
+              </m:msqrt>
+              
+            </m:mrow>
+          </m:mfrac>
+          
+        </m:mrow>
+        <m:mo>)</m:mo></m:mrow>
+    </m:mrow>
+  </m:math> or <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>t</m:mi>
+   <m:mrow>
+    <m:mi>d</m:mi><m:mi>f</m:mi>
+   </m:mrow>
+  </m:msub>
+  
+ </m:mrow>
+</m:math></para><para id="element-838">The population parameter is <emphasis effect="italics">&#956;</emphasis>. The estimated value (point estimate) for &#956; is <m:math>
+    <m:mover accent="true">
+      <m:mi>x</m:mi>
+      <m:mo>&#175;</m:mo>
+    </m:mover>
+  </m:math>, the sample mean.</para><para id="element-245">If you are testing a <term>single population proportion</term>, the distribution for the test is for
+  proportions or percentages:</para><para id="element-851"><m:math>
+    <m:mrow>
+      <m:msup>
+        <m:mi>P</m:mi>
+        <m:mo>&#8242;</m:mo>
+      </m:msup>
+      <m:mo>~</m:mo><m:mi>N</m:mi><m:mrow><m:mo>(</m:mo>
+        <m:mrow>
+          <m:mi>p</m:mi><m:mo>,</m:mo><m:msqrt>
+            <m:mrow>
+              <m:mfrac>
+                <m:mrow>
+                  <m:mi>p</m:mi><m:mo>&#8901;</m:mo><m:mi>q</m:mi>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:mfrac>
+              
+            </m:mrow>
+          </m:msqrt>
+          
+        </m:mrow>
+        <m:mo>)</m:mo></m:mrow>
+    </m:mrow>
+  </m:math></para>
+  <para id="element-128">The population parameter is <emphasis effect="italics">p</emphasis>. The estimated value (point estimate) for <emphasis effect="italics">p</emphasis> is <emphasis effect="italics">p&#8242;</emphasis>. <emphasis effect="italics">p&#8242;</emphasis> = <m:math>
+      <m:mrow>
+        <m:mfrac>
+          <m:mi>x</m:mi>
+          <m:mi>n</m:mi>
+        </m:mfrac>
+      </m:mrow>
+    </m:math> where <emphasis effect="italics">x</emphasis> is the number of successes and <emphasis effect="italics">n</emphasis> is the sample size.</para>
+<section id="fs-idp38268576"><title>Assumptions</title><para id="fs-idp18826944">When you perform a <term>hypothesis test</term> <emphasis>of a single population mean <emphasis effect="italics">&#956;</emphasis></emphasis> using a
+<term>Student's <emphasis effect="italics">t</emphasis>-distribution</term> (often called a t-test), there are fundamental assumptions that need to be met in order for the test to work properly. Your data should be a <term>simple random sample</term> that comes from a population that is approximately <term>normally distributed</term>. You use the sample <term>standard deviation</term> to approximate the population standard deviation. (Note that if the sample size is sufficiently large, a t-test will work even if the population is not approximately normally distributed).</para><para id="element-849">When you perform a <emphasis>hypothesis test of a single population mean <emphasis effect="italics">&#956;</emphasis></emphasis> using a
+normal distribution (often called a <emphasis effect="italics">z</emphasis>-test), you take a simple random sample from the population. The population you are testing is normally distributed or your sample size is sufficiently large. You know the value of the population standard deviation which, in reality, is rarely known.</para><para id="element-395">When you perform a <emphasis>hypothesis test of a single population proportion <emphasis effect="italics">p</emphasis></emphasis>, you
+  take a simple random sample from the population. You must meet the conditions for a <term>binomial distribution</term> which are: there are a certain number <emphasis effect="italics">n</emphasis> of independent trials, the outcomes of any trial are success or failure, and each trial has the same probability of a success <emphasis effect="italics">p</emphasis>. The shape of the binomial distribution needs to be similar to the shape of the normal distribution. To ensure this, the quantities <emphasis effect="italics">np</emphasis> and <emphasis effect="italics">nq</emphasis> must both be greater than five (<emphasis effect="italics">np</emphasis> &gt; 5 and <emphasis effect="italics">nq</emphasis> &gt; 5). Then the binomial distribution of a sample (estimated) proportion can be approximated by the normal distribution with <emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">p</emphasis> and <m:math>
+    <m:mrow>
+      <m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+        <m:mrow>
+          <m:mfrac>
+            <m:mrow>
+              <m:mi>p</m:mi><m:mi>q</m:mi>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:mfrac>
+          
+        </m:mrow>
+      </m:msqrt>
+      
+    </m:mrow>
+  </m:math>.
+
+Remember that <emphasis effect="italics">q</emphasis> = 1 &#8211; <emphasis effect="italics">p</emphasis>.</para></section><section id="eip-952" class="summary">
+  <title>Chapter Review</title>
+  <para id="eip-948">In order for a hypothesis test&#8217;s results to be generalized to a population, certain requirements must be satisfied. </para>
+  <para id="eip-996">When testing for a single population mean:</para>
+  <list id="eip-idp106869104" mark-suffix="." list-type="enumerated" number-style="arabic"><item>A Student's <emphasis effect="italics">t</emphasis>-test should be used if the data come from a simple, random sample and the population is approximately normally distributed, or the sample size is large, with an unknown standard deviation.</item>
+    <item>The normal test will work if the data come from a simple, random sample and the population
+      is approximately normally distributed, or the sample size is large, with a known standard
+      deviation.</item>
+  </list><para id="fs-idp12045392">When testing a single population proportion use a normal test for a single population proportion if the data comes from a simple, random sample, fill the requirements for a binomial distribution, and the mean number of success and the mean number of failures satisfy the conditions: <emphasis effect="italics">np</emphasis> &gt; 5 and <emphasis effect="italics">nq</emphasis> &gt; <emphasis effect="italics">n</emphasis> where <emphasis effect="italics">n</emphasis> is the sample size, <emphasis effect="italics">p</emphasis> is the probability of a success, and <emphasis effect="italics">q</emphasis> is the probability of a failure.</para>
+</section>
+
+
+  <section id="eip-772" class="formula-review">
+    <title>Formula Review</title>
+  <para id="element-678">If there is no given preconceived <emphasis effect="italics">&#945;</emphasis>, then use <emphasis effect="italics">&#945;</emphasis> = 0.05.</para>
+    <list id="element-254" list-type="bulleted"><title>Types of Hypothesis Tests</title><item>Single population mean, <emphasis>known</emphasis> population variance (or standard deviation): <emphasis>Normal
+    test</emphasis>.</item>
+    <item>Single population mean, <emphasis>unknown</emphasis> population variance (or standard deviation): <emphasis>Student's <emphasis effect="italics">t</emphasis>-test</emphasis>.</item>
+    <item>Single population proportion: <emphasis>Normal test</emphasis>.</item>
+      <item>For a <emphasis>single population mean</emphasis>, we may use a normal distribution with the following mean and standard deviation. Means: <m:math>
+        <m:mrow>
+          <m:mi>&#956;</m:mi><m:mo>=</m:mo><m:msub>
+            <m:mi>&#956;</m:mi>
+            <m:mover accent="true">
+              <m:mi>x</m:mi>
+              <m:mo>&#175;</m:mo>
+            </m:mover>
+            
+          </m:msub>
+          
+        </m:mrow>
+      </m:math> and <m:math>
+        <m:mrow>
+          <m:msub>
+            <m:mi>&#963;</m:mi>
+            <m:mover accent="true">
+              <m:mi>x</m:mi>
+              <m:mo>&#175;</m:mo>
+            </m:mover>
+            
+          </m:msub>
+          <m:mo>=</m:mo><m:mfrac>
+            <m:mrow>
+              <m:msub>
+                <m:mi>&#963;</m:mi>
+                <m:mi>x</m:mi>
+              </m:msub>
+              
+            </m:mrow>
+            <m:mrow>
+              <m:msqrt>
+                <m:mi>n</m:mi>
+              </m:msqrt>
+              
+            </m:mrow>
+          </m:mfrac>
+          
+        </m:mrow>
+      </m:math></item>
+      <item>A <emphasis>single population proportion</emphasis>, we may use a normal distribution with the following mean and standard deviation. Proportions:  <emphasis effect="italics">&#181;</emphasis> = <emphasis><emphasis effect="italics">p</emphasis></emphasis> and <m:math>
+        <m:mrow>
+          <m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+            <m:mrow>
+              <m:mfrac>
+                <m:mrow>
+                  <m:mi>p</m:mi><m:mi>q</m:mi>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:mfrac>
+              
+            </m:mrow>
+          </m:msqrt>
+          
+        </m:mrow>
+      </m:math>. </item>
+    </list></section>
+
+
+<section id="eip-496" class="practice">
+  <exercise id="eip-176"><problem id="eip-548">
+  <para id="eip-434">Which two distributions can you use for hypothesis testing for this chapter?</para>
+</problem>
+
+<solution id="eip-482">
+  <para id="eip-665">A normal distribution or a Student&#8217;s <emphasis effect="italics">t</emphasis>-distribution</para></solution>
+</exercise><exercise id="eip-492"><problem id="eip-819">
+  <para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-696">Which distribution do you use when you are testing a population mean and the population standard deviation is known? Assume a normal distribution, with n &#8805; 30.</para></problem></exercise><exercise id="eip-579">
+    <problem id="eip-177">
+  <para id="eip-756">Which distribution do you use when the standard deviation is not known and you are testing one population mean? Assume sample size is large.</para>
+</problem>
+
+<solution id="eip-957">
+  <para id="eip-853">Use a Student&#8217;s <emphasis effect="italics">t</emphasis>-distribution</para></solution>
+  </exercise>
+  <exercise id="eip-692"><problem id="eip-962">
+  <para id="eip-204">A population mean is 13. The sample mean is 12.8, and the sample standard deviation is two. The sample size is 20. What distribution should you use to perform a hypothesis test? Assume the underlying population is normal.</para>
+</problem>  </exercise><exercise id="eip-917">
+    <problem id="eip-265">
+  <para id="eip-995">A population has a mean is 25 and a standard deviation of five. The sample mean is 24, and the sample size is 108. What distribution should you use to perform a hypothesis test?</para>
+</problem>
+
+<solution id="eip-953">
+  <para id="eip-267">a normal distribution for a single population mean</para>
+</solution>
+  </exercise>
+  <exercise id="eip-138"><problem id="eip-208">
+  <para id="eip-449">It is thought that 42% of respondents in a taste test would prefer Brand <emphasis effect="italics">A</emphasis>. In a particular test of 100 people, 39% preferred Brand <emphasis effect="italics">A</emphasis>. What distribution should you use to perform a hypothesis test?</para>
+</problem></exercise><exercise id="eip-637"><problem id="eip-74">
+  <para id="eip-239">You are performing a hypothesis test of a single population mean using a Student&#8217;s <emphasis effect="italics">t</emphasis>-distribution. What must you assume about the distribution of the data?</para></problem>
+
+<solution id="eip-520">
+  <para id="eip-20">It must be approximately normally distributed.</para>
+</solution>
+</exercise>
+  <exercise id="eip-315"><problem id="eip-505">
+  <para id="eip-972">You are performing a hypothesis test of a single population mean using a Student&#8217;s <emphasis effect="italics">t</emphasis>-distribution. The data are not from a simple random sample. Can you accurately perform the hypothesis test?</para></problem></exercise><exercise id="eip-254">
+    <problem id="eip-543">
+      <para id="eip-372">You are performing a hypothesis test of a single population proportion. What must be true about the quantities of <emphasis effect="italics">np</emphasis> and <emphasis effect="italics">nq</emphasis>?</para>
+</problem>
+
+<solution id="eip-509">
+  <para id="eip-285">They must both be greater than five.</para>
+</solution>
+  </exercise><exercise id="eip-354"><problem id="eip-633">
+  <para id="eip-457">You are performing a hypothesis test of a single population proportion. You find out that <emphasis effect="italics">np</emphasis> is less than five. What must you do to be able to perform a valid hypothesis test?</para>
+</problem></exercise><exercise id="fs-idp17688688">
+    <problem id="eip-577">
+      <para id="eip-129">You are performing a hypothesis test of a single population proportion. The data come from which distribution?</para>
+</problem>
+
+<solution id="eip-979">
+  <para id="eip-676">binomial distribution<newline/></para>
+</solution>
+</exercise>
+
+</section>
+
+<section id="fs-idm173512608" class="free-response">
+<title>Homework</title>
+
+<exercise id="fs-idm140519760">
+  <problem id="fs-idm140519632"><para id="fs-idp12923264">It is believed that Lake Tahoe Community College (LTCC) Intermediate Algebra students get less than seven hours of sleep per night, on average. A survey of 22 LTCC Intermediate Algebra students generated a mean of 7.24 hours with a standard deviation of 1.93 hours. At a level of significance of 5%, do LTCC Intermediate Algebra students get less than seven hours of sleep per night, on average? The distribution to be used for this test is <m:math>
+    <m:mover accent="true">
+      <m:mi>X</m:mi>
+      <m:mo>&#175;</m:mo>
+    </m:mover>
+    
+  </m:math> ~ ________________</para><list id="fs-idm141858480" list-type="enumerated" number-style="lower-alpha">
+      <item><m:math>
+        <m:mrow>
+          <m:mi>N</m:mi><m:mo stretchy="false">(</m:mo><m:mn>7.24</m:mn><m:mo>,</m:mo><m:mfrac>
+            <m:mrow>
+              <m:mn>1.93</m:mn>
+            </m:mrow>
+            <m:mrow>
+              <m:msqrt>
+                <m:mrow>
+                  <m:mn>22</m:mn>
+                </m:mrow>
+              </m:msqrt>
+              
+            </m:mrow>
+          </m:mfrac>
+          <m:mo stretchy="false">)</m:mo>
+        </m:mrow>
+      </m:math></item>
+      <item><m:math>
+        <m:mrow>
+          <m:mi>N</m:mi><m:mo stretchy="false">(</m:mo><m:mn>7.24</m:mn><m:mo>,</m:mo><m:mn>1.93</m:mn><m:mo stretchy="false">)</m:mo>
+        </m:mrow>
+      </m:math></item>
+      <item><emphasis effect="italics">t</emphasis><sub>22</sub></item>
+      <item><emphasis effect="italics">t</emphasis><sub>21</sub></item>
+    </list>
+    
+  </problem>
+
+<solution id="fs-idp8543664">
+<para id="fs-idm76617584">d</para>
+</solution>
+</exercise>
+
+</section>
+
+</content>
+
+<glossary>
+<definition id="bidist">
+    <term>Binomial Distribution</term>
+    <meaning id="fs-idm119055264">a discrete random variable (RV) that arises from Bernoulli trials. There are a fixed number, <emphasis effect="italics">n</emphasis>, of independent trials. &#8220;Independent&#8221; means that the result of any trial (for example, trial 1) does not affect the results of the following trials, and all trials are conducted under the same conditions. Under these circumstances the binomial RV &#935; is defined as the number of successes in <emphasis effect="italics">n</emphasis> trials. The notation is: <emphasis effect="italics">X ~ B(n, p)</emphasis> <emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">np</emphasis>  and the standard deviation is <m:math>
+ <m:mrow>
+  <m:mi>&#963;</m:mi><m:mo>=</m:mo><m:mo>&#160;</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mi>n</m:mi><m:mi>p</m:mi><m:mi>q</m:mi>
+   </m:mrow>
+  </m:msqrt>
+  
+ </m:mrow>
+    </m:math>. The probability of exactly <emphasis effect="italics">x</emphasis> successes in <emphasis effect="italics">n</emphasis> trials is <m:math>
+      <m:mrow>
+        <m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo>
+          <m:mrow>
+            <m:mtable>
+              <m:mtr>
+                <m:mtd>
+                  <m:mi>n</m:mi>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+              </m:mtr>
+              
+            </m:mtable>
+          </m:mrow>
+          <m:mo>)</m:mo></m:mrow><m:msup>
+            <m:mi>p</m:mi>
+            <m:mi>x</m:mi>
+          </m:msup>
+        <m:msup>
+          <m:mi>q</m:mi>
+          <m:mrow>
+            <m:mi>n</m:mi><m:mo>&#8722;</m:mo><m:mi>x</m:mi>
+          </m:mrow>
+        </m:msup>
+        
+      </m:mrow>
+    </m:math>.
+</meaning>
+  </definition>
+
+
+<definition id="normdist">
+    <term>Normal Distribution</term>
+  <meaning id="id42733014">a continuous random variable (RV) with pdf <m:math>
+    <m:mrow>
+      <m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mo>&#160;</m:mo><m:mfrac>
+        <m:mn>1</m:mn>
+        <m:mrow>
+          <m:mi>&#963;</m:mi><m:msqrt>
+            <m:mrow>
+              <m:mn>2</m:mn><m:mi>&#960;</m:mi>
+            </m:mrow>
+          </m:msqrt>
+          
+        </m:mrow>
+      </m:mfrac>
+      <m:msup>
+        <m:mi>e</m:mi>
+        <m:mrow>
+          <m:mfrac>
+            <m:mrow>
+              <m:mo>&#8722;</m:mo><m:msup>
+                <m:mrow>
+                  <m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>&#8722;</m:mo><m:mi>&#956;</m:mi><m:mo stretchy="false">)</m:mo>
+                </m:mrow>
+                <m:mn>2</m:mn>
+              </m:msup>
+              
+            </m:mrow>
+            <m:mrow>
+              <m:mn>2</m:mn><m:msup>
+                <m:mi>&#963;</m:mi>
+                <m:mn>2</m:mn>
+              </m:msup>
+              
+            </m:mrow>
+          </m:mfrac>
+          
+        </m:mrow>
+      </m:msup>
+      
+    </m:mrow>
+  </m:math>, where <emphasis effect="italics">&#956;</emphasis> is the mean of the distribution, and <emphasis effect="italics">&#963;</emphasis> is the standard deviation, notation: <emphasis effect="italics">X ~ N</emphasis>(<emphasis effect="italics">&#956;</emphasis>, <emphasis effect="italics">&#963;</emphasis>). If <emphasis effect="italics">&#956;</emphasis> = 0 and <emphasis effect="italics">&#963;</emphasis> = 1, the RV is called <emphasis>the standard normal distribution</emphasis>.</meaning>
+  </definition>
+
+  <definition id="stddev">
+    <term>Standard Deviation</term>
+    <meaning id="id20302532">a number that is equal to the square root of the variance and measures how far data values are from their mean; notation: <emphasis effect="italics">s</emphasis> for sample standard deviation and <emphasis effect="italics">&#963;</emphasis> for population standard deviation.</meaning>
+  </definition>
+
+<definition id="studenttdist">
+    <term>Student's <emphasis effect="italics">t</emphasis>-Distribution</term>
+    <meaning id="id8759760">investigated and reported by William S. Gossett in 1908 and published under the pseudonym Student. The major characteristics of the random variable (RV) are: 
+<list id="tdist1" list-type="bulleted">
+  <item>It is continuous and assumes any real values.</item>
+  <item>The pdf is symmetrical about its mean of zero. However, it is more spread out and flatter at the apex than the normal distribution.</item>
+  <item>It approaches the standard normal distribution as <emphasis effect="italics">n</emphasis> gets larger.</item>
+  <item>There is a "family" of t distributions: every representative of the family is completely defined by the number of degrees of freedom which is one less than the number of data items.</item></list></meaning>
+  </definition>
+
+
+</glossary>
+</document>

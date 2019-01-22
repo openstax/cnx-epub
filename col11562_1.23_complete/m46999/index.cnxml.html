@@ -1,0 +1,3389 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>A Population Proportion</title><meta name="created-time" content="2013/07/19 13:56:25 -0500"/><meta name="revised-time" content="2018/08/30 15:21:19 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="binomial distribution, confidence interval, confidence level, error bound, error bound for a population proportion, plus four"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">A Population Proportion</div>
+    <p id="eip-494">During an election year, we see articles in the newspaper that state <span data-type="term">confidence intervals</span> in terms of proportions or percentages. For example, a poll for a particular candidate running for president might show that the candidate has 40% of the vote within three percentage points  (if the sample is large enough). Often, election polls are calculated with 95% confidence, so, the pollsters would be 95% confident that the true proportion of voters who favored the candidate would be between 0.37 and 0.43: (0.40 &#8211; 0.03,0.40 + 0.03).</p>
+ <p id="element-292">Investors in the stock market are interested in the true proportion of stocks that go up and down each week. Businesses that sell personal computers are interested in the proportion of households in the United States that own personal computers. Confidence intervals can be calculated for the true proportion of stocks that go up or down each week and for the true proportion of households in the United States that own personal computers.</p>
+ <p id="element-918">The procedure to find the confidence interval, the sample size, the <span data-type="term">error bound</span>, and the <span data-type="term">confidence level</span> for a proportion is similar to that for the population mean, but the
+ formulas are different.</p>
+  <p id="element-574"><strong>How do you know you are dealing with a proportion problem?</strong> First, the underlying <strong>distribution is a</strong> <span data-type="term">binomial distribution</span>. (There is no mention of a mean or average.) If <em data-effect="italics">X</em> is a binomial random variable, then <em data-effect="italics">X</em> ~ <em data-effect="italics">B</em>(<em data-effect="italics">n</em>, <em data-effect="italics">p</em>)  where <em data-effect="italics">n</em> is the number of trials and <em data-effect="italics">p</em> is the probability of a success. To form a proportion, take <em data-effect="italics">X</em>, the random variable for the number of successes and divide it by <em data-effect="italics">n</em>, the number of trials (or the sample size). The random variable <em data-effect="italics">P&#8242;</em> (read "P prime") is that proportion,
+  </p>
+ <p id="element-771"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msup>
+     <mi>P</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>=</mo><mfrac>
+     <mi>X</mi>
+     <mi>n</mi>
+    </mfrac>
+   </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msup>
+     <mi>P</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>=</mo><mfrac>
+     <mi>X</mi>
+     <mi>n</mi>
+    </mfrac>
+   </mrow></annotation-xml></semantics></math>
+ </p>
+ <p id="element-596">(Sometimes the random variable is denoted as <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mover accent="true">
+   <mi>P</mi>
+   <mo>^</mo>
+  </mover>
+ </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+   <mi>P</mi>
+   <mo>^</mo>
+  </mover></annotation-xml></semantics></math>, read "P hat".)</p>
+
+ <p id="element-959">When <em data-effect="italics">n</em> is large and <em data-effect="italics">p</em> is not close to zero or one, we can use the <span data-type="term">normal distribution</span> to approximate the binomial.</p>
+
+ <p id="element-813"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>X</mi><mo>~</mo><mi>N</mi><mo stretchy="false">(</mo><mi>n</mi><mi>p</mi><mo>,</mo><msqrt>
+   <mrow>
+    <mi>n</mi><mi>p</mi><mi>q</mi>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>X</mi><mo>~</mo><mi>N</mi><mo stretchy="false">(</mo><mi>n</mi><mi>p</mi><mo>,</mo><msqrt>
+   <mrow>
+    <mi>n</mi><mi>p</mi><mi>q</mi>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math></p>
+ <p id="element-76">If we divide the random variable, the mean, and the standard
+deviation by <em data-effect="italics">n</em>, we get a normal distribution of proportions with <em data-effect="italics">P&#8242;</em>, called the
+estimated proportion, as the random variable. (Recall that a proportion as the
+number of successes divided by <em data-effect="italics">n</em>.)</p>
+
+ <p id="element-461"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>X</mi>
+   <mi>n</mi>
+  </mfrac>
+  <mo>=</mo><msup>
+   <mi>P</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mtext>~&#160;</mtext><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mi>n</mi><mi>p</mi>
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+    <mo>,</mo><mfrac>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mi>n</mi><mi>p</mi><mi>q</mi>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>X</mi>
+   <mi>n</mi>
+  </mfrac>
+  <mo>=</mo><msup>
+   <mi>P</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mtext>~&#160;</mtext><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mi>n</mi><mi>p</mi>
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+    <mo>,</mo><mfrac>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mi>n</mi><mi>p</mi><mi>q</mi>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></p><p id="element-894">Using algebra to simplify : <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <mfrac>
+    <mrow>
+     <msqrt>
+      <mrow>
+       <mi>n</mi><mi>p</mi><mi>q</mi>
+      </mrow>
+     </msqrt>
+
+    </mrow>
+    <mi>n</mi>
+   </mfrac>
+   <mo>=</mo><msqrt>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <mi>p</mi><mi>q</mi>
+      </mrow>
+      <mi>n</mi>
+     </mfrac>
+
+    </mrow>
+   </msqrt>
+
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <mfrac>
+    <mrow>
+     <msqrt>
+      <mrow>
+       <mi>n</mi><mi>p</mi><mi>q</mi>
+      </mrow>
+     </msqrt>
+
+    </mrow>
+    <mi>n</mi>
+   </mfrac>
+   <mo>=</mo><msqrt>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <mi>p</mi><mi>q</mi>
+      </mrow>
+      <mi>n</mi>
+     </mfrac>
+
+    </mrow>
+   </msqrt>
+
+  </mrow></annotation-xml></semantics></math>
+ </p>
+ <p id="element-683"><strong><em data-effect="italics">P&#8242;</em> follows a normal distribution for proportions</strong>:
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>X</mi>
+   <mi>n</mi>
+  </mfrac>
+  <mo>=</mo><msup>
+   <mi>P</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mtext>~&#160;</mtext><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mi>n</mi><mi>p</mi>
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+    <mo>,</mo><mfrac>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mi>n</mi><mi>p</mi><mi>q</mi>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>X</mi>
+   <mi>n</mi>
+  </mfrac>
+  <mo>=</mo><msup>
+   <mi>P</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mtext>~&#160;</mtext><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mi>n</mi><mi>p</mi>
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+    <mo>,</mo><mfrac>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mi>n</mi><mi>p</mi><mi>q</mi>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></p><p id="element-716">The confidence interval has the form (<em data-effect="italics">p&#8242;</em> &#8211; <em data-effect="italics">EBP</em>, <em data-effect="italics">p&#8242;</em> + <em data-effect="italics">EBP</em>). <em data-effect="italics">EBP</em> is error bound for the proportion.</p>
+ <p id="element-35"><em data-effect="italics">p&#8242;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>x</mi>
+   <mi>n</mi>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>x</mi>
+   <mi>n</mi>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>
+ </p>
+ <p id="element-142"><em data-effect="italics">p&#8242;</em> = the <strong>estimated proportion</strong> of successes (<em data-effect="italics">p&#8242;</em> is a <strong>point estimate</strong> for <em data-effect="italics">p</em>, the true proportion.)</p>
+
+ <p id="element-818"><em data-effect="italics">x</em> = the <strong>number</strong> of successes</p>
+
+ <p id="element-434"><em data-effect="italics">n</em> = the size of the sample</p>
+
+ <p id="element-498"><strong>The error bound for a proportion is</strong></p>
+
+ <p id="element-249">
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> where <em data-effect="italics">q&#8242;</em> = 1 &#8211; <em data-effect="italics">p&#8242;</em></p>
+<p id="eip-841">This formula is similar to the error bound formula for a mean, except that the "appropriate standard deviation" is different. For a mean, when the population standard deviation is known, the appropriate standard deviation that we use is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mfrac>
+<mrow>
+<mi>&#963;</mi>
+</mrow>
+<mrow>
+<msqrt>
+<mi>n</mi>
+</msqrt>
+</mrow>
+</mfrac>
+</mrow><annotation-xml encoding="MathML-Content"><mfrac>
+<mrow>
+<mi>&#963;</mi>
+</mrow>
+<mrow>
+<msqrt>
+<mi>n</mi>
+</msqrt>
+</mrow>
+</mfrac></annotation-xml></semantics></math>. For a proportion, the appropriate standard deviation is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<msqrt>
+<mfrac>
+<mrow>
+<mi>p</mi>
+<mi>q</mi>
+</mrow>
+<mrow>
+<mi>n</mi>
+</mrow>
+</mfrac>
+</msqrt>
+</mrow><annotation-xml encoding="MathML-Content"><msqrt>
+<mfrac>
+<mrow>
+<mi>p</mi>
+<mi>q</mi>
+</mrow>
+<mrow>
+<mi>n</mi>
+</mrow>
+</mfrac>
+</msqrt></annotation-xml></semantics></math>.</p>
+ <p id="element-886">However, in the error bound formula, we use
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mi>p</mi>
+       <mo>&#8242;</mo>
+      </msup>
+      <msup>
+       <mi>q</mi>
+       <mo>&#8242;</mo>
+      </msup>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mi>p</mi>
+       <mo>&#8242;</mo>
+      </msup>
+      <msup>
+       <mi>q</mi>
+       <mo>&#8242;</mo>
+      </msup>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math> as the standard deviation, instead of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<msqrt>
+<mfrac>
+<mrow>
+<mi>p</mi>
+<mi>q</mi>
+</mrow>
+<mrow>
+<mi>n</mi>
+</mrow>
+</mfrac>
+</msqrt>
+</mrow><annotation-xml encoding="MathML-Content"><msqrt>
+<mfrac>
+<mrow>
+<mi>p</mi>
+<mi>q</mi>
+</mrow>
+<mrow>
+<mi>n</mi>
+</mrow>
+</mfrac>
+</msqrt></annotation-xml></semantics></math>.</p>
+
+<p id="element-685">In the error bound formula, the <strong> sample proportions <em data-effect="italics">p&#8242;</em> and <em data-effect="italics">q&#8242;</em> are estimates of the unknown population proportions <em data-effect="italics">p</em> and <em data-effect="italics">q</em></strong>. The estimated proportions <em data-effect="italics">p&#8242;</em> and <em data-effect="italics">q&#8242;</em> are used because <em data-effect="italics">p</em> and <em data-effect="italics">q</em> are not known. The sample proportions <em data-effect="italics">p&#8242;</em> and <em data-effect="italics">q&#8242;</em> are calculated from the data: <em data-effect="italics">p&#8242;</em> is the estimated proportion of successes, and <em data-effect="italics">q&#8242;</em> is the estimated proportion of failures.</p>
+
+ <p id="eip-711">The confidence interval can be used only if the number of successes <em data-effect="italics">np&#8242;</em> and the number of failures <em data-effect="italics">nq&#8242;</em> are both greater than five.</p>
+
+<div data-type="note" data-has-label="true" id="id24362956" data-label=""><div data-type="title">Note</div>
+<p id="fs-idp79319136">For the normal distribution of proportions, the <em data-effect="italics">z</em>-score formula is as follows.</p>
+  <p id="element-272">If <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msup>
+     <mi>P</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mtext>~</mtext><mi>N</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>p</mi><mo>,</mo><msqrt>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>p</mi><mi>q</mi>
+         </mrow>
+         <mi>n</mi>
+        </mfrac>
+
+       </mrow>
+      </msqrt>
+
+     </mrow>
+     <mo>)</mo></mrow>
+   </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msup>
+     <mi>P</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mtext>~</mtext><mi>N</mi><mrow><mo>(</mo>
+     <mrow>
+      <mi>p</mi><mo>,</mo><msqrt>
+       <mrow>
+        <mfrac>
+         <mrow>
+          <mi>p</mi><mi>q</mi>
+         </mrow>
+         <mi>n</mi>
+        </mfrac>
+
+       </mrow>
+      </msqrt>
+
+     </mrow>
+     <mo>)</mo></mrow>
+   </mrow></annotation-xml></semantics></math> then the <em data-effect="italics">z</em>-score formula is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>z</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>&#8722;</mo><mi>p</mi>
+   </mrow>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mi>p</mi><mi>q</mi>
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>z</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>&#8722;</mo><mi>p</mi>
+   </mrow>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mi>p</mi><mi>q</mi>
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></p>
+ </div>
+<div data-type="example" id="element-32">
+<div data-type="exercise" id="element-814"><div data-type="problem" id="id24363103">
+  <p id="element-687">Suppose that a market research firm is hired to estimate the percent of adults living in a large city who have cell phones.  Five hundred randomly selected adult residents in this city are surveyed to determine whether they have cell phones. Of
+  the 500 people surveyed, 421 responded yes - they own cell phones. Using a 95% confidence level, compute a confidence interval estimate for the true proportion of adult residents of this city who have cell phones.</p>
+
+</div>
+<div data-type="solution" id="id24363164">
+<div data-type="list" id="element-757"><div data-type="title">Solution A</div><ul>
+<li>The first solution is step-by-step (Solution A).</li>
+<li>The second solution uses a function of the TI-83, 83+ or 84 calculators (Solution B).</li>
+</ul></div>
+ <p id="element-386">Let <em data-effect="italics">X</em> = the number of people in the sample who have cell phones. <em data-effect="italics">X</em> is binomial. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>X</mi><mo>~</mo><mi>B</mi><mrow><mo>(</mo>
+   <mrow>
+    <mn>500</mn><mo>,</mo><mfrac>
+     <mrow>
+      <mn>421</mn>
+     </mrow>
+     <mrow>
+      <mn>500</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>X</mi><mo>~</mo><mi>B</mi><mrow><mo>(</mo>
+   <mrow>
+    <mn>500</mn><mo>,</mo><mfrac>
+     <mrow>
+      <mn>421</mn>
+     </mrow>
+     <mrow>
+      <mn>500</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math>.</p>
+<p id="element-985">To calculate the confidence interval, you must find <em data-effect="italics">p&#8242;</em>, <em data-effect="italics">q&#8242;</em>, and <em data-effect="italics">EBP</em>.</p>
+ <p id="element-227"><em data-effect="italics">n</em> = 500</p>
+<p id="eip-idm67964976"><em data-effect="italics">x</em> = the number of successes = 421</p>
+ <p id="element-513"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <msup>
+    <mi>p</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>=</mo><mfrac>
+    <mi>x</mi>
+    <mi>n</mi>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mn>421</mn>
+    </mrow>
+    <mrow>
+     <mn>500</mn>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mn>0.842</mn>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <msup>
+    <mi>p</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>=</mo><mfrac>
+    <mi>x</mi>
+    <mi>n</mi>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mn>421</mn>
+    </mrow>
+    <mrow>
+     <mn>500</mn>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mn>0.842</mn>
+  </mrow></annotation-xml></semantics></math>
+  </p>
+<p id="fs-idp54910160"><em data-effect="italics">p&#8242;</em> = 0.842 is the sample proportion; this is the point estimate of the population proportion.</p>
+
+ <p id="element-339"><em data-effect="italics">q&#8242;</em> = 1 &#8211; <em data-effect="italics">p&#8242;</em> = 1 &#8211; 0.842 = 0.158</p>
+
+ <p id="element-239">Since <em data-effect="italics">CL</em> = 0.95, then <em data-effect="italics">&#945;</em> = 1 &#8211; <em data-effect="italics">CL</em> = 1 &#8211; 0.95 = 0.05 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> = 0.025.</p>
+<p id="element-838a">Then <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<msub>
+<mi>z</mi>
+<mfrac>
+<mrow>
+<mi>&#945;</mi>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</mfrac>
+</msub>
+<mo>=</mo>
+<msub>
+<mi>z</mi>
+<mn>0.025</mn>
+</msub>
+<mo>=</mo>
+<mn>1.96</mn>
+</mrow><annotation-xml encoding="MathML-Content"><msub>
+<mi>z</mi>
+<mfrac>
+<mrow>
+<mi>&#945;</mi>
+</mrow>
+<mrow>
+<mn>2</mn>
+</mrow>
+</mfrac>
+</msub><mo>=</mo><msub>
+<mi>z</mi>
+<mn>0.025</mn>
+</msub><mo>=</mo><mn>1.96</mn></annotation-xml></semantics></math></p>
+ <p id="element-88" class="finger">Use the TI-83, 83+, or 84+ calculator command invNorm(0.975,0,1) to find <em data-effect="italics">z<sub>0.025</sub></em>. Remember that the area to the right of <em data-effect="italics">z<sub>0.025</sub></em> is 0.025 and the area to the left of <em data-effect="italics">z<sub>0.025</sub></em> is 0.975. This can also be found using appropriate commands on other calculators, using a computer, or using a Standard Normal probability table.</p>
+ <p id="element-42"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mi>p</mi>
+       <mo>&#8242;</mo>
+      </msup>
+      <msup>
+       <mi>q</mi>
+       <mo>&#8242;</mo>
+      </msup>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mo stretchy="false">(</mo><mn>1.96</mn><mo stretchy="false">)</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mo stretchy="false">(</mo><mn>0.842</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.158</mn><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <mn>500</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mn>0.032</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mi>p</mi>
+       <mo>&#8242;</mo>
+      </msup>
+      <msup>
+       <mi>q</mi>
+       <mo>&#8242;</mo>
+      </msup>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mo stretchy="false">(</mo><mn>1.96</mn><mo stretchy="false">)</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mo stretchy="false">(</mo><mn>0.842</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.158</mn><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <mn>500</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mn>0.032</mn>
+ </mrow></annotation-xml></semantics></math></p>
+
+ <p id="element-237"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mi>p</mi>
+<mo>'</mo>
+<mo>&#8211;</mo>
+  <mi>E</mi><mi>B</mi><mi>P</mi>
+<mo>=</mo>
+<mn>0.842</mn>
+<mo>&#8211;</mo>
+<mn>0.032</mn>
+<mo>=</mo>
+<mn>0.81</mn>
+ </mrow><annotation-xml encoding="MathML-Content"><mi>p</mi><mo>'</mo><mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mn>0.842</mn><mo>&#8211;</mo><mn>0.032</mn><mo>=</mo><mn>0.81</mn></annotation-xml></semantics></math>
+ </p>
+
+ <p id="element-744"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <msup>
+    <mi>p</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>+</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mn>0.842</mn><mo>+</mo><mn>0.032</mn><mo>=</mo><mn>0.874</mn>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <msup>
+    <mi>p</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>+</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mn>0.842</mn><mo>+</mo><mn>0.032</mn><mo>=</mo><mn>0.874</mn>
+  </mrow></annotation-xml></semantics></math>
+  </p>
+ <p id="element-144">The confidence interval for the true binomial population proportion is (<em data-effect="italics">p&#8242;</em> &#8211; <em data-effect="italics">EBP</em>, <em data-effect="italics">p&#8242;</em> + <em data-effect="italics">EBP</em>) = (0.810, 0.874).</p>
+ <p id="element-822"><span data-type="title">Interpretation</span>We estimate with 95% confidence that between 81% and 87.4% of all adult residents of this city have cell phones.</p>
+ <p id="element-415"><span data-type="title">Explanation of 95% Confidence Level</span>Ninety-five percent of the confidence intervals constructed in this way would contain the true value for the population proportion of all adult residents of this city who have cell phones.<div data-type="newline"><br/></div></p>
+</div>
+<div data-type="solution" id="fs-idm19757088">
+<p id="eip-idp6259424"><span data-type="title">Solution B</span></p>
+<div data-type="note" data-has-label="true" id="fs-idm86739552" class="statistics calculator" data-label="">
+<p id="element-387">Press <code>STAT</code> and arrow over to <code>TESTS</code>.<div data-type="newline"><br/></div>
+Arrow down to <code>A:1-PropZint</code>. Press <code>ENTER</code>.<div data-type="newline"><br/></div>
+Arrow down to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>x</mi></mrow><annotation-xml encoding="MathML-Content"><mi>x</mi></annotation-xml></semantics></math> and enter 421.<div data-type="newline"><br/></div>
+Arrow down to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>n</mi></mrow><annotation-xml encoding="MathML-Content"><mi>n</mi></annotation-xml></semantics></math> and enter 500.<div data-type="newline"><br/></div>
+Arrow down to <code>C-Level</code> and enter .95.<div data-type="newline"><br/></div>
+Arrow down to <code>Calculate</code> and press <code>ENTER</code>.<div data-type="newline"><br/></div>
+The confidence interval is (0.81003, 0.87397).</p>
+</div>
+</div>
+</div></div>
+<div data-type="note" data-has-label="true" id="fs-idp89365680" class="statistics try" data-label=""><div data-type="title">Try It</div>
+   <div data-type="exercise" id="eip-890"><div data-type="problem" id="eip-454">
+  <p id="eip-844">
+Suppose 250 randomly selected people are surveyed to determine if they own a tablet. Of the 250 surveyed, 98 reported owning a tablet. Using a 95% confidence level, compute a confidence interval estimate for the true proportion of people who own tablets.
+  </p>
+</div>
+   </div>
+</div><div data-type="example" id="eip-164"><div data-type="exercise" id="element-2"><div data-type="problem" id="id1164699825510">
+  <p id="element-182">For a class project, a political science student at a large university wants to estimate the percent of students who are registered voters. He surveys 500 students and finds that 300 are registered voters. Compute a 90% confidence interval for the true percent of students who are registered voters, and interpret the confidence interval.</p>
+  </div>
+<div data-type="solution" id="id1164685709005">
+<ul id="eip-id1168006547279">
+<li>The first solution is step-by-step (Solution A).</li>
+<li>The second solution uses a function of the TI-83, 83+, or 84 calculators (Solution B).</li>
+</ul>
+  <p id="element-829"><span data-type="title">Solution A</span>
+       <em data-effect="italics">x</em> = 300 and <em data-effect="italics">n</em> = 500</p>
+ <p id="element-896"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <msup>
+    <mi>p</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>=</mo><mfrac>
+    <mi>x</mi>
+    <mi>n</mi>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mn>300</mn>
+    </mrow>
+    <mrow>
+     <mn>500</mn>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mn>0.600</mn>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <msup>
+    <mi>p</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>=</mo><mfrac>
+    <mi>x</mi>
+    <mi>n</mi>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mn>300</mn>
+    </mrow>
+    <mrow>
+     <mn>500</mn>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mn>0.600</mn>
+  </mrow></annotation-xml></semantics></math></p>
+ <p id="element-994"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <msup>
+    <mi>q</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>=</mo><mn>1</mn><mo>-</mo><msup>
+    <mi>p</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>=</mo><mn>1</mn><mo>-</mo><mn>0.600</mn><mo>=</mo><mn>0.400</mn>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <msup>
+    <mi>q</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>=</mo><mn>1</mn><mo>-</mo><msup>
+    <mi>p</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>=</mo><mn>1</mn><mo>-</mo><mn>0.600</mn><mo>=</mo><mn>0.400</mn>
+  </mrow></annotation-xml></semantics></math></p>
+<p id="element-702">Since <em data-effect="italics">CL</em> = 0.90, then <em data-effect="italics">&#945;</em> = 1 &#8211; <em data-effect="italics">CL</em> = 1 &#8211; 0.90 = 0.10<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> = 0.05
+</p>
+<p id="eip-idm146395264">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+		<msub>
+			<mi>z</mi>
+			<mfrac>
+				<mrow>
+					<mi>&#945;</mi>
+				</mrow>
+				<mrow>
+					<mn>2</mn>
+				</mrow>
+			</mfrac>
+		</msub>
+		</mrow><annotation-xml encoding="MathML-Content"><msub>
+			<mi>z</mi>
+			<mfrac>
+				<mrow>
+					<mi>&#945;</mi>
+				</mrow>
+				<mrow>
+					<mn>2</mn>
+				</mrow>
+			</mfrac>
+		</msub></annotation-xml></semantics></math> = <em data-effect="italics">z</em><sub>0.05</sub> = 1.645</p>
+ <p id="element-803" class="finger">Use the TI-83, 83+, or 84+ calculator command invNorm(0.95,0,1) to find <em data-effect="italics">z<sub>0.05</sub></em>. Remember that the area to the right of <em data-effect="italics">z<sub>0.05</sub></em> is 0.05 and the area to the left of <em data-effect="italics">z<sub>0.05</sub></em> is 0.95. This can also be found using appropriate commands on other calculators, using a computer, or using a standard normal probability table.</p>
+ <p id="element-541"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mi>p</mi>
+       <mo>&#8242;</mo>
+      </msup>
+      <msup>
+       <mi>q</mi>
+       <mo>&#8242;</mo>
+      </msup>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mo stretchy="false">(</mo><mn>1.645</mn><mo stretchy="false">)</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mo stretchy="false">(</mo><mn>0.60</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.40</mn><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <mn>500</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mn>0.036</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mi>p</mi>
+       <mo>&#8242;</mo>
+      </msup>
+      <msup>
+       <mi>q</mi>
+       <mo>&#8242;</mo>
+      </msup>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mo stretchy="false">(</mo><mn>1.645</mn><mo stretchy="false">)</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mo stretchy="false">(</mo><mn>0.60</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.40</mn><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <mn>500</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mn>0.036</mn>
+ </mrow></annotation-xml></semantics></math></p>
+ <p id="element-898"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mn>0.60</mn><mo>&#8722;</mo><mn>0.036</mn><mo>=</mo><mn>0.564</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mn>0.60</mn><mo>&#8722;</mo><mn>0.036</mn><mo>=</mo><mn>0.564</mn>
+ </mrow></annotation-xml></semantics></math></p>
+ <p id="fs-idm110100928"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>+</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mn>0.60</mn><mo>+</mo><mn>0.036</mn><mo>=</mo><mn>0.636</mn>
+   </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>+</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mn>0.60</mn><mo>+</mo><mn>0.036</mn><mo>=</mo><mn>0.636</mn>
+   </mrow></annotation-xml></semantics></math></p>
+<p id="element-343">The confidence interval for the true binomial population proportion is (<em data-effect="italics">p&#8242;</em> &#8211; <em data-effect="italics">EBP</em>, <em data-effect="italics">p&#8242;</em> + <em data-effect="italics">EBP</em>) = (0.564,0.636).</p>
+
+ <div data-type="list" id="element-523"><div data-type="title"><strong>Interpretation</strong></div><ul>
+<li>We estimate with 90% confidence that the true percent of all students that are registered voters is between 56.4% and 63.6%.</li>
+<li>Alternate Wording: We estimate with 90% confidence that between 56.4% and 63.6% of ALL students are registered voters.</li>
+ </ul></div>
+ <p id="element-828"><span data-type="title">Explanation of 90% Confidence Level</span>Ninety percent of all confidence intervals constructed in this way contain the true value for the population percent of students that are registered voters.</p>
+</div>
+<div data-type="solution" id="fs-idp10495376">
+<p id="eip-idm56642544"><span data-type="title">Solution B</span></p>
+<div data-type="note" data-has-label="true" id="fs-idm49834128" class="statistics calculator" data-label="">
+<p id="eip-833">Press <code>STAT</code> and arrow over to <code>TESTS</code>.
+<div data-type="newline"><br/></div>Arrow down to <code>A:1-PropZint</code>. Press <code>ENTER</code>.
+<div data-type="newline"><br/></div>Arrow down to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>x</mi></mrow><annotation-xml encoding="MathML-Content"><mi>x</mi></annotation-xml></semantics></math> and enter 300.
+<div data-type="newline"><br/></div>Arrow down to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>n</mi></mrow><annotation-xml encoding="MathML-Content"><mi>n</mi></annotation-xml></semantics></math> and enter 500.
+<div data-type="newline"><br/></div>Arrow down to <code>C-Level</code> and enter 0.90.
+<div data-type="newline"><br/></div>Arrow down to <code>Calculate</code> and press <code>ENTER</code>.
+<div data-type="newline"><br/></div>The confidence interval is (0.564, 0.636).</p>
+  </div>
+</div>
+ </div></div><div data-type="note" data-has-label="true" id="fs-idp55027792" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm23330928">
+<div data-type="problem" id="eip-165">
+<p id="eip-183">A student polls his school to see if students in the school district are for or against the new legislation regarding school uniforms. She surveys 600 students and finds that 480 are against the new legislation.<div data-type="newline" data-count="2"><br/><br/></div></p><p id="fs-idp17812400">a. Compute a 90% confidence interval for the true percent of students who are against the new legislation, and interpret the confidence interval.</p>
+</div>
+</div>
+<div data-type="exercise" id="fs-idm29038320">
+<div data-type="problem" id="eip-882">
+<p id="eip-207">b. In a sample of 300 students, 68% said they own an iPod and a smart phone. Compute a 97% confidence interval for the true percent of students who own an iPod and a smartphone.</p>
+ </div>
+  </div>
+</div>
+
+ <section data-depth="1" id="eip-443"><h3 data-type="title">&#8220;Plus Four&#8221; Confidence Interval for <em data-effect="italics">p</em></h3>
+
+  <p id="eip-idm101192016">There is a certain amount of error introduced into the process of calculating a confidence interval for a proportion. Because we do not know the true proportion for the population, we are forced to use point estimates to calculate the appropriate standard deviation of the sampling distribution. Studies have shown that the resulting estimation of the standard deviation can be flawed.</p>
+
+  <p id="eip-idp9663392">Fortunately, there is a simple adjustment that allows us to produce more accurate confidence intervals. We simply pretend that we have four additional observations. Two of these observations are successes and two are failures. The new sample size, then, is <em data-effect="italics">n</em> + 4, and the new count of successes is <em data-effect="italics">x</em> + 2. </p>
+
+  <p id="eip-idp9663968">Computer studies have demonstrated the effectiveness of this method. It should be used when the confidence level desired is at least 90% and the sample size is at least ten.</p>
+  </section>
+ <div data-type="example" id="eip-982"><div data-type="exercise" id="eip-152"><div data-type="problem" id="eip-885">
+  <p id="eip-191">A random sample of 25 statistics students was asked: &#8220;Have you smoked a cigarette in the past week?&#8221; Six students reported smoking within the past week. Use the &#8220;plus-four&#8221; method to find a 95% confidence interval for the true proportion of statistics students who smoke.</p>
+</div>
+<div data-type="solution" id="eip-19" data-label="">
+<p id="eip-idp35102016"><span data-type="title">Solution A</span>Six students out of 25 reported smoking within the past week, so <em data-effect="italics">x</em> = 6 and <em data-effect="italics">n</em> = 25. Because we are using the &#8220;plus-four&#8221; method, we will use <em data-effect="italics">x</em> = 6 + 2 = 8 and <em data-effect="italics">n</em> = 25 + 4 = 29.</p>
+
+ <p id="eip-idm32296464"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>=</mo><mfrac>
+   <mi>x</mi>
+   <mi>n</mi>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mn>8</mn>
+   <mrow>
+    <mn>29</mn>
+   </mrow>
+  </mfrac>
+  <mo>&#8776;</mo><mn>0.276</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>=</mo><mfrac>
+   <mi>x</mi>
+   <mi>n</mi>
+  </mfrac>
+  <mo>=</mo><mfrac>
+   <mn>8</mn>
+   <mrow>
+    <mn>29</mn>
+   </mrow>
+  </mfrac>
+  <mo>&#8776;</mo><mn>0.276</mn>
+ </mrow></annotation-xml></semantics></math></p>
+
+ <p id="eip-idm33200496"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msup>
+   <mi>q</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>=</mo><mn>1</mn><mo>&#8211;</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>=</mo><mn>1</mn><mo>&#8211;</mo><mn>0.276</mn><mo>=</mo><mn>0.724</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msup>
+   <mi>q</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>=</mo><mn>1</mn><mo>&#8211;</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>=</mo><mn>1</mn><mo>&#8211;</mo><mn>0.276</mn><mo>=</mo><mn>0.724</mn>
+ </mrow></annotation-xml></semantics></math></p>
+ <p id="eip-idm27545488">Since <em data-effect="italics">CL</em> = 0.95, we know <em data-effect="italics">&#945;</em> = 1 &#8211; 0.95 = 0.05 and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> = 0.025.</p>
+ <p id="eip-idm27544960"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>z</mi>
+   <mrow>
+    <mn>0.025</mn>
+   </mrow>
+  </msub>
+  <mo>=</mo><mn>1.96</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>z</mi>
+   <mrow>
+    <mn>0.025</mn>
+   </mrow>
+  </msub>
+  <mo>=</mo><mn>1.96</mn>
+ </mrow></annotation-xml></semantics></math>
+ </p>
+ <p id="eip-idm54844960"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>P</mi><mi>B</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mi>p</mi>
+       <mo>&#8242;</mo>
+      </msup>
+      <msup>
+       <mi>q</mi>
+       <mo>&#8242;</mo>
+      </msup>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mo stretchy="false">(</mo><mn>1.96</mn><mo stretchy="false">)</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mn>0.276</mn><mo stretchy="false">(</mo><mn>0.724</mn><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <mn>29</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>&#8776;</mo><mn>0.163</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>P</mi><mi>B</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mi>p</mi>
+       <mo>&#8242;</mo>
+      </msup>
+      <msup>
+       <mi>q</mi>
+       <mo>&#8242;</mo>
+      </msup>
+
+     </mrow>
+     <mi>n</mi>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>=</mo><mo stretchy="false">(</mo><mn>1.96</mn><mo stretchy="false">)</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mn>0.276</mn><mo stretchy="false">(</mo><mn>0.724</mn><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <mn>29</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>&#8776;</mo><mn>0.163</mn>
+ </mrow></annotation-xml></semantics></math></p>
+ <p id="eip-idm47330704"><em data-effect="italics">p&#8242;</em> &#8211; <em data-effect="italics">EPB</em> = 0.276 &#8211; 0.163 = 0.113</p>
+ <p id="eip-idm47330064"><em data-effect="italics">p&#8242;</em> + <em data-effect="italics">EPB</em> = 0.276 + 0.163 = 0.439</p>
+ <p id="eip-idm46666976">We are 95% confident that the true proportion of all statistics students who smoke cigarettes is between 0.113 and 0.439.</p>
+</div>
+<div data-type="solution" id="fs-idp68718096">
+<p id="eip-idm50693904"><span data-type="title">Solution B</span></p>
+<div data-type="note" data-has-label="true" id="fs-idp48064384" class="statistics calculator" data-label="">
+<p id="fs-idp140335584">Press STAT and arrow over to TESTS.<div data-type="newline"><br/></div>
+ Arrow down to A:1-PropZint. Press ENTER.<div data-type="newline"><br/></div></p>
+ <div data-type="note" data-has-label="true" id="fs-idp12207696" data-label=""><div data-type="title">Reminder</div>
+<p id="fs-idp183978608">Remember that the plus-four method assume an additional four trials: two successes and two failures. You do not need to change the process for calculating the confidence interval; simply update the values of x and n to reflect these additional trials.</p>
+ </div>
+ <p id="fs-idm64251984">Arrow down to <em data-effect="italics">x</em> and enter eight.<div data-type="newline"><br/></div>
+ Arrow down to <em data-effect="italics">n</em> and enter 29.<div data-type="newline"><br/></div>
+ Arrow down to C-Level and enter 0.95.<div data-type="newline"><br/></div>
+ Arrow down to Calculate and press ENTER.<div data-type="newline"><br/></div>
+ The confidence interval is (0.113, 0.439).<div data-type="newline"><br/></div></p>
+</div></div>
+  </div></div><div data-type="note" data-has-label="true" id="fs-idp89200688" class="statistics try" data-label=""><div data-type="title">Try It</div>
+      <div data-type="exercise" id="eip-479">
+       <div data-type="problem" id="eip-517">
+    <p id="eip-987">Out of a random sample of 65 freshmen at State University, 31 students have declared a major. Use the &#8220;plus-four&#8221; method to find a 96% confidence interval for the true proportion of freshmen at State University who have declared a major.</p>
+   </div>
+    </div>
+  </div>
+<div data-type="example" id="eip-251">
+<div data-type="exercise" id="eip-790"><div data-type="problem" id="eip-4">
+  <p id="eip-idm57290160">The Berkman Center for Internet &amp; Society at Harvard recently conducted a study analyzing the privacy management habits of teen internet users. In a group of 50 teens, 13 reported having more than 500 friends on Facebook. Use the &#8220;plus four&#8221; method to find a 90% confidence interval for the true proportion of teens who would report having more than 500 Facebook friends.</p>
+</div>
+<div data-type="solution" id="eip-598">
+<p id="eip-idp21168352"><span data-type="title">Solution A</span>Using &#8220;plus-four,&#8221; we have <em data-effect="italics">x</em> = 13 + 2 = 15 and <em data-effect="italics">n</em> = 50 + 4 = 54.</p>
+ <p id="eip-idp92452528">
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>'</mo>
+  </msup>
+  <mo>=</mo><mo> </mo><mfrac>
+   <mrow>
+    <mn>15</mn>
+   </mrow>
+   <mrow>
+    <mn>54</mn>
+   </mrow>
+  </mfrac>
+  <mo> </mo><mo>&#8776;</mo><mo> </mo><mn>0.278</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>'</mo>
+  </msup>
+  <mo>=</mo><mo> </mo><mfrac>
+   <mrow>
+    <mn>15</mn>
+   </mrow>
+   <mrow>
+    <mn>54</mn>
+   </mrow>
+  </mfrac>
+  <mo> </mo><mo>&#8776;</mo><mo> </mo><mn>0.278</mn>
+ </mrow></annotation-xml></semantics></math>
+</p>
+<p id="eip-idp92453168"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msup>
+   <mi>q</mi>
+   <mo>'</mo>
+  </msup>
+  <mo>=</mo><mn>1</mn><mo>&#8211;</mo><msup>
+   <mi>p</mi>
+   <mo>'</mo>
+  </msup>
+  <mo>=</mo><mn>1</mn><mo>-</mo><mn>0.241</mn><mo>=</mo><mn>0.722</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msup>
+   <mi>q</mi>
+   <mo>'</mo>
+  </msup>
+  <mo>=</mo><mn>1</mn><mo>&#8211;</mo><msup>
+   <mi>p</mi>
+   <mo>'</mo>
+  </msup>
+  <mo>=</mo><mn>1</mn><mo>-</mo><mn>0.241</mn><mo>=</mo><mn>0.722</mn>
+ </mrow></annotation-xml></semantics></math>
+</p>
+<p id="eip-idp23600320">Since <em data-effect="italics">CL</em> = 0.90, we know <em data-effect="italics">&#945;</em> = 1 &#8211; 0.90 = 0.10 and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+ </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> = 0.05.
+</p>
+<p id="eip-idp84176480"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>z</mi>
+   <mrow>
+    <mn>0.05</mn>
+   </mrow>
+  </msub>
+  <mo>=</mo><mn>1.645</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>z</mi>
+   <mrow>
+    <mn>0.05</mn>
+   </mrow>
+  </msub>
+  <mo>=</mo><mn>1.645</mn>
+ </mrow></annotation-xml></semantics></math>
+</p>
+ <p id="eip-idp73704848"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>P</mi><mi>B</mi><mo>=</mo><mo stretchy="false">(</mo><msub>
+   <mi>z</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>=</mo><mo stretchy="false">(</mo><mn>1.645</mn><mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>0.278</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.722</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mrow>
+        <mn>54</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>&#8776;</mo><mn>0.100</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>P</mi><mi>B</mi><mo>=</mo><mo stretchy="false">(</mo><msub>
+   <mi>z</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>=</mo><mo stretchy="false">(</mo><mn>1.645</mn><mo stretchy="false">)</mo><mrow><mo>(</mo>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>0.278</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.722</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mrow>
+        <mn>54</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>&#8776;</mo><mn>0.100</mn>
+ </mrow></annotation-xml></semantics></math></p>
+<p id="eip-idp40189152"><em data-effect="italics">p&#8242;</em> &#8211; <em data-effect="italics">EPB</em> = 0.278 &#8211; 0.100 = 0.178</p>
+ <p id="eip-idp61257168"><em data-effect="italics">p&#8242;</em> + <em data-effect="italics">EPB</em> = 0.278 + 0.100 = 0.378</p>
+<p id="eip-idp61146144">We are 90% confident that between 17.8% and 37.8% of all teens would report having more than 500 friends on Facebook.</p></div>
+<div data-type="solution" id="fs-idp141579680">
+<p id="eip-idp20279360"><span data-type="title">Solution B</span></p>
+<div data-type="note" data-has-label="true" id="fs-idm93286128" class="statistics calculator" data-label="">
+<p id="fs-idp57846688">
+  <div data-type="newline"><br/></div>Press STAT and arrow over to TESTS.
+  <div data-type="newline"><br/></div>Arrow down to A:1-PropZint. Press ENTER.
+  <div data-type="newline"><br/></div>Arrow down to <em data-effect="italics">x</em> and enter 15.
+  <div data-type="newline"><br/></div>Arrow down to <em data-effect="italics">n</em> and enter 54.
+  <div data-type="newline"><br/></div>Arrow down to C-Level and enter 0.90.
+  <div data-type="newline"><br/></div>Arrow down to Calculate and press ENTER.
+  <div data-type="newline"><br/></div>The confidence interval is (0.178, 0.378).
+</p>
+</div>
+</div>
+
+   </div></div>
+<div data-type="note" data-has-label="true" id="fs-idp15135760" class="statistics try" data-label=""><div data-type="title">Try It</div>
+ <div data-type="exercise" id="eip-375"><div data-type="problem" id="eip-391">
+ <p id="eip-879">The Berkman Center Study referenced in <a href="#eip-251" class="autogenerated-content">[link]</a> talked to teens in smaller focus groups, but also interviewed additional teens over the phone. When the study was complete, 588 teens had answered the question about their Facebook friends with 159 saying that they have more than 500 friends. Use the &#8220;plus-four&#8221; method to find a 90% confidence interval for the true proportion of teens that would report having more than 500 Facebook friends based on this larger sample. Compare the results to those in <a href="#eip-251" class="autogenerated-content">[link]</a>.
+     </p>
+    </div>
+</div>
+</div>
+ <section data-depth="1" id="fs-idm22068416"><h3 data-type="title">Calculating the Sample Size <em data-effect="italics">n</em></h3>
+       <p id="element-24">
+If researchers desire a specific margin of error, then they can use the error bound formula to calculate the required sample size.
+</p><p id="element-957">The error bound formula for a population proportion is
+</p><ul id="element-166"><li>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></li>
+<li>Solving for <em data-effect="italics">n</em> gives you an equation for the sample size.</li>
+<li>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>n</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo stretchy="false">(</mo><msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <msup>
+     <mi>q</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <mi>E</mi><mi>B</mi><msup>
+     <mi>P</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>n</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mrow><mo>(</mo>
+       <mrow>
+        <msub>
+         <mi>z</mi>
+         <mrow>
+          <mfrac>
+           <mi>&#945;</mi>
+           <mn>2</mn>
+          </mfrac>
+
+         </mrow>
+        </msub>
+
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo stretchy="false">(</mo><msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <msup>
+     <mi>q</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <mi>E</mi><mi>B</mi><msup>
+     <mi>P</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>
+</li>
+</ul>
+ <div data-type="example" id="element-724">
+<div data-type="exercise" id="fs-idp171900368">
+<div data-type="problem" id="fs-idp171900624"><p id="eip-843">Suppose a mobile phone company wants to determine the current percentage of customers aged 50+ who use text messaging on their cell phones. How many customers aged 50+ should the company survey in order to be 90% confident that the estimated (sample) proportion is within three percentage points of the true population proportion of customers aged 50+ who use text messaging on their cell phones.</p></div>
+ <div data-type="solution" id="fs-idp53892304">
+<p id="eip-806">From the problem, we know that <strong><em data-effect="italics">EBP</em> = 0.03</strong> (3%=0.03) and
+   <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+     <msub>
+      <mi>z</mi>
+      <mrow>
+       <mfrac>
+        <mi>&#945;</mi>
+        <mn>2</mn>
+       </mfrac>
+      </mrow>
+     </msub>
+   </mrow>
+   </mrow><annotation-xml encoding="MathML-Content"><mrow>
+     <msub>
+      <mi>z</mi>
+      <mrow>
+       <mfrac>
+        <mi>&#945;</mi>
+        <mn>2</mn>
+       </mfrac>
+      </mrow>
+     </msub>
+   </mrow></annotation-xml></semantics></math> <em data-effect="italics">z</em><sub>0.05</sub> = 1.645 because the confidence level is 90%.</p>
+<p id="eip-35">However, in order to find <em data-effect="italics">n</em>, we need to know the estimated (sample) proportion <em data-effect="italics">p</em>&#8242;. Remember that <em data-effect="italics">q</em>&#8242; = 1 &#8211; <em data-effect="italics">p</em>&#8242;. But, we do not know <em data-effect="italics">p</em>&#8242; yet. Since we multiply <em data-effect="italics">p</em>&#8242; and <em data-effect="italics">q</em>&#8242; together, we make them both equal to 0.5 because <em data-effect="italics">p</em>&#8242;<em data-effect="italics">q</em>&#8242; = (0.5)(0.5) = 0.25 results in the largest possible product. (Try other products: (0.6)(0.4) = 0.24; (0.3)(0.7) = 0.21; (0.2)(0.8) = 0.16 and so on). The largest possible product gives us the largest <em data-effect="italics">n</em>. This gives us a large enough sample so that we can be 90% confident that we are within three percentage points of the true population proportion. To calculate the sample size <em data-effect="italics">n</em>, use the formula and make the substitutions.</p>
+  <p id="eip-812"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>n</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mi>z</mi>
+     <mn>2</mn>
+    </msup>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <msup>
+     <mi>q</mi>
+     <mo>&#8242;</mo>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mi>E</mi><mi>B</mi><msup>
+     <mi>P</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>n</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mi>z</mi>
+     <mn>2</mn>
+    </msup>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <msup>
+     <mi>q</mi>
+     <mo>&#8242;</mo>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mi>E</mi><mi>B</mi><msup>
+     <mi>P</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> gives <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>n</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mn>1.645</mn>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mn>0.03</mn>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>751.7</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>n</mi><mo>=</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mn>1.645</mn>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mn>0.03</mn>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>751.7</mn>
+ </mrow></annotation-xml></semantics></math></p><p id="eip-979">Round the answer to the next higher value. The sample size should be 752 cell phone customers aged 50+ in order to be 90%  confident that the estimated (sample) proportion is within three percentage points of the true population proportion of all customers aged 50+ who use text messaging on their cell phones.
+</p></div>
+
+
+ </div></div>
+<div data-type="note" data-has-label="true" id="fs-idp13131184" class="statistics try" data-label=""><div data-type="title">Try It</div>
+      <div data-type="exercise" id="eip-143">
+    <div data-type="problem" id="eip-26">
+  <p id="eip-803">Suppose an internet marketing company wants to determine the current percentage of customers who click on ads on their smartphones. How many customers should the company survey in order to be 90% confident that the estimated proportion is within five percentage points of the true population proportion of customers who click on ads on their smartphones?
+  </p>
+</div>
+   </div>
+ </div>
+ </section>
+<section data-depth="1" id="eip-566" class="references"><h3 data-type="title">References</h3><p id="eip-idp27535536">Jensen, Tom. &#8220;Democrats, Republicans Divided on Opinion of Music Icons.&#8221; Public Policy Polling. Available online at http://www.publicpolicypolling.com/Day2MusicPoll.pdf (accessed July 2, 2013).</p>
+<p id="eip-idm28118800">Madden, Mary, Amanda Lenhart, Sandra Coresi, Urs Gasser, Maeve Duggan, Aaron Smith, and Meredith Beaton. &#8220;Teens, Social Media, and Privacy.&#8221; PewInternet, 2013. Available online at http://www.pewinternet.org/Reports/2013/Teens-Social-Media-And-Privacy.aspx (accessed July 2, 2013).</p>
+<p id="eip-idm28117680">Prince Survey Research Associates International. &#8220;2013 Teen and Privacy Management Survey.&#8221; Pew Research Center: Internet and American Life Project. Available online at  http://www.pewinternet.org/~/media//Files/Questionnaire/2013/Methods%20and%20Questions_Teens%20and%20Social%20Media.pdf (accessed July 2, 2013).</p>
+<p id="eip-idm58659488">Saad, Lydia. &#8220;Three in Four U.S. Workers Plan to Work Pas Retirement Age: Slightly more say they will do this by choice rather than necessity.&#8221; Gallup&#174; Economy, 2013. Available online at http://www.gallup.com/poll/162758/three-four-workers-plan-work-past-retirement-age.aspx (accessed July 2, 2013).</p>
+<p id="eip-idm58658768">The Field Poll. Available online at http://field.com/fieldpollonline/subscribers/ (accessed July 2, 2013).</p>
+<p id="eip-idm58658256">Zogby. &#8220;New SUNYIT/Zogby Analytics Poll: Few Americans Worry about Emergency Situations Occurring in Their Community; Only one in three have an Emergency Plan; 70% Support Infrastructure &#8216;Investment&#8217; for National Security.&#8221; Zogby Analytics, 2013. Available online at http://www.zogbyanalytics.com/news/299-americans-neither-worried-nor-prepared-in-case-of-a-disaster-sunyit-zogby-analytics-poll (accessed July 2, 2013).</p>
+<p id="eip-idm58656656">&#8220;52% Say Big-Time College Athletics Corrupt Education Process.&#8221; Rasmussen Reports, 2013. Available online at http://www.rasmussenreports.com/public_content/lifestyle/sports/may_2013/52_say_big_time_college_athletics_corrupt_education_process (accessed July 2, 2013).</p></section><section data-depth="1" id="eip-854" class="summary"><h3 data-type="title">Chapter Review</h3>
+  <p id="eip-idm15657920">Some statistical measures, like many survey questions, measure qualitative rather than quantitative data. In this case, the population parameter being estimated is a proportion. It is possible to create a confidence interval for the true population proportion following procedures similar to those used in creating confidence intervals for population means. The formulas are slightly different, but they follow the same reasoning.</p>
+
+  <p id="eip-idm15657536">Let <em data-effect="italics">p&#8242;</em> represent the sample proportion, <em data-effect="italics">x/n</em>, where <em data-effect="italics">x</em> represents the number of successes and <em data-effect="italics">n</em> represents the sample size. Let <em data-effect="italics">q&#8242;</em> = 1 &#8211; <em data-effect="italics">p&#8242;</em>. Then the confidence interval for a population proportion is given by the following formula:</p><p id="eip-idp121742160">(lower bound, upper bound) <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo>=</mo><mo stretchy="false">(</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>,</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>&#160;</mo><mo>+</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&#160;</mo><mrow><mo>(</mo>
+   <mrow>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>&#8211;</mo><mi>z</mi><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+    <mo>,</mo><msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>+</mo><mi>z</mi><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo>=</mo><mo stretchy="false">(</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>,</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>&#160;</mo><mo>+</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo stretchy="false">)</mo><mo>=</mo><mo>&#160;</mo><mrow><mo>(</mo>
+   <mrow>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>&#8211;</mo><mi>z</mi><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+    <mo>,</mo><msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>+</mo><mi>z</mi><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math>
+</p>
+<p id="eip-idp146455680">The &#8220;plus four&#8221; method for calculating confidence intervals is an attempt to balance the error introduced by using estimates of the population proportion when calculating the standard deviation of the sampling distribution. Simply imagine four additional trials in the study; two are successes and two are failures. Calculate <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <mi>x</mi><mo>+</mo><mn>2</mn>
+   </mrow>
+   <mrow>
+    <mi>n</mi><mo>+</mo><mn>4</mn>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>=</mo><mfrac>
+   <mrow>
+    <mi>x</mi><mo>+</mo><mn>2</mn>
+   </mrow>
+   <mrow>
+    <mi>n</mi><mo>+</mo><mn>4</mn>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>, and proceed to find the confidence interval. When sample sizes are small, this method has been demonstrated to provide more accurate confidence intervals than the standard formula used for larger samples.</p></section>
+<section data-depth="1" id="eip-826" class="formula-review"><h3 data-type="title">Formula Review</h3>
+ <p id="eip-idm44244000"><em data-effect="italics">p&#8242; = x / n</em> where <em data-effect="italics">x</em> represents the number of successes and <em data-effect="italics">n</em> represents the sample size. The variable <em data-effect="italics">p</em>&#8242; is the sample proportion and serves as the point estimate for the true population proportion.</p>
+ <p id="eip-idm61459360"><em data-effect="italics">q</em>&#8242; = 1 &#8211; <em data-effect="italics">p</em>&#8242;</p>
+ <p id="eip-idm163551632"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>~</mo><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mi>p</mi><mo>,</mo><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mi>p</mi><mi>q</mi>
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>~</mo><mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mi>p</mi><mo>,</mo><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mi>p</mi><mi>q</mi>
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> The variable <em data-effect="italics">p&#8242;</em> has a binomial distribution that can be approximated with the normal distribution shown here.</p>
+ <p id="eip-idm90817904"><em data-effect="italics">EBP</em> = the error bound for a proportion = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <msub>
+    <mi>z</mi>
+    <mrow>
+     <mfrac>
+      <mi>&#945;</mi>
+      <mn>2</mn>
+     </mfrac>
+
+    </mrow>
+   </msub>
+   <msqrt>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mi>p</mi>
+        <mo>&#8242;</mo>
+       </msup>
+       <msup>
+        <mi>q</mi>
+        <mo>&#8242;</mo>
+       </msup>
+
+      </mrow>
+      <mi>n</mi>
+     </mfrac>
+
+    </mrow>
+   </msqrt>
+
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <msub>
+    <mi>z</mi>
+    <mrow>
+     <mfrac>
+      <mi>&#945;</mi>
+      <mn>2</mn>
+     </mfrac>
+
+    </mrow>
+   </msub>
+   <msqrt>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <msup>
+        <mi>p</mi>
+        <mo>&#8242;</mo>
+       </msup>
+       <msup>
+        <mi>q</mi>
+        <mo>&#8242;</mo>
+       </msup>
+
+      </mrow>
+      <mi>n</mi>
+     </mfrac>
+
+    </mrow>
+   </msqrt>
+
+  </mrow></annotation-xml></semantics></math></p>
+ <p id="eip-idm140522368">Confidence interval for a proportion:</p>
+ <p id="eip-idm140521984"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><mtext>lower&#160;bound,&#160;upper&#160;bound)</mtext><mo>=</mo><mo stretchy="false">(</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>,</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>+</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>&#8211;</mo><mi>z</mi><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+    <mo>,</mo><mo>&#160;</mo><msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>+</mo><mi>z</mi><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><mtext>lower&#160;bound,&#160;upper&#160;bound)</mtext><mo>=</mo><mo stretchy="false">(</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>&#8211;</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo>,</mo><msup>
+   <mi>p</mi>
+   <mo>&#8242;</mo>
+  </msup>
+  <mo>+</mo><mi>E</mi><mi>B</mi><mi>P</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>&#8211;</mo><mi>z</mi><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+    <mo>,</mo><mo>&#160;</mo><msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <mo>+</mo><mi>z</mi><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <msup>
+         <mi>p</mi>
+         <mo>&#8242;</mo>
+        </msup>
+        <msup>
+         <mi>q</mi>
+         <mo>&#8242;</mo>
+        </msup>
+
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></p>
+ <p id="eip-idm111094496"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>n</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+    <msup>
+     <mrow/>
+     <mn>2</mn>
+    </msup>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <msup>
+     <mi>q</mi>
+     <mo>&#8242;</mo>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mi>E</mi><mi>B</mi><msup>
+     <mi>P</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>n</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+    <msup>
+     <mrow/>
+     <mn>2</mn>
+    </msup>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <msup>
+     <mi>q</mi>
+     <mo>&#8242;</mo>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mi>E</mi><mi>B</mi><msup>
+     <mi>P</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> provides the number of participants needed to estimate the population proportion with confidence 1 - <em data-effect="italics">&#945;</em> and margin of error <em data-effect="italics">EBP</em>.</p>
+
+<p id="eip-340">Use the normal distribution for a single population proportion <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <mi>p</mi><mo>&#8242;</mo><mo>&#160;</mo><mo>=</mo><mfrac>
+    <mi>x</mi>
+    <mi>n</mi>
+   </mfrac>
+
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <mi>p</mi><mo>&#8242;</mo><mo>&#160;</mo><mo>=</mo><mfrac>
+    <mi>x</mi>
+    <mi>n</mi>
+   </mfrac>
+
+  </mrow></annotation-xml></semantics></math></p>
+ <p id="eip-970"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <msub>
+      <mi>z</mi>
+      <mrow>
+       <mfrac>
+        <mi>&#945;</mi>
+        <mn>2</mn>
+       </mfrac>
+
+      </mrow>
+     </msub>
+
+    </mrow>
+    <mo>)</mo></mrow><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mi>p</mi><mo>&#8242;</mo><mi>q</mi><mo>&#8242;</mo>
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+   <mo>&#160;</mo><mi>p</mi><mo>&#8242;</mo><mo>+</mo><mi>q</mi><mo>&#8242;</mo><mo>=</mo><mn>1</mn>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <msub>
+      <mi>z</mi>
+      <mrow>
+       <mfrac>
+        <mi>&#945;</mi>
+        <mn>2</mn>
+       </mfrac>
+
+      </mrow>
+     </msub>
+
+    </mrow>
+    <mo>)</mo></mrow><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mi>p</mi><mo>&#8242;</mo><mi>q</mi><mo>&#8242;</mo>
+       </mrow>
+       <mi>n</mi>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+   <mo>&#160;</mo><mi>p</mi><mo>&#8242;</mo><mo>+</mo><mi>q</mi><mo>&#8242;</mo><mo>=</mo><mn>1</mn>
+  </mrow></annotation-xml></semantics></math></p>
+ <p id="eip-93">The confidence interval has the format (<em data-effect="italics">p&#8242;</em> &#8211; <em data-effect="italics">EBP</em>, <em data-effect="italics">p&#8242;</em> + <em data-effect="italics">EBP</em>).</p>
+  <p id="eip-121"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo stretchy="true">&#175;</mo>
+  </mover>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo stretchy="true">&#175;</mo>
+  </mover>
+ </mrow></annotation-xml></semantics></math> is a point estimate for <em data-effect="italics">&#956;</em></p>
+ <p id="eip-285"><em data-effect="italics">p&#8242;</em> is a point estimate for <em data-effect="italics">&#961;</em></p>
+ <p id="eip-401"><em data-effect="italics">s</em> is a point estimate for <em data-effect="italics">&#963;</em></p>
+</section>
+<section data-depth="1" id="eip-515" class="practice">
+  <p id="eip-246"><em data-effect="italics">Use the following information to answer the next two exercises:</em> Marketing companies are interested in knowing the population percent of women who make the majority of household purchasing decisions.</p>
+<div data-type="exercise" id="eip-506"><div data-type="problem" id="eip-9">
+  <p id="eip-581">
+When designing a study to determine this population proportion, what is the minimum number you would need to survey to be 90% confident that the population proportion is estimated to within 0.05?
+  </p>
+</div>
+</div><div data-type="exercise" id="eip-523"><div data-type="problem" id="eip-263">
+  <p id="eip-924">
+If it were later determined that it was important to be more than 90% confident and a new survey were commissioned, how would it affect the minimum number you need to survey? Why?
+  </p>
+</div>
+<div data-type="solution" id="eip-204">
+  <p id="eip-269">It would decrease, because the z-score would decrease, which reducing the numerator and lowering the number.</p>
+</div>
+</div>
+ <p id="eip-471"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next five exercises:</em> Suppose the marketing company did do a survey. They randomly surveyed 200 households and found that in 120 of them, the woman made the majority of the purchasing decisions. We are interested in the population proportion of households where women make the majority of the purchasing decisions.</p><div data-type="exercise" id="eip-616"><div data-type="problem" id="eip-108">
+  <p id="eip-293">
+Identify the following:
+  </p>
+  <ol id="fs-idm88953968" type="a">
+  <li><em data-effect="italics">x</em> = ______</li>
+  <li><em data-effect="italics">n</em> = ______</li>
+   <li><em data-effect="italics">p&#8242;</em> = ______</li>
+  </ol>
+</div>
+</div><div data-type="exercise" id="eip-55"><div data-type="problem" id="eip-818">
+ <p id="eip-idp4012128">Define the random variables <em data-effect="italics">X</em> and <em data-effect="italics">P&#8242;</em> in words.</p>
+</div>
+<div data-type="solution" id="eip-907">
+ <p id="eip-idm101446224"><em data-effect="italics">X</em> is the number of &#8220;successes&#8221; where the woman makes the majority of the purchasing decisions for the household. <em data-effect="italics">P</em>&#8242; is the percentage of households sampled where the woman makes the majority of the purchasing decisions for the household.</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-733"><div data-type="problem" id="eip-758">
+<p id="eip-idp9191824">Which distribution should you use for this problem?</p>
+</div>
+</div><div data-type="exercise" id="eip-151"><div data-type="problem" id="eip-216">
+<p id="eip-idp83214256">Construct a 95% confidence interval for the population proportion of households where the women make the majority of the purchasing decisions. State the confidence interval, sketch the graph, and calculate the error bound.</p>
+</div>
+<div data-type="solution" id="eip-208">
+<p id="eip-idp62067840">CI: (0.5321, 0.6679)</p>
+<figure id="fs-idp73910688"><span data-type="media" id="eip-idp62068224" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 0.6 on the horizontal axis.  A central region is shaded between points 0.5321 and 0.6679."><img src="/resources/7ef8255e4404dde35a46807785836e4fd66ca7ec/CNX_Stats_C08_M04_item002annoN.jpg" data-media-type="image/jpeg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 0.6 on the horizontal axis.  A central region is shaded between points 0.5321 and 0.6679." width="380"/></span></figure>
+<p id="eip-idp97751072"><em data-effect="italics">EBM</em>: 0.0679</p></div>
+</div>
+
+ <div data-type="exercise" id="eip-839"><div data-type="problem" id="eip-166">
+  <p id="eip-idp170819776">List two difficulties the company might have in obtaining random results, if this survey were done by email.</p>
+</div>
+</div><p id="eip-488"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next five exercises:</em> Of 1,050 randomly selected adults, 360 identified themselves as manual laborers, 280 identified themselves as non-manual wage earners, 250 identified themselves as mid-level managers, and 160 identified themselves as executives. In the survey, 82% of manual laborers preferred trucks, 62% of non-manual wage earners preferred trucks, 54% of mid-level managers preferred trucks, and 26% of executives preferred trucks.
+</p><div data-type="exercise" id="eip-115"><div data-type="problem" id="eip-837">
+ <p id="eip-idm93454256">We are interested in finding the 95% confidence interval for the percent of executives who prefer trucks. Define random variables <em data-effect="italics">X</em> and <em data-effect="italics">P</em>&#8242; in words.</p>
+</div>
+<div data-type="solution" id="eip-307">
+ <p id="eip-idp374416"><em data-effect="italics">X</em> is the number of &#8220;successes&#8221; where an executive prefers a truck. <em data-effect="italics">P</em>&#8242; is the percentage of executives sampled who prefer a truck.</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-47"><div data-type="problem" id="eip-638">
+<p id="eip-idm12643968">Which distribution should you use for this problem?</p>
+</div>
+</div><div data-type="exercise" id="eip-593">
+<div data-type="problem" id="eip-434">
+<p id="eip-idp15976608">Construct a 95% confidence interval. State the confidence interval, sketch the graph, and calculate the error bound.</p>
+</div>
+<div data-type="solution" id="eip-284">
+<p id="eip-idp28777568">CI: (0.19432, 0.33068)</p>
+<figure id="fs-idm39446528"><span data-type="media" id="eip-idp150796640" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 0.26 on the horizontal axis.  A central region is shaded between points 0.1943 and 0.3307."><img src="/resources/b9f2a364aa2940fa352a641d6a49ab5ea18267eb/CNX_Stats_C08_M04_item002anno.jpg" data-media-type="image/jpeg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 0.26 on the horizontal axis.  A central region is shaded between points 0.1943 and 0.3307." width="380"/></span></figure>
+<p id="eip-idp173934176"><em data-effect="italics">EBM</em>: 0.0707</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-218"><div data-type="problem" id="eip-768">
+<p id="eip-idp111500528">Suppose we want to lower the sampling error. What is one way to accomplish that?</p>
+</div>
+</div><div data-type="exercise" id="eip-978"><div data-type="problem" id="eip-261">
+<p id="eip-idm82424912">The sampling error given in the survey is &#177;2%. Explain what the &#177;2% means.</p>
+</div>
+<div data-type="solution" id="eip-188">
+<p id="eip-idp36786320">The sampling error means that the true mean can be 2% above or below the sample mean.</p>
+</div>
+</div>
+ <p id="eip-770"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next five exercises:</em> A poll of 1,200 voters asked what the most significant issue was in the upcoming election. Sixty-five percent answered the economy. We are interested in the population proportion of voters who feel the economy is the most important.</p><div data-type="exercise" id="eip-808"><div data-type="problem" id="eip-294">
+<p id="eip-idp73640048">Define the random variable <em data-effect="italics">X</em> in words.</p>
+</div>
+</div><div data-type="exercise" id="eip-94"><div data-type="problem" id="eip-929">
+ <p id="eip-idp47473088">Define the random variable <em data-effect="italics">P</em>&#8242; in words.</p>
+</div>
+<div data-type="solution" id="eip-944">
+ <p id="eip-idp31035264"><em data-effect="italics">P</em>&#8242; is the proportion of voters sampled who said the economy is the most important issue in the upcoming election.</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-425"><div data-type="problem" id="eip-398">
+<p id="eip-idm26324624">Which distribution should you use for this problem?</p>
+</div>
+</div><div data-type="exercise" id="eip-820"><div data-type="problem" id="eip-679">
+<p id="eip-idp659904">Construct a 90% confidence interval, and state the confidence interval and the error bound.</p>
+</div>
+<div data-type="solution" id="eip-87">
+<p id="eip-idp108579488">CI: (0.62735, 0.67265)</p>
+<p id="eip-idp108579872"><em data-effect="italics">EBM</em>: 0.02265</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-209"><div data-type="problem" id="eip-65">
+<p id="eip-idp87563392">What would happen to the confidence interval if the level of confidence were 95%?</p>
+</div>
+</div><p id="fs-idp85734416"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next 16 exercises:</em> The Ice Chalet offers dozens of different beginning ice-skating classes. All of the class names are put into a bucket. The 5 P.M., Monday night, ages 8 to 12, beginning ice-skating class was picked. In that class were 64 girls and 16 boys. Suppose that we are interested in the true proportion of girls, ages 8 to 12, in all beginning ice-skating classes at the Ice Chalet. Assume that the children in the selected class are a random sample of the population.</p><div data-type="exercise" id="element-193"><div data-type="problem" id="id8180231">
+  <p id="element-79">What is being counted?</p>
+</div>
+ <div data-type="solution" id="fs-idp114007216">
+  <p id="fs-idp114007472">The number of girls, ages 8 to 12, in the 5 P.M. Monday night beginning ice-skating class.</p>
+ </div>
+</div>
+<div data-type="exercise" id="element-708"><div data-type="problem" id="id3220390">
+  <p id="element-976">In words, define the random variable <em data-effect="italics">X</em>.</p>
+</div>
+</div><div data-type="exercise" id="element-138"><div data-type="problem" id="id9755908">
+<p id="element-23523">
+Calculate the following:
+ </p><ol id="fs-idp23913648" type="a">
+  <li><em data-effect="italics">x</em> = _______</li>
+  <li><em data-effect="italics">n</em> = _______</li>
+  <li><em data-effect="italics">p</em>&#8242; = _______</li>
+</ol>
+</div>
+<div data-type="solution" id="id3263628">
+ <ol id="fs-idp45823456" type="a">
+  <li><em data-effect="italics">x</em> = 64</li>
+  <li><em data-effect="italics">n</em> = 80</li>
+  <li><em data-effect="italics">p</em>&#8242; = 0.8</li>
+ </ol>
+</div>
+</div>
+<div data-type="exercise" id="element-296"><div data-type="problem" id="id8027106">
+  <p id="element-99">State the estimated distribution of <em data-effect="italics">X</em>. <em data-effect="italics">X</em>~________</p></div>
+</div><div data-type="exercise" id="element-324"><div data-type="problem" id="id3370663">
+ <p id="element-84">Define a new random variable <em data-effect="italics">P</em>&#8242;. What is <em data-effect="italics">p</em>&#8242; estimating?
+ </p>
+</div>
+<div data-type="solution" id="id3301619">
+  <p id="element-393"><em data-effect="italics">p</em></p>
+</div>
+</div>
+<div data-type="exercise" id="element-257"><div data-type="problem" id="id3304622">
+ <p id="element-442">In words, define the random variable <em data-effect="italics">P</em>&#8242;.</p>
+</div>
+</div><div data-type="exercise" id="element-759">
+ <div data-type="problem" id="id9812677">
+ <p id="element-678">State the estimated distribution of <em data-effect="italics">P</em>&#8242;. Construct a 92% Confidence Interval for the true proportion of girls in the ages 8 to 12 beginning ice-skating classes at the Ice Chalet.</p>
+</div>
+<div data-type="solution" id="fs-idm95519424">
+ <p id="fs-idm36051552"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <msup>
+    <mi>P</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>~</mo><mi>N</mi><mo stretchy="true">(</mo><mn>0.8</mn><mo>,</mo><msqrt>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <mo stretchy="true">(</mo><mn>0.8</mn><mo stretchy="true">)</mo><mo stretchy="false">(</mo><mn>0.2</mn><mo stretchy="true">)</mo>
+      </mrow>
+      <mrow>
+       <mn>80</mn>
+      </mrow>
+     </mfrac>
+
+    </mrow>
+   </msqrt>
+   <mo stretchy="true">)</mo>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <msup>
+    <mi>P</mi>
+    <mo>&#8242;</mo>
+   </msup>
+   <mo>~</mo><mi>N</mi><mo stretchy="true">(</mo><mn>0.8</mn><mo>,</mo><msqrt>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <mo stretchy="true">(</mo><mn>0.8</mn><mo stretchy="true">)</mo><mo stretchy="false">(</mo><mn>0.2</mn><mo stretchy="true">)</mo>
+      </mrow>
+      <mrow>
+       <mn>80</mn>
+      </mrow>
+     </mfrac>
+
+    </mrow>
+   </msqrt>
+   <mo stretchy="true">)</mo>
+  </mrow></annotation-xml></semantics></math>. (0.72171, 0.87829).</p></div>
+</div>
+<div data-type="exercise" id="element-669"><div data-type="problem" id="id9812907">
+  <p id="element-480">How much area is in both tails (combined)?</p>
+</div>
+</div><div data-type="exercise" id="element-364"><div data-type="problem" id="id3366191">
+  <p id="element-382">How much area is in each tail?</p>
+</div>
+<div data-type="solution" id="id3371993">
+  <p id="element-176">0.04</p>
+</div>
+</div>
+
+ <div data-type="exercise" id="element-709"><div data-type="problem" id="id3722586">
+<p id="element-23487325">Calculate the following:
+ </p><ol id="list-876238746" type="a">
+  <li>lower limit</li>
+  <li>upper limit</li>
+  <li>error bound</li>
+</ol>
+</div>
+</div><div data-type="exercise" id="element-846"><div data-type="problem" id="id8490179">
+ <p id="element-622">The 92% confidence interval is _______.
+ </p></div>
+<div data-type="solution" id="id9759141">
+  <p id="element-255">(0.72; 0.88)
+  </p></div>
+</div>
+ <div data-type="exercise" id="element-592"><div data-type="problem" id="id9759165">
+  <p id="element-373">Fill in the blanks on the graph with the areas, upper and lower limits of the confidence interval, and the sample proportion.</p>
+<figure id="five-Ohno"><span data-type="media" id="id7994111" data-alt="Normal distribution curve with two vertical upward lines from the x-axis to the curve. The confidence interval is between these two lines. The residual areas are on either side."><img src="/resources/0560f8125d1a227a27fab71117e832078097fc0f/fig-ch08_08_01.jpg" data-media-type="image/jpg" alt="Normal distribution curve with two vertical upward lines from the x-axis to the curve. The confidence interval is between these two lines. The residual areas are on either side." width="380"/></span></figure>
+</div>
+ </div><div data-type="exercise" id="element-733"><div data-type="problem" id="id9811149">
+  <p id="element-17">
+  In one complete sentence, explain what the interval means.
+  </p>
+ </div>
+  <div data-type="solution" id="fs-idp27973488"><p id="fs-idp27973616">With 92% confidence, we estimate the proportion of girls, ages 8 to 12, in a beginning ice-skating class at the Ice Chalet to be between 72% and 88%.</p></div>
+</div>
+<div data-type="exercise" id="element-577"><div data-type="problem" id="id5516509">
+ <p id="element-707">Using the same <em data-effect="italics">p</em>&#8242; and level of confidence, suppose that <em data-effect="italics">n</em> were increased to 100. Would the error bound become larger or smaller? How do you know?
+ </p>
+</div>
+
+
+</div><div data-type="exercise" id="element-478"><div data-type="problem" id="id9923031">
+  <p id="element-717">Using the same <em data-effect="italics">p</em>&#8242; and <em data-effect="italics">n</em> = 80, how would the error bound change if the confidence level were increased to 98%? Why?
+  </p></div>
+  <div data-type="solution" id="fs-idm19388800"><p id="fs-idm19388672">The error bound would increase.  Assuming all other variables are kept constant, as the confidence level increases, the area under the curve corresponding to the confidence level becomes larger, which creates a wider interval and thus a larger error.</p></div>
+</div><div data-type="exercise" id="element-154"><div data-type="problem" id="id3186484">
+  <p id="element-588">If you decreased the allowable error bound, why would the minimum sample size increase (keeping the same level of confidence)?</p>
+</div>
+</div></section>
+<section data-depth="1" id="fs-idm34727072" class="free-response"><h3 data-type="title">Homework</h3>
+<div data-type="exercise" id="eip-77"><div data-type="problem" id="eip-474">
+  <p id="eip-909">
+    Insurance companies are interested in knowing the population percent of drivers who always buckle up before riding in a car.</p>
+ <ol id="fs-idm156928880" type="a">
+<li>When designing a study to determine this population proportion, what is the minimum number you would need to survey to be 95% confident that the population proportion is estimated to within 0.03?</li>
+<li>If it were later determined that it was important to be more than 95% confident and a new survey was commissioned, how would that affect the minimum number you would need to survey? Why?</li>
+</ol>
+</div>
+
+ <div data-type="solution" id="fs-idm22600112">
+  <ol id="fs-idm22599856" type="a">
+   <li>1,068</li>
+   <li>The sample size would need to be increased since the critical value increases as the confidence level increases.</li>
+  </ol>
+ </div>
+
+</div>
+  <div data-type="exercise" id="eip-344"><div data-type="problem" id="eip-396">
+  <p id="eip-1">Suppose that the insurance companies did do a survey. They randomly surveyed 400 drivers and found that 320 claimed they always buckle up. We are interested in the population proportion of drivers who claim they always buckle up.</p>
+ <ol id="eip-idp159069360" type="a">
+  <li><ol id="eip-idp141224128" type="i">
+<li><em data-effect="italics">x</em> = __________</li>
+<li><em data-effect="italics">n</em> = __________</li>
+   <li><em data-effect="italics">p</em>&#8242; = __________</li>
+  </ol>
+  </li>
+  <li>Define the random variables <em data-effect="italics">X</em> and <em data-effect="italics">P</em>&#8242;, in words.</li>
+<li>Which distribution should you use for this problem? Explain your choice.</li>
+<li>Construct a 95% confidence interval for the population proportion who claim they always buckle up.
+ <ol id="eip-idp7029968" type="i">
+<li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+</ol>
+</li>
+<li>If this survey were done by telephone, list three difficulties the companies might have in obtaining random results.</li>
+</ol>
+</div>
+ </div><div data-type="exercise" id="exerc4"><div data-type="problem" id="id5938058">
+   <p id="para31">According to a recent survey of 1,200 people, 61% feel that the president is doing an acceptable job. We are interested in the population proportion of people who feel the president is doing an acceptable job.</p>
+<ol id="list31" type="a">
+  <li>Define the random variables <em data-effect="italics">X</em> and <em data-effect="italics">P</em>&#8242; in words.</li>
+<li>Which distribution should you use for this problem? Explain your choice.</li>
+<li>Construct a 90% confidence interval for the population proportion of people who feel the president is doing an acceptable job.
+<ol id="list32" type="i">
+ <li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li></ol></li>
+</ol></div>
+ <div data-type="solution" id="id6199005">
+<ol id="list_solution" type="a">
+  <li>
+   <p id="fs-idm2730480"><em data-effect="italics">X</em> = the number of people who feel that the president is doing an acceptable job;</p>
+   <p id="fs-idm2729840"><em data-effect="italics">P</em>&#8242; = the proportion of people in a sample who feel that the president is doing an acceptable job.</p>
+  </li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mn>0.61</mn><mo>,</mo><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>0.61</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.39</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mrow>
+        <mn>1200</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mn>0.61</mn><mo>,</mo><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>0.61</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.39</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mrow>
+        <mn>1200</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></li>
+  <li>
+   <ol id="list_solution1" type="i">
+   <li>CI: (0.59, 0.63)</li>
+    <li>Check student&#8217;s solution</li>
+    <li><em data-effect="italics">EBM</em>: 0.02</li>
+   </ol>
+  </li></ol></div>
+ </div><div data-type="exercise" id="eip-idp49345824"><div data-type="problem" id="eip-idp49345952">
+ <p id="eip-idp49346080">An article regarding interracial dating and marriage recently appeared in the <span data-type="cite-title">Washington Post</span>. Of the 1,709 randomly selected adults, 315 identified themselves as Latinos, 323 identified themselves as blacks, 254 identified themselves as Asians, and 779 identified themselves as whites. In this survey, 86% of blacks said that they would welcome a white person into their families. Among Asians, 77% would welcome a white person into their families, 71% would welcome a Latino, and 66% would welcome a black person.</p>
+   <ol id="eip-idm65104512" type="a"><li>We are interested in finding the 95% confidence interval for the percent of all black adults who would welcome a white person into their families. Define the random variables <em data-effect="italics">X</em> and <em data-effect="italics">P</em>&#8242;, in words.</li>
+<li>Which distribution should you use for this problem? Explain your choice.</li>
+<li>Construct a 95% confidence interval.
+ <ol id="eip-idm5084416" type="i">
+  <li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+ </ol>
+</li>
+  </ol></div>
+ </div><div data-type="exercise" id="exe1"><div data-type="problem" id="id5306840">
+   <p id="para37">Refer to  the information in <a href="#eip-idp49345824" class="autogenerated-content">[link]</a>.</p><ol id="list37" type="a">
+<li>Construct three 95% confidence intervals.
+ <ol id="eip-id1164398498310" type="i">
+  <li>percent of all Asians who would welcome a white person into their families.</li>
+  <li>percent of all Asians who would welcome a Latino into their families.</li>
+  <li>percent of all Asians who would welcome a black person into their families.</li>
+  </ol>
+</li>
+<li>Even though the three point estimates are different, do any of the confidence intervals overlap? Which?</li>
+<li>For any intervals that do overlap, in words, what does this imply about the significance of the differences in the true proportions?</li>
+<li>For any intervals that do not overlap, in words, what does this imply about the significance of the differences in the true proportions?</li>
+</ol>
+  </div>
+  <div data-type="solution" id="fs-idp39314896">
+   <ol id="fs-idm25153232" type="a">
+    <li>
+     <ol id="fs-idm25152352" type="i">
+      <li>(0.72, 0.82)</li>
+      <li>(0.65, 0.76)</li>
+      <li>(0.60, 0.72)</li>
+     </ol>
+    </li>
+    <li>Yes, the intervals (0.72, 0.82) and (0.65, 0.76) overlap, and the intervals (0.65, 0.76) and (0.60, 0.72) overlap.</li>
+    <li>We can say that there does not appear to be a significant difference between the proportion of Asian adults who say that their families would welcome a white person into their families and the proportion of Asian adults who say that their families would welcome a Latino person into their families.</li>
+    <li>We can say that there is a significant difference between the proportion of Asian adults who say that their families would welcome a white person into their families and the proportion of Asian adults who say that their families would welcome a black person into their families.</li>
+   </ol>
+  </div>
+</div><div data-type="exercise" id="exerr1"><div data-type="problem" id="id5266159">
+<p id="para41">Stanford University conducted a study of whether running is healthy for men and women over age 50. During the first eight years of the study, 1.5% of the 451 members of the 50-Plus Fitness Association died. We are interested in the proportion of people over 50 who ran and died in the same eight-year period.</p>
+<ol id="list41_5" type="a">
+  <li>Define the random variables <em data-effect="italics">X</em> and <em data-effect="italics">P</em>&#8242; in words.</li>
+      <li>Which distribution should you use for this problem? Explain your choice.</li>
+      <li>Construct a 97% confidence interval for the population proportion of people over 50 who ran and died in the same eight&#8211;year period.
+       <ol id="list42" type="i">
+        <li>State the confidence interval.</li>
+        <li>Sketch the graph.</li>
+        <li>Calculate the error bound.</li>
+       </ol>
+      </li>
+<li>Explain what a &#8220;97% confidence interval&#8221; means for this study.</li></ol>
+</div>
+</div><div data-type="exercise" id="exercise111"><div data-type="problem" id="id5280738">
+  <p id="para45">A telephone poll of 1,000 adult Americans was reported in an issue of <span data-type="cite-title">Time Magazine</span>. One of the questions asked was &#8220;What is the main problem facing the country?&#8221; Twenty percent answered &#8220;crime.&#8221; We are interested in the population proportion of adult Americans who feel that crime is the main problem.</p>
+ <ol id="list45" type="a">
+  <li>Define the random variables <em data-effect="italics">X</em> and <em data-effect="italics">P</em>&#8242; in words.</li>
+      <li>Which distribution should you use for this problem? Explain your choice.</li>
+  <li>Construct a 95% confidence interval for the population proportion of adult Americans who feel that crime is the main problem.
+   <ol id="list45_5" type="i">
+<li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+  </ol></li>
+<li>Suppose we want to lower the sampling error. What is one way to accomplish that?</li>
+<li>The sampling error given by Yankelovich Partners, Inc. (which conducted the poll) is &#177;3%. In one to three complete sentences, explain what the &#177;3% represents.</li>
+    </ol>
+ </div>
+ <div data-type="solution" id="fs-idm130896">
+  <ol id="fs-idm130640" type="a"><li> <em data-effect="italics">X</em> = the number of adult Americans who feel that crime is the main problem; <em data-effect="italics">P&#8242;</em> = the proportion of adult Americans who feel that crime is the main problem</li>
+    <li>Since we are estimating a proportion, given <em data-effect="italics">P&#8242;</em> = 0.2 and <em data-effect="italics">n</em> = 1000, the distribution we should use is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mn>0.2</mn><mo>,</mo><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>0.2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.8</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mrow>
+        <mn>1000</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>N</mi><mrow><mo>(</mo>
+   <mrow>
+    <mn>0.2</mn><mo>,</mo><msqrt>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>0.2</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.8</mn><mo stretchy="false">)</mo>
+       </mrow>
+       <mrow>
+        <mn>1000</mn>
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math>.</li>
+    <li>
+     <ol id="fs-idm23582576" type="i">
+      <li>CI: (0.18, 0.22)</li>
+      <li>Check student&#8217;s solution.</li>
+      <li><em data-effect="italics">EBM</em>: 0.02</li>
+     </ol>
+    </li>
+    <li>One way to lower the sampling error is to increase the sample size.</li>
+    <li>The stated &#8220;&#177; 3%&#8221; represents the maximum error bound.  This means that those doing the study are reporting a maximum error of 3%.  Thus, they estimate the percentage of adult Americans who feel that crime is the main problem to be between 18% and 22%.</li>
+  </ol></div>
+</div>
+<div data-type="exercise" id="exerrrrcise1"><div data-type="problem" id="id5247798">
+  <p id="para47">Refer to <a href="#exercise111" class="autogenerated-content">[link]</a>. Another question in the poll was &#8220;[How much are] you worried about the quality of education in our schools?&#8221; Sixty-three percent responded &#8220;a lot&#8221;. We are interested in the population proportion of adult Americans who are worried a lot about the quality of education in our schools.</p><ol id="list47" type="a">
+   <li>Define the random variables <em data-effect="italics">X</em> and <em data-effect="italics">P</em>&#8242; in words.</li>
+      <li>Which distribution should you use for this problem? Explain your choice.</li>
+      <li>Construct a 95% confidence interval for the population proportion of adult Americans who are worried a lot about the quality of education in our schools.
+       <ol id="list47_5" type="i">
+        <li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+       </ol>
+      </li>
+<li>The sampling error given by Yankelovich Partners, Inc. (which conducted the poll) is &#177;3%. In one to three complete sentences, explain what the &#177;3% represents. </li></ol>
+
+</div>
+</div><p id="id7660726"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next three exercises:</em> According to a Field Poll, 79% of California adults (actual results are 400 out of 506 surveyed) feel that &#8220;education and our schools&#8221; is one of the top issues facing California. We wish to construct a 90% confidence interval for the true proportion of California adults who feel that education and the schools is one of the top issues facing California.</p><div data-type="exercise" id="exercise3289720"><div data-type="problem" id="id6273772">
+ <p id="para52">A point estimate for the true population proportion is:</p>
+<ol id="list52" type="a">
+  <li>0.90</li>
+  <li>1.27</li>
+  <li>0.79</li>
+  <li>400</li>
+ </ol></div>
+<div data-type="solution" id="id5608706">
+ <p id="sol11">c</p>
+</div>
+</div><div data-type="exercise" id="eip-idm27625664"><div data-type="problem" id="eip-idm27625536">
+<p id="eip-idm27625408">A 90% confidence interval for the population proportion is _______.</p>
+<ol id="eip-idm10149840" type="a">
+ <li>(0.761, 0.820)</li>
+<li>(0.125, 0.188)</li>
+<li>(0.755, 0.826)</li>
+<li>(0.130, 0.183)</li></ol>
+</div>
+ </div><div data-type="exercise" id="eeexxxx"><div data-type="problem" id="id5222734">
+<p id="para56">The error bound is approximately _____.</p>
+<ol id="list56" type="a">
+   <li>1.581</li>
+<li>0.791</li>
+<li>0.059</li>
+<li>0.030</li></ol>
+ </div>
+<div data-type="solution" id="id6332368">
+ <p id="sol11aa">d</p>
+</div>
+  </div><p id="id7661014"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next two exercises:</em> Five hundred and eleven (511) homes in a certain southern California community are randomly surveyed to determine if they meet minimal earthquake preparedness recommendations. One hundred seventy-three (173) of the homes surveyed met the minimum recommendations for earthquake preparedness, and 338 did not.</p><div data-type="exercise" id="exercising1"><div data-type="problem" id="id6353916">
+      <p id="para64">Find the confidence interval at the 90% Confidence Level for the true population proportion of southern California community homes meeting at least the minimum recommendations for earthquake preparedness.</p>
+<ol id="list64" type="a"><li>(0.2975, 0.3796)</li>
+<li>(0.6270, 0.6959)</li>
+<li>(0.3041, 0.3730)</li>
+<li>(0.6204, 0.7025)</li></ol></div>
+    </div><div data-type="exercise" id="exer12345"><div data-type="problem" id="id5970138"><p id="para66">The point estimate for the population proportion of homes that do not meet the minimum recommendations for earthquake preparedness is ______.</p>
+<ol id="list66" type="a">
+       <li>0.6614</li>
+<li>0.3386</li>
+<li>173</li>
+<li>338</li></ol>
+</div>
+<div data-type="solution" id="id6170513">
+ <p id="sol11jjkkasdf">a</p>
+</div>
+    </div><div data-type="exercise" id="eip-44"><div data-type="problem" id="eip-123">
+  <p id="eip-54">On May 23, 2013, Gallup reported that of the 1,005 people surveyed, 76% of U.S. workers believe that they will continue working past retirement age. The confidence level for this study was reported at 95% with a &#177;3% margin of error.</p>
+<ol id="eip-idp139727584424128" type="a">
+ <li>Determine the estimated proportion from the sample.</li>
+	<li>Determine the sample size.</li>
+	<li>Identify <em data-effect="italics">CL</em> and <em data-effect="italics">&#945;</em>.</li>
+	<li>Calculate the error bound based on the information provided.</li>
+	<li>Compare the error bound in part d to the margin of error reported by Gallup. Explain any differences between the values.</li>
+	<li>Create a confidence interval for the results of this study.</li>
+	<li>A reporter is covering the release of this study for a local news station. How should she explain the confidence interval to her audience?</li>
+</ol>
+</div>
+
+   </div><div data-type="exercise" id="eip-126"><div data-type="problem" id="eip-785">
+  <p id="eip-804">A national survey of 1,000 adults was conducted on May 13, 2013 by Rasmussen Reports. It concluded with 95% confidence that 49% to 55% of Americans believe that big-time college sports programs corrupt the process of higher education.</p>
+<ol id="eip-idp36043200" type="a">
+<li>Find the point estimate and the error bound for this confidence interval.</li>
+<li>Can we (with 95% confidence) conclude that more than half of all American adults believe this?</li>
+<li>Use the point estimate from part a and <em data-effect="italics">n</em> = 1,000 to calculate a 75% confidence interval for the proportion of American adults that believe that major college sports programs corrupt higher education.</li>
+<li>Can we (with 75% confidence) conclude that at least half of all American adults believe this?</li>
+</ol>
+</div>
+<div data-type="solution" id="eip-746">
+ <ol id="eip-idp44228944" type="a"><li><em data-effect="italics">p&#8242;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <mfrac>
+    <mrow>
+     <mtext>(0</mtext><mtext>.55&#160;+&#160;0</mtext><mtext>.49)</mtext>
+    </mrow>
+    <mtext>2</mtext>
+   </mfrac>
+
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <mfrac>
+    <mrow>
+     <mtext>(0</mtext><mtext>.55&#160;+&#160;0</mtext><mtext>.49)</mtext>
+    </mrow>
+    <mtext>2</mtext>
+   </mfrac>
+
+  </mrow></annotation-xml></semantics></math> = 0.52; <em data-effect="italics">EBP</em> = 0.55 - 0.52 = 0.03</li>
+<li>No, the confidence interval includes values less than or equal to 0.50. It is possible that less than half of the population believe this.</li>
+<li><em data-effect="italics">CL</em> = 0.75, so <em data-effect="italics">&#945;</em> = 1 &#8211; 0.75 = 0.25 and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+  <mo>=</mo><mn>0.125</mn><mo>&#160;</mo><msub>
+   <mi>z</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo>=</mo><mn>1.150</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+  <mo>=</mo><mn>0.125</mn><mo>&#160;</mo><msub>
+   <mi>z</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo>=</mo><mn>1.150</mn>
+ </mrow></annotation-xml></semantics></math>. (The area to the right of this <em data-effect="italics">z</em> is 0.125, so the area to the left is 1 &#8211; 0.125 = 0.875.)
+<div data-type="newline"><br/></div><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mo stretchy="false">(</mo><mn>1.150</mn><mo stretchy="false">)</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mn>0.52</mn><mo stretchy="false">(</mo><mn>0.48</mn><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <mn>1</mn><mo>,</mo><mn>000</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>&#8776;</mo><mn>0.018</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>P</mi><mo>=</mo><mo stretchy="false">(</mo><mn>1.150</mn><mo stretchy="false">)</mo><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mn>0.52</mn><mo stretchy="false">(</mo><mn>0.48</mn><mo stretchy="false">)</mo>
+     </mrow>
+     <mrow>
+      <mn>1</mn><mo>,</mo><mn>000</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+  <mo>&#8776;</mo><mn>0.018</mn>
+ </mrow></annotation-xml></semantics></math>
+
+  <div data-type="newline"><br/></div>(<em data-effect="italics">p</em>&#8242; - <em data-effect="italics">EBP</em>, <em data-effect="italics">p</em>&#8242; + <em data-effect="italics">EBP</em>) = (0.52 &#8211; 0.018, 0.52 + 0.018) = (0.502, 0.538)
+<p id="eip-idp88904352">Alternate Solution</p>
+<div data-type="note" data-has-label="true" id="fs-idp94228912" class="statistics calculator" data-label="">
+   <p id="fs-idm22151456">STAT TESTS A: 1-PropZinterval with <em data-effect="italics">x</em> = (0.52)(1,000), <em data-effect="italics">n</em> = 1,000, CL = 0.75.</p>
+    <p id="fs-idm20874816">Answer is (0.502, 0.538)</p>
+</div>
+</li>
+<li>Yes &#8211; this interval does not fall less than 0.50 so we can conclude that at least half of all American adults believe that major sports programs corrupt education &#8211; but we do so with only 75% confidence.</li>
+</ol></div>
+</div><div data-type="exercise" id="eip-571"><div data-type="problem" id="eip-111">
+  <p id="eip-154">Public Policy Polling recently conducted a survey asking adults across the U.S. about music preferences. When asked, 80 of the 571 participants admitted that they have illegally downloaded music.</p>
+<ol id="eip-idm613264" type="a">
+ <li>Create a 99% confidence interval for the true proportion of American adults who have illegally downloaded music.</li>
+<li>This survey was conducted through automated telephone interviews on May 6 and 7, 2013. The error bound of the survey compensates for sampling error, or natural variability among samples. List some factors that could affect the survey&#8217;s outcome that are not covered by the margin of error.</li>
+<li>Without performing any calculations, describe how the confidence interval would change if the confidence level changed from 99% to 90%. </li>
+</ol>
+</div>
+</div><div data-type="exercise" id="eip-934"><div data-type="problem" id="eip-507">
+  <p id="eip-754">You plan to conduct a survey on your college campus to learn about the political awareness of students. You want to estimate the true proportion of college students on your campus who voted in the 2012 presidential election with 95% confidence and a margin of error no greater than five percent. How many students must you interview?</p>
+</div>
+<div data-type="solution" id="eip-287">
+  <p id="eip-938"><em data-effect="italics">CL</em> = 0.95 <em data-effect="italics">&#945;</em> = 1 &#8211; 0.95 = 0.05 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> = 0.025 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>z</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>z</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> = 1.96. Use <em data-effect="italics">p</em>&#8242; = <em data-effect="italics">q</em>&#8242; = 0.5.</p><p id="eip-idm23070384"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>n</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mo>&#160;</mo><msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+    <msup>
+     <mrow/>
+     <mn>2</mn>
+    </msup>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <msup>
+     <mi>q</mi>
+     <mo>&#8242;</mo>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mi>E</mi><mi>B</mi><msup>
+     <mi>P</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mn>1.96</mn>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mn>0.05</mn>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>384.16</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>n</mi><mo>=</mo><mfrac>
+   <mrow>
+    <mo>&#160;</mo><msub>
+     <mi>z</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+    <msup>
+     <mrow/>
+     <mn>2</mn>
+    </msup>
+    <msup>
+     <mi>p</mi>
+     <mo>&#8242;</mo>
+    </msup>
+    <msup>
+     <mi>q</mi>
+     <mo>&#8242;</mo>
+    </msup>
+
+   </mrow>
+   <mrow>
+    <mi>E</mi><mi>B</mi><msup>
+     <mi>P</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mn>1.96</mn>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>0.5</mn><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <msup>
+     <mrow>
+      <mn>0.05</mn>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>384.16</mn>
+ </mrow></annotation-xml></semantics></math>
+</p>
+<p id="eip-idp11287232">You need to interview at least 385 students to estimate the proportion to within 5% at 95% confidence.</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-701"><div data-type="problem" id="eip-710">
+  <p id="eip-439">In a recent Zogby International Poll, nine of 48 respondents rated the likelihood of a terrorist attack in their community as &#8220;likely&#8221; or &#8220;very likely.&#8221; Use the &#8220;plus four&#8221; method to create a 97% confidence interval for the proportion of American adults who believe that a terrorist attack in their community is likely or very likely. Explain what this confidence interval means in the context of the problem.</p>
+</div>
+</div></section>
+<div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+ <dl id="bidist">
+<dt>Binomial Distribution</dt>
+  <dd id="id8181257">a discrete random variable (RV) which arises from Bernoulli trials; there are a fixed number, <em data-effect="italics">n</em>, of independent trials. &#8220;Independent&#8221; means that the result of any trial (for example, trial 1) does not affect the results of the following trials, and all trials are conducted under the same conditions. Under these circumstances the binomial RV <em data-effect="italics">X</em> is defined as the number of successes in <em data-effect="italics">n</em> trials. The notation is: <em data-effect="italics">X</em>~<em data-effect="italics">B</em>(<strong>n</strong>,<strong>p</strong>). The mean is <em data-effect="italics">&#956;</em> = <em data-effect="italics">np</em> and the standard deviation is <em data-effect="italics">&#963;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <msqrt>
+    <mrow>
+     <mi>n</mi><mi>p</mi><mi>q</mi>
+    </mrow>
+   </msqrt>
+
+  </mrow><annotation-xml encoding="MathML-Content"><msqrt>
+    <mrow>
+     <mi>n</mi><mi>p</mi><mi>q</mi>
+    </mrow>
+   </msqrt></annotation-xml></semantics></math>. The probability of exactly <em data-effect="italics">x</em> successes in <em data-effect="italics">n</em> trials is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mi>P</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>=</mo>
+  <mi>x</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mfenced>
+    <mfrac linethickness="0">
+      <mi>n</mi>
+      <mi>x</mi>
+    </mfrac>
+  </mfenced>
+  <msup>
+    <mi>p</mi>
+    <mi>x</mi>
+  </msup>
+  <msup>
+    <mi>q</mi>
+    <mrow>
+      <mi>n</mi>
+      <mo>&#8722;</mo>
+      <mi>x</mi>
+    </mrow>
+  </msup>
+</mrow><annotation-xml encoding="MathML-Content"><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo>)</mo><mo>=</mo><mfenced>
+    <mfrac linethickness="0">
+      <mi>n</mi>
+      <mi>x</mi>
+    </mfrac>
+  </mfenced><msup>
+    <mi>p</mi>
+    <mi>x</mi>
+  </msup><msup>
+    <mi>q</mi>
+    <mrow>
+      <mi>n</mi>
+      <mo>&#8722;</mo>
+      <mi>x</mi>
+    </mrow>
+  </msup></annotation-xml></semantics></math>.
+    </dd>
+  </dl>
+<dl id="ebpbound">
+    <dt>Error Bound for a Population Proportion (EBP)</dt>
+    <dd id="fs-id1166722361636">the margin of error; depends on the confidence level, the sample size, and the estimated (from the sample) proportion of successes.
+    </dd>
+  </dl>
+</div></body>
+
+</html>

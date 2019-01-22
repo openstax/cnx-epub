@@ -1,0 +1,1304 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" class="appendix" cnxml-version="0.7" module-id="new">
+
+<title>Notes for the TI-83, 83+, 84, 84+ Calculators</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>https://legacy.cnx.org/content</md:repository>
+  <md:content-url>https://legacy.cnx.org/content/m47896/latest/</md:content-url>
+  <md:content-id>m47896</md:content-id>
+  <md:title>Notes for the TI-83, 83+, 84, 84+ Calculators</md:title>
+  <md:version>1.10</md:version>
+  <md:created>2013/10/29 11:03:25 -0500</md:created>
+  <md:revised>2018/11/12 15:45:56.840 US/Central</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content class="appendix">
+  <section id="fs-id15632468">
+  <title>Quick Tips</title>
+   <para id="fs-id14313746">
+  <title>Legend</title>
+  <list id="fs-id15693270"><item><media id="fs-id15740147" display="inline" alt="A blank calculator button">
+              <image mime-type="image/png" src="ti83-button.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-button.eps"/>
+            </media> represents a button press</item>
+			<item><code>[ ]</code> represents yellow command or green letter behind a key</item>
+			<item><code>&lt; &gt;</code> represents items on the screen</item>
+  </list></para>
+  <para id="fs-id14248473"><title>To adjust the contrast</title>Press <media id="fs-id14772600" display="inline" alt="2nd key">
+              <image mime-type="image/png" src="ti83-2nd.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-2nd.eps"/>
+            </media>, then hold <media id="fs-id13797489" display="inline" alt="arrow up">
+              <image mime-type="image/png" src="ti83-dir-up.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-dir-up.eps"/>
+            </media> to increase the contrast or <media id="fs-id12745418" display="inline" alt="arrow down">
+              <image mime-type="image/png" src="ti83-dir-down.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-dir-down.eps"/>
+            </media> to decrease the contrast.
+  </para><para id="fs-id15738732"><title>To capitalize letters and words</title>Press <media id="fs-id15336309" display="inline" alt="alpha key">
+              <image mime-type="image/png" src="ti83-alpha.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-alpha.eps"/>
+            </media> to get one capital letter, or press <media id="fs-id15256555" display="inline" alt="2nd key">
+              <image mime-type="image/png" src="ti83-2nd.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-2nd.eps"/>
+            </media>, then <media id="fs-id14248475" display="inline" alt="alpha key">
+              <image mime-type="image/png" src="ti83-alpha.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-alpha.eps"/>
+            </media> to set all button presses to capital letters.
+			You can return to the top-level button values by pressing
+			<media id="fs-id13796242" display="inline" alt="alpha key">
+              <image mime-type="image/png" src="ti83-alpha.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-alpha.eps"/>
+            </media> again.
+  </para><para id="fs-id15448816"><title>To correct a mistake</title>If you hit a wrong button, just hit <media id="fs-id15674844" display="inline" alt="clear key">
+              <image mime-type="image/png" src="ti83-clear.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-clear.eps"/>
+            </media> and start again.
+  </para><para id="fs-id8629783"><title>To write in scientific notation</title>Numbers in scientific notation are expressed on the TI-83, 83+, 84, and 84+ using E notation, such that...
+  <list id="fs-id12894103"><item>4.321 E 4 = <m:math>
+ <m:mrow>
+  <m:mtext>4</m:mtext><m:mtext>.321</m:mtext><m:mo>×</m:mo><m:msup>
+   <m:mrow>
+    <m:mtext>10</m:mtext>
+   </m:mrow>
+   <m:mn>4</m:mn>
+  </m:msup>
+  
+ </m:mrow>
+</m:math></item>
+<item>4.321 E –4 = <m:math>
+ <m:mrow>
+  <m:mtext>4</m:mtext><m:mtext>.321</m:mtext><m:mo>×</m:mo><m:msup>
+   <m:mrow>
+    <m:mtext>10</m:mtext>
+   </m:mrow>
+   <m:mrow>
+    <m:mn>–4</m:mn>
+   </m:mrow>
+  </m:msup>
+  
+ </m:mrow>
+</m:math>
+</item>
+   </list></para><para id="fs-id14327214"><title>To transfer programs or equations from one calculator to another:</title><emphasis>Both calculators:</emphasis> Insert your respective end of the link cable cable
+and press <media id="fs-id15384266" display="inline" alt="2nd key">
+              <image mime-type="image/png" src="ti83-2nd.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-2nd.eps"/>
+            </media>, then <code>[LINK]</code>.
+  </para><para id="eip-607"><title>Calculator receiving information:</title><list id="fs-id15504626" list-type="enumerated" number-style="arabic" class="stepwise"><item>Use the arrows to navigate to and select <code>&lt;RECEIVE&gt;</code> </item>
+<item>Press <media id="fs-id14419024" display="inline" alt="enter key">
+              <image mime-type="image/png" src="ti83-enter.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-enter.eps"/>
+            </media>.</item>
+</list></para><para id="eip-442"><title>Calculator sending information:</title><list id="fs-id13666196" list-type="enumerated" number-style="arabic" class="stepwise"><item>Press appropriate number or letter.</item>
+<item>Use up and down arrows to access the appropriate item.</item>
+<item>Press <media id="fs-id14358160" display="inline" alt="enter key">
+              <image mime-type="image/png" src="ti83-enter.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-enter.eps"/>
+            </media> to select item to transfer.</item>
+<item>Press right arrow to navigate to and select <code>&lt;TRANSMIT&gt;</code>.</item>
+<item>Press <media id="fs-id15557080" display="inline" alt="enter key">
+              <image mime-type="image/png" src="ti83-enter.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-enter.eps"/>
+            </media>.</item>
+</list></para><note id="eip-623"><label/><title>Note</title>
+<para id="eip-idp123049456">ERROR 35 LINK generally means that the cables have not been inserted far enough.</para>
+</note><para id="eip-432"><emphasis>Both calculators:</emphasis> Insert your respective end of the link cable cable
+Both calculators: press <media id="fs-id4481246" display="inline" alt="2nd key">
+              <image mime-type="image/png" src="ti83-2nd.png"/>
+              <image for="pdf" mime-type="application/postscript" src="ti83-2nd.eps"/>
+            </media>, then <code>[QUIT]</code> to exit when done.</para></section>
+    <section id="eip-367">
+      <title>Manipulating One-Variable Statistics</title>
+      <note id="builtinprogram"><label/><title>Note</title>
+<para id="eip-idp125210352">These directions are for entering data with the built-in statistical program.</para></note><table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-886" summary="A table of sample data used throughout the rest of this section. The first column is data, while the second column represents the frequency of that data."><title>Sample Data We are manipulating one-variable statistics.</title>
+<tgroup cols="2"><thead valign="top">
+            <row>
+              <entry align="center">Data</entry>
+              <entry align="center">Frequency</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>–2</entry>
+              <entry>10</entry>
+            </row>
+            <row>
+              <entry>–1</entry>
+              <entry>3</entry>
+            </row>
+            <row>
+              <entry>0</entry>
+              <entry>4</entry>
+            </row>
+            <row>
+              <entry>1</entry>
+              <entry>5</entry>
+            </row>
+            <row>
+              <entry>3</entry>
+              <entry>8</entry>
+            </row>
+          </tbody>
+        
+
+
+</tgroup>
+</table><para id="eip-653"><title>To begin:</title><list id="eip-idm14073664" list-type="enumerated" number-style="arabic"><item>
+<para id="fs-id15582062">Turn on the calculator.<newline/>
+<media id="fs-id14420511" display="inline" alt="on key">
+<image mime-type="image/png" src="ti83-on.png"/>
+</media></para></item>
+<item>
+<para id="fs-id10641750">Access statistics mode.<newline/>
+<media id="fs-id13748217" display="inline" alt="stat key">
+<image mime-type="image/png" src="ti83-stat.png"/>
+</media>
+</para></item>
+<item>
+<para id="fs-id15437009">Select <code>&lt;4:ClrList&gt;</code> to clear data from lists, if desired.
+<newline/><media id="fs-id15649038" display="inline" alt="number 4 key">
+<image mime-type="image/png" src="ti83-four.png"/>
+</media> ,
+<media id="fs-id9695112" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+<item><para id="fs-id13785018">Enter list <code>[L1]</code> to be cleared.<newline/>
+<media id="fs-id13768754" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L1]</code> ,
+<media id="fs-id14335493" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id14419501">Display last instruction.<newline/>
+<media id="fs-id14831640" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[ENTRY]</code>
+</para></item>
+
+<item><para id="fs-id14326768">Continue clearing remaining lists in the same fashion, if desired.<newline/>
+<media id="fs-id14329997" display="inline" alt="arrow left key">
+<image mime-type="image/png" src="ti83-dir-left.png"/>
+</media> ,
+<media id="fs-id15742818" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L2]</code> ,
+<media id="fs-id15395962" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id14832244">Access statistics mode.<newline/>
+<media id="fs-id14891229" display="inline" alt="stat key">
+<image mime-type="image/png" src="ti83-stat.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id10927723">Select <code>&lt;1:Edit . . .&gt;</code><newline/>
+<media id="fs-id15712626" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item><para id="eip-idm96290832">Enter data. Data values go into <code>[L1]</code>. (You may need to arrow over to <code>[L1]</code>).
+<list id="fs-id15712194" list-type="bulleted" bullet-style="bullet">
+<item><para id="fs-id14421999">Type in a data value and enter it. (For negative numbers, use the negate (-) key at the bottom of the keypad).<newline/>
+<media id="fs-id15478563" display="inline" alt="negative sign key">
+<image mime-type="image/png" src="ti83-negate.png"/>
+</media> ,
+<media id="fs-id15648786" display="inline" alt="number 9 key">
+<image mime-type="image/png" src="ti83-nine.png"/>
+</media> ,
+<media id="fs-id14357766" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+<item>Continue in the same manner until all data values are entered.</item>
+</list>
+</para>
+</item>
+
+<item><para id="eip-idm74059056">In <code>[L2]</code>, enter the frequencies for each data value in <code>[L1]</code>.
+<list id="fs-id4481227" list-type="bulleted" bullet-style="bullet">
+<item><para id="fs-id15505645">Type in a frequency and enter it. (If a data value appears only once, the frequency is "1").<newline/>
+<media id="fs-id15710714" display="inline" alt="number 4 key">
+<image mime-type="image/png" src="ti83-four.png"/>
+</media> ,
+<media id="fs-id15650017" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item>Continue in the same manner until all data values are entered.</item>
+</list>
+</para>
+</item>
+
+<item><para id="fs-id15743532">Access statistics mode.<newline/>
+<media id="fs-id14418553" display="inline" alt="stat key">
+<image mime-type="image/png" src="ti83-stat.png"/>
+</media>
+</para></item>
+
+<item>Navigate to <code>&lt;CALC&gt;</code>.</item>
+
+<item><para id="fs-id14357978">Access <code>&lt;1:1-var Stats&gt;</code>.<newline/>
+
+<media id="fs-id13797091" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id13788979">Indicate that the data is in <code>[L1]</code>...<newline/>
+
+<media id="fs-id15374940" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L1]</code> ,
+<media id="fs-id13776903" display="inline" alt="comma key">
+<image mime-type="image/png" src="ti83-comma.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id15665979">...and indicate that the frequencies are in <code>[L2]</code>.<newline/>
+<media id="fs-id15677570" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L2]</code> ,
+<media id="fs-id15735160" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item>The statistics should be displayed. You may arrow down to get remaining statistics. Repeat as necessary.</item></list></para></section>
+    <section id="fs-id15737311">
+      <title>Drawing Histograms</title>
+      <note id="fs-id14426441"><label/><title>Note</title>
+<para id="eip-idp35239360">We will assume that the data is already entered.</para></note><para id="fs-id15680349">We will construct two histograms with the built-in STATPLOT application. The first way will use the default ZOOM. The second way will involve customizing a new graph.</para>
+      <list id="fs-id15742651" list-type="enumerated" number-style="arabic"><item>
+<para id="fs-id15419737">Access graphing mode.<newline/>
+<media id="fs-id15448652" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para>
+</item>
+
+<item>
+<para id="fs-id15557620">Select <code>&lt;1:plot 1&gt;</code> to access plotting - first graph.<newline/>
+<media id="fs-id13682805" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id15739558">Use the arrows navigate go to <code>&lt;ON&gt;</code> to turn on Plot 1.<newline/>
+<code>&lt;ON&gt;</code> ,
+<media id="fs-id10512380" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>
+Use the arrows to go to the histogram picture and select the histogram. 
+<media id="fs-id13783163" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</item>
+
+<item>Use the arrows to navigate to <code>&lt;Xlist&gt;</code>.</item>
+
+<item>
+<para id="fs-id14329150">If "L1" is not selected, select it.<newline/>
+<media id="fs-id15663891" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L1]</code> ,
+<media id="fs-id14338110" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item>Use the arrows to navigate to <code>&lt;Freq&gt;</code>.</item>
+
+<item>
+<para id="fs-id14831268">Assign the frequencies to <code>[L2]</code>.<newline/>
+<media id="fs-id15664107" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L2]</code> ,
+<media id="fs-id15681866" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id15772224">Go back to access other graphs.<newline/>
+<media id="fs-id15861321" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para></item>
+
+<item>Use the arrows to turn off the remaining plots.</item>
+
+<item><emphasis>Be sure to deselect or clear all equations before graphing.</emphasis></item>
+      </list><para id="eip-907"><title>To deselect equations:</title><list id="eip-idm66550672" list-type="enumerated" number-style="arabic"><item><para id="fs-id10677318">Access the list of equations.<newline/>
+<media id="fs-id14831127" display="inline" alt="Y= key">
+<image mime-type="image/png" src="ti83-yequals.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id14360577">Select each equal sign (=).<newline/>
+<media id="fs-id15443354" display="inline" alt="arrow down key">
+<image mime-type="image/png" src="ti83-dir-down.png"/>
+</media>
+<media id="fs-id15666036" display="inline" alt="arrow right key">
+<image mime-type="image/png" src="ti83-dir-right.png"/>
+</media>
+<media id="fs-id15685297" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para></item>
+
+<item>Continue, until all equations are deselected.</item></list></para><para id="eip-556"><title>To clear equations:</title><list id="eip-idp10993520" list-type="enumerated" number-style="arabic"><item><para id="fs-id15384255">Access the list of equations.<newline/>
+<media id="fs-id14831410" display="inline" alt="Y= key">
+<image mime-type="image/png" src="ti83-yequals.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id4458420">Use the arrow keys to navigate to the right of each equal sign (=) and clear them.<newline/>
+<media id="fs-id15399911" display="inline" alt="arrow down key">
+<image mime-type="image/png" src="ti83-dir-down.png"/>
+</media>
+<media id="fs-id15664574" display="inline" alt="arrow right key">
+<image mime-type="image/png" src="ti83-dir-right.png"/>
+</media>
+<media id="fs-id15392714" display="inline" alt="clear key">
+<image mime-type="image/png" src="ti83-clear.png"/>
+</media>
+</para></item>
+
+<item>Repeat until all equations are deleted.</item></list></para><para id="eip-649"><title>To draw default histogram:</title><list id="eip-idm164199760" list-type="enumerated" number-style="arabic"><item><para id="fs-id12596788">Access the ZOOM menu.<newline/>
+<media id="fs-id15558179" display="inline" alt="ZOOM key">
+<image mime-type="image/png" src="ti83-zoom.png"/>
+</media>
+</para></item>
+
+<item><para id="fs-id15743779">Select <code>&lt;9:ZoomStat&gt;</code>.<newline/>
+<media id="fs-id15676186" display="inline" alt="number 9 key">
+<image mime-type="image/png" src="ti83-nine.png"/>
+</media>
+</para></item>
+
+<item>The histogram will show with a window automatically set.</item></list></para><para id="eip-296"><title>To draw custom histogram:</title><list id="eip-idm110111776" list-type="enumerated" number-style="arabic"><item>Access window mode to set the graph parameters.<newline/>
+<media id="fs-id15413869" display="inline" alt="window key"><image mime-type="image/png" src="ti83-window.png"/></media></item>
+<item>
+<list id="fs-id15770367" list-type="bulleted" bullet-style="bullet">
+<item>
+<m:math><m:mrow>
+  <m:msub>
+   <m:mi>X</m:mi>
+   <m:mrow>
+    <m:mi>min</m:mi>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>–2.5</m:mn>
+ </m:mrow>
+</m:math>
+</item>
+            <item>
+              <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>X</m:mi>
+   <m:mrow>
+    <m:mi>max</m:mi>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>3.5</m:mn>
+ </m:mrow>
+</m:math>
+
+            </item>
+            <item>
+              <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>X</m:mi>
+   <m:mrow>
+    <m:mi>s</m:mi><m:mi>c</m:mi><m:mi>l</m:mi>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>1</m:mn>
+ </m:mrow>
+</m:math> (width of bars)
+            </item>
+            <item>
+              <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>Y</m:mi>
+   <m:mrow>
+    <m:mi>min</m:mi>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>0</m:mn>
+ </m:mrow>
+</m:math>
+
+            </item>
+            <item>
+              <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>Y</m:mi>
+   <m:mrow>
+    <m:mi>max</m:mi>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>10</m:mn>
+ </m:mrow>
+</m:math>
+
+            </item>
+            <item>
+              <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>Y</m:mi>
+   <m:mrow>
+    <m:mi>s</m:mi><m:mi>c</m:mi><m:mi>l</m:mi>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>1</m:mn>
+ </m:mrow>
+</m:math> (spacing of tick marks on <emphasis effect="italics">y</emphasis>-axis)
+            </item>
+            <item>
+              <m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>X</m:mi>
+   <m:mrow>
+    <m:mi>r</m:mi><m:mi>e</m:mi><m:mi>s</m:mi>
+   </m:mrow>
+  </m:msub>
+  <m:mo>=</m:mo><m:mn>1</m:mn>
+ </m:mrow>
+</m:math>
+</item>
+          </list>
+</item>
+        <item>Access graphing mode to see the histogram.<newline/>
+<media id="fs-id14338525" display="inline" alt="graph key">
+            <image mime-type="image/png" src="ti83-graph.png"/>
+          </media></item> 
+</list></para><para id="eip-140"><title>To draw box plots:</title><list id="eip-idp73874128" list-type="enumerated" number-style="arabic"><item><para id="fs-id13795663">Access graphing mode.<newline/>
+<media id="fs-id8283012" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para>
+</item>
+
+<item><para id="fs-id15609035">Select <code>&lt;1:Plot 1&gt;</code> to access the first graph.<newline/>
+
+<media id="fs-id15436944" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item><para id="fs-id10982525">Use the arrows to select <code>&lt;ON&gt;</code> and turn on Plot 1.<newline/>
+<media id="fs-id15407549" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item><para id="fs-id14339453">Use the arrows to select the box plot picture and enable it.<newline/>
+<media id="fs-id15682750" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>Use the arrows to navigate to <code>&lt;Xlist&gt;</code>.</item>
+
+<item><para id="fs-id12116579">If "L1" is not selected, select it.<newline/>
+<media id="fs-id13785172" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L1]</code> ,
+<media id="fs-id13796670" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>Use the arrows to navigate to <code>&lt;Freq&gt;</code>.</item>
+
+<item><para id="fs-id14792157">Indicate that the frequencies are in <code>[L2]</code>.<newline/>
+<media id="fs-id14857230" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L2]</code> ,
+<media id="fs-id15400636" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item><para id="fs-id15259023">Go back to access other graphs.<newline/>
+<media id="fs-id3301526" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para>
+</item>
+
+<item><emphasis>Be sure to deselect or clear all equations before graphing</emphasis> using the method mentioned above.</item>
+
+<item><para id="fs-id15428121">View the box plot.<newline/>
+<media id="fs-id15743723" display="inline" alt="graph key">
+<image mime-type="image/png" src="ti83-graph.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para>
+</item></list></para></section>
+    <section id="fs-id14569516">
+      <title>Linear Regression</title>
+      <section id="fs-id15377984">
+        <title>Sample Data</title>
+        <para id="fs-id15306460">The following data is real. The percent of declared ethnic minority students at De Anza College for selected years from 1970–1995 was:</para><table id="fs-id14336458" summary=" The first column is data represents years, from 1970 to 1995, while the second column represents the percentage of declared ethnic minority students at De Anza College with respect to the entire student body for that year.">
+          <tgroup cols="2">
+            <thead valign="top">
+              <row>
+                <entry align="center">Year</entry>
+                <entry align="center">Student Ethnic Minority Percentage</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>1970</entry>
+                <entry>14.13</entry>
+              </row>
+              <row>
+                <entry>1973</entry>
+                <entry>12.27</entry>
+              </row>
+              <row>
+                <entry>1976</entry>
+                <entry>14.08</entry>
+              </row>
+              <row>
+                <entry>1979</entry>
+                <entry>18.16</entry>
+              </row>
+              <row>
+                <entry>1982</entry>
+                <entry>27.64</entry>
+              </row>
+              <row>
+                <entry>1983</entry>
+                <entry>28.72</entry>
+              </row>
+              <row>
+                <entry>1986</entry>
+                <entry>31.86</entry>
+              </row>
+              <row>
+                <entry>1989</entry>
+                <entry>33.14</entry>
+              </row>
+              <row>
+                <entry>1992</entry>
+                <entry>45.37</entry>
+              </row>
+              <row>
+                <entry>1995</entry>
+                <entry>53.1</entry>
+              </row>
+            </tbody>
+          </tgroup>
+          <caption>The independent variable is "Year," while the independent variable is "Student Ethnic Minority Percent."</caption>
+        </table>
+        <figure id="fs-id13815357"><title>Student Ethnic Minority Percentage</title><media id="fs-id15377645" display="block" alt="This is a scatterplot for the data provided. Year is plotted on the horizontal axis and percent is plotted on the vertical axis. The points show a strong, curved, upward trend.">
+            <image mime-type="image/png" src="CNX_Stats_Appendix_ART_Figure_14.6.jpg" width="350"/>
+          </media>
+          
+        <caption>By hand, verify the scatterplot above.</caption></figure><note id="fs-id15648837"><label/><title>Note</title>
+<para id="eip-idp56972304">The TI-83 has a built-in linear regression feature, which allows the data to be edited.The <emphasis effect="italics">x</emphasis>-values will be in <code>[L1]</code>; the <emphasis effect="italics">y</emphasis>-values in <code>[L2]</code>.</para></note><para id="eip-901"><title>To enter data and do linear regression:</title><list id="eip-idp244900032" list-type="enumerated" number-style="arabic"><item><para id="fs-id5077977">ON Turns calculator on.<newline/>
+<media id="fs-id7330302" display="inline" alt="on key">
+<image mime-type="image/png" src="ti83-on.png"/>
+</media>
+</para>
+</item>
+
+<item>Before accessing this program, be sure to turn off all plots.
+<list id="fs-id14326364" list-type="bulleted" bullet-style="bullet">
+<item><para id="fs-id14859632">Access graphing mode.<newline/>
+<media id="fs-id13808044" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para>
+</item>
+
+<item><para id="fs-id10740237">Turn off all plots.<newline/>
+<media id="fs-id14046599" display="inline" alt="number 4 key">
+<image mime-type="image/png" src="ti83-four.png"/>
+</media> ,
+<media id="fs-id13782731" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+</list>
+</item>
+
+<item>Round to three decimal places. To do so:
+<list id="fs-id13796521" list-type="bulleted" bullet-style="bullet">
+<item><para id="fs-id13815985">Access the mode menu.<newline/>
+<media id="fs-id15436477" display="inline" alt="mode key">
+<image mime-type="image/png" src="ti83-mode.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para>
+</item>
+
+<item>
+<para id="fs-id4472705">Navigate to <code>&lt;Float&gt;</code> and then to the right to <code>&lt;3&gt;</code>.<newline/>
+<media id="fs-id12738760" display="inline" alt="arrow down key">
+<image mime-type="image/png" src="ti83-dir-down.png"/>
+</media>
+<media id="fs-id14332544" display="inline" alt="arrow right key">
+<image mime-type="image/png" src="ti83-dir-right.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id14770838">All numbers will be rounded to three decimal places until changed.<newline/>
+<media id="fs-id14064149" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+</list>
+</item>
+
+<item>
+<para id="fs-id5168875">Enter statistics mode and clear lists <code>[L1]</code> and <code>[L2]</code>, as describe previously.<newline/>
+<media id="fs-id13746924" display="inline" alt="stat key">
+<image mime-type="image/png" src="ti83-stat.png"/>
+</media> ,
+<media id="fs-id14325808" display="inline" alt="number 4 key">
+<image mime-type="image/png" src="ti83-four.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id15672446">Enter editing mode to insert values for <emphasis effect="italics">x</emphasis> and <emphasis effect="italics">y</emphasis>.<newline/>
+<media id="fs-id15871012" display="inline" alt="stat key">
+<image mime-type="image/png" src="ti83-stat.png"/>
+</media> ,
+<media id="fs-id15414493" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>Enter each value. Press
+<media id="fs-id15320435" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media> to continue. 
+</item></list></para><para id="eip-909"><title>To display the correlation coefficient:</title><list id="eip-idp108929536" list-type="enumerated" number-style="arabic"><item><para id="fs-id15415238">Access the catalog.<newline/>
+<media id="fs-id13748163" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[CATALOG]</code>
+</para>
+</item>
+
+<item><para id="fs-id13412820">Arrow down and select <code>&lt;DiagnosticOn&gt;</code><newline/>
+<media id="fs-id14419965" display="inline" alt="arrow down key">
+<image mime-type="image/png" src="ti83-dir-down.png"/>
+</media>... ,
+<media id="fs-id14758720" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media> ,
+<media id="fs-id15298972" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<m:math>
+<m:ci>r</m:ci>
+</m:math> and
+<m:math>
+<m:apply>
+<m:power/>
+<m:ci>r</m:ci>
+<m:cn>2</m:cn>
+</m:apply>
+</m:math> will be displayed during regression calculations.
+</item>
+
+<item><para id="fs-id15861386">Access linear regression.<newline/>
+<media id="fs-id14358803" display="inline" alt="stat key">
+<image mime-type="image/png" src="ti83-stat.png"/>
+</media>
+<media id="fs-id15770182" display="inline" alt="arrow right key">
+<image mime-type="image/png" src="ti83-dir-right.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id15677479">Select the form of <emphasis effect="italics">y</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis>.<newline/>
+<media id="fs-id15413761" display="inline" alt="number 8 key">
+<image mime-type="image/png" src="ti83-eight.png"/>
+</media> ,
+<media id="fs-id14568976" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item></list></para><para id="fs-id13602951"><newline/>The display will show:</para><para id="eip-878"><title>LinReg</title><list id="fs-id13602953">
+<item><emphasis effect="italics">y</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+            <item><emphasis effect="italics">a</emphasis> = –3176.909</item>
+            <item><emphasis effect="italics">b</emphasis> = 1.617 </item>
+            <item><emphasis effect="italics">r</emphasis> = 2 0.924 </item>
+            <item><emphasis effect="italics">r</emphasis> = 0.961 </item>
+            </list></para><para id="fs-id4451506">
+<newline/>This means the Line of Best Fit (Least Squares Line) is:
+        <list id="fs-id10515055" list-type="bulleted" bullet-style="bullet">
+        <item><emphasis effect="italics">y</emphasis> = –3176.909 + 1.617<emphasis effect="italics">x</emphasis> </item>
+         <item>Percent = –3176.909 + 1.617 (year #) </item>
+        </list>The correlation coefficient <emphasis effect="italics">r</emphasis> = 0.961</para>
+
+<para id="fs-idm68992784"><title>To see the scatter plot:</title>
+<list id="fs-id14860854" list-type="enumerated" number-style="arabic"><item>
+<para id="fs-id15375252">Access graphing mode.<newline/>
+<media id="fs-id14743415" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para>
+</item>
+
+<item>
+<para id="fs-id13782813">Select <code>&lt;1:plot 1&gt;</code> To access plotting - first graph.<newline/>
+<media id="fs-id13782817" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id9642211">Navigate and select <code>&lt;ON&gt;</code> to turn on Plot 1.<newline/>
+<code>&lt;ON&gt;</code>
+<media id="fs-id15326624" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>Navigate to the first picture.</item>
+
+<item>
+<para id="fs-id14425261">Select the scatter plot.<newline/>
+<media id="fs-id14425265" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>Navigate to <code>&lt;Xlist&gt;</code>.</item>
+
+<item>
+If <code>[L1]</code> is not selected, press
+<media id="fs-id15586352" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L1]</code> to select it.
+</item>
+
+<item>
+<para id="fs-id13616594">Confirm that the data values are in <code>[L1]</code>.<newline/>
+<code>&lt;ON&gt;</code>
+<media id="fs-id15674802" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>Navigate to <code>&lt;Ylist&gt;</code>.</item>
+
+<item>
+<para id="fs-id12292882">Select that the frequencies are in <code>[L2]</code>.<newline/>
+<media id="fs-id12292887" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L2]</code> ,
+<media id="fs-id13027628" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id8794800">Go back to access other graphs.<newline/>
+<media id="fs-id15374874" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[STAT PLOT]</code>
+</para>
+</item>
+
+<item>Use the arrows to turn off the remaining plots.</item>
+
+<item>Access window mode to set the graph parameters.<newline/>
+<media id="fs-id15380303" display="inline" alt="window key">
+<image mime-type="image/png" src="ti83-window.png"/>
+</media>
+<list id="fs-id4833843" list-type="bulleted" bullet-style="bullet">
+<item>
+<m:math>
+<m:mrow>
+<m:msub>
+<m:mi>X</m:mi>
+<m:mrow>
+<m:mi>min</m:mi>
+</m:mrow>
+</m:msub>
+<m:mo>=</m:mo><m:mn>1970</m:mn>
+</m:mrow>
+</m:math>
+</item>
+<item>
+<m:math>
+<m:mrow>
+<m:msub>
+<m:mi>X</m:mi>
+<m:mrow>
+<m:mi>max</m:mi>
+</m:mrow>
+</m:msub>
+<m:mo>=</m:mo><m:mn>2000</m:mn>
+</m:mrow>
+</m:math>
+</item>
+<item>
+<m:math>
+<m:mrow>
+<m:msub>
+<m:mi>X</m:mi>
+<m:mrow>
+<m:mi>s</m:mi><m:mi>c</m:mi><m:mi>l</m:mi>
+</m:mrow>
+</m:msub>
+<m:mo>=</m:mo><m:mn>10</m:mn>
+</m:mrow>
+</m:math> (spacing of tick marks on <emphasis effect="italics">x</emphasis>-axis)
+</item>
+<item>
+<m:math>
+<m:mrow>
+<m:msub>
+<m:mi>Y</m:mi>
+<m:mrow>
+<m:mi>min</m:mi>
+</m:mrow>
+</m:msub>
+<m:mo>=</m:mo><m:mo>−</m:mo><m:mn>0.05</m:mn>
+</m:mrow>
+</m:math>
+</item>
+<item>
+<m:math>
+<m:mrow>
+<m:msub>
+<m:mi>Y</m:mi>
+<m:mrow>
+<m:mi>max</m:mi>
+</m:mrow>
+</m:msub>
+<m:mo>=</m:mo><m:mn>60</m:mn>
+</m:mrow>
+</m:math>
+</item>
+<item>
+<m:math>
+<m:mrow>
+<m:msub>
+<m:mi>Y</m:mi>
+<m:mrow>
+<m:mi>s</m:mi><m:mi>c</m:mi><m:mi>l</m:mi>
+</m:mrow>
+</m:msub>
+<m:mo>=</m:mo><m:mn>10</m:mn>
+</m:mrow>
+</m:math> (spacing of tick marks on <emphasis effect="italics">y</emphasis>-axis)
+</item>
+<item>
+<m:math>
+<m:mrow>
+<m:msub>
+<m:mi>X</m:mi>
+<m:mrow>
+<m:mi>r</m:mi><m:mi>e</m:mi><m:mi>s</m:mi>
+</m:mrow>
+</m:msub>
+<m:mo>=</m:mo><m:mn>1</m:mn>
+</m:mrow>
+</m:math>
+</item>
+</list>
+</item>
+
+<item>Be sure to deselect or clear all equations before graphing, using the instructions above.</item>
+
+<item>Press  the graph button to see the scatter plot.
+<media id="fs-id11867940" display="inline" alt="graph key">
+<image mime-type="image/png" src="ti83-graph.png"/>
+</media>
+</item></list></para>
+
+<para id="fs-idm30312176">
+<title>To see the regression graph:</title>
+<list id="fs-id15636297" list-type="enumerated" number-style="arabic"><item>
+<para id="fs-id14418754">Access the equation menu. The regression equation will be put into Y1.<newline/>
+<media id="fs-id12873704" display="inline" alt="Y= key">
+<image mime-type="image/png" src="ti83-yequals.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id15318374">Access the vars menu and navigate to <code>&lt;5: Statistics&gt;</code>.<newline/>
+<media id="fs-id10268916" display="inline" alt="vars key">
+<image mime-type="image/png" src="ti83-vars.png"/>
+</media> ,
+<media id="fs-id14419539" display="inline" alt="number 5 key">
+<image mime-type="image/png" src="ti83-five.png"/>
+</media>
+</para>
+</item>
+
+<item>Navigate to <code>&lt;EQ&gt;</code>.</item>
+
+<item>
+<para id="fs-id14622106"><code>&lt;1: RegEQ&gt;</code> contains the regression equation which will be entered in Y1.<newline/>
+<media id="fs-id15667622" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>Press the graphing mode button. The regression line will be superimposed over the scatter plot.<newline/>
+<media id="fs-id15399739" display="inline" alt="graph key">
+<image mime-type="image/png" src="ti83-graph.png"/>
+</media>
+</item></list></para>
+        <para id="eip-385"><title>To see the residuals and use them to calculate the critical point for an outlier:</title><list id="eip-idp57821472" list-type="enumerated" number-style="arabic"><item>
+<para id="fs-id14885511">Access the list. RESID will be an item on the menu. Navigate to it.<newline/>
+<media id="fs-id15318284" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media>, <code>[LIST]</code>, <code>&lt;RESID&gt;</code>
+</para>
+</item>
+
+<item>
+<para id="fs-id15771552">Confirm twice to view the list of residuals. Use the arrows to select them.<newline/>
+<media id="fs-id13622621" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media> ,
+<media id="fs-id15558165" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>The critical point for an outlier is:
+<m:math>
+<m:apply>
+<m:times/>
+<m:cn>1.9</m:cn>
+<m:ci>V</m:ci>
+<m:apply>
+<m:divide/>
+<m:ci>SSE</m:ci>
+<m:apply>
+<m:minus/>
+<m:ci>n</m:ci>
+<m:cn>2</m:cn>
+</m:apply>
+</m:apply>
+</m:apply>
+</m:math> where:
+<list id="fs-id13668874">
+<item>
+<m:math>
+<m:ci>n</m:ci>
+</m:math> = number of pairs of data
+</item>
+<item>
+<m:math>
+<m:ci>SSE</m:ci>
+</m:math> = sum of the squared errors
+</item>
+<item>
+<m:math>
+<m:apply>
+<m:sum/>
+<m:apply>
+<m:power/>
+<m:ci>residual</m:ci>
+<m:cn>2</m:cn>
+</m:apply>
+</m:apply>
+</m:math>
+</item>
+</list>
+</item>
+
+<item>
+<para id="fs-id13856017">Store the residuals in <code>[L3]</code>.<newline/>
+<media id="fs-id13855071" display="inline" alt="store key">
+<image mime-type="image/png" src="ti83-sto.png"/>
+</media> ,
+<media id="fs-id15769062" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L3]</code> ,
+<media id="fs-id15401211" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id15734182">Calculate the
+<m:math>
+<m:apply>
+<m:divide/>
+<m:apply>
+<m:power/>
+<m:ci>(residual)</m:ci>
+<m:cn>2</m:cn>
+</m:apply>
+<m:apply>
+<m:minus/>
+<m:ci>n</m:ci>
+<m:cn>2</m:cn>
+</m:apply>
+</m:apply>
+</m:math>. Note that
+<m:math>
+<m:apply>
+<m:eq/>
+<m:apply>
+<m:minus/>
+<m:ci>n</m:ci>
+<m:cn>2</m:cn>
+</m:apply>
+<m:cn>8</m:cn>
+</m:apply>
+</m:math>
+<newline/>
+<media id="fs-id15680372" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L3]</code> ,
+<media id="fs-id15332654" display="inline" alt="x-squared key">
+<image mime-type="image/png" src="ti83-xsquared.png"/>
+</media> ,
+<media id="fs-id15664227" display="inline" alt="division key">
+<image mime-type="image/png" src="ti83-divide.png"/>
+</media> ,
+<media id="fs-id15443531" display="inline" alt="number 8 key">
+<image mime-type="image/png" src="ti83-eight.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id15492779">Store this value in <code>[L4]</code>.<newline/>
+<media id="fs-id12493313" display="inline" alt="store key">
+<image mime-type="image/png" src="ti83-sto.png"/>
+</media> ,
+<media id="fs-id14857761" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L4]</code> ,
+<media id="fs-id15330584" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>
+<para id="fs-id13799897">Calculate the critical value using the equation above.<newline/>
+<media id="fs-id15553710" display="inline" alt="number 1 key">
+<image mime-type="image/png" src="ti83-one.png"/>
+</media> ,
+<media id="fs-id13679088" display="inline" alt="decimal point key">
+<image mime-type="image/png" src="ti83-decimal.png"/>
+</media> ,
+<media id="fs-id15413832" display="inline" alt="number 9 key">
+<image mime-type="image/png" src="ti83-nine.png"/>
+</media> ,
+<media id="fs-id13632053" display="inline" alt="multiplication key">
+<image mime-type="image/png" src="ti83-multiply.png"/>
+</media> ,
+<media id="fs-id15673395" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[V]</code> ,
+<media id="fs-id15682092" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[LIST]</code>
+<media id="fs-id12746411" display="inline" alt="arrow right key">
+<image mime-type="image/png" src="ti83-dir-right.png"/>
+</media> ,
+<media id="fs-id15385301" display="inline" alt="arrow right key">
+<image mime-type="image/png" src="ti83-dir-right.png"/>
+</media> ,
+<media id="fs-id14854303" display="inline" alt="number 5 key">
+<image mime-type="image/png" src="ti83-five.png"/>
+</media> ,
+<media id="fs-id15331426" display="inline" alt="2nd key">
+<image mime-type="image/png" src="ti83-2nd.png"/>
+</media> , <code>[L4]</code> ,
+<media id="fs-id14040973" display="inline" alt="closing parenthesis key">
+<image mime-type="image/png" src="ti83-rightparenthesis.png"/>
+</media> ,
+<media id="fs-id12262413" display="inline" alt="closing parenthesis key">
+<image mime-type="image/png" src="ti83-rightparenthesis.png"/>
+</media> ,
+<media id="fs-id8733928" display="inline" alt="enter key">
+<image mime-type="image/png" src="ti83-enter.png"/>
+</media>
+</para>
+</item>
+
+<item>Verify that the calculator displays: 7.642669563. This is the critical value.</item>
+
+<item>Compare the absolute value of each residual value in <code>[L3]</code> to 7.64. If the absolute value is greater than 7.64, then the (x, y) corresponding point is an outlier. In this case, none of the points is an outlier.</item></list></para><para id="fs-id14035082"><title>To obtain estimates of <emphasis effect="italics">y</emphasis> for various <emphasis effect="italics">x</emphasis>-values:</title>There are various ways to determine estimates for "<emphasis effect="italics">y.</emphasis>" One way is to substitute values for "<emphasis effect="italics">x</emphasis>" in the equation. Another way is to use the
+          <media id="fs-id4485078" display="inline" alt="trace key">
+            <image mime-type="image/png" src="ti83-trace.png"/>
+            <image for="pdf" mime-type="application/postscript" src="ti83-trace.eps"/>
+          </media> on the graph of the regression line.
+        </para></section>
+    </section>
+    <section id="fs-id5169011">
+      <title>TI-83, 83+, 84, 84+ instructions for distributions and tests</title><section id="fs-id15450346">
+        <title>Distributions</title>
+        <para id="fs-id13791824">Access <code display="inline">DISTR</code> (for "Distributions").</para>
+        <para id="fs-id15526075">For technical assistance, visit the Texas Instruments website at <link url="http://www.ti.com" window="new">http://www.ti.com</link> and enter your calculator model into the "search" box.</para>
+
+        <para id="fs-idm103615424"><title>Binomial Distribution</title>
+    <list id="fs-id15384919"><item><code display="inline">binompdf(<emphasis effect="italics">n</emphasis>,<emphasis effect="italics">p</emphasis>,<emphasis effect="italics">x</emphasis>)</code> corresponds to <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = <emphasis effect="italics">x</emphasis>)</item>
+          <item><code display="inline">binomcdf(<emphasis effect="italics">n</emphasis>,<emphasis effect="italics">p</emphasis>,<emphasis effect="italics">x</emphasis>)</code> corresponds to <emphasis effect="italics">P</emphasis>(X ≤ x)</item>
+          <item>To see a list of all probabilities for <emphasis effect="italics">x</emphasis>: 0, 1, . . . , <emphasis effect="italics">n</emphasis>, leave off the "<code display="inline"><emphasis effect="italics">x</emphasis></code>" parameter.</item>
+        </list></para>
+
+<para id="fs-idp1474048"><title>Poisson Distribution</title>
+<list id="fs-id13783374"><item><code display="inline">poissonpdf(λ,<emphasis effect="italics">x</emphasis>)</code> corresponds to <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> = <emphasis effect="italics">x</emphasis>)</item>
+          <item><code display="inline">poissoncdf(λ,<emphasis effect="italics">x</emphasis>)</code> corresponds to <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> ≤ <emphasis effect="italics">x</emphasis>)</item>
+        </list></para>
+        <para id="eip-283"><title>Continuous Distributions (general)</title><list id="eip-idp115972320">
+<item>
+            <m:math>
+ <m:mrow>
+  <m:mo>−</m:mo><m:mi>∞</m:mi>
+ </m:mrow>
+</m:math> uses the value –1EE99 for left bound</item>
+          <item>
+            <m:math>
+              <m:apply>
+                <m:plus/>
+                <m:infinity/>
+              </m:apply>
+            </m:math> uses the value 1EE99 for right bound</item>
+</list></para><para id="eip-402"><title>Normal Distribution</title><list id="eip-idp89416480">
+
+<item><code display="inline">normalpdf(<emphasis effect="italics">x</emphasis>,<emphasis effect="italics">μ</emphasis>,<emphasis effect="italics">σ</emphasis>)</code>  yields a probability density function value (only useful to plot the normal curve, in which case "<code display="inline"><emphasis effect="italics">x</emphasis></code>" is the variable)</item>
+
+<item><code display="inline">normalcdf(left bound, right bound, <emphasis effect="italics">μ</emphasis>, <emphasis effect="italics">σ</emphasis>)</code> corresponds to <emphasis effect="italics">P</emphasis>(left bound &lt; <emphasis effect="italics">X</emphasis> &lt; right bound)</item>
+
+<item><code display="inline">normalcdf(left bound, right bound)</code> corresponds to <emphasis effect="italics">P</emphasis>(left bound &lt; <emphasis effect="italics">Z</emphasis> &lt; right bound) – standard normal</item>
+
+<item><code display="inline">invNorm(<emphasis effect="italics">p</emphasis>,<emphasis effect="italics">μ</emphasis>,<emphasis effect="italics">σ</emphasis>)</code> yields the critical value, <emphasis effect="italics">k</emphasis>: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">X</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = <emphasis effect="italics">p</emphasis></item>
+
+<item><code display="inline">invNorm(<emphasis effect="italics">p</emphasis>)</code> yields the critical value, <emphasis effect="italics">k</emphasis>: <emphasis effect="italics">P</emphasis>(<emphasis effect="italics">Z</emphasis> &lt; <emphasis effect="italics">k</emphasis>) = <emphasis effect="italics">p</emphasis> for the standard normal</item>
+
+</list></para><para id="eip-113"><title>Student's <emphasis effect="italics">t</emphasis>-Distribution</title><list id="eip-idm52146688">
+<item><code display="inline">tpdf(<emphasis effect="italics">x</emphasis>,<emphasis effect="italics">df</emphasis>)</code> yields the probability density function value (only useful to plot the student-<emphasis effect="italics">t</emphasis> curve, in which case "<code display="inline"><emphasis effect="italics">x</emphasis></code>" is the variable)</item>
+          <item><code display="inline">tcdf(left bound, right bound, <emphasis effect="italics">df</emphasis>)</code> corresponds to <emphasis effect="italics">P</emphasis>(left bound &lt; <emphasis effect="italics">t</emphasis> &lt; right bound)</item>
+</list></para><para id="eip-771"><title>Chi-square Distribution</title><list id="eip-idm44632080">
+
+<item><code display="inline">Χ<sup>2</sup>pdf(<emphasis effect="italics">x</emphasis>,<emphasis effect="italics">df</emphasis>)</code> yields the probability density function value (only useful to plot the chi<sup>2</sup> curve, in which case "<code display="inline"><emphasis effect="italics">x</emphasis></code>" is the variable)</item>
+          <item><code display="inline">Χ<sup>2</sup>cdf(left bound, right bound, <emphasis effect="italics">df</emphasis>)</code> corresponds to <emphasis effect="italics">P</emphasis>(left bound &lt; <emphasis effect="italics">Χ</emphasis><sup>2</sup> &lt; right bound)</item>
+
+</list></para><para id="eip-380"><title>F Distribution</title><list id="eip-idm166766896">
+<item><code display="inline">Fpdf(<emphasis effect="italics">x</emphasis>,<emphasis effect="italics">dfnum</emphasis>,<emphasis effect="italics">dfdenom</emphasis>)</code> yields the probability density function value (only useful to plot the <emphasis effect="italics">F</emphasis> curve, in which case "<code display="inline"><emphasis effect="italics">x</emphasis></code>" is the variable)</item>
+          <item><code display="inline">Fcdf(left bound,right bound,<emphasis effect="italics">dfnum</emphasis>,<emphasis effect="italics">dfdenom</emphasis>)</code> corresponds to <emphasis effect="italics">P</emphasis>(left bound &lt; <emphasis effect="italics">F</emphasis> &lt; right bound)</item>
+</list></para></section>
+      <section id="fs-id15677913">
+        <title>Tests and Confidence Intervals</title>
+        <para id="fs-id15287935">Access <code display="inline">STAT</code> and <code display="inline">TESTS</code>.</para>
+        <para id="fs-id14324569">For the confidence intervals and hypothesis tests, you may enter the data into the appropriate lists and press <code display="inline">DATA</code> to have the calculator find the sample means and standard deviations. Or, you may enter the sample means and sample standard deviations directly by pressing <code display="inline">STAT</code> once in the appropriate tests.</para>
+<para id="fs-idp96939616">
+<title>Confidence Intervals</title>
+<list id="fs-id14324572"><item><code display="inline">ZInterval</code> is the confidence interval for mean when σ is known.</item>
+
+<item><code display="inline">TInterval</code> is the confidence interval for mean when σ is unknown; <emphasis effect="italics">s</emphasis> estimates σ.</item>
+
+<item><code display="inline">1-PropZInt</code> is the confidence interval for proportion.</item>
+        </list></para>
+        <note id="fs-id14799914"><label/><title>Note</title>
+<para id="eip-idp1918880">The confidence levels should be given as percents (ex. enter "<code display="inline">95</code>" or "<code display="inline">.95</code>" for a 95% confidence level).</para></note>
+
+<para id="fs-idp36667376"><title>Hypothesis Tests</title>
+<list id="fs-id14799919"><item><code display="inline">Z-Test</code> is the hypothesis test for single mean when σ is known.</item>
+<item><code display="inline">T-Test</code> is the hypothesis test for single mean when σ is unknown; <emphasis effect="italics">s</emphasis> estimates σ.</item>
+<item><code display="inline">2-SampZTest</code> is the hypothesis test for two independent means when both σ's are known.</item>
+<item><code display="inline">2-SampTTest</code> is the hypothesis test for two independent means when both σ's are unknown.</item>
+<item><code display="inline">1-PropZTest</code> is the hypothesis test for single proportion.</item>
+<item><code display="inline">2-PropZTest</code> is the hypothesis test for two proportions.</item>
+<item><code display="inline">Χ<sup>2</sup>-Test</code> is the hypothesis test for independence.</item>
+<item><code display="inline">Χ<sup>2</sup>GOF-Test</code> is the hypothesis test for goodness-of-fit (TI-84+ only).</item>
+<item><code display="inline">LinRegTTEST</code> is the hypothesis test for Linear Regression (TI-84+ only).</item></list></para>
+        <note id="fs-id15374930"><label/><title>Note</title>
+<para id="eip-idp140444871127008">Input the null hypothesis value in the row below "<code display="inline">Inpt</code>." For a test of a single mean, "<code display="inline">μ∅</code>" represents the null hypothesis. For a test of a single proportion, "<code display="inline">p∅</code>" represents the null hypothesis. Enter the alternate hypothesis on the bottom row.</para></note></section>
+    </section>
+  </content>
+</document>

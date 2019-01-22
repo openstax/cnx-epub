@@ -1,0 +1,195 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Facts About the Chi-Square Distribution</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47062/latest</md:content-url>
+  <md:content-id>m47062</md:content-id>
+  <md:title>Facts About the Chi-Square Distribution</md:title>
+  <md:version>1.7</md:version>
+  <md:created>2013/07/19 04:49:40 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>chi-square distribution</md:keyword>
+    <md:keyword>population mean</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="element-364">The notation for the <term>chi-square distribution</term> is:</para><equation id="eip-171"><m:math>
+ <m:mrow>
+  <m:mi>&#967;</m:mi><m:mo>&#8764;</m:mo><m:msubsup>
+   <m:mi>&#967;</m:mi>
+   <m:mrow>
+    <m:mi>d</m:mi><m:mi>f</m:mi>
+   </m:mrow>
+   <m:mn>2</m:mn>
+  </m:msubsup>
+  
+ </m:mrow>
+</m:math></equation><para id="element-712"><newline/>where <emphasis effect="italics">df</emphasis> = degrees of freedom which depends on how chi-square is being used. (If you want to practice calculating chi-square probabilities then use <emphasis effect="italics">df</emphasis> = <emphasis effect="italics">n</emphasis> - 1. The degrees of freedom for the three major uses are each calculated differently.)</para><para id="element-734">For the <emphasis effect="italics">&#967;<sup>2</sup></emphasis> distribution, the population mean is <emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">df</emphasis> and the population standard deviation is <m:math>
+ <m:mrow>
+  <m:mi>&#963;</m:mi><m:mo>=</m:mo><m:msqrt>
+   <m:mrow>
+    <m:mn>2</m:mn><m:mo stretchy="false">(</m:mo><m:mi>d</m:mi><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:msqrt>
+  
+ </m:mrow>
+</m:math>.</para><para id="element-797">The random variable is shown as <emphasis effect="italics">&#967;<sup>2</sup></emphasis>, but may be any upper case letter.</para><para id="element-468">The random variable for a chi-square distribution with <emphasis effect="italics">k</emphasis> degrees of freedom is the sum of <emphasis effect="italics">k</emphasis> independent, squared standard normal variables.</para>
+<para id="element-708"><emphasis effect="italics">&#967;</emphasis><sup>2</sup> = (<emphasis effect="italics">Z</emphasis><sub>1</sub>)<sup>2</sup> + (<emphasis effect="italics">Z</emphasis><sub>2</sub>)<sup>2</sup> + ... + (<emphasis effect="italics">Z</emphasis><sub>k</sub>)<sup>2</sup></para><list id="element-278" list-type="enumerated"><item>The curve is nonsymmetrical and skewed to the right.</item>
+<item>There is a different chi-square curve for each <emphasis effect="italics">df</emphasis>.
+<figure id="chisq_curvedf"><media id="id1169752398228" alt="Part (a) shows a chi-square curve with 2 degrees of freedom. It is nonsymmetrical and slopes downward continually. Part (b) shows a chi-square curve with 24 df. This nonsymmetrical curve does have a peak and is skewed to the right. The graphs illustrate that different degrees of freedom produce different chi-square curves.">
+<image src="fig-ch11_03_01.jpg" mime-type="image/png" print-width="3in"/>
+</media></figure></item>
+<item>The test statistic for any test is always greater than or equal to zero.</item>
+<item>When <emphasis effect="italics">df</emphasis> &gt; 90, the chi-square curve approximates the normal distribution. For <emphasis effect="italics">X</emphasis> ~ <m:math>
+ <m:mrow>
+  <m:msubsup>
+   <m:mi>&#967;</m:mi>
+   <m:mrow>
+    <m:mn>1,000</m:mn>
+   </m:mrow>
+   <m:mn>2</m:mn>
+  </m:msubsup>
+ </m:mrow>
+</m:math> the mean, <emphasis effect="italics">&#956;</emphasis> = <emphasis effect="italics">df</emphasis> = 1,000 and the standard deviation, <emphasis effect="italics">&#963;</emphasis> = <m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mn>2</m:mn><m:mo stretchy="false">(</m:mo><m:mn>1,000</m:mn><m:mo stretchy="false">)</m:mo>
+   </m:mrow>
+  </m:msqrt>
+  
+ </m:mrow>
+</m:math> = 44.7. Therefore, <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">N</emphasis>(1,000, 44.7), approximately.</item>
+<item>The mean, <emphasis effect="italics">&#956;</emphasis>, is located just to the right of the peak.
+<figure id="chisq_curvedf2"><media id="id1169723113430" alt="This is a nonsymmetrical chi-square curve which is skewed to the right. The mean, m, is labeled on the horizontal axis and is located to the right of the curve's peak.">
+<image src="fig-ch11_03_02-02.jpg" mime-type="image/png" print-width="3in"/></media></figure></item>
+</list><section id="fs-idm72973008" class="references">
+<title>References</title>
+<para id="fs-idp56327392">Data from <emphasis effect="italics">Parade Magazine</emphasis>.</para>
+<para id="fs-idm82439456">&#8220;HIV/AIDS Epidemiology Santa Clara County.&#8221;Santa Clara County Public Health Department, May 2011.</para>
+</section>
+<section id="eip-648" class="summary">
+<title>Chapter Review</title>
+<para id="eip-38">The chi-square distribution is a useful tool for assessment in a series of problem categories. These problem categories include primarily (i) whether a data set fits a particular distribution, (ii) whether the distributions of two populations are the same, (iii) whether two events might be independent, and (iv) whether there is a different variability than expected within a population.</para><para id="eip-227">An important parameter in a chi-square distribution is the degrees of freedom <emphasis effect="italics">df</emphasis> in a given problem. The random variable in the chi-square distribution is the sum of squares of <emphasis effect="italics">df</emphasis> standard normal variables, which must be independent. The key characteristics of the chi-square distribution also depend directly on the degrees of freedom.</para><para id="eip-26">The chi-square distribution curve is skewed to the right, and its shape depends on the degrees of freedom <emphasis effect="italics">df</emphasis>. For <emphasis effect="italics">df</emphasis> &gt; 90, the curve approximates the normal distribution. Test statistics based on the chi-square distribution are always greater than or equal to zero. Such application tests are almost always right-tailed tests.</para></section>
+<section id="eip-257" class="formula-review">
+<title>Formula Review</title>
+<para id="eip-153"><emphasis effect="italics">&#967;</emphasis><sup>2</sup> = (<emphasis effect="italics">Z</emphasis><sub>1</sub>)<sup>2</sup> + (<emphasis effect="italics">Z</emphasis><sub>2</sub>)<sup>2</sup> + &#8230; (<emphasis effect="italics">Z<sub>df</sub></emphasis>)<sup>2</sup>
+chi-square distribution random variable</para><para id="eip-800"><emphasis effect="italics">&#956;<sub>&#967;<sup>2</sup></sub></emphasis> = <emphasis effect="italics">df</emphasis> chi-square distribution population mean</para><para id="eip-477"><m:math>
+ <m:mrow>
+  <m:msub>
+   <m:mi>&#963;</m:mi>
+   <m:mrow>
+    <m:msup>
+     <m:mi>&#967;</m:mi>
+     <m:mn>2</m:mn>
+    </m:msup>
+    
+   </m:mrow>
+  </m:msub>
+  <m:mtext>=</m:mtext><m:msqrt>
+   <m:mrow>
+    <m:mn>2</m:mn><m:mrow><m:mo>(</m:mo>
+     <m:mrow>
+      <m:mi>d</m:mi><m:mi>f</m:mi>
+     </m:mrow>
+    <m:mo>)</m:mo></m:mrow>
+   </m:mrow>
+  </m:msqrt>
+  
+ </m:mrow>
+</m:math> Chi-Square distribution population standard deviation</para></section>
+<section id="eip-461" class="practice">
+<exercise id="eip-600">
+<problem id="eip-611">
+  <para id="eip-39">If the number of degrees of freedom for a chi-square distribution is 25, what is the population mean and standard deviation?</para>
+</problem>
+<solution id="eip-85">
+  <para id="eip-817">mean = 25 and standard deviation = 7.0711</para>
+</solution>
+</exercise>
+<exercise id="eip-313"><problem id="eip-552">
+  <para id="eip-774">If <emphasis effect="italics">df</emphasis> &gt; 90, the distribution is _____________. If <emphasis effect="italics">df</emphasis> = 15, the distribution is ________________.</para></problem>
+</exercise><exercise id="eip-836">
+<problem id="eip-509">
+  <para id="eip-827">When does the chi-square curve approximate a normal distribution?</para></problem>
+<solution id="eip-878">
+  <para id="eip-147">when the number of degrees of freedom is greater than 90</para></solution>
+</exercise>
+<exercise id="eip-957"><problem id="eip-158">
+  <para id="eip-922">Where is <emphasis effect="italics">&#956;</emphasis> located on a chi-square curve?</para></problem>
+</exercise><exercise id="eip-121"><problem id="eip-112">
+  <para id="eip-96">Is it more likely the <emphasis effect="italics">df</emphasis> is 90, 20, or two in the graph?</para>
+<figure id="eip-idm89632480"><media id="eip-idm149706320" alt="This is a nonsymmetrical  chi-square curve which slopes downward continually.">
+<image mime-type="image/jpeg" src="CNX_Stats_C11_M03_item001.jpg" width="280"/>
+</media>
+</figure></problem>
+<solution id="eip-300">
+  <para id="eip-35"><emphasis effect="italics">df</emphasis> = 2</para></solution>
+</exercise></section>
+<section id="fs-idm36620848" class="free-response">
+<title>Homework</title>
+<para id="fs-idp40574880"><emphasis effect="italics">Decide whether the following statements are true or false.</emphasis></para>
+<exercise id="element-612">
+<problem id="id21088269">
+  <para id="fs-idm37824272">As the number of degrees of freedom increases, the graph of the chi-square distribution looks more and more symmetrical.</para>
+</problem>
+<solution id="id21088289">
+  <para id="fs-idp108949152">true</para>
+</solution>
+</exercise>
+<exercise id="element-859"><problem id="id21088318">
+  <para id="element-303">The standard deviation of the chi-square distribution is twice the mean.</para>
+</problem>
+</exercise><exercise id="element-389">
+<problem id="id21088366">
+  <para id="element-110">The mean and the median of the chi-square distribution are the same if <emphasis effect="italics">df</emphasis> = 24.</para>
+</problem>
+<solution id="id21088416">
+  <para id="element-97">false</para>
+</solution>
+</exercise>
+</section>
+</content>
+</document>

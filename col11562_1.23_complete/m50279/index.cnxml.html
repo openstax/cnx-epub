@@ -1,0 +1,240 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Lab 1: Chi-Square Goodness-of-Fit</title><meta name="created-time" content="2014/05/09 10:31:25 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="population variance, test of a single variance"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Lab 1: Chi-Square Goodness-of-Fit</div>
+  <div data-type="note" data-has-label="true" id="fs-id1170646469482" class="statistics lab" data-label=""><div data-type="title">Lab 1: Chi-Square Goodness-of-Fit</div>
+<p id="id5380446">Class Time: </p>
+  <p id="id5380454">Names:</p>
+   <div data-type="list" id="id5380464"><div data-type="title">Student Learning Outcome</div><ul><li>The student will evaluate data collected to determine if they fit either the uniform or exponential distributions. </li>
+   </ul></div><p id="element-875862734"><span data-type="title">Collect the Data</span>
+    Go to your local supermarket. Ask 30 people as they leave for the total amount on their grocery receipts. (Or, ask three cashiers for the last ten amounts. Be sure to include the express lane, if it is open.)</p>
+   <div data-type="note" data-has-label="true" id="eip-665" data-label=""><div data-type="title">Note</div>You may need to combine two categories so that each cell has an expected value of at least five.</div><ol id="list-87585" data-mark-suffix=".">
+    <li>Record the values.
+     <table id="table023865" summary="Blank table with 30 empty cells."><tbody>
+        <tr>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+        </tr>
+        <tr>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+        </tr>
+        <tr>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+        </tr>
+        <tr>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+        </tr>
+        <tr>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+        </tr>
+        <tr>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+         <td>__________</td>
+        </tr>
+       </tbody></table>
+    </li>
+    <li>Construct a histogram of the data. Make five to six intervals. Sketch the graph using a ruler and pencil. Scale the axes. <figure id="id42008923"><span data-type="media" id="id42008927" data-alt="Blank graph with relative frequency on vertical"><img src="/resources/15009e556f23c8ae8bc9b2afb1e57bbfed146aa6/fig-ch11_15_01.png" data-media-type="image/png" alt="Blank graph with relative frequency on vertical" width="380"/></span></figure></li>
+    <li> Calculate the following: <ol id="list3242" type="a">
+      <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+      <mrow>
+       <mover accent="true">
+        <mi>x</mi>
+        <mo>&#175;</mo>
+       </mover>
+       <mo>=</mo>
+      </mrow>
+     </mrow><annotation-xml encoding="MathML-Content"><mrow>
+       <mover accent="true">
+        <mi>x</mi>
+        <mo>&#175;</mo>
+       </mover>
+       <mo>=</mo>
+      </mrow></annotation-xml></semantics></math>________</li>
+     <li><em data-effect="italics">s</em> = ________</li>
+     <li><em data-effect="italics">s</em><sup>2</sup> = ________</li>
+    </ol>
+    </li>
+   </ol>
+   <p id="element-755"><span data-type="title">Uniform Distribution</span>
+    Test to see if grocery receipts follow the uniform distribution.</p>
+   <ol id="list-897576324" data-mark-suffix="."><li>Using your lowest and highest values, <em data-effect="italics">X</em> ~ <em data-effect="italics">U</em> (_______, _______)</li>
+    <li>Divide the distribution into fifths.</li>
+    <li>Calculate the following:
+     <ol id="list45865" type="a"><li>lowest value = _________</li>
+      <li>20<sup>th</sup> percentile = _________</li>
+      <li>40<sup>th</sup> percentile = _________</li>
+      <li>60<sup>th</sup> percentile = _________</li>
+      <li>80<sup>th</sup> percentile = _________</li>
+      <li>highest value = _________</li>
+     </ol></li>
+    <li>For each fifth, count the observed number of receipts and record it. Then determine the expected number of receipts and record that.
+     <table id="id58758asdfa533062" summary="The partially filled table presents each fifth in the first column, observed in the blank second column, and expected in the blank third column. There are 5 rows."><thead>
+        <tr>
+         <th>Fifth </th>
+         <th>Observed</th>
+         <th>Expected</th>
+        </tr>
+       </thead><tbody>
+        <tr>
+         <td>1<sup>st</sup></td>
+         <td/>
+         <td/>
+        </tr>
+        <tr>
+         <td>2<sup>nd</sup></td>
+         <td/>
+         <td/>
+        </tr>
+        <tr>
+         <td>3<sup>rd</sup></td>
+         <td/>
+         <td/>
+        </tr>
+        <tr>
+         <td>4<sup>th</sup></td>
+         <td/>
+         <td/>
+        </tr>
+        <tr>
+         <td>5<sup>th</sup></td>
+         <td/>
+         <td/>
+        </tr>
+       </tbody></table></li>
+    <li><em data-effect="italics">H<sub>0</sub></em>: ________</li>
+    <li><em data-effect="italics">H<sub>a</sub></em>: ________</li>
+    <li>What distribution should you use for a hypothesis test?</li>
+    <li>Why did you choose this distribution?</li>
+    <li>Calculate the test statistic.</li>
+    <li>Find the <em data-effect="italics">p</em>-value.</li>
+    <li>Sketch a graph of the situation. Label and scale the <em data-effect="italics">x</em>-axis. Shade the area corresponding to the <em data-effect="italics">p</em>-value. <figure id="id40469669"><span data-type="media" id="id40469674" data-alt="Blank graph with vertical and horizontal axes."><img src="/resources/fff772d27029cb8e720c8be9db336c968f835d22/fig-ch11_15_02.png" data-media-type="image/png" alt="Blank graph with vertical and horizontal axes." width="380"/></span></figure></li>
+    <li>State your decision.</li>
+    <li>State your conclusion in a complete sentence.</li>
+   </ol><p id="element-875"><span data-type="title">Exponential Distribution</span>
+    Test to see if grocery receipts follow the exponential distribution with decay parameter <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mfrac>
+     <mrow>
+      <mn>1</mn>
+     </mrow>
+     <mrow>
+      <mover><mrow><mi>x</mi></mrow><mo>&#175;</mo></mover>
+     </mrow>
+    </mfrac>
+   </mrow><annotation-xml encoding="MathML-Content"><mfrac>
+     <mrow>
+      <mn>1</mn>
+     </mrow>
+     <mrow>
+      <apply>
+       <conjugate/>
+       <ci>x</ci>
+      </apply>
+     </mrow>
+    </mfrac></annotation-xml></semantics></math>.</p>
+   <ol id="list-86872534" data-mark-suffix="."><li>Using <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mover accent="true">
+        <mi>x</mi>
+        <mo>&#175;</mo>
+       </mover>
+      </mfrac>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mover accent="true">
+        <mi>x</mi>
+        <mo>&#175;</mo>
+       </mover>
+      </mfrac>
+     </mrow></annotation-xml></semantics></math> as the decay parameter, <em data-effect="italics">X</em> ~ <em data-effect="italics">Exp</em>(_________).</li>
+    <li>Calculate the following:
+     <ol id="list3248" type="a">
+      <li>lowest value = ________</li>
+      <li>first quartile = ________</li>
+      <li>37<sup>th</sup> percentile = ________</li>
+      <li>median = ________</li>
+      <li>63<sup>rd</sup> percentile = ________</li>
+      <li>3<sup>rd</sup> quartile = ________</li>
+      <li>highest value = ________</li>
+     </ol>
+    </li>
+    <li>For each cell, count the observed number of receipts and record it. Then determine the expected number of receipts and record that.<table id="id5asd875fasssff533783" summary="The partially filled table presents the cell in the first column, observed in the blank second column, and the expected in the blank third column. There are 6 rows."><thead>
+       <tr>
+        <th>Cell</th>
+        <th>Observed</th>
+        <th>Expected</th>
+       </tr>
+      </thead><tbody>
+       <tr>
+        <td>1<sup>st</sup></td>
+        <td/>
+        <td/>
+       </tr>
+       <tr>
+        <td>2<sup>nd</sup></td>
+        <td/>
+        <td/>
+       </tr>
+       <tr>
+        <td>3<sup>rd</sup></td>
+        <td/>
+        <td/>
+       </tr>
+       <tr>
+        <td>4<sup>th</sup></td>
+        <td/>
+        <td/>
+       </tr>
+       <tr>
+        <td>5<sup>th</sup></td>
+        <td/>
+        <td/>
+       </tr>
+       <tr>
+        <td>6<sup>th</sup></td>
+        <td/>
+        <td/>
+       </tr>
+      </tbody></table>
+    </li>
+    <li><em data-effect="italics">H<sub>0</sub></em>: ________</li>
+    <li><em data-effect="italics">H<sub>a</sub></em>: ________</li>
+    <li>What distribution should you use for a hypothesis test? </li>
+    <li>Why did you choose this distribution? </li>
+    <li>Calculate the test statistic.</li>
+    <li>Find the <em data-effect="italics">p</em>-value.</li>
+    <li>Sketch a graph of the situation. Label and scale the <em data-effect="italics">x</em>-axis. Shade the area corresponding to the <em data-effect="italics">p</em>-value. <figure id="id42004364"><span data-type="media" id="id42004370" data-alt="Blank graph with vertical and horizontal axes."><img src="/resources/fff772d27029cb8e720c8be9db336c968f835d22/fig-ch11_15_03.png" data-media-type="image/png" alt="Blank graph with vertical and horizontal axes." width="380"/></span></figure></li>
+    <li>State your decision.</li>
+    <li>State your conclusion in a complete sentence.</li>
+   </ol><div data-type="list" id="list-8658234"><div data-type="title">Discussion Questions</div><ol>
+    <li>Did your data fit either distribution? If so, which?</li>
+    <li>In general, do you think it&#8217;s likely that data could fit more than one distribution? In complete sentences, explain why or why not.</li>
+   </ol></div>
+ </div></body>
+
+</html>

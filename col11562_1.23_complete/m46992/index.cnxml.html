@@ -1,0 +1,3059 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Using the Central Limit Theorem</title><meta name="created-time" content="2013/07/19 08:42:57 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="binomial distribution, interquartile range, law of large numbers, mean, normal distribution, percentile, random variable, sample mean, sum, total, uniform distribution, z-score"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Using the Central Limit Theorem</div>
+    <p id="delete_me">It is important for you to understand when to use the <span data-type="term">central limit theorem</span>. If you are being asked to find the probability of the mean, use the clt for the mean. If you are being asked to find the probability of a sum or total, use the clt for sums. This also applies to percentiles for means and sums.</p><div data-type="note" data-has-label="true" id="id11030776" data-label=""><div data-type="title">NOTE</div>
+<p id="fs-idm90223456">If you are being asked to find the probability of an <strong>individual</strong> value, do <strong>not</strong> use the clt. <strong>Use the distribution of its random variable.</strong></p></div><section data-depth="1" id="element-733"><h3 data-type="title">Examples of the Central Limit Theorem</h3>
+<section data-depth="2" id="fs-idp5962992"><h4 data-type="title">Law of Large Numbers</h4>
+<p id="element-349">The <span data-type="term">law of large numbers</span> says that if you take samples of larger and larger size from any population, then the mean <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> of the sample tends to get closer and closer to <em data-effect="italics">&#956;</em>. From the central limit theorem, we know that as <em data-effect="italics">n</em> gets larger and larger, the sample means follow a normal distribution. The larger <em data-effect="italics">n</em> gets, the smaller the standard deviation gets. (Remember that the standard deviation for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#963;</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#963;</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>.) This means that the sample mean <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> must be close to the population mean <em data-effect="italics">&#956;</em>. We can say that <em data-effect="italics">&#956;</em> is the value that the sample means approach as <em data-effect="italics">n</em> gets larger. The central limit theorem illustrates the law of large numbers.</p>
+</section>
+
+<section data-depth="2" id="fs-idm1089056"><h4 data-type="title">Central Limit Theorem for the Mean and Sum Examples</h4>
+<div data-type="example" id="element-482">
+<p id="element-361">A study involving stress is conducted among the students on a college campus. <strong>The stress scores follow a <span data-type="term">uniform distribution</span></strong> with the lowest stress score equal to one and the highest equal to five. Using a sample of 75 students, find:</p>
+
+<ol id="fs-idp18838512" type="a">
+<li>The probability that the <strong>mean stress score</strong> for the 75 students is less than two.</li>
+<li>The 90<sup>th</sup> percentile for the <strong>mean stress score</strong> for the 75 students.</li>
+<li>The probability that the <strong>total of the 75 stress scores</strong> is less than 200.</li>
+<li>The 90<sup>th</sup> percentile for the <strong>total stress score</strong> for the 75 students.</li>
+</ol><p id="element-294">Let <em data-effect="italics">X</em> = one stress score.</p>
+
+<p id="element-632">Problems a and b ask you to find a probability or a percentile for a <span data-type="term">mean</span>. Problems c and d ask you to find a probability or a percentile for a <strong>total or sum</strong>. The sample size, <em data-effect="italics">n</em>, is equal to 75.</p>
+
+<p id="element-494">Since the individual stress scores follow a uniform distribution, <em data-effect="italics">X</em> ~ <em data-effect="italics">U</em>(1, 5) where <em data-effect="italics">a</em> = 1 and <em data-effect="italics">b</em> = 5 (See <a href="/contents/5b21fe4f-2515-4a5b-9935-f862434c88ed">Continuous Random Variables</a> for an explanation on the uniform distribution).</p><p id="element-35"><em data-effect="italics">&#956;<sub>X</sub></em> =
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mi>a</mi><mo>+</mo><mi>b</mi>
+   </mrow>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mi>a</mi><mo>+</mo><mi>b</mi>
+   </mrow>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mtext>1&#160;+&#160;5</mtext>
+   </mrow>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mtext>1&#160;+&#160;5</mtext>
+   </mrow>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> = 3
+</p><p id="element-200"><em data-effect="italics">&#963;<sub>X</sub></em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mi>b</mi><mo>&#8211;</mo><mi>a</mi><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mi>b</mi><mo>&#8211;</mo><mi>a</mi><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>5</mn><mo>&#8211;</mo><mtext>1)</mtext>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mn>5</mn><mo>&#8211;</mo><mtext>1)</mtext>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math> = 1.15
+</p><p id="element-591">For problems a. and b., let <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = the mean stress score for the 75 students. Then,</p><p id="element-257"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &#8764; <em data-effect="italics">N</em> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>3,&#160;</mtext><mfrac>
+     <mrow>
+      <mtext>1</mtext><mtext>.15</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>75</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>3,&#160;</mtext><mfrac>
+     <mrow>
+      <mtext>1</mtext><mtext>.15</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>75</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math>
+
+</p><div data-type="exercise" id="element-197">
+<div data-type="problem" id="id10355852">
+  <p id="element-549">a. Find <em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; 2). Draw the graph.</p></div>
+
+<div data-type="solution" id="id10355911">
+  <p id="element-146">a. <em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; 2) = 0</p>
+<p id="element-870">The probability that the mean stress score is less than two is about zero.</p>
+
+<figure id="fs-idm147247216">
+<span data-type="media" id="id10559440" data-alt="This is a normal distribution curve over a horizontal axis. The peak of the curve coincides with the point 3 on the horizontal axis. A point, 2, is marked at the left edge of the curve.">
+<img src="/resources/b5dad0da9c024b3da9b9fef4478aa2a82388f089/fig-ch07_04_01.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve over a horizontal axis. The peak of the curve coincides with the point 3 on the horizontal axis. A point, 2, is marked at the left edge of the curve." width="380"/></span>
+</figure>
+
+<p id="fs-idm29706432"><code>normalcdf</code> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>1,2,3,</mtext><mfrac>
+     <mrow>
+      <mtext>1</mtext><mtext>.15</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>75</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>1,2,3,</mtext><mfrac>
+     <mrow>
+      <mtext>1</mtext><mtext>.15</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>75</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> = 0
+</p><div data-type="note" data-has-label="true" id="note-1" data-label="" data-element-type="Reminder"><div data-type="title">Reminder</div>
+<p id="fs-idm90269648">The smallest stress score is one.</p>
+</div>
+</div>
+</div>
+
+<div data-type="exercise" id="element-523">
+<div data-type="problem" id="id10559554">
+  <p id="element-199">b. Find the 90<sup>th</sup> percentile for the mean of 75 stress scores. Draw a graph.</p></div>
+
+<div data-type="solution" id="id10559572">
+  <p id="element-647">b. Let <em data-effect="italics">k</em> = the 90<sup>th</sup> precentile.</p>
+<p id="element-179">Find <em data-effect="italics">k</em>, where <em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; <em data-effect="italics">k</em>) = 0.90.</p>
+<p id="element-54"><em data-effect="italics">k</em> = 3.2</p>
+
+<figure id="fs-idm91881776">
+<span data-type="media" id="id11181476" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 3 on the horizontal axis. A point, k, is labeled to the right of 3. A vertical line extends from k to the curve. The area under the curve to the left of k is shaded. The shaded area shows that P(x-bar &lt; k) = 0.90.">
+<img src="/resources/823d909d6d3687a2742a9bcaef0bd4f912e29b88/fig-ch07_04_02.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 3 on the horizontal axis. A point, k, is labeled to the right of 3. A vertical line extends from k to the curve. The area under the curve to the left of k is shaded. The shaded area shows that P(x-bar &lt; k) = 0.90." width="300" data-print-width="3in"/></span>
+</figure>
+
+<p id="element-776">The 90<sup>th</sup> percentile for the mean of 75 scores is about 3.2. This tells us that 90% of all the means of 75 stress scores are at most 3.2, and that 10% are at least 3.2.</p>
+<p id="element-992"><code>invNorm</code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>0</mtext><mtext>.90,3,</mtext><mfrac>
+     <mrow>
+      <mn>1.15</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>75</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>0</mtext><mtext>.90,3,</mtext><mfrac>
+     <mrow>
+      <mn>1.15</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>75</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> = 3.2
+</p></div>
+</div>
+
+<p id="element-445">For problems c and d, let <em data-effect="italics">&#931;X</em> = the sum of the 75 stress scores. Then, <em data-effect="italics">&#931;X</em> ~ <em data-effect="italics">N</em>[(75)(3),<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><msqrt>
+   <mrow>
+    <mn>75</mn>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><msqrt>
+   <mrow>
+    <mn>75</mn>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math>(1.15)]</p><div data-type="exercise" id="element-888">
+<div data-type="problem" id="id11181656">
+  <p id="element-293">c. Find <em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> &lt; 200). Draw the graph.</p></div>
+
+<div data-type="solution" id="id11181711">
+  <p id="fs-idp52789136">c. The mean of the sum of 75 stress scores is (75)(3) = 225</p>
+<p id="element-28">The standard deviation of the sum of 75 stress scores is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><msqrt>
+   <mrow>
+    <mn>75</mn>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><msqrt>
+   <mrow>
+    <mn>75</mn>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math>(1.15) = 9.96</p><p id="element-510"><em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> &lt; 200) = 0</p>
+
+<figure id="fs-idm142729648"><span data-type="media" id="id10985583" data-alt="This is a normal distribution curve over a horizontal axis. The peak of the curve coincides with the point 225 on the horizontal axis. A point, 200, is marked at the left edge of the curve.">
+<img src="/resources/3bcb7bce3ce73c09aa0a4ff2c4204407674c6e55/fig-ch07_04_03.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve over a horizontal axis. The peak of the curve coincides with the point 225 on the horizontal axis. A point, 200, is marked at the left edge of the curve." width="380"/>
+</span></figure>
+
+<p id="element-456">The probability that the total of 75 scores is less than 200 is about zero.</p>
+
+<p id="element-273" class="finger"><code>normalcdf</code> (75,200,(75)(3),<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><msqrt>
+   <mrow>
+    <mn>75</mn>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><msqrt>
+   <mrow>
+    <mn>75</mn>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math>(1.15)).</p><div data-type="note" data-has-label="true" id="note-2" data-label="" data-element-type="Reminder"><div data-type="title">Reminder</div>
+<p id="fs-idm105410608">The smallest total of 75 stress scores is 75, because the smallest single score is one.</p></div>
+
+</div>
+</div>
+
+<div data-type="exercise" id="element-681">
+<div data-type="problem" id="id10985710">
+  <p id="element-698">d. Find the 90<sup>th</sup> percentile for the total of 75 stress scores. Draw a graph.</p></div>
+
+<div data-type="solution" id="id10985728">
+  <p id="element-308">d. Let <em data-effect="italics">k</em> = the 90<sup>th</sup> percentile.</p>
+<p id="element-780">Find <em data-effect="italics">k</em> where <em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> &lt; <em data-effect="italics">k</em>) = 0.90.</p>
+<p id="element-724"><em data-effect="italics">k</em> = 237.8</p>
+
+<figure id="fs-idm72661520"><span data-type="media" id="id10985827" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 225 on the horizontal axis. A point, k, is labeled to the right of 225. A vertical line extends from k to the curve. The area under the curve to the left of k is shaded. The shaded area shows that P(sum of x &lt; k) = 0.90.">
+<img src="/resources/34f66e086d52d6f7bcd9843020078ccfabe3d92c/fig-ch07_04_04.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 225 on the horizontal axis. A point, k, is labeled to the right of 225. A vertical line extends from k to the curve. The area under the curve to the left of k is shaded. The shaded area shows that P(sum of x &lt; k) = 0.90." width="380"/></span>
+</figure>
+
+<p id="element-229">The 90<sup>th</sup> percentile for the sum of 75 scores is about 237.8. This tells us that 90% of all the sums of 75 scores are no more than 237.8 and 10% are no less than 237.8.</p>
+
+<p id="element-210"><code>invNorm</code>(0.90,(75)(3),<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><msqrt>
+   <mrow>
+    <mn>75</mn>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><msqrt>
+   <mrow>
+    <mn>75</mn>
+   </mrow>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math>(1.15)) = 237.8</p></div>
+</div></div>
+
+<div data-type="note" data-has-label="true" id="fs-idm56169616" class="statistics try" data-label=""><div data-type="title">Try It</div>
+
+<div data-type="exercise" id="fs-idm127013136">
+<div data-type="problem" id="fs-idm53684704">
+<p id="fs-idm54565472">Use the information in <a href="#element-482" class="autogenerated-content">[link]</a>, but use a sample size of 55 to answer the following questions.</p>
+
+<ol id="fs-idm68188624" type="a">
+<li>Find <em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+<mi>x</mi>
+<mo>&#175;</mo>
+</mover></annotation-xml></semantics></math> &lt; 7).</li>
+<li>Find <em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> &gt; 170).</li>
+<li>Find the 80<sup>th</sup> percentile for the mean of 55 scores.</li>
+<li>Find the 85<sup>th</sup> percentile for the sum of 55 scores.</li>
+</ol>
+</div>
+</div></div><div data-type="example" id="example2">
+<p id="eip-id1171180958925">Suppose that a market research analyst for a cell phone company conducts a study of their customers who exceed the time allowance included on their basic cell phone contract; the analyst finds that for those people who exceed the time included in their basic contract, the <strong>excess time used</strong> follows an <span data-type="term">exponential distribution</span> with a mean of 22 minutes.</p><p id="eip-id1171181431405">Consider a random sample of 80 customers who exceed the time allowance included in their basic cell phone contract.</p>
+
+<p id="eip-id1171181123857">Let <em data-effect="italics">X</em> = the excess time used by one INDIVIDUAL cell phone customer who exceeds his contracted time allowance.</p>
+
+<p id="eip-id1171182604485"><em data-effect="italics">X</em> &#8764; <em data-effect="italics">Exp</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>22</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>22</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math>. From previous chapters, we know that <em data-effect="italics">&#956;</em> = 22 and <em data-effect="italics">&#963;</em> = 22.</p><p id="eip-id1171180995295">Let <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = the mean excess time used by a sample of <em data-effect="italics">n</em> = 80 customers who exceed their contracted time allowance.</p>
+
+<p id="eip-id1171181077126"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math>&#160;~&#160;<em data-effect="italics">N</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>22,&#160;</mtext><mfrac>
+     <mrow>
+      <mtext>22</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>80</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>22,&#160;</mtext><mfrac>
+     <mrow>
+      <mtext>22</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>80</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> by the central limit theorem for sample means</p>
+
+<div data-type="exercise" id="eip-id8136792"><div data-type="problem" id="eip-id8760885">
+  <div data-type="list" id="eip-id1171180795181"><div data-type="title"><strong>Using the clt to find probability</strong></div><ol type="a">
+<li>Find the probability that the mean excess time used by the 80 customers in the sample is longer than 20 minutes. This is asking us to find <em data-effect="italics">P(</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &gt; 20). Draw the graph.</li>
+<li>Suppose that one customer who exceeds the time limit for his cell phone contract is randomly selected. Find the probability that this individual customer's excess time is longer than 20 minutes. This is asking us to find <em data-effect="italics">P</em>(<em data-effect="italics">x</em> &gt; 20).</li>
+<li>Explain why the probabilities in parts a and b are different.</li>
+</ol></div></div>
+
+<div data-type="solution" id="eip-id1171181279568">
+<ol id="fs-idm166018016" type="a"><li>
+<p id="fs-idm154380928">Find: <em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &gt; 20)</p>
+<p id="fs-idm18337216"><em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &gt; 20) = 0.79199 using <code>normalcdf</code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>20,1E99,22,</mtext><mfrac>
+     <mrow>
+      <mtext>22</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>80</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>20,1E99,22,</mtext><mfrac>
+     <mrow>
+      <mtext>22</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>80</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></p><p id="eip-id1171180808191">The probability is 0.7919 that the mean excess time used is more than 20 minutes, for a sample of 80 customers who exceed their contracted time allowance.</p>
+
+<figure id="fs-idm52706528">
+<span data-type="media" id="id1164895099196" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 22 on the horizontal axis. A point, 20, is labeled to the left of 22. A vertical line extends from 20 to the curve. The area under the curve to the right of k is shaded. The shaded area shows that P(x-bar &gt; 20).">
+<img src="/resources/832dc3bab2cd88641ded60380533d6e556f97ba7/fig-ch07_04_05N.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 22 on the horizontal axis. A point, 20, is labeled to the left of 22. A vertical line extends from 20 to the curve. The area under the curve to the right of k is shaded. The shaded area shows that P(x-bar &gt; 20)." width="380"/></span>
+</figure>
+
+<div data-type="note" data-has-label="true" id="note-5" class="finger" data-label="" data-element-type="Reminder"><div data-type="title">Reminder</div>
+<p id="fs-idm69813456"><strong>1E99 = 10<sup>99</sup> and &#8211;1E99 = &#8211;10<sup>99</sup></strong>. Press the <code>EE</code> key for E. Or just use 10<sup>99</sup> instead of 1E99.</p></div>
+</li>
+
+<li>
+<p id="element-260">Find <em data-effect="italics">P</em>(x &gt; 20). Remember to use the exponential distribution for an <strong>individual:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>X</mi><mo>~</mo><mi>E</mi><mi>x</mi><mi>p</mi><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>22</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>X</mi><mo>~</mo><mi>E</mi><mi>x</mi><mi>p</mi><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>22</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math>.<div data-type="newline"><br/></div><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo>&gt;</mo><mn>20</mn><mo stretchy="false">)</mo><mtext>&#160;=&#160;</mtext><msup>
+   <mi>e</mi>
+   <mrow>
+    <mrow><mo>(</mo>
+     <mrow>
+      <mo>&#8722;</mo><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>1</mn>
+         <mrow>
+          <mn>22</mn>
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mn>20</mn>
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    <mo>)</mo></mrow>
+   </mrow>
+  </msup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo>&gt;</mo><mn>20</mn><mo stretchy="false">)</mo><mtext>&#160;=&#160;</mtext><msup>
+   <mi>e</mi>
+   <mrow>
+    <mrow><mo>(</mo>
+     <mrow>
+      <mo>&#8722;</mo><mrow><mo>(</mo>
+       <mrow>
+        <mfrac>
+         <mn>1</mn>
+         <mrow>
+          <mn>22</mn>
+         </mrow>
+        </mfrac>
+
+       </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mn>20</mn>
+       </mrow>
+      <mo>)</mo></mrow>
+     </mrow>
+    <mo>)</mo></mrow>
+   </mrow>
+  </msup>
+
+ </mrow></annotation-xml></semantics></math> or <em data-effect="italics">e</em><sup>(&#8211;0.04545(20))</sup> = 0.4029 </p></li>
+<li>
+<ol id="eip-id1171181135515" type="1"><li><em data-effect="italics">P</em>(<em data-effect="italics">x</em> &gt; 20) = 0.4029 but <em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &gt; 20) = 0.7919</li>
+<li>The probabilities are not equal because we use different distributions to calculate the probability for individuals and for means.</li>
+<li>When asked to find the probability of an individual value, use the stated distribution of its random variable; do not use the clt. Use the clt with the normal distribution when you are being asked to find the probability for a mean.</li></ol>
+</li>
+</ol></div>
+</div>
+
+<div data-type="exercise" id="eip-id1171180910907">
+<div data-type="problem" id="eip-id1171181151372">
+<p id="eip-id1171180876381"><span data-type="title"><strong>Using the clt to find percentiles</strong></span>Find the 95<sup>th</sup> percentile for the <strong>sample mean excess time</strong> for samples of 80 customers who exceed their basic contract time allowances. Draw a graph.</p></div>
+
+<div data-type="solution" id="eip-id1171181126592">
+  <p id="eip-id1171181699771">Let <em data-effect="italics">k</em> = the 95<sup>th</sup> percentile. Find <em data-effect="italics">k</em> where <em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; <em data-effect="italics">k</em>) = 0.95</p>
+<p id="eip-id1171180867272" class="finger"><em data-effect="italics">k</em> = 26.0 using <code>invNorm</code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>0</mtext><mtext>.95,22</mtext><mo>,</mo><mfrac>
+     <mrow>
+      <mn>22</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>80</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>0</mtext><mtext>.95,22</mtext><mo>,</mo><mfrac>
+     <mrow>
+      <mn>22</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>80</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> = 26.0</p><figure id="fs-idm61807792">
+<span data-type="media" id="id1164881078203" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 22 on the horizontal axis. A point, k, is labeled to the right of 22. A vertical line extends from k to the curve. The area under the curve to the left of k is shaded. The shaded area shows that P(x-bar &lt; k) = 0.95.">
+<img src="/resources/2bf126a04004910fb6ccb9dbfa68769e790e1a60/fig-ch07_04_06.jpg" data-media-type="image/jpg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 22 on the horizontal axis. A point, k, is labeled to the right of 22. A vertical line extends from k to the curve. The area under the curve to the left of k is shaded. The shaded area shows that P(x-bar &lt; k) = 0.95." width="380"/>
+</span>
+</figure>
+
+<p id="element-987">The 95<sup>th</sup> percentile for the <strong>sample mean excess time used</strong> is about 26.0 minutes for random samples of 80 customers who exceed their contractual allowed time.</p>
+
+<p id="eip-id1171181013130">Ninety five percent of such samples would have means under 26 minutes; only five percent of such samples would have means above 26 minutes.</p></div>
+</div>
+</div>
+
+
+<div data-type="note" data-has-label="true" id="fs-idm50063488" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm113638352"><div data-type="problem" id="fs-idm60469088">
+<p id="eip-823">Use the information in <a href="#example2" class="autogenerated-content">[link]</a>, but change the sample size to 144.</p>
+<ol id="fs-idm72056816" type="a"><li>Find <em data-effect="italics">P</em>(20 &lt; <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; 30).</li>
+<li>Find <em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> is at least 3,000).</li>
+<li>Find the 75<sup>th</sup> percentile for the sample mean excess time of 144 customers.</li>
+<li>Find the 85<sup>th</sup> percentile for the sum of 144 excess times used by customers.</li>
+</ol></div>
+</div></div>
+
+<div data-type="example" id="fs-idm153949776">
+<p id="fs-idp5363584">In the United States, someone is sexually assaulted every two minutes, on average, according to a number of studies. Suppose the standard deviation is 0.5 minutes and the sample size is 100.</p><div data-type="exercise" id="fs-idm67039584">
+<div data-type="problem" id="fs-idm9526400">
+<ol id="fs-idm184397680" type="a"><li>Find the median, the first quartile, and the third quartile for the sample mean time of sexual assaults in the United States.</li>
+<li>Find the median, the first quartile, and the third quartile for the sum of sample times of sexual assaults in the United States.</li>
+<li>Find the probability that a sexual assault occurs on the average between 1.75 and 1.85 minutes.</li>
+<li>Find the value that is two standard deviations above the sample mean.</li>
+<li>Find the <em data-effect="italics">IQR</em> for the sum of the sample times.</li>
+</ol></div>
+<div data-type="solution" id="fs-idm110029216" class="finger">
+<ol id="fs-idm113256736" type="a"><li>We have, <em data-effect="italics">&#956;<sub>x</sub></em> = <em data-effect="italics">&#956;</em> = 2 and <em data-effect="italics">&#963;<sub>x</sub></em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#963;</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#963;</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mn>0.5</mn>
+   </mrow>
+   <mrow>
+    <mn>10</mn>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mn>0.5</mn>
+   </mrow>
+   <mrow>
+    <mn>10</mn>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> = 0.05. Therefore:
+<ol id="fs-idm103882928" type="1"><li>50<sup>th</sup> percentile = <em data-effect="italics">&#956;<sub>x</sub></em> = <em data-effect="italics">&#956;</em> = 2</li>
+<li>25<sup>th</sup> percentile = <em data-effect="italics">invNorm</em>(0.25,2,0.05) = 1.97</li>
+<li>75<sup>th</sup> percentile = <em data-effect="italics">invNorm</em>(0.75,2,0.05) = 2.03</li></ol></li>
+<li>We have <em data-effect="italics">&#956;<sub>&#931;x</sub></em> = <em data-effect="italics">n</em>(<em data-effect="italics">&#956;<sub>x</sub></em>) = 100(2) = 200 and <em data-effect="italics">&#963;<sub>&#956;x</sub></em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msqrt>
+   <mi>n</mi>
+  </msqrt>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msqrt>
+   <mi>n</mi>
+  </msqrt>
+ </mrow></annotation-xml></semantics></math>(<em data-effect="italics">&#963;<sub>x</sub></em>) = 10(0.5) = 5. Therefore
+<ol id="fs-idm36416432" type="1"><li>50<sup>th</sup> percentile = <em data-effect="italics">&#956;<sub>&#931;x</sub></em> = <em data-effect="italics">n</em>(<em data-effect="italics">&#956;<sub>x</sub></em>) = 100(2) = 200</li>
+<li>25<sup>th</sup> percentile = invNorm(0.25,200,5) = 196.63</li>
+<li>75<sup>th</sup> percentile = invNorm(0.75,200,5) = 203.37</li>
+</ol></li>
+<li><em data-effect="italics">P</em>(1.75 &lt; <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; 1.85) = <code>normalcdf</code>(1.75,1.85,2,0.05) = 0.0013</li>
+<li>Using the <em data-effect="italics">z</em>-score equation, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>z</mi><mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8211;</mo><msub>
+     <mi>&#956;</mi>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </msub>
+
+   </mrow>
+   <mrow>
+    <msub>
+     <mi>&#963;</mi>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </msub>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>z</mi><mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8211;</mo><msub>
+     <mi>&#956;</mi>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </msub>
+
+   </mrow>
+   <mrow>
+    <msub>
+     <mi>&#963;</mi>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+
+    </msub>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>, and solving for <em data-effect="italics">x</em>, we have <em data-effect="italics">x</em> = 2(0.05) + 2 = 2.1</li>
+<li>The <em data-effect="italics">IQR</em> is 75<sup>th</sup> percentile &#8211; 25<sup>th</sup> percentile = 203.37 &#8211; 196.63 = 6.74</li>
+</ol></div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idm67893584" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm59759104">
+<div data-type="problem" id="fs-idm113132656">
+<p id="fs-idm69144496">Based on data from the National Health Survey, women between the ages of 18 and 24 have an average systolic blood pressures (in mm Hg) of 114.8 with a standard deviation of 13.1. Systolic blood pressure for women between the ages of 18 to 24 follow a normal distribution.</p><ol id="fs-idm115059504" type="a">
+<li>If one woman from this population is randomly selected, find the probability that her systolic blood pressure is greater than 120.</li>
+<li>If 40 women from this population are randomly selected, find the probability that their mean systolic blood pressure is greater than 120.</li>
+<li>If the sample were four women between the ages of 18 to 24 and we did not know the original distribution, could the central limit theorem be used?</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div data-type="example" id="fs-idm112138992">
+<div data-type="exercise" id="fs-idm108732608">
+<div data-type="problem" id="fs-idm110483328">
+<p id="fs-idm753456">A study was done about violence against prostitutes and the symptoms of the posttraumatic stress that they developed. The age range of the prostitutes was 14 to 61. The mean age was 30.9 years with a standard deviation of nine years.</p>
+<ol id="fs-idm45985568" type="a">
+<li>In a sample of 25 prostitutes, what is the probability that the mean age of the prostitutes is less than 35?</li>
+<li>Is it likely that the mean age of the sample group could be more than 50 years? Interpret the results.</li>
+<li>In a sample of 49 prostitutes, what is the probability that the sum of the ages is no less than 1,600?</li>
+<li>Is it likely that the sum of the ages of the 49 prostitutes is at most 1,595? Interpret the results.</li>
+<li>Find the 95<sup>th</sup> percentile for the sample mean age of 65 prostitutes. Interpret the results.</li>
+<li>Find the 90<sup>th</sup> percentile for the sum of the ages of 65 prostitutes. Interpret the results.</li>
+</ol>
+</div>
+<div data-type="solution" id="fs-idm138994048" class="finger">
+<ol id="fs-idm86323200" type="a"><li><em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; 35) = <code>normalcdf</code>(-<em data-effect="italics">E</em>99,35,30.9,1.8) = 0.9886</li>
+<li><em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &gt; 50) = <code>normalcdf</code>(50, <em data-effect="italics">E</em>99,30.9,1.8) &#8776; 0. For this sample group, it is almost impossible for the group&#8217;s average age to be more than 50. However, it is still possible for an individual in this group to have an age greater than 50.</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> &#8805; 1,600) = <code>normalcdf</code>(1600,E99,1514.10,63) = 0.0864</li>
+<li><em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> &#8804; 1,595) = <code>normalcdf</code>(-E99,1595,1514.10,63) = 0.9005. This means that there is a 90% chance that the sum of the ages for the sample group <em data-effect="italics">n</em> = 49 is at most 1595.</li>
+<li>The 95th percentile = <code>invNorm</code>(0.95,30.9,1.1) = 32.7. This indicates that 95% of the prostitutes in the sample of 65 are younger than 32.7 years, on average.</li>
+<li>The 90th percentile = <code>invNorm</code>(0.90,2008.5,72.56) = 2101.5. This indicates that 90% of the prostitutes in the sample of 65 have a sum of ages less than 2,101.5 years.</li>
+</ol></div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="fs-idm102859984" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm123966224">
+<div data-type="problem" id="fs-idm146706672">
+<p id="fs-idm107433712">According to Boeing data, the 757 airliner carries 200 passengers and has doors with a height of 72 inches. Assume for a certain population of men we have a mean height of 69.0 inches and a standard deviation of 2.8 inches.</p><ol id="fs-idm131956368" type="a"><li>What doorway height would allow 95% of men to enter the aircraft without bending?</li>
+<li>Assume that half of the 200 passengers are men. What mean doorway height satisfies the condition that there is a 0.95 probability that this height is greater than the mean height of 100 men?</li>
+<li>For engineers designing the 757, which result is more relevant: the height from part a or part b? Why?</li>
+</ol></div>
+</div>
+</div>
+
+<div data-type="note" data-has-label="true" id="eip-713" data-label=""><div data-type="title">HISTORICAL NOTE</div>
+
+<p id="fs-idm36895584"><strong>: Normal Approximation to the Binomial</strong></p>
+<p id="eip-614">Historically, being able to compute binomial probabilities was one of the most important applications of the central limit theorem. Binomial probabilities with a small value for <em data-effect="italics">n</em>(say, 20) were displayed in a table in a book. To calculate the probabilities with large values of <em data-effect="italics">n</em>,  you had to use the binomial formula, which could be very complicated. Using the <span data-type="term">normal approximation to the binomial</span> distribution simplified the process. To compute the normal approximation to the binomial distribution, take a simple random sample from a population. You must meet the conditions for a <span data-type="term">binomial distribution</span>:</p>
+<ul id="norm_bi_approx" data-bullet-style="bullet">
+<li>there are a certain number <em data-effect="italics">n</em> of independent trials</li>
+<li>the outcomes of any trial are success or failure</li>
+<li>each trial has the same probability of a success <em data-effect="italics">p</em></li>
+</ul>
+<p id="fs-idm101632">Recall that if <em data-effect="italics">X</em> is the binomial random variable, then <em data-effect="italics">X</em> ~ <em data-effect="italics">B</em>(<em data-effect="italics">n, p</em>). The shape of the binomial distribution needs to be
+similar to the shape of the normal distribution. To ensure this, the quantities <em data-effect="italics">np</em>
+and <em data-effect="italics">nq</em> must both be greater than five (<em data-effect="italics">np</em> &gt; 5 and <em data-effect="italics">nq</em> &gt; 5;  the approximation is better if they are both greater than or equal to 10). Then the binomial can be approximated by the normal distribution with mean <em data-effect="italics">&#956;</em> = <em data-effect="italics">np</em> and standard deviation <em data-effect="italics">&#963;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msqrt>
+   <mrow>
+    <mi>n</mi><mi>p</mi><mi>q</mi>
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msqrt>
+   <mrow>
+    <mi>n</mi><mi>p</mi><mi>q</mi>
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math>. Remember that <em data-effect="italics">q</em> = 1 &#8211; <em data-effect="italics">p</em>. In order to get the best approximation, add 0.5 to <em data-effect="italics">x</em> or subtract 0.5 from <em data-effect="italics">x</em> (use <em data-effect="italics">x</em> + 0.5 or <em data-effect="italics">x</em> &#8211; 0.5). The number 0.5 is called the <span data-type="term">continuity correction factor</span> and is used in the following example.</p></div><div data-type="example" id="eip-831">
+<p id="eip-926">Suppose in a local Kindergarten through 12<sup>th</sup> grade (K - 12) school district, 53 percent of the population favor a charter school for grades K through 5. A simple random sample of 300 is surveyed.</p><ol id="eip-306" type="a"><li>Find the probability that <strong>at least 150</strong> favor a charter school.</li>
+<li>Find the probability that <strong>at most 160</strong> favor a charter school.</li>
+<li>Find the probability that <strong>more than 155</strong> favor a charter school.</li>
+<li>Find the probability that <strong>fewer than 147</strong> favor a charter school.</li>
+<li>Find the probability that <strong>exactly 175</strong> favor a charter school.</li>
+ </ol><p id="eip-778">Let <em data-effect="italics">X</em> = the number that favor a charter school for grades K trough 5. <em data-effect="italics">X</em> ~ <em data-effect="italics">B</em>(<em data-effect="italics">n, p</em>) where <em data-effect="italics">n</em> = 300 and <em data-effect="italics">p</em> = 0.53. Since <em data-effect="italics">np</em> &gt; 5 and <em data-effect="italics">nq</em> &gt; 5, use the normal approximation to the binomial. The formulas for the mean and standard deviation are <em data-effect="italics">&#956;</em> = <em data-effect="italics">np</em> and <em data-effect="italics">&#963;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow> <msqrt><mrow>
+    <mi>n</mi><mi>p</mi><mi>q</mi>
+   </mrow>
+  </msqrt>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow> <msqrt><mrow>
+    <mi>n</mi><mi>p</mi><mi>q</mi>
+   </mrow>
+  </msqrt>
+ </mrow></annotation-xml></semantics></math>. The mean is 159 and the standard deviation is 8.6447. The random variable for the normal distribution is <em data-effect="italics">Y</em>. <em data-effect="italics">Y</em> ~ <em data-effect="italics">N</em>(159, 8.6447). See <a href="/contents/725363e7-7247-4700-bfca-8ea5f02a4fe1">The Normal Distribution</a> for help with calculator instructions.</p><p id="eip-214" class="finger">For part a, you <strong>include 150</strong> so <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8805; 150) has normal approximation <em data-effect="italics">P</em>(<em data-effect="italics">Y</em> &#8805; 149.5) = 0.8641.</p>
+<p id="eip-554"><code>normalcdf</code>(149.5,10^99,159,8.6447) = 0.8641.</p><p id="eip-323">For part b, you <strong>include 160</strong> so <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8804; 160) has normal appraximation <em data-effect="italics">P</em>(<em data-effect="italics">Y</em> &#8804; 160.5) = 0.5689.</p>
+
+<p id="eip-162"><code>normalcdf</code>(0,160.5,159,8.6447) = 0.5689</p><p id="eip-630">For part c, you <strong>exclude 155</strong> so <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &gt; 155) has normal approximation <em data-effect="italics">P</em>(<em data-effect="italics">y</em> &gt; 155.5) = 0.6572.</p>
+
+<p id="eip-763"><code>normalcdf</code>(155.5,10^99,159,8.6447) = 0.6572.</p><p id="eip-955">For part d, you <strong>exclude 147</strong> so <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &lt; 147) has normal approximation <em data-effect="italics">P</em>(<em data-effect="italics">Y</em> &lt; 146.5) = 0.0741.</p><p id="eip-555"><code>normalcdf</code>(0,146.5,159,8.6447) = 0.0741</p><p id="eip-788">For part e,<em data-effect="italics">P</em>(<em data-effect="italics">X</em> = 175) has normal approximation <em data-effect="italics">P</em>(174.5 &lt; <em data-effect="italics">Y</em> &lt; 175.5) = 0.0083.</p>
+<p id="eip-680"><code>normalcdf</code>(174.5,175.5,159,8.6447) = 0.0083</p><p id="eip-863" class="finger"><strong>Because of calculators and computer software</strong> that let you calculate binomial probabilities for large values of <em data-effect="italics">n</em> easily, it is not necessary to use the the normal approximation to the binomial distribution, provided that you have access to these technology tools. Most school labs have Microsoft Excel, an example of computer software that calculates binomial probabilities. Many students have access to the TI-83 or 84 series calculators, and they easily calculate probabilities for the binomial distribution. If you type in "binomial probability distribution calculation" in an Internet browser, you can find at least one online calculator for the binomial.</p>
+
+<p id="eip-251">For <a href="#fs-idm153949776" class="autogenerated-content">[link]</a>, the  probabilities are calculated using the following binomial distribution: (<em data-effect="italics">n</em> = 300 and <em data-effect="italics">p</em> = 0.53). Compare the binomial and normal distribution answers. See <a href="/contents/0b777791-2ace-41f1-bf62-3e8aa7a267bb">Discrete Random Variables</a> for help with calculator instructions for the binomial.</p><p id="eip-67"><em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8805; 150) :<code>1 - binomialcdf</code>(300,0.53,149) = 0.8641</p><p id="eip-560"><em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8804; 160) :<code>binomialcdf</code>(300,0.53,160) = 0.5684</p><p id="eip-727"><em data-effect="italics">P</em>(<em data-effect="italics">X</em> &gt; 155) :<code>1 - binomialcdf</code>(300,0.53,155) = 0.6576</p><p id="eip-122"><em data-effect="italics">P</em>(<em data-effect="italics">X</em> &lt; 147) :<code>binomialcdf</code>(300,0.53,146) = 0.0742</p><p id="eip-267"><em data-effect="italics">P</em>(<em data-effect="italics">X</em> = 175) :(You use the binomial pdf.)<code>binomialpdf</code>(300,0.53,175) = 0.0083</p></div>
+</section>
+</section>
+
+<div data-type="note" data-has-label="true" id="fs-idm31488240" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="fs-idm78234832"><div data-type="problem" id="fs-idm12123632">
+<p id="fs-idm152181632">In a city, 46 percent of the population favor the incumbent, Dawn Morgan, for mayor. A simple random sample of 500 is taken. Using the continuity correction factor, find the probability that at least 250 favor Dawn Morgan for mayor.</p>
+</div>
+</div></div>
+
+
+<section data-depth="1" id="fs-idm136010448" class="references"><h3 data-type="title">References</h3>
+<p id="fs-idm131580848">Data from the Wall Street Journal.</p>
+<p id="fs-idm135912576">&#8220;National Health and Nutrition Examination Survey.&#8221; Center for Disease Control and Prevention. Available online at http://www.cdc.gov/nchs/nhanes.htm (accessed May 17, 2013).</p>
+</section>
+
+<section data-depth="1" id="fs-idm72155760" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="fs-idm147861760">The central limit theorem can be used to illustrate the law of large numbers. The law of large numbers states that the larger the sample size you take from a population, the closer the sample mean <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> gets to <em data-effect="italics">&#956;</em>.</p>
+</section>
+
+<section data-depth="1" id="fs-idm65344016" class="practice"><p id="fs-idp5239552"><em data-effect="italics">Use the following information to answer the next ten exercises:</em> A manufacturer produces 25-pound lifting weights. The lowest actual weight is 24 pounds, and the highest is 26 pounds. Each weight is equally likely so the distribution of weights is uniform. A sample of 100 weights is taken.</p>
+
+<div data-type="exercise" id="exercise4">
+<div data-type="problem" id="fs-idm108112736">
+<ol id="fs-idm44419104" type="a">
+<li>What is the distribution for the weights of one 25-pound lifting weight? What is the mean and standard deivation?</li>
+<li>What is the distribution for the mean weight of 100 25-pound lifting weights?</li>
+<li>Find the probability that the mean actual weight for the 100 weights is less than 24.9.</li>
+</ol>
+</div>
+
+<div data-type="solution" id="fs-idm27647648">
+<ol id="fs-idp41045488" type="a"><li><em data-effect="italics">U</em>(24, 26), 25, 0.5774</li>
+<li><em data-effect="italics">N</em>(25, 0.0577)</li>
+<li>0.0416</li>
+</ol></div>
+</div>
+
+<div data-type="exercise" id="fs-idm84240544"><div data-type="problem" id="fs-idp8363072">
+<p id="fs-idm117442736">Draw the graph from <a href="#exercise4" class="autogenerated-content">[link]</a></p></div>
+
+<!-- <solution id="fs-idm124774096">
+<figure id="fs-idm129645712"><media id="fs-idm66137264" alt="This is a normal distribution curve which extends from 24 to 26. The peak of the curve  coincides with the point 25 on the horizontal axis. An arrow points to 25 showing P(x-bar &lt; 24.9).">
+<image mime-type="image/jpg" src="CNX_Stats_C07_M04_item001annoN.jpg" width="380"/>
+</media>
+</figure></solution> -->
+</div><div data-type="exercise" id="exercise6">
+<div data-type="problem" id="fs-idm151567920">
+<p id="fs-idm68403024">Find the probability that the mean actual weight for the 100 weights is greater than 25.2.</p>
+</div>
+<div data-type="solution" id="fs-idm73291392">
+<p id="fs-idm73292848">0.0003</p>
+</div>
+</div>
+
+
+<div data-type="exercise" id="fs-idm30735600"><div data-type="problem" id="fs-idm87184416">
+<p id="fs-idm68751264">Draw the graph from <a href="#exercise6" class="autogenerated-content">[link]</a></p></div>
+
+<!-- <solution id="fs-idm90694544">
+<figure id="eip-idp936112">
+<media id="fs-idm69192448" alt="This is a normal distribution curve which extends from 24 to 26. The peak of the curve  coincides with the point 25 on the horizontal axis. An arrow points to 25 showing P(x-bar &gt; 25.2).">
+<image mime-type="image/jpg" src="CNX_Stats_C07_M04_item002annoN.jpg" width="380"/>
+</media>
+</figure>
+</solution> -->
+</div><div data-type="exercise" id="exercise8">
+<div data-type="problem" id="fs-idm65102048">
+<p id="fs-idm147870912">Find the 90<sup>th</sup> percentile for the mean weight for the 100 weights.</p>
+</div>
+<div data-type="solution" id="fs-idm110485568">
+<p id="fs-idm150922624">25.07</p>
+</div>
+</div>
+
+
+<div data-type="exercise" id="fs-idm167897040"><div data-type="problem" id="fs-idm61920032">
+<p id="fs-idm111847536">Draw the graph from <a href="#exercise8" class="autogenerated-content">[link]</a></p></div>
+
+<!-- <solution id="fs-idm110267328">
+<figure id="eip-idp3873008"><media id="fs-idm113411344" alt="This is a normal distribution curve which extends from 24 to 26. The peak of the curve  coincides with the point 25 on the horizontal axis. A point, k, is labeled to the right of 25. A vertical line extends from k to the curve. An arrow points to 25 showing P(x-bar &lt; k) = 0.90.">
+<image mime-type="image/jpg" width="380" src="CNX_Stats_C07_M04_item003annoN.jpg"/>
+</media>
+</figure>
+</solution> -->
+</div><div data-type="exercise" id="exercise10">
+<div data-type="problem" id="fs-idm111208496">
+<ol id="fs-idm21659936" type="a">
+<li>What is the distribution for the sum of the weights of 100 25-pound lifting weights?</li>
+<li>Find <em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> &lt; 2,450).</li></ol>
+</div>
+<div data-type="solution" id="fs-idm9385136">
+<ol id="fs-idp176981200" type="a">
+<li><em data-effect="italics">N</em>(2,500, 5.7735)</li>
+<li>0</li></ol>
+</div>
+</div>
+
+<div data-type="exercise" id="exercise11"><div data-type="problem" id="fs-idm29117824">
+<p id="fs-idm110263040">Draw the graph from <a href="#exercise10" class="autogenerated-content">[link]</a></p></div>
+
+<!-- <solution id="fs-idp11678144">
+<figure id="eip-idm64321520">
+<media id="fs-idm129935248" alt="This is a normal distribution curve which extends from 2400 to 2600. The peak of the curve  coincides with the point 2500 on the horizontal axis. An arrow points to the left tail of the curve showing P(sum of x &lt; 2450)." display="block">
+<image mime-type="image/jpg" src="CNX_Stats_C07_M04_item004annoN.jpg" width="380"/>
+</media>
+</figure>
+</solution> -->
+</div><div data-type="exercise" id="exercise12">
+<div data-type="problem" id="fs-idm115316000">
+<p id="fs-idm15854240">Find the 90<sup>th</sup> percentile for the total weight of the 100 weights.</p>
+</div>
+<div data-type="solution" id="fs-idm57878688"><p id="fs-idm47977984">2,507.40</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm54084400"><div data-type="problem" id="fs-idm58526640">
+<p id="fs-idp2153120">Draw the graph from <a href="#exercise12" class="autogenerated-content">[link]</a></p></div>
+
+<!-- <solution id="fs-idm17187952">
+<figure id="eip-idp76755600">
+<media id="fs-idm123631184" alt="This is a normal distribution curve which extends from 24 to 26. The peak of the curve  coincides with the point 25 on the horizontal axis. A point, k, is labeled to the right of 25. A vertical line extends from k to the curve. An arrow points to 25 showing P(sum of x &lt; k) = 0.90.">
+<image mime-type="image/jpg" width="380" src="CNX_Stats_C07_M04_item005annoN.jpg"/>
+</media>
+</figure>
+</solution> -->
+</div><p id="fs-idp1747872"><em data-effect="italics"><div data-type="newline"><br/></div>Use the following information to answer the next five exercises:</em> The length of time a particular smartphone's battery lasts follows an exponential distribution with a mean of ten months. A sample of 64 of these smartphones is taken.</p><div data-type="exercise" id="fs-idm110175696">
+<div data-type="problem" id="fs-idp8374016">
+<ol id="fs-idp7565520" type="a">
+<li>What is the standard deviation?</li>
+<li>What is the parameter <em data-effect="italics">m</em>?</li>
+</ol>
+</div>
+<div data-type="solution" id="fs-idm119290064">
+<ol id="fs-idp20993168" type="a">
+<li>10</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mrow>
+    <mn>10</mn>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mrow>
+    <mn>10</mn>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></li>
+</ol>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm85285856"><div data-type="problem" id="fs-idp955712">
+<p id="fs-idm35104432">What is the distribution for the length of time one battery lasts?</p>
+</div>
+
+<!-- <solution id="fs-idm75203552">
+<para id="fs-idm4726032"><emphasis effect="italics">Exp</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mrow>
+      <m:mn>10</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></para></solution> --></div><div data-type="exercise" id="fs-idm151129248">
+<div data-type="problem" id="fs-idm53240800">
+<p id="fs-idm86689744">What is the distribution for the mean length of time 64 batteries last?</p>
+</div>
+<div data-type="solution" id="fs-idm34212208">
+<p id="fs-idm34212080"><em data-effect="italics">N</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>10,&#160;</mtext><mfrac>
+     <mrow>
+      <mn>10</mn>
+     </mrow>
+     <mn>8</mn>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>10,&#160;</mtext><mfrac>
+     <mrow>
+      <mn>10</mn>
+     </mrow>
+     <mn>8</mn>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm69924752"><div data-type="problem" id="fs-idm55097344">
+<p id="fs-idp63314112">What is the distribution for the total length of time 64 batteries last?</p>
+</div>
+
+<!-- <solution id="fs-idm141956784">
+<para id="fs-idm64798960"><emphasis effect="italics">N</emphasis>(640, 80)</para>
+</solution> -->
+</div><div data-type="exercise" id="fs-idm1366160">
+<div data-type="problem" id="fs-idm41789648">
+<p id="fs-idm41789520">Find the probability that the sample mean is between seven and 11.</p></div>
+<div data-type="solution" id="fs-idm51974096">
+<p id="fs-idm51973968">0.7799</p>
+</div>
+</div>
+
+<div data-type="exercise" id="fs-idm28939008"><div data-type="problem" id="fs-idm73034064">
+<p id="fs-idm28887376">Find the 80<sup>th</sup> percentile for the total length of time 64 batteries last.</p></div>
+
+<!-- <solution id="fs-idm4580720"><para id="fs-idm5410400">707.3</para></solution> -->
+</div><div data-type="exercise" id="fs-idm41589104">
+<div data-type="problem" id="fs-idm45566256"><p id="fs-idm45566128">Find the <em data-effect="italics">IQR</em> for the mean amount of time 64 batteries last.</p></div>
+<div data-type="solution" id="fs-idm46764496"><p id="fs-idm46764368">1.69</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm45108016"><div data-type="problem" id="fs-idm4738352">
+<p id="fs-idm53098160">Find the middle 80% for the total amount of time 64 batteries last.</p>
+</div>
+
+<!-- <solution id="fs-idm72677136"><para id="fs-idm12285840">205.05</para></solution> -->
+</div><p id="fs-idm65293824"><em data-effect="italics"><div data-type="newline"><br/></div>Use the following information to answer the next eight exercises:</em> A uniform distribution has a minimum of six and a maximum of ten. A sample of 50 is taken.</p><div data-type="exercise" id="fs-idm1612656">
+<div data-type="problem" id="fs-idm47127360">
+<p id="fs-idm47127232">Find <em data-effect="italics">P</em>(<em data-effect="italics">&#931;x</em> &gt; 420).</p>
+</div>
+<div data-type="solution" id="fs-idm7883840"><p id="fs-idm7883712">0.0072</p></div>
+</div>
+
+
+<div data-type="exercise" id="fs-idm48638032"><div data-type="problem" id="fs-idm30917728">
+<p id="fs-idm132534640">Find the 90<sup>th</sup> percentile for the sums.</p>
+</div>
+
+<!-- <solution id="fs-idm96012160">
+<para id="fs-idm96012032">410.46</para>
+</solution> -->
+</div><div data-type="exercise" id="fs-idm53694544">
+<div data-type="problem" id="fs-idm53230816">
+<p id="fs-idm65302128">Find the 15<sup>th</sup> percentile for the sums.</p></div>
+<div data-type="solution" id="fs-idm143692576"><p id="fs-idm143692448">391.54</p></div>
+</div>
+
+
+<div data-type="exercise" id="fs-idm16561168"><div data-type="problem" id="fs-idm46777472">
+<p id="fs-idp4806384">Find the first quartile for the sums.</p>
+</div>
+
+<!-- <solution id="fs-idp5340032"><para id="fs-idm53707024">394.49</para></solution> -->
+</div><div data-type="exercise" id="fs-idp10404400">
+<div data-type="problem" id="fs-idm78936016"><p id="fs-idm78935888">Find the third quartile for the sums.</p></div>
+<div data-type="solution" id="fs-idp671104"><p id="fs-idp671232">405.51</p></div>
+</div>
+
+
+<div data-type="exercise" id="fs-idm111220240"><div data-type="problem" id="fs-idm73987984"><p id="fs-idm65020208">Find the 80<sup>th</sup> percentile for the sums.</p></div>
+
+<!-- <solution id="fs-idm3823936"><para id="fs-idm70486928">406.87</para></solution> -->
+</div></section><section data-depth="1" id="fs-idm47834016" class="free-response"><h3 data-type="title">Homework</h3>
+<div data-type="exercise" id="element-941"><div data-type="problem" id="id6533927">
+  <p id="element-918">The attention span of a two-year-old is exponentially distributed with a mean of about eight minutes. Suppose we randomly survey 60 two-year-olds.</p>
+
+<ol id="element-307" type="a"><li>In words, <em data-effect="italics">&#935;</em> = _______</li>
+<li><em data-effect="italics">&#935;</em> ~  _____(_____,_____)</li>
+<li>In words, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = ____________</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> ~ _____(_____,_____)</li>
+<li>Before doing any calculations, which do you think will be higher? Explain why.
+<ol id="sublist1" type="i">
+<li>The probability that an individual attention span is less than ten minutes.</li>
+<li>The probability that the average attention span for the 60 children is less than ten minutes?</li>
+</ol>
+</li>
+<li>Calculate the probabilities in part e.</li>
+<li>Explain why the distribution for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> is not exponential.</li></ol></div>
+
+<!-- <solution id="fs-idm12623136">
+<list id="fs-idm12622880" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">X</emphasis> = the attention span of a two-year-old</item>
+<item><emphasis effect="italics">&#935;</emphasis> ~ <emphasis effect="italics">Exp</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mfrac>
+     <m:mn>1</m:mn>
+     <m:mn>8</m:mn>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+</m:math> = the mean (average) attention span of a two-year-old</item>
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> ~ <emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>8,&#160;</m:mtext><m:mfrac>
+     <m:mn>8</m:mn>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>60</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item>The standard deviation is smaller, so there is more area under the normal curve.</item>
+<item>Exponential: 0.7135
+<newline/>Normal: 0.7579</item>
+<item>By the central limit theorem, as <emphasis effect="italics">n</emphasis> gets larger, the means tend to follow a normal distribution.</item>
+</list></solution> -->
+</div><div data-type="exercise" id="element-897">
+<div data-type="problem" id="id6536735">
+  <p id="element-790">The closing stock prices of 35 U.S. semiconductor manufacturers are given as follows.</p>
+<p id="id6536759"><span data-type="list" data-list-type="labeled-item" data-display="inline">
+<span data-type="item">8.625</span>
+<span data-type="item">30.25</span>
+<span data-type="item">27.625</span>
+<span data-type="item">46.75</span>
+<span data-type="item">32.875</span>
+<span data-type="item">18.25</span>
+<span data-type="item">5</span>
+<span data-type="item">0.125</span>
+<span data-type="item">2.9375</span>
+<span data-type="item">6.875</span>
+<span data-type="item">28.25</span>
+<span data-type="item">24.25</span>
+<span data-type="item">21</span>
+<span data-type="item">1.5</span>
+<span data-type="item">30.25</span>
+<span data-type="item">71</span>
+<span data-type="item">43.5</span>
+<span data-type="item">49.25</span>
+<span data-type="item">2.5625</span>
+<span data-type="item">31</span>
+<span data-type="item">16.5</span>
+<span data-type="item">9.5</span>
+<span data-type="item">18.5</span>
+<span data-type="item">18</span>
+<span data-type="item">9</span>
+<span data-type="item">10.5</span>
+<span data-type="item">16.625</span>
+<span data-type="item">1.25</span>
+<span data-type="item">18</span>
+<span data-type="item">12.87</span>
+<span data-type="item">7</span>
+<span data-type="item">12.875</span>
+<span data-type="item">2.875</span>
+<span data-type="item">60.25</span>
+<span data-type="item">29.25</span>
+</span></p>
+
+<ol id="madeup9" type="a"><li>In words, <em data-effect="italics">&#935;</em> = ______________</li>
+	<li><ol id="list234325" type="i">
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = _____</li>
+<li><em data-effect="italics">s<sub>x</sub></em> = _____</li>
+<li><em data-effect="italics">n</em> = _____</li>
+</ol>
+</li>
+<li>Construct a histogram of the distribution of the averages. Start at <em data-effect="italics">x</em> = &#8211;0.0005. Use bar widths of ten.</li>
+<li>In words, describe the distribution of stock prices.</li>
+<li>Randomly average five stock prices together. (Use a random number generator.) Continue averaging five pieces together until you have ten averages. List those ten averages.</li>
+<li>Use the ten averages from part e to calculate the following.
+<ol id="listhgklasdlfh11" type="i"><li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = _____</li>
+<li><em data-effect="italics">s<sub>x</sub></em> = _____</li>
+</ol></li>
+<li>Construct a histogram of the distribution of the averages. Start at <em data-effect="italics">x</em> = -0.0005. Use bar widths of ten.</li>
+<li>Does this histogram look like the graph in part c?</li>
+<li>In one or two complete sentences, explain why the graphs either look the same or look different?</li>
+<li>Based upon the theory of the <strong>central limit theorem</strong>, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> ~ _____(_____,____)</li>
+</ol></div>
+<div data-type="solution" id="id6537488">
+<ol id="madeup8" type="a"><li><em data-effect="italics">X</em> = the closing stock prices for U.S. semiconductor manufacturers</li>
+<li>i. $20.71; ii. $17.31; iii. 35</li>
+<li/>
+<li>Exponential distribution, <em data-effect="italics">&#935; ~ Exp</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20.71</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mn>1</mn>
+     <mrow>
+      <mn>20.71</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></li>
+
+<li>Answers will vary.</li>
+<li>i. $20.71; ii. $11.14</li>
+<li>Answers will vary.</li>
+<li>Answers will vary.</li>
+<li>Answers will vary.</li>
+<li><em data-effect="italics">N</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>20</mtext><mtext>.71,&#160;</mtext><mfrac>
+     <mrow>
+      <mn>17.31</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mn>5</mn>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>20</mtext><mtext>.71,&#160;</mtext><mfrac>
+     <mrow>
+      <mn>17.31</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mn>5</mn>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></li>
+</ol></div>
+</div>
+
+
+<p id="fs-idm20388704"><em data-effect="italics"><div data-type="newline"><br/></div>Use the following information to answer the next three exercises:</em> Richard&#8217;s Furniture Company delivers furniture from 10 A.M. to 2 P.M. continuously and uniformly. We are interested in how long (in hours) past the 10 A.M. start time that individuals wait for their delivery.</p><div data-type="exercise" id="element-725"><div data-type="problem" id="id10684324">
+  <p id="element-386"><em data-effect="italics">&#935;</em> ~ _____(_____,_____)</p>
+<ol id="element-596" type="a">
+<li><em data-effect="italics">U</em>(0,4)</li>
+<li><em data-effect="italics">U</em>(10,2)</li>
+<li><em data-effect="italics">E&#967;p</em>(2)</li>
+<li><em data-effect="italics">N</em>(2,1)</li></ol>
+</div>
+
+<!-- <solution id="id11298039">
+  <para id="element-98">a</para>
+</solution> -->
+</div><div data-type="exercise" id="element-407">
+<div data-type="problem" id="id11298063">
+  <p id="element-498">The average wait time is:</p>
+<ol id="element-143" type="a">
+<li>one hour.</li>
+<li>two hours.</li>
+<li>two and a half hours.</li>
+<li>four hours.</li></ol>
+</div>
+<div data-type="solution" id="id11298138">
+  <p id="element-117">b</p>
+</div>
+</div>
+
+<div data-type="exercise" id="element-191"><div data-type="problem" id="id11298162">
+<p id="fs-idp19107664">Suppose that it is now past noon on a delivery day. The probability that a person must wait at least one and a half <strong>more</strong> hours is:</p><ol id="fs-idp191113008" type="a">
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>4</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>4</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>
+</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>4</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>4</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>
+</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>8</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>8</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>
+</li>
+</ol>
+</div>
+
+<!-- <solution id="id11213161">
+  <para id="element-376">a</para>
+</solution> --></div><p id="fs-idm3061136"><em data-effect="italics">Use the following information to answer the next two exercises:</em> The time to wait for a particular rural bus is distributed uniformly from zero to 75 minutes. One hundred riders are randomly sampled to learn how long they waited.</p>
+<div data-type="exercise" id="element-620">
+<div data-type="problem" id="id6538203">
+  <p id="element-73">The 90<sup>th</sup> percentile sample average wait time (in minutes) for a sample of 100 riders is:</p>
+<ol id="element-576" type="a">
+<li>315.0</li>
+<li>40.3	</li>
+<li>38.5	</li>
+<li>65.2</li>
+</ol>
+</div>
+<div data-type="solution" id="id6538281">
+  <p id="element-230">b</p>
+</div>
+</div>
+<div data-type="exercise" id="element-339"><div data-type="problem" id="id6538305">
+  <p id="element-905">Would you be surprised, based upon numerical calculations, if the sample average wait time (in minutes) for 100 riders was less than 30 minutes?</p>
+<ol id="element-346" type="a">
+<li>yes</li>
+<li>no</li>
+<li>There is not enough information.	</li>
+</ol>
+</div>
+
+<!-- <solution id="id6538373">
+  <para id="element-59">a</para>
+</solution> -->
+</div><p id="fs-idm126595600"><em data-effect="italics"><div data-type="newline"><br/></div>Use the following to answer the next two exercises:</em> The cost of unleaded gasoline in the Bay Area once followed an unknown distribution with a mean of $4.59 and a standard deviation of $0.10. Sixteen gas stations from the Bay Area are randomly chosen. We are interested in the average cost of gasoline for the 16 gas stations.</p><div data-type="exercise" id="element-644"><div data-type="problem" id="id6538784">
+  <p id="element-163">What's the approximate probability that the average price for 16 gas stations is over $4.69?</p>
+<ol id="element-390" type="a">
+<li>almost zero</li>
+<li>0.1587</li>
+<li>0.0943</li>
+<li>unknown</li>
+</ol>
+</div>
+<div data-type="solution" id="id6538862">
+  <p id="element-931">a</p>
+</div>
+</div><div data-type="exercise" id="eip-415"><div data-type="problem" id="eip-id1164882896740">
+  <p id="eip-id1164888343606">Find the probability that the average price for 30 gas stations is less than $4.55.</p>
+<ol id="element-193" type="a">
+<li>0.6554</li>
+<li>0.3446</li>
+<li>0.0142</li>
+<li>0.9858</li>
+<li>0</li></ol>
+</div>
+
+<!-- <solution id="eip-id2487344">
+  <para id="eip-id1164888569646">c</para>
+</solution> -->
+</div><div data-type="exercise" id="eip-786">
+<div data-type="problem" id="eip-371">
+  <p id="eip-975">Suppose in a local Kindergarten through 12<sup>th</sup> grade (K - 12) school district, 53 percent of the population favor a charter school for grades K through five. A simple random sample of 300 is surveyed. Calculate following using the normal approximation to the binomial distribtion.</p><ol id="Charter_School" type="a">
+<li>Find the probability that less than 100 favor a charter school for grades K through 5.</li>
+<li>Find the probability that 170 or more favor a charter school for grades K through 5.</li>
+<li>Find the probability that no more than 140 favor a charter school for grades K through 5.</li>
+<li>Find the probability that there are fewer than 130 that favor a charter school for grades K through 5.</li>
+<li>Find the probability that exactly 150 favor a charter school for grades K through 5.</li>
+</ol>
+<p id="fs-idm85678016" class="finger">If you have access to an appropriate calculator or computer software, try calculating these probabilities using the technology.</p>
+</div>
+<div data-type="solution" id="eip-350">
+<ol id="Charter_school_answers" type="a">
+<li>0</li>
+<li>0.1123</li>
+<li>0.0162</li>
+<li>0.0003</li>
+<li>0.0268</li>
+</ol>
+
+</div>
+</div>
+<div data-type="exercise" id="eip-140"><div data-type="problem" id="eip-821">
+  <p id="eip-681">Four friends, Janice, Barbara, Kathy and Roberta, decided to carpool together to get to school. Each day the driver would be chosen by randomly selecting one of the four names. They carpool to school for 96 days. Use the normal approximation to the binomial to calculate the following probabilities. Round the standard deviation to four decimal places.</p>
+<ol id="Carpool" type="a">
+<li>Find the probability that Janice is the driver at most 20 days.</li>
+<li>Find the probability that Roberta is the driver more than 16 days.</li>
+<li>Find the probability that Barbara drives exactly 24 of those 96 days.</li>
+</ol>
+</div>
+<!-- <solution id="eip-168">
+  <para id="eip-768">
+<list id="Carpool_answers" list-type="enumerated" number-style="lower-alpha">
+<item>0.2047</item>
+<item>0.9615</item>
+<item>0.0938</item>
+</list></para>
+</solution> -->
+</div><div data-type="exercise" id="element-440"><div data-type="problem" id="id6182284">
+  <p id="element-569"><em data-effect="italics">X</em> ~ <em data-effect="italics">N</em>(60, 9). Suppose that you form random samples of 25 from this distribution. Let <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> be the random variable of averages. Let <em data-effect="italics">&#931;X</em> be the random variable of sums. For parts c through f, sketch the graph, shade the region, label and scale the horizontal axis for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math>, and find the probability.</p>
+
+<ol id="element-455" type="a">
+<li>Sketch the distributions of <em data-effect="italics">X</em> and
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> on the same graph.</li>
+	<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> ~ _____(_____,_____)</li>
+	<li><em data-effect="italics">P</em>(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; 60) = _____</li>
+	<li>Find the 30<sup>th</sup> percentile for the mean.</li>
+	<li><em data-effect="italics">P</em>(56 &lt; <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; 62) = _____</li>
+	<li><em data-effect="italics">P</em>(18 &lt; <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &lt; 58) = _____</li>
+	<li><em data-effect="italics">&#931;x</em> ~ _____(_____,_____)</li>
+	<li>Find the minimum value for the upper quartile for the sum.</li>
+	<li><em data-effect="italics">P</em>(1,400 &lt; <em data-effect="italics">&#931;x</em> &lt; 1,550) = _____</li>
+</ol></div>
+
+<div data-type="solution" id="id6009706">
+<ol id="element-209" type="a"><li>Check student&#8217;s solution.</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> ~ <em data-effect="italics">N</em><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>60,&#160;</mtext><mfrac>
+     <mn>9</mn>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>25</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mtext>60,&#160;</mtext><mfrac>
+     <mn>9</mn>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>25</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></li>
+	<li>0.5000</li>
+	<li>59.06</li>
+	<li>0.8536</li>
+	<li>0.1333</li>
+<li> <em data-effect="italics">N</em>(1500, 45)</li>
+	<li>1530.35</li>
+	<li>0.6877
+</li></ol></div>
+</div><div data-type="exercise" id="element-666"><div data-type="problem" id="id6534247">
+<p id="element-660">Suppose that the length of research papers is uniformly distributed from ten to 25 pages. We survey a class in which 55 research papers were turned in to a professor. The 55 research papers are considered a random collection of all papers. We are interested in the average length of the research papers.</p>
+<ol id="element-826" type="a">
+<li>In words, <em data-effect="italics">X</em> = _____________</li>
+<li><em data-effect="italics">X</em> ~ _____(_____,_____)</li>
+<li><em data-effect="italics">&#956;<sub>x</sub></em> = _____</li>
+<li><em data-effect="italics">&#963;<sub>x</sub></em> = _____</li>
+<li>In words, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = ______________</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> ~ _____(_____,_____)</li>
+<li>In words, <em data-effect="italics">&#931;X</em> = _____________</li>
+	<li><em data-effect="italics">&#931;X</em> ~ _____(_____,_____)</li>
+	<li>Without doing any calculations, do you think that it&#8217;s likely that the professor will need to read a total of more than 1,050 pages? Why?</li>
+	<li>Calculate the probability that the professor will need to read a total of more than 1,050 pages.</li>
+	<li>Why is it so unlikely that the average length of the papers will be less than 12 pages?</li>
+</ol></div>
+
+<!-- <solution id="id6534744">
+<list id="element-150" list-type="enumerated" number-style="lower-alpha">
+<item/>
+<item><emphasis effect="italics">U</emphasis>(10, 25)</item>
+<item>17.5</item>
+<item><m:math>
+ <m:mrow>
+  <m:msqrt>
+   <m:mrow>
+    <m:mfrac>
+     <m:mrow>
+      <m:mn>225</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:mn>12</m:mn>
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  </m:msqrt>
+
+ </m:mrow>
+</m:math> = 4.3301</item>
+<item><emphasis effect="italics">N</emphasis>(17.5, 0.5839)</item>
+<item><emphasis effect="italics">N</emphasis>(962.5, 32.11)</item>
+<item>0.0032</item></list>
+</solution> -->
+</div><div data-type="exercise" id="element-138"><div data-type="problem" id="id6535223">
+  <p id="element-245">Salaries for teachers in a particular elementary school district are normally distributed with a mean of $44,000 and a standard deviation of $6,500. We randomly survey ten teachers from that district.</p>
+<ol id="element-285" type="a">
+<li>Find the 90<sup>th</sup> percentile for an individual teacher&#8217;s salary.</li>
+<li>Find the 90<sup>th</sup> percentile for the average teacher&#8217;s salary.</li>
+</ol>
+</div>
+<div data-type="solution" id="fs-idm1040896">
+<ol id="fs-idm1040640" type="a">
+<li>$52,330</li>
+<li>$46,634</li></ol>
+</div>
+</div>
+
+
+<div data-type="exercise" id="element-566"><div data-type="problem" id="id6536038">
+  <p id="element-798">The average length of a maternity stay in a U.S. hospital is said to be 2.4 days with a standard deviation of 0.9 days. We randomly survey 80 women who recently bore children in a U.S. hospital.</p>
+<ol id="madeup" type="a">
+<li>In words, <em data-effect="italics">X</em> = _____________</li>
+<li>In words, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = ___________________</li>
+	<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> ~ _____(_____,_____)</li>
+	<li>In words, <em data-effect="italics">&#931;X</em> = _______________</li>
+	<li><em data-effect="italics">&#931;X</em> ~ _____(_____,_____)</li>
+	<li>Is it likely that an individual stayed more than five days in the hospital? Why or why not?</li>
+	<li>Is it likely that the average stay for the 80 women was more than five days? Why or why not?</li>
+	<li>Which is more likely:
+<ol id="sublist" type="i">
+<li>An individual stayed more than five days.</li>
+<li>the average stay of 80 women was more than five days.</li></ol></li>
+	<li>If we were to sum up the women&#8217;s stays, is it likely that, collectively they spent more than a year in the hospital? Why or why not?</li>
+</ol>
+</div>
+
+<!-- <solution id="id6536385">
+<list id="madeup1" list-type="enumerated" number-style="lower-alpha"><item>the length of a maternity stay in a U.S. hospital, in days</item>
+<item>the average length of a maternity stay in a U.S. hospital, in days</item>
+<item><emphasis effect="italics">N</emphasis><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>2</m:mtext><m:mtext>.4,&#160;</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>0.9</m:mn>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mn>80</m:mn>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math></item>
+<item><emphasis effect="italics">N</emphasis>(192, 8.05)</item>
+<item>Not likely, but possible. The mean stay is 2.4 days.</item>
+<item>No, the probability is 0.</item>
+<item>Individual</item>
+<item>No, the probability is 0.</item>
+</list></solution> --></div><!--inserted from patch file-->
+<p id="fs-idm4142592"><div data-type="newline"><br/></div><em data-effect="italics">For each problem, wherever possible, provide graphs and use the calculator.</em></p><div data-type="exercise" id="fs-idm4142208">
+<div data-type="problem" id="fs-idm4141952">
+<p id="fs-idm4141696">NeverReady batteries has engineered a newer, longer lasting AAA battery. The company claims this battery has an average life span of 17 hours with a standard deviation of 0.8 hours. Your statistics class questions this claim. As a class, you randomly select 30 batteries and find that the sample mean life span is 16.7 hours. If the process is working properly, what is the probability of getting a random sample of 30 batteries in which the sample mean lifetime is 16.7 hours or less? Is the company&#8217;s claim reasonable?</p>
+</div>
+<div data-type="solution" id="fs-idm4141184">
+<ul id="fs-idm24476240"><li>We have <em data-effect="italics">&#956;</em> = 17, &#963; = 0.8, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = 16.7, and <em data-effect="italics">n</em> = 30. To calculate the probability, we use <code>normalcdf</code>(lower, upper, <em data-effect="italics">&#956;</em>, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#963;</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+   </mrow>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#963;</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+   </mrow>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>) = <code>normalcdf</code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mi>E</mi><mo>&#8211;</mo><mtext>99,16</mtext><mtext>.7,17,</mtext><mfrac>
+     <mrow>
+      <mn>0.</mn><mtext>8</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>30</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mi>E</mi><mo>&#8211;</mo><mtext>99,16</mtext><mtext>.7,17,</mtext><mfrac>
+     <mrow>
+      <mn>0.</mn><mtext>8</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>30</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> = 0.0200.</li>
+<li>If the process is working properly, then the probability that a sample of 30 batteries would have at most 16.7 lifetime hours is only 2%. Therefore, the class was justified to question the claim.</li>
+</ul></div>
+</div>
+
+<div data-type="exercise" id="fs-idm165833488"><div data-type="problem" id="fs-idm165833232">
+<p id="fs-idm165832976">Men have an average weight of 172 pounds with a standard deviation of 29 pounds.</p>
+<ol id="fs-idm165831968" type="a">
+<li>Find the probability that 20 randomly selected men will have a sum weight greater than 3600 lbs.</li>
+<li>If 20 men have a sum weight greater than 3500 lbs, then their total weight exceeds the safety limits for water taxis. Based on (a), is this a safety concern? Explain.</li>
+</ol>
+</div>
+
+<!-- <solution id="fs-idm72540544">
+<list id="fs-idm72540288" list-type="enumerated" number-style="lower-alpha">
+<item>To calculate the probability, we use <code>normalcdf</code>(3600, <emphasis effect="italics">E</emphasis>99, 3440, 129.69) = 0.1087</item>
+<item>While the probability is not exceptionally large, <emphasis effect="italics">P</emphasis>(<m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> &gt; 3600) = 0.1087, it could be wise to be concerned. After all, we do have a 1 in 10 chance that a random sample of men could have an averages sum weight that exceeds the safety limit.</item>
+</list></solution> -->
+</div><div data-type="exercise" id="fs-idp87424832">
+<div data-type="problem" id="fs-idp87425088">
+<p id="fs-idm55489232">M&amp;M candies large candy bags have a claimed net weight of 396.9 g. The standard deviation for the weight of the individual candies is 0.017 g. The following table is from a stats experiment conducted by a statistics class.</p>
+<table id="fs-idm55488384" summary=""><thead>
+<tr>
+<th>Red</th>
+<th>Orange</th>
+<th>Yellow</th>
+<th>Brown</th>
+<th>Blue</th>
+<th>Green</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0.751</td>
+<td>0.735</td>
+<td>0.883</td>
+<td>0.696</td>
+<td>0.881</td>
+<td>0.925</td>
+</tr>
+<tr>
+<td>0.841</td>
+<td>0.895</td>
+<td>0.769</td>
+<td>0.876</td>
+<td>0.863</td>
+<td>0.914</td>
+</tr>
+<tr>
+<td>0.856</td>
+<td>0.865</td>
+<td>0.859</td>
+<td>0.855</td>
+<td>0.775</td>
+<td>0.881</td>
+</tr>
+<tr>
+<td>0.799</td>
+<td>0.864</td>
+<td>0.784</td>
+<td>0.806</td>
+<td>0.854</td>
+<td>0.865</td>
+</tr>
+<tr>
+<td>0.966</td>
+<td>0.852</td>
+<td>0.824</td>
+<td>0.840</td>
+<td>0.810</td>
+<td>0.865</td>
+</tr>
+<tr>
+<td>0.859</td>
+<td>0.866</td>
+<td>0.858</td>
+<td>0.868</td>
+<td>0.858</td>
+<td>1.015</td>
+</tr>
+<tr>
+<td>0.857</td>
+<td>0.859</td>
+<td>0.848</td>
+<td>0.859</td>
+<td>0.818</td>
+<td>0.876</td>
+</tr>
+<tr>
+<td>0.942</td>
+<td>0.838</td>
+<td>0.851</td>
+<td>0.982</td>
+<td>0.868</td>
+<td>0.809</td>
+</tr>
+<tr>
+<td>0.873</td>
+<td>0.863</td>
+<td/>
+<td/>
+<td>0.803</td>
+<td>0.865</td>
+</tr>
+<tr>
+<td>0.809</td>
+<td>0.888</td>
+<td/>
+<td/>
+<td>0.932</td>
+<td>0.848</td>
+</tr>
+<tr>
+<td>0.890</td>
+<td>0.925</td>
+<td/>
+<td/>
+<td>0.842</td>
+<td>0.940</td>
+</tr>
+<tr>
+<td>0.878</td>
+<td>0.793</td>
+<td/>
+<td/>
+<td>0.832</td>
+<td>0.833</td>
+</tr>
+<tr>
+<td>0.905</td>
+<td>0.977</td>
+<td/>
+<td/>
+<td>0.807</td>
+<td>0.845</td>
+</tr>
+<tr>
+<td/>
+<td>0.850</td>
+<td/>
+<td/>
+<td>0.841</td>
+<td>0.852</td>
+</tr>
+<tr>
+<td/>
+<td>0.830</td>
+<td/>
+<td/>
+<td>0.932</td>
+<td>0.778</td>
+</tr>
+<tr>
+<td/>
+<td>0.856</td>
+<td/>
+<td/>
+<td>0.833</td>
+<td>0.814</td>
+</tr>
+<tr>
+<td/>
+<td>0.842</td>
+<td/>
+<td/>
+<td>0.881</td>
+<td>0.791</td>
+</tr>
+<tr>
+<td/>
+<td>0.778</td>
+<td/>
+<td/>
+<td>0.818</td>
+<td>0.810</td>
+</tr>
+<tr>
+<td/>
+<td>0.786</td>
+<td/>
+<td/>
+<td>0.864</td>
+<td>0.881</td>
+</tr>
+<tr>
+<td/>
+<td>0.853</td>
+<td/>
+<td/>
+<td>0.825</td>
+<td/>
+</tr>
+<tr>
+<td/>
+<td>0.864</td>
+<td/>
+<td/>
+<td>0.855</td>
+<td/>
+</tr>
+<tr>
+<td/>
+<td>0.873</td>
+<td/>
+<td/>
+<td>0.942</td>
+<td/>
+</tr>
+<tr>
+<td/>
+<td>0.880</td>
+<td/>
+<td/>
+<td>0.825</td>
+<td/>
+</tr>
+<tr>
+<td/>
+<td>0.882</td>
+<td/>
+<td/>
+<td>0.869</td>
+<td/>
+</tr>
+<tr>
+<td/>
+<td>0.931</td>
+<td/>
+<td/>
+<td>0.912</td>
+<td/>
+</tr>
+<tr>
+<td/>
+<td/>
+<td/>
+<td/>
+<td>0.887</td>
+<td/>
+</tr>
+</tbody></table>
+<p id="fs-idm30058352">The bag contained 465 candies and he listed weights in the table came from randomly selected candies. Count the weights.</p>
+<ol id="fs-idm5281504" type="a"><li>Find the mean sample weight and the standard deviation of the sample weights of candies in the table.</li>
+<li>Find the sum of the sample weights in the table and the standard deviation of the sum of the weights.</li>
+<li>If 465 M&amp;Ms are randomly selected, find the probability that their weights sum to at least 396.9.</li>
+<li>Is the Mars Company&#8217;s M&amp;M labeling accurate?</li>
+</ol></div>
+<div data-type="solution" id="fs-idm20614304">
+<ol id="fs-idm20614048" type="a"><li>For the sample, we have <em data-effect="italics">n</em> = 100, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = 0.862, <em data-effect="italics">s</em> = 0.05</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>&#931;</mi><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>&#931;</mi><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+
+ </mrow></annotation-xml></semantics></math> = 85.65, <em data-effect="italics">&#931;s</em> = 5.18</li>
+<li><code>normalcdf</code>(396.9,<em data-effect="italics">E</em>99,(465)(0.8565),(0.05)(<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msqrt>
+   <mrow>
+    <mn>465</mn>
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msqrt>
+   <mrow>
+    <mn>465</mn>
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math>)) &#8776; 1</li>
+<li>Since the probability of a sample of size 465 having at least a mean sum of 396.9 is appproximately 1, we can conclude that Mars is correctly labeling their M&amp;M packages.</li>
+</ol></div>
+</div>
+
+<div data-type="exercise" id="fs-idp89909664"><div data-type="problem" id="fs-idp89909920">
+<p id="fs-idp54889200">The Screw Right Company claims their <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>4</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>3</mn>
+   <mn>4</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> inch screws are within &#177;0.23 of the claimed mean diameter of 0.750 inches with a standard deviation of 0.115 inches. The following data were recorded.</p>
+<table id="fs-idm10579216" summary=""><tbody>
+<tr>
+<td>0.757</td>
+<td>0.723</td>
+<td>0.754</td>
+<td>0.737</td>
+<td>0.757</td>
+<td>0.741</td>
+<td>0.722</td>
+<td>0.741</td>
+<td>0.743</td>
+<td>0.742</td>
+</tr>
+<tr>
+<td>0.740</td>
+<td>0.758</td>
+<td>0.724</td>
+<td>0.739</td>
+<td>0.736</td>
+<td>0.735</td>
+<td>0.760</td>
+<td>0.750</td>
+<td>0.759</td>
+<td>0.754</td>
+</tr>
+<tr>
+<td>0.744</td>
+<td>0.758</td>
+<td>0.765</td>
+<td>0.756</td>
+<td>0.738</td>
+<td>0.742</td>
+<td>0.758</td>
+<td>0.757</td>
+<td>0.724</td>
+<td>0.757</td>
+</tr>
+<tr>
+<td>0.744</td>
+<td>0.738</td>
+<td>0.763</td>
+<td>0.756</td>
+<td>0.760</td>
+<td>0.768</td>
+<td>0.761</td>
+<td>0.742</td>
+<td>0.734</td>
+<td>0.754</td>
+</tr>
+<tr>
+<td>0.758</td>
+<td>0.735</td>
+<td>0.740</td>
+<td>0.743</td>
+<td>0.737</td>
+<td>0.737</td>
+<td>0.725</td>
+<td>0.761</td>
+<td>0.758</td>
+<td>0.756</td>
+</tr></tbody></table>
+
+<p id="fs-idm59306496">The screws were randomly selected from the local home repair store.</p>
+<ol id="fs-idm59306112" type="a">
+<li>Find the mean diameter and standard deviation for the sample</li>
+<li>Find the probability that 50 randomly selected screws will be within the stated tolerance levels. Is the company&#8217;s diameter claim plausible?</li>
+</ol>
+</div>
+
+<!-- <solution id="fs-idp22883968">
+<list id="fs-idp22884224" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+
+</m:math> = 0.75 and <emphasis effect="italics">s</emphasis> 0.01</item>
+<item>We have <code>normalcdf</code><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mn>0.</m:mn><m:mtext>52,0</m:mtext><m:mtext>.98,0</m:mtext><m:mtext>.75,</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mn>0.</m:mn><m:mtext>115</m:mtext>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mtext>50</m:mtext>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> &#8776; 1 and we can conclude that the company's diameter claim is justified.</item>
+</list></solution> -->
+</div><div data-type="exercise" id="fs-idm3642992">
+<div data-type="problem" id="fs-idm3642736">
+<p id="fs-idm3642480">Your company has a contract to perform preventive maintenance on thousands of air-conditioners in a large city. Based on service records from previous years, the time that a technician spends servicing a unit averages one hour with a standard deviation of one hour. In the coming week, your company will service a simple random sample of 70 units in the city. You plan to budget an average of 1.1 hours per technician to complete the work. Will this be enough time?</p>
+</div>
+<div data-type="solution" id="fs-idm3641488">
+<p id="fs-idm22918992">Use <code>normalcdf</code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mi>E</mi><mo>&#8211;</mo><mtext>99,1</mtext><mtext>.1,1,</mtext><mfrac>
+     <mn>1</mn>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>70</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mi>E</mi><mo>&#8211;</mo><mtext>99,1</mtext><mtext>.1,1,</mtext><mfrac>
+     <mn>1</mn>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>70</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> = 0.7986. This means that there is an 80% chance that the service time will be less than 1.1 hours. It could be wise to schedule more time since there is an associated 20% chance that the maintenance time will be greater than 1.1 hours.</p></div>
+</div>
+
+<div data-type="exercise" id="fs-idm37303792"><div data-type="problem" id="fs-idm37303536">
+<p id="fs-idm37303280">A typical adult has an average IQ score of 105 with a standard deviation of 20. If 20 randomly selected adults are given an IQ tesst, what is the probability that the sample mean scores will be between 85 and 125 points?</p>
+</div>
+
+<!-- <solution id="fs-idm37302528">
+<para id="fs-idp90689408">The probability that the sample score is between 85 and 125 points is given by <code>normalcdf</code><m:math>
+ <m:mrow>
+  <m:mrow><m:mo>(</m:mo>
+   <m:mrow>
+    <m:mtext>85,125,105,</m:mtext><m:mfrac>
+     <m:mrow>
+      <m:mtext>20</m:mtext>
+     </m:mrow>
+     <m:mrow>
+      <m:msqrt>
+       <m:mrow>
+        <m:mtext>20</m:mtext>
+       </m:mrow>
+      </m:msqrt>
+
+     </m:mrow>
+    </m:mfrac>
+
+   </m:mrow>
+  <m:mo>)</m:mo></m:mrow>
+ </m:mrow>
+</m:math> = 0.9999. Therefore, it is almost a guarantee that a well selected sample of 20 adults will have an average score between 85 and 125.</para></solution> -->
+</div><div data-type="exercise" id="fs-idm31585616">
+<div data-type="problem" id="fs-idm31585360">
+<p id="fs-idm31585104">Certain coins have an average weight of 5.201 grams with a standard deviation of 0.065 g. If a vending machine is designed to accept coins whose weights range from 5.111 g to 5.291 g, what is the expected number of rejected coins when 280 randomly selected coins are inserted into the machine?</p>
+</div>
+<div data-type="solution" id="fs-idm31584288">
+<p id="fs-idp55181072">We assume that the weights of coins are normally distributed in the population. Since we have <code>normalcdf</code><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mn>5.</mn><mtext>111,5</mtext><mtext>.291,5</mtext><mtext>.201,</mtext><mfrac>
+     <mrow>
+      <mn>0.</mn><mtext>065</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>280</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mn>5.</mn><mtext>111,5</mtext><mtext>.291,5</mtext><mtext>.201,</mtext><mfrac>
+     <mrow>
+      <mn>0.</mn><mtext>065</mtext>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mtext>280</mtext>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math> &#8776; 0.8338, we expect (1 &#8211; 0.8338)280 &#8776; 47 coins to be rejected.</p></div>
+</div>
+
+</section>
+<div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+ <dl id="expdist">
+    <dt>Exponential Distribution</dt>
+ <dd id="id13301408">a continuous random variable (RV) that appears when we are interested in the intervals of time between some random events, for example, the length of time between emergency arrivals at a hospital, notation: <em data-effect="italics">X</em> ~ <em data-effect="italics">Exp</em>(<em data-effect="italics">m</em>). The mean is <em data-effect="italics">&#956;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mi>m</mi>
+  </mfrac>
+
+ </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mn>1</mn>
+   <mi>m</mi>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> and the standard deviation is <em data-effect="italics">&#963;</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+   <mfrac>
+   <mn>1</mn>
+   <mi>m</mi>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <!--<m:mi>&#963;</m:mi><m:mtext>&#160;=&#160;</m:mtext>--><mfrac>
+   <mn>1</mn>
+   <mi>m</mi>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>. The probability density function is <em data-effect="italics">f</em>(<em data-effect="italics">x</em>) = me<sup>&#8211;mx</sup>, <em data-effect="italics">x</em> &#8805; 0 and the cumulative distribution function is <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8804; <em data-effect="italics">x</em>) = 1 &#8211; e<sup>&#8211;mx</sup>.</dd>
+  </dl>
+
+<dl id="mean">
+    <dt>Mean</dt>
+    <dd id="id10578364">a number that measures the central tendency; a common name for mean is "average." The term "mean" is a shortened form of "arithmetic mean." By definition, the mean for a sample (denoted by <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math>) is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mtext>Sum&#160;of&#160;all&#160;values&#160;in&#160;the&#160;sample</mtext>
+   </mrow>
+   <mrow>
+    <mtext>Number&#160;of&#160;values&#160;in&#160;the&#160;sample</mtext>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mtext>Sum&#160;of&#160;all&#160;values&#160;in&#160;the&#160;sample</mtext>
+   </mrow>
+   <mrow>
+    <mtext>Number&#160;of&#160;values&#160;in&#160;the&#160;sample</mtext>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>, and the mean for a population (denoted by <em data-effect="italics">&#956;</em>) is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>&#956;</mi><mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mtext>Sum&#160;of&#160;all&#160;values&#160;in&#160;the&#160;population</mtext>
+   </mrow>
+   <mrow>
+    <mtext>Number&#160;of&#160;values&#160;in&#160;the&#160;population</mtext>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>&#956;</mi><mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mtext>Sum&#160;of&#160;all&#160;values&#160;in&#160;the&#160;population</mtext>
+   </mrow>
+   <mrow>
+    <mtext>Number&#160;of&#160;values&#160;in&#160;the&#160;population</mtext>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>.</dd>
+  </dl>
+
+<dl id="fs-idm63436704">
+<dt>Normal Distribution</dt>
+<dd id="fs-idm63436064">a continuous random variable (RV) with pdf <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>&#160;=&#160;</mtext><mfrac>
+   <mn>1</mn>
+   <mrow>
+    <mi>&#963;</mi><msqrt>
+     <mrow>
+      <mn>2</mn><mi>&#960;</mi>
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+  <mo>&#160;</mo><msup>
+   <mi>e</mi>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mo>&#8211;</mo><msup>
+       <mrow>
+        <mtext>(</mtext><mi>x</mi><mtext>&#160;</mtext><mo>&#8211;</mo><mtext>&#160;</mtext><mi>&#956;</mi><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+     <mrow>
+      <mn>2</mn><msup>
+       <mi>&#963;</mi>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>&#160;=&#160;</mtext><mfrac>
+   <mn>1</mn>
+   <mrow>
+    <mi>&#963;</mi><msqrt>
+     <mrow>
+      <mn>2</mn><mi>&#960;</mi>
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+  <mo>&#160;</mo><msup>
+   <mi>e</mi>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mo>&#8211;</mo><msup>
+       <mrow>
+        <mtext>(</mtext><mi>x</mi><mtext>&#160;</mtext><mo>&#8211;</mo><mtext>&#160;</mtext><mi>&#956;</mi><mo stretchy="false">)</mo>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+     <mrow>
+      <mn>2</mn><msup>
+       <mi>&#963;</mi>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msup>
+
+ </mrow></annotation-xml></semantics></math>, where <em data-effect="italics">&#956;</em> is the mean of the distribution and <em data-effect="italics">&#963;</em> is the standard deviation.; notation: <em data-effect="italics">X</em> ~ <em data-effect="italics">N</em>(<em data-effect="italics">&#956;</em>, <em data-effect="italics">&#963;</em>). If <em data-effect="italics">&#956;</em> = 0 and <em data-effect="italics">&#963;</em> = 1, the RV is called the <strong>standard normal distribution</strong>.</dd>
+</dl>
+
+
+
+<dl id="unidist">
+    <dt>Uniform Distribution</dt>
+    <dd id="id14303008">a continuous random variable (RV) that has equally likely outcomes over the domain, <em data-effect="italics">a</em> &lt; <em data-effect="italics">x</em> &lt; <em data-effect="italics">b</em>; often referred as the  <strong>Rectangular Distribution</strong> because the graph of the pdf has the form of a rectangle. Notation: <em data-effect="italics">X</em> ~ <em data-effect="italics">U</em>(<em data-effect="italics">a</em>, <em data-effect="italics">b</em>). The mean is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>&#956;</mi><mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mi>a</mi><mtext>&#160;+&#160;</mtext><mi>b</mi>
+   </mrow>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>&#956;</mi><mtext>&#160;=&#160;</mtext><mfrac>
+   <mrow>
+    <mi>a</mi><mtext>&#160;+&#160;</mtext><mi>b</mi>
+   </mrow>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> and the standard deviation is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>&#963;</mi><mtext>&#160;=&#160;</mtext><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mi>b</mi><mo>&#8211;</mo><mtext>a)</mtext>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>&#963;</mi><mtext>&#160;=&#160;</mtext><msqrt>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mrow>
+        <mo stretchy="false">(</mo><mi>b</mi><mo>&#8211;</mo><mtext>a)</mtext>
+       </mrow>
+       <mn>2</mn>
+      </msup>
+
+     </mrow>
+     <mrow>
+      <mn>12</mn>
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </msqrt>
+
+ </mrow></annotation-xml></semantics></math>. The probability density function is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>&#160;=&#160;</mtext><mfrac>
+   <mn>1</mn>
+   <mrow>
+    <mi>b</mi><mo>&#8211;</mo><mi>a</mi>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext>&#160;=&#160;</mtext><mfrac>
+   <mn>1</mn>
+   <mrow>
+    <mi>b</mi><mo>&#8211;</mo><mi>a</mi>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> for <em data-effect="italics">a</em> &lt; <em data-effect="italics">x</em> &lt; <em data-effect="italics">b</em> or <em data-effect="italics">a</em> &#8804; <em data-effect="italics">x</em> &#8804; <em data-effect="italics">b</em>. The cumulative distribution is <em data-effect="italics">P</em>(<em data-effect="italics">X</em> &#8804; <em data-effect="italics">x</em>) = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mi>x</mi><mo>&#8211;</mo><mtext>a</mtext>
+   </mrow>
+   <mrow>
+    <mi>b</mi><mo>&#8211;</mo><mtext>a</mtext>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mi>x</mi><mo>&#8211;</mo><mtext>a</mtext>
+   </mrow>
+   <mrow>
+    <mi>b</mi><mo>&#8211;</mo><mtext>a</mtext>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>.</dd>
+  </dl>
+</div></body>
+
+</html>

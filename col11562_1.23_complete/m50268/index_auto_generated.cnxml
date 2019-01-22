@@ -1,0 +1,293 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Central Limit Theorem (Pocket Change)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50268/latest</md:content-url>
+  <md:content-id>m50268</md:content-id>
+  <md:title>Central Limit Theorem (Pocket Change)</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/09 09:05:39 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>binomial distribution</md:keyword>
+    <md:keyword>interquartile range</md:keyword>
+    <md:keyword>law of large numbers</md:keyword>
+    <md:keyword>mean</md:keyword>
+    <md:keyword>normal distribution</md:keyword>
+    <md:keyword>percentile</md:keyword>
+    <md:keyword>random variable</md:keyword>
+    <md:keyword>sample mean</md:keyword>
+    <md:keyword>sum</md:keyword>
+    <md:keyword>total</md:keyword>
+    <md:keyword>uniform distribution</md:keyword>
+    <md:keyword>z-score</md:keyword>
+  </md:keywordlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1172804210713" class="statistics lab"><label/><title>Central Limit Theorem (Pocket Change)</title>
+
+<para id="id48439801">Class Time: </para>
+<para id="id48439812">Names:</para>
+
+
+<list id="id48439824" list-type="bulleted">
+<title>Student Learning Outcomes</title>
+<item>The student will demonstrate and compare properties of the central limit theorem.</item>
+</list>
+
+<note id="id17413334">
+<label/><title>Note</title>
+
+<para id="fs-idm68262064">This lab works best when sampling from several classes and combining data.</para></note>
+
+<list id="list-9099999888" list-type="enumerated"><title id="CollectData">Collect the Data</title><item>Count the change in your pocket. (Do not include bills.)</item>
+<item>Randomly survey 30 classmates. Record the values of the change in <link target-id="Ch07_lab1_tbl001" document=""/>.
+<table id="Ch07_lab1_tbl001" summary="Blank table with 30 empty cells.">
+<tgroup cols="5">
+<tbody>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+	<item>Construct a histogram. Make five to six intervals. Sketch the graph using a ruler and pencil. Scale the axes.<newline/>
+<figure id="id17573354"><media id="id17573359" alt="Blank graph template. The horizontal axis is labeled Value of the change and the vertical axis is labeled Frequency."><image src="fig-ch07_09_01.png" mime-type="image/png" width="380"/></media>
+</figure></item>
+<item> Calculate the following (<emphasis effect="italics">n</emphasis> = 1; surveying one person at a time):
+<list id="list-975947" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> = _______</item>
+<item><emphasis effect="italics">s</emphasis> = _______</item>
+</list></item>
+<item>Draw a smooth curve through the tops of the bars of the histogram. Use one to two complete sentences to describe the general shape of the curve.</item>
+</list><para id="element-509"><title>Collecting Averages of Pairs</title>Repeat steps one through five of the section <link target-id="CollectData" document="">Collect the Data.</link> with one exception. Instead of recording the change of 30 classmates, record the average change of 30 pairs.</para><list id="list-9759443" list-type="enumerated"><item>Randomly survey 30 <emphasis>pairs</emphasis> of classmates.</item>
+<item>Record the values of the average of their change in <link target-id="Ch07_lab1_tbl002" document=""/>.
+<table id="Ch07_lab1_tbl002" summary="Blank table containing 30 blank cells.">
+<tgroup cols="5">
+<tbody>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+<item>Construct a histogram. Scale the axes using the same scaling you used for the section titled <link target-id="CollectData" document="">Collect the Data</link>. Sketch the graph using a ruler and a pencil.<newline/>
+
+<figure id="id17561753">
+<media id="id17561758" alt="This is a blank graph template. The horizontal axis is labeled Value of the change and the vertical axis is labeled Frequency.">
+<image src="fig-ch07_09_02.png" mime-type="image/png" width="380"/>
+</media></figure></item>
+<item> Calculate the following (<emphasis effect="italics">n</emphasis> = 2; surveying two people at a time):
+<list id="list-975875947" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> = _______</item>
+<item><emphasis effect="italics">s</emphasis> = _______</item>
+</list></item>
+<item>Draw a smooth curve through tops of the bars of the histogram. Use one to two complete sentences to describe the general shape of the curve.</item>
+</list><para id="element-505436759"><title>Collecting Averages of Groups of Five</title>Repeat steps one through five (of the section titled <link target-id="CollectData" document="">Collect the Data</link>) with one exception. Instead of recording the change of 30 classmates, record the average change of 30 groups of five.</para><list id="list-9735659975974443" list-type="enumerated" number-style="arabic"><item>Randomly survey 30 <emphasis>groups of five</emphasis> classmates.</item>
+<item>Record the values of the average of their change.<table id="Ch07_lab1_tbl003" summary="Blank table containing 30 blank cells.">
+<tgroup cols="5">
+<tbody>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+<item>Construct a histogram. Scale the axes using the same scaling you used for the section titled <link target-id="CollectData" document="">Collect the Data</link>. Sketch the graph using a ruler and a pencil.<figure id="id17563881"><media id="id17563886" alt="This is a blank graph template. The horizontal axis is labeled Value of the change and the vertical axis is labeled Frequency.">
+<image src="fig-ch07_09_03.png" mime-type="image/png" width="380"/>
+</media></figure></item>
+<item>Calculate the following (<emphasis effect="italics">n</emphasis> = 5; surveying five people at a time):
+<list id="list-97587555947" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+ <m:mover accent="true">
+  <m:mi>x</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> = _______</item>
+<item><emphasis effect="italics">s</emphasis> = _______</item>
+</list></item>
+<item>Draw a smooth curve through tops of the bars of the histogram. Use one to two complete sentences to describe the general shape of the curve.</item>
+</list><list id="element-441" list-type="enumerated"><title>Discussion Questions</title><item>Why did the shape of the distribution of the data change, as <emphasis effect="italics">n</emphasis> changed? Use one to two complete sentences to explain what happened.</item>
+<item>In the section titled <link target-id="CollectData" document="">Collect the Data</link>, what was the approximate distribution of the data? <emphasis effect="italics">X</emphasis> ~ _____(_____,_____)</item>
+<item>In the section titled <link target-id="element-505436759" document="">Collecting Averages of Groups of Five</link>, what was the approximate distribution of the averages? <m:math>
+ <m:mover accent="true">
+  <m:mi>X</m:mi>
+  <m:mo>&#175;</m:mo>
+ </m:mover>
+ 
+</m:math> ~ _____(_____,_____)</item>
+<item>In one to two complete sentences, explain any differences in your answers to the previous two questions.</item></list></note></content>
+
+</document>

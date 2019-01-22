@@ -1,0 +1,147 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Hypothesis Testing for Two Means and Two Proportions</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50278/latest</md:content-url>
+  <md:content-id>m50278</md:content-id>
+  <md:title>Hypothesis Testing for Two Means and Two Proportions</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/09 10:25:19 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>matched samples</md:keyword>
+    <md:keyword>paired samples</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1918441" class="statistics lab"><label/><title>Hypothesis Testing for Two Means and Two Proportions </title>
+<para id="id5260693">Class Time: </para>
+<para id="id6186867">Names:</para>
+<para id="fs-idm110643216"><title>Student Learning Outcomes</title></para>
+<list id="id3866304" list-type="bulleted">
+<item>The student will select the appropriate distributions to use in each case.</item>
+<item>The student will conduct hypothesis tests and interpret the results.</item>
+</list>
+<list id="id6083673" list-type="bulleted">
+<title>Supplies:</title>
+<item>the business section from two consecutive days&#8217; newspapers</item>
+<item>three small packages of M&amp;Ms&#174;</item>
+<item>five small packages of Reese's Pieces&#174;</item>
+</list>
+<para id="element-304"><title>Increasing Stocks Survey</title><newline/>Look at yesterday&#8217;s newspaper business section. Conduct a hypothesis test to determine if
+the proportion of New York Stock Exchange (NYSE) stocks that increased is greater than the
+proportion of NASDAQ stocks that increased. As randomly as possible, choose 40 NYSE
+stocks, and 32 NASDAQ stocks and complete the following statements.
+</para><list id="list-86476434" list-type="enumerated" mark-suffix=".">
+<item><emphasis effect="italics">H<sub>0</sub>: _________</emphasis></item>
+<item><emphasis effect="italics">H<sub>a</sub>: _________</emphasis></item>
+<item>In words, define the random variable.</item>
+<item>The distribution to use for the test is _____________.</item>
+<item>Calculate the test statistic using your data.</item>
+<item>Draw a graph and label it appropriately. Shade the actual level of significance.
+<list id="list-875872354" list-type="enumerated" number-style="lower-alpha">
+<item>Graph:
+<figure id="id6690350"><media id="id6690354" alt="This is a blank graph template. The vertical and horizontal axes are unlabeled."><image src="fig-ch10_11_02.png" mime-type="image/png" width="380"/></media></figure></item>
+<item>Calculate the <emphasis effect="italics">p</emphasis>-value.</item>
+</list>
+</item>
+<item>Do you reject or not reject the null hypothesis? Why?</item>
+<item>Write a clear conclusion using a complete sentence.</item>
+</list>
+<para id="element-687">
+<title>Decreasing Stocks Survey</title>
+<newline/>Randomly pick eight stocks from the newspaper. Using two consecutive days&#8217; business sections, test whether the stocks went down, on average, for the second day.</para>
+<list id="element-926" list-type="enumerated" mark-suffix="."><item><emphasis effect="italics">H<sub>0</sub></emphasis>: ________</item>
+<item><emphasis effect="italics">H<sub>a</sub>: ________</emphasis></item>
+<item>In words, define the random variable.</item>
+<item>The distribution to use for the test is _____________.</item>
+<item>Calculate the test statistic using your data.</item>
+<item>Draw a graph and label it appropriately. Shade the actual level of significance.
+<list id="list-8758723552564" list-type="enumerated" number-style="lower-alpha">
+<item>Graph:<figure id="id8343352"><media id="id8343356" alt="This is a blank graph template. The vertical and horizontal axes are unlabeled."><image src="fig-ch10_11_02.png" mime-type="image/png" width="380"/></media></figure></item>
+<item>Calculate the <emphasis effect="italics">p</emphasis>-value:</item>
+</list>
+</item>
+<item>Do you reject or not reject the null hypothesis? Why?</item>
+<item>Write a clear conclusion using a complete sentence.</item>
+</list>
+<para id="element-97568234">
+<title>Candy Survey</title>
+Buy three small packages of M&amp;Ms and five small packages of Reese's Pieces (same net weight as the M&amp;Ms). Test whether or not the mean number of candy pieces per package is the same for the two brands.</para><list id="list343" mark-suffix="." list-type="enumerated">
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: ________</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: ________</item>
+<item>In words, define the random variable.</item>
+<item>What distribution should be used for this test?</item>
+<item>Calculate the test statistic using your data.</item>
+<item>Draw a graph and label it appropriately. Shade the actual level of significance. 
+<list id="list-896293765" list-type="enumerated" number-style="lower-alpha">
+<item>Graph:<figure id="id8343564"><media id="id8343568" alt="This is a blank graph template. The vertical and horizontal axes are unlabeled."><image src="fig-ch10_11_03.png" mime-type="image/png" width="380"/></media></figure></item>
+<item>Calculate the <emphasis effect="italics">p</emphasis>-value.</item>
+</list>
+</item>
+<item>Do you reject or not reject the null hypothesis? Why?</item>
+<item>Write a clear conclusion using a complete sentence.</item>
+</list>
+<para id="element-858234">
+<title>Shoe Survey</title>
+Test whether women have, on average, more pairs of shoes than men. Include all forms of sneakers, shoes, sandals, and boots. Use your class as the sample.</para>
+<list id="list287" list-type="enumerated" mark-suffix=".">
+<item><emphasis effect="italics">H<sub>0</sub></emphasis>: ________</item>
+<item><emphasis effect="italics">H<sub>a</sub></emphasis>: ________</item>
+<item>In words, define the random variable.</item>
+<item>The distribution to use for the test is ________________.</item>
+<item>Calculate the test statistic using your data.</item>
+<item>Draw a graph and label it appropriately. Shade the actual level of significance.
+<list id="list-8758723875552564" list-type="enumerated" number-style="lower-alpha">
+<item>Graph:<figure id="id8357842"><media id="id8357847" alt="This is a blank graph template. The vertical and horizontal axes are unlabeled."><image src="fig-ch10_11_04.png" mime-type="image/png" width="380"/></media></figure></item>
+<item>Calculate the <emphasis effect="italics">p</emphasis>-value.</item>
+</list>
+</item>
+<item>Do you reject or not reject the null hypothesis? Why?</item>
+<item>Write a clear conclusion using a complete sentence.</item>
+</list>
+</note></content>
+
+</document>

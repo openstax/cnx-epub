@@ -1,0 +1,882 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>Prediction</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47105/latest</md:content-url>
+  <md:content-id>m47105</md:content-id>
+  <md:title>Prediction</md:title>
+  <md:version>1.6</md:version>
+  <md:created>2013/07/19 15:03:01 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>extrapolation</md:keyword>
+    <md:keyword>interpolation</md:keyword>
+    <md:keyword>prediction</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+    <para id="eip-775">Recall the <link document="m47117" target-id="element-22">third exam/final exam example</link>.</para><para id="eip-804">We examined the scatterplot and showed that the correlation coefficient is significant. We found the equation of the best-fit line for the final exam grade as a function of the grade on the third-exam. We can now use the least-squares regression line for prediction.</para>
+
+<para id="element-12498">Suppose you want to estimate, or predict, the mean final exam score of statistics students who received 73 on the third exam. The exam scores <emphasis>(<emphasis effect="italics">x</emphasis>-values)</emphasis> range from 65 to 75. <emphasis> Since 73 is between the <emphasis effect="italics">x</emphasis>-values 65 and 75</emphasis>, substitute <emphasis effect="italics">x</emphasis> = 73 into the equation. Then:</para>
+
+<equation id="element-735"><m:math>
+ <m:mrow>
+  <m:mover accent="true">
+   <m:mi>y</m:mi>
+   <m:mo>^</m:mo>
+  </m:mover>
+  <m:mo>=</m:mo><m:mo>&#8722;</m:mo><m:mn>173.51</m:mn><m:mo>+</m:mo><m:mn>4.83</m:mn><m:mo stretchy="false">(</m:mo><m:mn>73</m:mn><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>179.08</m:mn>
+ </m:mrow>
+</m:math>
+</equation>
+
+<para id="fs-idm74881792">We predict that statistics students who earn a grade of 73 on the third exam will earn a grade of 179.08 on the final exam, on average.</para>
+
+<example id="element-438">
+<para id="element-546">Recall the <link document="m47117" target-id="element-22">third exam/final exam example</link>.<newline count="2"/></para><exercise id="element-770">
+<problem id="id1170592391444">
+  <para id="element-464">a. What would you predict the final exam score to be for a student who scored a 66 on the third exam?  </para></problem>
+
+<solution id="id1170583280560">
+  <para id="element-444">a. 145.27<newline count="2"/></para></solution>
+</exercise>
+
+
+<exercise id="element-844">
+<problem id="id1170601334360">
+  <para id="element-306">b. What would you predict the final exam score to be for a student who scored a 90 on the third exam?
+  </para></problem>
+
+<solution id="id3981938" print-placement="end">
+  <para id="element-380">b. The <emphasis effect="italics">x</emphasis> values in the data are between 65 and 75. Ninety is outside of the domain of the observed <emphasis effect="italics">x</emphasis> values in the data (independent variable), so you cannot reliably predict the final exam score for this student. (Even though it is possible to enter 90 into the equation for <emphasis effect="italics">x</emphasis> and calculate a corresponding <emphasis effect="italics">y</emphasis> value, the <emphasis effect="italics">y</emphasis> value that you get will not be reliable.)
+<newline/><newline/>
+
+To understand really how unreliable the prediction can be outside of the observed <emphasis effect="italics">x</emphasis> values observed in the data, make the substitution <emphasis effect="italics">x</emphasis> = 90 into the equation.
+<newline/><newline/>
+<m:math>
+<m:mover>
+<m:mi>y</m:mi>
+<m:mo>^</m:mo>
+</m:mover>
+<m:mo>=</m:mo>
+<m:mn>&#8211;173.51</m:mn>
+<m:mo>+</m:mo>
+<m:mn>4.83</m:mn>
+<m:mo>(</m:mo>
+<m:mn>90</m:mn>
+<m:mo>)</m:mo>
+<m:mo>=</m:mo>
+<m:mn>261.19</m:mn>
+</m:math>
+<newline/><newline/>
+The final-exam score is predicted to be 261.19.  The largest the final-exam score can be is 200.
+<newline/>
+<note id="eip-id1168998191288"><label/><title>Note</title>
+<para id="eip-idp117960960">The process of predicting inside of the observed <emphasis effect="italics">x</emphasis> values observed in the data is called <term>interpolation</term>. The process of predicting outside of the observed <emphasis effect="italics">x</emphasis> values observed in the data is called <term>extrapolation</term>.</para></note></para></solution>
+</exercise>
+</example>
+
+<note id="fs-idp125531648" class="statistics try">
+<label/>
+<title>Try It</title>
+<exercise id="eip-375">
+<problem id="eip-637">
+  <para id="eip-244">Data are collected on the relationship between the number of hours per week practicing a musical instrument and scores on a math test. The line of best fit is as follows:</para>
+<para id="eip-idp180607312"><emphasis effect="italics">&#375;</emphasis> = 72.5 + 2.8<emphasis effect="italics">x</emphasis>
+<newline/>What would you predict the score on a math test would be for a student who practices a musical instrument for five hours a week?</para></problem>
+</exercise>
+</note>
+
+<section id="eip-368" class="references"><title>References</title><para id="eip-idp173225584">Data from the Centers for Disease Control and Prevention.</para>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idp173225968">Data from the National Center for agency reporting flu cases and TB Prevention.</para><para id="eip-idp57756432">Data from the United States Census Bureau. Available online at http://www.census.gov/compendia/statab/cats/transportation/motor_vehicle_accidents_and_fatalities.html</para>
+<para id="eip-idm1014608">Data from the National Center for Health Statistics.</para></section><section id="eip-469" class="summary">
+<title>Chapter Review</title>
+<para id="fs-idm72353840">After determining the presence of a strong correlation coefficient and calculating the line of best fit, you can use the least squares regression line to make predictions about your data.</para>
+</section>
+
+<section id="eip-160" class="practice">
+<para id="eip-949"><emphasis effect="italics">Use the following information to answer the next two exercises</emphasis>. An electronics retailer used regression to find a simple model to predict sales growth in the first quarter of the new year (January through March). The model is good for 90 days, where <emphasis effect="italics">x</emphasis> is the day. The model can be written as follows:</para>
+<para id="eip-785"><emphasis effect="italics">&#375;</emphasis> = 101.32 + 2.48<emphasis effect="italics">x</emphasis> where <emphasis effect="italics">&#375;</emphasis> is in thousands of dollars.</para>
+
+<exercise id="eip-673">
+<problem id="eip-599">
+<para id="eip-285">What would you predict the sales to be on day 60?</para>
+</problem>
+
+<solution id="eip-137">
+  <para id="eip-261">$250,120</para>
+</solution>
+</exercise>
+
+<exercise id="eip-439"><problem id="eip-642">
+  <para id="eip-412">What would you predict the sales to be on day 90?</para>
+</problem></exercise><para id="eip-756"><newline/><emphasis effect="italics">Use the following information to answer the next three exercises</emphasis>. A landscaping company is hired to mow the grass for several large properties. The total area of the properties combined is 1,345 acres. The rate at which one person can mow is as follows:</para><para id="eip-986"><emphasis effect="italics">&#375;</emphasis> = 1350 &#8211; 1.2<emphasis effect="italics">x</emphasis> where <emphasis effect="italics">x</emphasis> is the number of hours and <emphasis effect="italics">&#375;</emphasis> represents the number of acres left to mow.</para>
+<exercise id="eip-584">
+<problem id="eip-780">
+  <para id="eip-988">How many acres will be left to mow after 20 hours of work?</para>
+</problem>
+
+<solution id="eip-344">
+  <para id="eip-927">1,326 acres</para>
+</solution>
+</exercise>
+
+<exercise id="eip-309"><problem id="eip-16">
+  <para id="eip-864">How many acres will be left to mow after 100 hours of work?</para>
+</problem></exercise><exercise id="eip-159"><problem id="eip-587">
+  <para id="eip-180">
+How many hours will it take to mow all of the lawns? (When is <emphasis effect="italics">&#375;</emphasis> = 0?)
+  </para>
+</problem>
+
+<solution id="eip-274">
+  <para id="eip-211">1,125 hours, or when <emphasis effect="italics">x</emphasis> = 1,125</para>
+</solution>
+</exercise>
+
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-532"><link target-id="element-806" document=""/> contains real data for the first two decades of flu cases reporting.</para><table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-806" summary="This table presents the year of reporting flu cases and deaths in the first column, number of flu cases diagnosed in the second column, and number of flu deaths in the third column."><title>Adults and Adolescents only, United States </title>
+<tgroup cols="3"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <colspec colnum="3" colname="c3"/>
+        <tbody>
+          <row>
+            <entry>
+              <emphasis>Year </emphasis>
+            </entry>
+            <entry>
+              <emphasis># flu cases diagnosed</emphasis>
+            </entry>
+            <entry>
+              <emphasis># flu deaths </emphasis>
+            </entry>
+          </row>
+          <row>
+            <entry>Pre-1981</entry>
+            <entry>91</entry>
+            <entry>29</entry>
+          </row>
+          <row>
+            <entry>1981</entry>
+            <entry>319</entry>
+            <entry>121</entry>
+          </row>
+          <row>
+            <entry>1982</entry>
+            <entry>1,170</entry>
+            <entry>453</entry>
+          </row>
+          <row>
+            <entry>1983</entry>
+            <entry>3,076</entry>
+            <entry>1,482</entry>
+          </row>
+          <row>
+            <entry>1984</entry>
+            <entry>6,240</entry>
+            <entry>3,466</entry>
+          </row>
+          <row>
+            <entry>1985</entry>
+            <entry>11,776</entry>
+            <entry>6,878</entry>
+          </row>
+          <row>
+            <entry>1986</entry>
+            <entry>19,032</entry>
+            <entry>11,987</entry>
+          </row>
+          <row>
+            <entry>1987</entry>
+            <entry>28,564</entry>
+            <entry>16,162</entry>
+          </row>
+          <row>
+            <entry>1988</entry>
+            <entry>35,447</entry>
+            <entry>20,868</entry>
+          </row>
+          <row>
+            <entry>1989</entry>
+            <entry>42,674</entry>
+            <entry>27,591</entry>
+          </row>
+          <row>
+            <entry>1990</entry>
+            <entry>48,634</entry>
+            <entry>31,335</entry>
+          </row>
+          <row>
+            <entry>1991</entry>
+            <entry>59,660</entry>
+            <entry>36,560</entry>
+          </row>
+          <row>
+            <entry>1992</entry>
+            <entry>78,530</entry>
+            <entry>41,055</entry>
+          </row>
+          <row>
+            <entry>1993</entry>
+            <entry>78,834</entry>
+            <entry>44,730</entry>
+          </row>
+          <row>
+            <entry>1994</entry>
+            <entry>71,874</entry>
+            <entry>49,095</entry>
+          </row>
+          <row>
+            <entry>1995</entry>
+            <entry>68,505</entry>
+            <entry>49,456</entry>
+          </row>
+          <row>
+            <entry>1996</entry>
+            <entry>59,347</entry>
+            <entry>38,510</entry>
+          </row>
+          <row>
+            <entry>1997</entry>
+            <entry>47,149</entry>
+            <entry>20,736</entry>
+          </row>
+          <row>
+            <entry>1998</entry>
+            <entry>38,393</entry>
+            <entry>19,005</entry>
+          </row>
+          <row>
+            <entry>1999</entry>
+            <entry>25,174</entry>
+            <entry>18,454</entry>
+          </row>
+          <row>
+            <entry>2000</entry>
+            <entry>25,522</entry>
+            <entry>17,347</entry>
+          </row>
+          <row>
+            <entry>2001</entry>
+            <entry>25,643</entry>
+            <entry>17,402</entry>
+          </row>
+          <row>
+            <entry>2002</entry>
+            <entry>26,464</entry>
+            <entry>16,371</entry>
+          </row>
+          <row>
+            <entry>
+              <emphasis>Total</emphasis>
+            </entry>
+            <entry>
+              <emphasis>802,118</emphasis>
+            </entry>
+            <entry>
+              <emphasis>489,093</emphasis>
+            </entry>
+          </row>
+        </tbody>
+
+
+
+</tgroup>
+</table><exercise id="fs-idm41333104"><problem id="fs-idp95587552">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp149524096">Graph &#8220;year&#8221; versus &#8220;# flu cases diagnosed&#8221; (plot the scatter plot).  Do not include pre-1981 data.</para></problem></exercise><exercise id="fs-idp60770720">
+<problem id="fs-idm63008624">
+<para id="fs-idp60410256">Perform linear regression.  What is the linear equation?  Round to the nearest whole number.</para>
+</problem>
+<solution id="fs-idp27267136">
+<para id="fs-idp39386448">Check student&#8217;s solution.</para>
+</solution>
+</exercise>
+
+<exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm89824624"><problem id="fs-idm35742144">
+<para id="fs-idm38107680">Find the correlation coefficient.<newline/>
+<list id="eip-idm31798608" list-type="enumerated" number-style="lower-alpha"><item><emphasis effect="italics">r</emphasis> = ________</item>
+</list></para></problem></exercise><exercise id="element-578">
+<problem id="id3231872">
+ <para id="element-632">Solve.
+<list id="eip-idp112356080" list-type="enumerated" number-style="lower-alpha">
+<item>When <emphasis effect="italics">x</emphasis> = 1985, <emphasis effect="italics">&#375;</emphasis> = _____</item>
+<item>When <emphasis effect="italics">x</emphasis> = 1990, <emphasis effect="italics">&#375;</emphasis> =_____</item>
+<item>When <emphasis effect="italics">x</emphasis> = 1970, <emphasis effect="italics">&#375;</emphasis> =______ Why doesn&#8217;t this answer make sense?</item>
+</list>
+</para></problem>
+
+<solution id="id3763418">
+<para id="fs-idp123166832"><list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-idp156589440" list-type="enumerated" number-style="lower-alpha"><item>When <emphasis effect="italics">x</emphasis> = 1985, <emphasis effect="italics">&#375;</emphasis> = 25,52</item>
+<item>When <emphasis effect="italics">x</emphasis> = 1990, <emphasis effect="italics">&#375;</emphasis> = 34,275</item>
+<item>When <emphasis effect="italics">x</emphasis> = 1970, <emphasis effect="italics">&#375;</emphasis> = &#8211;725 Why doesn&#8217;t this answer make sense?  The range of <emphasis effect="italics">x</emphasis> values was 1981 to 2002; the year 1970 is not in this range. The regression equation does not apply, because predicting for the year 1970 is extrapolation, which requires a different process. Also, a negative number does not make sense in this context, where we are predicting flu cases diagnosed.</item>
+</list></para></solution>
+</exercise>
+
+<exercise id="fs-idp123707680"><problem id="fs-idp101389664">
+<para id="fs-idm47746240">Does the line seem to fit the data? Why or why not?</para>
+</problem></exercise><exercise id="fs-idp46020944">
+<problem id="fs-idp87495152">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp59562368">What does the correlation imply about the relationship between time (years) and the number of diagnosed flu cases reported in the U.S.?</para></problem>
+<solution id="fs-idp63232128">
+<para id="fs-idm19062048">Also, the correlation <emphasis effect="italics">r</emphasis> = 0.4526.  If <emphasis effect="italics">r</emphasis> is compared to the value in the 95% Critical Values of the Sample Correlation Coefficient Table, because <emphasis effect="italics">r</emphasis> &gt; 0.423, <emphasis effect="italics">r</emphasis> is significant, and you would think that the line could be used for prediction. But the scatter plot indicates otherwise.</para></solution>
+</exercise>
+
+
+<!-- From 12.4 Move to 12.8 -->
+<exercise id="fs-idm79515504">
+<problem id="fs-idm117830672">
+<para id="element-263">Plot the two given points on the following graph. Then, connect the two points to form the regression line.</para>
+<figure id="fs-idp74029648"><media id="id4253169" alt="Blank graph with horizontal and vertical axes." display="block"><image src="fig-ch12_14_01.jpg" mime-type="image/jpeg" width="380"/></media></figure>
+<para id="element-2352642">Obtain the graph on your calculator or computer.</para>
+</problem>
+</exercise>
+
+<!-- From 12.5 MOVE to 12.8 -->
+
+<exercise id="element-537">
+<problem id="id3371067">
+  <para id="element-803">Write the equation: <emphasis effect="italics">&#375;</emphasis>= ____________</para>
+</problem>
+
+<solution id="id3238552">
+  <para id="element-747"><m:math>
+ <m:mover accent="true">
+  <m:mi>y</m:mi>
+  <m:mo>^</m:mo>
+ </m:mover>
+</m:math> = 3,448,225 + 1750<emphasis effect="italics">x</emphasis></para></solution>
+</exercise>
+
+<exercise id="element-593"><problem id="id3281976">
+<para id="element-659">Hand draw a smooth curve on the graph that shows the flow of the data.</para>
+</problem>
+</exercise><!-- From 12.6 Move to 12.8 -->
+
+<exercise id="element-508">
+<problem id="id4193945">
+  <para id="element-348">Does the line seem to fit the data? Why or why not?</para>
+</problem>
+<solution id="fs-idm125506640">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm47836464">There was an increase in flu cases diagnosed until 1993. From 1993 through 2002, the number of flu cases diagnosed declined each year. It is not appropriate to use a linear regression line to fit to the data.</para></solution>
+</exercise>
+
+<exercise id="element-717"><problem id="id4247751">
+  <para id="element-160">
+	Do you think a linear fit is best? Why or why not?
+  </para>
+</problem></exercise><exercise id="element-658">
+<problem id="id4227065">
+  <para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-893">What does the correlation imply about the relationship between time (years) and the number of diagnosed flu cases reported in the U.S.?
+  </para></problem>
+<solution id="fs-idp25424512">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm57267184">Since there is no linear association between year and # of flu cases diagnosed, it is not appropriate to calculate a linear correlation coefficient. When there is a linear association and it is appropriate to calculate a correlation, we cannot say that one variable &#8220;causes&#8221; the other variable.</para></solution>
+</exercise>
+
+<!-- From 12.7 MOVE to 12.8 -->
+<exercise id="fs-idp87876464"><problem id="fs-idm79455904">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-85">Graph &#8220;year&#8221; vs. &#8220;# flu cases diagnosed.&#8221; Do not include pre-1981. Label both axes with words. Scale both axes.</para></problem></exercise><exercise id="element-54"><problem id="id4187966">
+<para id="element-930">Enter your data into your calculator or computer. The pre-1981 data should not be included. Why is that so?</para>
+<para id="eip-935">Write the linear equation, rounding to four decimal places:</para></problem>
+
+<solution id="fs-idp16730128">
+<para id="fs-idm46065584">We don&#8217;t know if the pre-1981 data was collected from a single year.  So we don&#8217;t have an accurate <emphasis effect="italics">x</emphasis> value for this figure.</para><para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idm126049344">Regression equation: <emphasis effect="italics">&#375;</emphasis> (#Flu Cases) = &#8211;3,448,225 + 1749.777 (year)</para><table id="fs-idm85288224" summary="..">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry/>
+<entry>Coefficients</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Intercept</entry>
+<entry>&#8211;3,448,225</entry>
+</row>
+<row>
+<entry><emphasis effect="italics">X</emphasis> Variable 1</entry>
+<entry>1,749.777</entry>
+</row>
+</tbody>
+
+</tgroup>
+</table></solution>
+</exercise><exercise xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-222"><problem id="id4176091">
+<para id="element-50234233422">Find the correlation coefficient.</para>
+<list id="list-234" list-type="enumerated" number-style="lower-alpha"><item>correlation = _____</item>
+</list>
+</problem></exercise></section>
+
+
+<section id="fs-idp66999104" class="free-response"><title>Homework</title><exercise id="element-401"><problem id="id44884447">
+<para id="element-292">Recently, the annual number of driver deaths per 100,000 for the selected age groups was as follows:</para>
+
+<table xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp87463888" summary="..">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<thead>
+<row>
+<entry>Age</entry>
+<entry>Number of Driver Deaths per 100,000</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>16&#8211;19</entry>
+<entry>38</entry>
+</row>
+<row>
+<entry>20&#8211;24</entry>
+<entry>36</entry>
+</row>
+<row>
+<entry>25&#8211;34</entry>
+<entry>24</entry>
+</row>
+<row>
+<entry>35&#8211;54</entry>
+<entry>20</entry>
+</row>
+<row>
+<entry>55&#8211;74</entry>
+<entry>18</entry>
+</row>
+<row>
+<entry>75+</entry>
+<entry>28</entry>
+</row>
+</tbody>
+
+
+
+</tgroup>
+</table><list id="element-119" list-type="enumerated" number-style="lower-alpha">
+<item>For each age group, pick the midpoint of the interval for the <emphasis effect="italics">x</emphasis> value. (For the 75+ group, use 80.)</item>
+<item>Using &#8220;ages&#8221; as the independent variable and &#8220;Number of driver deaths per 100,000&#8221; as the dependent variable, make a scatter plot of the data.</item>
+<item>Calculate the least squares (best&#8211;fit) line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Predict the number of deaths for ages 40 and 60.</item>
+<item>Based on the given data, is there a linear relationship between age of a driver and driver fatality rate?</item>
+<item>What is the slope of the least squares (best-fit) line?  Interpret the slope.</item>
+</list>
+</problem>
+<solution id="fs-idm44998864">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp19420064" list-type="enumerated" number-style="lower-alpha"><item><table id="id108047k45" summary="This table presents the age groups in the first column and the number of driver deaths per 100,000 in the second column.">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Age</entry>
+            <entry>Number of Driver Deaths per 100,000</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>16&#8211;19</entry>
+            <entry align="center">38</entry>
+          </row>
+          <row>
+            <entry>20&#8211;24</entry>
+            <entry align="center">36</entry>
+          </row>
+          <row>
+            <entry>25&#8211;34</entry>
+            <entry align="center">24</entry>
+          </row>
+          <row>
+            <entry>35&#8211;54</entry>
+            <entry align="center">20</entry>
+          </row>
+          <row>
+            <entry>55&#8211;74</entry>
+            <entry align="center">18</entry>
+          </row>
+          <row>
+            <entry>75+</entry>
+            <entry align="center">28</entry>
+          </row>
+        </tbody>
+</tgroup>
+</table></item>
+<item>Check student&#8217;s solution.</item>
+<item><emphasis effect="italics">&#375;</emphasis> = 35.5818045 &#8211; 0.19182491<emphasis effect="italics">x</emphasis></item>
+<item><emphasis effect="italics">r</emphasis> = &#8211;0.57874<newline/>For four <emphasis effect="italics">df</emphasis> and alpha = 0.05, the LinRegTTest gives <emphasis effect="italics">p</emphasis>-value = 0.2288 so we do not reject the null hypothesis; there is not a significant linear relationship between deaths and age.<newline/>Using the table of critical values for the correlation coefficient, with four <emphasis effect="italics">df</emphasis>, the critical value is 0.811. The correlation coefficient <emphasis effect="italics">r</emphasis> = &#8211;0.57874  is not less than &#8211;0.811, so we do not reject the null hypothesis.</item>
+<item>There is not a linear relationship between the two variables, as evidenced by a p-value greater than 0.05.</item></list></solution>
+</exercise>
+
+
+<exercise id="element-213"><problem id="id44888890">
+  <para id="element-635"><link target-id="idasdgf10411945"/> shows the life expectancy for an individual born in the United States in certain years. </para><table id="idasdgf10411945" summary="This table presents year of birth in the first column and life expectancy in the second column.">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Year of Birth</entry>
+            <entry>Life Expectancy</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry align="center">1930</entry>
+            <entry align="center">59.7</entry>
+          </row>
+          <row>
+            <entry align="center">1940</entry>
+            <entry align="center">62.9</entry>
+          </row>
+          <row>
+            <entry align="center">1950</entry>
+            <entry align="center">70.2</entry>
+          </row>
+          <row>
+            <entry align="center">1965</entry>
+            <entry align="center">69.7</entry>
+          </row>
+          <row>
+            <entry align="center">1973</entry>
+            <entry align="center">71.4</entry>
+          </row>
+          <row>
+            <entry align="center">1982</entry>
+            <entry align="center">74.5</entry>
+          </row>
+          <row>
+            <entry align="center">1987</entry>
+            <entry align="center">75</entry>
+          </row>
+          <row>
+            <entry align="center">1992</entry>
+            <entry align="center">75.7</entry>
+          </row>
+          <row>
+            <entry align="center">2010</entry>
+            <entry align="center">78.7</entry>
+          </row>
+        </tbody>
+ </tgroup>
+</table>
+<list id="element-796" list-type="enumerated" number-style="lower-alpha"><item>Decide which variable should be the independent variable and which should be the dependent variable.</item>
+<item>Draw a scatter plot of the ordered pairs.</item>
+<item>Calculate the least squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Find the estimated life expectancy for an individual born in 1950 and for one born in 1982.</item>
+<item>Why aren&#8217;t the answers to part e the same as the values in <link target-id="idasdgf10411945" document=""/> that correspond to those years?</item>
+<item>Use the two points in part e to plot the least squares line on your graph from part b.</item>
+<item>Based on the data, is there a linear relationship between the year of birth and life expectancy?</item>
+<item>Are there any outliers in the data?</item>
+<item>Using the least squares line, find the estimated life expectancy for an individual born in 1850. Does the least squares line give an accurate estimate for that year? Explain why or why not.</item>
+<item>What is the slope of the least-squares (best-fit) line? Interpret the slope.</item>
+</list></problem></exercise><exercise id="element-682">
+<problem id="id44892027">
+  <para id="element-350">The maximum discount value of the Entertainment&#174; card for the &#8220;Fine Dining&#8221; section, Edition ten, for various pages is given in <link target-id="id9216hh080"/></para><table id="id9216hh080" summary="This table presents the page number in the first column and the maximum value ($) in the second column.">
+
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Page number</entry>
+            <entry>Maximum value ($)</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry align="center">4</entry>
+            <entry align="center">16</entry>
+          </row>
+          <row>
+            <entry align="center">14</entry>
+            <entry align="center">19</entry>
+          </row>
+          <row>
+            <entry align="center">25</entry>
+            <entry align="center">15</entry>
+          </row>
+          <row>
+            <entry align="center">32</entry>
+            <entry align="center">17</entry>
+          </row>
+          <row>
+            <entry align="center">43</entry>
+            <entry align="center">19</entry>
+          </row>
+          <row>
+            <entry align="center">57</entry>
+            <entry align="center">15</entry>
+          </row>
+          <row>
+            <entry align="center">72</entry>
+            <entry align="center">16</entry>
+          </row>
+          <row>
+            <entry align="center">85</entry>
+            <entry align="center">15</entry>
+          </row>
+          <row>
+            <entry align="center">90</entry>
+            <entry align="center">17</entry>
+          </row>
+        </tbody>
+</tgroup>
+</table>
+<list id="element-86" list-type="enumerated" number-style="lower-alpha">
+<item>Decide which variable should be the independent variable and which should be the dependent variable.</item>
+<item>Draw a scatter plot of the ordered pairs.</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis></item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>Find the estimated maximum values for the restaurants on page ten and on page 70.</item>
+<item>Does it appear that the restaurants giving the maximum value are placed in the beginning of the &#8220;Fine Dining&#8221; section? How did you arrive at your answer?</item>
+<item>Suppose that there were 200 pages of restaurants. What do you estimate to be the maximum value for a restaurant listed on page 200? </item>
+<item>Is the least squares line valid for page 200? Why or why not?</item>
+<item>What is the slope of the least-squares (best-fit) line? Interpret the slope.</item></list>
+</problem>
+<solution id="fs-idp21667088">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp21667344" list-type="enumerated" number-style="lower-alpha"><item>We wonder if the better discounts appear earlier in the book so we select page as <emphasis effect="italics">X</emphasis> and discount as <emphasis effect="italics">Y</emphasis>.</item>
+<item>Check student&#8217;s solution.</item>
+<item><emphasis effect="italics">&#375;</emphasis> = 17.21757 &#8211; 0.01412<emphasis effect="italics">x</emphasis></item>
+<item><emphasis effect="italics">r</emphasis> = &#8211; 0.2752 <newline/>For seven <emphasis effect="italics">df</emphasis> and alpha = 0.05, using LinRegTTest <emphasis effect="italics">p</emphasis>-value = 0.4736  so we do not reject; there is a not a significant linear relationship between page and discount.<newline/>Using the table of critical values for the correlation coefficient, with seven <emphasis effect="italics">df</emphasis>, the critical value is 0.666.  The correlation coefficient <emphasis effect="italics">xi</emphasis> = &#8211;0.2752 is not less than  0.666 so we do not reject.  </item>
+<item>There is not a significant linear correlation so it appears there is no relationship between the page and the amount of the discount.</item>
+</list><para id="fs-idp70584384">As the page number increases by one page, the discount decreases by $0.01412</para>
+
+</solution>
+</exercise>
+
+
+<exercise id="element-263a"><problem id="id44847508">
+<para id="element-49"><link target-id="id9978lok311"/> gives the gold medal times for every other Summer Olympics for the women&#8217;s 100-meter freestyle (swimming).</para><table id="id9978lok311" summary="This table presents the summer olympics year in the first column and the women's 100 meter freestyle time in seconds in the second column.">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <thead>
+          <row>
+            <entry>Year</entry>
+            <entry>Time (seconds)</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry align="center">1912</entry>
+            <entry align="center">82.2</entry>
+          </row>
+          <row>
+            <entry align="center">1924</entry>
+            <entry align="center">72.4</entry>
+          </row>
+          <row>
+            <entry align="center">1932</entry>
+            <entry align="center">66.8</entry>
+          </row>
+          <row>
+            <entry align="center">1952</entry>
+            <entry align="center">66.8</entry>
+          </row>
+          <row>
+            <entry align="center">1960</entry>
+            <entry align="center">61.2</entry>
+          </row>
+          <row>
+            <entry align="center">1968</entry>
+            <entry align="center">60.0</entry>
+          </row>
+          <row>
+            <entry align="center">1976</entry>
+            <entry align="center">55.65</entry>
+          </row>
+          <row>
+            <entry align="center">1984</entry>
+            <entry align="center">55.92</entry>
+          </row>
+          <row>
+            <entry align="center">1992</entry>
+            <entry align="center">54.64</entry>
+          </row>
+
+          <row>
+            <entry align="center">2000</entry>
+            <entry align="center">53.8</entry>
+          </row>
+          <row>
+            <entry align="center">2008</entry>
+            <entry align="center">53.1</entry>
+          </row>
+
+        </tbody>
+
+</tgroup>
+</table>
+<list id="element-81" list-type="enumerated" number-style="lower-alpha">
+<item>Decide which variable should be the independent variable and which should be the dependent variable.</item>
+<item>Draw a scatter plot of the data.</item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis>.</item>
+<item>Find the correlation coefficient. Is the decrease in times significant?</item>
+<item>Find the estimated gold medal time for 1932. Find the estimated time for 1984.</item>
+<item>Why are the answers from part f different from the chart values?</item>
+<item>Does it appear that a line is the best way to fit the data? Why or why not?</item>
+<item>Use the least-squares line to estimate the gold medal time for the next Summer Olympics. Do you think that your answer is reasonable? Why or why not?</item>
+</list>
+</problem>
+</exercise><exercise id="element-512">
+<problem id="id44850206">
+
+<table id="id10945556" summary="This table presents the state names in the first column, number of letters in the state name in the second column, year entered in the union in the third column, rank for entering the union in the fourth column, and state area in square miles in the last column.">
+
+<tgroup cols="5"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <colspec colnum="3" colname="c3"/>
+        <colspec colnum="4" colname="c4"/>
+        <colspec colnum="5" colname="c5"/>
+     <thead>
+          <row>
+            <entry>State</entry>
+            <entry># letters in name</entry>
+            <entry>Year entered the Union</entry>
+            <entry>Rank for entering the Union</entry>
+            <entry>Area (square miles)</entry>
+          </row>
+         </thead>
+         <tbody>
+          <row>
+            <entry>Alabama</entry>
+            <entry>7</entry>
+            <entry>1819</entry>
+            <entry>22</entry>
+            <entry>52,423</entry>
+          </row>
+          <row>
+            <entry>Colorado</entry>
+            <entry>8</entry>
+            <entry>1876</entry>
+            <entry>38</entry>
+            <entry>104,100</entry>
+          </row>
+          <row>
+            <entry>Hawaii</entry>
+            <entry>6</entry>
+            <entry>1959</entry>
+            <entry>50</entry>
+            <entry>10,932</entry>
+          </row>
+          <row>
+            <entry>Iowa</entry>
+            <entry>4</entry>
+            <entry>1846</entry>
+            <entry>29</entry>
+            <entry>56,276</entry>
+          </row>
+          <row>
+            <entry>Maryland</entry>
+            <entry>8</entry>
+            <entry>1788</entry>
+            <entry>7</entry>
+            <entry>12,407</entry>
+          </row>
+          <row>
+            <entry>Missouri</entry>
+            <entry>8</entry>
+            <entry>1821</entry>
+            <entry>24</entry>
+            <entry>69,709</entry>
+          </row>
+          <row>
+            <entry>New Jersey</entry>
+            <entry>9</entry>
+            <entry>1787</entry>
+            <entry>3</entry>
+            <entry>8,722</entry>
+          </row>
+          <row>
+            <entry>Ohio</entry>
+            <entry>4</entry>
+            <entry>1803</entry>
+            <entry>17</entry>
+            <entry>44,828</entry>
+          </row>
+          <row>
+            <entry>South Carolina</entry>
+            <entry>13</entry>
+            <entry>1788</entry>
+            <entry>8</entry>
+            <entry>32,008</entry>
+          </row>
+          <row>
+            <entry>Utah</entry>
+            <entry>4</entry>
+            <entry>1896</entry>
+            <entry>45</entry>
+            <entry>84,904</entry>
+          </row>
+          <row>
+            <entry>Wisconsin</entry>
+            <entry>9</entry>
+            <entry>1848</entry>
+            <entry>30</entry>
+            <entry>65,499</entry>
+          </row>
+        </tbody>
+
+</tgroup>
+</table>
+  <para id="element-336">We are interested in whether or not the number of letters in a state name depends upon the year the state entered the Union.</para>
+<list id="element-0" list-type="enumerated" number-style="lower-alpha">
+<item>Decide which variable should be the independent variable and which should be the dependent variable.</item>
+<item>Draw a scatter plot of the data.</item>
+<item>Does it appear from inspection that there is a relationship between the variables? Why or why not?</item>
+<item>Calculate the least-squares line. Put the equation in the form of: <emphasis effect="italics">&#375;</emphasis> = <emphasis effect="italics">a</emphasis> + <emphasis effect="italics">bx</emphasis>.</item>
+<item>Find the correlation coefficient. What does it imply about the significance of the relationship?</item>
+<item>Find the estimated number of letters (to the nearest integer) a state would have if it entered the Union in 1900. Find the estimated number of letters a state would have if it entered the Union in 1940.</item>
+<item>Does it appear that a line is the best way to fit the data? Why or why not?</item>
+<item>Use the least-squares line to estimate the number of letters a new state that enters the Union this year would have. Can the least squares line be used to predict it? Why or why not?</item>
+</list>
+</problem>
+
+<solution id="fs-idp67061424">
+<list xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="fs-idp34721504" list-type="enumerated" number-style="lower-alpha"><item>Year is the independent or <emphasis effect="italics">x</emphasis> variable; the number of letters is the dependent or <emphasis effect="italics">y</emphasis> variable.</item>
+<item>Check student&#8217;s solution.</item>
+<item>no</item>
+<item><emphasis effect="italics">&#375;</emphasis> = 47.03 &#8211; 0.0216<emphasis effect="italics">x</emphasis></item>
+<item>&#8211;0.4280 The r-value indicates that there is not a significant correlation between the year the state entered the union and the number of letters in the name.</item>
+<item>No, the relationship does not appear to be linear; the correlation is not significant.</item>
+
+</list></solution>
+</exercise></section></content>
+</document>

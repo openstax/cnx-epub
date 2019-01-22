@@ -1,0 +1,2398 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>A Single Population Mean using the Student t Distribution</title><meta name="created-time" content="2013/07/19 08:55:42 -0500"/><meta name="revised-time" content="2018/07/24 15:48:58 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="confidence interval, degrees of freedom, inverse, normal distribution, standard deviation, student&#8217;s t-distribution"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">A Single Population Mean using the Student t Distribution</div>
+    <p id="delete_me">In practice, we rarely know the population <span data-type="term">standard deviation</span>. In the past, when the sample size was large, this did not present a problem to statisticians. They used the sample standard deviation <em data-effect="italics">s</em> as an estimate for <em data-effect="italics">&#963;</em> and proceeded as before to calculate a <span data-type="term">confidence interval</span> with close enough results. However, statisticians ran into problems when the sample size was small. A small sample size caused inaccuracies in the confidence interval. </p>
+<p id="element-643">William S. Goset (1876&#8211;1937) of the Guinness brewery in Dublin, Ireland ran into this  problem. His experiments with hops and barley produced very few samples. Just replacing <em data-effect="italics">&#963;</em> with <em data-effect="italics">s</em> did not produce accurate results when he tried to calculate a confidence interval. He realized that he could not use a normal distribution for the calculation; he found that the actual distribution depends on the sample size. This problem led him to "discover" what is called the <span data-type="term">Student's t-distribution</span>. The name comes from the fact that Gosset wrote under the pen name "Student."</p>
+<p id="eip-254">Up until the mid-1970s, some statisticians used the <span data-type="term">normal distribution</span> approximation for large sample sizes and used the Student's t-distribution only for sample sizes of at most 30. With graphing calculators and computers, the practice now is to use the Student's t-distribution whenever <em data-effect="italics">s</em> is used as an estimate for <em data-effect="italics">&#963;</em>.</p><p id="eip-449">If you draw a simple random sample of size <em data-effect="italics">n</em> from a population that has an approximately normal distribution with mean <em data-effect="italics">&#956;</em> and unknown population standard deviation <em data-effect="italics">&#963;</em> and calculate the <em data-effect="italics">t</em>-score <em data-effect="italics">t</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8211;</mo><mi>&#956;</mi>
+   </mrow>
+   <mrow>
+    <mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mi>s</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow>
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8211;</mo><mi>&#956;</mi>
+   </mrow>
+   <mrow>
+    <mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mi>s</mi>
+       <mrow>
+        <msqrt>
+         <mi>n</mi>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+    <mo>)</mo></mrow>
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>, then the <em data-effect="italics">t</em>-scores follow a <strong>Student's t-distribution with <em data-effect="italics">n</em> &#8211; 1 degrees of freedom</strong>. The <em data-effect="italics">t</em>-score has the same interpretation as the <span data-type="term"><em data-effect="italics">z</em>-score</span>. It measures how far <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> is from its mean <em data-effect="italics">&#956;</em>. For each sample size <em data-effect="italics">n</em>, there is a different Student's t-distribution.</p><p id="eip-490">The <span data-type="term">degrees of freedom</span>, <strong><em data-effect="italics">n</em> &#8211; 1</strong>, come from the calculation of the sample standard deviation <strong><em data-effect="italics">s</em></strong>. In <a href="/contents/dcec5517-4e51-42f5-9b11-8cb11c02d8ae" class="autogenerated-content">[link]</a>, we used <em data-effect="italics">n</em> deviations <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><mi>x</mi><mo>&#8211;</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mtext>values</mtext><mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><mi>x</mi><mo>&#8211;</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mtext>values</mtext><mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math> to calculate <strong><em data-effect="italics">s</em></strong>. Because the sum of the deviations is zero, we can find the last deviation once we know the other <strong><em data-effect="italics">n</em> &#8211; 1</strong> deviations. The other <strong><em data-effect="italics">n</em> &#8211; 1</strong> deviations can change or vary freely. <strong>We call the number <em data-effect="italics">n</em> &#8211; 1 the degrees of freedom (df).</strong></p><div data-type="list" id="eip-418"><div data-type="title">Properties of the Student's t-Distribution</div><ul>
+<li>The graph for the Student's t-distribution is similar to the standard normal curve.</li>
+<li>The mean for the Student's t-distribution is zero and the distribution is symmetric about zero.</li>
+<li>The Student's t-distribution has more probability in its tails than the standard normal distribution because the spread of the t-distribution is greater than the spread of the standard normal. So the graph of the Student's t-distribution will be thicker in the tails and shorter in the center than the graph of the standard normal distribution.</li>
+<li>The exact shape of the Student's t-distribution depends on the degrees of freedom. As the degrees of freedom increases, the graph of Student's t-distribution becomes more like the graph of the standard normal distribution.</li>
+<li>The underlying population of individual observations is assumed to be normally distributed with unknown population mean <em data-effect="italics">&#956;</em> and unknown population standard deviation <em data-effect="italics">&#963;</em>. The size of the underlying population is generally not relevant unless it is very small. If it is bell shaped (normal) then the assumption is met and doesn't need discussion. Random sampling is assumed, but that is a completely separate assumption from normality.</li>
+</ul></div>
+<p id="eip-231" class="finger">Calculators and computers can easily calculate any Student's t-probabilities. The TI-83,83+, and 84+ have a tcdf function to find the probability for given values of <em data-effect="italics">t</em>. The grammar for the tcdf command is tcdf(lower bound, upper bound, degrees of freedom). However for confidence intervals, we need to use <strong>inverse</strong> probability to find the value of <em data-effect="italics">t</em> when we know the probability.</p><p id="eip-980">For the TI-84+ you can use the invT command on the DISTRibution menu. The invT command works similarly to the invnorm. The invT command requires two inputs: <strong> invT(area to the left, degrees of freedom)</strong> The output is the t-score that corresponds to the area we specified. <div data-type="newline"><br/></div>
+<div data-type="newline"><br/></div> The TI-83 and 83+ do not have the invT command. (The TI-89 has an inverse T command.)</p>
+<p id="eip-647">A probability table for the Student's t-distribution can also be used.  The table gives t-scores that correspond to the confidence level (column) and degrees of freedom (row). (The TI-86 does not have an invT program or command, so if you are using that calculator, you need to use a probability table for the Student's t-Distribution.) When using a <em data-effect="italics">t</em>-table, note that some tables are formatted to show the confidence level in the column headings, while the column headings in some tables may show only corresponding area in one or both tails.<div data-type="newline"><br/></div>
+
+ <div data-type="newline"><br/></div>A Student's t table (See <a href="/contents/dcec5517-4e51-42f5-9b11-8cb11c02d8ae" class="autogenerated-content">[link]</a>) gives <em data-effect="italics">t</em>-scores given the degrees of freedom and the right-tailed probability. The table is very limited. <strong>Calculators and computers can easily calculate any Student's  t-probabilities.</strong><div data-type="newline"><br/></div></p><div data-type="list" id="eip-752"><div data-type="title"><strong>The notation for the Student's t-distribution (using <em data-effect="italics">T</em> as the random variable) is:</strong></div><ul><li><em data-effect="italics">T ~ t<sub>df</sub></em> where <em data-effect="italics">df</em> = <em data-effect="italics">n</em> &#8211; 1.</li>
+ <li>For example, if we have a sample of size <em data-effect="italics">n</em> = 20 items, then we calculate the degrees of freedom as <em data-effect="italics">df</em> = <em data-effect="italics">n</em> - 1 = 20 - 1 = 19 and we write the distribution as <em data-effect="italics">T ~ t<sub>19</sub></em>.</li></ul></div><p id="eip-737"><strong>If the population standard deviation is  not known</strong>,  the <span data-type="term">error bound for a population mean</span> is:</p>
+ <ul id="eip-168">
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>t</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>t</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math>,</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#963;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#963;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> is the <em data-effect="italics">t</em>-score with area to the right equal to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>,</li>
+<li>use <em data-effect="italics">df</em> = <em data-effect="italics">n</em> &#8211; 1 degrees of freedom, and</li>
+<li><em data-effect="italics">s</em> = sample standard deviation.</li></ul>
+<p id="eip-819"><strong>The format for the confidence interval is:</strong>
+<div data-type="newline"><br/></div><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mo stretchy="false">(</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>&#8722;</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo>,</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover><mo>+</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo stretchy="false">)</mo>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mo stretchy="false">(</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>&#8722;</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo>,</mo><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover><mo>+</mo><mi>E</mi><mi>B</mi><mi>M</mi><mo stretchy="false">)</mo>
+ </mrow></annotation-xml></semantics></math>.</p><div data-type="note" data-has-label="true" id="fs-idm181176784" class="statistics calculator" data-label="">
+
+<p id="eip-881">To calculate the confidence interval directly:
+<div data-type="newline"><br/></div>Press STAT.
+<div data-type="newline"><br/></div>Arrow over to TESTS.
+<div data-type="newline"><br/></div>Arrow down to 8:TInterval and press ENTER (or just press 8).</p>
+</div><div data-type="example" id="eip-51">
+<div data-type="exercise" id="element-632"><div data-type="problem" id="id1171101195216">
+<p id="element-866">Suppose you do a study of acupuncture to determine how effective it is in relieving pain. You measure sensory rates for 15 subjects with the results given. Use the sample data to construct a 95% confidence interval for the mean sensory rate for the population (assumed normal) from which you took the data.
+<div data-type="newline"><br/></div>The solution is shown step-by-step and by using the TI-83, 83+, or 84+ calculators.</p><div id="id1171109556457"><span data-type="list" data-list-type="labeled-item" id="set-328" data-display="inline"><span data-type="item">8.6</span>
+			<span data-type="item">9.4</span>
+			<span data-type="item">7.9</span>
+			<span data-type="item">6.8</span>
+			<span data-type="item">8.3</span>
+			<span data-type="item">7.3</span>
+			<span data-type="item">9.2</span>
+			<span data-type="item">9.6</span>
+			<span data-type="item">8.7</span>
+			<span data-type="item">11.4</span>
+			<span data-type="item">10.3</span>
+			<span data-type="item">5.4</span>
+			<span data-type="item">8.1</span>
+			<span data-type="item">5.5</span>
+			<span data-type="item">6.9</span></span></div>
+	</div>
+	<div data-type="solution" id="id1171108330127">
+<ul id="eip-id1169415158393">
+<li>The first solution is step-by-step (Solution A).</li>
+<li>The second solution uses the TI-83+ and TI-84 calculators (Solution B).</li>
+</ul>
+<p id="element-835"><span data-type="title">Solution A</span>To find the confidence interval, you need the sample mean, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+	  <mover accent="true">
+	   <mi>x</mi>
+	   <mo>&#175;</mo>
+	  </mover>
+	 </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+	   <mi>x</mi>
+	   <mo>&#175;</mo>
+	  </mover></annotation-xml></semantics></math>, and the <em data-effect="italics">EBM</em>.</p>
+
+	 <p id="element-809"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+	  <mrow>
+	   <mover accent="true">
+	    <mi>x</mi>
+	    <mo>&#175;</mo>
+	   </mover>
+	  </mrow>
+	 </mrow><annotation-xml encoding="MathML-Content"><mrow>
+	   <mover accent="true">
+	    <mi>x</mi>
+	    <mo>&#175;</mo>
+	   </mover>
+	  </mrow></annotation-xml></semantics></math> = 8.2267 <em data-effect="italics">s</em> = 1.6722 <em data-effect="italics">n</em> = 15</p>
+	 <p id="element-152"><em data-effect="italics">df</em> = 15 &#8211; 1 = 14 <em data-effect="italics">CL</em> so <em data-effect="italics">&#945;</em> = 1 &#8211; <em data-effect="italics">CL</em> = 1 &#8211; 0.95 = 0.05</p>
+	 <p id="element-471"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+	  <mrow>
+	   <mfrac>
+	    <mi>&#945;</mi>
+	    <mn>2</mn>
+	   </mfrac>
+	  </mrow>
+	 </mrow><annotation-xml encoding="MathML-Content"><mrow>
+	   <mfrac>
+	    <mi>&#945;</mi>
+	    <mn>2</mn>
+	   </mfrac>
+	  </mrow></annotation-xml></semantics></math> = 0.025 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+	   <mrow>
+	    <msub>
+	     <mi>t</mi>
+	     <mrow>
+	      <mfrac>
+	       <mi>&#945;</mi>
+	       <mn>2</mn>
+	      </mfrac>
+
+	     </mrow>
+	    </msub>
+	    <mo>=</mo><msub>
+	     <mi>t</mi>
+	     <mrow>
+	      <mn>0.025</mn>
+	     </mrow>
+	    </msub>
+
+	   </mrow>
+	  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+	    <msub>
+	     <mi>t</mi>
+	     <mrow>
+	      <mfrac>
+	       <mi>&#945;</mi>
+	       <mn>2</mn>
+	      </mfrac>
+
+	     </mrow>
+	    </msub>
+	    <mo>=</mo><msub>
+	     <mi>t</mi>
+	     <mrow>
+	      <mn>0.025</mn>
+	     </mrow>
+	    </msub>
+
+	   </mrow></annotation-xml></semantics></math></p>
+<p id="element-331">The area to the right of <em data-effect="italics">t</em><sub>0.025</sub> is 0.025, and the area to the left of <em data-effect="italics">t</em><sub>0.025</sub> is 1 &#8211; 0.025 = 0.975</p><p id="element-995"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mn>0.025</mn>
+   </mrow>
+  </msub>
+  <mo>=</mo><mn>2.14</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mn>0.025</mn>
+   </mrow>
+  </msub>
+  <mo>=</mo><mn>2.14</mn>
+ </mrow></annotation-xml></semantics></math> using invT(.975,14) on the TI-84+ calculator.</p>
+
+<p id="fs-idm31388048">
+	  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>t</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>t</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></p>
+
+	 <p id="element-522"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <mn>2.14</mn>
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mn>1.6722</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>15</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>=</mo><mn>0.924</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><mrow><mo>(</mo>
+   <mrow>
+    <mn>2.14</mn>
+   </mrow>
+  <mo>)</mo></mrow><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mn>1.6722</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>15</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>=</mo><mn>0.924</mn>
+ </mrow></annotation-xml></semantics></math></p>
+<p id="element-218"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &#8211; <em data-effect="italics">EBM</em> = 8.2267 &#8211; 0.9240 = 7.3</p>
+<p id="element-947"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> + <em data-effect="italics">EBM</em> = 8.2267 + 0.9240 = 9.15</p><p id="element-430">The 95% confidence interval is (7.30, 9.15).</p>
+	 <p id="element-273">We estimate with 95% confidence  that the true population mean sensory rate is between 7.30 and 9.15.</p></div>
+<div data-type="solution" id="fs-idp148096976">
+<div data-type="note" data-has-label="true" id="fs-idm8032736" class="statistics calculator" data-label="">
+<p id="fs-idm125793568">Press <code>STAT</code> and arrow over to <code>TESTS</code>.
+<div data-type="newline"><br/></div>Arrow down to <code>8:TInterval</code> and press <code>ENTER</code> (or you can just press <code>8</code>).
+<div data-type="newline"><br/></div>Arrow to <code>Data</code> and press <code>ENTER</code>.
+<div data-type="newline"><br/></div>Arrow down to <code>List</code> and enter the list name where you put the data.
+<div data-type="newline"><br/></div>There should be a 1 after <code>Freq</code>.
+<div data-type="newline"><br/></div>Arrow down to <code>C-level</code> and enter 0.95
+<div data-type="newline"><br/></div>Arrow down to <code>Calculate</code> and press <code>ENTER</code>.
+<div data-type="newline"><br/></div>The 95% confidence interval is (7.3006, 9.1527)</p>
+</div>
+<div data-type="note" data-has-label="true" id="eip-406" data-label=""><div data-type="title">Note</div>
+<p id="fs-idm137079696">When calculating the error bound, a probability table for the Student's t-distribution can also be used to find the value of <em data-effect="italics">t</em>. The table gives <em data-effect="italics">t</em>-scores that correspond to the confidence level (column) and degrees of freedom (row); the <em data-effect="italics">t</em>-score is found where the row and column intersect in the table.</p></div>
+</div>
+</div></div>
+<div data-type="note" data-has-label="true" id="fs-idm181001040" class="statistics try" data-label=""><div data-type="title">Try It</div>
+ <div data-type="exercise" id="eip-496"><div data-type="problem" id="eip-247">
+  <p id="eip-331">You do a study of hypnotherapy to determine how effective it is in increasing the number of hours of sleep subjects get each night. You measure hours of sleep for 12 subjects with the following results. Construct a 95% confidence interval for the mean number of hours slept for the population (assumed normal) from which you took the data.</p><p id="eip-idm108202576">8.2; 9.1; 7.7; 8.6; 6.9; 11.2; 10.1; 9.9; 8.9; 9.2; 7.5; 10.5</p></div>
+</div>
+</div>
+<div data-type="example" id="eip-804"><div data-type="exercise" id="eip-821"><div data-type="problem" id="eip-957">
+ <p id="eip-645">The Human Toxome Project (HTP) is working to understand the scope of industrial pollution in the human body. Industrial chemicals may enter the body through pollution or as ingredients in consumer products. In October 2008, the scientists at HTP tested cord blood samples for 20 newborn infants in the United States. The cord blood of the "In utero/newborn" group was tested for 430 industrial compounds, pollutants, and other chemicals, including chemicals linked to brain and nervous system toxicity, immune system toxicity, and reproductive toxicity, and fertility problems. There are health concerns about the effects of some chemicals on the brain and nervous system. <a href="#eip-222" class="autogenerated-content">[link]</a> shows how many of the targeted chemicals were found in each infant&#8217;s cord blood.</p><table id="eip-222" summary=".."><tbody>
+<tr><td>79</td>	<td>145</td>	<td>147</td>	<td>160</td>	<td>116</td>	<td>100</td>	<td>159</td>	<td>151</td>	<td>156</td>	<td>126</td></tr>
+<tr><td>137</td>	<td>83</td>	<td>156</td>	<td>94</td>	<td>121</td>	<td>144</td>	<td>123</td>	<td>114</td>	<td>139</td>	<td>99</td></tr>
+</tbody></table>
+<p id="eip-idp159676448">Use this sample data to construct a 90% confidence interval for the mean number of targeted industrial chemicals to be found in an in infant&#8217;s blood.</p>
+</div>
+<div data-type="solution" id="eip-262" data-label="">
+  <p id="eip-78"><span data-type="title">Solution A</span>From the sample, you can calculate <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = 127.45 and <em data-effect="italics">s</em> = 25.965. There are 20 infants in the sample, so <em data-effect="italics">n</em> = 20, and <em data-effect="italics">df</em> = 20 &#8211; 1 = 19. </p>
+<p id="eip-idm108372720">You are asked to calculate a 90% confidence interval: <em data-effect="italics">CL</em> = 0.90, so <em data-effect="italics">&#945;</em> = 1 &#8211; <em data-effect="italics">CL</em> = 1 &#8211; 0.90 = 0.10
+<span data-type="list" data-list-type="labeled-item" id="eip-idm108372304" data-display="inline">
+<span data-type="item"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+  <mo>=</mo><mn>0.05,</mn><mspace width="2pt"/><msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mn>0.05</mn>
+   </mrow>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+  <mo>=</mo><mn>0.05,</mn><mspace width="2pt"/><msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mn>0.05</mn>
+   </mrow>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math></span>
+   </span>
+  </p><p id="eip-idm186375552">By definition, the area to the right of <em data-effect="italics">t</em><sub>0.05</sub> is 0.05 and so the area to the left of <em data-effect="italics">t</em><sub>0.05</sub> is 1 &#8211; 0.05 = 0.95.</p>
+<p id="eip-idm38662128" class="finger">Use a table, calculator, or computer to find that <em data-effect="italics">t</em><sub>0.05</sub> = 1.729.</p>
+ <p id="eip-idm126306320"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>=</mo><mn>1.729</mn><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mn>25.965</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>20</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>&#160;</mo><mo>&#8776;</mo><mo>&#160;</mo><mn>10.038</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>=</mo><mn>1.729</mn><mrow><mo>(</mo>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <mn>25.965</mn>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mrow>
+        <mn>20</mn>
+       </mrow>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow><mo>&#160;</mo><mo>&#8776;</mo><mo>&#160;</mo><mn>10.038</mn>
+ </mrow></annotation-xml></semantics></math></p><p id="eip-idm123738016"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> &#8211; <em data-effect="italics">EBM</em> = 127.45 &#8211; 10.038 = 117.412</p>
+
+ <p id="eip-idm1765136"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> + <em data-effect="italics">EBM</em> = 127.45 + 10.038 = 137.488</p>
+ <p id="eip-idm27533168">We estimate with 90% confidence that the mean number of all targeted industrial chemicals found in cord blood in the United States is between 117.412 and 137.488.</p>
+</div>
+<div data-type="solution" id="fs-idp111080464" data-label="">
+<p id="eip-idp189552432"><span data-type="title">Solution B</span></p>
+ <div data-type="note" data-has-label="true" id="fs-idm115636704" class="statistics calculator" data-label="">
+<p id="fs-idm150426592">Enter the data as a list.
+<div data-type="newline"><br/></div>Press <code>STAT</code> and arrow over to <code>TESTS</code>.
+<div data-type="newline"><br/></div>Arrow down to <code>8:TInterval</code> and press <code>ENTER</code> (or you can just press <code>8</code>). Arrow to Data and press <code>ENTER</code>.
+<div data-type="newline"><br/></div>Arrow down to <code>List</code> and enter the list name where you put the data.
+<div data-type="newline"><br/></div>Arrow down to <code>Freq</code> and enter 1.
+<div data-type="newline"><br/></div>Arrow down to <code>C-level</code> and enter 0.90
+<div data-type="newline"><br/></div>Arrow down to <code>Calculate</code> and press <code>ENTER</code>.
+<div data-type="newline"><br/></div>The 90% confidence interval is (117.41, 137.49).</p>
+ </div>
+</div>
+</div></div><div data-type="note" data-has-label="true" id="fs-idm12320384" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="eip-467">
+<div data-type="problem" id="eip-272">
+  <p id="eip-636">A random sample of statistics students were asked to estimate the total number of hours they spend watching television in an average week. The responses are recorded in <a href="#eip-672" class="autogenerated-content">[link]</a>. Use this sample data to construct a 98% confidence interval for the mean number of hours statistics students will spend watching television in one week.
+</p><table id="eip-672" summary=".."><tbody>
+  <tr><td>0</td>	<td>3</td>	<td>1</td>	<td>20</td>	<td>9</td></tr>
+<tr><td>5</td>	<td>10</td>	<td>1</td>	<td>10</td>	<td>4</td></tr>
+<tr><td>14</td>	<td>2</td>	<td>4</td>	<td>4</td>	<td>5</td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<section data-depth="1" id="eip-400" class="references"><h3 data-type="title">References</h3><p id="eip-idp72771968">&#8220;America&#8217;s Best Small Companies.&#8221; Forbes, 2013. Available online at http://www.forbes.com/best-small-companies/list/ (accessed July 2, 2013).</p>
+<p id="eip-idm62303392">Data from <em data-effect="italics">Microsoft Bookshelf</em>.</p>
+<p id="eip-idm46745392">Data from http://www.businessweek.com/.</p>
+<p id="eip-idp72771584">Data from http://www.forbes.com/.</p>
+<p id="eip-idp90955712">&#8220;Disclosure Data Catalog: Leadership PAC and Sponsors Report, 2012.&#8221; Federal Election Commission. Available online at http://www.fec.gov/data/index.jsp (accessed July 2,2013).</p>
+<p id="eip-idm101744816">&#8220;Human Toxome Project: Mapping the Pollution in People.&#8221; Environmental Working Group. Available online at http://www.ewg.org/sites/humantoxome/participants/participant-group.php?group=in+utero%2Fnewborn (accessed July 2, 2013).</p>
+<p id="eip-idp90954816">&#8220;Metadata Description of Leadership PAC List.&#8221; Federal Election Commission. Available online at http://www.fec.gov/finance/disclosure/metadata/metadataLeadershipPacList.shtml (accessed July 2, 2013).</p></section><section data-depth="1" id="eip-447" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="eip-895">In many cases, the researcher does not know the population standard deviation, <em data-effect="italics">&#963;</em>, of the measure being studied. In these cases, it is common to use the sample standard deviation, <em data-effect="italics">s</em>, as an estimate of <em data-effect="italics">&#963;</em>. The normal distribution creates accurate confidence intervals when <em data-effect="italics">&#963;</em> is known, but it is not as accurate when <em data-effect="italics">s</em> is used as an estimate. In this case, the Student&#8217;s t-distribution is much better. Define a t-score using the following formula:</p>
+ <p id="eip-828"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>t</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8722;</mo><mo>&#160;</mo><mi>&#956;</mi>
+   </mrow>
+   <mrow>
+    <mfrac bevelled="true">
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>t</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8722;</mo><mo>&#160;</mo><mi>&#956;</mi>
+   </mrow>
+   <mrow>
+    <mfrac bevelled="true">
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></p>
+
+ <p id="eip-305">The <em data-effect="italics">t</em>-score follows the Student&#8217;s t-distribution with <em data-effect="italics">n</em> &#8211; 1 degrees of freedom. The confidence interval under this distribution is calculated with <em data-effect="italics">EBM</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>t</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mfrac>
+   <mi>s</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <msub>
+     <mi>t</mi>
+     <mrow>
+      <mfrac>
+       <mi>&#945;</mi>
+       <mn>2</mn>
+      </mfrac>
+
+     </mrow>
+    </msub>
+
+   </mrow>
+  <mo>)</mo></mrow><mfrac>
+   <mi>s</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> where <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> is the <em data-effect="italics">t</em>-score with area to the right equal to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math>, <em data-effect="italics">s</em> is the sample standard deviation, and <em data-effect="italics">n</em> is the sample size. Use a table, calculator, or computer to find <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> for a given <em data-effect="italics">&#945;</em>.</p></section>
+<section data-depth="1" id="eip-428" class="formula-review"><h3 data-type="title">Formula Review</h3>
+<p id="eip-987"><em data-effect="italics">s</em> = the standard deviation of sample values.
+</p>
+ <p id="eip-11"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>t</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8722;</mo><mi>&#956;</mi>
+   </mrow>
+   <mrow>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>t</mi><mo>=</mo><mo>&#160;</mo><mfrac>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8722;</mo><mi>&#956;</mi>
+   </mrow>
+   <mrow>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> is the formula for the <em data-effect="italics">t</em>-score which measures how far away a measure is from the population mean in the Student&#8217;s t-distribution</p>
+<p id="eip-995"><em data-effect="italics">df</em> = <em data-effect="italics">n</em> - 1; the degrees of freedom for a Student&#8217;s t-distribution where n represents the size of the sample</p>
+<p id="eip-288"><em data-effect="italics">T</em>~<em data-effect="italics">t<sub>df</sub></em> the random variable, <em data-effect="italics">T</em>, has a Student&#8217;s t-distribution with <em data-effect="italics">df</em> degrees of freedom</p>
+<p id="eip-635"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mfrac>
+   <mi>s</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mfrac>
+   <mi>s</mi>
+   <mrow>
+    <msqrt>
+     <mi>n</mi>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math> = the error bound for the population mean when the population standard deviation is unknown</p>
+<p id="eip-110"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> is the <em data-effect="italics">t</em>-score in the Student&#8217;s t-distribution with area to the right equal to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+
+ </mrow></annotation-xml></semantics></math></p>
+<p id="fs-idm169440128">The general form for a confidence interval for a single mean, population standard deviation unknown, Student's t is given by (lower bound, upper bound)
+<div data-type="newline"><br/></div>= (point estimate &#8211; <em data-effect="italics">EBM</em>, point estimate + <em data-effect="italics">EBM</em>)
+<div data-type="newline"><br/></div>= <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8211;</mo><mfrac>
+     <mrow>
+      <mi>t</mi><mi>s</mi>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+    <mo>,</mo><mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mtext>+&#160;</mtext><mfrac>
+     <mrow>
+      <mi>t</mi><mi>s</mi>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mrow><mo>(</mo>
+   <mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mo>&#8211;</mo><mfrac>
+     <mrow>
+      <mi>t</mi><mi>s</mi>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+    <mo>,</mo><mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+    <mtext>+&#160;</mtext><mfrac>
+     <mrow>
+      <mi>t</mi><mi>s</mi>
+     </mrow>
+     <mrow>
+      <msqrt>
+       <mi>n</mi>
+      </msqrt>
+
+     </mrow>
+    </mfrac>
+
+   </mrow>
+  <mo>)</mo></mrow>
+ </mrow></annotation-xml></semantics></math></p></section>
+<section data-depth="1" id="eip-568" class="practice">
+<p id="eip-517"><em data-effect="italics">Use the following information to answer the next five exercises.</em> A hospital is trying to cut down on emergency room wait times. It is interested in the amount of time patients must wait before being called back to be examined. An investigation committee randomly surveyed 70 patients. The sample mean was 1.5 hours with a sample standard deviation of 0.5 hours.</p>
+<div data-type="exercise" id="eip-761"><div data-type="problem" id="eip-280">
+  <p id="eip-271">Identify the following:  </p>
+ <ol id="fs-idm169488192" type="a">
+<li>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> =_______</li>
+ <li>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> =_______</li>
+ <li><em data-effect="italics">n</em> =_______</li>
+ <li><em data-effect="italics">n</em> &#8211; 1 =_______</li>
+</ol></div>
+</div><div data-type="exercise" id="eip-589"><div data-type="problem" id="eip-841">
+  <p id="eip-213">Define the random variables <em data-effect="italics">X</em> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> in words.</p>
+</div>
+<div data-type="solution" id="eip-771">
+  <p id="eip-673"><em data-effect="italics">X</em> is the number of hours a patient waits in the emergency room before being called back to be examined. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> is the mean wait time of 70 patients in the emergency room.</p></div>
+</div>
+<div data-type="exercise" id="eip-709"><div data-type="problem" id="eip-983">
+  <p id="eip-555">Which distribution should you use for this problem?</p>
+</div>
+</div><div data-type="exercise" id="eip-624">
+<div data-type="problem" id="eip-477">
+  <p id="eip-158">Construct a 95% confidence interval for the population mean time spent waiting. State the confidence interval, sketch the graph, and calculate the error bound.</p>
+</div>
+<div data-type="solution" id="eip-501">
+  <p id="eip-334">CI: (1.3808, 1.6192)</p>
+ <figure id="fs-idm150372688"><span data-type="media" id="eip-idp2023440" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 1.5 on the horizontal axis.  A central region is shaded between points 1.38 and 1.62."><img src="/resources/e04ba64a3e68451dfbe140cc00ec249af47bfa47/CNX_Stats_C08_M03_item001annoN.jpg" data-media-type="image/jpeg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 1.5 on the horizontal axis.  A central region is shaded between points 1.38 and 1.62." width="380"/></span></figure><p id="eip-idm67620928">
+<em data-effect="italics">EBM</em> = 0.12</p>
+</div>
+</div>
+<div data-type="exercise" id="eip-469"><div data-type="problem" id="eip-552">
+  <p id="eip-785">Explain in complete sentences what the confidence interval means.</p>
+</div>
+</div><p id="eip-724"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next six exercises:</em> One hundred eight Americans were surveyed to determine the number of hours they spend watching television each month. It was revealed that they watched an average of 151 hours each month with a standard deviation of 32 hours. Assume that the underlying population distribution is normal.</p><div data-type="exercise" id="eip-817"><div data-type="problem" id="eip-671">
+  <p id="eip-716">Identify the following:</p>
+ <ol id="fs-idm137662144" type="a"><li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> =_______</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> =_______</li>
+  <li><em data-effect="italics">n</em> =_______</li>
+  <li><em data-effect="italics">n</em> &#8211; 1 =_______</li>
+</ol></div>
+<div data-type="solution" id="eip-123">
+ <ol id="fs-idm117900288" type="a"><li>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = 151</li>
+<li>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> = 32</li>
+<li><em data-effect="italics">n</em> = 108</li>
+<li><em data-effect="italics">n</em> &#8211; 1 = 107</li>
+</ol></div>
+</div>
+<div data-type="exercise" id="eip-225"><div data-type="problem" id="eip-586">
+  <p id="eip-675">Define the random variable <em data-effect="italics">X</em> in words.</p>
+</div>
+</div><div data-type="exercise" id="eip-810">
+<div data-type="problem" id="eip-816">
+  <p id="eip-629">Define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> in words.</p>
+</div>
+<div data-type="solution" id="eip-823">
+  <p id="eip-495"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> is the mean number of hours spent watching television per month from a sample of 108 Americans.</p></div>
+</div><div data-type="exercise" id="eip-72"><div data-type="problem" id="eip-425">
+  <p id="eip-578">Which distribution should you use for this problem?</p>
+</div>
+</div><div data-type="exercise" id="eip-82"><div data-type="problem" id="eip-528">
+  <p id="eip-489">Construct a 99% confidence interval for the population mean hours spent watching television per month. (a) State the confidence interval, (b) sketch the graph, and (c) calculate the error bound.</p>
+</div>
+<div data-type="solution" id="eip-35">
+ <p id="eip-id1169812910484">CI: (142.92, 159.08)<div data-type="newline"><br/></div>
+
+  </p><figure id="fs-idm53713472"><span data-type="media" id="eip-idm24726752" data-alt="This is a normal distribution curve. The peak of the curve coincides with the point 151 on the horizontal axis.  A central region is shaded between points 142.92 and 159.08."><img src="/resources/063c5efc3bb6ffe2edd0062d9747b9c724e11778/CNX_Stats_C08_M03_item002annoN.jpg" data-media-type="image/jpeg" alt="This is a normal distribution curve. The peak of the curve coincides with the point 151 on the horizontal axis.  A central region is shaded between points 142.92 and 159.08." width="380"/></span></figure><p>
+<div data-type="newline"><br/></div><em data-effect="italics">EBM</em> = 8.08
+</p>
+</div>
+</div><div data-type="exercise" id="eip-793"><div data-type="problem" id="eip-727">
+  <p id="eip-524">Why would the error bound change if the confidence level were lowered to 95%?</p>
+</div>
+</div><p id="element-59"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next 13 exercises:</em> The data in <a href="#element-181" class="autogenerated-content">[link]</a> are the result of a random survey of 39 national flags (with replacement between picks) from various countries. We are interested in finding a confidence interval for the true mean number of colors on a national flag. Let <em data-effect="italics">X</em> = the number of colors on a national flag.</p><table id="element-181" summary="This table presents the X values (1-5) in the first column and the frequency in the second column."><thead>
+<tr>
+<th><em data-effect="italics">X</em></th>
+<th>Freq.</th>
+</tr>
+      </thead><tbody>
+<tr>
+<td data-align="center">1</td>
+<td data-align="center">1</td>
+</tr>
+<tr>
+<td data-align="center">2</td>
+<td data-align="center">7</td>
+</tr>
+<tr>
+<td data-align="center">3</td>
+<td data-align="center">18</td>
+</tr>
+<tr>
+<td data-align="center">4</td>
+<td data-align="center">7</td>
+</tr><tr>
+<td data-align="center">5</td>
+<td data-align="center">6</td>
+</tr>
+</tbody></table>
+<div data-type="exercise" id="element-953"><div data-type="problem" id="id45583482">
+ <p id="element-234525">
+Calculate the following:
+</p>
+  <ol id="list-87678" type="a">
+   <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+   </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math> =______</li>
+   <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> =______</li>
+   <li><em data-effect="italics">n</em> =______</li>
+</ol>
+
+</div>
+<div data-type="solution" id="id45593982">
+ <ol id="list-827634" type="a">
+<li>3.26</li>
+<li>1.02</li>
+<li>39</li>
+</ol>
+</div>
+</div>
+ <div data-type="exercise" id="element-62"><div data-type="problem" id="id45594056">
+  <p id="element-588">Define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> in words.</p>
+</div>
+ </div><div data-type="exercise" id="element-212">
+<div data-type="problem" id="id45594158">
+  <p id="element-703">What is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+
+   </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math> estimating?</p>
+</div>
+<div data-type="solution" id="id45594200">
+  <p id="element-760"><em data-effect="italics">&#956;</em></p>
+</div>
+ </div>
+ <div data-type="exercise" id="element-704"><div data-type="problem" id="id45594258">
+  <p id="element-695">Is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>&#963;</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>&#963;</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math> known?</p>
+</div>
+</div><div data-type="exercise" id="element-164"><div data-type="problem" id="id45594330">
+  <p id="element-339">As a result of your answer to <a href="#element-704" class="autogenerated-content">[link]</a>, state the exact distribution to use when calculating the confidence interval.</p></div>
+<div data-type="solution" id="id45594350">
+ <p id="element-875"><em data-effect="italics">t</em><sub>38</sub></p>
+</div>
+</div>
+<p id="element-548"><div data-type="newline" data-count="1"><br/></div><em data-effect="italics">Construct a 95% confidence interval for the true mean number of colors on national flags.</em></p><div data-type="exercise" id="element-425"><div data-type="problem" id="id45959436">
+  <p id="element-325">How much area is in both tails (combined)?</p>
+</div>
+</div><div data-type="exercise" id="element-945"><div data-type="problem" id="id45959507">
+  <p id="element-260">How much area is in each tail?</p>
+</div>
+<div data-type="solution" id="id45959554">
+  <p id="element-697">0.025</p>
+</div>
+</div>
+<div data-type="exercise" id="element-526"><div data-type="problem" id="id45959582">
+<p id="element-2354253">Calculate the following:
+ </p><ol id="list-76787865" type="a">
+  <li>lower limit</li>
+  <li>upper limit</li>
+  <li>error bound</li>
+</ol>
+</div>
+</div><div data-type="exercise" id="element-363"><div data-type="problem" id="id45959730">
+ <p id="element-434">The 95% confidence interval is_____.</p>
+</div>
+<div data-type="solution" id="id45959750">
+  <p id="element-350">(2.93, 3.59)</p>
+</div>
+</div>
+ <div data-type="exercise" id="element-188"><div data-type="problem" id="id45959778">
+  <p id="element-726">Fill in the blanks on the graph with the areas, the upper and lower limits of the Confidence Interval and the sample mean.</p>
+<figure id="five5"><span data-type="media" id="id45959805" data-alt="This is a template of a normal distribution curve with the central region shaded to represent a confidence interval. The residual areas are on either side of the shaded region. Blanks indicate that students should label the confidence level, residual areas, and points that define the confidence interval.">
+<img src="/resources/72ccfce0d7276334b22be02cf61f3eaf8cbe075e/fig-ch08_07_01.jpg" data-media-type="image/jpg" alt="This is a template of a normal distribution curve with the central region shaded to represent a confidence interval. The residual areas are on either side of the shaded region. Blanks indicate that students should label the confidence level, residual areas, and points that define the confidence interval." width="380"/></span></figure>
+</div>
+ </div><div data-type="exercise" id="element-499"><div data-type="problem" id="id45959843">
+  <p id="fs-idp7770160">In one complete sentence, explain what the interval means.</p>
+</div>
+<div data-type="solution" id="eip-idm51678224">
+<p id="eip-idp98208704">We are 95% confident that the true mean number of colors for national flags is between 2.93 colors and 3.59 colors.</p>
+</div>
+</div><div data-type="exercise" id="element-542"><div data-type="problem" id="id46274989">
+<p id="one">
+ Using the same <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+
+</mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math>, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <msub>
+   <mi>s</mi>
+   <mi>x</mi>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math>, and level of confidence, suppose that <em data-effect="italics">n</em> were 69 instead of 39. Would the error bound become larger or smaller? How do you know?</p>
+</div>
+<div data-type="solution" id="eip-idm61120128">
+<p id="eip-idm61119872">The error bound would become EBM = 0.245. This error bound decreases because as sample sizes increase, variability decreases and we need less interval length to capture the true mean.</p>
+</div></div><div data-type="exercise" id="element-939"><div data-type="problem" id="id46275081">
+  <p id="element-111">Using the same <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover></mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+    <mi>x</mi>
+    <mo>&#175;</mo>
+   </mover></annotation-xml></semantics></math>, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+     <msub>
+      <mi>s</mi>
+      <mi>x</mi>
+     </msub>
+    </mrow>
+   </mrow><annotation-xml encoding="MathML-Content"><mrow>
+     <msub>
+      <mi>s</mi>
+      <mi>x</mi>
+     </msub>
+    </mrow></annotation-xml></semantics></math>, and <em data-effect="italics">n</em> = 39, how would the error bound change if the confidence level were reduced to 90%? Why?</p>
+</div>
+</div>
+</section>
+<section data-depth="1" id="fs-idp293092128" class="free-response"><h3 data-type="title">Homework</h3>
+<div data-type="exercise" id="exer2">
+<div data-type="problem" id="id6354520">
+<p id="para2">In six packages of &#8220;The Flintstones&#174; Real Fruit Snacks&#8221; there were five Bam-Bam snack pieces. The total number of snack pieces in the six bags was 68. We wish to calculate a 96% confidence interval for the population proportion of Bam-Bam snack pieces.</p>
+ <ol id="list5" type="a">
+  <li>Define the random variables <em data-effect="italics">X</em> and
+   <em data-effect="italics">P</em>&#8242; in words.</li>
+      <li>Which distribution should you use for this problem? Explain your choice</li>
+  <li>Calculate <em data-effect="italics">p</em>&#8242;.</li>
+      <li>Construct a 96% confidence interval for the population proportion of Bam-Bam snack pieces per bag.
+       <ol id="list6" type="i">
+        <li>State the confidence interval.</li>
+      <li>Sketch the graph.</li>
+   <li>Calculate the error bound.</li>
+       </ol>
+      </li>
+      <li>Do you think that six packages of fruit snacks yield enough data to give accurate results? Why or why not?</li>
+ </ol>
+</div>
+</div>
+<div data-type="exercise" id="exer3"><div data-type="problem" id="id5182442"><p id="para7">A random survey of enrollment at 35 community colleges across the United States yielded the following figures: 6,414; 1,550; 2,109; 9,350; 21,828; 4,300; 5,944; 5,722; 2,825; 2,044; 5,481; 5,200; 5,853; 2,750; 10,012; 6,357; 27,000; 9,414; 7,681; 3,200; 17,500; 9,200; 7,380; 18,314; 6,557; 13,713; 17,768; 7,493; 2,771; 2,861; 1,263; 7,285; 28,165; 5,080; 11,622. Assume the underlying population is normal.
+ </p><ol id="list10" type="a">
+ <li>
+  <ol id="list9" type="i">
+   <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+   </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math> = __________</li>
+   <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+     <msub>
+      <mi>s</mi>
+      <mi>x</mi>
+     </msub>
+    </mrow>
+   </mrow><annotation-xml encoding="MathML-Content"><mrow>
+     <msub>
+      <mi>s</mi>
+      <mi>x</mi>
+     </msub>
+    </mrow></annotation-xml></semantics></math> = __________</li>
+   <li><em data-effect="italics">n</em> = __________</li>
+   <li><em data-effect="italics">n</em> &#8211; 1 = __________</li>
+  </ol>
+  </li>
+   <li>Define the random variables <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mi>X</mi>
+   </mrow><annotation-xml encoding="MathML-Content"><mi>X</mi></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+     <mi>X</mi>
+     <mo>&#175;</mo>
+    </mover>
+   </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+     <mi>X</mi>
+     <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math> in words.</li>
+      <li>Which distribution should you use for this problem? Explain your choice.</li>
+      <li>Construct a 95% confidence interval for the population mean enrollment at community colleges in the United States.
+       <ol id="list11" type="i">
+        <li>State the confidence interval.</li>
+      <li>Sketch the graph.</li>
+    <li>Calculate the error bound.</li>
+       </ol>
+      </li>
+    <li>What will happen to the error bound and confidence interval if 500 community colleges were surveyed? Why?</li>
+ </ol>
+</div>
+ <div data-type="solution" id="id6025360"><ol id="list_s4" type="a">
+  <li>
+   <ol id="list_s5" type="i">
+    <li>8629</li>
+<li>6944</li>
+<li>35</li>
+<li>34</li>
+   </ol>
+  </li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msub>
+     <mi>t</mi>
+     <mrow>
+      <mn>34</mn>
+     </mrow>
+    </msub>
+   </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msub>
+     <mi>t</mi>
+     <mrow>
+      <mn>34</mn>
+     </mrow>
+    </msub>
+   </mrow></annotation-xml></semantics></math>
+  </li>
+  <li><ol id="list_s7" type="i">
+   <li>CI: (6244, 11,014)</li>
+<li><figure id="fs-idp12588848"><span data-type="media" id="mmm" data-alt=""><img src="/resources/f68cb160f5cd54c1645314e0ee3759134f0c1ee5/fig-ch08_10_01.jpg" data-media-type="image/jpeg" alt="" width="380"/></span></figure></li>
+   <li>EB = 2385</li>
+  </ol>
+  </li>
+<li>It will become smaller</li>
+ </ol>
+
+ </div>
+</div>
+<div data-type="exercise" id="exer5"><div data-type="problem" id="id5647026"><p id="para8">Suppose that a committee is studying whether or not there is waste of time in our judicial system. It is interested in the mean amount of time individuals waste at the courthouse waiting to be called for jury duty. The committee randomly surveyed 81 people who recently served as jurors. The sample mean wait time was eight hours with a sample standard deviation of four hours.</p>
+
+<ol id="list13" type="a">
+  <li><ol id="list12" type="i">
+   <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover>
+   </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+     <mi>x</mi>
+     <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math> = __________</li>
+
+   <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mrow>
+     <msub>
+      <mi>s</mi>
+      <mi>x</mi>
+     </msub>
+    </mrow>
+   </mrow><annotation-xml encoding="MathML-Content"><mrow>
+     <msub>
+      <mi>s</mi>
+      <mi>x</mi>
+     </msub>
+    </mrow></annotation-xml></semantics></math> = __________</li>
+
+   <li><em data-effect="italics">n</em> = __________</li>
+
+   <li><em data-effect="italics">n</em> &#8211; 1 = __________</li>
+  </ol>
+   </li>
+   <li>Define the random variables <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mi>X</mi>
+   </mrow><annotation-xml encoding="MathML-Content"><mi>X</mi></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+     <mi>X</mi>
+     <mo>&#175;</mo>
+    </mover>
+   </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+     <mi>X</mi>
+     <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math> in words.</li>
+<li>Which distribution should you use for this problem? Explain your choice.</li>
+  <li>Construct a 95% confidence interval for the population mean time wasted.
+   <ol id="list14" type="i">
+    <li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+   </ol>
+  </li>
+<li>Explain in a complete sentence what the confidence interval means.</li>
+ </ol>
+</div>
+</div><div data-type="exercise" id="exer10"><div data-type="problem" id="id6300844"><p id="para21">A pharmaceutical company makes tranquilizers. It is assumed that the distribution for the length of time they last is approximately normal. Researchers in a hospital used the drug on a random sample of nine patients. The effective period of the tranquilizer for each patient (in hours) was as follows: 2.7; 2.8; 3.0; 2.3; 2.3; 2.2; 2.8; 2.1; and 2.4.</p>
+ <ol id="list21" type="a">
+  <li><ol id="list21a" type="i">
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+ </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover></annotation-xml></semantics></math> = __________</li>
+
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mi>x</mi>
+    </msub>
+   </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msub>
+     <mi>s</mi>
+     <mi>x</mi>
+    </msub>
+   </mrow></annotation-xml></semantics></math> = __________</li>
+
+  <li><em data-effect="italics">n</em> = __________</li>
+
+  <li><em data-effect="italics">n</em> &#8211; 1 = __________</li>
+ </ol>
+ </li>
+  <li>Define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mi>X</mi>
+   </mrow><annotation-xml encoding="MathML-Content"><mi>X</mi></annotation-xml></semantics></math> in words.</li>
+  <li>Define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+  </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover></annotation-xml></semantics></math> in words.</li>
+      <li>Which distribution should you use for this problem? Explain your choice.</li>
+  <li>Construct a 95% confidence interval for the population mean length of time.
+   <ol id="list22_5" type="i">
+   <li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+   </ol>
+  </li>
+<li>What does it mean to be &#8220;95% confident&#8221; in this problem?</li>
+ </ol>
+</div>
+<div data-type="solution" id="fs-idm131198032">
+<ol id="fs-idm86189312" type="a">
+<li>
+<ol id="fs-idm33946400" type="i">
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover>
+ </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>x</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> = 2.51</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mi>x</mi>
+    </msub>
+   </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msub>
+     <mi>s</mi>
+     <mi>x</mi>
+    </msub>
+   </mrow></annotation-xml></semantics></math> = 0.318</li>
+<li><em data-effect="italics">n</em> = 9</li>
+<li><em data-effect="italics">n</em> - 1 = 8 </li>
+</ol>
+</li>
+<li>the effective length of time for a tranquilizer</li>
+<li>the mean effective length of time of tranquilizers from a sample of nine patients</li>
+<li>We need to use a Student&#8217;s-t distribution, because we do not know the population standard deviation.</li>
+<li>
+<ol id="fs-idm270080896" type="i"><li>CI: (2.27, 2.76)</li>
+<li>Check student's solution.</li>
+<li><em data-effect="italics">EBM</em>: 0.25</li>
+</ol></li>
+<li>If we were to sample many groups of nine patients, 95% of the samples would contain the true population mean length of time.</li>
+</ol>
+</div>
+</div><div data-type="exercise" id="exer11"><div data-type="problem" id="id5850872">
+<p id="para23">Suppose that 14 children, who were learning to ride two-wheel bikes, were surveyed to determine how long they had to use training wheels. It was revealed that they used them an average of six months with a sample standard deviation of three months. Assume that the underlying population distribution is normal.</p>
+<ol id="list23_5" type="a">
+   <li>
+    <ol id="list24" type="i"><li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+      <mover accent="true">
+       <mi>x</mi>
+       <mo>&#175;</mo>
+      </mover>
+     </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+       <mi>x</mi>
+       <mo>&#175;</mo>
+      </mover></annotation-xml></semantics></math> = __________</li>
+     <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+      <mrow>
+       <msub>
+        <mi>s</mi>
+        <mi>x</mi>
+       </msub>
+      </mrow>
+     </mrow><annotation-xml encoding="MathML-Content"><mrow>
+       <msub>
+        <mi>s</mi>
+        <mi>x</mi>
+       </msub>
+      </mrow></annotation-xml></semantics></math> = __________</li>
+     <li><em data-effect="italics">n</em> = __________</li>
+
+     <li><em data-effect="italics">n</em> &#8211; 1 = __________</li>
+    </ol></li>
+
+   <li>Define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mi>X</mi>
+   </mrow><annotation-xml encoding="MathML-Content"><mi>X</mi></annotation-xml></semantics></math> in words.</li>
+   <li>Define the random variable<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+    <mover accent="true">
+     <mi>X</mi>
+     <mo>&#175;</mo>
+    </mover>
+   </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+     <mi>X</mi>
+     <mo>&#175;</mo>
+    </mover></annotation-xml></semantics></math> in words.</li>
+      <li>Which distribution should you use for this problem? Explain your choice.</li>
+   <li>Construct a 99% confidence interval for the population mean length of time using training wheels.<ol id="list24_5" type="i">
+    <li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li></ol></li>
+
+<li>Why would the error bound change if the confidence level were lowered to 90%?</li>
+  </ol>
+ </div>
+ </div><div data-type="exercise" id="eip-390"><div data-type="problem" id="eip-14">
+  <p id="eip-520">The Federal Election Commission (FEC) collects information about campaign contributions and disbursements for candidates and political committees each election cycle. A political action committee (PAC) is a committee formed to raise money for candidates and campaigns. A Leadership PAC is a PAC formed by a federal politician (senator or representative) to raise money to help other candidates&#8217; campaigns.</p>
+<p id="eip-idm79133520">The FEC has reported financial information for 556 Leadership PACs that operating during the 2011&#8211;2012 election cycle. The following table shows the total receipts during this cycle for a random selection of 30 Leadership PACs.</p><table id="eip-146" summary=".."><tbody>
+  <tr><td>$46,500.00</td>	<td>$0</td>	<td>$40,966.50</td>	<td>$105,887.20</td>	<td>$5,175.00</td></tr>
+<tr><td>$29,050.00</td>	<td>$19,500.00</td>	<td>$181,557.20</td>	<td>$31,500.00</td>	<td>$149,970.80</td></tr>
+<tr><td>$2,555,363.20</td>	<td>$12,025.00</td>	<td>$409,000.00</td>	<td>$60,521.70</td>	<td>$18,000.00</td></tr>
+<tr><td>$61,810.20</td>	<td>$76,530.80</td>	<td>$119,459.20</td>	<td>$0</td>	<td>$63,520.00</td></tr>
+<tr><td>$6,500.00</td>	<td>$502,578.00</td>	<td>$705,061.10</td>	<td>$708,258.90</td>	<td>$135,810.00</td></tr>
+<tr><td>$2,000.00</td>	<td>$2,000.00</td>	<td>$0</td>	<td>$1,287,933.80</td>	<td>$219,148.30</td></tr>
+</tbody></table>
+<p id="fs-idm101832672">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>=</mo><mi>$</mi><mn>251</mn><mo>,</mo><mn>854.23</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>=</mo><mi>$</mi><mn>251</mn><mo>,</mo><mn>854.23</mn>
+ </mrow></annotation-xml></semantics></math>
+</p>
+<p id="fs-idm60266896">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>s</mi><mo>=</mo><mtext>&#160;</mtext><mi>$</mi><mn>521</mn><mo>,</mo><mn>130.41</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>s</mi><mo>=</mo><mtext>&#160;</mtext><mi>$</mi><mn>521</mn><mo>,</mo><mn>130.41</mn>
+ </mrow></annotation-xml></semantics></math>
+</p>
+<p id="eip-idp69132832">Use this sample data to construct a 96% confidence interval for the mean amount of money raised by all Leadership PACs during the 2011&#8211;2012 election cycle. Use the Student's t-distribution.</p>
+</div>
+<div data-type="solution" id="eip-770">
+<p id="fs-idm151956208">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>=</mo><mi>$</mi><mn>251</mn><mo>,</mo><mn>854.23</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+  <mo>=</mo><mi>$</mi><mn>251</mn><mo>,</mo><mn>854.23</mn>
+ </mrow></annotation-xml></semantics></math>
+</p>
+<p id="fs-idp3598576">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>s</mi><mo>=</mo><mtext>&#160;</mtext><mi>$</mi><mn>521</mn><mo>,</mo><mn>130.41</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>s</mi><mo>=</mo><mtext>&#160;</mtext><mi>$</mi><mn>521</mn><mo>,</mo><mn>130.41</mn>
+ </mrow></annotation-xml></semantics></math>
+</p>
+<p id="fs-idm60939744">Note that we are not given the population standard deviation, only the standard deviation of the sample.</p>
+<p id="eip-idm63664256">There are 30 measures in the sample, so <em data-effect="italics">n</em> = 30, and <em data-effect="italics">df</em> = 30 - 1 = 29</p>
+<p id="fs-idm117819488"><em data-effect="italics">CL</em> = 0.96, so <em data-effect="italics">&#945;</em> = 1 - <em data-effect="italics">CL</em> = 1 - 0.96 = 0.04</p>
+<p id="fs-idm140901120"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+  <mo>=</mo><mn>0.02</mn>
+ </mrow>
+ <mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mn>0.02</mn>
+   </mrow>
+  </msub>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mi>&#945;</mi>
+   <mn>2</mn>
+  </mfrac>
+  <mo>=</mo><mn>0.02</mn>
+ </mrow><mrow>
+  <msub>
+   <mi>t</mi>
+   <mrow>
+    <mfrac>
+     <mi>&#945;</mi>
+     <mn>2</mn>
+    </mfrac>
+
+   </mrow>
+  </msub>
+  <mo>=</mo><msub>
+   <mi>t</mi>
+   <mrow>
+    <mn>0.02</mn>
+   </mrow>
+  </msub>
+
+ </mrow></annotation-xml></semantics></math>
+ = 2.150</p>
+ <p id="eip-idp903520"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><msub>
+    <mi>t</mi>
+    <mrow>
+     <mfrac>
+      <mi>&#945;</mi>
+      <mn>2</mn>
+     </mfrac>
+
+    </mrow>
+   </msub>
+   <mrow><mo>(</mo>
+    <mrow>
+     <mfrac>
+      <mi>s</mi>
+      <mrow>
+       <msqrt>
+        <mi>n</mi>
+       </msqrt>
+
+      </mrow>
+     </mfrac>
+
+    </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>2.150</mn><mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mn>521</mn><mo>,</mo><mn>130.41</mn>
+       </mrow>
+       <mrow>
+        <msqrt>
+         <mrow>
+          <mn>30</mn>
+         </mrow>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+     <mo>)</mo></mrow><mo>&#160;</mo><mo>~</mo><mo>&#160;</mo><mi>$</mi><mn>204</mn><mo>,</mo><mn>561.66</mn>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <mi>E</mi><mi>B</mi><mi>M</mi><mo>=</mo><msub>
+    <mi>t</mi>
+    <mrow>
+     <mfrac>
+      <mi>&#945;</mi>
+      <mn>2</mn>
+     </mfrac>
+
+    </mrow>
+   </msub>
+   <mrow><mo>(</mo>
+    <mrow>
+     <mfrac>
+      <mi>s</mi>
+      <mrow>
+       <msqrt>
+        <mi>n</mi>
+       </msqrt>
+
+      </mrow>
+     </mfrac>
+
+    </mrow>
+    <mo>)</mo></mrow><mo>=</mo><mn>2.150</mn><mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mn>521</mn><mo>,</mo><mn>130.41</mn>
+       </mrow>
+       <mrow>
+        <msqrt>
+         <mrow>
+          <mn>30</mn>
+         </mrow>
+        </msqrt>
+
+       </mrow>
+      </mfrac>
+
+     </mrow>
+     <mo>)</mo></mrow><mo>&#160;</mo><mo>~</mo><mo>&#160;</mo><mi>$</mi><mn>204</mn><mo>,</mo><mn>561.66</mn>
+  </mrow></annotation-xml></semantics></math>
+</p>
+<p id="eip-idm139616976"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo stretchy="true">&#175;</mo>
+  </mover>
+   </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo stretchy="true">&#175;</mo>
+  </mover>
+   </mrow></annotation-xml></semantics></math> - <em data-effect="italics">EBM</em> = $251,854.23 - $204,561.66 = $47,292.57</p>
+<p id="eip-idm95497616"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo stretchy="true">&#175;</mo>
+  </mover>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo stretchy="true">&#175;</mo>
+  </mover>
+ </mrow></annotation-xml></semantics></math> + <em data-effect="italics">EBM</em> = $251,854.23+ $204,561.66 = $456,415.89</p>
+<p id="eip-idm43369008">We estimate with 96% confidence that the mean amount of money raised by all Leadership PACs during the 2011&#8211;2012 election cycle lies between $47,292.57 and $456,415.89.<div data-type="newline"><br/></div></p><p id="eip-idm19923248">Alternate Solution</p>
+<div data-type="note" data-has-label="true" id="fs-idm33267104" class="statistics calculator" data-label="">
+<p id="fs-idm130936496">Enter the data as a list.</p>
+<p id="fs-idm33521776">Press <code>STAT</code> and arrow over to <code>TESTS</code>.</p>
+<p id="fs-idm74740208">Arrow down to <code>8:TInterval</code>.</p>
+<p id="fs-idm137623792">Press <code>ENTER</code>.</p>
+<p id="fs-idm117237136">Arrow to Data and press <code>ENTER</code>.</p>
+<p id="fs-idm121069488">Arrow down and enter the name of the list where the data is stored.</p>
+<p id="fs-idm76431648">Enter <code>Freq</code>: 1</p>
+<p id="fs-idm157410432">Enter <code>C-Level</code>: 0.96</p>
+<p id="fs-idm14318528">Arrow down to <code>Calculate</code> and press <code>Enter</code>.</p>
+<p id="fs-idm131790576">The 96% confidence interval is ($47,262, $456,447).</p>
+</div>
+<p id="eip-idp167827024">The difference between solutions arises from rounding differences.</p>
+</div>
+</div><div data-type="exercise" id="eip-217"><div data-type="problem" id="eip-975">
+ <p id="eip-184"><em data-effect="italics">Forbes</em> magazine published data on the best small firms in 2012. These were firms that had been publicly traded for at least a year, have a stock price of at least $5 per share, and have reported annual revenue between $5 million and $1 billion. The <a href="#eip-884" class="autogenerated-content">[link]</a> shows the ages of the corporate CEOs for a random sample of these firms.
+  </p>
+<table id="eip-884" summary=".."><tbody>
+  <tr><td>48</td>	<td>58</td>	<td>51</td>	<td>61</td>	<td>56</td></tr>
+<tr><td>59</td>	<td>74</td>	<td>63</td>	<td>53</td>	<td>50</td></tr>
+<tr><td>59</td>	<td>60</td>	<td>60</td>	<td>57</td>	<td>46</td></tr>
+<tr><td>55</td>	<td>63</td>	<td>57</td>	<td>47</td>	<td>55</td></tr>
+<tr><td>57</td>	<td>43</td>	<td>61</td>	<td>62</td>	<td>49</td></tr>
+<tr><td>67</td>	<td>67</td>	<td>55</td>	<td>55</td>	<td>49</td></tr>
+</tbody></table>
+<p id="eip-idm30943456">Use this sample data to construct a 90% confidence interval for the mean age of CEO&#8217;s for these top small firms. Use the Student's t-distribution.</p>
+</div>
+</div><div data-type="exercise" id="eip-392">
+<div data-type="problem" id="eip-190">
+  <p id="eip-579">Unoccupied seats on flights cause airlines to lose revenue. Suppose a large airline wants to estimate its mean number of unoccupied seats per flight over the past year. To accomplish this, the records of 225 flights are randomly selected and the number of unoccupied seats is noted for each of the sampled flights. The sample mean is 11.6 seats and the sample standard deviation is 4.1 seats.</p>
+ <ol id="eip-idm49907776" type="a"><li>
+ <ol id="eip-idp70657312" type="i">
+ <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+ </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover></annotation-xml></semantics></math> = __________
+  </li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mi>x</mi>
+    </msub>
+   </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msub>
+     <mi>s</mi>
+     <mi>x</mi>
+    </msub>
+   </mrow></annotation-xml></semantics></math> = __________</li>
+
+  <li><em data-effect="italics">n</em> = __________</li>
+
+  <li><em data-effect="italics">n</em>-1 = __________</li>
+  </ol>
+
+</li>
+ <li>Define the random variables <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mi>X</mi>
+ </mrow><annotation-xml encoding="MathML-Content"><mi>X</mi></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mover accent="true">
+   <mi>X</mi>
+   <mo>&#175;</mo>
+  </mover>
+ </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+   <mi>X</mi>
+   <mo>&#175;</mo>
+  </mover></annotation-xml></semantics></math> in words.</li>
+<li>Which distribution should you use for this problem? Explain your choice.</li>
+<li>Construct a 92% confidence interval for the population mean number of unoccupied seats per
+flight.
+ <ol id="eip-idm535456" type="i">
+<li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+ </ol>
+</li>
+ </ol>
+</div>
+<div data-type="solution" id="fs-idm33461392">
+<ol id="fs-idp16278992" type="a">
+<li>
+<ol id="fs-idm150491184" type="i"><li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover>
+ </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+   <mi>x</mi>
+   <mo>&#175;</mo>
+  </mover></annotation-xml></semantics></math> = 11.6</li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msub>
+     <mi>s</mi>
+     <mi>x</mi>
+    </msub>
+   </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msub>
+     <mi>s</mi>
+     <mi>x</mi>
+    </msub>
+   </mrow></annotation-xml></semantics></math> = 4.1</li>
+<li><em data-effect="italics">n</em> = 225</li>
+<li><em data-effect="italics">n</em> - 1 = 224</li>
+</ol></li>
+<li><em data-effect="italics">X</em> is the number of unoccupied seats on a single flight. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover>
+ </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+  <mi>X</mi>
+  <mo>&#175;</mo>
+ </mover></annotation-xml></semantics></math> is the mean number of unoccupied seats from a sample of 225 flights.</li>
+<li>We will use a Student&#8217;s-t distribution, because we do not know the population standard deviation.</li>
+<li>
+<ol id="fs-idm19293168" type="i"><li>CI: (11.12 , 12.08)</li>
+<li>Check student's solution.</li>
+<li><em data-effect="italics">EBM</em>: 0.48</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div data-type="exercise" id="eip-848"><div data-type="problem" id="eip-idm117422496">
+<p id="eip-idp46649712">In a recent sample of 84 used car sales costs, the sample mean was $6,425 with a standard deviation of $3,156. Assume the underlying distribution is approximately normal.</p>
+ <ol id="eip-idp46650288" type="a">
+<li>Which distribution should you use for this problem? Explain your choice.</li>
+  <li>Define the random variable <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+   </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover></annotation-xml></semantics></math> in words.</li>
+<li>Construct a 95% confidence interval for the population mean cost of a used car.
+ <ol id="eip-idp2064304" type="i">
+<li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+ </ol>
+</li>
+<li>Explain what a &#8220;95% confidence interval&#8221; means for this study.</li>
+</ol>
+</div>
+</div><div data-type="exercise" id="eip-789">
+<div data-type="problem" id="eip-idp101366832">
+<p id="eip-idp114357168">Six different national brands of chocolate chip cookies were randomly selected at the supermarket. The grams of fat per serving are as follows: 8; 8; 10; 7; 9; 9. Assume the underlying distribution is approximately normal.</p>
+<ol id="eip-idp114357792" type="a">
+<li>Construct a 90% confidence interval for the population mean grams of fat per serving of chocolate chip cookies sold in supermarkets.
+ <ol id="eip-idm3541392" type="i">
+<li>State the confidence interval.</li>
+<li>Sketch the graph.</li>
+<li>Calculate the error bound.</li>
+</ol>
+</li>
+<li>If you wanted a smaller error bound while keeping the same level of confidence, what should have been changed in the study before it was done?</li>
+<li>Go to the store and record the grams of fat per serving of six brands of chocolate chip cookies.</li>
+<li>Calculate the mean.</li>
+<li>Is the mean within the interval you calculated in part a? Did you expect it to be? Why or why not?</li>
+</ol>
+ </div>
+  <div data-type="solution" id="fs-idm144387776">
+   <ol id="fs-idm144387520" type="a">
+   <li>
+    <ol id="fs-idm104467472" type="i"><li>CI: (7.64 , 9.36)</li>
+     <li><figure id="fs-idm59520752"><span data-type="media" id="mmm3" data-alt=""><img src="/resources/7e546cdbea702c7a3c15b1be1c1c04b8590efe5f/fig-ch08_12_01.jpg" data-media-type="image/jpeg" alt="" width="380"/></span></figure></li>
+   <li><em data-effect="italics">EBM</em>: 0.86</li>
+    </ol></li>
+   <li>The sample should have been increased.</li>
+   <li>Answers will vary.</li>
+   <li>Answers will vary.</li>
+   <li>Answers will vary.</li>
+   </ol>
+  </div>
+ </div>
+<div data-type="exercise" id="fs-idm170967312"><div data-type="problem" id="fs-idm181156640">
+<p id="fs-idm181156384">A survey of the mean number of cents off that coupons give was conducted by randomly surveying one coupon per page from the coupon sections of a recent San Jose Mercury News. The following data were collected: 20&#162;; 75&#162;; 50&#162;; 65&#162;; 30&#162;; 55&#162;; 40&#162;; 40&#162;; 30&#162;; 55&#162;; $1.50; 40&#162;; 65&#162;; 40&#162;. Assume the underlying distribution is approximately normal.</p>
+ <ol id="fs-idm115727600" type="a"><li>
+   <ol id="fs-idm158307360" type="i">
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover>
+    </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+      <mi>x</mi>
+      <mo>&#175;</mo>
+     </mover></annotation-xml></semantics></math> = __________</li>
+    <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+     <mrow>
+      <msub>
+       <mi>s</mi>
+       <mi>x</mi>
+      </msub>
+     </mrow>
+    </mrow><annotation-xml encoding="MathML-Content"><mrow>
+      <msub>
+       <mi>s</mi>
+       <mi>x</mi>
+      </msub>
+     </mrow></annotation-xml></semantics></math> = __________</li>
+    <li><em data-effect="italics">n</em> = __________</li>
+    <li><em data-effect="italics">n</em>-1 = __________</li>
+ </ol>
+  </li>
+  <li>Define the random variables <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mi>X</mi>
+  </mrow><annotation-xml encoding="MathML-Content"><mi>X</mi></annotation-xml></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover>
+  </mrow><annotation-xml encoding="MathML-Content"><mover accent="true">
+    <mi>X</mi>
+    <mo>&#175;</mo>
+   </mover></annotation-xml></semantics></math> in words.</li>
+ <li>Which distribution should you use for this problem? Explain your choice.</li>
+ <li>Construct a 95% confidence interval for the population mean worth of coupons.
+  <ol id="fs-idm87013712" type="i">
+  <li>State the confidence interval.</li>
+ <li>Sketch the graph.</li>
+ <li>Calculate the error bound.</li>
+  </ol>
+ </li>
+<li>If many random samples were taken of size 14, what percent of the confidence intervals constructed should contain the population mean worth of coupons? Explain why.</li>
+ </ol></div>
+ </div><p id="id7660865"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next two exercises:</em> A quality control specialist for a restaurant chain takes a random sample of size 12 to check the amount of soda served in the 16 oz. serving size. The sample mean is 13.30 with a sample standard deviation of 1.55. Assume the underlying population is normally distributed.</p><div data-type="exercise" id="eeeeeeeeeeeeeeex"><div data-type="problem" id="id5710642">
+ <p id="para58">Find the 95% Confidence Interval for the true population mean for the amount of soda served.</p>
+<ol id="list58" type="a">
+<li>(12.42, 14.18)</li>
+<li>(12.32, 14.29)</li>
+<li>(12.50, 14.10)</li>
+<li>Impossible to determine</li></ol>
+</div>
+<div data-type="solution" id="id6215942">
+ <p id="solb11">b</p>
+</div>
+</div><div data-type="exercise" id="exxxx"><div data-type="problem" id="id6176057"><p id="para60"> What is the error bound?</p>
+<ol id="list60" type="a">
+<li>0.87</li>
+<li>1.98</li>
+<li>0.99</li>
+<li>1.74</li>
+ </ol>
+</div>
+</div></section>
+<div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+ <dl id="degrefree">
+    <dt>Degrees of Freedom (<em data-effect="italics">df</em>)</dt>
+    <dd id="id17799455">the number of objects in a sample that are free to vary</dd>
+  </dl>
+<dl id="normdist">
+    <dt>Normal Distribution</dt>
+    <dd id="id42733014">a continuous random variable (RV) with pdf <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mi>f</mi><mtext>(</mtext><mi>x</mi><mtext>)</mtext><mo>=</mo><mfrac>
+   <mn>1</mn>
+   <mrow>
+    <mi>&#963;</mi><msqrt>
+     <mrow>
+      <mn>2</mn><mi>&#960;</mi>
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+  <msup>
+   <mi>e</mi>
+   <mrow>
+    <mo>&#8211;</mo><msup>
+     <mrow>
+      <mo stretchy="false">(</mo><mi>x</mi><mo>&#8211;</mo><mi>&#956;</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo>/</mo><mn>2</mn><msup>
+     <mi>&#963;</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </msup>
+
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mi>f</mi><mtext>(</mtext><mi>x</mi><mtext>)</mtext><mo>=</mo><mfrac>
+   <mn>1</mn>
+   <mrow>
+    <mi>&#963;</mi><msqrt>
+     <mrow>
+      <mn>2</mn><mi>&#960;</mi>
+     </mrow>
+    </msqrt>
+
+   </mrow>
+  </mfrac>
+  <msup>
+   <mi>e</mi>
+   <mrow>
+    <mo>&#8211;</mo><msup>
+     <mrow>
+      <mo stretchy="false">(</mo><mi>x</mi><mo>&#8211;</mo><mi>&#956;</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+    <mo>/</mo><mn>2</mn><msup>
+     <mi>&#963;</mi>
+     <mn>2</mn>
+    </msup>
+
+   </mrow>
+  </msup>
+
+ </mrow></annotation-xml></semantics></math>, where <em data-effect="italics">&#956;</em> is the mean of the distribution and <em data-effect="italics">&#963;</em> is the standard deviation, notation: <em data-effect="italics">X</em> ~ <em data-effect="italics">N</em>(<em data-effect="italics">&#956;</em>,<em data-effect="italics">&#963;</em>). If <em data-effect="italics">&#956;</em> = 0 and <em data-effect="italics">&#963;</em> = 1, the RV is called <strong>the standard normal distribution</strong>.
+    </dd>
+  </dl>
+<dl id="stddev">
+    <dt>Standard Deviation</dt>
+    <dd id="id20302532"> a number that is equal to the square root of the variance and measures how far data values are from their mean; notation: <em data-effect="italics">s</em> for sample standard deviation and <em data-effect="italics">&#963;</em> for population standard deviation</dd>
+  </dl>
+<dl id="studenttdist">
+    <dt>Student's <strong>t</strong>-Distribution</dt>
+    <dd id="id8759760">investigated and reported by William S. Gossett in 1908 and published under the pseudonym Student; the major characteristics of the random variable (RV) are:
+    <ul id="fs-idp209408240">
+    <li>It is continuous and assumes any real values.</li>
+    <li>The pdf is symmetrical about its mean of zero. However, it is more spread out and flatter at the apex than the normal distribution.</li>
+    <li>It approaches the standard normal distribution as <em data-effect="italics">n</em> get larger.</li>
+    <li>There is a "family of t&#8211;distributions: each representative of the family is completely defined by the number of degrees of freedom, which is one less than the number of data.</li>
+    </ul>
+    </dd>
+  </dl>
+</div></body>
+
+</html>

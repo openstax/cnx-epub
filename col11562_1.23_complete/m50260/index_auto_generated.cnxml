@@ -1,0 +1,210 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" cnxml-version="0.7" module-id="new">
+
+<title>Continuous Distribution</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m50260/latest</md:content-url>
+  <md:content-id>m50260</md:content-id>
+  <md:title>Continuous Distribution</md:title>
+  <md:version>1.4</md:version>
+  <md:created>2014/05/08 17:03:26 -0500</md:created>
+  <md:revised>2018/09/06 16:52:56 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>continuous random variable</md:keyword>
+    <md:keyword>exponential distribution</md:keyword>
+    <md:keyword>memoryless property</md:keyword>
+  </md:keywordlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+  <note id="fs-id1167914364668" class="statistics lab"><label/><title>Continuous Distribution</title>
+
+<para id="fs-idm14104368">Class Time:</para>
+<para id="fs-idm14103984">Names:</para>
+<list id="fs-idm52234672" list-type="bulleted">
+<title>Student Learning Outcomes</title>
+<item>The student will compare and contrast empirical data from a random number generator with the uniform distribution.</item>
+</list>
+<para id="fs-idp95550544"><title>Collect the Data</title>Use a random number generator to generate 50 values between zero and one (inclusive). List them in <link target-id="fs-idm51701040"/>. Round the numbers to four decimal places or set the calculator MODE to four places.</para><list id="fs-idp1588960" list-type="enumerated" mark-suffix=".">
+<item>Complete the table.
+<table id="fs-idm51701040" summary="Blank table with 50 cells for entering in data.">
+<tgroup cols="5"><tbody>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+<row>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+<entry>__________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</item>
+<item>Calculate the following:
+<list id="fs-idp99174544" list-type="enumerated" number-style="lower-alpha">
+<item><m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+<m:mo>=</m:mo>
+</m:mrow>
+</m:math> _______</item>
+<item><emphasis effect="italics">s</emphasis> = _______</item>
+<item>first quartile = _______</item>
+<item>third quartile = _______</item>
+<item>median = _______</item>
+</list>
+</item>
+</list>
+<list id="fs-idp37245568" list-type="enumerated">
+<title>Organize the Data</title>
+<item>Construct a histogram of the empirical data. Make eight bars.
+<figure id="fs-idm34978704"><media id="fs-idm34978448" alt="Blank graph with relative frequency on the vertical axis and X on the horizontal axis.">
+<image src="fig-ch05_06_01.png" mime-type="image/png" width="380"/>
+</media>
+</figure></item>
+<item>Construct a histogram of the empirical data. Make five bars.
+<figure id="fs-idp120220128"><media id="fs-idp120220384" alt="Blank graph with relative frequency on the vertical axis and X on the horizontal axis.">
+<image src="fig-ch05_06_01.png" mime-type="image/png" width="380"/>
+</media>
+</figure></item>
+</list>
+<list id="fs-idm6061312" list-type="enumerated">
+<title>Describe the Data</title>
+<item>In two to three complete sentences, describe the shape of each graph. (Keep it simple. Does the graph go straight across, does it have a V shape, does it have a hump in the middle or at either end, and so on. One way to help you determine a shape is to draw a smooth curve roughly through the top of the bars.)</item>
+<item>Describe how changing the number of bars might change the shape.</item>
+</list>
+<list id="fs-idm19839648" mark-suffix="." list-type="enumerated"><title>Theoretical Distribution</title><item> In words, <emphasis effect="italics">X</emphasis> = _____________________________________.</item>
+<item>The theoretical distribution of <emphasis effect="italics">X</emphasis> is <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(0,1).</item>
+<item>In theory, based upon the distribution  <emphasis effect="italics">X</emphasis> ~ <emphasis effect="italics">U</emphasis>(0,1), complete the following.
+<list id="fs-idp172122752" list-type="enumerated" number-style="lower-alpha">
+<item><emphasis effect="italics">&#956;</emphasis> = ______</item>
+<item><emphasis effect="italics">&#963;</emphasis> = ______</item>
+<item>first quartile = ______</item>
+<item>third quartile = ______</item>
+<item>median = __________</item>
+</list>
+</item>
+<item>Are the empirical values (the data) in the section titled <link target-id="fs-idp95550544">Collect the Data</link> close to the corresponding theoretical values? Why or why not?</item>
+</list><list id="fs-idp170724832" list-type="enumerated"><title>Plot the Data</title><item>Construct a box plot of the data. Be sure to use a ruler to scale accurately and draw straight edges.</item>
+<item>Do you notice any potential outliers? If so, which values are they? Either way, justify your answer numerically. (Recall that any DATA that are less than <emphasis effect="italics">Q</emphasis><sub>1</sub> &#8211; 1.5(<emphasis effect="italics">IQR</emphasis>) or more than <emphasis effect="italics">Q</emphasis><sub>3</sub> + 1.5(<emphasis effect="italics">IQR</emphasis>) are potential outliers. <emphasis effect="italics">IQR</emphasis> means interquartile range.)</item>
+</list><list id="fs-idm63566320" list-type="enumerated"><title>Compare the Data</title><item>For each of the following parts, use a complete sentence to comment on how the value obtained from the data compares to the theoretical value you expected from the distribution in the section titled <link target-id="fs-idm19839648">Theoretical Distribution</link>.
+<list id="fs-idp53285248" list-type="enumerated" number-style="lower-alpha"><item>minimum value: _______</item>
+<item>first quartile: _______</item>
+<item>median: _______</item>
+<item>third quartile: _______</item>
+<item>maximum value: _______</item>
+<item>width of <emphasis effect="italics">IQR</emphasis>: _______</item>
+<item>overall shape: _______</item>
+</list></item>
+<item>Based on your comments in the section titled <link target-id="fs-idp95550544">Collect the Data</link>, how does the box plot fit or not fit what you would expect of the distribution in the section titled <link target-id="fs-idm19839648">Theoretical Distribution</link>?</item>
+</list><list id="fs-idm74366864" list-type="enumerated">
+<title>Discussion Question</title>
+<item>Suppose that the number of values generated was 500, not 50. How would that affect what you would expect the empirical data to be and the shape of its graph to look like?</item>
+</list>
+</note></content>
+
+</document>

@@ -1,0 +1,1409 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml"><title>Test of Independence</title><meta name="created-time" content="2013/07/19 09:50:18 -0500"/><meta name="revised-time" content="2018/09/06 15:09:20 -0500"/><meta name="author" content="OpenStaxCollege"/><meta name="licensor" content="OSCRiceUniversity"/><meta name="license" content="http://creativecommons.org/licenses/by/4.0/"/><meta name="keywords" content="contingency table, expected value, observed value, test of independence"/><meta name="subject" content="Mathematics and Statistics"/></head>
+
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:qml="http://cnx.rice.edu/qml/1.0" xmlns:mod="http://cnx.rice.edu/#moduleIds" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" data-cnxml-to-html-ver="1.3.2"><div data-type="document-title">Test of Independence</div>
+<p id="element-834">Tests of independence involve using a <span data-type="term">contingency table</span> of observed (data) values.</p>
+<p id="element-230">The test statistic for a <span data-type="term">test of independence</span> is similar to that of a goodness-of-fit test:</p><div data-type="equation" id="element-164"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow>
+ <mrow>
+  <munder>
+   <mi>&#931;</mi>
+   <mrow>
+    <mo stretchy="false">(</mo><mi>i</mi><mo>&#8901;</mo><mi>j</mi><mo stretchy="false">)</mo>
+   </mrow>
+  </munder>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><mi>O</mi><mo>&#8211;</mo><mi>E</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+   </mrow>
+   <mi>E</mi>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <munder>
+   <mi>&#931;</mi>
+   <mrow>
+    <mo stretchy="false">(</mo><mi>i</mi><mo>&#8901;</mo><mi>j</mi><mo stretchy="false">)</mo>
+   </mrow>
+  </munder>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><mi>O</mi><mo>&#8211;</mo><mi>E</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+   </mrow>
+   <mi>E</mi>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math></div><p id="element-874">where:</p>
+<ul id="element-12123"><li><em data-effect="italics">O</em> = observed values</li>
+<li><em data-effect="italics">E</em> = expected values</li>
+<li><em data-effect="italics">i</em> = the number of rows in the table</li>
+<li><em data-effect="italics">j</em> = the number of columns in the table</li>
+</ul><p id="element-575">There are <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>i</mi><mo>&#8901; </mo><mi>j</mi></mrow><annotation-xml encoding="MathML-Content"><mi>i</mi><mo>&#8901; </mo><mi>j</mi></annotation-xml></semantics></math> terms of the form <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><mi>O</mi><mo>&#8211;</mo><mi>E</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+   </mrow>
+   <mi>E</mi>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><mi>O</mi><mo>&#8211;</mo><mi>E</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+   </mrow>
+   <mi>E</mi>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math>. </p><p id="element-518"><strong>A test of independence determines whether two factors are independent or not.</strong> You first encountered the term independence in <a href="/contents/326ee2e0-0ccd-46ae-a776-f8857a5dad4c">Probability Topics</a>. As a review, consider the following example.</p><div data-type="note" data-has-label="true" id="eip-155" data-label=""><div data-type="title">Note</div>
+<p id="eip-idp140445076868880">The expected value for each cell needs to be at least five in order for you to use this test.</p></div><div data-type="example" id="element-54">
+<p id="element-904">Suppose <em data-effect="italics">A</em> = a speeding violation in the last year and <em data-effect="italics">B</em> = a cell phone user while driving. If <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are independent then <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>). <em data-effect="italics">A</em> AND <em data-effect="italics">B</em> is the event that a driver received a speeding violation last year and also used a cell phone while driving. Suppose, in a study of drivers who received speeding violations in the last year, and who used cell phone while driving, that 755 people were surveyed. Out of the 755, 70 had a speeding violation and 685 did not; 305 used cell phones while driving and 450 did not.</p><p id="element-427">Let <em data-effect="italics">y</em> = expected number of drivers who used a cell phone while driving and received speeding violations.</p>
+ <p id="element-367">If <em data-effect="italics">A</em> and <em data-effect="italics">B</em> are independent, then <em data-effect="italics">P</em>(<em data-effect="italics">A</em> AND <em data-effect="italics">B</em>) = <em data-effect="italics">P</em>(<em data-effect="italics">A</em>)<em data-effect="italics">P</em>(<em data-effect="italics">B</em>). By substitution,</p>
+ <p id="element-329"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <mfrac>
+    <mi>y</mi>
+    <mrow>
+     <mn>755</mn>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <mn>70</mn>
+      </mrow>
+      <mrow>
+       <mn>755</mn>
+      </mrow>
+     </mfrac>
+    </mrow>
+    <mo>)</mo></mrow><mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mn>305</mn>
+       </mrow>
+       <mrow>
+        <mn>755</mn>
+       </mrow>
+      </mfrac>
+     </mrow>
+     <mo>)</mo></mrow>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <mfrac>
+    <mi>y</mi>
+    <mrow>
+     <mn>755</mn>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <mn>70</mn>
+      </mrow>
+      <mrow>
+       <mn>755</mn>
+      </mrow>
+     </mfrac>
+    </mrow>
+    <mo>)</mo></mrow><mrow><mo>(</mo>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mn>305</mn>
+       </mrow>
+       <mrow>
+        <mn>755</mn>
+       </mrow>
+      </mfrac>
+     </mrow>
+     <mo>)</mo></mrow>
+  </mrow></annotation-xml></semantics></math>
+ </p>
+<p id="element-482">Solve for <em data-effect="italics">y</em>: <em data-effect="italics">y</em> = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <mo stretchy="false">(</mo><mn>70</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>305</mn><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <mn>755</mn>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>28.3</mn>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <mfrac>
+   <mrow>
+    <mo stretchy="false">(</mo><mn>70</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>305</mn><mo stretchy="false">)</mo>
+   </mrow>
+   <mrow>
+    <mn>755</mn>
+   </mrow>
+  </mfrac>
+  <mo>=</mo><mn>28.3</mn>
+ </mrow></annotation-xml></semantics></math> </p><p id="element-249">About 28 people from the sample are expected to use cell phones while driving and to receive speeding violations.</p><p id="element-365">In a test of independence, we state the null and alternative hypotheses in words. Since the contingency table consists of <strong>two factors</strong>, the null hypothesis states that the factors are <strong>independent</strong> and the alternative hypothesis states that they are <strong>not independent (dependent)</strong>. If we do a test of independence using the example, then the null hypothesis is:</p><p id="element-337"><em data-effect="italics">H<sub>0</sub></em>: Being a cell phone user while driving and receiving a speeding violation are independent events.</p><p id="element-903">If the null hypothesis were true, we would expect about 28 people to use cell phones while driving and to receive a speeding violation.</p>
+<p id="element-197"><strong>The test of independence is always right-tailed</strong> because of the calculation of the test statistic. If the expected and observed values are not close together, then the test statistic is very large and way out in the right tail of the chi-square curve, as it is in a goodness-of-fit.</p><p id="element-35">The number of degrees of freedom for the test of independence is:</p><p id="element-12412"><em data-effect="italics">df</em> = (number of columns - 1)(number of rows - 1)</p>
+<p id="element-928">The following formula calculates the <strong>expected number</strong> (<em data-effect="italics">E</em>):</p>
+<p id="element-32"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>E</mi><mo>=</mo><mfrac><mtext>(row total)(column total)</mtext><mtext>total number surveyed</mtext></mfrac></mrow><annotation-xml encoding="MathML-Content"><mi>E</mi><mo>=</mo><mfrac><mtext>(row total)(column total)</mtext><mtext>total number surveyed</mtext></mfrac></annotation-xml></semantics></math></p></div>
+<div data-type="note" data-has-label="true" id="fs-idp45633632" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="eip-298">
+ <div data-type="problem" id="eip-721">
+ <p id="eip-935">A sample of 300 students is taken. Of the students surveyed, 50 were music students, while 250 were not. Ninety-seven were on the honor roll, while 203 were not. If we assume being a music student and being on the honor roll are independent events, what is the expected number of music students who are also on the honor roll?</p></div>
+</div>
+</div><div data-type="example" id="element-272">
+ <p id="element-84">In a volunteer group, adults 21 and older volunteer from one to nine hours each week to spend time with a disabled senior citizen. The program recruits among community college students, four-year college students, and nonstudents. In <a href="#table-73248" class="autogenerated-content">[link]</a> is a <strong>sample</strong> of the adult volunteers and the number of hours they volunteer per week. </p><table id="table-73248" summary="This table presents the observed hours per week volunteered by type of volunteer. The first row represents community-college students, the second row represents four-year college students, and the third row represents non-students. The second column is 1-3 hours per week, the third column is 4-6 hours per week, and the fourth column is 7-9 hours per week."><caption><span data-type="title">Number of Hours Worked Per Week by Volunteer Type (Observed) The table contains <strong>observed (O)</strong> values (data). </span></caption><thead valign="top">
+ <tr>
+ <th>Type of Volunteer</th>
+	<th data-align="center">1&#8211;3 Hours</th>
+	<th data-align="center">4&#8211;6 Hours</th>
+	<th data-align="center">7&#8211;9 Hours</th>
+ <th data-align="center">Row Total</th>
+ </tr>
+ </thead><tbody valign="top">
+<tr>
+<td>Community College Students</td>
+<td>111</td>
+<td>96</td>
+<td>48</td>
+<td>255</td>
+</tr>
+<tr>
+<td>Four-Year College Students</td>
+<td>96</td>
+<td>133</td>
+<td>61</td>
+<td>290</td>
+</tr>
+<tr>
+<td>Nonstudents</td>
+<td>91</td>
+<td>150</td>
+<td>53</td>
+<td>294</td>
+</tr>
+<tr>
+<td>Column Total</td>
+<td>298</td>
+<td>379</td>
+<td>162</td>
+<td>839</td>
+</tr>
+</tbody></table><div data-type="exercise" id="exercise102"><div data-type="problem" id="id8698829">
+<p id="element-2342"> Is the number of hours volunteered <strong>independent</strong> of the type of volunteer? </p>
+</div>
+<div data-type="solution" id="id8698856">
+<p id="element-8768798723">The <strong>observed table</strong> and the question at the end of the problem, "Is the number of hours volunteered independent of the type of volunteer?" tell you this is a test of independence. The two factors are <strong>number of hours volunteered</strong> and <strong>type of volunteer</strong>. This test is always right-tailed.</p>
+<p id="element-945"><em data-effect="italics">H<sub>0</sub></em>: The number of hours volunteered is <strong>independent</strong> of the type of volunteer.</p><p id="element-255"><em data-effect="italics">H<sub>a</sub></em>: The number of hours volunteered is <strong>dependent</strong> on the type of volunteer.</p><p id="element-455">The expected result are in <a href="#table-73248a" class="autogenerated-content">[link]</a>.
+ </p><table id="table-73248a" summary="This table presents the expected hours per week volunteered by type of volunteer. The first row represents community-college students, the second row represents four-year college students, and the third row represents non-students. The second column is 1-3 hours per week, the third column is 4-6 hours per week, and the fourth column is 7-9 hours per week."><caption><span data-type="title">Number of Hours Worked Per Week by Volunteer Type (Expected)</span>The table contains <strong>expected</strong> (<em data-effect="italics">E</em>) values (data).</caption><thead valign="top"><tr><th>Type of Volunteer</th> 	<th data-align="center">1-3 Hours</th> 	<th data-align="center">4-6 Hours</th> 	<th data-align="center">7-9 Hours</th></tr></thead><tbody valign="top">
+    <tr><td>Community College Students</td><td>90.57</td><td>115.19</td><td>49.24</td></tr>
+    <tr><td>Four-Year College Students</td><td>103.00</td><td>131.00</td><td>56.00</td></tr>
+    <tr><td>Nonstudents</td><td>104.42</td><td>132.81</td><td>56.77</td></tr>
+   </tbody></table><p id="element-720">For example, the calculation for the expected frequency for the top left cell is </p>
+ <p id="element-914"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+  <mrow>
+   <mi>E</mi><mo>=</mo><mfrac>
+    <mrow>
+     <mo stretchy="false">(</mo><mtext>row&#160;total</mtext><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>column&#160;total</mtext><mo stretchy="false">)</mo>
+    </mrow>
+    <mrow>
+     <mtext>total&#160;number&#160;surveyed</mtext>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mn>255</mn>
+      </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mn>298</mn>
+       </mrow>
+       <mo>)</mo></mrow>
+    </mrow>
+    <mrow>
+     <mn>839</mn>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mn>90.57</mn>
+  </mrow>
+ </mrow><annotation-xml encoding="MathML-Content"><mrow>
+   <mi>E</mi><mo>=</mo><mfrac>
+    <mrow>
+     <mo stretchy="false">(</mo><mtext>row&#160;total</mtext><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>column&#160;total</mtext><mo stretchy="false">)</mo>
+    </mrow>
+    <mrow>
+     <mtext>total&#160;number&#160;surveyed</mtext>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mn>255</mn>
+      </mrow>
+      <mo>)</mo></mrow><mrow><mo>(</mo>
+       <mrow>
+        <mn>298</mn>
+       </mrow>
+       <mo>)</mo></mrow>
+    </mrow>
+    <mrow>
+     <mn>839</mn>
+    </mrow>
+   </mfrac>
+   <mo>=</mo><mn>90.57</mn>
+  </mrow></annotation-xml></semantics></math>
+ </p>
+<p id="element-558" class="finger"><strong>Calculate the test statistic:</strong> <em data-effect="italics">&#967;</em><sup>2</sup> = 12.99 (calculator or computer)</p><p id="element-775"><strong>Distribution for the test:</strong><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><msubsup><mi>&#967;</mi><mn>4</mn><mn>2</mn></msubsup></mrow><annotation-xml encoding="MathML-Content"><msubsup><mi>&#967;</mi><mn>4</mn><mn>2</mn></msubsup></annotation-xml></semantics></math></p>
+ <p id="fs-idp19708320"><em data-effect="italics">df</em> = (3 columns &#8211; 1)(3 rows &#8211; 1) = (2)(2) = 4</p><p id="element-48"><strong>Graph:</strong></p>
+ <figure id="fs-idm32439392"><span data-type="media" id="id8547662" data-alt="Nonsymmetrical chi-square curve with values of 0 and 12.99 on the x-axis representing the test statistic of number of hours worked by volunteers of different types. A vertical upward line extends from 12.99 to the curve and the area to the right of this is equal to the p-value." data-display="block"><img src="/resources/4e1369a91949ed2bf19ff4f2fe8cbb14e8736250/fig-ch11_05_01N.jpg" data-media-type="image/jpg" alt="Nonsymmetrical chi-square curve with values of 0 and 12.99 on the x-axis representing the test statistic of number of hours worked by volunteers of different types. A vertical upward line extends from 12.99 to the curve and the area to the right of this is equal to the p-value." width="380"/></span></figure><p id="element-117"><strong>Probability statement:</strong> <em data-effect="italics">p</em>-value=<em data-effect="italics">P</em>(<em data-effect="italics">&#967;<sup>2</sup></em> &gt; 12.99) = 0.0113</p><p id="element-347"><strong>Compare <em data-effect="italics">&#945;</em> and the <em data-effect="italics">p</em>-value:</strong> Since no <em data-effect="italics">&#945;</em> is given, assume <em data-effect="italics">&#945;</em> = 0.05. <em data-effect="italics">p</em>-value = 0.0113. <em data-effect="italics">&#945;</em> &gt; <em data-effect="italics">p</em>-value.</p>
+<p id="fs-idm62402592"><strong>Make a decision:</strong> Since <em data-effect="italics">&#945;</em> &gt; <em data-effect="italics">p</em>-value, reject <em data-effect="italics">H<sub>0</sub></em>. This means that the factors are not independent.</p><p id="element-590"><strong>Conclusion:</strong> At a 5% level of significance, from the data, there is sufficient evidence to conclude that the number of hours volunteered and the type of volunteer are dependent on one another.</p>
+ <p id="element-956">For the example in <a href="#table-73248a" class="autogenerated-content">[link]</a>, if there had been another type of volunteer, teenagers, what would the degrees of freedom be?</p><div data-type="note" data-has-label="true" id="fs-idp30286464" class="statistics calculator" data-label="">
+<p id="element-854">Press the <code>MATRX</code> key and arrow over to <code>EDIT</code>. Press <code>1:[A]</code>. Press <code>3 ENTER 3 ENTER</code>. Enter the table values by row from <a href="#table-73248a" class="autogenerated-content">[link]</a>. Press <code>ENTER</code> after each. Press <code>2nd QUIT</code>. Press <code>STAT</code> and arrow over to <code>TESTS</code>. Arrow down to <code>C:&#967;2-TEST</code>. Press <code>ENTER</code>. You should see <code>Observed:[A] and Expected:[B]</code>. Arrow down to <code>Calculate</code>. Press <code>ENTER</code>. The test statistic is 12.9909 and the <em data-effect="italics">p</em>-value = 0.0113. Do the procedure a second time, but arrow down to <code>Draw</code> instead of <code>calculate</code>.</p></div></div></div></div>
+<div data-type="note" data-has-label="true" id="fs-idm24618832" class="statistics try finger" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="eip-685"><div data-type="problem" id="eip-903">
+ <p id="eip-845">The Bureau of Labor Statistics gathers data about employment in the United States. A sample is taken to calculate the number of U.S. citizens working in one of several industry sectors over time. <a href="#fs-idp61742592" class="autogenerated-content">[link]</a> shows the results: </p>
+<table id="fs-idp61742592" summary=""><thead>
+ <tr>
+ <th>Industry Sector</th>
+ <th>2000</th>
+ <th>2010</th>
+ <th>2020</th>
+ <th>Total</th>
+ </tr>
+</thead><tbody>
+ <tr>
+ <td>Nonagriculture wage and salary</td>
+ <td>13,243</td>
+ <td>13,044</td>
+ <td>15,018</td>
+ <td>41,305</td>
+ </tr>
+ <tr>
+ <td>Goods-producing, excluding agriculture</td>
+ <td>2,457</td>
+ <td>1,771</td>
+ <td>1,950</td>
+ <td>6,178</td>
+ </tr>
+ <tr>
+ <td>Services-providing</td>
+ <td>10,786</td>
+ <td>11,273</td>
+ <td>13,068</td>
+ <td>35,127</td>
+ </tr>
+ <tr>
+ <td>Agriculture, forestry, fishing, and hunting</td>
+ <td>240</td>
+ <td>214</td>
+ <td>201</td>
+ <td>655</td>
+ </tr>
+ <tr>
+ <td>Nonagriculture self-employed and unpaid family worker</td>
+ <td>931</td>
+ <td>894</td>
+ <td>972</td>
+ <td>2,797</td>
+ </tr>
+ <tr>
+ <td>Secondary wage and salary jobs in agriculture and private household industries</td>
+ <td>14</td>
+ <td>11</td>
+ <td>11</td>
+ <td>36</td>
+ </tr>
+ <tr>
+ <td>Secondary jobs as a self-employed or unpaid family worker</td>
+ <td>196</td>
+ <td>144</td>
+ <td>152</td>
+ <td>492</td>
+ </tr>
+ <tr>
+ <td>Total</td>
+ <td>27,867</td>
+ <td>27,351</td>
+ <td>31,372</td>
+ <td>86,590</td>
+ </tr>
+</tbody></table>
+<p id="eip-idp2741344">We want to know if the change in the number of jobs is independent of the change in years. State the null and alternative hypotheses and the degrees of freedom.</p>
+</div>
+</div></div><div data-type="example" id="element-505">
+ <p id="element-311">De Anza College is interested in the relationship between anxiety level and the need to succeed in school. A random sample of 400 students took a test that measured anxiety level and need to succeed in school. <a href="#element-875" class="autogenerated-content">[link]</a> shows the results. De Anza College wants to know if anxiety level and need to succeed in school are independent events.</p><table id="element-875" summary="This table presents the need to succeed in school in the first column and the various anxiety levels (high to low) and the row total in the second to seventh columns. The first row is for high need, the second row is for medium need, third row is for low need, and the column total is in the fourth row."><caption><span data-type="title">Need to Succeed in School vs. Anxiety Level</span></caption><thead valign="top">
+ <tr>
+ <th>Need to Succeed in School</th>
+ <th>High <div data-type="newline"><br/></div>Anxiety</th>
+ <th>Med-high <div data-type="newline"><br/></div>Anxiety</th>
+ <th>Medium <div data-type="newline"><br/></div>Anxiety</th>
+ <th>Med-low <div data-type="newline"><br/></div>Anxiety</th>
+ <th>Low <div data-type="newline"><br/></div>Anxiety</th>
+ <th>Row Total</th>
+ </tr>
+</thead><tbody>
+ <tr>
+ <td>High Need</td>
+ <td>35</td>
+ <td>42</td>
+ <td>53</td>
+ <td>15</td>
+ <td>10</td>
+<td>155</td>
+ </tr>
+ <tr>
+ <td>Medium Need</td>
+ <td>18</td>
+ <td>48</td>
+ <td>63</td>
+ <td>33</td>
+ <td>31</td>
+<td>193</td>
+ </tr>
+ <tr>
+ <td>Low Need</td>
+ <td>4</td>
+ <td>5</td>
+ <td>11</td>
+ <td>15</td>
+ <td>17</td>
+<td>52</td>
+ </tr>
+ <tr>
+ <td>Column Total</td>
+ <td>57</td>
+ <td>95</td>
+ <td>127</td>
+ <td>63</td>
+ <td>58</td>
+<td>400</td>
+ </tr>
+</tbody></table>
+<div data-type="exercise" id="element-454"><div data-type="problem" id="id9399628">
+ <p id="element-671">a. How many high anxiety level students are expected to have a high need to succeed in school? </p></div>
+<div data-type="solution" id="id9399648">
+ <p id="element-554">a. The column total for a high anxiety level is 57. The row total for high need to succeed in school is 155. The sample size or total surveyed is 400. </p><p id="fs-idm95557984"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>E</mi><mo>=</mo><mfrac><mtext>(row total)(column total)</mtext><mtext>total surveyed</mtext></mfrac><mo>=</mo><mfrac><mrow><mn>155</mn><mo>&#8901;</mo><mn>57</mn></mrow><mn>400</mn></mfrac><mo>=</mo><mn>22.09</mn></mrow><annotation-xml encoding="MathML-Content"><mi>E</mi><mo>=</mo><mfrac><mtext>(row total)(column total)</mtext><mtext>total surveyed</mtext></mfrac><mo>=</mo><mfrac><mrow><mn>155</mn><mo>&#8901;</mo><mn>57</mn></mrow><mn>400</mn></mfrac><mo>=</mo><mn>22.09</mn></annotation-xml></semantics></math></p><p id="element-790">The expected number of students who have a high anxiety level and a high need to succeed in school is about 22.<div data-type="newline" data-count="2"><br/><br/></div></p></div>
+</div><div data-type="exercise" id="element-804"><div data-type="problem" id="id8698448">
+ <p id="element-683">b. If the two variables are independent, how many students do you expect to have a low need to succeed in school and a med-low level of anxiety? </p></div>
+<div data-type="solution" id="id8698469">
+ <p id="element-921">b. The column total for a med-low anxiety level is 63. The row total for a low need to succeed in school is 52. The sample size or total surveyed is 400.</p>
+</div>
+</div><div data-type="exercise" id="eip-152"><div data-type="problem" id="id7273926">
+<p id="eip-idp45969696">c. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>E</mi><mo>=</mo><mfrac><mtext>(row total)(column total)</mtext>
+ <mtext>total surveyed</mtext></mfrac></mrow><annotation-xml encoding="MathML-Content"><mi>E</mi><mo>=</mo><mfrac><mtext>(row total)(column total)</mtext>
+ <mtext>total surveyed</mtext></mfrac></annotation-xml></semantics></math> = ________</p>
+</div>
+<div data-type="solution" id="id8469218">
+<p id="eip-idm78464064">c. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow><mi>E</mi><mo>=</mo><mfrac><mtext>(row total)(column total)</mtext><mtext>total surveyed</mtext></mfrac><mo> = </mo><mn>8.19</mn></mrow><annotation-xml encoding="MathML-Content"><mi>E</mi><mo>=</mo><mfrac><mtext>(row total)(column total)</mtext><mtext>total surveyed</mtext></mfrac><mo> = </mo><mn>8.19</mn></annotation-xml></semantics></math> </p>
+ </div>
+</div><div data-type="exercise" id="eip-699"><div data-type="problem" id="id7273926a">
+<p id="eip-idm73581440">d. The expected number of students who have a med-low anxiety level and a low need to
+  succeed in school is about ________.</p>
+</div>
+<div data-type="solution" id="id8469218a">
+<p id="eip-idm130717088">d. 8</p>
+</div>
+</div></div>
+<div data-type="note" data-has-label="true" id="fs-idm15185536" class="statistics try" data-label=""><div data-type="title">Try It</div>
+<div data-type="exercise" id="eip-358"><div data-type="problem" id="eip-928">
+ <p id="eip-757">Refer back to the information in <a href="#fs-idm24618832" class="autogenerated-content">[link]</a>. How many service providing jobs are there expected to be in 2020? How many nonagriculture wage and salary jobs are there expected to be in 2020?</p></div>
+</div>
+</div><section data-depth="1" id="fs-idp57429040" class="references"><h3 data-type="title">References</h3>
+<p id="fs-idp13074288">DiCamilo, Mark, Mervin Field, &#8220;Most Californians See a Direct Linkage between Obesity and Sugary Sodas. Two in Three Voters Support Taxing Sugar-Sweetened Beverages If Proceeds are Tied to Improving School Nutrition and Physical Activity Programs.&#8221; The Field Poll, released Feb. 14, 2013. Available online at http://field.com/fieldpollonline/subscribers/Rls2436.pdf (accessed May 24, 2013).</p>
+<p id="fs-idm55866896">Harris Interactive, &#8220;Favorite Flavor of Ice Cream.&#8221; Available online at http://www.statisticbrain.com/favorite-flavor-of-ice-cream (accessed May 24, 2013)</p>
+<p id="fs-idp88629920">&#8220;Youngest Online Entrepreneurs List.&#8221;  Available online at http://www.statisticbrain.com/youngest-online-entrepreneur-list (accessed May 24, 2013).</p>
+</section>
+<section data-depth="1" id="fs-idm174129504" class="summary"><h3 data-type="title">Chapter Review</h3>
+<p id="eip-409">To assess whether two factors are independent or not, you can apply the test of independence that uses the chi-square distribution. The null hypothesis for this test states that the two factors are independent. The test compares observed values to expected values. The test is right-tailed. Each observation or cell category must have an expected value of at least 5.</p></section>
+<section data-depth="1" id="fs-idm165691616" class="formula-review"><h3 data-type="title">Formula Review</h3>
+<div data-type="list" id="eip-958"><div data-type="title">Test of Independence</div><ul><li>The number of degrees of freedom is equal to (number of columns - 1)(number of rows - 1).</li>
+<li>The test statistic is
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+ <mrow>
+  <munder>
+   <mi>&#931;</mi>
+   <mrow>
+    <mo stretchy="false">(</mo><mi>i</mi><mo>&#8901;</mo><mi>j</mi><mo stretchy="false">)</mo>
+   </mrow>
+  </munder>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><mi>O</mi><mo>&#8211;</mo><mi>E</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+   </mrow>
+   <mi>E</mi>
+  </mfrac>
+ </mrow>
+</mrow><annotation-xml encoding="MathML-Content"><mrow>
+  <munder>
+   <mi>&#931;</mi>
+   <mrow>
+    <mo stretchy="false">(</mo><mi>i</mi><mo>&#8901;</mo><mi>j</mi><mo stretchy="false">)</mo>
+   </mrow>
+  </munder>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mrow>
+      <mo stretchy="false">(</mo><mi>O</mi><mo>&#8211;</mo><mi>E</mi><mo stretchy="false">)</mo>
+     </mrow>
+     <mn>2</mn>
+    </msup>
+   </mrow>
+   <mi>E</mi>
+  </mfrac>
+ </mrow></annotation-xml></semantics></math> where
+<em data-effect="italics">O</em> = observed values,
+<em data-effect="italics">E</em> = expected values,
+<em data-effect="italics">i</em> = the number of rows in the
+table, and
+<em data-effect="italics">j</em> = the number of columns in
+the table.
+</li>
+<li>If the null hypothesis is true, the expected number
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+<mi>E</mi>
+<mo>=</mo>
+<mfrac>
+<mtext>(row total)(column total)</mtext>
+<mtext>total surveyed</mtext>
+</mfrac>
+</mrow><annotation-xml encoding="MathML-Content"><mi>E</mi><mo>=</mo><mfrac>
+<mtext>(row total)(column total)</mtext>
+<mtext>total surveyed</mtext>
+</mfrac></annotation-xml></semantics></math>.
+</li>
+</ul></div></section>
+<section data-depth="1" id="fs-idm76665472" class="practice"><p id="eip-idp65377328"><em data-effect="italics">Determine the appropriate test to be used  in the next three exercises.</em></p>
+<div data-type="exercise" id="eip-643"><div data-type="problem" id="eip-796">
+ <p id="eip-177">A pharmaceutical company is interested in the relationship between age and presentation of symptoms for a common viral infection. A random sample is taken of 500 people with the infection across different age groups.</p></div>
+<div data-type="solution" id="eip-222">
+ <p id="eip-752">a test of independence </p></div>
+</div>
+<div data-type="exercise" id="eip-703"><div data-type="problem" id="eip-619">
+ <p id="eip-885">The owner of a baseball team is interested in the relationship between player salaries and team winning percentage. He takes a random sample of 100 players from different organizations.</p></div>
+</div><div data-type="exercise" id="eip-46"><div data-type="problem" id="eip-671">
+ <p id="eip-389">A marathon runner is interested in the relationship between the brand of shoes runners wear and their run times. She takes a random sample of 50 runners and records their run times as well as the brand of shoes they were wearing.</p></div>
+<div data-type="solution" id="eip-58">
+ <p id="eip-988">a test of independence </p></div>
+</div>
+ <p id="eip-180"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next seven exercises:</em> Transit Railroads is interested in the relationship between travel distance and the ticket class purchased. A random sample of 200 passengers is taken. <a href="#eip-956" class="autogenerated-content">[link]</a> shows the results. The railroad wants to know if a passenger&#8217;s choice in ticket class is independent of the distance they must travel.</p><table id="eip-956" summary=".."><thead>
+ <tr>
+ <th>Traveling Distance</th>
+ <th>Third class</th>
+ <th>Second class</th>
+ <th>First class</th>
+ <th>Total</th>
+ </tr>
+</thead><tbody>
+ <tr>
+ <td>1&#8211;100 miles</td>
+ <td>21</td>
+ <td>14</td>
+ <td>6</td>
+ <td>41</td>
+ </tr>
+ <tr>
+  <td>101&#8211;200 miles</td>
+ <td>18</td>
+ <td>16</td>
+ <td>8</td>
+ <td>42</td>
+ </tr>
+ <tr>
+  <td>201&#8211;300 miles</td>
+ <td>16</td>
+ <td>17</td>
+ <td>15</td>
+ <td>48</td>
+ </tr>
+ <tr>
+  <td>301&#8211;400 miles</td>
+ <td>12</td>
+ <td>14</td>
+ <td>21</td>
+ <td>47</td>
+ </tr>
+ <tr>
+  <td>401&#8211;500 miles</td>
+ <td>6</td>
+ <td>6</td>
+ <td>10</td>
+ <td>22</td>
+ </tr>
+ <tr>
+ <td>Total</td>
+ <td>73</td>
+ <td>67</td>
+ <td>60</td>
+ <td>200</td>
+ </tr>
+</tbody></table>
+<div data-type="exercise" id="eip-919"><div data-type="problem" id="eip-917">
+ <p id="eip-842">State the hypotheses.
+<div data-type="newline"><br/></div><em data-effect="italics">H<sub>0</sub></em>: _______
+<div data-type="newline"><br/></div><em data-effect="italics">H<sub>a</sub></em>: _______
+ </p></div>
+</div><div data-type="exercise" id="eip-304">
+ <div data-type="problem" id="eip-131">
+ <p id="eip-301"><em data-effect="italics">df</em> = _______</p>
+</div>
+<div data-type="solution" id="eip-56">
+ <p id="eip-37">8 </p>
+</div>
+ </div>
+ <div data-type="exercise" id="eip-276"><div data-type="problem" id="eip-282">
+ <p id="eip-952">How many passengers are expected to travel between 201 and 300 miles and purchase second-class tickets? </p></div>
+</div><div data-type="exercise" id="eip-870">
+ <div data-type="problem" id="eip-869">
+ <p id="eip-799">How many passengers are expected to travel between 401 and 500 miles and purchase first-class tickets?</p></div>
+<div data-type="solution" id="eip-650">
+ <p id="eip-134">6.6 </p>
+</div>
+</div>
+ <div data-type="exercise" id="eip-364"><div data-type="problem" id="eip-857">
+ <p id="eip-486">What is the test statistic? </p>
+ </div>
+</div><div data-type="exercise" id="eip-811">
+  <div data-type="problem" id="eip-646">
+ <p id="eip-575">What is the <em data-effect="italics">p</em>-value? </p>
+  </div>
+<div data-type="solution" id="eip-554">
+ <p id="eip-599">0.0435 </p>
+</div>
+ </div>
+ <div data-type="exercise" id="eip-629"><div data-type="problem" id="eip-818">
+ <p id="eip-788">What can you conclude at the 5% level of significance?</p>
+ </div>
+</div><p id="element-538"><div data-type="newline"><br/></div><em data-effect="italics">Use the following information to answer the next eight exercises:</em> An article in the New England Journal of Medicine, discussed a study on smokers in California and Hawaii. In one part of the report, the self-reported ethnicity and smoking levels per day were given. Of the people smoking at most ten cigarettes per day, there were 9,886 African Americans, 2,745 Native Hawaiians, 12,831 Latinos, 8,378 Japanese Americans and 7,650 whites. Of the people smoking 11 to 20 cigarettes per day, there were 6,514 African Americans, 3,062 Native Hawaiians, 4,932 Latinos, 10,680 Japanese Americans, and 9,877 whites. Of the people smoking 21 to 30 cigarettes per day, there were 1,671 African Americans, 1,419 Native Hawaiians, 1,406 Latinos, 4,715 Japanese Americans, and 6,062 whites. Of the people smoking at least 31 cigarettes per day, there were 759 African Americans, 788 Native Hawaiians, 800 Latinos, 2,305 Japanese Americans, and 3,970 whites.</p><div data-type="exercise" id="fs-idm12518016"><div data-type="problem" id="fs-idp16845632">
+<p id="eip-idp205148416">Complete the table.</p><table id="element-894" summary="This is a partially filled observation table with Ethnicity for the columns (2nd to 6th) and Total for the seventh column. The smoking level (4 rows) and the total constitute the rows of the table. 30 blank cells are available."><caption><span data-type="title">Smoking Levels by Ethnicity (Observed)</span></caption><colgroup><col data-width="150"/><col data-width="120"/><col data-width="120"/><col data-width="80"/><col data-width="150"/><col data-width="80"/><col data-width="80"/></colgroup><thead>
+<tr>
+<th data-align="center">Smoking Level Per Day</th>
+<th data-align="center">African American</th>
+<th data-align="center">Native Hawaiian</th>
+<th data-align="center">Latino</th>
+<th data-align="center">Japanese Americans</th>
+<th data-align="center">White</th>
+<th data-align="center">TOTALS</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>
+1-10
+</td>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+</tr>
+<tr>
+<td>
+11-20
+</td>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+</tr>
+<tr>
+<td>
+21-30
+</td>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+</tr>
+<tr>
+<td>
+31+
+</td>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+</tr>
+<tr>
+<td>
+TOTALS
+</td>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+<td/>
+</tr>
+</tbody></table>
+</div>
+<div data-type="solution" id="fs-idm6558000">
+<table id="fs-idp136234736" summary=".."><caption><span data-type="title"/></caption><colgroup><col data-width="150"/><col data-width="120"/><col data-width="120"/><col data-width="80"/><col data-width="150"/><col data-width="80"/><col data-width="80"/></colgroup><thead>
+<tr>
+<th data-align="center">Smoking Level Per Day</th>
+<th data-align="center">African American</th>
+<th data-align="center">Native Hawaiian</th>
+<th data-align="center">Latino</th>
+<th data-align="center">Japanese Americans</th>
+<th data-align="center">White</th>
+<th data-align="center">Totals</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1-10</td>
+<td>9,886</td>
+<td>2,745</td>
+<td>12,831</td>
+<td>8,378</td>
+<td>7,650</td>
+<td>41,490</td>
+</tr>
+<tr>
+<td>11-20</td>
+<td>6,514</td>
+<td>3,062</td>
+<td>4,932</td>
+<td>10,680</td>
+<td>9,877</td>
+<td>35,065</td>
+</tr>
+<tr>
+<td>21-30</td>
+<td>1,671</td>
+<td>1,419</td>
+<td>1,406</td>
+<td>4,715</td>
+<td>6,062</td>
+<td>15,273</td>
+</tr>
+<tr>
+<td>31+</td>
+<td>759</td>
+<td>788</td>
+<td>800</td>
+<td>2,305</td>
+<td>3,970</td>
+<td>8,622</td>
+</tr>
+<tr>
+<td>Totals</td>
+<td>18,830</td>
+<td>8,014</td>
+<td>19,969</td>
+<td>26,078</td>
+<td>27,559</td>
+<td>10,0450</td>
+</tr>
+</tbody></table>
+</div></div><div data-type="exercise" id="fs-idp51845072"><div data-type="problem" id="fs-idp65899264">
+<p id="eip-842abc">State the hypotheses.<div data-type="newline"><br/></div>
+<em data-effect="italics">H<sub>0</sub></em>: _______<div data-type="newline"><br/></div>
+<em data-effect="italics">H<sub>a</sub></em>: _______
+</p></div>
+ </div><div data-type="exercise" id="fs-idp153986240"><div data-type="problem" id="fs-idp153898880">
+ <p id="element-762"> Enter expected values in <a href="#element-894" class="autogenerated-content">[link]</a>. Round to two decimal places.</p>
+<p id="eip-idm129023760">Calculate the following values:</p>
+</div>
+<div data-type="solution" id="fs-idp8876448">
+ <table id="fs-idp49533968" summary=".."><caption><span data-type="title"/></caption><colgroup><col data-width="150"/><col data-width="120"/><col data-width="120"/><col data-width="80"/><col data-width="150"/><col data-width="80"/></colgroup><thead>
+    <tr>
+     <th>Smoking Level Per Day</th>
+     <th>African American</th>
+     <th>Native Hawaiian</th>
+     <th>Latino</th>
+     <th>Japanese Americans</th>
+     <th>White</th>
+    </tr>
+   </thead><tbody>
+    <tr>
+     <td>1-10</td>
+     <td>7777.57</td>
+     <td>3310.11</td>
+     <td>8248.02</td>
+     <td>10771.29</td>
+     <td>11383.01</td>
+    </tr>
+    <tr>
+     <td>11-20</td>
+     <td>6573.16</td>
+     <td>2797.52</td>
+     <td>6970.76</td>
+     <td>9103.29</td>
+     <td>9620.27</td>
+    </tr>
+    <tr>
+     <td>21-30</td>
+     <td>2863.02</td>
+     <td>1218.49</td>
+     <td>3036.20</td>
+     <td>3965.05</td>
+     <td>4190.23</td>
+    </tr>
+    <tr>
+     <td>31+</td>
+     <td>1616.25</td>
+     <td>687.87</td>
+     <td>1714.01</td>
+     <td>2238.37</td>
+     <td>2365.49</td>
+    </tr>
+   </tbody></table>
+</div>
+ </div><div data-type="exercise" id="element-180"><div data-type="problem" id="id13657036">
+  <p id="element-491"><em data-effect="italics">df</em> = _______</p>
+</div>
+ </div><div data-type="exercise" id="element-607">
+ <div data-type="problem" id="id3392008">
+  <p id="element-615"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow>
+   <mrow>
+    <msup>
+     <mi>&#967;</mi>
+     <mtext>2</mtext>
+    </msup>
+   </mrow>
+  </mrow><annotation-xml encoding="MathML-Content"><mrow>
+    <msup>
+     <mi>&#967;</mi>
+     <mtext>2</mtext>
+    </msup>
+   </mrow></annotation-xml></semantics></math> test statistic = ______</p></div>
+<div data-type="solution" id="id13687139">
+ <p id="element-123"> 10,301.8 </p>
+</div>
+</div>
+<div data-type="exercise" id="element-151"><div data-type="problem" id="id13677856">
+ <p id="element-267"><em data-effect="italics">p</em>-value = ______</p>
+</div>
+</div><div data-type="exercise" id="element-526"><div data-type="problem" id="id13507289">
+ <p id="element-78">Is this a right-tailed, left-tailed, or two-tailed test? Explain why.</p>
+</div>
+<div data-type="solution" id="id12956247">
+ <p id="element-785">right</p>
+</div>
+</div>
+<div data-type="exercise" id="element-651"><div data-type="problem" id="id13510518">
+<p id="element-52">Graph the situation. Label and scale the horizontal axis. Mark the mean and test statistic. Shade in the region corresponding to the <em data-effect="italics">p</em>-value. </p>
+<figure id="fs-idp37466400"><span data-type="media" id="id10494834" data-display="block" data-alt="Blank graph with vertical and horizontal axes."><img src="/resources/1d7d2bbf0ae2678fe6330ca4ed8f91db754e2a11/fig-ch11_11_01.jpg" data-media-type="image/jpg" alt="Blank graph with vertical and horizontal axes." width="380"/></span></figure>
+ </div>
+</div><p id="element-150">State the decision and conclusion (in a complete sentence) for the following preconceived levels of <em data-effect="italics">&#945;</em>.</p><div data-type="exercise" id="element-90"><div data-type="problem" id="id13505381">
+ <p id="element-764"><em data-effect="italics">&#945;</em> = 0.05</p>
+  <ol id="list-2353627788" type="a"><li>Decision: ___________________</li>
+<li>Reason for the decision: ___________________</li>
+<li>Conclusion (write out in a complete sentence): ___________________</li>
+  </ol></div>
+<div data-type="solution" id="id10677600">
+ <ol id="fs-idp17339744" type="a">
+  <li>Reject the null hypothesis.</li>
+  <li> <em data-effect="italics">p</em>-value &lt; alpha</li>
+  <li> There is sufficient evidence to conclude that smoking level is dependent on ethnic group.</li>
+ </ol>
+ </div>
+ </div><div data-type="exercise" id="element-56"><div data-type="problem" id="id12810548">
+ <p id="element-317"><em data-effect="italics">&#945;</em> = 0.01</p>
+   <ol id="list-23536277881" data-mark-suffix="." type="a"><li>Decision: ___________________</li>
+<li>Reason for the decision: ___________________</li>
+<li>Conclusion (write out in a complete sentence): ___________________</li>
+   </ol></div>
+</div></section><section data-depth="1" id="fs-idm54060384" class="free-response"><h3 data-type="title">Homework</h3>
+<p id="fs-idp19244768"><em data-effect="italics">For each problem, use a solution sheet to solve the hypothesis test problem. Go to <a href="/contents/c0449c55-aa47-4f1c-bd5f-0521652f0e82">Appendix E</a> for the chi-square solution sheet. Round expected frequency to two decimal places.</em></p><div data-type="exercise" id="element-241"><div data-type="problem" id="id20690433">
+ <p id="element-506"> A recent debate about where in the United States skiers believe the skiing is best prompted the following survey. Test to see if the best ski area is independent of the level of the skier. </p>
+ <table id="id7787415" summary="The table has the level of the skier from second to fourth column with the first column as being U.S. Ski Area. There are three rows."><thead>
+<tr>
+ <th>U.S. Ski Area</th>
+ <th>Beginner</th>
+ <th>Intermediate</th>
+ <th>Advanced</th>
+ </tr>
+ </thead><tbody>
+ <tr>
+ <td>Tahoe</td>
+ <td>20</td>
+ <td>30</td>
+ <td>40</td>
+ </tr>
+ <tr>
+ <td>Utah</td>
+ <td>10</td>
+ <td>30</td>
+ <td>60</td>
+ </tr>
+ <tr>
+ <td>Colorado</td>
+ <td>10</td>
+ <td>40</td>
+ <td>50</td>
+ </tr>
+</tbody></table>
+</div>
+</div><div data-type="exercise" id="fs-idm133556096"><div data-type="problem" id="id20690775">
+  <p id="element-887">Car manufacturers are interested in whether there is a relationship between the size of car an individual drives and the number of people in the driver&#8217;s family (that is, whether car size and family size are independent). To test this, suppose that 800 car owners were randomly surveyed with the  results in <a href="#id6178445" class="autogenerated-content">[link]</a>. Conduct a test of independence. </p><table id="id6178445" summary="This table has family size in the first column and car size from columns 2-5. There are 4 rows."><thead>
+ <tr>
+ <th>Family Size</th>
+ <th>Sub &amp; Compact</th>
+ <th>Mid-size</th>
+ <th>Full-size</th>
+ <th>Van &amp; Truck</th>
+ </tr>
+ </thead><tbody>
+ <tr>
+ <td>1</td>
+ <td>20</td>
+ <td>35</td>
+ <td>40</td>
+ <td>35</td>
+ </tr>
+ <tr>
+ <td>2</td>
+ <td>20</td>
+ <td>50</td>
+ <td>70</td>
+ <td>80</td>
+ </tr>
+ <tr>
+ <td>3&#8211;4</td>
+ <td>20</td>
+ <td>50</td>
+ <td>100</td>
+ <td>90</td>
+ </tr>
+ <tr>
+ <td>5+</td>
+ <td>20</td>
+ <td>30</td>
+ <td>70</td>
+ <td>70</td>
+ </tr>
+ </tbody></table>
+</div>
+<div data-type="solution" id="fs-idp45408448">
+ <ol id="fs-idm6658592" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: Car size is independent of family size.</li>
+  <li><em data-effect="italics">H<sub>a</sub></em>: Car size is dependent on family size.</li>
+  <li><em data-effect="italics">df</em> = 9</li>
+  <li>chi-square distribution with <em data-effect="italics">df</em> = 9</li>
+  <li>test statistic = 15.8284</li>
+  <li><em data-effect="italics">p</em>-value = 0.0706</li>
+  <li>Check student&#8217;s solution.</li>
+  <li>
+   <ol id="fs-idp124357408" type="i">
+    <li>Alpha: 0.05</li>
+    <li>Decision: Do not reject the null hypothesis.</li>
+    <li>Reason for decision: <em data-effect="italics">p</em>-value &gt; alpha</li>
+    <li>Conclusion: At the 5% significance level, there is insufficient evidence to conclude that car size and family size are dependent.</li>
+   </ol>
+  </li>
+ </ol></div>
+</div>
+ <div data-type="exercise" id="element-650"><div data-type="problem" id="id20691133">
+  <p id="element-99"> College students may be interested in whether or not their majors have any effect on starting salaries after graduation. Suppose that 300 recent graduates were surveyed as to their majors in college and their starting salaries after graduation. <a href="#id7852811" class="autogenerated-content">[link]</a> shows the data. Conduct a test of independence. </p>
+<table id="id7852811" summary="The table has the starting salary along the top from column 2-4 and the major in the first column. There are 5 rows."><thead>
+ <tr>
+ <th>Major</th>
+ <th>&lt; $50,000</th>
+ <th>$50,000 &#8211; $68,999</th>
+ <th>$69,000 +</th>
+ </tr>
+ </thead><tbody>
+ <tr>
+ <td>English</td>
+ <td>5</td>
+ <td>20</td>
+ <td>5</td>
+ </tr>
+ <tr>
+ <td>Engineering</td>
+ <td>10</td>
+ <td>30</td>
+ <td>60</td>
+ </tr>
+ <tr>
+ <td>Nursing</td>
+ <td>10</td>
+ <td>15</td>
+ <td>15</td>
+ </tr>
+ <tr>
+ <td>Business</td>
+ <td>10</td>
+ <td>20</td>
+ <td>30</td>
+ </tr>
+ <tr>
+ <td>Psychology</td>
+ <td>20</td>
+ <td>30</td>
+ <td>20</td>
+ </tr>
+ </tbody></table>
+ </div>
+</div><div data-type="exercise" id="element-8d1"><div data-type="problem" id="id20691551">
+ <p id="element-47aa7">Some travel agents claim that honeymoon hot spots vary according to age of the bride. Suppose that 280 recent brides were interviewed as to where they spent their honeymoons. The information is given in <a href="#id78334ss42" class="autogenerated-content">[link]</a>. Conduct a test of independence. </p><table id="id78334ss42" summary="This table has the age of the bride along the top from columns 2-4 and the location in the first column. There are 4 rows."><thead>
+ <tr>
+ <th>Location</th>
+ <th>20&#8211;29</th>
+  <th>30&#8211;39</th>
+  <th>40&#8211;49</th>
+ <th>50 and over</th>
+ </tr>
+ </thead><tbody>
+ <tr>
+ <td>Niagara Falls</td>
+ <td>15</td>
+ <td>25</td>
+ <td>25</td>
+ <td>20</td>
+ </tr>
+ <tr>
+ <td>Poconos</td>
+ <td>15</td>
+ <td>25</td>
+ <td>25</td>
+ <td>10</td>
+ </tr>
+ <tr>
+ <td>Europe</td>
+ <td>10</td>
+ <td>25</td>
+ <td>15</td>
+ <td>5</td>
+ </tr>
+ <tr>
+ <td>Virgin Islands</td>
+ <td>20</td>
+ <td>25</td>
+ <td>15</td>
+ <td>5</td>
+ </tr>
+ </tbody></table>
+</div>
+ <div data-type="solution" id="fs-idp45475856">
+  <ol id="fs-idp151446416" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: Honeymoon locations are independent of bride&#8217;s age.</li>
+   <li><em data-effect="italics">H<sub>a</sub></em>: Honeymoon locations are dependent on bride&#8217;s age.</li>
+   <li><em data-effect="italics">df</em> = 9</li>
+   <li>chi-square distribution with <em data-effect="italics">df</em> = 9</li>
+   <li>test statistic = 15.7027</li>
+   <li><em data-effect="italics">p</em>-value = 0.0734</li>
+   <li>Check student&#8217;s solution.</li>
+   <li>
+    <ol id="fs-idm28786192" type="i">
+     <li>Alpha: 0.05</li>
+     <li>Decision: Do not reject the null hypothesis.</li>
+     <li>Reason for decision: <em data-effect="italics">p</em>-value &gt; alpha</li>
+     <li>Conclusion: At the 5% significance level, there is insufficient evidence to conclude that honeymoon location and bride age are dependent.</li>
+    </ol>
+   </li>
+  </ol></div>
+</div>
+ <div data-type="exercise" id="element-656"><div data-type="problem" id="id20691902">
+ <p id="element-870">A manager of a sports club keeps information concerning the main sport in which members participate and their ages. To test whether there is a relationship between the age of a member and his or her choice of sport, 643 members of the sports club are randomly selected. Conduct a test of independence. </p><table id="id7834002" summary="The table has the age from columns 2-5 and sport in the first column. There are three rows."><thead>
+ <tr>
+ <th>Sport</th>
+ <th>18 - 25</th>
+ <th>26 - 30</th>
+ <th>31 - 40</th>
+ <th>41 and over</th>
+ </tr>
+ </thead><tbody>
+ <tr>
+ <td>racquetball</td>
+ <td>42</td>
+ <td>58</td>
+ <td>30</td>
+ <td>46</td>
+ </tr>
+ <tr>
+ <td>tennis</td>
+ <td>58</td>
+ <td>76</td>
+ <td>38</td>
+ <td>65</td>
+ </tr>
+ <tr>
+ <td>swimming</td>
+ <td>72</td>
+ <td>60</td>
+ <td>65</td>
+ <td>33</td>
+ </tr>
+ </tbody></table>
+</div>
+</div><div data-type="exercise" id="fs-idm153473104"><div data-type="problem" id="id20692285">
+ <p id="element-497">A major food manufacturer is concerned that the sales for its skinny french fries have been decreasing. As a part of a feasibility study, the company conducts research into the types of fries sold across the country to determine if the type of fries sold is independent of the area of the country. The results of the study are shown in <a href="#id6092701" class="autogenerated-content">[link]</a>. Conduct a test of independence.</p><table id="id6092701" summary="The table has area of country along the top from columns 2-5 and type of fries in the first column. There are three rows."><thead>
+ <tr>
+ <th>Type of Fries</th>
+ <th>Northeast</th>
+ <th>South</th>
+ <th>Central</th>
+ <th>West</th>
+ </tr>
+ </thead><tbody>
+ <tr>
+ <td>skinny fries</td>
+ <td>70</td>
+ <td>50</td>
+ <td>20</td>
+ <td>25</td>
+ </tr>
+ <tr>
+ <td>curly fries</td>
+ <td>100</td>
+ <td>60</td>
+ <td>15</td>
+ <td>30</td>
+ </tr>
+ <tr>
+ <td>steak fries</td>
+ <td>20</td>
+ <td>40</td>
+ <td>10</td>
+ <td>10</td>
+ </tr>
+ </tbody></table>
+</div>
+<div data-type="solution" id="fs-idp17240224">
+ <ol id="fs-idp17240480" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: The types of fries sold are independent of the location.</li>
+  <li><em data-effect="italics">H<sub>a</sub></em>: The types of fries sold are dependent on the location.</li>
+  <li><em data-effect="italics">df</em> = 6</li>
+  <li> chi-square distribution with <em data-effect="italics">df</em> = 6</li>
+  <li>test statistic =18.8369</li>
+  <li><em data-effect="italics">p</em>-value = 0.0044</li>
+  <li> Check student&#8217;s solution.</li>
+  <li>
+   <ol id="fs-idp36061776" type="i">
+    <li>Alpha: 0.05</li>
+    <li>Decision: Reject the null hypothesis.</li>
+    <li>Reason for decision: <em data-effect="italics">p</em>-value &lt; alpha</li>
+    <li>Conclusion: At the 5% significance level, There is sufficient evidence that types of fries and location are dependent.</li>
+   </ol>
+  </li>
+ </ol></div>
+</div>
+ <div data-type="exercise" id="element-598"><div data-type="problem" id="id20692592">
+ <p id="fs-idm168518032">According to Dan Lenard, an independent insurance agent in the Buffalo, N.Y. area, the following is a breakdown of the amount of life insurance purchased by males in the following age groups. He is interested in whether the age of the male and the amount of life insurance purchased are independent events. Conduct a test for independence.</p><table id="id7819090" summary="The table presents the amount of life insurance purchased along the top from columns 2-6 and age of males in the first column. There are 4 rows."><thead>
+ <tr>
+ <th>Age of Males</th>
+ <th>None</th>
+ <th>&lt; $200,000</th>
+ <th>$200,000&#8211;$400,000</th>
+ <th>$401,001&#8211;$1,000,000</th>
+ <th>$1,000,001+</th>
+ </tr>
+ </thead><tbody>
+ <tr>
+ <td>20&#8211;29</td>
+ <td>40</td>
+ <td>15</td>
+ <td>40</td>
+ <td>0</td>
+ <td>5</td>
+ </tr>
+ <tr>
+ <td>30&#8211;39</td>
+ <td>35</td>
+ <td>5</td>
+ <td>20</td>
+ <td>20</td>
+ <td>10</td>
+ </tr>
+ <tr>
+ <td>40&#8211;49</td>
+ <td>20</td>
+ <td>0</td>
+ <td>30</td>
+ <td>0</td>
+ <td>30</td>
+ </tr>
+ <tr>
+ <td>50+</td>
+ <td>40</td>
+ <td>30</td>
+ <td>15</td>
+ <td>15</td>
+ <td>10</td>
+ </tr>
+ </tbody></table></div>
+</div><div data-type="exercise" id="element-619"><div data-type="problem" id="id21086869">
+ <p id="element-186"> Suppose that 600 thirty-year-olds were surveyed to determine whether or not there is a relationship between the level of education an individual has and salary. Conduct a test of independence. </p>
+<table id="id7819454" summary="The table presents the level of education along the top from columns 2-5 and annual salary in the first column. There are 5 rows."><thead>
+ <tr>
+ <th>Annual Salary </th>
+ <th>Not a high school graduate</th>
+ <th>High school graduate</th>
+ <th>College graduate</th>
+ <th>Masters or doctorate</th>
+ </tr>
+ </thead><tbody>
+ <tr>
+ <td>&lt; $30,000</td>
+ <td>15</td>
+ <td>25</td>
+ <td>10</td>
+ <td>5</td>
+ </tr>
+ <tr>
+ <td>$30,000&#8211;$40,000</td>
+ <td>20</td>
+ <td>40</td>
+ <td>70</td>
+ <td>30</td>
+ </tr>
+ <tr>
+ <td>$40,000&#8211;$50,000</td>
+ <td>10</td>
+ <td>20</td>
+ <td>40</td>
+ <td>55</td>
+ </tr>
+ <tr>
+ <td>$50,000&#8211;$60,000</td>
+ <td>5</td>
+ <td>10</td>
+ <td>20</td>
+ <td>60</td>
+ </tr>
+ <tr>
+ <td>$60,000+</td>
+ <td>0</td>
+ <td>5</td>
+ <td>10</td>
+ <td>150</td>
+ </tr>
+ </tbody></table>
+ </div>
+<div data-type="solution" id="eip-idm117790352">
+<ol id="eip-idm117790096" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: Salary is independent of level of education.</li>
+<li><em data-effect="italics">H<sub>a</sub></em>: Salary is dependent on level of education.</li>
+<li><em data-effect="italics">df</em> = 12</li>
+<li>chi-square distribution with <em data-effect="italics">df</em> = 12</li>
+<li>test statistic = 255.7704</li>
+<li><em data-effect="italics">p</em>-value = 0</li>
+<li>Check student&#8217;s solution.</li>
+<li>
+<p id="eip-idp3905728">Alpha: 0.05</p>
+<p id="eip-idp3906112">Decision: Reject the null hypothesis.</p>
+<p id="eip-idm66838512">Reason for decision: <em data-effect="italics">p</em>-value &lt; alpha</p>
+<p id="eip-idm120727936">Conclusion: At the 5% significance level, there is sufficient evidence to conclude that salary and level of education are dependent.</p>
+</li>
+</ol></div></div><p id="fs-idm14785440"><em data-effect="italics">Read the statement and decide whether it is true or false.</em></p><div data-type="exercise" id="element-926"><div data-type="problem" id="id21088545">
+ <p id="element-470">The number of degrees of freedom for a test of independence is equal to the sample size minus one.</p>
+</div>
+</div><div data-type="exercise" id="element-688"><div data-type="problem" id="id21088644">
+ <p id="element-564">The test for independence uses tables of observed and expected data values. </p>
+</div>
+<div data-type="solution" id="id21088664">
+ <p id="element-959"> true </p>
+</div>
+</div>
+ <div data-type="exercise" id="element-786"><div data-type="problem" id="id21088692">
+ <p id="element-374"> The test to use when determining if the college or university a student chooses to attend is related to his or her socioeconomic status is a test for independence.</p>
+</div>
+</div><div data-type="exercise" id="element-266"><div data-type="problem" id="id21088742">
+ <p id="element-556">In a test of independence, the expected number is equal to the row total multiplied by the column total divided by the total surveyed. </p></div>
+<div data-type="solution" id="id21088762">
+ <p id="element-692"> true </p>
+</div>
+</div>
+ <div data-type="exercise" id="eip-573"><div data-type="problem" id="eip-665">
+  <p id="eip-735">An ice cream maker performs a nationwide survey about favorite flavors of ice cream in different geographic areas of the U.S. Based on <a href="#fs-idp162013328" class="autogenerated-content">[link]</a>, do the numbers suggest that geographic location is independent of favorite ice cream flavors? Test at the 5% significance level. </p><table id="fs-idp162013328" summary=""><thead>
+<tr>
+<th>U.S. region/Flavor</th>
+<th>Strawberry</th>
+<th>Chocolate</th>
+<th>Vanilla</th>
+<th>Rocky Road</th>
+<th>Mint Chocolate Chip</th>
+<th>Pistachio</th>
+<th>Row total</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>West</td>
+<td>12</td>
+<td>21</td>
+<td>22</td>
+<td>19</td>
+<td>15</td>
+<td>8</td>
+<td>97</td>
+</tr>
+<tr>
+<td>Midwest</td>
+<td>10</td>
+<td>32</td>
+<td>22</td>
+<td>11</td>
+<td>15</td>
+<td>6</td>
+<td>96</td>
+</tr>
+<tr>
+<td>East</td>
+<td>8</td>
+<td>31</td>
+<td>27</td>
+<td>8</td>
+<td>15</td>
+<td>7</td>
+<td>96</td>
+</tr>
+<tr>
+<td>South</td>
+<td>15</td>
+<td>28</td>
+<td>30</td>
+<td>8</td>
+<td>15</td>
+<td>6</td>
+<td>102</td>
+</tr>
+<tr>
+<td>Column Total</td>
+<td>45</td>
+<td>112</td>
+<td>101</td>
+<td>46</td>
+<td>60</td>
+<td>27</td>
+<td>391</td>
+</tr>
+</tbody></table>
+ </div>
+ </div><div data-type="exercise" id="eip-640"><div data-type="problem" id="eip-751">
+  <p id="eip-130"><a href="#fs-idp932416" class="autogenerated-content">[link]</a> provides a recent survey of the youngest online entrepreneurs whose net worth is estimated at one million dollars or more. Their ages range from 17 to 30. Each cell in the table illustrates the number of entrepreneurs who correspond to the specific age group and their net worth. Are the ages and net worth independent? Perform a test of independence at the 5% significance level.</p>
+  <table id="fs-idp932416" summary=""><thead>
+     <tr>
+      <th>Age Group\ Net Worth Value (in millions of US dollars)</th>
+      <th>1&#8211;5</th>
+      <th>6&#8211;24</th>
+      <th>&#8805;25</th>
+      <th>Row Total</th>
+     </tr>
+    </thead><tbody>
+     <tr>
+      <td>17&#8211;25</td>
+      <td>8</td>
+      <td>7</td>
+      <td>5</td>
+      <td>20</td>
+     </tr>
+     <tr>
+      <td>26&#8211;30</td>
+      <td>6</td>
+      <td>5</td>
+      <td>9</td>
+      <td>20</td>
+     </tr>
+     <tr>
+      <td>Column Total</td>
+      <td>14</td>
+      <td>12</td>
+      <td>14</td>
+      <td>40</td>
+     </tr>
+    </tbody></table>
+ </div>
+
+  <div data-type="solution" id="eip-14">
+   <ol id="fs-idp33820128" type="a"><li><em data-effect="italics">H<sub>0</sub></em>: Age is independent of the youngest online entrepreneurs&#8217; net worth.</li>
+    <li><em data-effect="italics">H<sub>a</sub></em>: Age is dependent on the net worth of the youngest online entrepreneurs.</li>
+    <li><em data-effect="italics">df</em> = 2</li>
+    <li>chi-square distribution with <em data-effect="italics">df</em> = 2 </li>
+    <li>test statistic = 1.76</li>
+    <li><em data-effect="italics">p</em>-value 0.4144</li>
+    <li>Check student&#8217;s solution.</li>
+    <li>
+     <ol id="fs-idp21843088" type="i">
+      <li>Alpha: 0.05</li>
+      <li>Decision: Do not reject the null hypothesis.</li>
+      <li>Reason for decision: <em data-effect="italics">p</em>-value &gt; alpha</li>
+      <li>Conclusion: At the 5% significance level, there is insufficient evidence to conclude that age and net worth for the youngest online entrepreneurs are dependent.</li>
+     </ol>
+    </li>
+   </ol></div>
+ </div>
+<div data-type="exercise" id="eip-433"><div data-type="problem" id="eip-876">
+  <p id="eip-353">A 2013 poll in California surveyed people about taxing sugar-sweetened beverages. The results are presented in <a href="#eip-idm61320176" class="autogenerated-content">[link]</a>, and are classified by ethnic group and response type. Are the poll responses independent of the participants&#8217; ethnic group? Conduct a test of independence at the 5% significance level.</p><table id="eip-idm61320176" summary="--"><thead>
+<tr>
+<th>Opinion/Ethnicity</th>
+<th>Asian-American</th>
+<th>White/Non-Hispanic</th>
+<th>African-American</th>
+<th>Latino</th>
+<th>Row Total</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Against tax</td>
+<td>48</td>
+<td>433</td>
+<td>41</td>
+<td>160</td>
+<td>682</td>
+</tr>
+<tr>
+<td>In Favor of tax</td>
+<td>54</td>
+<td>234</td>
+<td>24</td>
+<td>147</td>
+<td>459</td>
+</tr>
+<tr>
+<td>No opinion</td>
+<td>16</td>
+<td>43</td>
+<td>16</td>
+<td>19</td>
+<td>94</td>
+</tr>
+<tr>
+<td>Column Total</td>
+<td>118</td>
+<td>710</td>
+<td>81</td>
+<td>326</td>
+<td>1235</td>
+</tr>
+</tbody></table></div>
+ </div></section>
+ <div data-type="glossary"><h3 data-type="glossary-title">Glossary</h3>
+ <dl id="contintable">
+ <dt>Contingency Table</dt>
+ <dd id="id17487593">a table that displays sample values for two different factors that may be dependent or contingent on one another; it facilitates determining conditional probabilities.</dd>
+ </dl>
+</div></body>
+
+</html>

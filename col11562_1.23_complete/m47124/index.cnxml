@@ -1,0 +1,328 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:cnxorg="http://cnx.rice.edu/system-info" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:q="http://cnx.rice.edu/qml/1.0" xmlns:bib="http://bibtexml.sf.net/" id="new" module-id="" cnxml-version="0.7">
+  <title>One-Way ANOVA</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>http://legacy.cnx.org/content</md:repository>
+  <md:content-url>http://legacy.cnx.org/content/m47124/latest</md:content-url>
+  <md:content-id>m47124</md:content-id>
+  <md:title>One-Way ANOVA</md:title>
+  <md:version>1.6</md:version>
+  <md:created>2013/07/19 15:09:48 -0500</md:created>
+  <md:revised>2018/07/24 15:48:58 -0500</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>College</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:keywordlist>
+    <md:keyword>equal standard deviation</md:keyword>
+    <md:keyword>One-way ANOVA</md:keyword>
+  </md:keywordlist>
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract/>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content>
+<para id="fs-idm10364336">The purpose of a one-way ANOVA test is to determine the existence of a statistically significant difference among several group means. The test actually uses <term>variances</term> to help determine if the means are equal or not. In order to perform a one-way ANOVA test, there are five basic <emphasis>assumptions</emphasis> to be fulfilled:</para>
+<list id="list-786879" list-type="enumerated">
+<item>Each population from which a sample is taken is assumed to be normal.</item>
+<item>All samples are randomly selected and independent.</item>
+<item> The populations are assumed to have <term>equal standard deviations</term> <emphasis>(or variances)</emphasis>.</item>
+<item>The factor is a categorical variable.</item>
+<item>The response is a numerical variable.</item>
+</list>
+<section id="fs-idm3483088">
+<title>The Null and Alternative Hypotheses</title>
+<para id="me2">The null hypothesis is simply that all the group population means are the same. The alternative hypothesis is that at least one pair of means is different. For example, if there are <emphasis effect="italics">k</emphasis> groups:</para>
+<para id="element-671"><emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;</emphasis><sub>1</sub> = <emphasis effect="italics">&#956;</emphasis><sub>2</sub> = <emphasis effect="italics">&#956;</emphasis><sub>3</sub> = ... = <emphasis effect="italics">&#956;<sub>k</sub></emphasis></para>
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="element-952"><emphasis effect="italics">H<sub>a</sub></emphasis>: At least two of the group means <emphasis effect="italics">&#956;</emphasis><sub>1</sub>, <emphasis effect="italics">&#956;</emphasis><sub>2</sub>, <emphasis effect="italics">&#956;</emphasis><sub>3</sub>, ..., <emphasis effect="italics">&#956;<sub>k</sub></emphasis> are not equal. That is, <emphasis effect="italics">&#956;<sub>i</sub></emphasis> &#8800; <emphasis effect="italics">&#956;<sub>j</sub></emphasis> for some <emphasis effect="italics">i</emphasis> &#8800; <emphasis effect="italics">j</emphasis>. </para><para id="eip-969">The graphs, a set of box plots representing the distribution of values with the group means indicated by a horizontal line through the box, help in the understanding of the hypothesis test. In the first graph (red box plots), <emphasis effect="italics">H<sub>0</sub></emphasis>: <emphasis effect="italics">&#956;<sub>1</sub></emphasis> = <emphasis effect="italics">&#956;<sub>2</sub></emphasis> = <emphasis effect="italics">&#956;<sub>3</sub></emphasis> and the three populations have the same distribution if the null hypothesis is true.  The variance of the combined data is approximately the same as the variance of each of the populations.</para>
+<para id="fs-idp14626496">If the null hypothesis is false, then the variance of the combined data is larger which is caused by the different means as shown in the second graph (green box plots).</para>
+
+<figure id="fs-idp110803872"><media id="eip-idp18347248" alt="The first illustration shows three vertical boxplots with equal means. The second illustration shows three vertical boxplots with unequal means.">
+<image src="CNX_Stats_C13_M02_001n.jpg" mime-type="image/jpeg" width="380"/>
+</media>
+<caption>(a) <emphasis effect="italics">H<sub>0</sub></emphasis> is true. All means are the same; the differences are due to random variation. (b) <emphasis effect="italics">H<sub>0</sub></emphasis> is not true. All means are not the same; the differences are too large to be due to random variation.</caption></figure></section>
+
+<section id="eip-60" class="summary">
+<title>Chapter Review</title>
+<para id="eip-981">Analysis of variance extends the comparison of two groups to several, each a level of a categorical variable (factor). Samples from each group are independent, and must be randomly selected from normal populations with equal variances. We test the null hypothesis of equal means of the response in every group versus the alternative hypothesis of one or more group means being different from the others. A one-way ANOVA hypothesis test determines if several population means are equal. The distribution for the test is the <emphasis effect="italics">F</emphasis> distribution with two different degrees of freedom.</para>
+
+<list id="fs-idm125719248" list-type="enumerated">
+<title>Assumptions:</title>
+<item>Each population from which a sample is taken is assumed to be normal.</item>
+<item>All samples are randomly selected and independent.</item>
+<item>The populations are assumed to have equal standard deviations (or variances).</item>
+</list>
+</section>
+
+<section id="fs-idm135442768" class="practice">
+<para id="eip-369"><emphasis effect="italics">Use the following information to answer the next five exercises.</emphasis> There are five basic assumptions that must be fulfilled in order to perform a one-way ANOVA test. What are they?</para>
+
+<exercise id="eip-555">
+<problem id="eip-470">
+<para id="eip-917">Write one assumption.</para>
+</problem>
+<solution id="eip-356">
+<para id="eip-725">Each population from which a sample is taken is assumed to be normal.</para>
+</solution>
+</exercise>
+
+<exercise id="eip-191">
+<problem id="eip-403">
+<para id="eip-920">Write another assumption.</para>
+</problem>
+</exercise>
+
+<exercise id="eip-194">
+<problem id="eip-35">
+<para id="eip-96">Write a third assumption.</para>
+</problem>
+<solution id="eip-504">
+<para id="eip-339">The populations are assumed to have equal standard deviations (or variances).</para>
+</solution>
+</exercise>
+
+<exercise id="eip-396">
+<problem id="eip-488">
+<para id="eip-1">Write a fourth assumption.</para>
+</problem></exercise>
+
+<exercise id="eip-922">
+<problem id="eip-459">
+<para id="eip-531">Write the final assumption.</para>
+</problem>
+<solution id="eip-764">
+<para id="eip-62">The response is a numerical value.</para>
+</solution>
+</exercise>
+
+<exercise id="eip-550">
+<problem id="eip-740">
+<para id="eip-332">State the null hypothesis for a one-way ANOVA test if there are four groups.</para>
+</problem>
+</exercise>
+
+<exercise id="eip-417">
+<problem id="eip-624">
+<para id="eip-291">State the alternative hypothesis for a one-way ANOVA test if there are three groups.</para>
+</problem>
+<solution id="eip-317">
+<para id="eip-971"><emphasis effect="italics">H<sub>a</sub></emphasis>: At least two of the group means <emphasis effect="italics">&#956;<sub>1</sub></emphasis>, <emphasis effect="italics">&#956;<sub>2</sub></emphasis>, <emphasis effect="italics">&#956;<sub>3</sub></emphasis> are not equal.</para>
+</solution>
+</exercise>
+
+<exercise id="eip-983">
+<problem id="eip-849">
+<para id="eip-274">When do you use an ANOVA test?</para>
+</problem>
+</exercise>
+</section>
+
+<section id="fs-idm25046720" class="free-response">
+<title>Homework</title>
+
+<exercise id="eip-213">
+<problem id="eip-272">
+<para xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" id="eip-950">Three different traffic routes are tested for mean driving time. The entries in the <link target-id="eip-24" document=""/> are the driving times in minutes on the three different routes. 
+<table id="eip-24" summary="..">
+<tgroup cols="3">
+<thead>
+<row>
+<entry>Route 1</entry>
+<entry>Route 2</entry>
+<entry>Route 3</entry>
+</row>
+</thead>
+<tbody>
+<row><entry>30</entry>	<entry>27</entry>	<entry>16</entry></row>
+<row><entry>32</entry>	<entry>29</entry>	<entry>41</entry></row>
+<row><entry>27</entry>	<entry>28</entry>	<entry>22</entry></row>
+<row><entry>35</entry>	<entry>36</entry>	<entry>31</entry></row>
+</tbody>
+</tgroup>
+</table>
+</para><para id="eip-331">State <emphasis effect="italics">SS</emphasis><sub>between</sub>, <emphasis effect="italics">SS</emphasis><sub>within</sub>, and the <emphasis effect="italics">F</emphasis> statistic.</para>
+</problem>
+<solution id="eip-934">
+<para id="eip-idp68682064"><emphasis effect="italics">SS</emphasis><sub>between</sub> = 26
+<newline/><emphasis effect="italics">SS</emphasis><sub>within</sub> = 441
+<newline/><emphasis effect="italics">F</emphasis> = 0.2653</para>
+</solution>
+</exercise><exercise id="eip-230"><problem id="id47643113">
+
+
+<para id="element-577">Suppose a group is interested in determining whether teenagers obtain their drivers licenses at approximately the same average age across the country. Suppose that the following data are randomly collected from five teenagers in each region of the country. The numbers represent the age at which teenagers obtained their drivers licenses.</para>
+
+<table id="element-25" summary="">
+<tgroup cols="6"><colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<colspec colnum="4" colname="c4"/>
+<colspec colnum="5" colname="c5"/>
+<colspec colnum="6" colname="c6"/>
+<thead>
+<row>
+<entry/>
+<entry>Northeast</entry>
+<entry>South</entry>
+<entry>West</entry>
+<entry>Central</entry>
+<entry>East</entry>
+</row>
+</thead>
+<tbody>         
+
+<row>
+<entry/>
+<entry>16.3</entry>
+<entry>16.9</entry>
+<entry>16.4</entry>
+<entry>16.2</entry>
+<entry>17.1</entry>
+</row>
+<row>
+<entry/>
+<entry>16.1</entry>
+<entry>16.5</entry>
+<entry>16.5</entry>
+<entry>16.6</entry>
+<entry>17.2</entry>
+</row>
+<row>
+<entry/>
+<entry>16.4</entry>
+<entry>16.4</entry>
+<entry>16.6</entry>
+<entry>16.5</entry>
+<entry>16.6</entry>
+</row>
+<row>
+<entry/>
+<entry>16.5</entry>
+<entry>16.2</entry>
+<entry>16.1</entry>
+<entry>16.4</entry>
+<entry>16.8</entry>
+</row>
+<row>
+<entry>
+ <m:math>
+<m:mrow>
+<m:mover accent="true">
+<m:mi>x</m:mi>
+<m:mo>&#175;</m:mo>
+</m:mover>
+<m:mo>=</m:mo>
+</m:mrow>
+</m:math> </entry>
+<entry>________</entry>
+<entry>________</entry>
+<entry>________</entry>
+<entry>________</entry>
+<entry>________</entry>
+</row>
+<row>
+<entry>
+ <m:math>
+<m:mrow>
+<m:msup>
+<m:mi>s</m:mi>
+<m:mn>2</m:mn>
+</m:msup>
+<m:mo>=</m:mo>
+</m:mrow>
+</m:math> </entry>
+<entry>________</entry>
+<entry>________</entry>
+<entry>________</entry>
+<entry>________</entry>
+<entry>________</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<para id="element-736">State the hypotheses.</para>
+<para id="element-740"><emphasis effect="italics">H<sub>0</sub></emphasis>: ____________</para>
+<para id="element-571"><emphasis effect="italics">H<sub>a</sub></emphasis>: ____________    </para>
+</problem>
+</exercise>
+</section>
+</content>
+
+
+
+  <glossary>
+  <definition id="anova">
+    <term>Analysis of Variance</term>
+    <meaning id="id1164594558494">also referred to as ANOVA, is a method of testing whether or not the means of three or more populations are equal. The method is applicable if: 
+<list id="gllist1" list-type="bulleted">
+<item>all populations of interest are normally distributed.</item>
+<item>the populations have equal standard deviations.</item>
+<item>samples (not necessarily of the same size) are randomly and independently selected from each population.</item>
+</list>
+<para id="fs-idp106136800">The test statistic for analysis of variance is the <emphasis effect="italics">F</emphasis>-ratio.</para></meaning>
+  </definition>
+
+<definition id="fs-idp127655040">
+<term>One-Way ANOVA</term>
+<meaning id="fs-idp127655680">a method of testing whether or not the means of three or more populations are equal; the method is applicable if:
+<list id="fs-idm27280064" list-type="bulleted">
+<item>all populations of interest are normally distributed.</item>
+<item>the populations have equal standard deviations.</item>
+<item>samples (not necessarily of the same size) are randomly and independently selected from each population.</item>
+<item>there is one independent variable and one dependent variable.</item>
+</list>
+<para id="fs-idp134835456">The test statistic for analysis of variance is the <emphasis effect="italics">F</emphasis>-ratio.</para></meaning>
+</definition>
+
+<definition id="variance">
+    <term>Variance</term>
+  <meaning id="id3154337">mean of the squared deviations from the mean; the square of the standard deviation. For a set of data, a deviation can be represented as <emphasis effect="italics">x</emphasis> &#8211; <m:math>
+    <m:mover accent="true">
+      <m:mi>x</m:mi>
+      <m:mo>&#175;</m:mo>
+    </m:mover>
+  </m:math> where <emphasis effect="italics">x</emphasis> is a value of the data and <m:math>
+    <m:mover accent="true">
+      <m:mi>x</m:mi>
+      <m:mo>&#175;</m:mo>
+    </m:mover>
+    
+  </m:math> is the sample mean. The sample variance is equal to the sum of the squares of the deviations divided by the difference of the sample size and one.</meaning>
+  </definition>
+
+
+</glossary>
+</document>

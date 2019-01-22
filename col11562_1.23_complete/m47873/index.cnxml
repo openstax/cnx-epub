@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:q="http://cnx.rice.edu/qml/1.0" id="new" class="appendix" cnxml-version="0.7" module-id="new">
+
+<title>Data Sets</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml"
+          mdml-version="0.5">
+  <!-- WARNING! The 'metadata' section is read only. Do not edit below.
+       Changes to the metadata section in the source will not be saved. -->
+  <md:repository>https://legacy.cnx.org/content</md:repository>
+  <md:content-url>https://legacy.cnx.org/content/m47873/latest/</md:content-url>
+  <md:content-id>m47873</md:content-id>
+  <md:title>Data Sets</md:title>
+  <md:version>1.8</md:version>
+  <md:created>2013/10/28 17:33:47 -0500</md:created>
+  <md:revised>2018/11/12 15:15:55.721 US/Central</md:revised>
+  <md:actors>
+    <md:organization userid="OpenStaxCollege">
+      <md:shortname>OpenStax</md:shortname>
+      <md:fullname>OpenStax</md:fullname>
+      <md:email>info@openstax.org</md:email>
+    </md:organization>
+    <md:person userid="OSCRiceUniversity">
+      <md:firstname>Rice</md:firstname>
+      <md:surname>University</md:surname>
+      <md:fullname>Rice University</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+    <md:person userid="cnxstats">
+      <md:firstname>OpenStax</md:firstname>
+      <md:surname>Statistics</md:surname>
+      <md:fullname>OpenStax Statistics</md:fullname>
+      <md:email>info@openstaxcollege.org</md:email>
+    </md:person>
+  </md:actors>
+  <md:roles>
+    <md:role type="author">OpenStaxCollege</md:role>
+    <md:role type="maintainer">OpenStaxCollege cnxstats</md:role>
+    <md:role type="licensor">OSCRiceUniversity</md:role>
+  </md:roles>
+  <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License 4.0</md:license>
+  <!-- For information on license requirements for use or modification, see license url in the
+       above <md:license> element.
+       For information on formatting required attribution, see the URL:
+         CONTENT_URL/content_info#cnx_cite_header
+       where CONTENT_URL is the value provided above in the <md:content-url> element.
+  -->
+  <md:subjectlist>
+    <md:subject>Mathematics and Statistics</md:subject>
+  </md:subjectlist>
+  <md:abstract></md:abstract>
+  <md:language>en</md:language>
+  <!-- WARNING! The 'metadata' section is read only. Do not edit above.
+       Changes to the metadata section in the source will not be saved. -->
+</metadata>
+
+<content class="appendix">
+    <section id="element-244"><title>Lap Times</title>
+<para id="element-336">The following tables provide lap times from Terri Vogel's log book. Times are recorded in seconds for 2.5-mile laps completed in a series of races and practice runs.</para>
+
+<table id="id5853402" summary="">
+<title>Race Lap Times (in seconds)</title>
+<tgroup cols="8"><colspec colnum="1" colname="header_c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <colspec colnum="3" colname="c3"/>
+        <colspec colnum="4" colname="c4"/>
+        <colspec colnum="5" colname="c5"/>
+        <colspec colnum="6" colname="c6"/>
+        <colspec colnum="7" colname="c7"/>
+        <colspec colnum="8" colname="c8"/>
+        <thead>
+          <row>
+            <entry/>
+            <entry>Lap 1</entry>
+            <entry>Lap 2</entry>
+            <entry>Lap 3</entry>
+            <entry>Lap 4</entry>
+            <entry>Lap 5</entry>
+            <entry>Lap 6</entry>
+            <entry>Lap 7</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Race 1</entry>
+            <entry>135</entry>
+            <entry>130</entry>
+            <entry>131</entry>
+            <entry>132</entry>
+            <entry>130</entry>
+            <entry>131</entry>
+            <entry>133</entry>
+          </row>
+          <row>
+            <entry>Race 2</entry>
+            <entry>134</entry>
+            <entry>131</entry>
+            <entry>131</entry>
+            <entry>129</entry>
+            <entry>128</entry>
+            <entry>128</entry>
+            <entry>129</entry>
+          </row>
+          <row>
+            <entry>Race 3</entry>
+            <entry>129</entry>
+            <entry>128</entry>
+            <entry>127</entry>
+            <entry>127</entry>
+            <entry>130</entry>
+            <entry>127</entry>
+            <entry>129</entry>
+          </row>
+          <row>
+            <entry>Race 4</entry>
+            <entry>125</entry>
+            <entry>125</entry>
+            <entry>126</entry>
+            <entry>125</entry>
+            <entry>124</entry>
+            <entry>125</entry>
+            <entry>125</entry>
+          </row>
+          <row>
+            <entry>Race 5</entry>
+            <entry>133</entry>
+            <entry>132</entry>
+            <entry>132</entry>
+            <entry>132</entry>
+            <entry>131</entry>
+            <entry>130</entry>
+            <entry>132</entry>
+          </row>
+          <row>
+            <entry>Race 6</entry>
+            <entry>130</entry>
+            <entry>130</entry>
+            <entry>130</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>130</entry>
+            <entry>129</entry>
+          </row>
+          <row>
+            <entry>Race 7</entry>
+            <entry>132</entry>
+            <entry>131</entry>
+            <entry>133</entry>
+            <entry>131</entry>
+            <entry>134</entry>
+            <entry>134</entry>
+            <entry>131</entry>
+          </row>
+          <row>
+            <entry>Race 8</entry>
+            <entry>127</entry>
+            <entry>128</entry>
+            <entry>127</entry>
+            <entry>130</entry>
+            <entry>128</entry>
+            <entry>126</entry>
+            <entry>128</entry>
+          </row>
+          <row>
+            <entry>Race 9</entry>
+            <entry>132</entry>
+            <entry>130</entry>
+            <entry>127</entry>
+            <entry>128</entry>
+            <entry>126</entry>
+            <entry>127</entry>
+            <entry>124</entry>
+          </row>
+          <row>
+            <entry>Race 10</entry>
+            <entry>135</entry>
+            <entry>131</entry>
+            <entry>131</entry>
+            <entry>132</entry>
+            <entry>130</entry>
+            <entry>131</entry>
+            <entry>130</entry>
+          </row>
+          <row>
+            <entry>Race 11</entry>
+            <entry>132</entry>
+            <entry>131</entry>
+            <entry>132</entry>
+            <entry>131</entry>
+            <entry>130</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+          </row>
+          <row>
+            <entry>Race 12</entry>
+            <entry>134</entry>
+            <entry>130</entry>
+            <entry>130</entry>
+            <entry>130</entry>
+            <entry>131</entry>
+            <entry>130</entry>
+            <entry>130</entry>
+          </row>
+          <row>
+            <entry>Race 13</entry>
+            <entry>128</entry>
+            <entry>127</entry>
+            <entry>128</entry>
+            <entry>128</entry>
+            <entry>128</entry>
+            <entry>129</entry>
+            <entry>128</entry>
+          </row>
+          <row>
+            <entry>Race 14</entry>
+            <entry>132</entry>
+            <entry>131</entry>
+            <entry>131</entry>
+            <entry>131</entry>
+            <entry>132</entry>
+            <entry>130</entry>
+            <entry>130</entry>
+          </row>
+          <row>
+            <entry>Race 15</entry>
+            <entry>136</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+          </row>
+          <row>
+            <entry>Race 16</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>128</entry>
+            <entry>128</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+          </row>
+          <row>
+            <entry>Race 17</entry>
+            <entry>134</entry>
+            <entry>131</entry>
+            <entry>132</entry>
+            <entry>131</entry>
+            <entry>132</entry>
+            <entry>132</entry>
+            <entry>132</entry>
+          </row>
+          <row>
+            <entry>Race 18</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>130</entry>
+            <entry>130</entry>
+            <entry>133</entry>
+            <entry>133</entry>
+            <entry>127</entry>
+          </row>
+          <row>
+            <entry>Race 19</entry>
+            <entry>130</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>128</entry>
+          </row>
+          <row>
+            <entry>Race 20</entry>
+            <entry>131</entry>
+            <entry>128</entry>
+            <entry>130</entry>
+            <entry>128</entry>
+            <entry>129</entry>
+            <entry>130</entry>
+            <entry>130</entry>
+          </row>
+        </tbody>
+</tgroup>
+</table>
+
+    <table id="id11030993" summary="">
+<title>Practice Lap Times (in seconds)</title>
+<tgroup cols="8"><colspec colnum="1" colname="header_c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <colspec colnum="3" colname="c3"/>
+        <colspec colnum="4" colname="c4"/>
+        <colspec colnum="5" colname="c5"/>
+        <colspec colnum="6" colname="c6"/>
+        <colspec colnum="7" colname="c7"/>
+        <colspec colnum="8" colname="c8"/>
+        <thead>
+          <row>
+            <entry/>
+            <entry>Lap 1</entry>
+            <entry>Lap 2</entry>
+            <entry>Lap 3</entry>
+            <entry>Lap 4</entry>
+            <entry>Lap 5</entry>
+            <entry>Lap 6</entry>
+            <entry>Lap 7</entry>
+          </row>
+</thead>
+<tbody>
+          <row>
+            <entry>Practice 1</entry>
+            <entry>142</entry>
+            <entry>143</entry>
+            <entry>180</entry>
+            <entry>137</entry>
+            <entry>134</entry>
+            <entry>134</entry>
+            <entry>172</entry>
+          </row>
+          <row>
+            <entry>Practice 2</entry>
+            <entry>140</entry>
+            <entry>135</entry>
+            <entry>134</entry>
+            <entry>133</entry>
+            <entry>128</entry>
+            <entry>128</entry>
+            <entry>131</entry>
+          </row>
+          <row>
+            <entry>Practice 3</entry>
+            <entry>130</entry>
+            <entry>133</entry>
+            <entry>130</entry>
+            <entry>128</entry>
+            <entry>135</entry>
+            <entry>133</entry>
+            <entry>133</entry>
+          </row>
+          <row>
+            <entry>Practice 4</entry>
+            <entry>141</entry>
+            <entry>136</entry>
+            <entry>137</entry>
+            <entry>136</entry>
+            <entry>136</entry>
+            <entry>136</entry>
+            <entry>145</entry>
+          </row>
+          <row>
+            <entry>Practice 5</entry>
+            <entry>140</entry>
+            <entry>138</entry>
+            <entry>136</entry>
+            <entry>137</entry>
+            <entry>135</entry>
+            <entry>134</entry>
+            <entry>134</entry>
+          </row>
+          <row>
+            <entry>Practice 6</entry>
+            <entry>142</entry>
+            <entry>142</entry>
+            <entry>139</entry>
+            <entry>138</entry>
+            <entry>129</entry>
+            <entry>129</entry>
+            <entry>127</entry>
+          </row>
+          <row>
+            <entry>Practice 7</entry>
+            <entry>139</entry>
+            <entry>137</entry>
+            <entry>135</entry>
+            <entry>135</entry>
+            <entry>137</entry>
+            <entry>134</entry>
+            <entry>135</entry>
+          </row>
+          <row>
+            <entry>Practice 8</entry>
+            <entry>143</entry>
+            <entry>136</entry>
+            <entry>134</entry>
+            <entry>133</entry>
+            <entry>134</entry>
+            <entry>133</entry>
+            <entry>132</entry>
+          </row>
+          <row>
+            <entry>Practice 9</entry>
+            <entry>135</entry>
+            <entry>134</entry>
+            <entry>133</entry>
+            <entry>133</entry>
+            <entry>132</entry>
+            <entry>132</entry>
+            <entry>133</entry>
+          </row>
+          <row>
+            <entry>Practice 10</entry>
+            <entry>131</entry>
+            <entry>130</entry>
+            <entry>128</entry>
+            <entry>129</entry>
+            <entry>127</entry>
+            <entry>128</entry>
+            <entry>127</entry>
+          </row>
+          <row>
+            <entry>Practice 11</entry>
+            <entry>143</entry>
+            <entry>139</entry>
+            <entry>139</entry>
+            <entry>138</entry>
+            <entry>138</entry>
+            <entry>137</entry>
+            <entry>138</entry>
+          </row>
+          <row>
+            <entry>Practice 12</entry>
+            <entry>132</entry>
+            <entry>133</entry>
+            <entry>131</entry>
+            <entry>129</entry>
+            <entry>128</entry>
+            <entry>127</entry>
+            <entry>126</entry>
+          </row>
+          <row>
+            <entry>Practice 13</entry>
+            <entry>149</entry>
+            <entry>144</entry>
+            <entry>144</entry>
+            <entry>139</entry>
+            <entry>138</entry>
+            <entry>138</entry>
+            <entry>137</entry>
+          </row>
+          <row>
+            <entry>Practice 14</entry>
+            <entry>133</entry>
+            <entry>132</entry>
+            <entry>137</entry>
+            <entry>133</entry>
+            <entry>134</entry>
+            <entry>130</entry>
+            <entry>131</entry>
+          </row>
+          <row>
+            <entry>Practice 15</entry>
+            <entry>138</entry>
+            <entry>136</entry>
+            <entry>133</entry>
+            <entry>133</entry>
+            <entry>132</entry>
+            <entry>131</entry>
+            <entry>131</entry>
+          </row>
+        </tbody>
+      
+
+
+</tgroup>
+</table>
+</section>
+
+    <section id="element-949">
+<title>Stock Prices</title>
+<para id="element-492">The following table lists initial public offering (IPO) stock prices for all 1999 stocks that at least doubled in value during the first day of trading.</para>
+
+<table id="id10255660" summary="">
+<title>IPO Offer Prices</title>
+<tgroup cols="6"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <colspec colnum="3" colname="c3"/>
+        <colspec colnum="4" colname="c4"/>
+        <colspec colnum="5" colname="c5"/>
+        <colspec colnum="6" colname="c6"/>
+        <tbody>
+          <row>
+            <entry>$17.00</entry>
+            <entry>$23.00</entry>
+            <entry>$14.00</entry>
+            <entry>$16.00</entry>
+            <entry>$12.00</entry>
+            <entry>$26.00</entry>
+          </row>
+          <row>
+            <entry>$20.00</entry>
+            <entry>$22.00</entry>
+            <entry>$14.00</entry>
+            <entry>$15.00</entry>
+            <entry>$22.00</entry>
+            <entry>$18.00</entry>
+          </row>
+          <row>
+            <entry>$18.00</entry>
+            <entry>$21.00</entry>
+            <entry>$21.00</entry>
+            <entry>$19.00</entry>
+            <entry>$15.00</entry>
+            <entry>$21.00</entry>
+          </row>
+          <row>
+            <entry>$18.00</entry>
+            <entry>$17.00</entry>
+            <entry>$15.00</entry>
+            <entry>$25.00</entry>
+            <entry>$14.00</entry>
+            <entry>$30.00</entry>
+          </row>
+          <row>
+            <entry>$16.00</entry>
+            <entry>$10.00</entry>
+            <entry>$20.00</entry>
+            <entry>$12.00</entry>
+            <entry>$16.00</entry>
+            <entry>$17.44</entry>
+          </row>
+          <row>
+            <entry>$16.00</entry>
+            <entry>$14.00</entry>
+            <entry>$15.00</entry>
+            <entry>$20.00</entry>
+            <entry>$20.00</entry>
+            <entry>$16.00</entry>
+          </row>
+          <row>
+            <entry>$17.00</entry>
+            <entry>$16.00</entry>
+            <entry>$15.00</entry>
+            <entry>$15.00</entry>
+            <entry>$19.00</entry>
+            <entry>$48.00</entry>
+          </row>
+          <row>
+            <entry>$16.00</entry>
+            <entry>$18.00</entry>
+            <entry>$9.00</entry>
+            <entry>$18.00</entry>
+            <entry>$18.00</entry>
+            <entry>$20.00</entry>
+          </row>
+          <row>
+            <entry>$8.00</entry>
+            <entry>$20.00</entry>
+            <entry>$17.00</entry>
+            <entry>$14.00</entry>
+            <entry>$11.00</entry>
+            <entry>$16.00</entry>
+          </row>
+          <row>
+            <entry>$19.00</entry>
+            <entry>$15.00</entry>
+            <entry>$21.00</entry>
+            <entry>$12.00</entry>
+            <entry>$8.00</entry>
+            <entry>$16.00</entry>
+          </row>
+          <row>
+            <entry>$13.00</entry>
+            <entry>$14.00</entry>
+            <entry>$15.00</entry>
+            <entry>$14.00</entry>
+            <entry>$13.41</entry>
+            <entry>$28.00</entry>
+          </row>
+          <row>
+            <entry>$21.00</entry>
+            <entry>$17.00</entry>
+            <entry>$28.00</entry>
+            <entry>$17.00</entry>
+            <entry>$19.00</entry>
+            <entry>$16.00</entry>
+          </row>
+          <row>
+            <entry>$17.00</entry>
+            <entry>$19.00</entry>
+            <entry>$18.00</entry>
+            <entry>$17.00</entry>
+            <entry>$15.00</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>$14.00</entry>
+            <entry>$21.00</entry>
+            <entry>$12.00</entry>
+            <entry>$18.00</entry>
+            <entry>$24.00</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>$15.00</entry>
+            <entry>$23.00</entry>
+            <entry>$14.00</entry>
+            <entry>$16.00</entry>
+            <entry>$12.00</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>$24.00</entry>
+            <entry>$20.00</entry>
+            <entry>$14.00</entry>
+            <entry>$14.00</entry>
+            <entry>$15.00</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>$14.00</entry>
+            <entry>$19.00</entry>
+            <entry>$16.00</entry>
+            <entry>$38.00</entry>
+            <entry>$20.00</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>$24.00</entry>
+            <entry>$16.00</entry>
+            <entry>$8.00</entry>
+            <entry>$18.00</entry>
+            <entry>$17.00</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>$16.00</entry>
+            <entry>$15.00</entry>
+            <entry>$7.00</entry>
+            <entry>$19.00</entry>
+            <entry>$12.00</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>$8.00</entry>
+            <entry>$23.00</entry>
+            <entry>$12.00</entry>
+            <entry>$18.00</entry>
+            <entry>$20.00</entry>
+            <entry/>
+          </row>
+          <row>
+            <entry>$21.00</entry>
+            <entry>$34.00</entry>
+            <entry>$16.00</entry>
+            <entry>$26.00</entry>
+            <entry>$14.00</entry>
+            <entry/>
+          </row>
+        </tbody>
+</tgroup>
+</table>
+</section>
+<section id="fs-idp192653104" class="references"><title>References</title><para id="fs-idp188238272">Data compiled by Jay R. Ritter of University of Florida using data from <emphasis effect="italics">Securities Data Co.</emphasis> and <emphasis effect="italics">Bloomberg</emphasis>.</para></section></content>
+</document>
