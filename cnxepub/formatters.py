@@ -223,9 +223,9 @@ class SingleHTMLFormatter(object):
         """
         if isinstance(node, CompositeDocument):
             return 'composite-page'
-        if isinstance(node, Document):
+        elif isinstance(node, (Document, DocumentPointer)):
             return 'page'
-        if isinstance(node, Binder) and parent is None:
+        elif isinstance(node, Binder) and parent is None:
             return 'book'
         for child in node:
             if isinstance(child, TranslucentBinder):
