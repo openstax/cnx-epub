@@ -253,7 +253,7 @@ class SingleHTMLFormatter(object):
                       child_elem, 'h1', **{'data-type': 'document-title'}
                       ).text = node.metadata['title']
                 self._build_binder(node, child_elem)
-            elif isinstance(node, Document):
+            elif isinstance(node, (Document, DocumentPointer)):
                 html = bytes(HTMLFormatter(node, generate_ids=True))
                 doc_root = etree.fromstring(html)
                 body = doc_root.xpath('//xhtml:body',
