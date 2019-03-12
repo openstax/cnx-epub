@@ -685,7 +685,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
     def test_from_formatter_to_adapter(self):
         from ..adapters import adapt_single_html
         from ..formatters import SingleHTMLFormatter
-        from ..models import Binder, Document
+        from ..models import Binder, Document, DocumentPointer
 
         random.seed(1)
         metadata = self.base_metadata.copy()
@@ -702,6 +702,9 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         <p>Yum.</p>
     </body>
 </html>'''), metadata=metadata))
+        binder.append(DocumentPointer('content-ident-hash', metadata={
+            'title': 'Test Document Pointer',
+            'url': 'https://cnx.org/'}))
 
         single_html = str(SingleHTMLFormatter(binder))
         adapted_binder = adapt_single_html(single_html)
@@ -715,6 +718,18 @@ class HTMLAdaptationTestCase(unittest.TestCase):
   </div></body>'''.format(random.randint(0, 100000)))
         self.assertEqual(adapted_binder[1].content.decode('utf-8'), '''\
 <body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="lemon-pie"><h1>Lemon Pie</h1>\n        \n        <p id="{}">Yum.</p>\n    \n    \n  </div></body>'''.format(random.randint(0, 100000)))
+        self.assertEqual(adapted_binder[2].id, 'content-ident-hash')
+        self.assertEqual(adapted_binder[2].metadata['title'],
+                         'Test Document Pointer')
+        self.assertEqual(adapted_binder[2].content.decode('utf-8'), '''\
+<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="content-\
+ident-hash"><div>
+      <p>
+        Click <a href="https://cnx.org/">here</a> to read Test Document \
+Pointer.
+      </p>
+    </div>
+  </div></body>''')
 
     def test_to_binder(self):
         from ..adapters import adapt_single_html
