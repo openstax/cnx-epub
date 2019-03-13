@@ -5,6 +5,11 @@
 
    - feature message
 
+0.17.1
+------
+
+- Fix single-page-html formatter to work with DocumentPointer models (#144)
+
 0.17.0
 ------
 
