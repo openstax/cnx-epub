@@ -8,21 +8,26 @@ Getting started
 
 To install::
 
+(you may need to install e.g. on Linux ``sudo apt install libicu-dev``)
+
+    pip install lxml==3.6.4
+    pip install git+https://github.com/openstax/cnx-cssselect2.git#egg=cnx-cssselect2
+    pip install git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake
     python setup.py install
 
 Running tests
 -------------
 
-.. image:: https://travis-ci.org/Connexions/cnx-epub.png?branch=master
-   :target: https://travis-ci.org/Connexions/cnx-epub
+.. image:: https://travis-ci.org/openstax/cnx-epub.png?branch=master
+   :target: https://travis-ci.org/openstax/cnx-epub
 
-.. image:: https://codecov.io/gh/Connexions/cnx-epub/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/Connexions/cnx-epub
+.. image:: https://codecov.io/gh/openstax/cnx-epub/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/openstax/cnx-epub
   
 Either of the following will work::
 
-    $ python -m unittest discover
-    $ python setup.py test
+    python setup.py test
+    python -m unittest discover
 
 Format notes
 ------------
