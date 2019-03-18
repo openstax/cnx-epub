@@ -6,9 +6,9 @@ Library for parsing and building EPUB3 files for connexions content.
 Getting started
 ---------------
 
-To install::
+Prerequisites needed e.g. on Ubuntu Linux ``sudo apt install python-dev libicu-dev``
 
-(you may need to install e.g. on Linux ``sudo apt install libicu-dev``)
+To install::
 
     pip install lxml==3.6.4
     pip install git+https://github.com/openstax/cnx-cssselect2.git#egg=cnx-cssselect2
