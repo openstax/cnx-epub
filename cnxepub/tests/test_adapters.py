@@ -183,7 +183,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
             u'publishers': [{u'id': None, u'name': u'Ream', u'type': None}],
             u'revised': u'2013/06/18 15:22:55 -0500',
             u'subjects': [u'Science and Mathematics'],
-            u'summary': u'\n        By the end of this section, you will be able to: \n        <ul xmlns="http://www.w3.org/1999/xhtml" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lrmi="http://lrmi.net/the-specification" class="list">\n          <li class="item">Drive a car</li>\n          <li class="item">Purchase a watch</li>\n          <li class="item">Wear funny hats</li>\n          <li class="item">Eat cake</li>\n        </ul>\n      ',
+            u'summary': u'By the end of this section, you will be able to: \n        <ul xmlns="http://www.w3.org/1999/xhtml" xmlns:bib="http://bibtexml.sf.net/" xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lrmi="http://lrmi.net/the-specification" class="list">\n          <li class="item">Drive a car</li>\n          <li class="item">Purchase a watch</li>\n          <li class="item">Wear funny hats</li>\n          <li class="item">Eat cake</li>\n        </ul>',
             u'title': u'Document One of Infinity',
             u'translators': [{u'id': None, u'name': u'Francis Hablar',
                               u'type': None}],
@@ -778,7 +778,7 @@ Pointer.
                 {
                     'shortId': None,
                     'id': 'chocolate@1.3',
-                    'title': u'\u30c1\u30e7\u30b3\u30ec\u30fc\u30c8'
+                    'title': '&#12481;&#12519;&#12467;&#12524;&#12540;&#12488;'
                 },
                 {
                     'shortId': None,
@@ -851,7 +851,7 @@ Pointer.
                       chocolate.content)
         self.assertIn(b'<div data-type="list" id="list"><ul>',
                       chocolate.content)
-        self.assertEqual(u'チョコレート',
+        self.assertEqual('&#12481;&#12519;&#12467;&#12524;&#12540;&#12488;',
                          desserts.get_title_for_node(chocolate))
 
         extra = desserts[2]

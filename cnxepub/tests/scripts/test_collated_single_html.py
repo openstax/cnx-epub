@@ -49,4 +49,7 @@ class CollatedSingleHTMLTestCase(unittest.TestCase):
         self.assertEqual(return_code, 0)
 
         stdout.seek(0)
-        self.assertIn("'title': 'Fruity'", stdout.read())
+        if IS_PY3:
+            self.assertIn("'title': 'Fruity'", stdout.read())
+        else:
+            self.assertIn("'title': u'Fruity'", stdout.read())
