@@ -78,7 +78,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     {
                         'shortId': None,
                         'id': 'chocolate@1.3',
-                        'title': u'\u30c1\u30e7\u30b3\u30ec\u30fc\u30c8'
+                        'title': '&#12481;&#12519;&#12467;&#12524;&#12540;&#12488;'
                     },
                     {
                         'shortId': None,

@@ -10,23 +10,13 @@ import re
 from lxml import etree
 
 from .models import TRANSLUCENT_BINDER_ID
+from cnxepub.utils import squash_xml_to_text
 
 
 HTML_DOCUMENT_NAMESPACES = {
     'xhtml': "http://www.w3.org/1999/xhtml",
     'epub': "http://www.idpf.org/2007/ops",
     }
-
-
-def _squash_to_text(elm, remove_namespaces=False):
-    value = [elm.text or '']
-    for child in elm.getchildren():
-        value.append(etree.tostring(child).decode('utf-8').strip())
-        value.append(child.tail or '')
-    if remove_namespaces:
-        value = [re.sub(' xmlns:?[^=]*="[^"]*"', '', v) for v in value]
-    value = ''.join(value)
-    return value
 
 
 def parse_navigation_html_to_tree(html, id):
@@ -65,8 +55,8 @@ def _nav_to_tree(root):
             shortid = li.get('cnx-archive-shortid')
             yield {'id': itemid,
                    # Title is wrapped in a span, div or some other element...
-                   'title': _squash_to_text(expath(li, '*')[0],
-                                            remove_namespaces=True),
+                   'title': squash_xml_to_text(expath(li, '*')[0],
+                                               remove_namespaces=True),
                    'shortId': shortid,
                    'contents': [x for x in _nav_to_tree(li)],
                    }
@@ -75,7 +65,7 @@ def _nav_to_tree(root):
             a = li.xpath('xhtml:a', namespaces=HTML_DOCUMENT_NAMESPACES)[0]
             yield {'id': a.get('href'),
                    'shortid': li.get('cnx-archive-shortid'),
-                   'title': _squash_to_text(a, remove_namespaces=True)}
+                   'title': squash_xml_to_text(a, remove_namespaces=True)}
 
 
 def parse_metadata(html):
@@ -153,7 +143,7 @@ class DocumentMetadataParser:
         items = self.parse('.//*[@data-type="description"]')
         try:
             description = items[0]
-            value = _squash_to_text(description).encode('utf-8')
+            value = squash_xml_to_text(description).encode('utf-8')
         except IndexError:
             value = None
         return value
