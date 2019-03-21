@@ -757,7 +757,7 @@ Pointer.
                         {
                             'shortId': None,
                             'id': 'lemon@1.3',
-                            'title': '<span>1.1</span> <span>|</span> <span>&#12524;&#12514;&#12531;</span>'
+                            'title': u'<span>1.1</span> <span>|</span> <span>レモン</span>'
                         },
 
                         {
@@ -778,7 +778,7 @@ Pointer.
                 {
                     'shortId': None,
                     'id': 'chocolate@1.3',
-                    'title': '&#12481;&#12519;&#12467;&#12524;&#12540;&#12488;'
+                    'title': u'チョコレート'
                 },
                 {
                     'shortId': None,
@@ -824,8 +824,8 @@ Pointer.
         self.assertEqual(metadata, lemon_metadata)
         self.assertIn(b'<p id="8271">Yum! <img id="33432" '
                       b'src="/resources/1x1.jpg"/></p>', lemon.content)
-        self.assertEqual('<span>1.1</span> <span>|</span> <span>'
-                         '&#12524;&#12514;&#12531;</span>',
+        self.assertEqual(u'<span>1.1</span> <span>|</span> <span>'
+                         u'レモン</span>',
                          fruity.get_title_for_node(lemon))
 
         citrus = fruity[2]
@@ -851,7 +851,7 @@ Pointer.
                       chocolate.content)
         self.assertIn(b'<div data-type="list" id="list"><ul>',
                       chocolate.content)
-        self.assertEqual('&#12481;&#12519;&#12467;&#12524;&#12540;&#12488;',
+        self.assertEqual(u'チョコレート',
                          desserts.get_title_for_node(chocolate))
 
         extra = desserts[2]

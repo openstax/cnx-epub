@@ -54,27 +54,28 @@ class TestSquashXMLToText(unittest.TestCase):
         if IS_PY2:
             txt = txt.decode('utf-8')
             expected = expected.decode('utf-8')
-            expected = expected.encode('ascii', 'xmlcharrefreplace')
-        else:
-            expected = expected.encode('ascii', 'xmlcharrefreplace')
-            expected = expected.decode('utf-8')
 
         result = self.target(etree.fromstring(txt, self.parser), True)
-
         assert result == expected
 
     def test_single_elem_only(self):
         txt = '<div><span>Hello Wórld!</span></div>'
-        result = self.target(etree.fromstring(txt), True)
+        expected = '<span>Hello Wórld!</span>'
+        if IS_PY2:
+            txt = txt.decode('utf-8')
+            expected = expected.decode('utf-8')
 
-        expected = '<span>Hello W&#243;rld!</span>'
+        result = self.target(etree.fromstring(txt), True)
         assert result == expected
 
     def test_with_leading_whitespace(self):
         txt = '\n  <div>\n  <span>Hello Wórld!</span>  </div>'
-        result = self.target(etree.fromstring(txt), True)
+        expected = '<span>Hello Wórld!</span>'
+        if IS_PY2:
+            txt = txt.decode('utf-8')
+            expected = expected.decode('utf-8')
 
-        expected = '<span>Hello W&#243;rld!</span>'
+        result = self.target(etree.fromstring(txt), True)
         assert result == expected
 
     def test_with_space_separated_elements(self):
@@ -106,7 +107,10 @@ class TestSquashXMLToText(unittest.TestCase):
             ' Hélène'
             '</div>'
         )
-        result = self.target(etree.fromstring(txt), True)
+        expected = 'Ottó <span>vs</span> Hélène'
+        if IS_PY2:
+            txt = txt.decode('utf-8')
+            expected = expected.decode('utf-8')
 
-        expected = 'Ott&#243; <span>vs</span> H&#233;l&#232;ne'
+        result = self.target(etree.fromstring(txt), True)
         assert result == expected
