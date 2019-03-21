@@ -30,19 +30,14 @@ def squash_xml_to_text(elm, remove_namespaces=False):
     :rtype: str
 
     """
-    result = []
-    if elm.text is not None:
-        # Encode the text as XML entities (e.g. `ó` becomes `&#243;`)
-        # This is done, because etree.tostring without utf-8 encoding
-        # does this by default. We do the same to the text for consistency.
-        text = elm.text.lstrip().encode('ascii', 'xmlcharrefreplace')
-        result.append(text.decode('utf-8'))
+    leading_text = elm.text and elm.text or ''
+    result = [leading_text]
 
     for child in elm.getchildren():
-        # Encoding is not set to utf-8 because otherwise `ó` wouldn't
+        # Encoding is set to utf-8 because otherwise `ó` would
         # become `&#243;`
-        child_value = etree.tostring(child)
-        # Decode to a string and strip the whitespace
+        child_value = etree.tostring(child, encoding='utf-8')
+        # Decode to a string for later regexp and whitespace stripping
         child_value = child_value.decode('utf-8')
         result.append(child_value)
 
@@ -52,5 +47,5 @@ def squash_xml_to_text(elm, remove_namespaces=False):
         result = [re.sub(' xmlns:?[^=]*="[^"]*"', '', v) for v in result]
 
     # Join the results and strip any surrounding whitespace
-    result = ''.join(result).strip()
+    result = u''.join(result).strip()
     return result

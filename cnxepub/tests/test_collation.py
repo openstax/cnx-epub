@@ -59,7 +59,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     {
                     'shortId': None,
                     'id': 'lemon@1.3',
-                    'title': '<span>1.1</span> <span>|</span> <span>&#12524;&#12514;&#12531;</span>'
+                    'title': u'<span>1.1</span> <span>|</span> <span>レモン</span>'
                     },
                     {
                     'shortId': 'sfE7YYyV@1.3',
@@ -78,7 +78,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     {
                         'shortId': None,
                         'id': 'chocolate@1.3',
-                        'title': '&#12481;&#12519;&#12467;&#12524;&#12540;&#12488;'
+                        'title': u'チョコレート'
                     },
                     {
                         'shortId': None,
