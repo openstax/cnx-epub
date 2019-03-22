@@ -420,7 +420,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg',
                            filename='1x1.jpg')
         binder.append(Document('egress', io.BytesIO(
-            u'<body><p><img src="1x1.jpg" />hüvasti.</p></body>'.encode('utf-8')),
+            u'<body><p><img src="1x1.jpg" />hüvasti.</p><p><img longdesc="1x1.jpg" src="1x1.jpg" />hüvastilongdesc.</p></body>'.encode('utf-8')),
                                metadata=metadata,
                                resources=[jpg]))
 
@@ -487,6 +487,7 @@ class ModelsToEPUBTestCase(unittest.TestCase):
             '<div data-type="resources"[^>]*>\s*<ul>\s*'
             '<li>\s*<a href="1x1.jpg">1x1.jpg</a>\s*</li>\s*</ul>\s*</div>', egress))
         self.assertTrue(u'<p><img src="../resources/1x1.jpg"/>hüvasti.</p>' in egress)
+        self.assertTrue(u'<p><img longdesc="../resources/1x1.jpg" src="../resources/1x1.jpg"/>hüvastilongdesc.</p>' in egress)
 
         # Adapt epub back to documents and binders
         from cnxepub import EPUB
