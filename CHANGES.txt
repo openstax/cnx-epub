@@ -1,9 +1,9 @@
-.. Use the following to start a new version entry:
+0.18.0
+------
 
-   |version|
-   ----------------------
-
-   - feature message
+- Update README
+- Fix and make the private _squash_to_text function reusable (#146)
+- Fix longdesc resource handling (#147)
 
 0.17.1
 ------
