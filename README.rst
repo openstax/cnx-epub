@@ -6,7 +6,7 @@ Library for parsing and building EPUB3 files for connexions content.
 Getting started
 ---------------
 
-Prerequisites needed e.g. on Ubuntu Linux ``sudo apt install python-dev libicu-dev``
+Prerequisites needed e.g. on Ubuntu Linux ``sudo apt install build-essential python-dev python3-dev libicu-dev``
 
 To install::
 
