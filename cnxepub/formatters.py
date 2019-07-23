@@ -11,6 +11,7 @@ import json
 import logging
 import random
 import sys
+from io import BytesIO
 
 import re
 import jinja2
@@ -306,7 +307,8 @@ class SingleHTMLFormatter(object):
 
 
 def _fix_namespaces(html):
-    nsmap = {u"": u"http://www.w3.org/1999/xhtml",
+    # Get rid of unused namespaces and put them all in the root tag
+    nsmap = {None: u"http://www.w3.org/1999/xhtml",
              u"m": u"http://www.w3.org/1998/Math/MathML",
              u"epub": u"http://www.idpf.org/2007/ops",
              u"rdf": u"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -321,16 +323,26 @@ def _fix_namespaces(html):
              u"md": u"http://cnx.rice.edu/mdml",
              u"c": u"http://cnx.rice.edu/cnxml"
              }
-    from xml.etree import ElementTree as ET
-    from io import BytesIO
-    for prefix, uri in nsmap.items():
-        ET.register_namespace(prefix, uri)
-    et = ET.parse(BytesIO(html))
-    new_html = BytesIO()
-    et.write(new_html)
-    new_html.seek(0)
-    let = etree.parse(new_html)
-    return etree.tostring(let, pretty_print=True, encoding='utf-8')
+    root = etree.fromstring(html)
+
+    # It's not possible to edit the namespaces in lxml:
+    # https://stackoverflow.com/questions/11346480/lxml-add-namespace-to-input-file
+
+    # Put all the namespaces into the root tag (remove namespaces from non root
+    # tags)
+    all_namespaces_root = etree.Element(root.tag, nsmap=nsmap, **root.attrib)
+    all_namespaces_root[:] = root[:]
+
+    # Check which namespaces are used
+    for prefix, uri in tuple(nsmap.items()):
+        if not etree.ETXPath('.//{%s}*' % (uri,))(all_namespaces_root):
+            nsmap.pop(prefix)
+
+    # Create a new root with only the namespaces we use
+    new_root = etree.Element(root.tag, nsmap=nsmap, **root.attrib)
+    new_root[:] = all_namespaces_root[:]
+
+    return etree.tostring(new_root, pretty_print=True, encoding='utf-8')
 
 
 def _replace_tex_math(node, mml_url, mc_client=None, retry=0):
