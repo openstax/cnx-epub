@@ -335,8 +335,8 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <body><p>コンテンツ...</p></body>
+<html xmlns="http://www.w3.org/1999/xhtml">\
+<body><p>コンテンツ...</p></body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
@@ -374,8 +374,8 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://www.w3.org/1998/Math/MathML">
-  <body><p><math/></p></body>
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns="http://www.w3.org/1999/xhtml">\
+<body><p><math/></p></body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
@@ -918,3 +918,30 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
         # After assert, so won't clean up if test fails
         os.remove(out_path)
+
+
+class FixNamespacesTestCase(unittest.TestCase):
+    def test(self):
+        from ..formatters import _fix_namespaces
+
+        actual = _fix_namespaces("""\
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <body xmlns:bib="http://bibtexml.sf.net/">
+        <p>Some text<em><!-- no-selfclose --></em>!</p>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mtext>H</mtext>
+        </math>
+    </body>
+</html>""").decode('utf-8')
+        expected_content = """\
+<html xmlns:m="http://www.w3.org/1998/Math/MathML"\
+ xmlns="http://www.w3.org/1999/xhtml" lang="en">\
+<body>
+        <p>Some text<em><!-- no-selfclose --></em>!</p>
+        <m:math>
+            <m:mtext>H</m:mtext>
+        </m:math>
+    </body>
+</html>
+"""
+        self.assertMultiLineEqual(expected_content, actual)

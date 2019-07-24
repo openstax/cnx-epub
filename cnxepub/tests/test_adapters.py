@@ -823,8 +823,8 @@ Pointer.
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, lemon_metadata)
-        self.assertIn(b'<p id="8271">Yum! <img id="33432" '
-                      b'src="/resources/1x1.jpg"/></p>', lemon.content)
+        self.assertIn(b'<p id="8271">Yum! <img src="/resources/1x1.jpg" '
+                      b'id="33432"/></p>', lemon.content)
         self.assertEqual(u'<span>1.1</span> <span>|</span> <span>'
                          u'レモン</span>',
                          fruity.get_title_for_node(lemon))
