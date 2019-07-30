@@ -1,3 +1,9 @@
+0.19.0
+------
+
+- improve readme for python 3 usage (#148)
+- Change _fix_namespaces to not remove xml comments (#149)
+
 0.18.0
 ------
 
