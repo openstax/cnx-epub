@@ -6,6 +6,7 @@
 # See LICENCE.txt for details.
 # ###
 from __future__ import unicode_literals
+import sys
 import base64
 import io
 import logging
@@ -439,6 +440,8 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             return str(uuid.uuid4())
 
         uuid_key = elem.get('data-uuid-key', elem.get('class', key))
+        if (sys.version_info.major == 2):  # https://bugs.python.org/issue34145
+            uuid_key = uuid_key.encode('utf-8')
         return str(uuid.uuid5(p_uuid, uuid_key))
 
     def _compute_shortid(ident_hash):
