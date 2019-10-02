@@ -883,6 +883,20 @@ Pointer.
         with self.assertRaises(AdaptationError) as caught_exception:
             desserts = adapt_single_html(html)
 
+    def test_title_utf8_umlaut_uuid5_generation(self):
+        """Test UTF8 in metadata title with uuid5 generation."""
+        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-umlaut.xhtml')
+        from ..adapters import adapt_single_html
+        from ..models import model_to_tree
+
+        with open(page_path, 'r') as f:
+            html = f.read()
+
+        try:
+            desserts = adapt_single_html(html)
+        except Exception as e:
+            self.fail('utf8 uuid5 test failed: ' + str(e))
+
     def test_unknown_data_type(self):
         """Throw error if unknown data-type in HTML"""
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page-bad-type.xhtml')
