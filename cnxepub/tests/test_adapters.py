@@ -892,8 +892,10 @@ Pointer.
         with open(page_path, 'r') as f:
             html = f.read()
 
-        from ..adapters import AdaptationError
-        desserts = adapt_single_html(html)
+        try:
+            desserts = adapt_single_html(html)
+        except Exception as e:
+            self.fail('utf8 uuid5 test failed: ' + str(e))
 
     def test_unknown_data_type(self):
         """Throw error if unknown data-type in HTML"""
