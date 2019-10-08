@@ -374,18 +374,29 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
-<html xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns="http://www.w3.org/1999/xhtml">\
-<body><p><math/></p></body>
+<html
+  xmlns='http://www.w3.org/1999/xhtml'
+  xmlns:m='http://www.w3.org/1998/Math/MathML'
+>
+  <body>
+    <p>
+      <math></math>
+    </p>
+  </body>
 </html>
 """
-        self.assertEqual(expected_html, unescape(html))
+        self.assertMultiLineEqual(
+            expected_html,
+            xmlpp(unescape(html).encode('utf-8')).decode('utf-8'))
 
         # Second variation. Hoisted namespace declaration
         document = Document('title',
                             io.BytesIO(u'<body><p xmlns:m="http://www.w3.org/1998/Math/MathML"><m:math/></p></body>'.encode('utf-8')),
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
-        self.assertEqual(expected_html, unescape(html))
+        self.assertMultiLineEqual(
+            expected_html,
+            xmlpp(unescape(html).encode('utf-8')).decode('utf-8'))
 
 
 class DocumentSummaryFormatterTestCase(unittest.TestCase):
@@ -932,16 +943,22 @@ class FixNamespacesTestCase(unittest.TestCase):
             <mtext>H</mtext>
         </math>
     </body>
-</html>""").decode('utf-8')
+</html>""")
         expected_content = """\
-<html xmlns:m="http://www.w3.org/1998/Math/MathML"\
- xmlns="http://www.w3.org/1999/xhtml" lang="en">\
-<body>
-        <p>Some text<em><!-- no-selfclose --></em>!</p>
-        <m:math>
-            <m:mtext>H</m:mtext>
-        </m:math>
-    </body>
+<html
+  lang='en'
+  xmlns='http://www.w3.org/1999/xhtml'
+  xmlns:m='http://www.w3.org/1998/Math/MathML'
+>
+  <body>
+    <p>Some text
+      <em><!-- no-selfclose --></em>!
+    </p>
+    <m:math>
+      <m:mtext>H</m:mtext>
+    </m:math>
+  </body>
 </html>
 """
-        self.assertMultiLineEqual(expected_content, actual)
+        self.maxDiff = None
+        self.assertMultiLineEqual(expected_content, xmlpp(actual).decode('utf-8'))
