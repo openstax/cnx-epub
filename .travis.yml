@@ -2,7 +2,7 @@ language: python
 sudo: false
 python:
   - "2.7"
-  - "3.5"
+  - "3.6"
 services:
   - memcached
 before_install:
@@ -11,8 +11,6 @@ before_install:
   - pip --version
   - pip install coverage
   - pip install codecov
-  # FIXME travis fails w/ 3.7.0 on python3, even though it works locally
-  - pip install lxml==3.6.4
   # Install cnx-easybake
   - pip install git+https://github.com/openstax/cnx-cssselect2.git#egg=cnx-cssselect2
   - pip install git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake
