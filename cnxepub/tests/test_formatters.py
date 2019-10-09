@@ -78,7 +78,7 @@ EXERCISE_JSON_HTML = {
          "number": 93,
          "editors": [],
          "is_vocab": False,
-         "stimulus_html": "",
+         "stimulus_html": "<p>Please answer the following question:</p>",
          "questions": [
             {
                "stimulus_html": "",
