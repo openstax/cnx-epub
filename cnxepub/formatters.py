@@ -459,6 +459,7 @@ def exercise_callback_factory(match, url_template,
 #  src/scripts/modules/media/embeddables/exercise-template.html
 
 EXERCISE_TEMPLATE = jinja2.Template("""\
+{{data['items'].stimulus_html}}
 {% if data['items'].0.questions %}
     {% for question in data['items'].0.questions %}
         <div>{{ question.stem_html }}</div>
