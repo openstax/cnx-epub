@@ -12,6 +12,7 @@ import logging
 import random
 import sys
 from io import BytesIO
+import string
 
 import re
 import jinja2
@@ -422,7 +423,7 @@ def exercise_callback_factory(match, url_template,
             missing.text = 'MISSING EXERCISE: tag:{}'.format(item_code)
             nodes = [missing]
         else:
-            html = EXERCISE_TEMPLATE.render(data=exercise)
+            html = EXERCISE_TEMPLATE.render(data=exercise, ascii_uppercase=string.ascii_uppercase, zip=zip)
             try:
                 nodes = etree.fromstring('<div>{}</div>'.format(html))
             except etree.XMLSyntaxError:  # Probably HTML
@@ -463,7 +464,10 @@ EXERCISE_TEMPLATE = jinja2.Template("""\
     <div class="exercise-stimulus">{{ data['items'].0.stimulus_html }}</div>
 {% endif %}
 {% if data['items'].0.questions %}
-    {% for question in data['items'].0.questions %}
+    {% for question, counter in zip(data['items'].0.questions, ascii_uppercase) %}
+        {% if data['items'].0.questions|length > 1 %}
+            <span class="exercise-question-counter">{{ counter }}</span>
+        {% endif %}
         <div>{{ question.stem_html }}</div>
         {% if 'multiple-choice' in question.formats %}
             {% if question.answers %}

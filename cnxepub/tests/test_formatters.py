@@ -201,6 +201,36 @@ EXERCISE_JSON = {
                ],
                "combo_choices": [],
                "stem_html": "Dehydration <img href='none'/> synthesis leads to the formation of what?"
+            },
+            {
+               "stimulus_html": "",
+               "formats": [
+                  "free-response",
+                  "multiple-choice"
+               ],
+               "hints": [],
+               "id": 63062,
+               "is_answer_order_important": True,
+               "answers": [
+                  {
+                     "id": 259956,
+                     "content_html": "monomers"
+                  },
+                  {
+                     "content_html": "polymers",
+                     "id": 259957
+                  },
+                  {
+                     "id": 259958,
+                     "content_html": "carbohydrates only"
+                  },
+                  {
+                     "content_html": "water only",
+                     "id": 259959
+                  }
+               ],
+               "combo_choices": [],
+               "stem_html": "Dehydration <img href='none'/> synthesis does NOT lead to the formation of what?"
             }
          ],
          "tags": [
