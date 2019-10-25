@@ -962,3 +962,57 @@ class FixNamespacesTestCase(unittest.TestCase):
 """
         self.maxDiff = None
         self.assertMultiLineEqual(expected_content, xmlpp(actual).decode('utf-8'))
+
+
+class ExerciseCallbackTestCase(unittest.TestCase):
+    @mock.patch('cnxepub.formatters.logger')
+    @mock.patch('cnxepub.formatters.requests.get')
+    @mock.patch('cnxepub.formatters.requests.post')
+    def test_xmlsyntaxerror(self, requests_post, requests_get, logger):
+        from ..formatters import exercise_callback_factory
+
+        xpath, cb = exercise_callback_factory(
+            '#ost/api/ex/',
+            'https://exercises/{itemCode}',
+            mml_url='https://mathmlcloud/')
+
+        self.assertEqual(xpath, '//xhtml:a[contains(@href, "#ost/api/ex/")]')
+        node = etree.fromstring("""
+<div>
+    <a href="#ost/api/ex/book-ch01-ex001"></a>
+</div>""")
+
+        tex_math = r'<span data-math="1\ \text{kcal}"></span>'
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'questions': [{
+                    'stem_html': tex_math,
+                }],
+            }]}
+        requests_get.return_value = get_resp
+
+        mathml = r"""<math xmlns="http://www.w3.org/1998/Math/MathML"
+      display="block" alttext="1 kcal">
+  <mn>1</mn>
+  <mtext>&nbsp;</mtext>
+  <mtext>kcal</mtext>
+</math>
+        """
+        post_resp = mock.Mock()
+        post_resp.json.return_value = {'components': [
+                {'format': 'mml',
+                 'source': mathml}]}
+        requests_post.return_value = post_resp
+
+        self.assertRaises(etree.XMLSyntaxError, cb, node.getchildren()[0])
+        self.assertEqual(logger.error.call_args[0][0].strip(), u"""\
+Error converting math in book-ch01-ex001:
+  math: 1\\ \\text{kcal}
+  mathml: <math xmlns="http://www.w3.org/1998/Math/MathML"
+      display="block" alttext="1 kcal">
+  <mn>1</mn>
+  <mtext>&nbsp;</mtext>
+  <mtext>kcal</mtext>
+</math>""")
