@@ -388,7 +388,8 @@ def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
                        '{}'.format(json.dumps(eq, indent=4)))
         retry += 1
         if retry < 2:
-            return _replace_tex_math(node, mml_url, mc_client, retry)
+            return _replace_tex_math(exercise_id, node, mml_url, mc_client,
+                                     retry)
 
     return None
 
