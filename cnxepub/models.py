@@ -8,15 +8,17 @@
 import io
 import hashlib
 import mimetypes
-try:
-    from collections.abc import MutableSequence
-except ImportError:
-    from collections import MutableSequence
+import sys
 try:
     from urllib.parse import urlparse
 except ImportError:
     from urlparse import urlparse
 from contextlib import contextmanager
+
+if sys.version_info >= (3, 3,):
+    from collections.abc import MutableSequence
+else:
+    from collections import MutableSequence
 
 from lxml import etree
 

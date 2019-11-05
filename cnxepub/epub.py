@@ -7,9 +7,14 @@
 # ###
 import os
 import io
+import sys
 import tempfile
 import zipfile
-from collections import Sequence
+
+if sys.version_info >= (3, 3,):
+    from collections.abc import Sequence
+else:
+    from collections import Sequence
 
 import jinja2
 from lxml import etree
