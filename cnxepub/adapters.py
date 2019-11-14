@@ -480,6 +480,11 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                     .format(data_type, child.attrib.get('id'),
                             parent.metadata.get('title')))
                 raise
+            except IndexError:
+                logger.exception(
+                    'Metadata (data-type="metadata") not found:\n{}...'
+                    .format(etree.tostring(child).decode('utf-8')[:800]))
+                raise
 
             # Handle version, id and uuid from metadata
             if not metadata.get('version'):
