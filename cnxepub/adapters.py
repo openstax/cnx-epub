@@ -470,9 +470,16 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
 
         if data_type in ('unit', 'chapter', 'composite-chapter',
                          'page', 'composite-page'):
-            # metadata munging for all node types, in one place
-            metadata = parse_metadata(
-                    child.xpath('./*[@data-type="metadata"]')[0])
+            try:
+                # metadata munging for all node types, in one place
+                metadata = parse_metadata(
+                        child.xpath('./*[@data-type="metadata"]')[0])
+            except ValueError:
+                logger.exception(
+                    'Error when parsing metadata for {} (id: {}, parent: "{}")'
+                    .format(data_type, child.attrib.get('id'),
+                            parent.metadata.get('title')))
+                raise
 
             # Handle version, id and uuid from metadata
             if not metadata.get('version'):

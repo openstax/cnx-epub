@@ -947,3 +947,22 @@ Pointer.
         apple = desserts[0][0]
         self.assertIn(b'<p id="12345"><a href="/contents/chocolate">',
                       apple.content)
+
+    @mock.patch('cnxepub.adapters.logger')
+    def test_missing_required_metadata(self, logger):
+        from ..adapters import adapt_single_html
+
+        page_path = os.path.join(TEST_DATA_DIR,
+                                 'collated-desserts-single-page.xhtml')
+
+        with open(page_path, 'r') as f:
+            html = f.read()
+
+        html = html.replace(
+            '<h1 data-type="document-title" itemprop="name">Apple</h1>',
+            '<h1 data-type="document-title" itemprop="name"></h1>')
+
+        desserts = self.assertRaises(ValueError, adapt_single_html, html)
+        self.assertEqual(logger.exception.call_args, mock.call(
+            u'Error when parsing metadata for page '
+            u'(id: apple, parent: "Fruity")'))
