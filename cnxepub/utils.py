@@ -7,6 +7,12 @@
 # ###
 """Various standalone utility functions that provide specific outcomes"""
 import re
+try:
+    from concurrent.futures import ThreadPoolExecutor
+except:
+    ThreadPoolExecutor = None
+    from threading import Thread
+    from Queue import Queue
 
 from lxml import etree
 
@@ -49,3 +55,34 @@ def squash_xml_to_text(elm, remove_namespaces=False):
     # Join the results and strip any surrounding whitespace
     result = u''.join(result).strip()
     return result
+
+
+if ThreadPoolExecutor is None:
+    def worker(q):
+        def _worker():
+            while True:
+                f, args, kwargs = q.get()
+                f(*args, **kwargs)
+                q.task_done()
+        return _worker
+
+    class ThreadPoolExecutor(object):
+        def __init__(self, max_workers):
+            self.max_workers = max_workers
+            self.q = Queue()
+            self.workers = []
+            for i in range(max_workers):
+                t = Thread(target=worker(self.q))
+                t.daemon = True
+                t.start()
+
+        def submit(self, f, *args, **kwargs):
+            self.q.put((f, args, kwargs))
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc_value, traceback):
+            self.q.join()
+            for worker in self.workers:
+                worker.join()
