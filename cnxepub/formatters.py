@@ -27,6 +27,7 @@ from .models import (
     Binder, TranslucentBinder,
     Document, DocumentPointer, CompositeDocument, utf8)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
+from .utils import ThreadPoolExecutor
 
 logger = logging.getLogger('cnxepub')
 
@@ -199,7 +200,7 @@ class HTMLFormatter(object):
 
 
 class SingleHTMLFormatter(object):
-    def __init__(self, binder, includes=None):
+    def __init__(self, binder, includes=None, threads=1):
         self.binder = binder
 
         self.root = etree.fromstring(bytes(HTMLFormatter(self.binder)))
@@ -210,6 +211,7 @@ class SingleHTMLFormatter(object):
         self.built = False
         self.includes = includes
         self.included = False
+        self.threads = threads
 
     def xpath(self, path, elem=None):
         if elem is None:
@@ -269,9 +271,10 @@ class SingleHTMLFormatter(object):
         self._build_binder(self.binder, self.body)
         # Fetch any includes from remote sources
         if not self.included and self.includes is not None:
-            for match, proc in self.includes:
-                for elem in self.xpath(match):
-                    proc(elem)
+            with ThreadPoolExecutor(max_workers=self.threads) as e:
+                for match, proc in self.includes:
+                    for elem in self.xpath(match):
+                        e.submit(proc, elem)
             self.included = True
 
         # Rewrite absolute-path links that are intra-binder
