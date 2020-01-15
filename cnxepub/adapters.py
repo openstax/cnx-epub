@@ -494,7 +494,11 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                 elif parent.metadata.get('version') is not None:
                     metadata['version'] = parent.metadata['version']
 
-            id_ = metadata.get('cnx-archive-uri') or child.attrib.get('id')
+            uuid_key = child.get('data-uuid-key')
+            child_id = child.attrib.get('id')
+            id_ = metadata.get('cnx-archive-uri') or (child_id
+                                                      if not uuid_key
+                                                      else None)
             if not id_:
                 id_ = _compute_id(parent, child, metadata.get('title'))
                 if metadata.get('version'):
