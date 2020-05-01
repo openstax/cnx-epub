@@ -14,6 +14,7 @@ install_requires = [
     'python-memcached'
     ] if IS_PY3 else [
     'jinja2==2.11.2',
+    'MarkupSafe==1.1.1',
     'lxml',
     'requests',
     'python-memcached'
