@@ -545,7 +545,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
 
             document_body = content_to_etree('')
             document_body.append(child)
-            contents = etree.tostring(document_body)
+            contents = etree.tostring(document_body, encoding='utf8')
             model = {
                 'page': Document,
                 'composite-page': CompositeDocument,
