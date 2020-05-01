@@ -12,6 +12,11 @@ install_requires = [
     'lxml',
     'requests',
     'python-memcached'
+    ] if IS_PY3 else [
+    'jinja2==2.11.2',
+    'lxml',
+    'requests',
+    'python-memcached'
     ]
 collation_requires = [
     'cnx-easybake',
