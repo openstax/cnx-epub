@@ -554,7 +554,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             document = model(id_, contents, metadata=metadata)
             parent.append(document)
 
-            fix_generated_ids(document, id_map)  # also populates id_map
+            #fix_generated_ids(document, id_map)  # also populates id_map
         elif data_type in ['metadata', None]:
             # Expected non-nodal child types
             pass
@@ -575,4 +575,5 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
     # processed for whole book, to allow for foward links
     if depth == 0:
         for page in flatten_to_documents(parent):
-            fix_links(page, id_map)
+            pass
+            #fix_links(page, id_map)
