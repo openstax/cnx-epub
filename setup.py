@@ -9,7 +9,13 @@ IS_PY3 = sys.version_info > (3,)
 
 install_requires = [
     'jinja2',
-    'lxml',
+    'lxml==4.4.3',
+    'requests',
+    'python-memcached'
+    ] if IS_PY3 else [
+    'jinja2==2.11.2',
+    'MarkupSafe==1.1.1',
+    'lxml==4.4.3',
     'requests',
     'python-memcached'
     ]
