@@ -9,13 +9,13 @@ IS_PY3 = sys.version_info > (3,)
 
 install_requires = [
     'jinja2',
-    'lxml==4.4.3',
+    'lxml==4.4.3',  # Unicode problem in lxml 4.5.0 cnx#924
     'requests',
     'python-memcached'
     ] if IS_PY3 else [
     'jinja2==2.11.2',
     'MarkupSafe==1.1.1',
-    'lxml==4.4.3',
+    'lxml==4.4.3',  # Unicode problem in lxml 4.5.0 cnx#924
     'requests',
     'python-memcached'
     ]
