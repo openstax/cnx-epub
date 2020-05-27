@@ -277,7 +277,9 @@ class CollateTestCase(BaseModelTestCase):
         binder = self.make_binder(
             '8d75ea29',
             metadata={'version': '3', 'title': "Book One",
-                      'license_url': 'http://my.license'},
+                      'license_url': 'http://my.license',
+                      'cnx-archive-uri': 
+                            '00000000-0000-0000-0000-000000000000'},
             nodes=[
                 self.make_document(
                     id="e78d4f90",

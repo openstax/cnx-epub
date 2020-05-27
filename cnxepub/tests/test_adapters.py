@@ -690,7 +690,10 @@ class HTMLAdaptationTestCase(unittest.TestCase):
 
         random.seed(1)
         metadata = self.base_metadata.copy()
-        binder = Binder(metadata['title'], metadata=metadata)
+        metadata_book = self.base_metadata.copy()
+        metadata_book['cnx-archive-uri'] = '00000000-0000-0000-0000-000000000000'
+        
+        binder = Binder(metadata['title'], metadata=metadata_book)
         binder.append(Document('apple-pie', io.BytesIO(b'<body><p>Apple Pie</p></body>'),
                                metadata=metadata))
         binder.append(Document('lemon-pie', io.BytesIO(b'''\

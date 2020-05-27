@@ -351,7 +351,10 @@ def adapt_single_html(html):
     html_root = etree.fromstring(html)
 
     metadata = parse_metadata(html_root.xpath('//*[@data-type="metadata"]')[0])
-    id_ = metadata['cnx-archive-uri'] or 'book'
+    id_ = metadata['cnx-archive-uri']
+    if id_ is None:
+        raise ValueError('Metadata element did not contain a cnx-archive-uri', 
+            etree.tostring(html_root.xpath('//*[@data-type="metadata"]')[0]))
 
     binder = Binder(id_, metadata=metadata)
     nav_tree = parse_navigation_html_to_tree(html_root, id_)
@@ -437,7 +440,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             except ValueError:
                 pass
         else:  # Punt - no parent uuid, make one up for child
-            return str(uuid.uuid4())
+            raise ValueError('Could not find parent UUID while trying to generate a UUID', p_ids)
 
         uuid_key = elem.get('data-uuid-key', elem.get('class', key))
         if (sys.version_info.major == 2):  # https://bugs.python.org/issue34145
