@@ -102,40 +102,16 @@ class HTMLFormatter(object):
         possible to link to them.
         """
         existing_ids = content.xpath('//*/@id')
-        elements = [
-            'p', 'dl', 'dt', 'dd', 'table', 'div', 'section', 'figure',
-            'blockquote', 'q', 'code', 'pre', 'object', 'img', 'audio',
-            'video', 'aside'
-            ]
-        elements_xpath = '|'.join(['.//{}|.//xhtml:{}'.format(elem, elem)
-                                  for elem in elements])
-
-        data_types = [
-            'equation', 'list', 'exercise', 'rule', 'example', 'note',
-            'footnote-number', 'footnote-ref', 'problem', 'solution', 'media',
-            'proof', 'statement', 'commentary'
-            ]
-        data_types_xpath = '|'.join(['.//*[@data-type="{}"]'.format(data_type)
-                                     for data_type in data_types])
-
-        xpath = '|'.join([elements_xpath, data_types_xpath])
+        xpath = './/*[@id]'
 
         mapping = {}  # old id -> new id
 
         for node in content.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
             old_id = node.attrib.get('id')
             document_id = document.id.replace('_', '')
-            if old_id:
-                new_id = 'auto_{}_{}'.format(document_id, old_id)
-            else:
-                random_number = random.randint(0, 100000)
-                new_id = 'auto_{}_{}'.format(document_id, random_number)
-            while new_id in existing_ids:
-                random_number = random.randint(0, 100000)
-                new_id = 'auto_{}_{}'.format(document_id, random_number)
+            new_id = 'auto_{}_{}'.format(document_id, old_id)
             node.attrib['id'] = new_id
-            if old_id:
-                mapping[old_id] = new_id
+            mapping[old_id] = new_id
             existing_ids.append(new_id)
 
         for a in content.xpath('//a[@href]|//xhtml:a[@href]',
