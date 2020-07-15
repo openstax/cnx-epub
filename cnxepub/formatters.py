@@ -105,7 +105,7 @@ class HTMLFormatter(object):
         elements = [
             'p', 'dl', 'dt', 'dd', 'table', 'div', 'section', 'figure',
             'blockquote', 'q', 'code', 'pre', 'object', 'img', 'audio',
-            'video', 'aside'
+            'video', 'aside', 'ol'
             ]
         elements_xpath = '|'.join(['.//{}|.//xhtml:{}'.format(elem, elem)
                                   for elem in elements])
