@@ -109,11 +109,16 @@ class HTMLFormatter(object):
 
         def next_free_auto_id_generator():
             next_free_auto_id_generator.new_id_count = 0
+
             def inner():
-                auto_id = 'auto_{}_{}'.format(document_id, next_free_auto_id_generator.new_id_count)
+                auto_id = 'auto_{}_{}'.format(
+                    document_id,
+                    next_free_auto_id_generator.new_id_count)
                 next_free_auto_id_generator.new_id_count += 1
                 while auto_id in existing_ids:
-                    auto_id = 'auto_{}_{}'.format(document_id, next_free_auto_id_generator.new_id_count)
+                    auto_id = 'auto_{}_{}'.format(
+                        document_id,
+                        next_free_auto_id_generator.new_id_count)
                     next_free_auto_id_generator.new_id_count += 1
                 return auto_id
             return inner
@@ -138,8 +143,10 @@ class HTMLFormatter(object):
             'blockquote', 'q', 'code', 'pre', 'object', 'img', 'audio',
             'video',
         ]
-        elements_xpath = '|'.join(['.//*[local-name() = "{}"]'.format(elem, elem)
-                                   for elem in elements_need_ids])
+        elements_xpath = '|'.join([
+            './/*[local-name() = "{}"]'.format(elem, elem)
+            for elem in elements_need_ids
+        ])
 
         data_types_need_ids = [
             'equation', 'list', 'exercise', 'rule', 'example', 'note',
