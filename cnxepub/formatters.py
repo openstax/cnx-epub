@@ -300,8 +300,8 @@ class SingleHTMLFormatter(object):
         self._build_binder(self.binder, self.body)
         # Fetch any includes from remote sources
         if not self.included and self.includes is not None:
-            with ThreadPoolExecutor(max_workers=self.threads) as e:
-                for match, proc in self.includes:
+            for match, proc in self.includes:
+                with ThreadPoolExecutor(max_workers=self.threads) as e:
                     for elem in self.xpath(match):
                         e.submit(proc, elem)
             self.included = True

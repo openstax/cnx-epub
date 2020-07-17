@@ -843,6 +843,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         includes = [exercise_callback_factory(exercise_match,
                                               exercise_url,
                                               mc_client),
+                    ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
         actual = SingleHTMLFormatter(self.desserts,
@@ -899,6 +900,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                                               mc_client,
                                               exercise_token,
                                               mathml_url),
+                    ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
         actual = SingleHTMLFormatter(self.desserts,
