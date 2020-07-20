@@ -143,7 +143,7 @@ class HTMLFormatter(object):
             'video',
         ]
         elements_xpath = '|'.join([
-            './/*[local-name() = "{}"]'.format(elem, elem)
+            './/*[local-name() = "{}"]'.format(elem)
             for elem in elements_need_ids
         ])
 
