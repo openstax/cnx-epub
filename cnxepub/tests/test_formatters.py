@@ -697,9 +697,9 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 <body>
 <h1>Apple Desserts</h1>
 <p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
-<ul><li id="auto_apple_13436">Apple Crumble,</li>
+<ul><li id="auto_apple_1">Apple Crumble,</li>
     <li>Apfelstrudel,</li>
-    <li id="auto_apple_17611">Caramel Apple,</li>
+    <li id="auto_apple_0">Caramel Apple,</li>
     <li>Apple Pie,</li>
     <li>Apple sauce...</li>
 </ul>

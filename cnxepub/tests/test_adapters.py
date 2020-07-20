@@ -809,7 +809,7 @@ Pointer.
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, apple_metadata)
-        self.assertIn(b'<p id="0">'
+        self.assertIn(b'<p id="2">'
                       b'<a href="/contents/lemon">Link to lemon</a>. '
                       b'Here are some examples:</p>',
                       apple.content)
