@@ -9,7 +9,6 @@ from __future__ import unicode_literals
 import hashlib
 import json
 import logging
-import random
 import sys
 from io import BytesIO
 
