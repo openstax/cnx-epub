@@ -9,7 +9,6 @@ from __future__ import unicode_literals
 import hashlib
 import json
 import logging
-import random
 import sys
 from io import BytesIO
 
@@ -101,48 +100,77 @@ class HTMLFormatter(object):
         """Generate unique ids for html elements in page content so that it's
         possible to link to them.
         """
-        existing_ids = content.xpath('//*/@id')
-        elements = [
+        document_id = document.id.replace('_', '')
+
+        # Step 1: prefix existing ids
+        elements_with_ids = content.xpath('//*[@id]')
+        existing_ids = set([el.attrib['id'] for el in elements_with_ids])
+
+        def next_free_auto_id_generator():
+            next_free_auto_id_generator.new_id_count = 0
+
+            def inner():
+                auto_id = 'auto_{}_{}'.format(
+                    document_id,
+                    next_free_auto_id_generator.new_id_count)
+                next_free_auto_id_generator.new_id_count += 1
+                while auto_id in existing_ids:
+                    auto_id = 'auto_{}_{}'.format(
+                        document_id,
+                        next_free_auto_id_generator.new_id_count)
+                    next_free_auto_id_generator.new_id_count += 1
+                return auto_id
+            return inner
+
+        next_auto_id = next_free_auto_id_generator()
+
+        old_id_to_new_id = {}
+
+        for node in elements_with_ids:
+            old_id = node.attrib['id']
+            if len(old_id) > 0:
+                new_id = 'auto_{}_{}'.format(document_id, old_id)
+            else:
+                new_id = next_auto_id()
+            node.attrib['id'] = new_id
+            old_id_to_new_id[old_id] = new_id
+            existing_ids.add(new_id)
+
+        # Step 2: give ids to elements that need them
+        elements_need_ids = [
             'p', 'dl', 'dt', 'dd', 'table', 'div', 'section', 'figure',
             'blockquote', 'q', 'code', 'pre', 'object', 'img', 'audio',
-            'video', 'aside', 'ol'
-            ]
-        elements_xpath = '|'.join(['.//{}|.//xhtml:{}'.format(elem, elem)
-                                  for elem in elements])
+            'video',
+        ]
+        elements_xpath = '|'.join([
+            './/*[local-name() = "{}"]'.format(elem)
+            for elem in elements_need_ids
+        ])
 
-        data_types = [
+        data_types_need_ids = [
             'equation', 'list', 'exercise', 'rule', 'example', 'note',
             'footnote-number', 'footnote-ref', 'problem', 'solution', 'media',
             'proof', 'statement', 'commentary'
-            ]
+        ]
         data_types_xpath = '|'.join(['.//*[@data-type="{}"]'.format(data_type)
-                                     for data_type in data_types])
+                                     for data_type in data_types_need_ids])
 
         xpath = '|'.join([elements_xpath, data_types_xpath])
 
-        mapping = {}  # old id -> new id
-
         for node in content.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
-            old_id = node.attrib.get('id')
-            document_id = document.id.replace('_', '')
-            if old_id:
-                new_id = 'auto_{}_{}'.format(document_id, old_id)
-            else:
-                random_number = random.randint(0, 100000)
-                new_id = 'auto_{}_{}'.format(document_id, random_number)
-            while new_id in existing_ids:
-                random_number = random.randint(0, 100000)
-                new_id = 'auto_{}_{}'.format(document_id, random_number)
+            node_id = node.attrib.get('id')
+            if node_id:
+                continue
+            new_id = next_auto_id()
             node.attrib['id'] = new_id
-            if old_id:
-                mapping[old_id] = new_id
-            existing_ids.append(new_id)
+            existing_ids.add(new_id)
 
+        # Step 3: redirect links to elements with now prefixed ids
         for a in content.xpath('//a[@href]|//xhtml:a[@href]',
                                namespaces=HTML_DOCUMENT_NAMESPACES):
             href = a.attrib['href']
-            if href.startswith('#') and href[1:] in mapping:
-                a.attrib['href'] = '#{}'.format(mapping[href[1:]])
+            if href.startswith('#') and href[1:] in old_id_to_new_id:
+                a.attrib['href'] = '#{}'.format(old_id_to_new_id[href[1:]])
 
     @property
     def _content(self):
@@ -271,8 +299,8 @@ class SingleHTMLFormatter(object):
         self._build_binder(self.binder, self.body)
         # Fetch any includes from remote sources
         if not self.included and self.includes is not None:
-            with ThreadPoolExecutor(max_workers=self.threads) as e:
-                for match, proc in self.includes:
+            for match, proc in self.includes:
+                with ThreadPoolExecutor(max_workers=self.threads) as e:
                     for elem in self.xpath(match):
                         e.submit(proc, elem)
             self.included = True

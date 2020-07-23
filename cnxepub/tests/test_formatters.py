@@ -621,12 +621,9 @@ class HTMLFormatterTestCase(unittest.TestCase):
         self.assertEqual(u'entrée', lis[0][0].text)
 
     def test_document_auto_generate_ids(self):
-        import random
-
         from ..models import Document
         from ..formatters import HTMLFormatter
 
-        random.seed(1)
         content = """<body>\
 <div class="title" id="title">Preface</div>
 <p class="para" id="my-id">This thing and <em>that</em> thing.</p>
@@ -639,9 +636,8 @@ class HTMLFormatterTestCase(unittest.TestCase):
 <p class="para" id="auto_{id}_my-id">This thing and <em>that</em> thing.</p>
 
 <p class="para" id="auto_{id}_{n}"><a href="#auto_{id}_title">Link</a> to title</p>\
-""".format(id=page_one_id, n=random.randint(0, 100000))
+""".format(id=page_one_id, n=0)
 
-        random.seed(1)
         document = Document(page_one_id, content)
         formatted = str(HTMLFormatter(document, generate_ids=True))
         self.assertIn(expected_content, formatted)
@@ -701,9 +697,9 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 <body>
 <h1>Apple Desserts</h1>
 <p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
-<ul><li id="auto_apple_13436">Apple Crumble,</li>
+<ul><li id="auto_apple_1">Apple Crumble,</li>
     <li>Apfelstrudel,</li>
-    <li id="auto_apple_17611">Caramel Apple,</li>
+    <li id="auto_apple_0">Caramel Apple,</li>
     <li>Apple Pie,</li>
     <li>Apple sauce...</li>
 </ul>
@@ -780,11 +776,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             resources=[cover_png])
 
     def test_binder(self):
-        import random
-
         from ..formatters import SingleHTMLFormatter
 
-        random.seed(1)
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
@@ -805,36 +798,32 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         os.remove(out_path)
 
     def test_str_unicode_bytes(self):
-        import random
-
         from ..formatters import SingleHTMLFormatter
 
-        random.seed(1)
         html = bytes(SingleHTMLFormatter(self.desserts))
         if IS_PY3:
-            random.seed(1)
             self.assertMultiLineEqual(
                 html.decode('utf-8'), str(SingleHTMLFormatter(self.desserts)))
         else:
-            random.seed(1)
             self.assertMultiLineEqual(
                 html, str(SingleHTMLFormatter(self.desserts)))
-            random.seed(1)
             self.assertMultiLineEqual(
                 html,
                 unicode(SingleHTMLFormatter(self.desserts)).encode('utf-8'))
 
     @mock.patch('requests.get', mocked_requests_get)
     def test_includes_callback(self):
-        import random
-
         from ..formatters import SingleHTMLFormatter
 
         def _upcase_text(elem):
             if elem.text:
                 elem.text = elem.text.upper()
+            for child in elem.iterdescendants():
+                if child.text:
+                    child.text = child.text.upper()
+                if child.tail:
+                    child.tail = child.tail.upper()
 
-        random.seed(1)
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-includes.xhtml')
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
@@ -854,6 +843,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         includes = [exercise_callback_factory(exercise_match,
                                               exercise_url,
                                               mc_client),
+                    ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
         actual = SingleHTMLFormatter(self.desserts,
@@ -877,15 +867,17 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     @mock.patch('requests.post', mocked_requests_post)
     @mock.patch('requests.get', mocked_requests_get)
     def test_includes_token_callback(self):
-        import random
-
         from ..formatters import SingleHTMLFormatter
 
         def _upcase_text(elem):
             if elem.text:
                 elem.text = elem.text.upper()
+            for child in elem.iterdescendants():
+                if child.text:
+                    child.text = child.text.upper()
+                if child.tail:
+                    child.tail = child.tail.upper()
 
-        random.seed(1)
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-token.xhtml')
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
@@ -908,6 +900,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                                               mc_client,
                                               exercise_token,
                                               mathml_url),
+                    ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
         actual = SingleHTMLFormatter(self.desserts,
