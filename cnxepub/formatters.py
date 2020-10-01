@@ -356,24 +356,10 @@ def _fix_namespaces(html):
              }
     root = etree.fromstring(html)
 
-    # It's not possible to edit the namespaces in lxml:
-    # https://stackoverflow.com/questions/11346480/lxml-add-namespace-to-input-file
+    # lxml has a built in function to do this without destroying comments
+    etree.cleanup_namespaces(root, top_nsmap=nsmap)
 
-    # Put all the namespaces into the root tag (remove namespaces from non root
-    # tags)
-    all_namespaces_root = etree.Element(root.tag, nsmap=nsmap, **root.attrib)
-    all_namespaces_root[:] = root[:]
-
-    # Check which namespaces are used
-    for prefix, uri in tuple(nsmap.items()):
-        if not etree.ETXPath('.//{%s}*' % (uri,))(all_namespaces_root):
-            nsmap.pop(prefix)
-
-    # Create a new root with only the namespaces we use
-    new_root = etree.Element(root.tag, nsmap=nsmap, **root.attrib)
-    new_root[:] = all_namespaces_root[:]
-
-    return etree.tostring(new_root, pretty_print=True, encoding='utf-8')
+    return etree.tostring(root, pretty_print=True, encoding='utf-8')
 
 
 def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
