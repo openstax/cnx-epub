@@ -475,6 +475,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
 
         # Build test document.
         metadata = self.base_metadata.copy()
+        metadata['canonical_book_uuid'] = 'ea4244ce-dd9c-4166-9c97-acae5faf0ba1'
         document = Document(
             metadata['title'],
             io.BytesIO(u'<body><p>コンテンツ...</p></body>'.encode('utf-8')),
@@ -502,6 +503,15 @@ class HTMLFormatterTestCase(unittest.TestCase):
         self.assertEqual(
             metadata['revised'],
             self.xpath('//xhtml:meta[@itemprop="dateModified"]/@content')[0])
+
+        self.assertEqual(
+            metadata['revised'],
+            self.xpath('.//xhtml:*[@data-type="revised"]/@data-value')[0])
+
+        self.assertEqual(
+            'ea4244ce-dd9c-4166-9c97-acae5faf0ba1',
+            self.xpath('.//xhtml:*[@data-type="canonical-book-uuid"]/@data-value')[0]
+        )
 
     def test_document_pointer(self):
         from ..models import DocumentPointer
@@ -693,6 +703,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Apple'
+        metadata['canonical_book_uuid'] = 'ea4244ce-dd9c-4166-9c97-acae5faf0ba1'
         contents = io.BytesIO(b"""\
 <body>
 <h1>Apple Desserts</h1>

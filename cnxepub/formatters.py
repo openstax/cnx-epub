@@ -619,6 +619,14 @@ HTML_DOCUMENT = """\
     <div data-type="metadata" style="display: none;">
       <h1 data-type="document-title" itemprop="name">{{ \
               metadata['title'] }}</h1>
+      {% if metadata.get('revised') %}
+      <span data-type="revised" data-value="{{ \
+          metadata['revised'] }}" />
+      {% endif %}
+      {% if metadata.get('canonical_book_uuid') %}
+      <span data-type="canonical-book-uuid" data-value="{{ \
+          metadata['canonical_book_uuid'] }}" />
+      {% endif %}
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
