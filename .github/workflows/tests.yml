@@ -34,5 +34,4 @@ jobs:
           pip install git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake
           python setup.py install
           coverage run --source=cnxepub -m unittest discover
-
-
+          codecov
