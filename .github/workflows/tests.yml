@@ -27,6 +27,7 @@ jobs:
           pip --version
           pip install coverage
           pip install codecov
+          pip install mock
           pip install git+https://github.com/openstax/cnx-cssselect2.git#egg=cnx-cssselect2
           pip install git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake
           python setup.py install
