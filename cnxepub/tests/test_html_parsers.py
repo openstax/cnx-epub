@@ -63,5 +63,6 @@ class HTMLParsingTestCase(unittest.TestCase):
             'print_style': '* print style *',
             'language': 'en',
             'version': '3',
+            'canonical_book_uuid': 'ea4244ce-dd9c-4166-9c97-acae5faf0ba1'
             }
         self.assertEqual(metadata, expected_metadata)

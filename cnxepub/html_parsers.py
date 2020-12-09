@@ -97,7 +97,7 @@ class DocumentMetadataParser:
         'license_text', 'editors', 'illustrators', 'translators',
         'publishers', 'copyright_holders', 'authors', 'summary',
         'cnx-archive-uri', 'cnx-archive-shortid', 'derived_from_uri',
-        'derived_from_title', 'print_style', 'version',
+        'derived_from_title', 'print_style', 'version', 'canonical_book_uuid'
         )
 
     def __init__(self, elm_tree, raise_value_error=True):
@@ -159,11 +159,21 @@ class DocumentMetadataParser:
 
     @property
     def revised(self):
-        items = self.parse('.//xhtml:meta[@itemprop="dateModified"]/@content')
-        try:
-            value = items[0]
-        except IndexError:
-            value = None
+        # Grab revised from <meta> if available, otherwise check for a
+        # corresponding data item
+        md_items = self.parse(
+            './/xhtml:meta[@itemprop="dateModified"]/@content'
+        )
+        data_items = self.parse('.//xhtml:*[@data-type="revised"]/@data-value')
+
+        value = None
+        for maybe_item in [md_items, data_items]:
+            try:
+                value = maybe_item[0]
+                break
+            except IndexError:
+                continue
+
         return value
 
     @property
@@ -318,6 +328,13 @@ class DocumentMetadataParser:
     @property
     def derived_from_title(self):
         items = self.parse('.//xhtml:*[@data-type="derived-from"]/text()')
+        if items:
+            return items[0]
+
+    @property
+    def canonical_book_uuid(self):
+        items = self.parse(
+            './/xhtml:*[@data-type="canonical-book-uuid"]/@data-value')
         if items:
             return items[0]
 

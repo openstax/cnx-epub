@@ -194,6 +194,7 @@ class EPUBAdaptationTestCase(unittest.TestCase):
             u'language': 'en',
             u'print_style': u'* print style *',
             u'version': None,
+            u'canonical_book_uuid': None
             }
         self.assertEqual(expected_metadata, document.metadata)
 
@@ -681,6 +682,7 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         u'derived_from_title': None,
         u'derived_from_uri': None,
         u'version': None,
+        u'canonical_book_uuid': None
         }
 
     def test_from_formatter_to_adapter(self):
@@ -804,6 +806,8 @@ Pointer.
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Apple'
         metadata['version'] = '1.3'
+        metadata['revised'] = '2013/03/05 09:35:24 -0500'
+        metadata['canonical_book_uuid'] = 'ea4244ce-dd9c-4166-9c97-acae5faf0ba1'
         apple_metadata = apple.metadata.copy()
         summary = etree.fromstring(apple_metadata.pop('summary'))
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
@@ -820,6 +824,7 @@ Pointer.
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Lemon'
         metadata['version'] = '1.3'
+        metadata['revised'] = '2013/03/05 09:35:24 -0500'
         lemon_metadata = lemon.metadata.copy()
         summary = etree.fromstring(lemon_metadata.pop('summary'))
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
@@ -849,6 +854,7 @@ Pointer.
         metadata = self.base_metadata.copy()
         metadata['title'] = u'チョコレート'
         metadata['version'] = '1.3'
+        metadata['revised'] = '2013/03/05 09:35:24 -0500'
         self.assertEqual(metadata, chocolate_metadata)
         self.assertIn(b'<p id="0"><a href="#list">List</a> of',
                       chocolate.content)
@@ -866,6 +872,7 @@ Pointer.
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         metadata['version'] = '1.3'
+        metadata['revised'] = '2013/03/05 09:35:24 -0500'
         self.assertEqual(metadata, extra_metadata)
         self.assertIn(b'<p id="1">Here is a <a href="/contents/chocolate'
                       b'#list">link</a> to another document.</p>',
