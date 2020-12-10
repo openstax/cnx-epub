@@ -90,14 +90,15 @@ class DocumentMetadataParser:
     """
     namespaces = HTML_DOCUMENT_NAMESPACES
     metadata_required_keys = (
-        'title', 'license_url',
+        'title',
         )
     metadata_optional_keys = (
         'created', 'revised', 'language', 'subjects', 'keywords',
         'license_text', 'editors', 'illustrators', 'translators',
         'publishers', 'copyright_holders', 'authors', 'summary',
         'cnx-archive-uri', 'cnx-archive-shortid', 'derived_from_uri',
-        'derived_from_title', 'print_style', 'version', 'canonical_book_uuid'
+        'derived_from_title', 'print_style', 'version', 'canonical_book_uuid',
+        'license_url',
         )
 
     def __init__(self, elm_tree, raise_value_error=True):
