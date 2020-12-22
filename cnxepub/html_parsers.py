@@ -98,7 +98,7 @@ class DocumentMetadataParser:
         'publishers', 'copyright_holders', 'authors', 'summary',
         'cnx-archive-uri', 'cnx-archive-shortid', 'derived_from_uri',
         'derived_from_title', 'print_style', 'version', 'canonical_book_uuid',
-        'license_url',
+        'license_url', 'slug'
         )
 
     def __init__(self, elm_tree, raise_value_error=True):
@@ -336,6 +336,13 @@ class DocumentMetadataParser:
     def canonical_book_uuid(self):
         items = self.parse(
             './/xhtml:*[@data-type="canonical-book-uuid"]/@data-value')
+        if items:
+            return items[0]
+
+    @property
+    def slug(self):
+        items = self.parse(
+            './/xhtml:*[@data-type="slug"]/@data-value')
         if items:
             return items[0]
 
