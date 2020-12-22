@@ -633,6 +633,10 @@ HTML_DOCUMENT = """\
       <span data-type="canonical-book-uuid" data-value="{{ \
           metadata['canonical_book_uuid'] }}" />
       {% endif %}
+      {% if metadata.get('slug') %}
+      <span data-type="slug" data-value="{{ \
+          metadata['slug'] }}" />
+      {% endif %}
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
