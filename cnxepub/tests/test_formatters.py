@@ -513,6 +513,42 @@ class HTMLFormatterTestCase(unittest.TestCase):
             self.xpath('.//xhtml:*[@data-type="canonical-book-uuid"]/@data-value')[0]
         )
 
+        self.assertEqual(
+            metadata['language'],
+            self.xpath('//xhtml:html/@lang')[0]
+        )
+
+        self.assertEqual(
+            metadata['language'],
+            self.xpath('//xhtml:meta[@itemprop="inLanguage"]/@content')[0]
+        )
+
+    def test_document_nolang(self):
+        from ..models import Document
+        from ..formatters import HTMLFormatter
+
+        # Build test document.
+        metadata = self.base_metadata.copy()
+        metadata['language'] = None
+        document = Document(
+            metadata['title'],
+            io.BytesIO(b'<body><p>Hello.</p></body>'),
+            metadata=metadata)
+
+        html = str(HTMLFormatter(document))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:html/@lang'))
+        )
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:meta[@itemprop="inLanguage"]/@content'))
+        )
+
     def test_document_pointer(self):
         from ..models import DocumentPointer
         from ..formatters import HTMLFormatter

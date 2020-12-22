@@ -579,17 +579,21 @@ HTML_DOCUMENT = """\
       xmlns:mod="http://cnx.rice.edu/#moduleIds"
       xmlns:md="http://cnx.rice.edu/mdml"
       xmlns:c="http://cnx.rice.edu/cnxml"
+      {% if metadata.get('language') %}
       lang="{{ metadata['language'] }}"
+      {% endif %}
       >
   <head itemscope="itemscope"
         itemtype="http://schema.org/Book"
         >
 
     <title>{{ metadata['title'] }}</title>
+    {% if metadata.get('language') %}
     <meta itemprop="inLanguage"
           data-type="language"
           content="{{ metadata['language'] }}"
           />
+    {% endif %}
 
     {# TODO Include this based on the feature being present #}
     <!-- These are for discoverability of accessible content. -->
