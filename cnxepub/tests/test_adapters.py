@@ -194,7 +194,8 @@ class EPUBAdaptationTestCase(unittest.TestCase):
             u'language': 'en',
             u'print_style': u'* print style *',
             u'version': None,
-            u'canonical_book_uuid': None
+            u'canonical_book_uuid': None,
+            u'slug': None,
             }
         self.assertEqual(expected_metadata, document.metadata)
 
@@ -682,7 +683,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         u'derived_from_title': None,
         u'derived_from_uri': None,
         u'version': None,
-        u'canonical_book_uuid': None
+        u'canonical_book_uuid': None,
+        u'slug': None,
         }
 
     def test_from_formatter_to_adapter(self):

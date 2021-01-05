@@ -579,17 +579,21 @@ HTML_DOCUMENT = """\
       xmlns:mod="http://cnx.rice.edu/#moduleIds"
       xmlns:md="http://cnx.rice.edu/mdml"
       xmlns:c="http://cnx.rice.edu/cnxml"
+      {% if metadata.get('language') %}
       lang="{{ metadata['language'] }}"
+      {% endif %}
       >
   <head itemscope="itemscope"
         itemtype="http://schema.org/Book"
         >
 
     <title>{{ metadata['title'] }}</title>
+    {% if metadata.get('language') %}
     <meta itemprop="inLanguage"
           data-type="language"
           content="{{ metadata['language'] }}"
           />
+    {% endif %}
 
     {# TODO Include this based on the feature being present #}
     <!-- These are for discoverability of accessible content. -->
@@ -603,9 +607,11 @@ HTML_DOCUMENT = """\
        <meta refines="#<html-id>" property="display-seq" content="<ord>" />
      #}
 
+    {% if metadata.get('created') %}
     <meta itemprop="dateCreated"
           content="{{ metadata['created'] }}"
           />
+    {% endif %}
     <meta itemprop="dateModified"
           content="{{ metadata['revised'] }}"
           />
@@ -626,6 +632,10 @@ HTML_DOCUMENT = """\
       {% if metadata.get('canonical_book_uuid') %}
       <span data-type="canonical-book-uuid" data-value="{{ \
           metadata['canonical_book_uuid'] }}" />
+      {% endif %}
+      {% if metadata.get('slug') %}
+      <span data-type="slug" data-value="{{ \
+          metadata['slug'] }}" />
       {% endif %}
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />

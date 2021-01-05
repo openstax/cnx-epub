@@ -113,7 +113,8 @@ class ReconstituteTestCase(unittest.TestCase):
             u'derived_from_title': None,
             u'derived_from_uri': None,
             u'version': None,
-            u'canonical_book_uuid': None
+            u'canonical_book_uuid': None,
+            u'slug': None,
             }
 
         fruity = desserts[0]

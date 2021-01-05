@@ -509,8 +509,65 @@ class HTMLFormatterTestCase(unittest.TestCase):
             self.xpath('.//xhtml:*[@data-type="revised"]/@data-value')[0])
 
         self.assertEqual(
-            'ea4244ce-dd9c-4166-9c97-acae5faf0ba1',
+            metadata['canonical_book_uuid'],
             self.xpath('.//xhtml:*[@data-type="canonical-book-uuid"]/@data-value')[0]
+        )
+
+        self.assertEqual(
+            metadata['language'],
+            self.xpath('//xhtml:html/@lang')[0]
+        )
+
+        self.assertEqual(
+            metadata['language'],
+            self.xpath('//xhtml:meta[@itemprop="inLanguage"]/@content')[0]
+        )
+
+    def test_document_nolang(self):
+        from ..models import Document
+        from ..formatters import HTMLFormatter
+
+        # Build test document.
+        metadata = self.base_metadata.copy()
+        metadata['language'] = None
+        document = Document(
+            metadata['title'],
+            io.BytesIO(b'<body><p>Hello.</p></body>'),
+            metadata=metadata)
+
+        html = str(HTMLFormatter(document))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:html/@lang'))
+        )
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:meta[@itemprop="inLanguage"]/@content'))
+        )
+
+    def test_document_nocreated(self):
+        from ..models import Document
+        from ..formatters import HTMLFormatter
+
+        # Build test document.
+        metadata = self.base_metadata.copy()
+        metadata['created'] = None
+        document = Document(
+            metadata['title'],
+            io.BytesIO(b'<body><p>Hello.</p></body>'),
+            metadata=metadata)
+
+        html = str(HTMLFormatter(document))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:meta[@itemprop="dateCreated"]/@content'))
         )
 
     def test_document_pointer(self):
@@ -783,7 +840,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                       'license_url': 'http://creativecommons.org/licenses/by/4.0/',
                       'license_text': 'CC-By 4.0',
                       'cnx-archive-uri': '00000000-0000-0000-0000-000000000000@1.3',
-                      'language': 'en'},
+                      'language': 'en',
+                      'slug': 'desserts'},
             resources=[cover_png])
 
     def test_binder(self):
