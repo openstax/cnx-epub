@@ -607,9 +607,11 @@ HTML_DOCUMENT = """\
        <meta refines="#<html-id>" property="display-seq" content="<ord>" />
      #}
 
+    {% if metadata.get('created') %}
     <meta itemprop="dateCreated"
           content="{{ metadata['created'] }}"
           />
+    {% endif %}
     <meta itemprop="dateModified"
           content="{{ metadata['revised'] }}"
           />

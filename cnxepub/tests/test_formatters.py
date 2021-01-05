@@ -549,6 +549,27 @@ class HTMLFormatterTestCase(unittest.TestCase):
             len(self.xpath('//xhtml:meta[@itemprop="inLanguage"]/@content'))
         )
 
+    def test_document_nocreated(self):
+        from ..models import Document
+        from ..formatters import HTMLFormatter
+
+        # Build test document.
+        metadata = self.base_metadata.copy()
+        metadata['created'] = None
+        document = Document(
+            metadata['title'],
+            io.BytesIO(b'<body><p>Hello.</p></body>'),
+            metadata=metadata)
+
+        html = str(HTMLFormatter(document))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:meta[@itemprop="dateCreated"]/@content'))
+        )
+
     def test_document_pointer(self):
         from ..models import DocumentPointer
         from ..formatters import HTMLFormatter
