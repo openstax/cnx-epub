@@ -509,7 +509,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
             self.xpath('.//xhtml:*[@data-type="revised"]/@data-value')[0])
 
         self.assertEqual(
-            'ea4244ce-dd9c-4166-9c97-acae5faf0ba1',
+            metadata['canonical_book_uuid'],
             self.xpath('.//xhtml:*[@data-type="canonical-book-uuid"]/@data-value')[0]
         )
 
