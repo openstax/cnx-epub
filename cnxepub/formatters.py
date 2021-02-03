@@ -490,7 +490,10 @@ EXERCISE_TEMPLATE = jinja2.Template("""\
 {% endif %}
 {% if data['items'].0.questions %}
     {% for question in data['items'].0.questions %}
-        <div>{{ question.stem_html }}</div>
+        {% if question.stimulus_html %}
+            <div class="question-stimulus">{{ question.stimulus_html }}</div>
+        {% endif %}
+        <div class="question-stem">{{ question.stem_html }}</div>
         {% if 'multiple-choice' in question.formats %}
             {% if question.answers %}
             <ol data-number-style="lower-alpha">
