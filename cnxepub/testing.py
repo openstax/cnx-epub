@@ -8,6 +8,16 @@
 from contextlib import contextmanager
 
 import sys
+from io import StringIO
+import memcache
+import os
+import tempfile
+import shutil
+import sys
+import unittest
+import zipfile
+
+# HTMLParser is deprecated in later versions
 if sys.version_info[0] >= 3 and sys.version_info[1] >= 4:
     import html
     parser = html
@@ -17,15 +27,6 @@ else:
     except:
         import HTMLParser
     parser = HTMLParser.HTMLParser()
-
-from io import StringIO
-import memcache
-import os
-import tempfile
-import shutil
-import sys
-import unittest
-import zipfile
 
 
 here = os.path.abspath(os.path.dirname(__file__))
