@@ -173,7 +173,7 @@ EXERCISE_JSON = {
          "stimulus_html": "",
          "questions": [
             {
-               "stimulus_html": "",
+               "stimulus_html": "Here's an excerpt please read",
                "formats": [
                   "free-response",
                   "multiple-choice"
