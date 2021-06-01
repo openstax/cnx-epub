@@ -20,8 +20,6 @@ from copy import deepcopy
 
 import requests
 
-import pdb
-
 from .models import (
     model_to_tree, content_to_etree, etree_to_content,
     flatten_to_documents,
@@ -458,13 +456,11 @@ def exercise_callback_factory(match, url_template,
                         module = tag.split(':')[1]
                     if 'context-cnxfeature:' in tag:
                         feature = tag.split(':')[1]
-                #pdb.set_trace()
                 exercise['items'][0]['required_context'] = {}
                 exercise['items'][0]['required_context']['module'] = module
                 exercise['items'][0]['required_context']['feature'] = feature
                 exercise['items'][0]['required_context']['ref'] = "auto_%s_%s" %(module, feature)
 
-            pdb.set_trace()
             html = EXERCISE_TEMPLATE.render(data=exercise)
             try:
                 nodes = etree.fromstring('<div>{}</div>'.format(html))
