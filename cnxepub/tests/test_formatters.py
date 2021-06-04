@@ -221,7 +221,8 @@ EXERCISE_JSON = {
             "context-cnxmod:85d6c500-9860-42e8-853a-e6940a50224f",
             "book:stax-apbio",
             "filter-type:import:hs",
-            "type:conceptual-or-recall"
+            "type:conceptual-or-recall",
+            "context-cnxfeature:link-to-feature-2",
          ],
          "derived_from": [],
          "version": 3
