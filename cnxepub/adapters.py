@@ -373,7 +373,9 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
         id_map = {}
 
     def fix_generated_ids(page, id_map):
-        """Fix element ids (remove auto marker) and populate id_map."""
+        """Fix element ids (remove auto and page markers) and populate
+        id_map.
+        """
 
         content = content_to_etree(page.content)
 
@@ -389,11 +391,23 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                     while (new_val + str(suffix)) in new_ids:
                         suffix += 1
                     new_val = new_val + str(suffix)
+            elif id_val.startswith('page_'):
+                new_val = id_val.split('page_')[-1]
             else:
                 new_val = id_val
             new_ids.add(new_val)
             element.set('id', new_val)
-            id_map['#{}'.format(id_val)] = (page, new_val)
+            if id_val.startswith('page_'):
+                # We want to map any references to the generated page ID
+                # directly to the page
+                id_map['#{}'.format(id_val)] = (page, '')
+            else:
+                id_map['#{}'.format(id_val)] = (page, new_val)
+
+        # Strip 'page_' prefix from an ID that may have been inserted during
+        # an earlier formatting if it is present
+        if page.id.startswith('page_'):
+            page.id = page.id.split('page_')[1]
 
         id_map['#{}'.format(page.id)] = (page, '')
         if page.id and '@' in page.id:

@@ -266,9 +266,14 @@ class SingleHTMLFormatter(object):
     def _build_binder(self, binder, elem):
         binder_type = self.get_node_type(binder)
         for node in binder:
-            attrs = {'data-type': self.get_node_type(node, binder_type)}
+            node_type = self.get_node_type(node, binder_type)
+            attrs = {'data-type': node_type}
             if node.id:
-                attrs['id'] = node.id
+                # Page IDs may start with a number when they're UUIDs, so we
+                # prefix the value
+                # (https://github.com/openstax/cnx/issues/1514)
+                id_prefix = "page_" if node_type == "page" else ''
+                attrs['id'] = "%s%s" % (id_prefix, node.id)
             child_elem = etree.SubElement(elem, 'div', **attrs)
             if isinstance(node, TranslucentBinder):
                 html = bytes(HTMLFormatter(node, generate_ids=False))
@@ -312,13 +317,16 @@ class SingleHTMLFormatter(object):
             href = link.get('href')
             if href.startswith('/contents/'):
                 link_uuid = re.split('@|#', href[10:])[0]
+                # While rewriting, account for page IDs being prefixed with
+                # "page_" earlier when building the binder so the links work
                 if link_uuid in page_uuids:
                     if '#' in href:
                         fragment = href[href.index('#'):].replace('#', '_')
                         link.set('href', '#auto_{}{}'.format(
                             page_uuids[link_uuid], fragment))
                     else:
-                        link.set('href', '#{}'.format(page_uuids[link_uuid]))
+                        link.set('href', '#page_{}'.format(
+                            page_uuids[link_uuid]))
         self.built = True
 
     def __unicode__(self):
