@@ -373,9 +373,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
         id_map = {}
 
     def fix_generated_ids(page, id_map):
-        """Fix element ids (remove auto and page markers) and populate
-        id_map.
-        """
+        """Fix element ids (remove auto marker) and populate id_map."""
 
         content = content_to_etree(page.content)
 
@@ -385,12 +383,13 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             id_val = element.get('id')
             if id_val.startswith('auto_'):
                 # It's possible that an auto_ prefix was injected using a page
-                # ID that incorporated the page_ prefix. We'll squash that out
-                # first if it exists
+                # ID that incorporated the page_ prefix. We'll remove that
+                # first if it exists so the auto prefixing fix works whether
+                # it is present or not.
                 new_val = id_val.replace('page_', '')
 
                 # We max split with two to avoid breaking up ID values that
-                # may have originally included '_' and only undo the auto_id_
+                # may have originally included '_' and only undo the auto_{id}_
                 # prefixing injected by a formatter
                 new_val = new_val.split('_', 2)[-1]
                 # Did content from different pages w/ same original id
@@ -399,8 +398,6 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                     while (new_val + str(suffix)) in new_ids:
                         suffix += 1
                     new_val = new_val + str(suffix)
-            elif id_val.startswith('page_'):
-                new_val = id_val.split('page_')[-1]
             else:
                 new_val = id_val
             new_ids.add(new_val)
@@ -411,11 +408,6 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                 id_map['#{}'.format(id_val)] = (page, '')
             else:
                 id_map['#{}'.format(id_val)] = (page, new_val)
-
-        # Strip 'page_' prefix from an ID that may have been inserted during
-        # an earlier formatting if it is present
-        if page.id.startswith('page_'):
-            page.id = page.id.split('page_')[1]
 
         id_map['#{}'.format(page.id)] = (page, '')
         if page.id and '@' in page.id:

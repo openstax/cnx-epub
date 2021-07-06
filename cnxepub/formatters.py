@@ -270,9 +270,11 @@ class SingleHTMLFormatter(object):
             attrs = {'data-type': node_type}
             if node.id:
                 # Page IDs may start with a number when they're UUIDs, so we
-                # prefix the value
+                # prefix the value if it's not already there
                 # (https://github.com/openstax/cnx/issues/1514)
-                id_prefix = "page_" if node_type == "page" else ''
+                id_prefix = ''
+                if node_type == "page" and not node.id.startswith('page_'):
+                    id_prefix = "page_"
                 attrs['id'] = "%s%s" % (id_prefix, node.id)
             child_elem = etree.SubElement(elem, 'div', **attrs)
             if isinstance(node, TranslucentBinder):
