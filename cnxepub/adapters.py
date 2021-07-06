@@ -384,7 +384,15 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
         for element in content.xpath('.//*[@id]'):
             id_val = element.get('id')
             if id_val.startswith('auto_'):
-                new_val = id_val.split('_')[-1]
+                # It's possible that an auto_ prefix was injected using a page
+                # ID that incorporated the page_ prefix. We'll squash that out
+                # first if it exists
+                new_val = id_val.replace('page_', '')
+
+                # We max split with two to avoid breaking up ID values that
+                # may have originally included '_' and only undo the auto_id_
+                # prefixing injected by a formatter
+                new_val = new_val.split('_', 2)[-1]
                 # Did content from different pages w/ same original id
                 # get moved to the same page?
                 if new_val in new_ids:
