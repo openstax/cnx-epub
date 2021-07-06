@@ -13,6 +13,7 @@ import logging
 import mimetypes
 import os
 import uuid
+import re
 
 from copy import deepcopy
 
@@ -386,7 +387,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                 # ID that incorporated the page_ prefix. We'll remove that
                 # first if it exists so the auto prefixing fix works whether
                 # it is present or not.
-                new_val = id_val.replace('page_', '')
+                new_val = re.sub(r'^auto_page_', 'auto_', id_val)
 
                 # We max split with two to avoid breaking up ID values that
                 # may have originally included '_' and only undo the auto_{id}_
