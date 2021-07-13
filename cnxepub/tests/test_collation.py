@@ -53,12 +53,12 @@ class ReconstituteTestCase(unittest.TestCase):
                 'id': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2@1.3',
                 'contents': [{
                     'shortId': None,
-                    'id': 'apple@1.3',
+                    'id': 'page_apple@1.3',
                     'title': 'Apple'
                     },
                     {
                     'shortId': None,
-                    'id': 'lemon@1.3',
+                    'id': 'page_lemon@1.3',
                     'title': u'<span>1.1</span> <span>|</span> <span>レモン</span>'
                     },
                     {
@@ -66,7 +66,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     'id': 'b1f13b61-8c95-5fbe-9112-46400b6dc8de@1.3',
                     'contents': [{
                         'shortId': None,
-                        'id': 'lemon@1.3',
+                        'id': 'page_lemon@1.3',
                         'title': 'Lemon'
                         }
                         ],
@@ -77,7 +77,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     },
                     {
                         'shortId': None,
-                        'id': 'chocolate@1.3',
+                        'id': 'page_chocolate@1.3',
                         'title': u'チョコレート'
                     },
                     {

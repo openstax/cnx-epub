@@ -1052,6 +1052,7 @@ class ExerciseCallbackTestCase(unittest.TestCase):
             'items': [{
                 'questions': [{
                     'stem_html': tex_math,
+                    'formats': []
                 }],
             }]}
         requests_get.return_value = get_resp
