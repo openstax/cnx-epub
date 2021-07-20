@@ -457,8 +457,10 @@ def exercise_callback_factory(match, url_template,
 
         # Determine parent page for this exercise
         parent_page_uuid = None
+        parent_page_elem = None
         for parent in elem.iterancestors():
             if parent.get('data-type') == 'page':
+                parent_page_elem = parent
                 parent_page_uuid = parent.get('id')
                 if parent_page_uuid.startswith('page_'):
                     # Strip `page_` prefix from ID to get UUID
@@ -466,6 +468,19 @@ def exercise_callback_factory(match, url_template,
                 break
 
         candidate_uuids = list(set(modules) & set(page_uuids))
+
+        # Check if the target feature ID is on the parent page for this
+        # exercise. If so, that takes priority over any context-cnxmod tag
+        # values, and should be picked even in cases where the parent page
+        # doesn't match one of the exercise tags. If the feature exists,
+        # we'll make sure it's included in candidate_uuids
+        maybe_feature = parent_page_elem.find(
+            './/*[@id="{}"]'.format("auto_%s_%s" % (parent_page_uuid, feature))
+        )
+        if (maybe_feature is not None) and \
+           not (parent_page_uuid in candidate_uuids):
+            candidate_uuids.append(parent_page_uuid)
+
         if len(candidate_uuids) == 0:
             # No valid page UUIDs in exercise data
             return
