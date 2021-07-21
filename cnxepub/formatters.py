@@ -467,19 +467,18 @@ def exercise_callback_factory(match, url_template,
                     parent_page_uuid = parent_page_uuid.split('page_')[1]
                 break
 
-        candidate_uuids = list(set(modules) & set(page_uuids))
+        candidate_uuids = set(modules) & set(page_uuids)
 
         # Check if the target feature ID is on the parent page for this
         # exercise. If so, that takes priority over any context-cnxmod tag
         # values, and should be picked even in cases where the parent page
         # doesn't match one of the exercise tags. If the feature exists,
-        # we'll make sure it's included in candidate_uuids
+        # we make sure the parent page UUID it's included in candidate_uuids
         maybe_feature = parent_page_elem.find(
             './/*[@id="{}"]'.format("auto_%s_%s" % (parent_page_uuid, feature))
         )
-        if (maybe_feature is not None) and \
-           not (parent_page_uuid in candidate_uuids):
-            candidate_uuids.append(parent_page_uuid)
+        if (maybe_feature is not None):
+            candidate_uuids.add(parent_page_uuid)
 
         if len(candidate_uuids) == 0:
             # No valid page UUIDs in exercise data
@@ -488,11 +487,11 @@ def exercise_callback_factory(match, url_template,
         if parent_page_uuid in candidate_uuids:
             target_module = parent_page_uuid
         else:
-            # Use the first UUID in the intersection of page UUIDs and
-            # tag UUIDs. This is somewhat arbritrary, but if we hit this
-            # scenario with more than one UUID in the list things have gone
-            # pretty unexpectedly
-            target_module = candidate_uuids[0]
+            # Use an UUID in the intersection of page UUIDs and tag UUIDs
+            # This is somewhat arbritrary, but if we hit this scenario with
+            # more than one UUID in the set things have gone pretty
+            # unexpectedly
+            target_module = candidate_uuids.pop()
 
         exercise['items'][0]['required_context'] = {}
         exercise['items'][0]['required_context']['module'] = target_module
