@@ -1178,15 +1178,8 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
             }]
         }
         requests_get.return_value = get_resp
-        self.annotator(self.exercise.find('.//a'), ['uuid1'])
-        expected_content = """
-<div>
-    <div data-type="page" id="page_uuid1">
-        <div id="auto_uuid1_autodetect-feature"></div>
-    </div>
-</div>"""
-        self.assertEqual(xmlpp(expected_content.encode('utf-8')).split(b'\n'),
-                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+        with self.assertRaises(Exception):
+            self.annotator(self.exercise.find('.//a'), ['uuid1'])
 
     @mock.patch('cnxepub.formatters.requests.get')
     def test_annotate_badfeature(self, requests_get):
@@ -1279,15 +1272,8 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
             }]
         }
         requests_get.return_value = get_resp
-        self.annotator(self.exercise.find('.//a'), ['uuid1', 'uuid2'])
-        expected_content = """
-<div>
-    <div data-type="page" id="page_uuid1">
-        <div id="auto_uuid1_autodetect-feature"></div>
-    </div>
-</div>"""
-        self.assertEqual(xmlpp(expected_content.encode('utf-8')).split(b'\n'),
-                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+        with self.assertRaises(Exception):
+            self.annotator(self.exercise.find('.//a'), ['uuid1', 'uuid2'])
 
     @mock.patch('cnxepub.formatters.requests.get')
     def test_annotate_autdetectparent(self, requests_get):

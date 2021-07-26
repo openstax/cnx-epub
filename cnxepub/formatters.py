@@ -453,7 +453,7 @@ def exercise_callback_factory(match, url_template,
         # There may be multiple `context-cnxmod:{uuid}` tags, each of which
         # could be the parent page for this exercise, a different page in this
         # book, or even invalid altogether. We'll prefer the first, fallback
-        # to the second, and not annotate in the last case.
+        # to the second, and error in the last case.
 
         # Determine parent page for this exercise
         parent_page_elem = elem.xpath('ancestor::*[@data-type="page"]')[0]
@@ -477,7 +477,9 @@ def exercise_callback_factory(match, url_template,
 
         if len(candidate_uuids) == 0:
             # No valid page UUIDs in exercise data
-            return
+            msg = 'No candidate uuid for exercise feature {}'.format(feature)
+            logger.error(msg)
+            raise Exception(msg)
 
         if parent_page_uuid in candidate_uuids:
             target_module = parent_page_uuid
