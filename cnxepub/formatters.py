@@ -468,11 +468,14 @@ def exercise_callback_factory(match, url_template,
         # exercise. If so, that takes priority over any context-cnxmod tag
         # values, and should be picked even in cases where the parent page
         # doesn't match one of the exercise tags. If the feature exists,
-        # we make sure the parent page UUID it's included in candidate_uuids
+        # we make sure the parent page UUID is included in candidate_uuids.
+        # Otherwise, remove parent page from candidate UUIDs.
         maybe_feature = parent_page_elem.find(
             './/*[@id="{}"]'.format("auto_%s_%s" % (parent_page_uuid, feature))
         )
-        if (maybe_feature is not None):
+        if (maybe_feature is None):
+            candidate_uuids.discard(parent_page_uuid)
+        else:
             candidate_uuids.add(parent_page_uuid)
 
         if len(candidate_uuids) == 0:
