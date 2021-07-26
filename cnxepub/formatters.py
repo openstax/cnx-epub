@@ -471,7 +471,7 @@ def exercise_callback_factory(match, url_template,
         # we make sure the parent page UUID is included in candidate_uuids.
         # Otherwise, remove parent page from candidate UUIDs.
         maybe_feature = parent_page_elem.find(
-            './/*[@id="{}"]'.format("auto_%s_%s" % (parent_page_uuid, feature))
+            './/*[@id="auto_{}_{}"]'.format(parent_page_uuid, feature)
         )
         if (maybe_feature is None):
             candidate_uuids.discard(parent_page_uuid)
@@ -492,6 +492,17 @@ def exercise_callback_factory(match, url_template,
             # more than one UUID in the set things have gone pretty
             # unexpectedly
             target_module = candidate_uuids.pop()
+
+        # As a final validation check, confirm the feature is on the target
+        # module and otherwise raise
+        feature_element = elem.xpath(
+            '//*[@id="auto_{}_{}"]'.format(target_module, feature)
+        )
+
+        if not feature_element:
+            msg = 'Feature {} not in {}'.format(feature, target_module)
+            logger.error(msg)
+            raise Exception(msg)
 
         exercise['items'][0]['required_context'] = {}
         exercise['items'][0]['required_context']['module'] = target_module
