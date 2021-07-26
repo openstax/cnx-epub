@@ -456,16 +456,11 @@ def exercise_callback_factory(match, url_template,
         # to the second, and not annotate in the last case.
 
         # Determine parent page for this exercise
-        parent_page_uuid = None
-        parent_page_elem = None
-        for parent in elem.iterancestors():
-            if parent.get('data-type') == 'page':
-                parent_page_elem = parent
-                parent_page_uuid = parent.get('id')
-                if parent_page_uuid.startswith('page_'):
-                    # Strip `page_` prefix from ID to get UUID
-                    parent_page_uuid = parent_page_uuid.split('page_')[1]
-                break
+        parent_page_elem = elem.xpath('ancestor::*[@data-type="page"]')[0]
+        parent_page_uuid = parent_page_elem.get('id')
+        if parent_page_uuid.startswith('page_'):
+            # Strip `page_` prefix from ID to get UUID
+            parent_page_uuid = parent_page_uuid.split('page_')[1]
 
         candidate_uuids = set(modules) & set(page_uuids)
 
