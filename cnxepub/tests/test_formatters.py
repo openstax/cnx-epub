@@ -783,6 +783,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 <body class="fruity">
 <h1>Lemon Desserts</h1>
 <p>Yum! <img src="/resources/1x1.jpg" /></p>
+<div id="link-to-feature-2"></div>
 <div data-type="exercise">
     <a href="#ost/api/ex/apbio-ch03-ex002">[link]</a>
 </div>
