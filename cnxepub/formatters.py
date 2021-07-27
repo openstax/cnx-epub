@@ -480,8 +480,11 @@ def exercise_callback_factory(match, url_template,
 
         if len(candidate_uuids) == 0:
             # No valid page UUIDs in exercise data
-            msg = 'No candidate uuid for exercise feature {} (exercise: {})'.\
-                format(feature, elem.get('href'))
+            exercise = elem.xpath('ancestor::*[@data-type="exercise"]')[0]
+            msg = 'No candidate uuid for exercise feature {} '.format(feature)
+            msg += '(exercise href: {} / exercise ID: {})'.format(
+                elem.get('href'), exercise.get('id')
+            )
             logger.error(msg)
             raise Exception(msg)
 
@@ -507,8 +510,10 @@ def exercise_callback_factory(match, url_template,
         )
 
         if feature_element is None:
-            msg = 'Feature {} not in {} (exercise: {})'.format(
-                feature, target_module, elem.get('href')
+            exercise = elem.xpath('ancestor::*[@data-type="exercise"]')[0]
+            msg = 'Feature {} not in {} '.format(feature, target_module)
+            msg += '(exercise href: {} / exercise ID: {})'.format(
+                elem.get('href'), exercise.get('id')
             )
             logger.error(msg)
             raise Exception(msg)
