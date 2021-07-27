@@ -495,11 +495,17 @@ def exercise_callback_factory(match, url_template,
 
         # As a final validation check, confirm the feature is on the target
         # module and otherwise raise
-        feature_element = elem.xpath(
-            '//*[@id="auto_{}_{}"]'.format(target_module, feature)
+        #
+        # NOTE: The following uses xpath() and find() together which may seem
+        # bizarre, but it's a work around for the fact that using just an
+        # xpath of '//*[@id="auto_{}_{}"]' results in seg faults when there
+        # are multiple threads due to the tree editing that occurs in
+        # _replace_exercises.
+        feature_element = elem.xpath('/*')[0].find(
+            './/*[@id="auto_{}_{}"]'.format(target_module, feature)
         )
 
-        if not feature_element:
+        if feature_element is None:
             msg = 'Feature {} not in {}'.format(feature, target_module)
             logger.error(msg)
             raise Exception(msg)
