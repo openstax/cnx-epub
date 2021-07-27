@@ -1195,7 +1195,8 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
             self.annotator(self.exercise.find('.//a'), ['uuid1'])
         self.assertEqual(
             str(error.exception),
-            'No candidate uuid for exercise feature feature-donotexist'
+            'No candidate uuid for exercise feature feature-donotexist '
+            '(exercise: #ost/api/ex/book-ch01-ex001)'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')
@@ -1301,7 +1302,8 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
             self.annotator(self.exercise.find('.//a'), ['uuid1', 'uuid2'])
         self.assertEqual(
             str(error.exception),
-            'Feature feature-donotexist not in uuid2'
+            'Feature feature-donotexist not in uuid2 '
+            '(exercise: #ost/api/ex/book-ch01-ex001)'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')
@@ -1322,7 +1324,8 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
             self.annotator(self.exercise.find('.//a'), ['uuid1', 'uuid2'])
         self.assertEqual(
             str(error.exception),
-            'No candidate uuid for exercise feature feature-donotexist'
+            'No candidate uuid for exercise feature feature-donotexist '
+            '(exercise: #ost/api/ex/book-ch01-ex001)'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')
