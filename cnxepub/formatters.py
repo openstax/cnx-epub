@@ -455,7 +455,8 @@ def exercise_callback_factory(match, url_template,
         # book, or even invalid altogether. We'll prefer the first, fallback
         # to the second, and error in the last case.
 
-        # Determine parent page for this exercise
+        # Determine parent page and exercise for this element
+        exercise_elem = elem.xpath('ancestor::*[@data-type="exercise"]')[0]
         parent_page_elem = elem.xpath('ancestor::*[@data-type="page"]')[0]
         parent_page_uuid = parent_page_elem.get('id')
         if parent_page_uuid.startswith('page_'):
@@ -480,10 +481,9 @@ def exercise_callback_factory(match, url_template,
 
         if len(candidate_uuids) == 0:
             # No valid page UUIDs in exercise data
-            exercise = elem.xpath('ancestor::*[@data-type="exercise"]')[0]
             msg = 'No candidate uuid for exercise feature {} '.format(feature)
             msg += '(exercise href: {} / exercise ID: {})'.format(
-                elem.get('href'), exercise.get('id')
+                elem.get('href'), exercise_elem.get('id')
             )
             logger.error(msg)
             raise Exception(msg)
@@ -505,15 +505,15 @@ def exercise_callback_factory(match, url_template,
         # xpath of '//*[@id="auto_{}_{}"]' results in seg faults when there
         # are multiple threads due to the tree editing that occurs in
         # _replace_exercises.
+        target_ref = 'auto_{}_{}'.format(target_module, feature)
         feature_element = elem.xpath('/*')[0].find(
-            './/*[@id="auto_{}_{}"]'.format(target_module, feature)
+            './/*[@id="{}"]'.format(target_ref)
         )
 
         if feature_element is None:
-            exercise = elem.xpath('ancestor::*[@data-type="exercise"]')[0]
             msg = 'Feature {} not in {} '.format(feature, target_module)
             msg += '(exercise href: {} / exercise ID: {})'.format(
-                elem.get('href'), exercise.get('id')
+                elem.get('href'), exercise_elem.get('id')
             )
             logger.error(msg)
             raise Exception(msg)
@@ -521,8 +521,7 @@ def exercise_callback_factory(match, url_template,
         exercise['items'][0]['required_context'] = {}
         exercise['items'][0]['required_context']['module'] = target_module
         exercise['items'][0]['required_context']['feature'] = feature
-        exercise['items'][0]['required_context']['ref'] = \
-            "auto_%s_%s" % (target_module, feature)
+        exercise['items'][0]['required_context']['ref'] = target_ref
 
     def _replace_exercises(elem, page_uuids):
         item_code = elem.get('href')[len(match):]
