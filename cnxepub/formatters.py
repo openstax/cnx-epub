@@ -304,17 +304,20 @@ class SingleHTMLFormatter(object):
 
     def build(self):
         self._build_binder(self.binder, self.body)
+        page_ids = [page.id for page in flatten_to_documents(self.binder)]
+        page_uuids = {id.split('@')[0]: id for id in page_ids}
+
         # Fetch any includes from remote sources
         if not self.included and self.includes is not None:
             for match, proc in self.includes:
                 with ThreadPoolExecutor(max_workers=self.threads) as e:
                     for elem in self.xpath(match):
-                        e.submit(proc, elem)
+                        e.submit(
+                            proc, elem, list(page_uuids.keys())
+                        )
             self.included = True
 
         # Rewrite absolute-path links that are intra-binder
-        page_ids = [page.id for page in flatten_to_documents(self.binder)]
-        page_uuids = {id.split('@')[0]: id for id in page_ids}
         for link in self.root.xpath('//*[@href]'):
             href = link.get('href')
             if href.startswith('/contents/'):
@@ -426,7 +429,101 @@ def exercise_callback_factory(match, url_template,
     """Create a callback function to replace an exercise by fetching from
     a server."""
 
-    def _replace_exercises(elem):
+    def _annotate_exercise(elem, exercise, page_uuids):
+        """Annotate exercise based upon tag data"""
+        tags = exercise['items'][0].get('tags')
+        if not tags:
+            return
+
+        # Annotate exercise with required context, if it exists
+        modules, feature = [], ''
+        for tag in tags:
+            if 'context-cnxmod:' in tag:
+                modules.append(tag.split(':')[1])
+            if 'context-cnxfeature:' in tag:
+                # Note: Assuming this tag will never be duplicated with
+                # multiple values in the exercise data
+                feature = tag.split(':')[1]
+
+        # It's possible that the feature tag is not present, or present but
+        # not valid (e.g. value of "context-cnxfeature:").
+        if not feature:
+            return
+
+        # There may be multiple `context-cnxmod:{uuid}` tags, each of which
+        # could be the parent page for this exercise, a different page in this
+        # book, or even invalid altogether. We'll prefer the first, fallback
+        # to the second, and error in the last case.
+
+        # Determine parent page and exercise for this element
+        exercise_elem = elem.xpath('ancestor::*[@data-type="exercise"]')[0]
+        parent_page_elem = elem.xpath('ancestor::*[@data-type="page"]')[0]
+        parent_page_uuid = parent_page_elem.get('id')
+        if parent_page_uuid.startswith('page_'):
+            # Strip `page_` prefix from ID to get UUID
+            parent_page_uuid = parent_page_uuid.split('page_')[1]
+
+        candidate_uuids = set(modules) & set(page_uuids)
+
+        # Check if the target feature ID is on the parent page for this
+        # exercise. If so, that takes priority over any context-cnxmod tag
+        # values, and should be picked even in cases where the parent page
+        # doesn't match one of the exercise tags. If the feature exists,
+        # we make sure the parent page UUID is included in candidate_uuids.
+        # Otherwise, remove parent page from candidate UUIDs.
+        maybe_feature = parent_page_elem.find(
+            './/*[@id="auto_{}_{}"]'.format(parent_page_uuid, feature)
+        )
+        if (maybe_feature is None):
+            candidate_uuids.discard(parent_page_uuid)
+        else:
+            candidate_uuids.add(parent_page_uuid)
+
+        if len(candidate_uuids) == 0:
+            # No valid page UUIDs in exercise data
+            msg = 'No candidate uuid for exercise feature {} '.format(feature)
+            msg += '(exercise href: {} / exercise ID: {})'.format(
+                elem.get('href'), exercise_elem.get('id')
+            )
+            logger.error(msg)
+            raise Exception(msg)
+
+        if parent_page_uuid in candidate_uuids:
+            target_module = parent_page_uuid
+        else:
+            # Use an UUID in the intersection of page UUIDs and tag UUIDs
+            # This is somewhat arbritrary, but if we hit this scenario with
+            # more than one UUID in the set things have gone pretty
+            # unexpectedly
+            target_module = candidate_uuids.pop()
+
+        # As a final validation check, confirm the feature is on the target
+        # module and otherwise raise
+        #
+        # NOTE: The following uses xpath() and find() together which may seem
+        # bizarre, but it's a work around for the fact that using just an
+        # xpath of '//*[@id="auto_{}_{}"]' results in seg faults when there
+        # are multiple threads due to the tree editing that occurs in
+        # _replace_exercises.
+        target_ref = 'auto_{}_{}'.format(target_module, feature)
+        feature_element = elem.xpath('/*')[0].find(
+            './/*[@id="{}"]'.format(target_ref)
+        )
+
+        if feature_element is None:
+            msg = 'Feature {} not in {} '.format(feature, target_module)
+            msg += '(exercise href: {} / exercise ID: {})'.format(
+                elem.get('href'), exercise_elem.get('id')
+            )
+            logger.error(msg)
+            raise Exception(msg)
+
+        exercise['items'][0]['required_context'] = {}
+        exercise['items'][0]['required_context']['module'] = target_module
+        exercise['items'][0]['required_context']['feature'] = feature
+        exercise['items'][0]['required_context']['ref'] = target_ref
+
+    def _replace_exercises(elem, page_uuids):
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
         exercise = {}
@@ -457,20 +554,7 @@ def exercise_callback_factory(match, url_template,
             missing.text = 'MISSING EXERCISE: tag:{}'.format(item_code)
             nodes = [missing]
         else:
-            # Annotate exercise with required context, if it exists
-            tags = exercise['items'][0].get('tags')
-            if tags and any('context-cnxfeature' in tag for tag in tags):
-                module, feature = '', ''
-                for tag in tags:
-                    if 'context-cnxmod:' in tag:
-                        module = tag.split(':')[1]
-                    if 'context-cnxfeature:' in tag:
-                        feature = tag.split(':')[1]
-                exercise['items'][0]['required_context'] = {}
-                exercise['items'][0]['required_context']['module'] = module
-                exercise['items'][0]['required_context']['feature'] = feature
-                exercise['items'][0]['required_context']['ref'] = \
-                    "auto_%s_%s" % (module, feature)
+            _annotate_exercise(elem, exercise, page_uuids)
 
             html = EXERCISE_TEMPLATE.render(data=exercise)
             try:
