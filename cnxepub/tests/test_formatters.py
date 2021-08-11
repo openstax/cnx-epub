@@ -23,7 +23,7 @@ from lxml import etree
 
 from ..testing import (TEST_DATA_DIR, unescape,
                        _get_memcache_client, IS_MEMCACHE_ENABLED)
-from ..formatters import exercise_callback_factory
+from ..formatters import exercise_callback_factory, render_exercise
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -1376,3 +1376,151 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
 </div>"""
         self.assertEqual(xmlpp(expected_content.encode('utf-8')).split(b'\n'),
                          xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+
+class ExerciseTemplateTestCase(unittest.TestCase):
+    def format_html(self, html):
+        return xmlpp(html.encode('utf-8')).split(b'\n')
+
+    def test_renders_full_set(self):
+        # Test case for an exercise with a full set of features
+        exercise = {
+            "total_count": 1,
+            "items": [
+                {
+                "images": [],
+                "tags": [
+                    "type:practice",
+                    "all",
+                    "another-test-tag"
+                ],
+                "uuid": "a6581f0e-529b-4eaf-b174-563c7c49831b",
+                "group_uuid": "2c185140-d8dd-4116-83fa-f17783d0c2e3",
+                "number": 25499,
+                "version": 3,
+                "uid": "25499@3",
+                "published_at": "2021-08-04T18:43:46.007Z",
+                "nickname": "contmath98",
+                "url": "test-url", # Added in formatters
+                "required_context" : {  # Added in formatters
+                    "module": "test-module-123",
+                    "feature": "test-feature-abc",
+                    "ref": "auto_123_abc-test"
+                },
+                "solutions_are_public": True,
+                "authors": [
+                    {
+                    "user_id": 1,
+                    "name": "OpenStax Exercises"
+                    }
+                ],
+                "copyright_holders": [
+                    {
+                    "user_id": 1,
+                    "name": "OpenStax Exercises"
+                    }
+                ],
+                "derived_from": [],
+                "is_vocab": False,
+                "stimulus_html": "I am the intro.\n",
+                "questions": [
+                    {
+                    "id": 176664,
+                    "is_answer_order_important": False,
+                    "stimulus_html": "",
+                    "stem_html": "I'm a question stem for question 1. A vinyl record dealer is trying to price a large collection she’s thinking of buying. She looks at every tenth record on the shelf and notes the value.\n",
+                    "answers": [],
+                    "hints": [],
+                    "formats": [
+                        "free-response"
+                    ],
+                    "combo_choices": [],
+                    "collaborator_solutions": [
+                        {
+                        "images": [],
+                        "solution_type": "detailed",
+                        "content_html": "I'm a dtailed solution for question 1 Randomization is being used; systematic random sample"
+                        }
+                    ],
+                    "community_solutions": []
+                    },
+                    {
+                    "id": 176665,
+                    "is_answer_order_important": False,
+                    "stimulus_html": "",
+                    "stem_html": "I'm a question stem for question 2 A court clerk is charged with identifying one hundred people for a jury pool for upcoming legal hearings. He has an alphabetized list of registered voters in his jurisdiction, so he uses a random number generator to pick one hundred names from the list.\n",
+                    "answers": [],
+                    "hints": [],
+                    "formats": [
+                        "free-response"
+                    ],
+                    "combo_choices": [],
+                    "collaborator_solutions": [
+                        {
+                        "images": [],
+                        "solution_type": "detailed",
+                        "content_html": "I'm a solution for question 2 Randomization is being used; simple random sample\n"
+                        }
+                    ],
+                    "community_solutions": []
+                    },
+                    {
+                    "id": 176660,       # multiple choice from contmath80
+                    "is_answer_order_important": True,
+                    "stimulus_html": "i'm a question stimulus\nUse the given stem-and-leaf plot to determine the mode, median, and mean:<table>\n    <tbody><tr>\n        <td>Stem</td>\n        <td> Leaf</td>\n    </tr>\n    <tr>\n        <td>8</td>\n        <td>8 9 </td>\n    </tr>\n    <tr>\n        <td>9 </td>\n        <td>0 0 7</td>\n    </tr>\n    <tr>\n        <td>10</td>\n        <td>2 5 6 7 8</td>\n    </tr>\n    <tr>\n        <td>11</td>\n        <td>1 2 2 2 4 5 7 9 9 </td>\n    </tr>\n    <tr>\n        <td>12</td>\n        <td>0 0 3 5 7</td>\n    </tr>\n    <tr>\n        <td>13</td>\n        <td>0 1 1 4</td>\n    </tr>\n</tbody></table>",
+                    "stem_html": "Testing a multiple choice question for Kendra Hi Kendra.  I'm a question stem right here.",
+                    "answers": [
+                        {
+                        "id": 668496,
+                        "content_html": "mean - i'm distractor",
+                        "correctness": "0.0",
+                        "feedback_html": "choice level feedback"
+                        },
+                        {
+                        "id": 668497,
+                        "content_html": "median - distractor",
+                        "correctness": "0.0",
+                        "feedback_html": "choice level feedback"
+                        },
+                        {
+                        "id": 668498,
+                        "content_html": "mode - correct answer",
+                        "correctness": "1.0",
+                        "feedback_html": "choice level feedback"
+                        },
+                        {
+                        "id": 668499,
+                        "content_html": "all of the above - distractor",
+                        "correctness": "0.0",
+                        "feedback_html": "choice level feedback"
+                        }
+                        ]
+                    }
+                ],
+                "delegations": [],
+                "versions": [
+                    3,
+                    2,
+                    1
+                ]
+                }
+            ]
+        }
+        html = self.format_html(render_exercise(exercise))
+        expected = self.format_html(
+'''<div 
+    data-type="injected-exercise"
+    data-injected-from-nickname="contmath98"
+    data-injected-from-version="3"
+    data-injected-from-url="test-url"
+    data-tags="type:practice all another-test-tag"
+>
+    <div data-type="required-context"
+        data-context-module="test-module-123"
+        data-context-feature="test-feature-abc">
+        <a class="autogenerated-content"
+        href="#auto_123_abc-test">[link]</a>
+    </div>
+    <div data-type="exercise-stimulus">I am the intro.</div>
+</div>''')
+        self.maxDiff = None
+        assert html == expected
