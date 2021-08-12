@@ -1427,7 +1427,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                     "id": 176664,
                     "is_answer_order_important": False,
                     "stimulus_html": "",
-                    "stem_html": "I'm a question stem for question 1. A vinyl record dealer is trying to price a large collection she’s thinking of buying. She looks at every tenth record on the shelf and notes the value.\n",
+                    "stem_html": "I'm a question stem for question 1. A vinyl record dealer is trying to price a large collection \n",
                     "answers": [],
                     "hints": [],
                     "formats": [
@@ -1447,7 +1447,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                     "id": 176665,
                     "is_answer_order_important": False,
                     "stimulus_html": "",
-                    "stem_html": "I'm a question stem for question 2 A court clerk is charged with identifying one hundred people for a jury pool for upcoming legal hearings. He has an alphabetized list of registered voters in his jurisdiction, so he uses a random number generator to pick one hundred names from the list.\n",
+                    "stem_html": "I'm a question stem for question 2 A court clerk is charged with identifying one hundred people for a jury pool.\n",
                     "answers": [],
                     "hints": [],
                     "formats": [
@@ -1457,16 +1457,26 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                     "collaborator_solutions": [
                         {
                         "images": [],
-                        "solution_type": "detailed",
+                        "solution_type": "another-solution-type",
                         "content_html": "I'm a solution for question 2 Randomization is being used; simple random sample\n"
                         }
                     ],
-                    "community_solutions": []
+                    "community_solutions": [
+                        {
+                        "images": [],
+                        "solution_type": "detailed",
+                        "content_html": "test community solution"
+                        }
+                    ]
                     },
                     {
                     "id": 176660,       # multiple choice from contmath80
                     "is_answer_order_important": True,
-                    "stimulus_html": "i'm a question stimulus\nUse the given stem-and-leaf plot to determine the mode, median, and mean:<table>\n    <tbody><tr>\n        <td>Stem</td>\n        <td> Leaf</td>\n    </tr>\n    <tr>\n        <td>8</td>\n        <td>8 9 </td>\n    </tr>\n    <tr>\n        <td>9 </td>\n        <td>0 0 7</td>\n    </tr>\n    <tr>\n        <td>10</td>\n        <td>2 5 6 7 8</td>\n    </tr>\n    <tr>\n        <td>11</td>\n        <td>1 2 2 2 4 5 7 9 9 </td>\n    </tr>\n    <tr>\n        <td>12</td>\n        <td>0 0 3 5 7</td>\n    </tr>\n    <tr>\n        <td>13</td>\n        <td>0 1 1 4</td>\n    </tr>\n</tbody></table>",
+                    "formats" : [
+                        "multiple-choice",
+                        "test-format"
+                    ],
+                    "stimulus_html": "i'm a question stimulus\n",
                     "stem_html": "Testing a multiple choice question for Kendra Hi Kendra.  I'm a question stem right here.",
                     "answers": [
                         {
@@ -1479,7 +1489,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                         "id": 668497,
                         "content_html": "median - distractor",
                         "correctness": "0.0",
-                        "feedback_html": "choice level feedback"
+                        "feedback_html": ""
                         },
                         {
                         "id": 668498,
@@ -1513,6 +1523,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
     data-injected-from-version="3"
     data-injected-from-url="test-url"
     data-tags="type:practice all another-test-tag"
+    data-is-vocab="False"
 >
     <div data-type="required-context"
         data-context-module="test-module-123"
@@ -1521,6 +1532,107 @@ class ExerciseTemplateTestCase(unittest.TestCase):
         href="#auto_123_abc-test">[link]</a>
     </div>
     <div data-type="exercise-stimulus">I am the intro.</div>
+    <div data-type="question" data-is-answer-order-important="False" data-formats="free-response">
+        <div data-type="question-stem">I'm a question stem for question 1. A vinyl record dealer is trying to price a large collection</div>
+        <div data-type="solution" data-solution-source="collaborator" data-solution-type="detailed">
+            I'm a dtailed solution for question 1 Randomization is being used; systematic random sample
+        </div>
+    </div>
+    <div data-type="question" data-is-answer-order-important="False" data-formats="free-response">
+        <div data-type="question-stem">I'm a question stem for question 2 A court clerk is charged with identifying one hundred people for a jury pool.</div>
+        <div data-type="solution" data-solution-source="collaborator" data-solution-type="another-solution-type">
+            I'm a solution for question 2 Randomization is being used; simple random sample
+        </div>
+        <div data-type="solution" data-solution-source="community" data-solution-type="detailed">
+            test community solution
+        </div>
+    </div>
+    <div data-type="question" data-is-answer-order-important="True" data-formats="multiple-choice test-format">
+        <div data-type="question-stimulus">i'm a question stimulus</div>
+        <div data-type="question-stem">Testing a multiple choice question for Kendra Hi Kendra.  I'm a question stem right here.</div>
+        <ol data-type="multiple-choice-options" type="a">
+            <li data-type="option" data-correctness="0.0" data-id="668496">
+                <div data-type="option-content">mean - i'm distractor</div>
+                <div data-type="option-feedback">choice level feedback</div>
+            </li>
+            <li data-type="option" data-correctness="0.0" data-id="668497">
+                <div data-type="option-content">median - distractor</div>
+            </li>
+            <li data-type="option" data-correctness="1.0" data-id="668498">
+                <div data-type="option-content">mode - correct answer</div>
+                <div data-type="option-feedback">choice level feedback</div>
+            </li>
+            <li data-type="option" data-correctness="0.0" data-id="668499">
+                <div data-type="option-content">all of the above - distractor</div>
+                <div data-type="option-feedback">choice level feedback</div>
+            </li>
+        </ol>
+    </div>
 </div>''')
-        self.maxDiff = None
+        assert html == expected
+
+    def test_renders_minimum_set(self):
+        # Test case for an exercise with a full set of features
+        exercise = {
+            "total_count": 1,
+            "items": [
+                {
+                "images": [],
+                "tags": [
+                    "type:practice",
+                    "all",
+                    "another-test-tag"
+                ],
+                "uuid": "a6581f0e-529b-4eaf-b174-563c7c49831b",
+                "group_uuid": "2c185140-d8dd-4116-83fa-f17783d0c2e3",
+                "number": 25499,
+                "version": 3,
+                "uid": "25499@3",
+                "published_at": "2021-08-04T18:43:46.007Z",
+                "nickname": "contmath98",
+                "url": "test-url", # Added in formatters
+                "solutions_are_public": True,
+                "authors": [
+                    {
+                    "user_id": 1,
+                    "name": "OpenStax Exercises"
+                    }
+                ],
+                "copyright_holders": [
+                    {
+                    "user_id": 1,
+                    "name": "OpenStax Exercises"
+                    }
+                ],
+                "derived_from": [],
+                "is_vocab": False,
+                "stimulus_html": "",
+                "questions": [
+                    {
+                        "stem_html": "question stem"
+                    }
+                ],
+                "delegations": [],
+                "versions": [
+                    3,
+                    2,
+                    1
+                ]
+                }
+            ]
+        }
+        html = self.format_html(render_exercise(exercise))
+        expected = self.format_html(
+'''<div 
+    data-type="injected-exercise"
+    data-injected-from-nickname="contmath98"
+    data-injected-from-version="3"
+    data-injected-from-url="test-url"
+    data-tags="type:practice all another-test-tag"
+    data-is-vocab="False"
+>
+    <div data-type="question" data-is-answer-order-important="" data-formats="">
+        <div data-type="question-stem">question stem</div>
+    </div>
+</div>''')
         assert html == expected
