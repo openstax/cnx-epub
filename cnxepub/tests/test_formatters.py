@@ -1387,38 +1387,20 @@ class ExerciseTemplateTestCase(unittest.TestCase):
             "total_count": 1,
             "items": [
                 {
-                "images": [],
                 "tags": [
                     "type:practice",
                     "all",
                     "another-test-tag"
                 ],
-                "uuid": "a6581f0e-529b-4eaf-b174-563c7c49831b",
-                "group_uuid": "2c185140-d8dd-4116-83fa-f17783d0c2e3",
-                "number": 25499,
                 "version": 3,
-                "uid": "25499@3",
-                "published_at": "2021-08-04T18:43:46.007Z",
                 "nickname": "contmath98",
-                "url": "test-url", # Added in formatters
-                "required_context" : {  # Added in formatters
+                "url": "test-url",          # Added in formatters
+                "required_context" : {      # Added in formatters
                     "module": "test-module-123",
                     "feature": "test-feature-abc",
                     "ref": "auto_123_abc-test"
                 },
                 "solutions_are_public": True,
-                "authors": [
-                    {
-                    "user_id": 1,
-                    "name": "OpenStax Exercises"
-                    }
-                ],
-                "copyright_holders": [
-                    {
-                    "user_id": 1,
-                    "name": "OpenStax Exercises"
-                    }
-                ],
                 "derived_from": [],
                 "is_vocab": False,
                 "stimulus_html": "I am the intro.\n",
@@ -1470,7 +1452,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                     ]
                     },
                     {
-                    "id": 176660,       # multiple choice from contmath80
+                    "id": 176660,       # multiple choice
                     "is_answer_order_important": True,
                     "formats" : [
                         "multiple-choice",
@@ -1505,12 +1487,6 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                         }
                         ]
                     }
-                ],
-                "delegations": [],
-                "versions": [
-                    3,
-                    2,
-                    1
                 ]
                 }
             ]
@@ -1550,7 +1526,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
     <div data-type="question" data-is-answer-order-important="True" data-formats="multiple-choice test-format">
         <div data-type="question-stimulus">i'm a question stimulus</div>
         <div data-type="question-stem">Testing a multiple choice question for Kendra Hi Kendra.  I'm a question stem right here.</div>
-        <ol data-type="multiple-choice-options" type="a">
+        <ol data-type="answers" type="a">
             <li data-type="option" data-correctness="0.0" data-id="668496">
                 <div data-type="option-content">mean - i'm distractor</div>
                 <div data-type="option-feedback">choice level feedback</div>
@@ -1577,46 +1553,20 @@ class ExerciseTemplateTestCase(unittest.TestCase):
             "total_count": 1,
             "items": [
                 {
-                "images": [],
                 "tags": [
                     "type:practice",
-                    "all",
-                    "another-test-tag"
+                    "all"
                 ],
-                "uuid": "a6581f0e-529b-4eaf-b174-563c7c49831b",
-                "group_uuid": "2c185140-d8dd-4116-83fa-f17783d0c2e3",
-                "number": 25499,
                 "version": 3,
-                "uid": "25499@3",
-                "published_at": "2021-08-04T18:43:46.007Z",
                 "nickname": "contmath98",
                 "url": "test-url", # Added in formatters
                 "solutions_are_public": True,
-                "authors": [
-                    {
-                    "user_id": 1,
-                    "name": "OpenStax Exercises"
-                    }
-                ],
-                "copyright_holders": [
-                    {
-                    "user_id": 1,
-                    "name": "OpenStax Exercises"
-                    }
-                ],
-                "derived_from": [],
                 "is_vocab": False,
                 "stimulus_html": "",
                 "questions": [
                     {
                         "stem_html": "question stem"
                     }
-                ],
-                "delegations": [],
-                "versions": [
-                    3,
-                    2,
-                    1
                 ]
                 }
             ]
@@ -1628,7 +1578,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
     data-injected-from-nickname="contmath98"
     data-injected-from-version="3"
     data-injected-from-url="test-url"
-    data-tags="type:practice all another-test-tag"
+    data-tags="type:practice all"
     data-is-vocab="False"
 >
     <div data-type="question" data-is-answer-order-important="" data-formats="">
