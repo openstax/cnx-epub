@@ -455,8 +455,6 @@ def exercise_callback_factory(match, url_template,
         # book, or even invalid altogether. We'll prefer the first, fallback
         # to the second, and error in the last case.
 
-        # Determine parent page and exercise for this element
-        exercise_elem = elem
         parent_page_elem = elem.xpath('ancestor::*[@data-type="page"]')[0]
         parent_page_uuid = parent_page_elem.get('id')
         if parent_page_uuid.startswith('page_'):
