@@ -1508,13 +1508,13 @@ class ExerciseTemplateTestCase(unittest.TestCase):
         href="#auto_123_abc-test">[link]</a>
     </div>
     <div data-type="exercise-stimulus">I am the intro.</div>
-    <div data-type="exercise-question" data-is-answer-order-important="False" data-formats="free-response">
+    <div data-type="exercise-question" data-is-answer-order-important="False" data-formats="free-response" id="auto_injected_question_176664">
         <div data-type="question-stem">I'm a question stem for question 1. A vinyl record dealer is trying to price a large collection</div>
         <div data-type="question-solution" data-solution-source="collaborator" data-solution-type="detailed">
             I'm a dtailed solution for question 1 Randomization is being used; systematic random sample
         </div>
     </div>
-    <div data-type="exercise-question" data-is-answer-order-important="False" data-formats="free-response">
+    <div data-type="exercise-question" data-is-answer-order-important="False" data-formats="free-response" id="auto_injected_question_176665">
         <div data-type="question-stem">I'm a question stem for question 2 A court clerk is charged with identifying one hundred people for a jury pool.</div>
         <div data-type="question-solution" data-solution-source="collaborator" data-solution-type="another-solution-type">
             I'm a solution for question 2 Randomization is being used; simple random sample
@@ -1523,7 +1523,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
             test community solution
         </div>
     </div>
-    <div data-type="exercise-question" data-is-answer-order-important="True" data-formats="multiple-choice test-format">
+    <div data-type="exercise-question" data-is-answer-order-important="True" data-formats="multiple-choice test-format" id="auto_injected_question_176660">
         <div data-type="question-stimulus">i'm a question stimulus</div>
         <div data-type="question-stem">Testing a multiple choice question for Kendra Hi Kendra.  I'm a question stem right here.</div>
         <ol data-type="question-answers" type="a">

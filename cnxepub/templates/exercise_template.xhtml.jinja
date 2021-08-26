@@ -20,7 +20,8 @@
     <div 
         data-type="exercise-question"
         data-is-answer-order-important="{{ question.is_answer_order_important }}"
-        data-formats="{{ ' '.join(question.formats) }}">
+        data-formats="{{ ' '.join(question.formats) }}"
+        {% if question.id %}id="auto_injected_question_{{ question.id }}"{% endif %}>
         {% if question.stimulus_html -%}
         <div data-type="question-stimulus">{{ question.stimulus_html }}</div>
         {% endif -%}
