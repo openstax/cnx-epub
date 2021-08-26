@@ -22,7 +22,7 @@
         data-is-answer-order-important="{{ question.is_answer_order_important | lower }}"
         data-formats="{{ ' '.join(question.formats) }}"
         {% if question.id %}data-id="{{ question.id }}"{% endif %}
-        {% if question.id %}id="auto_injected_question_{{ question.id }}"{% endif %}>
+        >
         {% if question.stimulus_html -%}
         <div data-type="question-stimulus">{{ question.stimulus_html }}</div>
         {% endif -%}
