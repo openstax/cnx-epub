@@ -4,7 +4,7 @@
     data-injected-from-version="{{ data.version }}"
     data-injected-from-url="{{ data.url }}"
     data-tags="{{ ' '.join(data.tags) }}"
-    data-is-vocab="{{ data.is_vocab }}">
+    data-is-vocab="{{ data.is_vocab | lower }}">
     {% if data.required_context -%}
     <div data-type="exercise-context"
         data-context-module="{{ data.required_context.module }}"
@@ -19,7 +19,7 @@
     {% for question in data.questions -%}
     <div 
         data-type="exercise-question"
-        data-is-answer-order-important="{{ question.is_answer_order_important }}"
+        data-is-answer-order-important="{{ question.is_answer_order_important | lower }}"
         data-formats="{{ ' '.join(question.formats) }}"
         {% if question.id %}id="auto_injected_question_{{ question.id }}"{% endif %}>
         {% if question.stimulus_html -%}
