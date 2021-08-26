@@ -1634,3 +1634,22 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                 </div>
             </div>''')
         assert html == expected
+
+    def test_render_with_nonsingular_exercise(self):
+        exercise = {
+            "total_count": 1,
+            "items": [
+                {
+                    "item1": "abc"
+                },
+                {
+                    "item2": "def"
+                }
+            ]
+        }
+        with self.assertRaises(Exception) as error:
+            render_exercise(exercise)
+        self.assertEqual(
+            str(error.exception),
+            'Exercise "items" array is nonsingular'
+        )
