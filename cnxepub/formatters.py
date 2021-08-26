@@ -482,8 +482,8 @@ def exercise_callback_factory(match, url_template,
         if len(candidate_uuids) == 0:
             # No valid page UUIDs in exercise data
             msg = 'No candidate uuid for exercise feature {} '.format(feature)
-            msg += '(exercise href: {} / exercise ID: {})'.format(
-                elem.get('href'), exercise_elem.get('id')
+            msg += '(exercise href: {})'.format(
+                elem.get('href')
             )
             logger.error(msg)
             raise Exception(msg)
@@ -512,8 +512,8 @@ def exercise_callback_factory(match, url_template,
 
         if feature_element is None:
             msg = 'Feature {} not in {} '.format(feature, target_module)
-            msg += '(exercise href: {} / exercise ID: {})'.format(
-                elem.get('href'), exercise_elem.get('id')
+            msg += '(exercise href: {})'.format(
+                elem.get('href')
             )
             logger.error(msg)
             raise Exception(msg)
@@ -554,8 +554,8 @@ def exercise_callback_factory(match, url_template,
             missing.text = 'MISSING EXERCISE: tag:{}'.format(item_code)
             nodes = [missing]
         else:
+            exercise['items'][0]['url'] = url
             _annotate_exercise(elem, exercise, page_uuids)
-            exercise['items'][0]['url'] = url # TODO: test this
 
             html = render_exercise(exercise)
             try:
