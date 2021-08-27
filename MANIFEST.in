@@ -2,4 +2,4 @@ include *.txt *.rst
 recursive-include cnxepub/tests/data *.*
 include versioneer.py
 include cnxepub/_version.py
-include cnxepub/templates/exercise_template.xhtml.jinja
+recursive-include cnxepub/templates *.jinja
