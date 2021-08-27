@@ -1,3 +1,8 @@
+0.31.1
+------
+
+- bInclude the jinja template files
+
 0.31.0
 ------
 
