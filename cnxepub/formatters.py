@@ -546,8 +546,8 @@ def exercise_callback_factory(match, url_template,
             logger.warning('MISSING EXERCISE: {}'.format(url))
 
             XHTML = '{{{}}}'.format(HTML_DOCUMENT_NAMESPACES['xhtml'])
-            missing = etree.Element(XHTML + 'div',
-                                    {'class': 'missing-exercise'},
+            missing = etree.Element(XHTML + 'span',
+                                    {'data-type': 'missing-exercise'},
                                     nsmap=HTML_DOCUMENT_NAMESPACES)
             missing.text = 'MISSING EXERCISE: tag:{}'.format(item_code)
             nodes = [missing]
