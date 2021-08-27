@@ -24,8 +24,9 @@ jobs:
       - name: Lint
         run: |
           pip install pep8
-          pep8 --exclude=tests *.py cnxepub/
+          pep8 --exclude=tests,templates *.py cnxepub/
           pep8 --max-line-length=1000 cnxepub/tests
+          pep8 --max-line-length=1000 cnxepub/templates
       - name: Test
         run: |
           pip install -U pip
