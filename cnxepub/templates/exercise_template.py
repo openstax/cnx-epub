@@ -1,4 +1,7 @@
-<div 
+import jinja2
+
+EXERCISE_TEMPLATE_STR = """\
+<div
     data-type="injected-exercise"
     data-injected-from-nickname="{{ data.nickname }}"
     data-injected-from-version="{{ data.version }}"
@@ -17,7 +20,7 @@
     <div data-type="exercise-stimulus">{{ data.stimulus_html }}</div>
     {% endif -%}
     {% for question in data.questions -%}
-    <div 
+    <div
         data-type="exercise-question"
         data-is-answer-order-important="{{ question.is_answer_order_important | lower }}"
         data-formats="{{ ' '.join(question.formats) }}"
@@ -50,3 +53,6 @@
     </div>
     {% endfor -%}
 </div>
+"""
+
+EXERCISE_TEMPLATE = jinja2.Template(EXERCISE_TEMPLATE_STR)

@@ -27,6 +27,7 @@ from .models import (
     Document, DocumentPointer, CompositeDocument, utf8)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
 from .utils import ThreadPoolExecutor
+from .templates.exercise_template import EXERCISE_TEMPLATE
 
 logger = logging.getLogger('cnxepub')
 
@@ -587,14 +588,7 @@ def render_exercise(exercise):
         raise Exception('Exercise "items" array is nonsingular')
     exercise_content = exercise['items'][0]
 
-    # Load template
-    env = jinja2.Environment(
-        loader=jinja2.PackageLoader("cnxepub"),
-        autoescape=jinja2.select_autoescape()
-    )
-    template = env.get_template("exercise_template.xhtml.jinja")
-
-    return template.render(data=exercise_content)
+    return EXERCISE_TEMPLATE.render(data=exercise_content)
 
 
 DOCUMENT_POINTER_TEMPLATE = """\
