@@ -41,12 +41,8 @@ def easybake(ruleset, in_html, out_html):
 
 def reconstitute(html):
     """Given a file-like object as ``html``, reconstruct it into models."""
-    try:
-        htree = etree.parse(html)
-    except etree.XMLSyntaxError:
-        html.seek(0)
-        htree = etree.HTML(html.read())
-
+    html.seek(0)
+    htree = etree.parse(html)
     xhtml = etree.tostring(htree, encoding='utf-8')
     return adapt_single_html(xhtml)
 
