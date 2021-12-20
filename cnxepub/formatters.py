@@ -747,7 +747,7 @@ HTML_DOCUMENT = """\
             <a href="{{ author['id'] }}"
                itemprop="url"
                data-type="{{ author['type'] }}"
-               >{{ author['name'] }}</a>
+               >{{ author['name']|e }}</a>
           </span>{% if not loop.last %}, {% endif %}
         {%- endfor %}
 
@@ -766,7 +766,7 @@ HTML_DOCUMENT = """\
               <a href="{{ person['id'] }}"
                  itemprop="url"
                  data-type="{{ person['type'] }}"
-                 >{{ person['name'] }}</a>
+                 >{{ person['name']|e }}</a>
             </span>{% if not loop.last %}, {% endif %}
           {% else %}
             <span itemprop="{{ person_type }}"
@@ -790,7 +790,7 @@ HTML_DOCUMENT = """\
               <a href="{{ person['id'] }}"
                  itemprop="url"
                  data-type="{{ person['type'] }}"
-                 >{{ person['name'] }}</a>
+                 >{{ person['name']|e }}</a>
             </span>{% if not loop.last %}, {% endif %}
           {% else %}
             <span itemprop="{{ person_type }}"
@@ -814,7 +814,7 @@ HTML_DOCUMENT = """\
               <a href="{{ person['id'] }}"
                  itemprop="url"
                  data-type="{{ person['type'] }}"
-                 >{{ person['name'] }}</a>
+                 >{{ person['name']|e }}</a>
             </span>{% if not loop.last %}, {% endif %}
           {% else %}
             <span itemprop="{{ person_type }}"
@@ -843,7 +843,7 @@ HTML_DOCUMENT = """\
               <a href="{{ person['id'] }}"
                  itemprop="url"
                  data-type="{{ person['type'] }}"
-                 >{{ person['name'] }}</a>
+                 >{{ person['name']|e }}</a>
             </span>{% if not loop.last %}, {% endif %}
           {% else %}
             <span itemprop="{{ person_type }}"
@@ -892,7 +892,7 @@ HTML_DOCUMENT = """\
                 <a href="{{ person['id'] }}"
                    itemprop="url"
                    data-type="{{ person['type'] }}"
-                   >{{ person['name'] }}</a>
+                   >{{ person['name']|e }}</a>
               </span>{% if not loop.last %}, {% endif %}
             {% else %}
               <span itemprop="{{ person_type }}"
@@ -907,7 +907,7 @@ HTML_DOCUMENT = """\
           <a href="{{ metadata['license_url'] }}"
              itemprop="dc:license,lrmi:useRightsURL"
              data-type="license"
-             >{{ metadata['license_text'] }}</a>
+             >{{ metadata['license_text']|e }}</a>
         </p>
       </div>
       {%- endif %}
@@ -917,7 +917,7 @@ HTML_DOCUMENT = """\
            itemprop="description"
            data-type="description"
            >
-        {{ metadata['summary'] }}
+        {{ metadata['summary']|e }}
       </div>
       {%- endif %}
       {% for keyword in metadata['keywords'] -%}
