@@ -610,7 +610,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
         itemtype="http://schema.org/Book"
         >
 
-    <title>{{ metadata['title'] }}</title>
+    <title>{{ metadata['title']|e }}</title>
 
     {# TODO Include this based on the feature being present #}
     <!-- These are for discoverability of accessible content. -->
@@ -630,7 +630,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
         >
     <div data-type="metadata">
       <h1 data-type="document-title" itemprop="name">{{ \
-              metadata['title'] }}</h1>
+              metadata['title']|e }}</h1>
       <span data-type="document" data-value="pointer" />
       {% if metadata.get('cnx-archive-uri') %}
       <span data-type="cnx-archive-uri" data-value="{{ \
@@ -644,7 +644,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
     <div>
       <p>
         Click <a href="{{ metadata['url'] }}">here</a> to read {{ \
-            metadata['title'] }}.
+            metadata['title']|e }}.
       </p>
     </div>
   </body>
@@ -672,7 +672,7 @@ HTML_DOCUMENT = """\
         itemtype="http://schema.org/Book"
         >
 
-    <title>{{ metadata['title'] }}</title>
+    <title>{{ metadata['title']|e }}</title>
     {% if metadata.get('language') %}
     <meta itemprop="inLanguage"
           data-type="language"
@@ -709,7 +709,7 @@ HTML_DOCUMENT = """\
         >
     <div data-type="metadata" style="display: none;">
       <h1 data-type="document-title" itemprop="name">{{ \
-              metadata['title'] }}</h1>
+              metadata['title']|e }}</h1>
       {% if metadata.get('revised') %}
       <span data-type="revised" data-value="{{ \
           metadata['revised'] }}" />
