@@ -2,10 +2,9 @@
 name: tests
 on:
   pull_request:
-  push:
     branches:
-      - main
-  pull_request:
+      - master
+  push:
     branches:
       - master
   schedule:
