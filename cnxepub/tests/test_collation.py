@@ -32,13 +32,6 @@ class ReconstituteTestCase(unittest.TestCase):
             desserts = reconstitute(html)
         self.check_desserts(desserts)
 
-    def test_html(self):
-        page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.html')
-        with open(page_path) as html:
-            from cnxepub.collation import reconstitute
-            desserts = reconstitute(html)
-        self.check_desserts(desserts)
-
     def check_desserts(self, desserts):
         """Assertions for the desserts model"""
         from ..models import model_to_tree
