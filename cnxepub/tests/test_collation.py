@@ -233,7 +233,7 @@ class ReconstituteTestCase(unittest.TestCase):
             u'revised': None,  # '2013/03/05 09:35:24 -0500',
             u'authors': [
                 {u'type': u'cnx-id',
-                 u'name': u'Good Food',
+                 u'name': u'Mario&Luigi',
                  u'id': u'yum'}],
             u'editors': [],
             u'copyright_holders': [],
