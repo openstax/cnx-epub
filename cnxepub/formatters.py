@@ -917,7 +917,7 @@ HTML_DOCUMENT = """\
            itemprop="description"
            data-type="description"
            >
-        {{ metadata['summary']|e }}
+        {{ metadata['summary'] }}
       </div>
       {%- endif %}
       {% for keyword in metadata['keywords'] -%}
