@@ -6,11 +6,16 @@ Library for parsing and building EPUB3 files for connexions content.
 Getting started
 ---------------
 
-Prerequisites needed e.g. on Ubuntu Linux ``sudo apt install build-essential python-dev python3-dev libicu-dev``
+Tested on Ubuntu 18.04, packages needed: ``sudo apt install build-essential python-dev python3-dev libicu-dev python3-venv``
+
+Optional (Python3 virtualenv)::
+
+    python3 -m venv env
+    source env/bin/activate
+    pip install -U pip setuptools
 
 To install::
 
-    pip install lxml==3.6.4
     pip install git+https://github.com/openstax/cnx-cssselect2.git#egg=cnx-cssselect2
     pip install git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake
     python setup.py install
@@ -20,7 +25,7 @@ Running tests
 
 .. image:: https://codecov.io/gh/openstax/cnx-epub/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/openstax/cnx-epub
-  
+
 Either of the following will work::
 
     python setup.py test
