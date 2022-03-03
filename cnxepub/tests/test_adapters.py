@@ -715,10 +715,10 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         self.assertEqual(adapted_binder[0].id, 'apple-pie')
         self.assertEqual(adapted_binder[1].id, 'lemon-pie')
         self.assertEqual(adapted_binder[0].content.decode('utf-8'), '''\
-<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="apple-pie"><p id="{}">Apple Pie</p>
-  </div></body>'''.format(random.randint(0, 100000)))
+<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="apple-pie"><p>Apple Pie</p>
+  </div></body>''')
         self.assertEqual(adapted_binder[1].content.decode('utf-8'), '''\
-<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="lemon-pie"><h1>Lemon Pie</h1>\n        \n        <p id="{}">Yum.</p>\n    \n    \n  </div></body>'''.format(random.randint(0, 100000)))
+<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="lemon-pie"><h1>Lemon Pie</h1>\n        \n        <p>Yum.</p>\n    \n    \n  </div></body>''')
         self.assertEqual(adapted_binder[2].id, 'content-ident-hash')
         self.assertEqual(adapted_binder[2].metadata['title'],
                          'Test Document Pointer')
@@ -807,7 +807,7 @@ Pointer.
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, apple_metadata)
-        self.assertIn(b'<p id="74606">'
+        self.assertIn(b'<p>'
                       b'<a href="/contents/lemon">Link to lemon</a>. '
                       b'Here are some examples:</p>',
                       apple.content)
@@ -823,8 +823,8 @@ Pointer.
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
         self.assertEqual('summary', summary.text)
         self.assertEqual(metadata, lemon_metadata)
-        self.assertIn(b'<p id="8271">Yum! <img src="/resources/1x1.jpg" '
-                      b'id="33432"/></p>', lemon.content)
+        self.assertIn(b'<p>Yum! <img src="/resources/1x1.jpg"'
+                      b'/></p>', lemon.content)
         self.assertEqual(u'<span>1.1</span> <span>|</span> <span>'
                          u'レモン</span>',
                          fruity.get_title_for_node(lemon))
@@ -848,7 +848,7 @@ Pointer.
         metadata['title'] = u'チョコレート'
         metadata['version'] = '1.3'
         self.assertEqual(metadata, chocolate_metadata)
-        self.assertIn(b'<p id="12302"><a href="#list">List</a> of',
+        self.assertIn(b'<p><a href="#list">List</a> of',
                       chocolate.content)
         self.assertIn(b'<div data-type="list" id="list"><ul>',
                       chocolate.content)
@@ -865,7 +865,7 @@ Pointer.
         metadata['title'] = 'Extra Stuff'
         metadata['version'] = '1.3'
         self.assertEqual(metadata, extra_metadata)
-        self.assertIn(b'<p id="56723">Here is a <a href="/contents/chocolate'
+        self.assertIn(b'<p>Here is a <a href="/contents/chocolate'
                       b'#list">link</a> to another document.</p>',
                       extra.content)
         self.assertEqual('Extra Stuff', desserts.get_title_for_node(extra))
@@ -945,7 +945,7 @@ Pointer.
 
         desserts = adapt_single_html(html)
         apple = desserts[0][0]
-        self.assertIn(b'<p id="12345"><a href="/contents/chocolate">',
+        self.assertIn(b'<p><a href="/contents/chocolate">',
                       apple.content)
 
     @mock.patch('cnxepub.adapters.logger')

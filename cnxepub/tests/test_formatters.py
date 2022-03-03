@@ -638,8 +638,8 @@ class HTMLFormatterTestCase(unittest.TestCase):
 
 <p class="para" id="auto_{id}_my-id">This thing and <em>that</em> thing.</p>
 
-<p class="para" id="auto_{id}_{n}"><a href="#auto_{id}_title">Link</a> to title</p>\
-""".format(id=page_one_id, n=random.randint(0, 100000))
+<p class="para"><a href="#auto_{id}_title">Link</a> to title</p>\
+""".format(id=page_one_id)
 
         random.seed(1)
         document = Document(page_one_id, content)
@@ -701,9 +701,9 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 <body>
 <h1>Apple Desserts</h1>
 <p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
-<ul><li id="auto_apple_13436">Apple Crumble,</li>
+<ul><li>Apple Crumble,</li>
     <li>Apfelstrudel,</li>
-    <li id="auto_apple_17611">Caramel Apple,</li>
+    <li>Caramel Apple,</li>
     <li>Apple Pie,</li>
     <li>Apple sauce...</li>
 </ul>
