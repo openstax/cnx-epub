@@ -105,7 +105,8 @@ class HTMLFormatter(object):
         xpath = './/*[@id]'
 
         old_id_to_new_id = {}
-        # Step 1: prefix all ids with the document so they are unique when all the documents are combined
+        # Step 1: prefix all ids with the document so they are unique when all
+        # the documents are combined
         for node in content.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
             old_id = node.attrib.get('id')
             document_id = document.id.replace('_', '')
