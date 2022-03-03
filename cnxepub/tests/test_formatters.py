@@ -782,8 +782,8 @@ class HTMLFormatterTestCase(unittest.TestCase):
 
 <p class="para" id="auto_{id}_my-id">This thing and <em>that</em> thing.</p>
 
-<p class="para" id="auto_{id}_{n}"><a href="#auto_{id}_title">Link</a> to title</p>\
-""".format(id=page_one_id, n=0)
+<p class="para"><a href="#auto_{id}_title">Link</a> to title</p>\
+""".format(id=page_one_id)
 
         document = Document(page_one_id, content)
         formatted = str(HTMLFormatter(document, generate_ids=True))
@@ -845,9 +845,9 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 <body>
 <h1>Apple Desserts</h1>
 <p><a href="/contents/lemon">Link to lemon</a>. Here are some examples:</p>
-<ul><li id="auto_apple_1">Apple Crumble,</li>
+<ul><li>Apple Crumble,</li>
     <li>Apfelstrudel,</li>
-    <li id="auto_apple_0">Caramel Apple,</li>
+    <li>Caramel Apple,</li>
     <li>Apple Pie,</li>
     <li>Apple sauce...</li>
 </ul>

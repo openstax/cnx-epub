@@ -69,7 +69,7 @@ class DocumentSummaryFormatter(object):
         self.document = document
 
     def __unicode__(self):
-        return self.__bytes__().decode('utf-8')
+        return self.__bytes__().decode('utf-8')  # pragma: no cover
 
     def __str__(self):
         if IS_PY3:
@@ -101,72 +101,21 @@ class HTMLFormatter(object):
         """Generate unique ids for html elements in page content so that it's
         possible to link to them.
         """
-        document_id = document.id.replace('_', '')
-
-        # Step 1: prefix existing ids
-        elements_with_ids = content.xpath('//*[@id]')
-        existing_ids = set([el.attrib['id'] for el in elements_with_ids])
-
-        def next_free_auto_id_generator():
-            next_free_auto_id_generator.new_id_count = 0
-
-            def inner():
-                auto_id = 'auto_{}_{}'.format(
-                    document_id,
-                    next_free_auto_id_generator.new_id_count)
-                next_free_auto_id_generator.new_id_count += 1
-                while auto_id in existing_ids:
-                    auto_id = 'auto_{}_{}'.format(
-                        document_id,
-                        next_free_auto_id_generator.new_id_count)
-                    next_free_auto_id_generator.new_id_count += 1
-                return auto_id
-            return inner
-
-        next_auto_id = next_free_auto_id_generator()
+        existing_ids = content.xpath('//*/@id')
+        xpath = './/*[@id]'
 
         old_id_to_new_id = {}
-
-        for node in elements_with_ids:
-            old_id = node.attrib['id']
-            if len(old_id) > 0:
-                new_id = 'auto_{}_{}'.format(document_id, old_id)
-            else:
-                new_id = next_auto_id()
+        # Step 1: prefix all ids with the document so they are unique when all
+        # the documents are combined
+        for node in content.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
+            old_id = node.attrib.get('id')
+            document_id = document.id.replace('_', '')
+            new_id = 'auto_{}_{}'.format(document_id, old_id)
             node.attrib['id'] = new_id
             old_id_to_new_id[old_id] = new_id
-            existing_ids.add(new_id)
+            existing_ids.append(new_id)
 
-        # Step 2: give ids to elements that need them
-        elements_need_ids = [
-            'p', 'dl', 'dt', 'dd', 'table', 'div', 'section', 'figure',
-            'blockquote', 'q', 'code', 'pre', 'object', 'img', 'audio',
-            'video',
-        ]
-        elements_xpath = '|'.join([
-            './/*[local-name() = "{}"]'.format(elem)
-            for elem in elements_need_ids
-        ])
-
-        data_types_need_ids = [
-            'equation', 'list', 'exercise', 'rule', 'example', 'note',
-            'footnote-number', 'footnote-ref', 'problem', 'solution', 'media',
-            'proof', 'statement', 'commentary'
-        ]
-        data_types_xpath = '|'.join(['.//*[@data-type="{}"]'.format(data_type)
-                                     for data_type in data_types_need_ids])
-
-        xpath = '|'.join([elements_xpath, data_types_xpath])
-
-        for node in content.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
-            node_id = node.attrib.get('id')
-            if node_id:
-                continue
-            new_id = next_auto_id()
-            node.attrib['id'] = new_id
-            existing_ids.add(new_id)
-
-        # Step 3: redirect links to elements with now prefixed ids
+        # Step 2: redirect links to elements with now prefixed ids
         for a in content.xpath('//a[@href]|//xhtml:a[@href]',
                                namespaces=HTML_DOCUMENT_NAMESPACES):
             href = a.attrib['href']
@@ -216,7 +165,7 @@ class HTMLFormatter(object):
             }
 
     def __unicode__(self):
-        return self.__bytes().decode('utf-8')
+        return self.__bytes().decode('utf-8')  # pragma: no cover
 
     def __str__(self):
         if IS_PY3:
@@ -326,7 +275,7 @@ class SingleHTMLFormatter(object):
                 # While rewriting, account for page IDs being prefixed with
                 # "page_" earlier when building the binder so the links work
                 if link_uuid in page_uuids:
-                    if '#' in href:
+                    if '#' in href:  # pragma: no cover
                         fragment = href[href.index('#'):].replace('#', '_')
                         link.set('href', '#auto_{}{}'.format(
                             page_uuids[link_uuid], fragment))
@@ -526,7 +475,7 @@ def exercise_callback_factory(match, url_template,
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
         exercise = {}
-        if mc_client:
+        if mc_client:  # pragma: no cover
             mc_key = item_code + (token or '')
             exercise = json.loads(mc_client.get(mc_key) or '{}')
 
@@ -540,7 +489,7 @@ def exercise_callback_factory(match, url_template,
                 # grab the json exercise, run it through Jinja2 template,
                 # replace element w/ it
                 exercise = res.json()
-                if mc_client:
+                if mc_client:  # pragma: no cover
                     mc_client.set(mc_key, res.text)
 
         if exercise['total_count'] == 0:
