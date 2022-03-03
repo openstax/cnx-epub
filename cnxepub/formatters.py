@@ -27,6 +27,7 @@ from .models import (
     Document, DocumentPointer, CompositeDocument, utf8)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
 from .utils import ThreadPoolExecutor
+from .templates.exercise_template import EXERCISE_TEMPLATE
 
 logger = logging.getLogger('cnxepub')
 
@@ -535,14 +536,7 @@ def render_exercise(exercise):
         raise Exception('Exercise "items" array is nonsingular')
     exercise_content = exercise['items'][0]
 
-    # Load template
-    env = jinja2.Environment(
-        loader=jinja2.PackageLoader("cnxepub"),
-        autoescape=jinja2.select_autoescape()
-    )
-    template = env.get_template("exercise_template.xhtml.jinja")
-
-    return template.render(data=exercise_content)
+    return EXERCISE_TEMPLATE.render(data=exercise_content)
 
 
 DOCUMENT_POINTER_TEMPLATE = """\
@@ -564,7 +558,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
         itemtype="http://schema.org/Book"
         >
 
-    <title>{{ metadata['title'] }}</title>
+    <title>{{ metadata['title']|e }}</title>
 
     {# TODO Include this based on the feature being present #}
     <!-- These are for discoverability of accessible content. -->
@@ -584,7 +578,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
         >
     <div data-type="metadata">
       <h1 data-type="document-title" itemprop="name">{{ \
-              metadata['title'] }}</h1>
+              metadata['title']|e }}</h1>
       <span data-type="document" data-value="pointer" />
       {% if metadata.get('cnx-archive-uri') %}
       <span data-type="cnx-archive-uri" data-value="{{ \
@@ -598,7 +592,7 @@ DOCUMENT_POINTER_TEMPLATE = """\
     <div>
       <p>
         Click <a href="{{ metadata['url'] }}">here</a> to read {{ \
-            metadata['title'] }}.
+            metadata['title']|e }}.
       </p>
     </div>
   </body>
@@ -626,7 +620,7 @@ HTML_DOCUMENT = """\
         itemtype="http://schema.org/Book"
         >
 
-    <title>{{ metadata['title'] }}</title>
+    <title>{{ metadata['title']|e }}</title>
     {% if metadata.get('language') %}
     <meta itemprop="inLanguage"
           data-type="language"
@@ -663,7 +657,7 @@ HTML_DOCUMENT = """\
         >
     <div data-type="metadata" style="display: none;">
       <h1 data-type="document-title" itemprop="name">{{ \
-              metadata['title'] }}</h1>
+              metadata['title']|e }}</h1>
       {% if metadata.get('revised') %}
       <span data-type="revised" data-value="{{ \
           metadata['revised'] }}" />
@@ -701,7 +695,7 @@ HTML_DOCUMENT = """\
             <a href="{{ author['id'] }}"
                itemprop="url"
                data-type="{{ author['type'] }}"
-               >{{ author['name'] }}</a>
+               >{{ author['name']|e }}</a>
           </span>{% if not loop.last %}, {% endif %}
         {%- endfor %}
 
@@ -720,7 +714,7 @@ HTML_DOCUMENT = """\
               <a href="{{ person['id'] }}"
                  itemprop="url"
                  data-type="{{ person['type'] }}"
-                 >{{ person['name'] }}</a>
+                 >{{ person['name']|e }}</a>
             </span>{% if not loop.last %}, {% endif %}
           {% else %}
             <span itemprop="{{ person_type }}"
@@ -744,7 +738,7 @@ HTML_DOCUMENT = """\
               <a href="{{ person['id'] }}"
                  itemprop="url"
                  data-type="{{ person['type'] }}"
-                 >{{ person['name'] }}</a>
+                 >{{ person['name']|e }}</a>
             </span>{% if not loop.last %}, {% endif %}
           {% else %}
             <span itemprop="{{ person_type }}"
@@ -768,7 +762,7 @@ HTML_DOCUMENT = """\
               <a href="{{ person['id'] }}"
                  itemprop="url"
                  data-type="{{ person['type'] }}"
-                 >{{ person['name'] }}</a>
+                 >{{ person['name']|e }}</a>
             </span>{% if not loop.last %}, {% endif %}
           {% else %}
             <span itemprop="{{ person_type }}"
@@ -797,7 +791,7 @@ HTML_DOCUMENT = """\
               <a href="{{ person['id'] }}"
                  itemprop="url"
                  data-type="{{ person['type'] }}"
-                 >{{ person['name'] }}</a>
+                 >{{ person['name']|e }}</a>
             </span>{% if not loop.last %}, {% endif %}
           {% else %}
             <span itemprop="{{ person_type }}"
@@ -846,7 +840,7 @@ HTML_DOCUMENT = """\
                 <a href="{{ person['id'] }}"
                    itemprop="url"
                    data-type="{{ person['type'] }}"
-                   >{{ person['name'] }}</a>
+                   >{{ person['name']|e }}</a>
               </span>{% if not loop.last %}, {% endif %}
             {% else %}
               <span itemprop="{{ person_type }}"
@@ -861,7 +855,7 @@ HTML_DOCUMENT = """\
           <a href="{{ metadata['license_url'] }}"
              itemprop="dc:license,lrmi:useRightsURL"
              data-type="license"
-             >{{ metadata['license_text'] }}</a>
+             >{{ metadata['license_text']|e }}</a>
         </p>
       </div>
       {%- endif %}
