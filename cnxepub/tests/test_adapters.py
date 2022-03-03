@@ -704,6 +704,8 @@ class HTMLAdaptationTestCase(unittest.TestCase):
     <body>
         <h1>Lemon Pie</h1>
         <p>Yum.</p>
+        <p id="dupe">Yum.</p>
+        <p id="dupe">Yum.</p>
     </body>
 </html>'''), metadata=metadata))
         binder.append(DocumentPointer('content-ident-hash', metadata={
@@ -720,7 +722,9 @@ class HTMLAdaptationTestCase(unittest.TestCase):
 <body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="page_apple-pie"><p>Apple Pie</p>
   </div></body>''')
         self.assertEqual(adapted_binder[1].content.decode('utf-8'), '''\
-<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="page_lemon-pie"><h1>Lemon Pie</h1>\n        \n        <p>Yum.</p>\n    \n    \n  </div></body>''')
+<body xmlns="http://www.w3.org/1999/xhtml"><div data-type="page" id="page_lemon-pie">\
+<h1>Lemon Pie</h1>\n        \n        <p>Yum.</p>\n        \n        <p id="dupe">Yum.</p>\n        \n        <p id="dupe0">Yum.</p>\n    \n    \n  \
+</div></body>'''.format(0, 0))
         self.assertEqual(adapted_binder[2].id, 'page_content-ident-hash')
         self.assertEqual(adapted_binder[2].metadata['title'],
                          'Test Document Pointer')
