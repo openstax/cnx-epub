@@ -69,7 +69,7 @@ class DocumentSummaryFormatter(object):
         self.document = document
 
     def __unicode__(self):
-        return self.__bytes__().decode('utf-8')
+        return self.__bytes__().decode('utf-8')  # pragma: no cover
 
     def __str__(self):
         if IS_PY3:
@@ -165,7 +165,7 @@ class HTMLFormatter(object):
             }
 
     def __unicode__(self):
-        return self.__bytes().decode('utf-8')
+        return self.__bytes().decode('utf-8')  # pragma: no cover
 
     def __str__(self):
         if IS_PY3:
@@ -275,7 +275,7 @@ class SingleHTMLFormatter(object):
                 # While rewriting, account for page IDs being prefixed with
                 # "page_" earlier when building the binder so the links work
                 if link_uuid in page_uuids:
-                    if '#' in href:
+                    if '#' in href:  # pragma: no cover
                         fragment = href[href.index('#'):].replace('#', '_')
                         link.set('href', '#auto_{}{}'.format(
                             page_uuids[link_uuid], fragment))
@@ -475,7 +475,7 @@ def exercise_callback_factory(match, url_template,
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
         exercise = {}
-        if mc_client:
+        if mc_client:  # pragma: no cover
             mc_key = item_code + (token or '')
             exercise = json.loads(mc_client.get(mc_key) or '{}')
 
@@ -489,7 +489,7 @@ def exercise_callback_factory(match, url_template,
                 # grab the json exercise, run it through Jinja2 template,
                 # replace element w/ it
                 exercise = res.json()
-                if mc_client:
+                if mc_client:  # pragma: no cover
                     mc_client.set(mc_key, res.text)
 
         if exercise['total_count'] == 0:
