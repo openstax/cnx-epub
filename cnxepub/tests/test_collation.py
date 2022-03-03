@@ -53,12 +53,12 @@ class ReconstituteTestCase(unittest.TestCase):
                 'id': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2@1.3',
                 'contents': [{
                     'shortId': None,
-                    'id': 'apple@1.3',
+                    'id': 'page_apple@1.3',
                     'title': 'Apple'
                     },
                     {
                     'shortId': None,
-                    'id': 'lemon@1.3',
+                    'id': 'page_lemon@1.3',
                     'title': u'<span>1.1</span> <span>|</span> <span>レモン</span>'
                     },
                     {
@@ -66,7 +66,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     'id': 'b1f13b61-8c95-5fbe-9112-46400b6dc8de@1.3',
                     'contents': [{
                         'shortId': None,
-                        'id': 'lemon@1.3',
+                        'id': 'page_lemon@1.3',
                         'title': 'Lemon'
                         }
                         ],
@@ -77,7 +77,7 @@ class ReconstituteTestCase(unittest.TestCase):
                     },
                     {
                         'shortId': None,
-                        'id': 'chocolate@1.3',
+                        'id': 'page_chocolate@1.3',
                         'title': u'チョコレート'
                     },
                     {
@@ -113,6 +113,8 @@ class ReconstituteTestCase(unittest.TestCase):
             u'derived_from_title': None,
             u'derived_from_uri': None,
             u'version': None,
+            u'canonical_book_uuid': None,
+            u'slug': None,
             }
 
         fruity = desserts[0]
@@ -124,6 +126,8 @@ class ReconstituteTestCase(unittest.TestCase):
         metadata = base_metadata.copy()
         metadata['title'] = 'Apple'
         metadata['version'] = '1.3'
+        metadata['revised'] = '2013/03/05 09:35:24 -0500'
+        metadata['canonical_book_uuid'] = 'ea4244ce-dd9c-4166-9c97-acae5faf0ba1'
         apple_metadata = apple.metadata.copy()
         summary = etree.fromstring(apple_metadata.pop('summary'))
         self.assertEqual('{http://www.w3.org/1999/xhtml}p', summary.tag)
@@ -135,6 +139,7 @@ class ReconstituteTestCase(unittest.TestCase):
         metadata = base_metadata.copy()
         metadata['title'] = 'Lemon'
         metadata['version'] = '1.3'
+        metadata['revised'] = '2013/03/05 09:35:24 -0500'
         apple_metadata = apple.metadata.copy()
         lemon_metadata = lemon.metadata.copy()
         summary = etree.fromstring(lemon_metadata.pop('summary'))
@@ -157,6 +162,7 @@ class ReconstituteTestCase(unittest.TestCase):
         metadata = base_metadata.copy()
         metadata['title'] = u'チョコレート'
         metadata['version'] = '1.3'
+        metadata['revised'] = '2013/03/05 09:35:24 -0500'
         apple_metadata = apple.metadata.copy()
         self.assertEqual(metadata, chocolate_metadata)
 
@@ -169,6 +175,7 @@ class ReconstituteTestCase(unittest.TestCase):
         metadata = base_metadata.copy()
         metadata['title'] = 'Extra Stuff'
         metadata['version'] = '1.3'
+        metadata['revised'] = '2013/03/05 09:35:24 -0500'
         self.assertEqual(metadata, extra_metadata)
 
 

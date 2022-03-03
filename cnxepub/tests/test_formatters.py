@@ -23,7 +23,7 @@ from lxml import etree
 
 from ..testing import (TEST_DATA_DIR, unescape,
                        _get_memcache_client, IS_MEMCACHE_ENABLED)
-from ..formatters import exercise_callback_factory
+from ..formatters import exercise_callback_factory, render_exercise
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -173,7 +173,7 @@ EXERCISE_JSON = {
          "stimulus_html": "",
          "questions": [
             {
-               "stimulus_html": "",
+               "stimulus_html": "Here's an excerpt please read",
                "formats": [
                   "free-response",
                   "multiple-choice"
@@ -219,9 +219,11 @@ EXERCISE_JSON = {
             "context-cnxmod:ea44b8fa-e7a2-4360-ad34-ac081bcf104f",
             "exid:apbio-ch03-ex002",
             "context-cnxmod:85d6c500-9860-42e8-853a-e6940a50224f",
+            "context-cnxmod:lemon",
             "book:stax-apbio",
             "filter-type:import:hs",
-            "type:conceptual-or-recall"
+            "type:conceptual-or-recall",
+            "context-cnxfeature:link-to-feature-2",
          ],
          "derived_from": [],
          "version": 3
@@ -335,8 +337,8 @@ class DocumentContentFormatterTestCase(unittest.TestCase):
                             metadata=metadata)
         html = str(DocumentContentFormatter(document))
         expected_html = u"""\
-<html xmlns="http://www.w3.org/1999/xhtml">\
-<body><p>コンテンツ...</p></body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <body><p>コンテンツ...</p></body>
 </html>
 """
         self.assertEqual(expected_html, unescape(html))
@@ -475,6 +477,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
 
         # Build test document.
         metadata = self.base_metadata.copy()
+        metadata['canonical_book_uuid'] = 'ea4244ce-dd9c-4166-9c97-acae5faf0ba1'
         document = Document(
             metadata['title'],
             io.BytesIO(u'<body><p>コンテンツ...</p></body>'.encode('utf-8')),
@@ -502,6 +505,72 @@ class HTMLFormatterTestCase(unittest.TestCase):
         self.assertEqual(
             metadata['revised'],
             self.xpath('//xhtml:meta[@itemprop="dateModified"]/@content')[0])
+
+        self.assertEqual(
+            metadata['revised'],
+            self.xpath('.//xhtml:*[@data-type="revised"]/@data-value')[0])
+
+        self.assertEqual(
+            metadata['canonical_book_uuid'],
+            self.xpath('.//xhtml:*[@data-type="canonical-book-uuid"]/@data-value')[0]
+        )
+
+        self.assertEqual(
+            metadata['language'],
+            self.xpath('//xhtml:html/@lang')[0]
+        )
+
+        self.assertEqual(
+            metadata['language'],
+            self.xpath('//xhtml:meta[@itemprop="inLanguage"]/@content')[0]
+        )
+
+    def test_document_nolang(self):
+        from ..models import Document
+        from ..formatters import HTMLFormatter
+
+        # Build test document.
+        metadata = self.base_metadata.copy()
+        metadata['language'] = None
+        document = Document(
+            metadata['title'],
+            io.BytesIO(b'<body><p>Hello.</p></body>'),
+            metadata=metadata)
+
+        html = str(HTMLFormatter(document))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:html/@lang'))
+        )
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:meta[@itemprop="inLanguage"]/@content'))
+        )
+
+    def test_document_nocreated(self):
+        from ..models import Document
+        from ..formatters import HTMLFormatter
+
+        # Build test document.
+        metadata = self.base_metadata.copy()
+        metadata['created'] = None
+        document = Document(
+            metadata['title'],
+            io.BytesIO(b'<body><p>Hello.</p></body>'),
+            metadata=metadata)
+
+        html = str(HTMLFormatter(document))
+        html = unescape(html)
+        self.root = etree.fromstring(html.encode('utf-8'))
+
+        self.assertEqual(
+            0,
+            len(self.xpath('//xhtml:meta[@itemprop="dateCreated"]/@content'))
+        )
 
     def test_document_pointer(self):
         from ..models import DocumentPointer
@@ -621,12 +690,9 @@ class HTMLFormatterTestCase(unittest.TestCase):
         self.assertEqual(u'entrée', lis[0][0].text)
 
     def test_document_auto_generate_ids(self):
-        import random
-
         from ..models import Document
         from ..formatters import HTMLFormatter
 
-        random.seed(1)
         content = """<body>\
 <div class="title" id="title">Preface</div>
 <p class="para" id="my-id">This thing and <em>that</em> thing.</p>
@@ -641,7 +707,6 @@ class HTMLFormatterTestCase(unittest.TestCase):
 <p class="para"><a href="#auto_{id}_title">Link</a> to title</p>\
 """.format(id=page_one_id)
 
-        random.seed(1)
         document = Document(page_one_id, content)
         formatted = str(HTMLFormatter(document, generate_ids=True))
         self.assertIn(expected_content, formatted)
@@ -697,6 +762,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Apple'
+        metadata['canonical_book_uuid'] = 'ea4244ce-dd9c-4166-9c97-acae5faf0ba1'
         contents = io.BytesIO(b"""\
 <body>
 <h1>Apple Desserts</h1>
@@ -717,6 +783,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 <body class="fruity">
 <h1>Lemon Desserts</h1>
 <p>Yum! <img src="/resources/1x1.jpg" /></p>
+<div id="link-to-feature-2"></div>
 <div data-type="exercise">
     <a href="#ost/api/ex/apbio-ch03-ex002">[link]</a>
 </div>
@@ -776,15 +843,13 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                       'license_url': 'http://creativecommons.org/licenses/by/4.0/',
                       'license_text': 'CC-By 4.0',
                       'cnx-archive-uri': '00000000-0000-0000-0000-000000000000@1.3',
-                      'language': 'en'},
+                      'language': 'en',
+                      'slug': 'desserts'},
             resources=[cover_png])
 
     def test_binder(self):
-        import random
-
         from ..formatters import SingleHTMLFormatter
 
-        random.seed(1)
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-single-page.xhtml')
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
@@ -805,36 +870,32 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         os.remove(out_path)
 
     def test_str_unicode_bytes(self):
-        import random
-
         from ..formatters import SingleHTMLFormatter
 
-        random.seed(1)
         html = bytes(SingleHTMLFormatter(self.desserts))
         if IS_PY3:
-            random.seed(1)
             self.assertMultiLineEqual(
                 html.decode('utf-8'), str(SingleHTMLFormatter(self.desserts)))
         else:
-            random.seed(1)
             self.assertMultiLineEqual(
                 html, str(SingleHTMLFormatter(self.desserts)))
-            random.seed(1)
             self.assertMultiLineEqual(
                 html,
                 unicode(SingleHTMLFormatter(self.desserts)).encode('utf-8'))
 
     @mock.patch('requests.get', mocked_requests_get)
     def test_includes_callback(self):
-        import random
-
         from ..formatters import SingleHTMLFormatter
 
-        def _upcase_text(elem):
+        def _upcase_text(elem, page_uuids=None):
             if elem.text:
                 elem.text = elem.text.upper()
+            for child in elem.iterdescendants():
+                if child.text:
+                    child.text = child.text.upper()
+                if child.tail:
+                    child.tail = child.tail.upper()
 
-        random.seed(1)
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-includes.xhtml')
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
@@ -854,6 +915,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         includes = [exercise_callback_factory(exercise_match,
                                               exercise_url,
                                               mc_client),
+                    ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
         actual = SingleHTMLFormatter(self.desserts,
@@ -877,15 +939,17 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
     @mock.patch('requests.post', mocked_requests_post)
     @mock.patch('requests.get', mocked_requests_get)
     def test_includes_token_callback(self):
-        import random
-
         from ..formatters import SingleHTMLFormatter
 
-        def _upcase_text(elem):
+        def _upcase_text(elem, page_uuids=None):
             if elem.text:
                 elem.text = elem.text.upper()
+            for child in elem.iterdescendants():
+                if child.text:
+                    child.text = child.text.upper()
+                if child.tail:
+                    child.tail = child.tail.upper()
 
-        random.seed(1)
         page_path = os.path.join(TEST_DATA_DIR, 'desserts-includes-token.xhtml')
         if not IS_PY3:
             page_path = page_path.replace('.xhtml', '-py2.xhtml')
@@ -908,6 +972,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                                               mc_client,
                                               exercise_token,
                                               mathml_url),
+                    ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
         actual = SingleHTMLFormatter(self.desserts,
@@ -989,6 +1054,7 @@ class ExerciseCallbackTestCase(unittest.TestCase):
             'items': [{
                 'questions': [{
                     'stem_html': tex_math,
+                    'formats': []
                 }],
             }]}
         requests_get.return_value = get_resp
@@ -1006,7 +1072,7 @@ class ExerciseCallbackTestCase(unittest.TestCase):
                  'source': mathml}]}
         requests_post.return_value = post_resp
 
-        self.assertRaises(etree.XMLSyntaxError, cb, node.getchildren()[0])
+        self.assertRaises(etree.XMLSyntaxError, cb, node.getchildren()[0], [])
         self.assertEqual(logger.error.call_args[0][0].strip(), u"""\
 Error converting math in book-ch01-ex001:
   math: 1\\ \\text{kcal}
@@ -1016,3 +1082,574 @@ Error converting math in book-ch01-ex001:
   <mtext>&nbsp;</mtext>
   <mtext>kcal</mtext>
 </math>""")
+
+
+class ExerciseAnnotationTestCase(unittest.TestCase):
+    def format_html(self, html):
+        return xmlpp(html.encode('utf-8')).split(b'\n')
+
+    def setUp(self):
+        from ..formatters import exercise_callback_factory
+        _, cb = exercise_callback_factory(
+            '#ost/api/ex/',
+            'https://exercises/{itemCode}'
+        )
+
+        self.exercise = etree.fromstring("""
+<div>
+    <div data-type="page" id="page_uuid1">
+        <div id="auto_uuid1_feature-1"></div>
+        <a href="#ost/api/ex/book-ch01-ex001"></a>
+    </div>
+    <div data-type="page" id="page_uuid2">
+        <div id="auto_uuid2_feature-2"></div>
+    </div>
+</div>""")
+        self.annotator = cb
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_valid(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxfeature:feature-1",
+                    "context-cnxmod:uuid1"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        self.annotator(self.exercise.find('.//a'), ['uuid1'])
+        expected_content = self.format_html("""
+<div>
+    <div data-type="page" id="page_uuid1">
+        <div id="auto_uuid1_feature-1"></div>
+        <div
+            data-type="injected-exercise"
+            data-injected-from-nickname=""
+            data-injected-from-version=""
+            data-injected-from-url="https://exercises/book-ch01-ex001"
+            data-tags="context-cnxfeature:feature-1 context-cnxmod:uuid1"
+            data-is-vocab="">
+            <div
+                data-type="exercise-context"
+                data-context-module="uuid1"
+                data-context-feature="feature-1">
+                <a class="autogenerated-content"
+                    href="#auto_uuid1_feature-1">[link]</a>
+            </div>
+        </div>
+    </div>
+    <div data-type="page" id="page_uuid2">
+        <div id="auto_uuid2_feature-2"></div>
+    </div>
+</div>""")
+        self.assertEqual(expected_content,
+                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_notags(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{}]
+        }
+        requests_get.return_value = get_resp
+        self.annotator(self.exercise.find('.//a'), ['uuid1'])
+        expected_content = self.format_html("""
+<div>
+    <div data-type="page" id="page_uuid1">
+        <div id="auto_uuid1_feature-1"></div>
+        <div
+            data-type="injected-exercise"
+            data-injected-from-nickname=""
+            data-injected-from-version=""
+            data-injected-from-url="https://exercises/book-ch01-ex001"
+            data-tags=""
+            data-is-vocab="">
+        </div>
+    </div>
+    <div data-type="page" id="page_uuid2">
+        <div id="auto_uuid2_feature-2"></div>
+    </div>
+</div>""")
+        self.assertEqual(expected_content,
+                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_nofeature(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxmod:uuid1"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        self.annotator(self.exercise.find('.//a'), ['uuid1'])
+        expected_content = self.format_html("""
+<div>
+    <div data-type="page" id="page_uuid1">
+        <div id="auto_uuid1_feature-1"></div>
+        <div
+            data-type="injected-exercise"
+            data-injected-from-nickname=""
+            data-injected-from-version=""
+            data-injected-from-url="https://exercises/book-ch01-ex001"
+            data-tags="context-cnxmod:uuid1"
+            data-is-vocab="">
+        </div>
+    </div>
+    <div data-type="page" id="page_uuid2">
+        <div id="auto_uuid2_feature-2"></div>
+    </div>
+</div>""")
+        self.assertEqual(expected_content,
+                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_nomodule(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxfeature:feature-donotexist"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        with self.assertRaises(Exception) as error:
+            self.annotator(self.exercise.find('.//a'), ['uuid1'])
+        self.assertEqual(
+            str(error.exception),
+            'No candidate uuid for exercise feature feature-donotexist '
+            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+        )
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_badfeature(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxfeature:",
+                    "context-cnxmod:uuid1"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        self.annotator(self.exercise.find('.//a'), ['uuid1'])
+        expected_content = self.format_html("""
+<div>
+    <div data-type="page" id="page_uuid1">
+        <div id="auto_uuid1_feature-1"></div>
+        <div
+            data-type="injected-exercise"
+            data-injected-from-nickname=""
+            data-injected-from-version=""
+            data-injected-from-url="https://exercises/book-ch01-ex001"
+            data-tags="context-cnxfeature: context-cnxmod:uuid1"
+            data-is-vocab="">
+        </div>
+    </div>
+    <div data-type="page" id="page_uuid2">
+        <div id="auto_uuid2_feature-2"></div>
+    </div>
+</div>""")
+        self.assertEqual(expected_content,
+                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_multimod_select_parent(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxfeature:feature-1",
+                    "context-cnxmod:uuid1",
+                    "context-cnxmod:uuid2"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        self.annotator(self.exercise.find('.//a'), ['uuid1', 'uuid2'])
+        expected_content = self.format_html("""
+<div>
+    <div data-type="page" id="page_uuid1">
+        <div id="auto_uuid1_feature-1"></div>
+        <div
+            data-type="injected-exercise"
+            data-injected-from-nickname=""
+            data-injected-from-version=""
+            data-injected-from-url="https://exercises/book-ch01-ex001"
+            data-tags="context-cnxfeature:feature-1 context-cnxmod:uuid1 context-cnxmod:uuid2"
+            data-is-vocab="">
+            <div data-type="exercise-context" data-context-module="uuid1" data-context-feature="feature-1">
+                <a class="autogenerated-content" href="#auto_uuid1_feature-1">[link]</a>
+            </div>
+        </div>
+    </div>
+    <div data-type="page" id="page_uuid2">
+        <div id="auto_uuid2_feature-2"></div>
+    </div>
+</div>""")
+        self.assertEqual(expected_content,
+                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_multimod_select_otherpage(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxfeature:feature-2",
+                    "context-cnxmod:uuid3",
+                    "context-cnxmod:uuid2"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        self.annotator(self.exercise.find('.//a'), ['uuid1', 'uuid2'])
+        expected_content = self.format_html("""
+<div>
+    <div data-type="page" id="page_uuid1">
+        <div id="auto_uuid1_feature-1"></div>
+        <div
+            data-type="injected-exercise"
+            data-injected-from-nickname=""
+            data-injected-from-version=""
+            data-injected-from-url="https://exercises/book-ch01-ex001"
+            data-tags="context-cnxfeature:feature-2 context-cnxmod:uuid3 context-cnxmod:uuid2"
+            data-is-vocab="">
+            <div data-type="exercise-context" data-context-module="uuid2" data-context-feature="feature-2">
+                <a class="autogenerated-content" href="#auto_uuid2_feature-2">[link]</a>
+            </div>
+        </div>
+    </div>
+    <div data-type="page" id="page_uuid2">
+        <div id="auto_uuid2_feature-2"></div>
+    </div>
+</div>""")
+        self.assertEqual(expected_content,
+                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_multimod_invalid_otherpage(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxfeature:feature-donotexist",
+                    "context-cnxmod:uuid2"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        with self.assertRaises(Exception) as error:
+            self.annotator(self.exercise.find('.//a'), ['uuid1', 'uuid2'])
+        self.assertEqual(
+            str(error.exception),
+            'Feature feature-donotexist not in uuid2 '
+            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+        )
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_multimod_novalid(self, requests_get):
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxfeature:feature-donotexist",
+                    "context-cnxmod:uuidX",
+                    "context-cnxmod:uuidY"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        with self.assertRaises(Exception) as error:
+            self.annotator(self.exercise.find('.//a'), ['uuid1', 'uuid2'])
+        self.assertEqual(
+            str(error.exception),
+            'No candidate uuid for exercise feature feature-donotexist '
+            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+        )
+
+    @mock.patch('cnxepub.formatters.requests.get')
+    def test_annotate_autodetectparent(self, requests_get):
+        # There may be cases where the feature exists on the parent page for
+        # an exercise, but that page isn't in the tag data. We should be smart
+        # enough to pick it anyways even if the tagged module exists in the
+        # book
+        get_resp = mock.Mock()
+        get_resp.json.return_value = {
+            'total_count': 1,
+            'items': [{
+                'tags': [
+                    "context-cnxfeature:feature-1",
+                    "context-cnxmod:uuid2"
+                ]
+            }]
+        }
+        requests_get.return_value = get_resp
+        self.annotator(self.exercise.find('.//a'), ['uuid2'])
+        expected_content = self.format_html("""
+<div>
+    <div data-type="page" id="page_uuid1">
+        <div id="auto_uuid1_feature-1"></div>
+        <div
+            data-type="injected-exercise"
+            data-injected-from-nickname=""
+            data-injected-from-version=""
+            data-injected-from-url="https://exercises/book-ch01-ex001"
+            data-tags="context-cnxfeature:feature-1 context-cnxmod:uuid2"
+            data-is-vocab="">
+            <div data-type="exercise-context" data-context-module="uuid1" data-context-feature="feature-1">
+                <a class="autogenerated-content" href="#auto_uuid1_feature-1">[link]</a>
+            </div>
+        </div>
+    </div>
+    <div data-type="page" id="page_uuid2">
+        <div id="auto_uuid2_feature-2"></div>
+    </div>
+</div>""")
+        self.assertEqual(expected_content,
+                         xmlpp(etree.tostring(self.exercise)).split(b'\n'))
+
+
+class ExerciseTemplateTestCase(unittest.TestCase):
+    def format_html(self, html):
+        return xmlpp(html.encode('utf-8')).split(b'\n')
+
+    def test_renders_full_set(self):
+        # Test case for an exercise with a full set of features
+        exercise = {
+            "total_count": 1,
+            "items": [
+                {
+                    "tags": [
+                        "type:practice",
+                        "all",
+                        "another-test-tag"
+                    ],
+                    "version": 3,
+                    "nickname": "contmath98",
+                    "url": "test-url",          # Added in formatters
+                    "required_context": {      # Added in formatters
+                        "module": "test-module-123",
+                        "feature": "test-feature-abc",
+                        "ref": "auto_123_abc-test"
+                    },
+                    "solutions_are_public": True,
+                    "derived_from": [],
+                    "is_vocab": False,
+                    "stimulus_html": "I am the intro.\n",
+                    "questions": [
+                        {
+                            "id": 176664,
+                            "is_answer_order_important": False,
+                            "stimulus_html": "",
+                            "stem_html": "I'm a question stem for question 1. A vinyl record dealer is trying to price a large collection \n",
+                            "answers": [],
+                            "hints": [],
+                            "formats": [
+                                "free-response"
+                            ],
+                            "combo_choices": [],
+                            "collaborator_solutions": [
+                                {
+                                    "images": [],
+                                    "solution_type": "detailed",
+                                    "content_html": "I'm a dtailed solution for question 1 Randomization is being used; systematic random sample"
+                                }
+                            ],
+                            "community_solutions": []
+                        },
+                        {
+                            "id": 176665,
+                            "is_answer_order_important": False,
+                            "stimulus_html": "",
+                            "stem_html": "I'm a question stem for question 2 A court clerk is charged with identifying one hundred people for a jury pool.\n",
+                            "answers": [],
+                            "hints": [],
+                            "formats": [
+                                "free-response"
+                            ],
+                            "combo_choices": [],
+                            "collaborator_solutions": [
+                                {
+                                    "images": [],
+                                    "solution_type": "another-solution-type",
+                                    "content_html": "I'm a solution for question 2 Randomization is being used; simple random sample\n"
+                                }
+                            ],
+                            "community_solutions": [
+                                {
+                                    "images": [],
+                                    "solution_type": "detailed",
+                                    "content_html": "test community solution"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 176660,       # multiple choice
+                            "is_answer_order_important": True,
+                            "formats": [
+                                "multiple-choice",
+                                "test-format"
+                            ],
+                            "stimulus_html": "i'm a question stimulus\n",
+                            "stem_html": "Testing a multiple choice question for Kendra Hi Kendra.  I'm a question stem right here.",
+                            "answers": [
+                                {
+                                    "id": 668496,
+                                    "content_html": "mean - i'm distractor",
+                                    "correctness": "0.0",
+                                    "feedback_html": "choice level feedback"
+                                },
+                                {
+                                    "id": 668497,
+                                    "content_html": "median - distractor",
+                                    "correctness": "0.0",
+                                    "feedback_html": ""
+                                },
+                                {
+                                    "id": 668498,
+                                    "content_html": "mode - correct answer",
+                                    "correctness": "1.0",
+                                    "feedback_html": "choice level feedback"
+                                },
+                                {
+                                    "id": 668499,
+                                    "content_html": "all of the above - distractor",
+                                    "correctness": "0.0",
+                                    "feedback_html": "choice level feedback"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+        html = self.format_html(render_exercise(exercise))
+        expected = self.format_html(
+            '''<div
+                data-type="injected-exercise"
+                data-injected-from-nickname="contmath98"
+                data-injected-from-version="3"
+                data-injected-from-url="test-url"
+                data-tags="type:practice all another-test-tag"
+                data-is-vocab="false"
+            >
+                <div data-type="exercise-context"
+                    data-context-module="test-module-123"
+                    data-context-feature="test-feature-abc">
+                    <a class="autogenerated-content"
+                    href="#auto_123_abc-test">[link]</a>
+                </div>
+                <div data-type="exercise-stimulus">I am the intro.</div>
+                <div data-type="exercise-question" data-is-answer-order-important="false" data-formats="free-response" data-id="176664">
+                    <div data-type="question-stem">I'm a question stem for question 1. A vinyl record dealer is trying to price a large collection</div>
+                    <div data-type="question-solution" data-solution-source="collaborator" data-solution-type="detailed">
+                        I'm a dtailed solution for question 1 Randomization is being used; systematic random sample
+                    </div>
+                </div>
+                <div data-type="exercise-question" data-is-answer-order-important="false" data-formats="free-response" data-id="176665">
+                    <div data-type="question-stem">I'm a question stem for question 2 A court clerk is charged with identifying one hundred people for a jury pool.</div>
+                    <div data-type="question-solution" data-solution-source="collaborator" data-solution-type="another-solution-type">
+                        I'm a solution for question 2 Randomization is being used; simple random sample
+                    </div>
+                    <div data-type="question-solution" data-solution-source="community" data-solution-type="detailed">
+                        test community solution
+                    </div>
+                </div>
+                <div data-type="exercise-question" data-is-answer-order-important="true" data-formats="multiple-choice test-format" data-id="176660">
+                    <div data-type="question-stimulus">i'm a question stimulus</div>
+                    <div data-type="question-stem">Testing a multiple choice question for Kendra Hi Kendra.  I'm a question stem right here.</div>
+                    <ol data-type="question-answers" type="a">
+                        <li data-type="question-answer" data-correctness="0.0" data-id="668496">
+                            <div data-type="answer-content">mean - i'm distractor</div>
+                            <div data-type="answer-feedback">choice level feedback</div>
+                        </li>
+                        <li data-type="question-answer" data-correctness="0.0" data-id="668497">
+                            <div data-type="answer-content">median - distractor</div>
+                        </li>
+                        <li data-type="question-answer" data-correctness="1.0" data-id="668498">
+                            <div data-type="answer-content">mode - correct answer</div>
+                            <div data-type="answer-feedback">choice level feedback</div>
+                        </li>
+                        <li data-type="question-answer" data-correctness="0.0" data-id="668499">
+                            <div data-type="answer-content">all of the above - distractor</div>
+                            <div data-type="answer-feedback">choice level feedback</div>
+                        </li>
+                    </ol>
+                </div>
+            </div>''')
+        assert html == expected
+
+    def test_renders_minimum_set(self):
+        # Test case for an exercise with a full set of features
+        exercise = {
+            "total_count": 1,
+            "items": [
+                {
+                    "tags": [
+                        "type:practice",
+                        "all"
+                    ],
+                    "version": 3,
+                    "nickname": "contmath98",
+                    "url": "test-url",  # Added in formatters
+                    "solutions_are_public": True,
+                    "is_vocab": False,
+                    "stimulus_html": "",
+                    "questions": [
+                        {
+                            "stem_html": "question stem"
+                        }
+                    ]
+                }
+            ]
+        }
+        html = self.format_html(render_exercise(exercise))
+        expected = self.format_html(
+            '''<div
+                data-type="injected-exercise"
+                data-injected-from-nickname="contmath98"
+                data-injected-from-version="3"
+                data-injected-from-url="test-url"
+                data-tags="type:practice all"
+                data-is-vocab="false"
+            >
+                <div data-type="exercise-question" data-is-answer-order-important="" data-formats="">
+                    <div data-type="question-stem">question stem</div>
+                </div>
+            </div>''')
+        assert html == expected
+
+    def test_render_with_nonsingular_exercise(self):
+        exercise = {
+            "total_count": 1,
+            "items": [
+                {
+                    "item1": "abc"
+                },
+                {
+                    "item2": "def"
+                }
+            ]
+        }
+        with self.assertRaises(Exception) as error:
+            render_exercise(exercise)
+        self.assertEqual(
+            str(error.exception),
+            'Exercise "items" array is nonsingular'
+        )

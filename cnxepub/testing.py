@@ -6,10 +6,8 @@
 # See LICENCE.txt for details.
 # ###
 from contextlib import contextmanager
-try:
-    import html.parser as HTMLParser
-except:
-    import HTMLParser
+
+import sys
 from io import StringIO
 import memcache
 import os
@@ -18,6 +16,17 @@ import shutil
 import sys
 import unittest
 import zipfile
+
+# HTMLParser is deprecated in later versions
+if sys.version_info[0] >= 3 and sys.version_info[1] >= 4:
+    import html
+    parser = html
+else:
+    try:
+        import html.parser as HTMLParser
+    except:
+        import HTMLParser
+    parser = HTMLParser.HTMLParser()
 
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -71,10 +80,9 @@ def captured_output():
 
 
 def unescape(html):
-    p = HTMLParser.HTMLParser()
     if isinstance(html, bytes):
         html = html.decode('utf-8')
-    return p.unescape(html)
+    return parser.unescape(html)
 
 
 def is_memcache_enabled():

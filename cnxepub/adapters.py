@@ -13,6 +13,7 @@ import logging
 import mimetypes
 import os
 import uuid
+import re
 
 from copy import deepcopy
 
@@ -377,23 +378,37 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
 
         content = content_to_etree(page.content)
 
-        new_ids = []
+        new_ids = set()
+        suffix = 0
         for element in content.xpath('.//*[@id]'):
             id_val = element.get('id')
             if id_val.startswith('auto_'):
-                new_val = id_val.split('_', 2)[-1]
+                # It's possible that an auto_ prefix was injected using a page
+                # ID that incorporated the page_ prefix. We'll remove that
+                # first if it exists so the auto prefixing fix works whether
+                # it is present or not.
+                new_val = re.sub(r'^auto_page_', 'auto_', id_val)
+
+                # We max split with two to avoid breaking up ID values that
+                # may have originally included '_' and only undo the auto_{id}_
+                # prefixing injected by a formatter
+                new_val = new_val.split('_', 2)[-1]
                 # Did content from different pages w/ same original id
                 # get moved to the same page?
                 if new_val in new_ids:
-                    suffix = 0
                     while (new_val + str(suffix)) in new_ids:
                         suffix += 1
                     new_val = new_val + str(suffix)
             else:
                 new_val = id_val
-            new_ids.append(new_val)
+            new_ids.add(new_val)
             element.set('id', new_val)
-            id_map['#{}'.format(id_val)] = (page, new_val)
+            if id_val.startswith('page_'):
+                # We want to map any references to the generated page ID
+                # directly to the page
+                id_map['#{}'.format(id_val)] = (page, '')
+            else:
+                id_map['#{}'.format(id_val)] = (page, new_val)
 
         id_map['#{}'.format(page.id)] = (page, '')
         if page.id and '@' in page.id:

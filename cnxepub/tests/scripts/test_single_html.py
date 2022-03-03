@@ -74,9 +74,6 @@ class SingleHTMLTestCase(unittest.TestCase):
             self.xpath('xhtml:head/xhtml:script/@src'))
 
     def test_w_html_out(self):
-        import random
-        random.seed(1)
-
         html_path = os.path.join(
             TEST_DATA_DIR, 'book-single-page-actual.xhtml')
         if not IS_PY3:

@@ -18,9 +18,6 @@ To install::
 Running tests
 -------------
 
-.. image:: https://travis-ci.org/openstax/cnx-epub.png?branch=master
-   :target: https://travis-ci.org/openstax/cnx-epub
-
 .. image:: https://codecov.io/gh/openstax/cnx-epub/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/openstax/cnx-epub
   

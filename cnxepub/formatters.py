@@ -9,7 +9,6 @@ from __future__ import unicode_literals
 import hashlib
 import json
 import logging
-import random
 import sys
 from io import BytesIO
 
@@ -104,21 +103,22 @@ class HTMLFormatter(object):
         existing_ids = content.xpath('//*/@id')
         xpath = './/*[@id]'
 
-        mapping = {}  # old id -> new id
-
+        old_id_to_new_id = {}
+        # Step 1: prefix all ids with the document so they are unique when all the documents are combined
         for node in content.xpath(xpath, namespaces=HTML_DOCUMENT_NAMESPACES):
             old_id = node.attrib.get('id')
             document_id = document.id.replace('_', '')
             new_id = 'auto_{}_{}'.format(document_id, old_id)
             node.attrib['id'] = new_id
-            mapping[old_id] = new_id
+            old_id_to_new_id[old_id] = new_id
             existing_ids.append(new_id)
 
+        # Step 2: redirect links to elements with now prefixed ids
         for a in content.xpath('//a[@href]|//xhtml:a[@href]',
                                namespaces=HTML_DOCUMENT_NAMESPACES):
             href = a.attrib['href']
-            if href.startswith('#') and href[1:] in mapping:
-                a.attrib['href'] = '#{}'.format(mapping[href[1:]])
+            if href.startswith('#') and href[1:] in old_id_to_new_id:
+                a.attrib['href'] = '#{}'.format(old_id_to_new_id[href[1:]])
 
     @property
     def _content(self):
@@ -214,9 +214,16 @@ class SingleHTMLFormatter(object):
     def _build_binder(self, binder, elem):
         binder_type = self.get_node_type(binder)
         for node in binder:
-            attrs = {'data-type': self.get_node_type(node, binder_type)}
+            node_type = self.get_node_type(node, binder_type)
+            attrs = {'data-type': node_type}
             if node.id:
-                attrs['id'] = node.id
+                # Page IDs may start with a number when they're UUIDs, so we
+                # prefix the value if it's not already there
+                # (https://github.com/openstax/cnx/issues/1514)
+                id_prefix = ''
+                if node_type == "page" and not node.id.startswith('page_'):
+                    id_prefix = "page_"
+                attrs['id'] = "%s%s" % (id_prefix, node.id)
             child_elem = etree.SubElement(elem, 'div', **attrs)
             if isinstance(node, TranslucentBinder):
                 html = bytes(HTMLFormatter(node, generate_ids=False))
@@ -245,28 +252,34 @@ class SingleHTMLFormatter(object):
 
     def build(self):
         self._build_binder(self.binder, self.body)
+        page_ids = [page.id for page in flatten_to_documents(self.binder)]
+        page_uuids = {id.split('@')[0]: id for id in page_ids}
+
         # Fetch any includes from remote sources
         if not self.included and self.includes is not None:
-            with ThreadPoolExecutor(max_workers=self.threads) as e:
-                for match, proc in self.includes:
+            for match, proc in self.includes:
+                with ThreadPoolExecutor(max_workers=self.threads) as e:
                     for elem in self.xpath(match):
-                        e.submit(proc, elem)
+                        e.submit(
+                            proc, elem, list(page_uuids.keys())
+                        )
             self.included = True
 
         # Rewrite absolute-path links that are intra-binder
-        page_ids = [page.id for page in flatten_to_documents(self.binder)]
-        page_uuids = {id.split('@')[0]: id for id in page_ids}
         for link in self.root.xpath('//*[@href]'):
             href = link.get('href')
             if href.startswith('/contents/'):
                 link_uuid = re.split('@|#', href[10:])[0]
+                # While rewriting, account for page IDs being prefixed with
+                # "page_" earlier when building the binder so the links work
                 if link_uuid in page_uuids:
                     if '#' in href:
                         fragment = href[href.index('#'):].replace('#', '_')
                         link.set('href', '#auto_{}{}'.format(
                             page_uuids[link_uuid], fragment))
                     else:
-                        link.set('href', '#{}'.format(page_uuids[link_uuid]))
+                        link.set('href', '#page_{}'.format(
+                            page_uuids[link_uuid]))
         self.built = True
 
     def __unicode__(self):
@@ -304,24 +317,10 @@ def _fix_namespaces(html):
              }
     root = etree.fromstring(html)
 
-    # It's not possible to edit the namespaces in lxml:
-    # https://stackoverflow.com/questions/11346480/lxml-add-namespace-to-input-file
+    # lxml has a built in function to do this without destroying comments
+    etree.cleanup_namespaces(root, top_nsmap=nsmap)
 
-    # Put all the namespaces into the root tag (remove namespaces from non root
-    # tags)
-    all_namespaces_root = etree.Element(root.tag, nsmap=nsmap, **root.attrib)
-    all_namespaces_root[:] = root[:]
-
-    # Check which namespaces are used
-    for prefix, uri in tuple(nsmap.items()):
-        if not etree.ETXPath('.//{%s}*' % (uri,))(all_namespaces_root):
-            nsmap.pop(prefix)
-
-    # Create a new root with only the namespaces we use
-    new_root = etree.Element(root.tag, nsmap=nsmap, **root.attrib)
-    new_root[:] = all_namespaces_root[:]
-
-    return etree.tostring(new_root, pretty_print=True, encoding='utf-8')
+    return etree.tostring(root, pretty_print=True, encoding='utf-8')
 
 
 def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
@@ -378,7 +377,99 @@ def exercise_callback_factory(match, url_template,
     """Create a callback function to replace an exercise by fetching from
     a server."""
 
-    def _replace_exercises(elem):
+    def _annotate_exercise(elem, exercise, page_uuids):
+        """Annotate exercise based upon tag data"""
+        tags = exercise['items'][0].get('tags')
+        if not tags:
+            return
+
+        # Annotate exercise with required context, if it exists
+        modules, feature = [], ''
+        for tag in tags:
+            if 'context-cnxmod:' in tag:
+                modules.append(tag.split(':')[1])
+            if 'context-cnxfeature:' in tag:
+                # Note: Assuming this tag will never be duplicated with
+                # multiple values in the exercise data
+                feature = tag.split(':')[1]
+
+        # It's possible that the feature tag is not present, or present but
+        # not valid (e.g. value of "context-cnxfeature:").
+        if not feature:
+            return
+
+        # There may be multiple `context-cnxmod:{uuid}` tags, each of which
+        # could be the parent page for this exercise, a different page in this
+        # book, or even invalid altogether. We'll prefer the first, fallback
+        # to the second, and error in the last case.
+
+        parent_page_elem = elem.xpath('ancestor::*[@data-type="page"]')[0]
+        parent_page_uuid = parent_page_elem.get('id')
+        if parent_page_uuid.startswith('page_'):
+            # Strip `page_` prefix from ID to get UUID
+            parent_page_uuid = parent_page_uuid.split('page_')[1]
+
+        candidate_uuids = set(modules) & set(page_uuids)
+
+        # Check if the target feature ID is on the parent page for this
+        # exercise. If so, that takes priority over any context-cnxmod tag
+        # values, and should be picked even in cases where the parent page
+        # doesn't match one of the exercise tags. If the feature exists,
+        # we make sure the parent page UUID is included in candidate_uuids.
+        # Otherwise, remove parent page from candidate UUIDs.
+        maybe_feature = parent_page_elem.find(
+            './/*[@id="auto_{}_{}"]'.format(parent_page_uuid, feature)
+        )
+        if (maybe_feature is None):
+            candidate_uuids.discard(parent_page_uuid)
+        else:
+            candidate_uuids.add(parent_page_uuid)
+
+        if len(candidate_uuids) == 0:
+            # No valid page UUIDs in exercise data
+            msg = 'No candidate uuid for exercise feature {} '.format(feature)
+            msg += '(exercise href: {})'.format(
+                elem.get('href')
+            )
+            logger.error(msg)
+            raise Exception(msg)
+
+        if parent_page_uuid in candidate_uuids:
+            target_module = parent_page_uuid
+        else:
+            # Use an UUID in the intersection of page UUIDs and tag UUIDs
+            # This is somewhat arbritrary, but if we hit this scenario with
+            # more than one UUID in the set things have gone pretty
+            # unexpectedly
+            target_module = candidate_uuids.pop()
+
+        # As a final validation check, confirm the feature is on the target
+        # module and otherwise raise
+        #
+        # NOTE: The following uses xpath() and find() together which may seem
+        # bizarre, but it's a work around for the fact that using just an
+        # xpath of '//*[@id="auto_{}_{}"]' results in seg faults when there
+        # are multiple threads due to the tree editing that occurs in
+        # _replace_exercises.
+        target_ref = 'auto_{}_{}'.format(target_module, feature)
+        feature_element = elem.xpath('/*')[0].find(
+            './/*[@id="{}"]'.format(target_ref)
+        )
+
+        if feature_element is None:
+            msg = 'Feature {} not in {} '.format(feature, target_module)
+            msg += '(exercise href: {})'.format(
+                elem.get('href')
+            )
+            logger.error(msg)
+            raise Exception(msg)
+
+        exercise['items'][0]['required_context'] = {}
+        exercise['items'][0]['required_context']['module'] = target_module
+        exercise['items'][0]['required_context']['feature'] = feature
+        exercise['items'][0]['required_context']['ref'] = target_ref
+
+    def _replace_exercises(elem, page_uuids):
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
         exercise = {}
@@ -403,13 +494,16 @@ def exercise_callback_factory(match, url_template,
             logger.warning('MISSING EXERCISE: {}'.format(url))
 
             XHTML = '{{{}}}'.format(HTML_DOCUMENT_NAMESPACES['xhtml'])
-            missing = etree.Element(XHTML + 'div',
-                                    {'class': 'missing-exercise'},
+            missing = etree.Element(XHTML + 'span',
+                                    {'data-type': 'missing-exercise'},
                                     nsmap=HTML_DOCUMENT_NAMESPACES)
             missing.text = 'MISSING EXERCISE: tag:{}'.format(item_code)
             nodes = [missing]
         else:
-            html = EXERCISE_TEMPLATE.render(data=exercise)
+            exercise['items'][0]['url'] = url
+            _annotate_exercise(elem, exercise, page_uuids)
+
+            html = render_exercise(exercise)
             try:
                 nodes = etree.fromstring('<div>{}</div>'.format(html))
             except etree.XMLSyntaxError:  # Probably HTML
@@ -428,45 +522,28 @@ def exercise_callback_factory(match, url_template,
                                        % (mathtext.encode('utf-8'), url))
 
         parent = elem.getparent()
-        if etree.QName(parent.tag).localname == 'p':
-            elem = parent
-            parent = elem.getparent()
-
-        parent.remove(elem)  # Special case - assumes single wrapper elem
         for child in nodes:
-            parent.append(child)
+            parent.insert(parent.index(elem), child)
+        parent.remove(elem)  # Special case - assumes single wrapper elem
 
     xpath = '//xhtml:a[contains(@href, "{}")]'.format(match)
     return (xpath, _replace_exercises)
 
 
-# XXX Rendering shouldn't happen here.
-#     Temporarily place the rendering templates and code here.
+def render_exercise(exercise):
+    if len(exercise['items']) != 1:
+        raise Exception('Exercise "items" array is nonsingular')
+    exercise_content = exercise['items'][0]
 
-#  Template copied from webview, and translated to jinja2.
-#  src/scripts/modules/media/embeddables/exercise-template.html
+    # Load template
+    env = jinja2.Environment(
+        loader=jinja2.PackageLoader("cnxepub"),
+        autoescape=jinja2.select_autoescape()
+    )
+    template = env.get_template("exercise_template.xhtml.jinja")
 
-EXERCISE_TEMPLATE = jinja2.Template("""\
-{% if data['items'].0.stimulus_html %}
-    <div class="exercise-stimulus">{{ data['items'].0.stimulus_html }}</div>
-{% endif %}
-{% if data['items'].0.questions %}
-    {% for question in data['items'].0.questions %}
-        <div>{{ question.stem_html }}</div>
-        {% if 'multiple-choice' in question.formats %}
-            {% if question.answers %}
-            <ol data-number-style="lower-alpha">
-                {% for answer in question.answers %}
-                    <li{% if 'correctness' in answer
-                        %} data-correctness={{ answer.correctness }}{%
-                    endif %}>{{ answer.content_html }}</li>
-                {% endfor %}
-            </ol>
-            {% endif %}
-        {% endif %}
-    {% endfor %}
-{% endif %}
-""",  trim_blocks=True, lstrip_blocks=True)
+    return template.render(data=exercise_content)
+
 
 DOCUMENT_POINTER_TEMPLATE = """\
 <?xml version="1.0" encoding="UTF-8"?>
@@ -541,17 +618,21 @@ HTML_DOCUMENT = """\
       xmlns:mod="http://cnx.rice.edu/#moduleIds"
       xmlns:md="http://cnx.rice.edu/mdml"
       xmlns:c="http://cnx.rice.edu/cnxml"
+      {% if metadata.get('language') %}
       lang="{{ metadata['language'] }}"
+      {% endif %}
       >
   <head itemscope="itemscope"
         itemtype="http://schema.org/Book"
         >
 
     <title>{{ metadata['title'] }}</title>
+    {% if metadata.get('language') %}
     <meta itemprop="inLanguage"
           data-type="language"
           content="{{ metadata['language'] }}"
           />
+    {% endif %}
 
     {# TODO Include this based on the feature being present #}
     <!-- These are for discoverability of accessible content. -->
@@ -565,9 +646,11 @@ HTML_DOCUMENT = """\
        <meta refines="#<html-id>" property="display-seq" content="<ord>" />
      #}
 
+    {% if metadata.get('created') %}
     <meta itemprop="dateCreated"
           content="{{ metadata['created'] }}"
           />
+    {% endif %}
     <meta itemprop="dateModified"
           content="{{ metadata['revised'] }}"
           />
@@ -581,6 +664,18 @@ HTML_DOCUMENT = """\
     <div data-type="metadata" style="display: none;">
       <h1 data-type="document-title" itemprop="name">{{ \
               metadata['title'] }}</h1>
+      {% if metadata.get('revised') %}
+      <span data-type="revised" data-value="{{ \
+          metadata['revised'] }}" />
+      {% endif %}
+      {% if metadata.get('canonical_book_uuid') %}
+      <span data-type="canonical-book-uuid" data-value="{{ \
+          metadata['canonical_book_uuid'] }}" />
+      {% endif %}
+      {% if metadata.get('slug') %}
+      <span data-type="slug" data-value="{{ \
+          metadata['slug'] }}" />
+      {% endif %}
       {% if is_translucent %}
       <span data-type="binding" data-value="translucent" />
       {%- endif %}
