@@ -3,6 +3,7 @@ import jinja2
 EXERCISE_TEMPLATE_STR = """\
 <div
     data-type="injected-exercise"
+    class="{{ data.class }}"
     data-injected-from-nickname="{{ data.nickname }}"
     data-injected-from-version="{{ data.version }}"
     data-injected-from-url="{{ data.url }}"

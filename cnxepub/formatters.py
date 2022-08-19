@@ -474,6 +474,7 @@ def exercise_callback_factory(match, url_template,
     def _replace_exercises(elem, page_uuids):
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
+        exercise_class = elem.get('class')
         exercise = {}
         if mc_client:  # pragma: no cover
             mc_key = item_code + (token or '')
@@ -503,6 +504,7 @@ def exercise_callback_factory(match, url_template,
             nodes = [missing]
         else:
             exercise['items'][0]['url'] = url
+            exercise['items'][0]['class'] = exercise_class
             _annotate_exercise(elem, exercise, page_uuids)
 
             html = render_exercise(exercise)
