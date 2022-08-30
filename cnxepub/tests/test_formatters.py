@@ -1526,7 +1526,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                         "another-test-tag"
                     ],
                     "version": 3,
-                    "class": "something", # Added in formatters
+                    "class": "something",  # Added in formatters
                     "nickname": "contmath98",
                     "url": "test-url",          # Added in formatters
                     "required_context": {      # Added in formatters
@@ -1693,7 +1693,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                         "all"
                     ],
                     "version": 3,
-                    "class": "something", # Added in formatters
+                    "class": "something",  # Added in formatters
                     "nickname": "contmath98",
                     "url": "test-url",  # Added in formatters
                     "solutions_are_public": True,
