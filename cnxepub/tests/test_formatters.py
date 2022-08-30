@@ -1709,6 +1709,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
         expected = self.format_html(
             '''<div
                 data-type="injected-exercise"
+                class="None"
                 data-injected-from-nickname="contmath98"
                 data-injected-from-version="3"
                 data-injected-from-url="test-url"
