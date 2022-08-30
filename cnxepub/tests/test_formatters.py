@@ -1205,6 +1205,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1241,6 +1242,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1274,6 +1276,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1328,6 +1331,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1363,6 +1367,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1401,6 +1406,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1485,6 +1491,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1519,6 +1526,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                         "another-test-tag"
                     ],
                     "version": 3,
+                    "class": "something",  # Added in formatters
                     "nickname": "contmath98",
                     "url": "test-url",          # Added in formatters
                     "required_context": {      # Added in formatters
@@ -1621,6 +1629,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
         expected = self.format_html(
             '''<div
                 data-type="injected-exercise"
+                class="something"
                 data-injected-from-nickname="contmath98"
                 data-injected-from-version="3"
                 data-injected-from-url="test-url"
@@ -1684,6 +1693,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                         "all"
                     ],
                     "version": 3,
+                    "class": "something",  # Added in formatters
                     "nickname": "contmath98",
                     "url": "test-url",  # Added in formatters
                     "solutions_are_public": True,
@@ -1701,6 +1711,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
         expected = self.format_html(
             '''<div
                 data-type="injected-exercise"
+                class="something"
                 data-injected-from-nickname="contmath98"
                 data-injected-from-version="3"
                 data-injected-from-url="test-url"
