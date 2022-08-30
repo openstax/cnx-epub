@@ -1242,6 +1242,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1275,6 +1276,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
@@ -1329,6 +1331,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         <div id="auto_uuid1_feature-1"></div>
         <div
             data-type="injected-exercise"
+            class="None"
             data-injected-from-nickname=""
             data-injected-from-version=""
             data-injected-from-url="https://exercises/book-ch01-ex001"
