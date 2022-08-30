@@ -1526,6 +1526,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                         "another-test-tag"
                     ],
                     "version": 3,
+                    "class": "something", # Added in formatters
                     "nickname": "contmath98",
                     "url": "test-url",          # Added in formatters
                     "required_context": {      # Added in formatters
@@ -1628,7 +1629,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
         expected = self.format_html(
             '''<div
                 data-type="injected-exercise"
-                class="None"
+                class="something"
                 data-injected-from-nickname="contmath98"
                 data-injected-from-version="3"
                 data-injected-from-url="test-url"
@@ -1692,6 +1693,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
                         "all"
                     ],
                     "version": 3,
+                    "class": "something", # Added in formatters
                     "nickname": "contmath98",
                     "url": "test-url",  # Added in formatters
                     "solutions_are_public": True,
@@ -1709,7 +1711,7 @@ class ExerciseTemplateTestCase(unittest.TestCase):
         expected = self.format_html(
             '''<div
                 data-type="injected-exercise"
-                class="None"
+                class="something"
                 data-injected-from-nickname="contmath98"
                 data-injected-from-version="3"
                 data-injected-from-url="test-url"
