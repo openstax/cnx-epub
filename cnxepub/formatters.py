@@ -375,7 +375,7 @@ def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
 
 
 def exercise_callback_factory(match, url_template,
-                              mc_client=None, token=None, mml_url=None):
+                              mc_client=None, token=None):
     """Create a callback function to replace an exercise by fetching from
     a server."""
 
@@ -513,18 +513,6 @@ def exercise_callback_factory(match, url_template,
             except etree.XMLSyntaxError:  # Probably HTML
                 nodes = etree.HTML(html)[0]  # body node
 
-            if mml_url:
-                for node in nodes.xpath('//*[@data-math]'):
-                    mathml = _replace_tex_math(
-                        item_code, node, mml_url, mc_client)
-                    if mathml is not None:
-                        mparent = node.getparent()
-                        mparent.replace(node, mathml)
-                    else:
-                        mathtext = node.get('data-math') or node.text or ''
-                        logger.warning('BAD TEX CONVERSION: "%s" URL: %s'
-                                       % (mathtext.encode('utf-8'), url))
-
         parent = elem.getparent()
         for child in nodes:
             parent.insert(parent.index(elem), child)
@@ -535,8 +523,7 @@ def exercise_callback_factory(match, url_template,
 
 
 def render_exercise(exercise):
-    if len(exercise['items']) != 1:
-        raise Exception('Exercise "items" array is nonsingular')
+    assert len(exercise['items']) is 1, 'Exercise "items" array is nonsingular'
     exercise_content = exercise['items'][0]
 
     return EXERCISE_TEMPLATE.render(data=exercise_content)

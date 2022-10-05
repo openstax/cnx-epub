@@ -1039,7 +1039,6 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
         exercise_match = '#ost/api/ex/'
         exercise_token = 'somesortoftoken'
-        mathml_url = 'http://mathmlcloud.cnx.org/equation'
         if IS_MEMCACHE_ENABLED:
             mc_client = _get_memcache_client()
         else:
@@ -1048,8 +1047,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         includes = [exercise_callback_factory(exercise_match,
                                               exercise_url,
                                               mc_client,
-                                              exercise_token,
-                                              mathml_url),
+                                              exercise_token),
                     ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
@@ -1105,61 +1103,6 @@ class FixNamespacesTestCase(unittest.TestCase):
 """
         self.maxDiff = None
         self.assertMultiLineEqual(expected_content, xmlpp(actual).decode('utf-8'))
-
-
-class ExerciseCallbackTestCase(unittest.TestCase):
-    @mock.patch('cnxepub.formatters.logger')
-    @mock.patch('cnxepub.formatters.requests.get')
-    @mock.patch('cnxepub.formatters.requests.post')
-    def test_xmlsyntaxerror(self, requests_post, requests_get, logger):
-        from ..formatters import exercise_callback_factory
-
-        xpath, cb = exercise_callback_factory(
-            '#ost/api/ex/',
-            'https://exercises/{itemCode}',
-            mml_url='https://mathmlcloud/')
-
-        self.assertEqual(xpath, '//xhtml:a[contains(@href, "#ost/api/ex/")]')
-        node = etree.fromstring("""
-<div>
-    <a href="#ost/api/ex/book-ch01-ex001"></a>
-</div>""")
-
-        tex_math = r'<span data-math="1\ \text{kcal}"></span>'
-        get_resp = mock.Mock()
-        get_resp.json.return_value = {
-            'total_count': 1,
-            'items': [{
-                'questions': [{
-                    'stem_html': tex_math,
-                    'formats': []
-                }],
-            }]}
-        requests_get.return_value = get_resp
-
-        mathml = r"""<math xmlns="http://www.w3.org/1998/Math/MathML"
-      display="block" alttext="1 kcal">
-  <mn>1</mn>
-  <mtext>&nbsp;</mtext>
-  <mtext>kcal</mtext>
-</math>
-        """
-        post_resp = mock.Mock()
-        post_resp.json.return_value = {'components': [
-                {'format': 'mml',
-                 'source': mathml}]}
-        requests_post.return_value = post_resp
-
-        self.assertRaises(etree.XMLSyntaxError, cb, node.getchildren()[0], [])
-        self.assertEqual(logger.error.call_args[0][0].strip(), u"""\
-Error converting math in book-ch01-ex001:
-  math: 1\\ \\text{kcal}
-  mathml: <math xmlns="http://www.w3.org/1998/Math/MathML"
-      display="block" alttext="1 kcal">
-  <mn>1</mn>
-  <mtext>&nbsp;</mtext>
-  <mtext>kcal</mtext>
-</math>""")
 
 
 class ExerciseAnnotationTestCase(unittest.TestCase):
