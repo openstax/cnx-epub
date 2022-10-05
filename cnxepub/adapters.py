@@ -411,8 +411,8 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                 id_map['#{}'.format(id_val)] = (page, new_val)
 
         id_map['#{}'.format(page.id)] = (page, '')
-        if page.id and '@' in page.id:
-            id_map['#{}'.format(page.id.split('@')[0])] = (page, '')
+        assert not (page.id and '@' in page.id)
+        id_map['#{}'.format(page.id.split('@')[0])] = (page, '')
 
         page.content = etree_to_content(content)
 
@@ -445,32 +445,24 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
         if 'cnx-archive-uri' in p.metadata and p.metadata['cnx-archive-uri']:
             p_ids.insert(0, p.metadata['cnx-archive-uri'].split('@')[0])
 
+        p_uuid = None
         for p_id in p_ids:
             try:
                 p_uuid = uuid.UUID(p_id)
                 break
             except ValueError:
                 pass
-        else:  # Punt - no parent uuid, make one up for child
-            return str(uuid.uuid4())
 
+        assert p_uuid is not None, 'Should always find a parent UUID'
         uuid_key = elem.get('data-uuid-key', elem.get('class', key))
-        if (sys.version_info.major == 2):  # https://bugs.python.org/issue34145
-            uuid_key = uuid_key.encode('utf-8')
         return str(uuid.uuid5(p_uuid, uuid_key))
 
     def _compute_shortid(ident_hash):
         """Compute shortId from uuid or ident_hash"""
         ver = None
-        if '@' in ident_hash:
-            (id_str, ver) = ident_hash.split('@')
-        else:
-            id_str = ident_hash
-        try:
-            id_uuid = uuid.UUID(id_str)
-        except ValueError:
-            # id is not a uuid, no shortid
-            return None
+        assert '@' in ident_hash
+        (id_str, ver) = ident_hash.split('@')
+        id_uuid = uuid.UUID(id_str)
 
         shortid = (base64.urlsafe_b64encode(id_uuid.bytes)[:8]).decode('utf-8')
         if ver:
@@ -485,21 +477,9 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
 
         if data_type in ('unit', 'chapter', 'composite-chapter',
                          'page', 'composite-page'):
-            try:
-                # metadata munging for all node types, in one place
-                metadata = parse_metadata(
-                        child.xpath('./*[@data-type="metadata"]')[0])
-            except ValueError:
-                logger.exception(
-                    'Error when parsing metadata for {} (id: {}, parent: "{}")'
-                    .format(data_type, child.attrib.get('id'),
-                            parent.metadata.get('title')))
-                raise
-            except IndexError:
-                logger.exception(
-                    'Metadata (data-type="metadata") not found:\n{}...'
-                    .format(etree.tostring(child).decode('utf-8')[:800]))
-                raise
+            # metadata munging for all node types, in one place
+            metadata = parse_metadata(
+                    child.xpath('./*[@data-type="metadata"]')[0])
 
             # Handle version, id and uuid from metadata
             if not metadata.get('version'):
@@ -516,11 +496,9 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                                                       else None)
             if not id_:
                 id_ = _compute_id(parent, child, metadata.get('title'))
-                if metadata.get('version'):
-                    metadata['cnx-archive-uri'] = \
-                        '@'.join((id_, metadata['version']))
-                else:
-                    metadata['cnx-archive-uri'] = id_
+                assert metadata.get('version')
+                metadata['cnx-archive-uri'] = \
+                    '@'.join((id_, metadata['version']))
                 metadata['cnx-archive-shortid'] = None
 
             if (metadata.get('cnx-archive-uri') and
@@ -555,8 +533,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             for node in metadata_nodes:
                 child.remove(node)
             for key in child.keys():
-                if key in ('itemtype', 'itemscope'):
-                    child.attrib.pop(key)
+                assert key not in ('itemtype', 'itemscope'), 'Seems true'
 
             document_body = content_to_etree('')
             document_body.append(child)
@@ -570,18 +547,13 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             parent.append(document)
 
             fix_generated_ids(document, id_map)  # also populates id_map
-        elif data_type in ['metadata', None]:
+        else:
+            assert data_type in ['metadata', None], \
+                'Unknown data-type for child node'
             # Expected non-nodal child types
             pass
-        else:  # Fall through - child is not a defined type
-            raise AdaptationError('Unknown data-type for child node')
 
-    # Assign title overrides
-    if len(parent) != len(title_overrides):
-        logger.error('Skipping title overrides -'
-                     'mismatched numbers: parent: {}, titles: {}'.format(
-                         len(parent), len(title_overrides)))
-        raise AdaptationError('Nav TOC does not match HTML structure')
+    assert len(parent) == len(title_overrides), 'Nav TOC should HTML structure'
 
     for i, node in enumerate(parent):
         parent.set_title_for_node(node, title_overrides[i])

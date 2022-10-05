@@ -890,8 +890,7 @@ Pointer.
         with open(page_path, 'r') as f:
             html = f.read()
 
-        from ..adapters import AdaptationError
-        with self.assertRaises(AdaptationError) as caught_exception:
+        with self.assertRaises(AssertionError) as caught_exception:
             desserts = adapt_single_html(html)
 
     def test_title_utf8_umlaut_uuid5_generation(self):
@@ -917,8 +916,7 @@ Pointer.
         with open(page_path, 'r') as f:
             html = f.read()
 
-        from ..adapters import AdaptationError
-        with self.assertRaises(AdaptationError) as caught_exception:
+        with self.assertRaises(AssertionError) as caught_exception:
             desserts = adapt_single_html(html)
 
     def test_fix_generated_ids_in_composite_page(self):
@@ -973,10 +971,7 @@ Pointer.
             '<h1 data-type="document-title" itemprop="name">Apple</h1>',
             '<h1 data-type="document-title" itemprop="name"></h1>')
 
-        desserts = self.assertRaises(ValueError, adapt_single_html, html)
-        self.assertEqual(logger.exception.call_args, mock.call(
-            u'Error when parsing metadata for page '
-            u'(id: apple, parent: "Fruity")'))
+        self.assertRaises(ValueError, adapt_single_html, html)
 
     @mock.patch('cnxepub.adapters.logger')
     def test_missing_metadata_element(self, logger):
@@ -992,32 +987,4 @@ Pointer.
             '<div data-type="page" id="apple">\n<div data-type="metadata">',
             '<div data-type="page" id="apple">\n<div>')
 
-        desserts = self.assertRaises(IndexError, adapt_single_html, html)
-        self.assertEqual(logger.exception.call_args, mock.call(u"""\
-Metadata (data-type="metadata") not found:
-<div xmlns="http://www.w3.org/1999/xhtml"\
- xmlns:bib="http://bibtexml.sf.net/"\
- xmlns:data="http://www.w3.org/TR/html5/dom.html#custom-data-attribute"\
- xmlns:epub="http://www.idpf.org/2007/ops"\
- xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\
- xmlns:dc="http://purl.org/dc/elements/1.1/"\
- xmlns:lrmi="http://lrmi.net/the-specification" data-type="page" id="apple">
-<div>
-      <h1 data-type="document-title" itemprop="name">Apple</h1>
-
-      <div class="authors">
-        By:
-<span id="author-1" itemscope="itemscope" itemtype="http://schema.org/Person"\
- itemprop="author" data-type="author">
-            <a href="yum" itemprop="url" data-type="cnx-id">Good Food</a>
-          </span>
-        Edited by:
-
-        Illustrated by:
-
-        Translated by:
-
-      </div>
-
-      <div class="publishers">
-..."""))
+        self.assertRaises(IndexError, adapt_single_html, html)
