@@ -5,7 +5,6 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
-from .epub import *
 from .formatters import *
 from .models import *
 from .adapters import *

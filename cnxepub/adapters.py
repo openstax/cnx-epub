@@ -22,7 +22,6 @@ import lxml.html
 
 from lxml import etree
 
-from .epub import EPUB, Package, Item
 from .formatters import HTMLFormatter
 from .models import (
     flatten_model, flatten_to_documents,
