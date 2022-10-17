@@ -53,7 +53,6 @@ class HTMLAdaptationTestCase(unittest.TestCase):
         u'license_text': u'CC-By 4.0',
         u'license_url': u'http://creativecommons.org/licenses/by/4.0/',
         u'language': 'en',
-        u'print_style': None,
         u'cnx-archive-uri': None,
         u'cnx-archive-shortid': None,
         u'derived_from_title': None,

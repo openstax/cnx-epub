@@ -733,15 +733,6 @@ HTML_DOCUMENT = """\
            >{{ metadata['derived_from_title']|escape }}</a>
       </div>
       {%- endif %}
-      {% if metadata.get('print_style') %}
-
-      <div class="print-style">
-        Print style:
-        <span
-           data-type="print-style"
-           >{{ metadata['print_style'] }}</span>
-      </div>
-      {%- endif %}
       {% if metadata.get('copyright-holder') or metadata.get('license_url') %}
 
       <div class="permissions">

@@ -60,7 +60,6 @@ class HTMLParsingTestCase(unittest.TestCase):
             'cnx-archive-shortid': '541PkOB4@3',
             'derived_from_uri': 'http://example.org/contents/id@ver',
             'derived_from_title': 'Wild Grains and Warted Feet',
-            'print_style': '* print style *',
             'language': 'en',
             'version': '3',
             'canonical_book_uuid': 'ea4244ce-dd9c-4166-9c97-acae5faf0ba1',
