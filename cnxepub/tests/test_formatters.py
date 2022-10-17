@@ -816,11 +816,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
     def setUp(self):
         from ..models import (TranslucentBinder, Binder, Document,
-                              Resource, CompositeDocument)
-
-        with open(os.path.join(TEST_DATA_DIR, '1x1.jpg'), 'rb') as f:
-            jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg',
-                           filename='small.jpg')
+                              CompositeDocument)
 
         metadata = self.base_metadata.copy()
         contents = io.BytesIO(u"""\
@@ -834,8 +830,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 </ul></div><img src="/resources/1x1.jpg" /><p>チョコレートデザート</p>
 </body>
 """.encode('utf-8'))
-        self.chocolate = Document('chocolate', contents, metadata=metadata,
-                                  resources=[jpg])
+        self.chocolate = Document('chocolate', contents, metadata=metadata)
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Apple'
@@ -877,8 +872,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 </ul>
 </body>
 """)
-        self.lemon = Document('lemon', contents, metadata=metadata,
-                              resources=[jpg])
+        self.lemon = Document('lemon', contents, metadata=metadata)
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Citrus'
@@ -909,11 +903,6 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         self.extra = CompositeDocument(
             'extra', contents, metadata=metadata)
 
-        with open(os.path.join(TEST_DATA_DIR, 'cover.png'), 'rb') as f:
-            cover_png = Resource(
-                'cover.png', io.BytesIO(f.read()), 'image/png',
-                filename='cover.png')
-
         self.desserts = Binder(
             'Desserts', [self.fruity, self.chocolate, self.extra],
             metadata={'title': 'Desserts',
@@ -921,8 +910,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                       'license_text': 'CC-By 4.0',
                       'cnx-archive-uri': '00000000-0000-0000-0000-000000000000@1.3',
                       'language': 'en',
-                      'slug': 'desserts'},
-            resources=[cover_png])
+                      'slug': 'desserts'})
 
     def test_binder(self):
         from ..formatters import SingleHTMLFormatter

@@ -379,7 +379,8 @@ def exercise_callback_factory(match, url_template,
             candidate_uuids.add(parent_page_uuid)
 
         # No valid page UUIDs in exercise data
-        assert len(candidate_uuids) > 0, 'No candidate uuid for exercise feature {} href={}'.format(feature, elem.get('href'))
+        assert_msg = 'No candidate uuid for exercise feature {} href={}'.format(feature, elem.get('href'))
+        assert len(candidate_uuids) > 0, assert_msg
 
         if parent_page_uuid in candidate_uuids:
             target_module = parent_page_uuid
@@ -403,7 +404,8 @@ def exercise_callback_factory(match, url_template,
             './/*[@id="{}"]'.format(target_ref)
         )
 
-        assert feature_element is not None, 'Feature {} not in {} href={}'.format(feature, target_module, elem.get('href'))
+        assert_msg = 'Feature {} not in {} href={}'.format(feature, target_module, elem.get('href'))
+        assert feature_element is not None, assert_msg
 
         exercise['items'][0]['required_context'] = {}
         exercise['items'][0]['required_context']['module'] = target_module
@@ -787,16 +789,6 @@ HTML_DOCUMENT = """\
       {% for subject in metadata['subjects'] -%}
       <div itemprop="about" data-type="subject">{{ subject|escape }}</div>
       {%- endfor %}
-      {% if resources %}
-
-      <div data-type="resources">
-        <ul>
-          {% for resource in resources -%}
-          <li><a href="{{ resource.id }}">{{ resource.filename }}</a></li>
-          {%- endfor %}
-        </ul>
-      </div>
-      {%- endif %}
     </div>
 
    {{ content }}

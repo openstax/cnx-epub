@@ -30,7 +30,6 @@ __all__ = (
     'flatten_model', 'flatten_to', 'flatten_to_documents',
     'Binder', 'TranslucentBinder',
     'Document', 'CompositeDocument', 'DocumentPointer',
-    'Resource',
     'content_to_etree', 'etree_to_content',
     )
 
@@ -553,37 +552,3 @@ class DocumentPointer(object):
 
 class CompositeDocument(Document):
     """A Document created during the collation process."""
-
-
-class Resource(object):
-    """A binary object used within the context of the ``Document``.
-    It is typically referenced within the documents HTML content.
-    """
-
-    def __init__(self, id, data, media_type, filename=None):
-        self.id = id
-        if not isinstance(data, io.BytesIO):
-            raise ValueError("Data must be an io.BytesIO instance. "
-                             "'{}' was given.".format(type(data)))
-        self._data = data
-        self.media_type = media_type
-
-        self._hash = hashlib.new(RESOURCE_HASH_TYPE,
-                                 self._data.read()).hexdigest()
-        if not filename:
-            # Create a filename from the hash and media-type.
-            filename = "{}{}".format(
-                self._hash, mimetypes.guess_extension(self.media_type))
-        self.filename = filename
-
-        self._data.seek(0)
-
-    @property
-    def hash(self):
-        return self._hash
-
-    @contextmanager
-    def open(self):
-        self._data.seek(0)
-        yield self._data
-        self._data.seek(0)

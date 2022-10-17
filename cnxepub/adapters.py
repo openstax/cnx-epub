@@ -27,7 +27,7 @@ from .models import (
     flatten_model, flatten_to_documents,
     content_to_etree, etree_to_content,
     Binder, TranslucentBinder,
-    Document, Resource, DocumentPointer, CompositeDocument,
+    Document, DocumentPointer, CompositeDocument,
     TRANSLUCENT_BINDER_ID,
     INTERNAL_REFERENCE_TYPE,
     INLINE_REFERENCE_TYPE,
