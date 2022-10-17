@@ -890,7 +890,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             '<span>Chapter</span> <span>2</span> <span>citrus</span>']
         self.fruity = Binder('ec84e75d-9973-41f1-ab9d-1a3ebaef87e2', [self.apple, self.lemon, self.citrus],
                              metadata={'title': 'Fruity',
-                                       'cnx-archive-uri': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2',
+                                       'cnx-archive-uri': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2@1.3',
                                        'cnx-archive-shortid': 'frt',
                                        'license_text': 'CC-By 4.0',
                                        'license_url': 'http://creativecommons.org/licenses/by/4.0/',

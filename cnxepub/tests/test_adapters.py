@@ -174,7 +174,7 @@ Pointer.
         fruity = desserts[0]
         self.assertEqual('Binder', fruity.__class__.__name__)
         self.assertEqual('Fruity', fruity.metadata['title'])
-        self.assertEqual('ec84e75d-9973-41f1-ab9d-1a3ebaef87e2', fruity.metadata['id'])
+        self.assertEqual('ec84e75d-9973-41f1-ab9d-1a3ebaef87e2@1.3', fruity.metadata['id'])
         self.assertEqual('frt', fruity.metadata['shortId'])
         self.assertEqual('Fruity', desserts.get_title_for_node(fruity))
 
