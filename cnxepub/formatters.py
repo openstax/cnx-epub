@@ -325,7 +325,7 @@ def _fix_namespaces(html):
     return etree.tostring(root, pretty_print=True, encoding='utf-8')
 
 
-def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
+def _replace_tex_math(exercise_id, node, mml_url, retry=0):
     """call mml-api service to replace TeX math in body of node with mathml"""
 
     math = node.attrib['data-math'] or node.text
@@ -333,9 +333,6 @@ def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
         return None
 
     eq = {}
-    if mc_client:
-        math_key = hashlib.md5(math.encode('utf-8')).hexdigest()
-        eq = json.loads(mc_client.get(math_key) or '{}')
 
     if not eq:
         res = requests.post(mml_url, {'math': math.encode('utf-8'),
@@ -343,8 +340,6 @@ def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
                                       'mml': 'true'})
         if res:  # Non-error response from requests
             eq = res.json()
-            if mc_client:
-                mc_client.set(math_key, res.text)
 
     if 'components' in eq and len(eq['components']) > 0:
         for component in eq['components']:
@@ -368,14 +363,14 @@ def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
                        '{}'.format(json.dumps(eq, indent=4)))
         retry += 1
         if retry < 2:
-            return _replace_tex_math(exercise_id, node, mml_url, mc_client,
+            return _replace_tex_math(exercise_id, node, mml_url,
                                      retry)
 
     return None
 
 
 def exercise_callback_factory(match, url_template,
-                              mc_client=None, token=None):
+                              token=None):
     """Create a callback function to replace an exercise by fetching from
     a server."""
 
@@ -475,23 +470,16 @@ def exercise_callback_factory(match, url_template,
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
         exercise_class = elem.get('class')
-        exercise = {}
-        if mc_client:  # pragma: no cover
-            mc_key = item_code + (token or '')
-            exercise = json.loads(mc_client.get(mc_key) or '{}')
+        if token:
+            headers = {'Authorization': 'Bearer {}'.format(token)}
+            res = requests.get(url, headers=headers)
+        else:
+            res = requests.get(url)
 
-        if not exercise:
-            if token:
-                headers = {'Authorization': 'Bearer {}'.format(token)}
-                res = requests.get(url, headers=headers)
-            else:
-                res = requests.get(url)
-            if res:
-                # grab the json exercise, run it through Jinja2 template,
-                # replace element w/ it
-                exercise = res.json()
-                if mc_client:  # pragma: no cover
-                    mc_client.set(mc_key, res.text)
+        assert res
+        # grab the json exercise, run it through Jinja2 template,
+        # replace element w/ it
+        exercise = res.json()
 
         if exercise['total_count'] == 0:
             logger.warning('MISSING EXERCISE: {}'.format(url))

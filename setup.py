@@ -11,13 +11,11 @@ install_requires = [
     'jinja2',
     'lxml==4.4.3',  # Unicode problem in lxml 4.5.0 cnx#924
     'requests',
-    'python-memcached'
     ] if IS_PY3 else [
     'jinja2==2.11.2',
     'MarkupSafe==1.1.1',
     'lxml==4.4.3',  # Unicode problem in lxml 4.5.0 cnx#924
     'requests',
-    'python-memcached'
     ]
 collation_requires = [
     'cnx-easybake',

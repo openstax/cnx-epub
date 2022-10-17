@@ -21,8 +21,7 @@ except ImportError:
 
 from lxml import etree
 
-from ..testing import (TEST_DATA_DIR, unescape,
-                       _get_memcache_client, IS_MEMCACHE_ENABLED)
+from ..testing import (TEST_DATA_DIR, unescape)
 from ..formatters import exercise_callback_factory, render_exercise
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -985,14 +984,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
         exercise_match = '#ost/api/ex/'
 
-        if IS_MEMCACHE_ENABLED:
-            mc_client = _get_memcache_client()
-        else:
-            mc_client = None
-
         includes = [exercise_callback_factory(exercise_match,
-                                              exercise_url,
-                                              mc_client),
+                                              exercise_url),
                     ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
@@ -1039,14 +1032,9 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
         exercise_match = '#ost/api/ex/'
         exercise_token = 'somesortoftoken'
-        if IS_MEMCACHE_ENABLED:
-            mc_client = _get_memcache_client()
-        else:
-            mc_client = None
 
         includes = [exercise_callback_factory(exercise_match,
                                               exercise_url,
-                                              mc_client,
                                               exercise_token),
                     ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]

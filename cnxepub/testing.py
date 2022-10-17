@@ -9,7 +9,6 @@ from contextlib import contextmanager
 
 import sys
 from io import StringIO
-import memcache
 import os
 import tempfile
 import shutil
@@ -83,17 +82,3 @@ def unescape(html):
     if isinstance(html, bytes):
         html = html.decode('utf-8')
     return parser.unescape(html)
-
-
-def is_memcache_enabled():
-    mc = _get_memcache_client()
-    is_enabled = bool(mc.get_stats())
-    return is_enabled
-
-
-def _get_memcache_client():
-    memcache_servers = ['127.0.0.1:11211']
-    mc = memcache.Client(memcache_servers, debug=0)
-    return mc
-
-IS_MEMCACHE_ENABLED = is_memcache_enabled()
