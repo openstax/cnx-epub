@@ -1239,7 +1239,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         self.assertEqual(
             str(error.exception),
             'No candidate uuid for exercise feature feature-donotexist '
-            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+            'href=#ost/api/ex/book-ch01-ex001'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')
@@ -1373,7 +1373,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         self.assertEqual(
             str(error.exception),
             'Feature feature-donotexist not in uuid2 '
-            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+            'href=#ost/api/ex/book-ch01-ex001'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')
@@ -1395,7 +1395,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         self.assertEqual(
             str(error.exception),
             'No candidate uuid for exercise feature feature-donotexist '
-            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+            'href=#ost/api/ex/book-ch01-ex001'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')

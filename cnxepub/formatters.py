@@ -325,50 +325,6 @@ def _fix_namespaces(html):
     return etree.tostring(root, pretty_print=True, encoding='utf-8')
 
 
-def _replace_tex_math(exercise_id, node, mml_url, retry=0):
-    """call mml-api service to replace TeX math in body of node with mathml"""
-
-    math = node.attrib['data-math'] or node.text
-    if math is None:
-        return None
-
-    eq = {}
-
-    if not eq:
-        res = requests.post(mml_url, {'math': math.encode('utf-8'),
-                                      'mathType': 'TeX',
-                                      'mml': 'true'})
-        if res:  # Non-error response from requests
-            eq = res.json()
-
-    if 'components' in eq and len(eq['components']) > 0:
-        for component in eq['components']:
-            if component['format'] == 'mml':
-                try:
-                    mml = etree.fromstring(component['source'])
-                except etree.XMLSyntaxError:
-                    logger.error(
-                        'Error converting math in {}:\n  math: {}\n'
-                        '  mathml: {}\n'.format(
-                            exercise_id, math, component['source']))
-                    raise
-        if node.tag.endswith('span'):
-            mml.set('display', 'inline')
-        elif node.tag.endswith('div'):
-            mml.set('display', 'block')
-        mml.tail = node.tail
-        return mml
-    else:
-        logger.warning('Retrying math TeX conversion: '
-                       '{}'.format(json.dumps(eq, indent=4)))
-        retry += 1
-        if retry < 2:
-            return _replace_tex_math(exercise_id, node, mml_url,
-                                     retry)
-
-    return None
-
-
 def exercise_callback_factory(match, url_template,
                               token=None):
     """Create a callback function to replace an exercise by fetching from
@@ -422,14 +378,8 @@ def exercise_callback_factory(match, url_template,
         else:
             candidate_uuids.add(parent_page_uuid)
 
-        if len(candidate_uuids) == 0:
-            # No valid page UUIDs in exercise data
-            msg = 'No candidate uuid for exercise feature {} '.format(feature)
-            msg += '(exercise href: {})'.format(
-                elem.get('href')
-            )
-            logger.error(msg)
-            raise Exception(msg)
+        # No valid page UUIDs in exercise data
+        assert len(candidate_uuids) > 0, 'No candidate uuid for exercise feature {} href={}'.format(feature, elem.get('href'))
 
         if parent_page_uuid in candidate_uuids:
             target_module = parent_page_uuid
@@ -453,13 +403,7 @@ def exercise_callback_factory(match, url_template,
             './/*[@id="{}"]'.format(target_ref)
         )
 
-        if feature_element is None:
-            msg = 'Feature {} not in {} '.format(feature, target_module)
-            msg += '(exercise href: {})'.format(
-                elem.get('href')
-            )
-            logger.error(msg)
-            raise Exception(msg)
+        assert feature_element is not None, 'Feature {} not in {} href={}'.format(feature, target_module, elem.get('href'))
 
         exercise['items'][0]['required_context'] = {}
         exercise['items'][0]['required_context']['module'] = target_module
