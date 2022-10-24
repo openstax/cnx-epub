@@ -379,8 +379,9 @@ def exercise_callback_factory(match, url_template,
             candidate_uuids.add(parent_page_uuid)
 
         # No valid page UUIDs in exercise data
-        assert_msg = 'No candidate uuid for exercise feature {} href={}'.format(feature, elem.get('href'))
-        assert len(candidate_uuids) > 0, assert_msg
+        assert_msg = 'No candidate uuid for exercise feature {} href={}'
+        assert len(candidate_uuids) > 0, assert_msg.format(feature,
+                                                           elem.get('href'))
 
         if parent_page_uuid in candidate_uuids:
             target_module = parent_page_uuid
@@ -404,7 +405,9 @@ def exercise_callback_factory(match, url_template,
             './/*[@id="{}"]'.format(target_ref)
         )
 
-        assert_msg = 'Feature {} not in {} href={}'.format(feature, target_module, elem.get('href'))
+        assert_msg = 'Feature {} not in {} href={}'.format(feature,
+                                                           target_module,
+                                                           elem.get('href'))
         assert feature_element is not None, assert_msg
 
         exercise['items'][0]['required_context'] = {}

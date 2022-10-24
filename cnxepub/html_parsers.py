@@ -311,7 +311,8 @@ class DocumentMetadataParser:
         items = self.parse(
             './/xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
         if items:
-            assert '@' in items[0], 'version should have an @ in it data-value="{}"'.format(items[0])
+            assert_msg = 'version should have an @ in it data-value="{}"'
+            assert '@' in items[0], assert_msg.format(items[0])
             return items[0].split('@')[1]
 
     @property
