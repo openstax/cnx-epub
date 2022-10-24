@@ -8,14 +8,8 @@
 import io
 import hashlib
 import mimetypes
-try:
-    from collections.abc import MutableSequence
-except ImportError:
-    from collections import MutableSequence
-try:
-    from urllib.parse import urlparse
-except ImportError:
-    from urlparse import urlparse
+from collections.abc import MutableSequence
+from urllib.parse import urlparse
 from contextlib import contextmanager
 
 from lxml import etree
@@ -415,8 +409,7 @@ class Binder(TranslucentBinder):
             if version is not None:
                 args.append(version)
             value = '@'.join(args)
-        else:
-            value = None
+        assert value is not None, 'Could not find value'
         return value
 
     @ident_hash.setter
@@ -426,17 +419,6 @@ class Binder(TranslucentBinder):
             self._id, self.metadata['version'] = value.split('@')
         except ValueError:
             raise ValueError("ident_hash requires a version", value)
-
-    def get_uri(self, system, default=None):
-        try:
-            uri = self.metadata["{}-uri".format(system)]
-        except KeyError:
-            return default
-        return uri
-
-    def set_uri(self, system, value):
-        key = "{}-uri".format(system)
-        self.metadata[key] = value
 
 
 class Document(object):
