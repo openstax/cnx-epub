@@ -10,14 +10,9 @@ install_requires = [
     'requests',
     'PyICU==2.10.1',
     ]
-collation_requires = [
-    'cnx-easybake',
-    ]
 tests_require = [
     ]
-tests_require.extend(collation_requires)
 extras_require = {
-    'collation': collation_requires,
     'test': tests_require,
     }
 description = "Library for building and paring Connexions' EPUBs."
@@ -47,6 +42,4 @@ setup(
         },
     test_suite='cnxepub.tests',
     zip_safe=False,
-    dependency_links=[
-        'git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake']
     )
