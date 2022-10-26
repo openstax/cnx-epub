@@ -10,18 +10,7 @@ install_requires = [
     'requests',
     'PyICU==2.10.1',
     ]
-tests_require = [
-    ]
-extras_require = {
-    'test': tests_require,
-    }
 description = "Library for building and paring Connexions' EPUBs."
-
-console_scripts = [
-    'cnx-epub-single_html = cnxepub.scripts.single_html.main:main',
-    ('cnx-epub-validate-collated = '
-     'cnxepub.scripts.collated_single_html.main:main'),
-]
 
 setup(
     name='cnx-epub',
@@ -32,14 +21,9 @@ setup(
     license='AGPL, See also LICENSE.txt',
     description=description,
     install_requires=install_requires,
-    tests_require=tests_require,
-    extras_require=extras_require,
     packages=find_packages(),
     include_package_data=True,
     cmdclass=versioneer.get_cmdclass(),
-    entry_points={
-        'console_scripts': console_scripts,
-        },
     test_suite='cnxepub.tests',
     zip_safe=False,
     )
