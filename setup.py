@@ -4,18 +4,11 @@ import versioneer
 from setuptools import setup, find_packages
 
 
-IS_PY3 = sys.version_info > (3,)
-
-
 install_requires = [
     'jinja2',
     'lxml==4.4.3',  # Unicode problem in lxml 4.5.0 cnx#924
     'requests',
-    ] if IS_PY3 else [
-    'jinja2==2.11.2',
-    'MarkupSafe==1.1.1',
-    'lxml==4.4.3',  # Unicode problem in lxml 4.5.0 cnx#924
-    'requests',
+    'PyICU==2.10.1',
     ]
 collation_requires = [
     'cnx-easybake',
@@ -28,9 +21,6 @@ extras_require = {
     'test': tests_require,
     }
 description = "Library for building and paring Connexions' EPUBs."
-
-if not IS_PY3:
-    tests_require.append('mock')
 
 console_scripts = [
     'cnx-epub-single_html = cnxepub.scripts.single_html.main:main',
