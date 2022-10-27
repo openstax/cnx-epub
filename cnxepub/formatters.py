@@ -460,7 +460,7 @@ def exercise_callback_factory(match, url_template,
 
 
 def render_exercise(exercise):
-    assert len(exercise['items']) is 1, 'Exercise "items" array is nonsingular'
+    assert len(exercise['items']) == 1, 'Exercise "items" array is nonsingular'
     exercise_content = exercise['items'][0]
 
     return EXERCISE_TEMPLATE.render(data=exercise_content)
