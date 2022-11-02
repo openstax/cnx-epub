@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 install_requires = [
     'jinja2',
-    'lxml==4.4.3',  # Unicode problem in lxml 4.5.0 cnx#924
+    'lxml==4.9.1',  # Unicode problem in lxml 4.5.0 cnx#924
     'requests',
     'PyICU==2.10.1',
     ]
