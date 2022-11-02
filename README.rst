@@ -17,7 +17,6 @@ Optional (Python3 virtualenv)::
 To install::
 
     pip install git+https://github.com/openstax/cnx-cssselect2.git#egg=cnx-cssselect2
-    pip install git+https://github.com/Connexions/cnx-easybake.git#egg=cnx-easybake
     python setup.py install
 
 Running tests

@@ -325,57 +325,8 @@ def _fix_namespaces(html):
     return etree.tostring(root, pretty_print=True, encoding='utf-8')
 
 
-def _replace_tex_math(exercise_id, node, mml_url, mc_client=None, retry=0):
-    """call mml-api service to replace TeX math in body of node with mathml"""
-
-    math = node.attrib['data-math'] or node.text
-    if math is None:
-        return None
-
-    eq = {}
-    if mc_client:
-        math_key = hashlib.md5(math.encode('utf-8')).hexdigest()
-        eq = json.loads(mc_client.get(math_key) or '{}')
-
-    if not eq:
-        res = requests.post(mml_url, {'math': math.encode('utf-8'),
-                                      'mathType': 'TeX',
-                                      'mml': 'true'})
-        if res:  # Non-error response from requests
-            eq = res.json()
-            if mc_client:
-                mc_client.set(math_key, res.text)
-
-    if 'components' in eq and len(eq['components']) > 0:
-        for component in eq['components']:
-            if component['format'] == 'mml':
-                try:
-                    mml = etree.fromstring(component['source'])
-                except etree.XMLSyntaxError:
-                    logger.error(
-                        'Error converting math in {}:\n  math: {}\n'
-                        '  mathml: {}\n'.format(
-                            exercise_id, math, component['source']))
-                    raise
-        if node.tag.endswith('span'):
-            mml.set('display', 'inline')
-        elif node.tag.endswith('div'):
-            mml.set('display', 'block')
-        mml.tail = node.tail
-        return mml
-    else:
-        logger.warning('Retrying math TeX conversion: '
-                       '{}'.format(json.dumps(eq, indent=4)))
-        retry += 1
-        if retry < 2:
-            return _replace_tex_math(exercise_id, node, mml_url, mc_client,
-                                     retry)
-
-    return None
-
-
 def exercise_callback_factory(match, url_template,
-                              mc_client=None, token=None, mml_url=None):
+                              token=None):
     """Create a callback function to replace an exercise by fetching from
     a server."""
 
@@ -427,14 +378,10 @@ def exercise_callback_factory(match, url_template,
         else:
             candidate_uuids.add(parent_page_uuid)
 
-        if len(candidate_uuids) == 0:
-            # No valid page UUIDs in exercise data
-            msg = 'No candidate uuid for exercise feature {} '.format(feature)
-            msg += '(exercise href: {})'.format(
-                elem.get('href')
-            )
-            logger.error(msg)
-            raise Exception(msg)
+        # No valid page UUIDs in exercise data
+        assert_msg = 'No candidate uuid for exercise feature {} href={}'
+        assert len(candidate_uuids) > 0, assert_msg.format(feature,
+                                                           elem.get('href'))
 
         if parent_page_uuid in candidate_uuids:
             target_module = parent_page_uuid
@@ -458,13 +405,10 @@ def exercise_callback_factory(match, url_template,
             './/*[@id="{}"]'.format(target_ref)
         )
 
-        if feature_element is None:
-            msg = 'Feature {} not in {} '.format(feature, target_module)
-            msg += '(exercise href: {})'.format(
-                elem.get('href')
-            )
-            logger.error(msg)
-            raise Exception(msg)
+        assert_msg = 'Feature {} not in {} href={}'.format(feature,
+                                                           target_module,
+                                                           elem.get('href'))
+        assert feature_element is not None, assert_msg
 
         exercise['items'][0]['required_context'] = {}
         exercise['items'][0]['required_context']['module'] = target_module
@@ -475,23 +419,16 @@ def exercise_callback_factory(match, url_template,
         item_code = elem.get('href')[len(match):]
         url = url_template.format(itemCode=item_code)
         exercise_class = elem.get('class')
-        exercise = {}
-        if mc_client:  # pragma: no cover
-            mc_key = item_code + (token or '')
-            exercise = json.loads(mc_client.get(mc_key) or '{}')
+        if token:
+            headers = {'Authorization': 'Bearer {}'.format(token)}
+            res = requests.get(url, headers=headers)
+        else:
+            res = requests.get(url)
 
-        if not exercise:
-            if token:
-                headers = {'Authorization': 'Bearer {}'.format(token)}
-                res = requests.get(url, headers=headers)
-            else:
-                res = requests.get(url)
-            if res:
-                # grab the json exercise, run it through Jinja2 template,
-                # replace element w/ it
-                exercise = res.json()
-                if mc_client:  # pragma: no cover
-                    mc_client.set(mc_key, res.text)
+        assert res
+        # grab the json exercise, run it through Jinja2 template,
+        # replace element w/ it
+        exercise = res.json()
 
         if exercise['total_count'] == 0:
             logger.warning('MISSING EXERCISE: {}'.format(url))
@@ -513,18 +450,6 @@ def exercise_callback_factory(match, url_template,
             except etree.XMLSyntaxError:  # Probably HTML
                 nodes = etree.HTML(html)[0]  # body node
 
-            if mml_url:
-                for node in nodes.xpath('//*[@data-math]'):
-                    mathml = _replace_tex_math(
-                        item_code, node, mml_url, mc_client)
-                    if mathml is not None:
-                        mparent = node.getparent()
-                        mparent.replace(node, mathml)
-                    else:
-                        mathtext = node.get('data-math') or node.text or ''
-                        logger.warning('BAD TEX CONVERSION: "%s" URL: %s'
-                                       % (mathtext.encode('utf-8'), url))
-
         parent = elem.getparent()
         for child in nodes:
             parent.insert(parent.index(elem), child)
@@ -535,8 +460,7 @@ def exercise_callback_factory(match, url_template,
 
 
 def render_exercise(exercise):
-    if len(exercise['items']) != 1:
-        raise Exception('Exercise "items" array is nonsingular')
+    assert len(exercise['items']) == 1, 'Exercise "items" array is nonsingular'
     exercise_content = exercise['items'][0]
 
     return EXERCISE_TEMPLATE.render(data=exercise_content)
@@ -814,15 +738,6 @@ HTML_DOCUMENT = """\
            >{{ metadata['derived_from_title']|escape }}</a>
       </div>
       {%- endif %}
-      {% if metadata.get('print_style') %}
-
-      <div class="print-style">
-        Print style:
-        <span
-           data-type="print-style"
-           >{{ metadata['print_style'] }}</span>
-      </div>
-      {%- endif %}
       {% if metadata.get('copyright-holder') or metadata.get('license_url') %}
 
       <div class="permissions">
@@ -877,16 +792,6 @@ HTML_DOCUMENT = """\
       {% for subject in metadata['subjects'] -%}
       <div itemprop="about" data-type="subject">{{ subject|escape }}</div>
       {%- endfor %}
-      {% if resources %}
-
-      <div data-type="resources">
-        <ul>
-          {% for resource in resources -%}
-          <li><a href="{{ resource.id }}">{{ resource.filename }}</a></li>
-          {%- endfor %}
-        </ul>
-      </div>
-      {%- endif %}
     </div>
 
    {{ content }}

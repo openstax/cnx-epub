@@ -97,7 +97,7 @@ class DocumentMetadataParser:
         'license_text', 'editors', 'illustrators', 'translators',
         'publishers', 'copyright_holders', 'authors', 'summary',
         'cnx-archive-uri', 'cnx-archive-shortid', 'derived_from_uri',
-        'derived_from_title', 'print_style', 'version', 'canonical_book_uuid',
+        'derived_from_title', 'version', 'canonical_book_uuid',
         'license_url', 'slug'
         )
 
@@ -311,18 +311,13 @@ class DocumentMetadataParser:
         items = self.parse(
             './/xhtml:*[@data-type="cnx-archive-uri"]/@data-value')
         if items:
-            if '@' in items[0]:
-                return items[0].split('@')[1]
+            assert_msg = 'version should have an @ in it data-value="{}"'
+            assert '@' in items[0], assert_msg.format(items[0])
+            return items[0].split('@')[1]
 
     @property
     def derived_from_uri(self):
         items = self.parse('.//xhtml:*[@data-type="derived-from"]/@href')
-        if items:
-            return items[0]
-
-    @property
-    def print_style(self):
-        items = self.parse('.//xhtml:*[@data-type="print-style"]/text()')
         if items:
             return items[0]
 
@@ -349,14 +344,8 @@ class DocumentMetadataParser:
 
 class DocumentPointerMetadataParser(DocumentMetadataParser):
     metadata_required_keys = (
-            'title', 'cnx-archive-uri', 'is_document_pointer',
+            'title', 'cnx-archive-uri',
             )
     metadata_optional_keys = DocumentMetadataParser.metadata_optional_keys + (
             'license_url', 'summary', 'cnx-archive-shortid',
             )
-
-    @property
-    def is_document_pointer(self):
-        items = self.parse('.//xhtml:*[@data-type="document"]/@data-value')
-        if items:
-            return items[0] == 'pointer'

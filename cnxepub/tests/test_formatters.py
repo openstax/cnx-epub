@@ -21,8 +21,7 @@ except ImportError:
 
 from lxml import etree
 
-from ..testing import (TEST_DATA_DIR, unescape,
-                       _get_memcache_client, IS_MEMCACHE_ENABLED)
+from ..testing import (TEST_DATA_DIR, unescape)
 from ..formatters import exercise_callback_factory, render_exercise
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -817,11 +816,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 
     def setUp(self):
         from ..models import (TranslucentBinder, Binder, Document,
-                              Resource, CompositeDocument)
-
-        with open(os.path.join(TEST_DATA_DIR, '1x1.jpg'), 'rb') as f:
-            jpg = Resource('1x1.jpg', io.BytesIO(f.read()), 'image/jpeg',
-                           filename='small.jpg')
+                              CompositeDocument)
 
         metadata = self.base_metadata.copy()
         contents = io.BytesIO(u"""\
@@ -835,8 +830,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 </ul></div><img src="/resources/1x1.jpg" /><p>チョコレートデザート</p>
 </body>
 """.encode('utf-8'))
-        self.chocolate = Document('chocolate', contents, metadata=metadata,
-                                  resources=[jpg])
+        self.chocolate = Document('chocolate', contents, metadata=metadata)
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Apple'
@@ -878,8 +872,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
 </ul>
 </body>
 """)
-        self.lemon = Document('lemon', contents, metadata=metadata,
-                              resources=[jpg])
+        self.lemon = Document('lemon', contents, metadata=metadata)
 
         metadata = self.base_metadata.copy()
         metadata['title'] = 'Citrus'
@@ -891,7 +884,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             '<span>Chapter</span> <span>2</span> <span>citrus</span>']
         self.fruity = Binder('ec84e75d-9973-41f1-ab9d-1a3ebaef87e2', [self.apple, self.lemon, self.citrus],
                              metadata={'title': 'Fruity',
-                                       'cnx-archive-uri': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2',
+                                       'cnx-archive-uri': 'ec84e75d-9973-41f1-ab9d-1a3ebaef87e2@1.3',
                                        'cnx-archive-shortid': 'frt',
                                        'license_text': 'CC-By 4.0',
                                        'license_url': 'http://creativecommons.org/licenses/by/4.0/',
@@ -910,11 +903,6 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
         self.extra = CompositeDocument(
             'extra', contents, metadata=metadata)
 
-        with open(os.path.join(TEST_DATA_DIR, 'cover.png'), 'rb') as f:
-            cover_png = Resource(
-                'cover.png', io.BytesIO(f.read()), 'image/png',
-                filename='cover.png')
-
         self.desserts = Binder(
             'Desserts', [self.fruity, self.chocolate, self.extra],
             metadata={'title': 'Desserts',
@@ -922,8 +910,7 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
                       'license_text': 'CC-By 4.0',
                       'cnx-archive-uri': '00000000-0000-0000-0000-000000000000@1.3',
                       'language': 'en',
-                      'slug': 'desserts'},
-            resources=[cover_png])
+                      'slug': 'desserts'})
 
     def test_binder(self):
         from ..formatters import SingleHTMLFormatter
@@ -985,14 +972,8 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
         exercise_match = '#ost/api/ex/'
 
-        if IS_MEMCACHE_ENABLED:
-            mc_client = _get_memcache_client()
-        else:
-            mc_client = None
-
         includes = [exercise_callback_factory(exercise_match,
-                                              exercise_url,
-                                              mc_client),
+                                              exercise_url),
                     ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
@@ -1039,17 +1020,10 @@ class SingleHTMLFormatterTestCase(unittest.TestCase):
             'https://%s/api/exercises?q=tag:{itemCode}' % ('exercises.openstax.org')
         exercise_match = '#ost/api/ex/'
         exercise_token = 'somesortoftoken'
-        mathml_url = 'http://mathmlcloud.cnx.org/equation'
-        if IS_MEMCACHE_ENABLED:
-            mc_client = _get_memcache_client()
-        else:
-            mc_client = None
 
         includes = [exercise_callback_factory(exercise_match,
                                               exercise_url,
-                                              mc_client,
-                                              exercise_token,
-                                              mathml_url),
+                                              exercise_token),
                     ('//xhtml:*[@data-type = "exercise"]', _upcase_text),
                     ('//xhtml:a', _upcase_text)]
 
@@ -1105,61 +1079,6 @@ class FixNamespacesTestCase(unittest.TestCase):
 """
         self.maxDiff = None
         self.assertMultiLineEqual(expected_content, xmlpp(actual).decode('utf-8'))
-
-
-class ExerciseCallbackTestCase(unittest.TestCase):
-    @mock.patch('cnxepub.formatters.logger')
-    @mock.patch('cnxepub.formatters.requests.get')
-    @mock.patch('cnxepub.formatters.requests.post')
-    def test_xmlsyntaxerror(self, requests_post, requests_get, logger):
-        from ..formatters import exercise_callback_factory
-
-        xpath, cb = exercise_callback_factory(
-            '#ost/api/ex/',
-            'https://exercises/{itemCode}',
-            mml_url='https://mathmlcloud/')
-
-        self.assertEqual(xpath, '//xhtml:a[contains(@href, "#ost/api/ex/")]')
-        node = etree.fromstring("""
-<div>
-    <a href="#ost/api/ex/book-ch01-ex001"></a>
-</div>""")
-
-        tex_math = r'<span data-math="1\ \text{kcal}"></span>'
-        get_resp = mock.Mock()
-        get_resp.json.return_value = {
-            'total_count': 1,
-            'items': [{
-                'questions': [{
-                    'stem_html': tex_math,
-                    'formats': []
-                }],
-            }]}
-        requests_get.return_value = get_resp
-
-        mathml = r"""<math xmlns="http://www.w3.org/1998/Math/MathML"
-      display="block" alttext="1 kcal">
-  <mn>1</mn>
-  <mtext>&nbsp;</mtext>
-  <mtext>kcal</mtext>
-</math>
-        """
-        post_resp = mock.Mock()
-        post_resp.json.return_value = {'components': [
-                {'format': 'mml',
-                 'source': mathml}]}
-        requests_post.return_value = post_resp
-
-        self.assertRaises(etree.XMLSyntaxError, cb, node.getchildren()[0], [])
-        self.assertEqual(logger.error.call_args[0][0].strip(), u"""\
-Error converting math in book-ch01-ex001:
-  math: 1\\ \\text{kcal}
-  mathml: <math xmlns="http://www.w3.org/1998/Math/MathML"
-      display="block" alttext="1 kcal">
-  <mn>1</mn>
-  <mtext>&nbsp;</mtext>
-  <mtext>kcal</mtext>
-</math>""")
 
 
 class ExerciseAnnotationTestCase(unittest.TestCase):
@@ -1308,7 +1227,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         self.assertEqual(
             str(error.exception),
             'No candidate uuid for exercise feature feature-donotexist '
-            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+            'href=#ost/api/ex/book-ch01-ex001'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')
@@ -1442,7 +1361,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         self.assertEqual(
             str(error.exception),
             'Feature feature-donotexist not in uuid2 '
-            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+            'href=#ost/api/ex/book-ch01-ex001'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')
@@ -1464,7 +1383,7 @@ class ExerciseAnnotationTestCase(unittest.TestCase):
         self.assertEqual(
             str(error.exception),
             'No candidate uuid for exercise feature feature-donotexist '
-            '(exercise href: #ost/api/ex/book-ch01-ex001)'
+            'href=#ost/api/ex/book-ch01-ex001'
         )
 
     @mock.patch('cnxepub.formatters.requests.get')

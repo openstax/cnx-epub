@@ -22,13 +22,12 @@ import lxml.html
 
 from lxml import etree
 
-from .epub import EPUB, Package, Item
 from .formatters import HTMLFormatter
 from .models import (
     flatten_model, flatten_to_documents,
     content_to_etree, etree_to_content,
     Binder, TranslucentBinder,
-    Document, Resource, DocumentPointer, CompositeDocument,
+    Document, DocumentPointer, CompositeDocument,
     TRANSLUCENT_BINDER_ID,
     INTERNAL_REFERENCE_TYPE,
     INLINE_REFERENCE_TYPE,
@@ -37,87 +36,13 @@ from .html_parsers import (parse_metadata, parse_navigation_html_to_tree,
                            parse_resources, DocumentPointerMetadataParser,
                            HTML_DOCUMENT_NAMESPACES)
 
-from .data_uri import DataURI
-
-
 logger = logging.getLogger('cnxepub')
 
 
 __all__ = (
-    'adapt_package', 'adapt_item',
     'get_model_extensions',
-    'make_epub', 'make_publication_epub',
-    'BinderItem',
-    'DocumentItem',
     'adapt_single_html',
     )
-
-
-class AdaptationError(Exception):
-    """Raised when data is not able to be adapted to the requested format."""
-
-
-def adapt_package(package):
-    """Adapts ``.epub.Package`` to a ``BinderItem`` and cascades
-    the adaptation downward to ``DocumentItem``
-    and ``ResourceItem``.
-    The results of this process provide the same interface as
-    ``.models.Binder``, ``.models.Document`` and ``.models.Resource``.
-    """
-    navigation_item = package.navigation
-    html = etree.parse(navigation_item.data)
-    tree = parse_navigation_html_to_tree(html, navigation_item.name)
-    return _node_to_model(tree, package)
-
-
-def adapt_item(item, package, filename=None):
-    """Adapts ``.epub.Item`` to a ``DocumentItem``.
-
-    """
-    if item.media_type == 'application/xhtml+xml':
-        try:
-            html = etree.parse(item.data)
-        except Exception as exc:
-            logger.error("failed parsing {}".format(item.name))
-            raise
-        metadata = DocumentPointerMetadataParser(
-            html, raise_value_error=False)()
-        item.data.seek(0)
-        if metadata.get('is_document_pointer'):
-            model = DocumentPointerItem(item, package)
-        else:
-            model = DocumentItem(item, package)
-    else:
-        model = Resource(item.name, item.data, item.media_type,
-                         filename or item.name)
-    return model
-
-
-def make_epub(binders, file):
-    """Creates an EPUB file from a binder(s)."""
-    if not isinstance(binders, (list, set, tuple,)):
-        binders = [binders]
-    epub = EPUB([_make_package(binder) for binder in binders])
-    epub.to_file(epub, file)
-
-
-def make_publication_epub(binders, publisher, publication_message, file):
-    """Creates an epub file from a binder(s). Also requires
-    publication information, meant to be used in a EPUB publication
-    request.
-    """
-    if not isinstance(binders, (list, set, tuple,)):
-        binders = [binders]
-    packages = []
-    for binder in binders:
-        metadata = binder.metadata
-        binder.metadata = deepcopy(metadata)
-        binder.metadata.update({'publisher': publisher,
-                                'publication_message': publication_message})
-        packages.append(_make_package(binder))
-        binder.metadata = metadata
-    epub = EPUB(packages)
-    epub.to_file(epub, file)
 
 
 def get_model_extensions(binder):
@@ -133,216 +58,6 @@ def get_model_extensions(binder):
         extensions[model.id] = ext
         extensions[model.ident_hash] = ext
     return extensions
-
-
-def _make_package(binder):
-    """Makes an ``.epub.Package`` from a  Binder'ish instance."""
-    package_id = binder.id
-    if package_id is None:
-        package_id = hash(binder)
-
-    package_name = "{}.opf".format(package_id)
-
-    extensions = get_model_extensions(binder)
-
-    template_env = jinja2.Environment(trim_blocks=True, lstrip_blocks=True)
-
-    # Build the package item list.
-    items = []
-    # Build the binder as an item, specifically a navigation item.
-    navigation_document = bytes(HTMLFormatter(binder, extensions))
-    navigation_document_name = "{}{}".format(
-        package_id,
-        mimetypes.guess_extension('application/xhtml+xml', strict=False))
-    item = Item(str(navigation_document_name),
-                io.BytesIO(navigation_document),
-                'application/xhtml+xml',
-                is_navigation=True, properties=['nav'])
-    items.append(item)
-    resources = {}
-    # Roll through the model list again, making each one an item.
-    for model in flatten_model(binder):
-        for resource in getattr(model, 'resources', []):
-            resources[resource.id] = resource
-            with resource.open() as data:
-                item = Item(resource.id, data, resource.media_type)
-            items.append(item)
-
-        if isinstance(model, (Binder, TranslucentBinder,)):
-            continue
-        if isinstance(model, DocumentPointer):
-            content = bytes(HTMLFormatter(model))
-            item = Item(''.join([model.ident_hash, extensions[model.id]]),
-                        io.BytesIO(content),
-                        model.media_type)
-            items.append(item)
-            continue
-        for reference in model.references:
-            if reference.remote_type == INLINE_REFERENCE_TYPE:
-                # has side effects - converts ref type to INTERNAL w/
-                # appropriate uri, so need to replicate resource treatment from
-                # above
-                resource = _make_resource_from_inline(reference)
-                model.resources.append(resource)
-                resources[resource.id] = resource
-                with resource.open() as data:
-                    item = Item(resource.id, data, resource.media_type)
-                items.append(item)
-                reference.bind(resource, '../resources/{}')
-
-            elif reference.remote_type == INTERNAL_REFERENCE_TYPE:
-                filename = os.path.basename(reference.uri)
-                resource = resources.get(filename)
-                if resource:
-                    reference.bind(resource, '../resources/{}')
-
-        complete_content = bytes(HTMLFormatter(model))
-        item = Item(''.join([model.ident_hash, extensions[model.id]]),
-                    io.BytesIO(complete_content),
-                    model.media_type)
-        items.append(item)
-
-    # Build the package.
-    package = Package(package_name, items, binder.metadata)
-    return package
-
-
-def _make_resource_from_inline(reference):
-    """Makes an ``models.Resource`` from a ``models.Reference``
-       of type INLINE. That is, a data: uri"""
-    uri = DataURI(reference.uri)
-    data = io.BytesIO(uri.data)
-    mimetype = uri.mimetype
-    res = Resource('dummy', data, mimetype)
-    res.id = res.filename
-    return res
-
-
-def _make_item(model):
-    """Makes an ``.epub.Item`` from
-    a ``.models.Document`` or ``.models.Resource``
-    """
-    item = Item(model.id, model.content, model.media_type)
-    return item
-
-
-def _node_to_model(tree_or_item, package, parent=None,
-                   lucent_id=TRANSLUCENT_BINDER_ID):
-    """Given a tree, parse to a set of models"""
-    if 'contents' in tree_or_item:
-        # It is a binder.
-        tree = tree_or_item
-        # Grab the package metadata, so we have required license info
-        metadata = package.metadata.copy()
-        if tree['id'] == lucent_id:
-            metadata['title'] = tree['title']
-            binder = TranslucentBinder(metadata=metadata)
-        else:
-            try:
-                package_item = package.grab_by_name(tree['id'])
-                binder = BinderItem(package_item, package)
-            except KeyError:  # Translucent w/ id
-                metadata.update({
-                   'title': tree['title'],
-                   'cnx-archive-uri': tree['id'],
-                   'cnx-archive-shortid': tree['shortId']})
-                binder = Binder(tree['id'], metadata=metadata)
-        for item in tree['contents']:
-            node = _node_to_model(item, package, parent=binder,
-                                  lucent_id=lucent_id)
-            if node.metadata['title'] != item['title']:
-                binder.set_title_for_node(node, item['title'])
-        result = binder
-    else:
-        # It is a document.
-        item = tree_or_item
-        package_item = package.grab_by_name(item['id'])
-        result = adapt_item(package_item, package)
-    if parent is not None:
-        parent.append(result)
-    return result
-
-
-def _id_from_metadata(metadata):
-    """Given an item's metadata, discover the id."""
-    # FIXME Where does the system identifier come from?
-    system = 'cnx-archive'
-    identifier = "{}-uri".format(system)
-    return metadata.get(identifier)
-
-
-class BinderItem(Binder):
-
-    def __init__(self, item, package):
-        self._item = item
-        self._package = package
-        html = etree.parse(self._item.data)
-        metadata = parse_metadata(html)
-        resources = [
-            adapt_item(package.grab_by_name(resource['id']),
-                       package, resource['filename'])
-            for resource in parse_resources(html)]
-        id = _id_from_metadata(metadata)
-        super(BinderItem, self).__init__(
-            id, metadata=metadata, resources=resources)
-
-
-class DocumentPointerItem(DocumentPointer):
-
-    def __init__(self, item, package):
-        self._item = item
-        self._package = package
-        self._html = etree.parse(self._item.data)
-
-        metadata = DocumentPointerMetadataParser(self._html)()
-        id = _id_from_metadata(metadata)
-        super(DocumentPointerItem, self).__init__(id, metadata=metadata)
-
-
-class DocumentItem(Document):
-
-    def __init__(self, item, package):
-        self._item = item
-        self._package = package
-        self._html = etree.parse(self._item.data)
-
-        metadata = parse_metadata(self._html)
-        body = self._html.xpath('//xhtml:body',
-                                namespaces=HTML_DOCUMENT_NAMESPACES)[0]
-        metadata_nodes = self._html.xpath(
-                                    "//xhtml:body/*[@data-type='metadata']",
-                                    namespaces=HTML_DOCUMENT_NAMESPACES)
-        for node in metadata_nodes:
-            body.remove(node)
-        for key in body.keys():
-            if key in ('itemtype', 'itemscope'):
-                body.attrib.pop(key)
-
-        content = etree.tostring(self._html)
-
-        id = _id_from_metadata(metadata)
-        resources = None
-        super(DocumentItem, self).__init__(id, content, metadata)
-
-        # Based on the reference list, make a best effort
-        # to acquire resources.
-        resources = []
-        for ref in self.references:
-            if ref.remote_type == 'external':
-                continue
-            elif not ref.uri.find('../resources') >= 0:
-                continue
-            name = os.path.basename(ref.uri)
-            try:
-                resource = adapt_item(package.grab_by_name(name), package)
-                ref.bind(resource, '../resources/{}')
-                resources.append(resource)
-            except KeyError:
-                # When resources are missing, the problem is pushed off
-                # to the rendering process, which will
-                # raise a missing reference exception when necessary.
-                pass
-        self.resources = resources
 
 
 def adapt_single_html(html):
@@ -411,8 +126,8 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                 id_map['#{}'.format(id_val)] = (page, new_val)
 
         id_map['#{}'.format(page.id)] = (page, '')
-        if page.id and '@' in page.id:
-            id_map['#{}'.format(page.id.split('@')[0])] = (page, '')
+        assert not (page.id and '@' in page.id)
+        id_map['#{}'.format(page.id.split('@')[0])] = (page, '')
 
         page.content = etree_to_content(content)
 
@@ -445,32 +160,24 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
         if 'cnx-archive-uri' in p.metadata and p.metadata['cnx-archive-uri']:
             p_ids.insert(0, p.metadata['cnx-archive-uri'].split('@')[0])
 
+        p_uuid = None
         for p_id in p_ids:
             try:
                 p_uuid = uuid.UUID(p_id)
                 break
             except ValueError:
                 pass
-        else:  # Punt - no parent uuid, make one up for child
-            return str(uuid.uuid4())
 
+        assert p_uuid is not None, 'Should always find a parent UUID'
         uuid_key = elem.get('data-uuid-key', elem.get('class', key))
-        if (sys.version_info.major == 2):  # https://bugs.python.org/issue34145
-            uuid_key = uuid_key.encode('utf-8')
         return str(uuid.uuid5(p_uuid, uuid_key))
 
     def _compute_shortid(ident_hash):
         """Compute shortId from uuid or ident_hash"""
         ver = None
-        if '@' in ident_hash:
-            (id_str, ver) = ident_hash.split('@')
-        else:
-            id_str = ident_hash
-        try:
-            id_uuid = uuid.UUID(id_str)
-        except ValueError:
-            # id is not a uuid, no shortid
-            return None
+        assert '@' in ident_hash
+        (id_str, ver) = ident_hash.split('@')
+        id_uuid = uuid.UUID(id_str)
 
         shortid = (base64.urlsafe_b64encode(id_uuid.bytes)[:8]).decode('utf-8')
         if ver:
@@ -485,21 +192,9 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
 
         if data_type in ('unit', 'chapter', 'composite-chapter',
                          'page', 'composite-page'):
-            try:
-                # metadata munging for all node types, in one place
-                metadata = parse_metadata(
-                        child.xpath('./*[@data-type="metadata"]')[0])
-            except ValueError:
-                logger.exception(
-                    'Error when parsing metadata for {} (id: {}, parent: "{}")'
-                    .format(data_type, child.attrib.get('id'),
-                            parent.metadata.get('title')))
-                raise
-            except IndexError:
-                logger.exception(
-                    'Metadata (data-type="metadata") not found:\n{}...'
-                    .format(etree.tostring(child).decode('utf-8')[:800]))
-                raise
+            # metadata munging for all node types, in one place
+            metadata = parse_metadata(
+                    child.xpath('./*[@data-type="metadata"]')[0])
 
             # Handle version, id and uuid from metadata
             if not metadata.get('version'):
@@ -516,11 +211,9 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
                                                       else None)
             if not id_:
                 id_ = _compute_id(parent, child, metadata.get('title'))
-                if metadata.get('version'):
-                    metadata['cnx-archive-uri'] = \
-                        '@'.join((id_, metadata['version']))
-                else:
-                    metadata['cnx-archive-uri'] = id_
+                assert metadata.get('version')
+                metadata['cnx-archive-uri'] = \
+                    '@'.join((id_, metadata['version']))
                 metadata['cnx-archive-shortid'] = None
 
             if (metadata.get('cnx-archive-uri') and
@@ -555,8 +248,7 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             for node in metadata_nodes:
                 child.remove(node)
             for key in child.keys():
-                if key in ('itemtype', 'itemscope'):
-                    child.attrib.pop(key)
+                assert key not in ('itemtype', 'itemscope'), 'Seems true'
 
             document_body = content_to_etree('')
             document_body.append(child)
@@ -570,18 +262,13 @@ def _adapt_single_html_tree(parent, elem, nav_tree, top_metadata,
             parent.append(document)
 
             fix_generated_ids(document, id_map)  # also populates id_map
-        elif data_type in ['metadata', None]:
+        else:
+            assert data_type in ['metadata', None], \
+                'Unknown data-type for child node'
             # Expected non-nodal child types
             pass
-        else:  # Fall through - child is not a defined type
-            raise AdaptationError('Unknown data-type for child node')
 
-    # Assign title overrides
-    if len(parent) != len(title_overrides):
-        logger.error('Skipping title overrides -'
-                     'mismatched numbers: parent: {}, titles: {}'.format(
-                         len(parent), len(title_overrides)))
-        raise AdaptationError('Nav TOC does not match HTML structure')
+    assert len(parent) == len(title_overrides), 'Nav TOC should HTML structure'
 
     for i, node in enumerate(parent):
         parent.set_title_for_node(node, title_overrides[i])
