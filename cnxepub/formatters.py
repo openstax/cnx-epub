@@ -825,7 +825,7 @@ def html_listify(tree, root_xl_element, extensions, list_type='ol'):
         else:
             a_elm = lxml.html.fragment_fromstring(
                 node['title'], create_parent='a')
-            a_elm.set('href', ''.join(['#page_', node['id']]))
+            a_elm.set('href', ''.join(['#page_', node['id'].split('@')[0]]))
             li_elm.append(a_elm)
         if node['id'] is not None and node['id'] != 'subcol':
             li_elm.set('cnx-archive-uri', node['id'])
