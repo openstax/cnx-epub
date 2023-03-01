@@ -5,12 +5,9 @@
 # Public License version 3 (AGPLv3).
 # See LICENCE.txt for details.
 # ###
-import io
-import hashlib
 import mimetypes
 from collections.abc import MutableSequence
 from urllib.parse import urlparse
-from contextlib import contextmanager
 
 from lxml import etree
 
@@ -19,8 +16,7 @@ __all__ = (
     'TRANSLUCENT_BINDER_ID', 'RESOURCE_HASH_TYPE',
     'INTERNAL_REFERENCE_TYPE', 'EXTERNAL_REFERENCE_TYPE',
     'REFERENCE_REMOTE_TYPES',
-    'ATTRIBUTED_ROLE_KEYS',
-    'flatten_tree_to_ident_hashes', 'model_to_tree',
+    'ATTRIBUTED_ROLE_KEYS', 'model_to_tree',
     'flatten_model', 'flatten_to', 'flatten_to_documents',
     'Binder', 'TranslucentBinder',
     'Document', 'CompositeDocument', 'DocumentPointer',
@@ -118,22 +114,6 @@ def model_to_tree(model, title=None, lucent_id=TRANSLUCENT_BINDER_ID):
                                  lucent_id=lucent_id)
             contents.append(item)
     return tree
-
-
-def flatten_tree_to_ident_hashes(item_or_tree,
-                                 lucent_id=TRANSLUCENT_BINDER_ID):
-    """Flatten a tree to id and version values (ident_hash)."""
-    if 'contents' in item_or_tree:
-        tree = item_or_tree
-        if tree['id'] != lucent_id:
-            yield tree['id']
-        for i in tree['contents']:
-            # yield from flatten_tree_to_ident_hashs(i, lucent_id)
-            for x in flatten_tree_to_ident_hashes(i, lucent_id):
-                yield x
-    else:
-        item = item_or_tree
-        yield item['id']
 
 
 def flatten_model(model):

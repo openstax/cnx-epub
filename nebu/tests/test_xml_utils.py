@@ -26,7 +26,7 @@ class TestSquashXMLToText(unittest.TestCase):
 
     @property
     def target(self):
-        from cnxepub.utils import squash_xml_to_text
+        from nebu.xml_utils import squash_xml_to_text
         return squash_xml_to_text
 
     def test(self):

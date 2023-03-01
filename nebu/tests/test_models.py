@@ -28,7 +28,7 @@ class BaseModelTestCase(unittest.TestCase):
         """Make a ``Binder`` instance.
         If ``id`` is not supplied, a ``TranslucentBinder`` is made.
         """
-        from ..models import Binder, TranslucentBinder
+        from nebu.models.base_binder import Binder, TranslucentBinder
         if id is None:
             binder = TranslucentBinder(nodes, metadata)
         else:
@@ -36,15 +36,15 @@ class BaseModelTestCase(unittest.TestCase):
         return binder
 
     def make_document(self, id, content=b'', metadata={}):
-        from ..models import Document
+        from nebu.models.base_binder import Document
         return Document(id, io.BytesIO(content), metadata=metadata)
 
     def make_document_pointer(self, ident_hash, metadata={}):
-        from ..models import DocumentPointer
+        from nebu.models.base_binder import DocumentPointer
         return DocumentPointer(ident_hash, metadata=metadata)
 
     def make_resource(self, *args, **kwargs):
-        from ..models import Resource
+        from nebu.models.base_binder import Resource
         return Resource(*args, **kwargs)
 
 
@@ -201,7 +201,7 @@ class TreeUtilityTestCase(BaseModelTestCase):
                  'title': 'Part Three'}],
             'title': 'Book One'}
 
-        from ..models import model_to_tree
+        from nebu.models.base_binder import model_to_tree
         tree = model_to_tree(binder)
         self.assertEqual(tree, expected_tree)
 
@@ -250,7 +250,7 @@ class TreeUtilityTestCase(BaseModelTestCase):
             'Part Two',
             'Chapter Three', 'Document Three']
 
-        from ..models import flatten_model
+        from nebu.models.base_binder import flatten_model
         titles = [m.metadata['title'] for m in flatten_model(binder)]
         self.assertEqual(titles, expected_titles)
 
@@ -295,7 +295,7 @@ class TreeUtilityTestCase(BaseModelTestCase):
                                     metadata={'version': '2',
                                               'title': "Document Three"})])])])
 
-        from ..models import flatten_to_documents
+        from nebu.models.base_binder import flatten_to_documents
 
         # Test for default, Document only results.
         expected_titles = ['Document One', 'Document Two', 'Document Three']
@@ -329,7 +329,7 @@ class ModelBehaviorTestCase(unittest.TestCase):
 </body>
 """.format(*expected_uris)
 
-        from ..models import Document
+        from nebu.models.base_binder import Document
         document = Document('mcdonald', content)
 
         self.assertEqual(len(document.references), 3)
@@ -358,7 +358,7 @@ class ModelBehaviorTestCase(unittest.TestCase):
 </body>
 """.format(*starting_uris)
 
-        from ..models import Document
+        from nebu.models.base_binder import Document
         document = Document('document', content)
 
         self.assertEqual(len(document.references), 2)
@@ -395,7 +395,7 @@ class ModelBehaviorTestCase(unittest.TestCase):
                          'fb74dc89-47d4-4e46-aac1-b8682f487bd5@1.json'),
                 'r') as f:
             metadata = json.loads(f.read())
-        from ..models import Document
+        from nebu.models.base_binder import Document
         document = Document('document', metadata['content'])
         self.assertTrue(b'To demonstrate the potential of online publishing'
                         in document.content)

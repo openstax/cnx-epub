@@ -6,27 +6,23 @@
 # See LICENCE.txt for details.
 # ###
 from __future__ import unicode_literals
-import hashlib
-import json
 import logging
 import sys
-from io import BytesIO
+from concurrent.futures import ThreadPoolExecutor
 
 import re
 import jinja2
 import lxml.html
 from lxml import etree
-from copy import deepcopy
 
 import requests
 
-from .models import (
+from nebu.models.base_binder import (
     model_to_tree, content_to_etree, etree_to_content,
     flatten_to_documents,
     Binder, TranslucentBinder,
-    Document, DocumentPointer, CompositeDocument, utf8)
+    Document, DocumentPointer, CompositeDocument)
 from .html_parsers import HTML_DOCUMENT_NAMESPACES
-from .utils import ThreadPoolExecutor
 from .templates.exercise_template import EXERCISE_TEMPLATE
 
 logger = logging.getLogger('cnxepub')
@@ -35,60 +31,10 @@ IS_PY3 = sys.version_info.major == 3
 
 
 __all__ = (
-    'DocumentContentFormatter',
-    'DocumentSummaryFormatter',
     'HTMLFormatter',
     'SingleHTMLFormatter',
     )
 
-
-class DocumentContentFormatter(object):
-    def __init__(self, document):
-        self.document = document
-
-    def __unicode__(self):
-        return self.__bytes__().decode('utf-8')
-
-    def __str__(self):
-        if IS_PY3:
-            return self.__bytes__().decode('utf-8')
-        return self.__bytes__()
-
-    def __bytes__(self):
-        html = """\
-<html xmlns="http://www.w3.org/1999/xhtml">
-  {}
-</html>""".format(utf8(self.document.content))
-        html = _fix_namespaces(html.encode('utf-8'))
-        et = etree.HTML(html.decode('utf-8'))
-        return etree.tostring(et, pretty_print=True, encoding='utf-8')
-
-
-class DocumentSummaryFormatter(object):
-    def __init__(self, document):
-        self.document = document
-
-    def __unicode__(self):
-        return self.__bytes__().decode('utf-8')  # pragma: no cover
-
-    def __str__(self):
-        if IS_PY3:
-            return self.__bytes__().decode('utf-8')
-        return self.__bytes__()
-
-    def __bytes__(self):
-        # try to make sure summary is wrapped in a tag
-        summary = self.document.metadata.get('summary', '') or ''
-        try:
-            etree.fromstring(summary)
-            html = '{}'.format(summary)
-        except etree.XMLSyntaxError:
-            html = """\
-<div class="description" data-type="description"\
- xmlns="http://www.w3.org/1999/xhtml">
-  {}
-</div>""".format(summary)
-        return html.encode('utf-8')
 
 
 class HTMLFormatter(object):

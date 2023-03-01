@@ -7,7 +7,6 @@
 # ###
 """Various standalone utility functions that provide specific outcomes"""
 import re
-from concurrent.futures import ThreadPoolExecutor
 from lxml import etree
 
 
