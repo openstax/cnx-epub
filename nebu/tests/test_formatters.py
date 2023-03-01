@@ -544,7 +544,7 @@ class HTMLFormatterTestCase(unittest.TestCase):
     maxDiff = None
 
     def xpath(self, path):
-        from ..html_parsers import HTML_DOCUMENT_NAMESPACES
+        from ..xml_utils import HTML_DOCUMENT_NAMESPACES
 
         return self.root.xpath(path, namespaces=HTML_DOCUMENT_NAMESPACES)
 

@@ -22,7 +22,7 @@ from nebu.models.base_binder import (
     flatten_to_documents,
     Binder, TranslucentBinder,
     Document, DocumentPointer, CompositeDocument)
-from .html_parsers import HTML_DOCUMENT_NAMESPACES
+from .xml_utils import HTML_DOCUMENT_NAMESPACES
 from .templates.exercise_template import EXERCISE_TEMPLATE
 
 logger = logging.getLogger('cnxepub')

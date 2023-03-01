@@ -12,7 +12,14 @@ from lxml import etree
 
 __all__ = (
     'squash_xml_to_text',
+    'HTML_DOCUMENT_NAMESPACES'
 )
+
+
+HTML_DOCUMENT_NAMESPACES = {
+    'xhtml': "http://www.w3.org/1999/xhtml",
+    'epub': "http://www.idpf.org/2007/ops",
+}
 
 
 def squash_xml_to_text(elm, remove_namespaces=False):
